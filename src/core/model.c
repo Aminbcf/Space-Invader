@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <SDL2/SDL.h>
+#include "utils/platform.h"
 
 static void init_player(Player* player) {
     player->hitbox.x = (GAME_AREA_WIDTH / 2) - (PLAYER_WIDTH / 2);
@@ -17,11 +17,11 @@ static void init_player(Player* player) {
 
 static void init_invaders(InvaderGrid* invaders) {
     invaders->direction = DIR_RIGHT;
-    invaders->speed = 1;
+    invaders->speed = 0.5;
     invaders->state = 0;
     invaders->killed = 0;
-    invaders->state_speed = 1000;
-    invaders->state_time = SDL_GetTicks();
+    invaders->state_speed = 1500;
+    invaders->state_time = platform_get_ticks();
 
     for (int i = 0; i < INVADER_ROWS; i++) {
         for (int j = 0; j < INVADER_COLS; j++) {
@@ -71,7 +71,7 @@ static void init_bullets(Bullet bullets[], int count, bool is_player) {
         bullets[i].hitbox.height = BULLET_HEIGHT;
         bullets[i].alive = false;
         bullets[i].is_player_bullet = is_player;
-        bullets[i].speed = is_player ? -30 : 15;
+        bullets[i].speed = is_player ? -30 : 8;
     }
 }
 
@@ -94,7 +94,7 @@ void model_init(GameModel* model) {
     init_saucer(&model->saucer);
     
     model->state = STATE_MENU;
-    model->game_time = SDL_GetTicks();
+    model->game_time = platform_get_ticks();
     model->needs_redraw = true;
     
     model_load_high_score(model);
@@ -161,13 +161,14 @@ static void move_invaders_down(InvaderGrid* invaders) {
 }
 
 void model_update_invaders(GameModel* model, float delta_time) {
+    (void)delta_time;
     InvaderGrid* invaders = &model->invaders;
     
     update_invader_speed(invaders);
     
     // Animation state
-    if (SDL_GetTicks() > invaders->state_time + invaders->state_speed) {
-        invaders->state_time = SDL_GetTicks();
+    if (platform_get_ticks() > invaders->state_time + invaders->state_speed) {
+        invaders->state_time = platform_get_ticks();
         invaders->state = !invaders->state;
         model->needs_redraw = true;
     }
@@ -234,7 +235,7 @@ void model_update_invaders(GameModel* model, float delta_time) {
 }
 
 void model_move_player(GameModel* model, Direction dir) {
-    int move_amount = 10;
+    int move_amount = 20;
     
     if (dir == DIR_LEFT) {
         if (model->player.hitbox.x - move_amount >= 0) {
@@ -277,6 +278,7 @@ void model_player_shoot(GameModel* model) {
 }
 
 void model_update_bullets(GameModel* model, float delta_time) {
+    (void)delta_time;
     // Player bullets
     for (int i = 0; i < PLAYER_BULLETS; i++) {
         if (model->player_bullets[i].alive) {
@@ -301,6 +303,7 @@ void model_update_bullets(GameModel* model, float delta_time) {
 }
 
 void model_update_saucer(GameModel* model, float delta_time) {
+    (void)delta_time;
     if (!model->saucer.alive) return;
     
     int move_amount = 5;
@@ -432,6 +435,7 @@ void model_check_player_invader_collision(GameModel* model) {
 }
 
 void model_update(GameModel* model, float delta_time) {
+    (void)delta_time;
     if (model->state != STATE_PLAYING) return;
     
     model_update_invaders(model, delta_time);

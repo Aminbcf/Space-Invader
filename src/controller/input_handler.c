@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+#ifdef USE_SDL_VIEW
 #include <SDL2/SDL.h>
+#endif
 
 InputHandler* input_handler_create(void) {
     InputHandler* handler = malloc(sizeof(InputHandler));
@@ -20,10 +23,18 @@ InputHandler* input_handler_create(void) {
     handler->joystick_count = 0;
     
     // Configuration par défaut (touches)
+    #ifdef USE_SDL_VIEW
     input_handler_set_keybindings(handler,
                                  SDLK_LEFT, SDLK_RIGHT,
                                  SDLK_SPACE, SDLK_p,
                                  SDLK_ESCAPE);
+    #else
+    // For ncurses, use character codes
+    input_handler_set_keybindings(handler,
+                                 'a', 'd',
+                                 ' ', 'p',
+                                 27); // ESC
+    #endif
     
     // Configuration par défaut (joystick)
     input_handler_set_joystick_bindings(handler,
@@ -32,8 +43,10 @@ InputHandler* input_handler_create(void) {
     // Seuil pour axes analogiques
     handler->axis_threshold = 0.5f;
     
-    // Détecter les joysticks
+    // Détecter les joysticks (SDL only)
+    #ifdef USE_SDL_VIEW
     input_handler_detect_joysticks(handler);
+    #endif
     
     return handler;
 }
@@ -72,6 +85,7 @@ void input_handler_set_joystick_bindings(InputHandler* handler,
     handler->joy_button_quit = quit;
 }
 
+#ifdef USE_SDL_VIEW
 void input_handler_detect_joysticks(InputHandler* handler) {
     if (!handler) return;
     
@@ -97,8 +111,17 @@ void input_handler_detect_joysticks(InputHandler* handler) {
         handler->joystick_count = 0;
     }
 }
+#else
+void input_handler_detect_joysticks(InputHandler* handler) {
+    if (!handler) return;
+    // No joystick support for ncurses
+    handler->joystick_states = NULL;
+    handler->joystick_count = 0;
+}
+#endif
 
 void input_handler_process_sdl_event(InputHandler* handler, SDL_Event* event) {
+#ifdef USE_SDL_VIEW
     if (!handler || !event) return;
     
     switch (event->type) {
@@ -160,8 +183,10 @@ void input_handler_process_sdl_event(InputHandler* handler, SDL_Event* event) {
         default:
             break;
     }
+#endif
 }
 
+#ifdef USE_SDL_VIEW
 void input_handler_handle_joystick_event(InputHandler* handler, SDL_Event* event) {
     if (!handler || !event) return;
     
@@ -214,6 +239,7 @@ void input_handler_handle_joystick_event(InputHandler* handler, SDL_Event* event
             break;
     }
 }
+#endif
 
 void input_handler_process_ncurses_input(InputHandler* handler, int ch) {
     if (!handler) return;
@@ -229,11 +255,13 @@ void input_handler_process_ncurses_input(InputHandler* handler, int ch) {
     switch (ch) {
         case 'a':
         case 'A':
+        //case KEY_LEFT:
             handler->keyboard_state.left_pressed = true;
             break;
 
         case 'd':
         case 'D':
+        //case KEY_RIGHT:
             handler->keyboard_state.right_pressed = true;
             break;
             
@@ -333,7 +361,8 @@ bool input_handler_get_command(InputHandler* handler, Command* cmd) {
         return true;
     }
     
-    // Vérifier les joysticks
+    // Vérifier les joysticks (SDL only)
+    #ifdef USE_SDL_VIEW
     for (int i = 0; i < handler->joystick_count; i++) {
         InputState* joy_state = &handler->joystick_states[i];
         
@@ -368,10 +397,12 @@ bool input_handler_get_command(InputHandler* handler, Command* cmd) {
             return true;
         }
     }
+    #endif
     
     return false;
 }
 
+#ifdef USE_SDL_VIEW
 bool input_handler_is_key_pressed(InputHandler* handler, SDL_Keycode key) {
     if (!handler) return false;
     
@@ -425,6 +456,7 @@ bool input_handler_get_joystick_button(InputHandler* handler,
     
     return pressed;
 }
+#endif
 
 bool input_handler_save_config(InputHandler* handler, const char* filename) {
     if (!handler || !filename) return false;

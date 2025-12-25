@@ -16,7 +16,7 @@
 #define PLAYER_HEIGHT 10
 #define BULLET_WIDTH 5
 #define BULLET_HEIGHT 15
-#define PLAYER_BULLETS 1
+#define PLAYER_BULLETS 3
 #define ENEMY_BULLETS 3
 #define BASE_COUNT 4
 #define BASE_WIDTH 60

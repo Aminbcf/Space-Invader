@@ -3,8 +3,33 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <SDL2/SDL.h>
+#include <time.h>
 #include "commands.h"
+
+/* Simple timer using standard C */
+static uint32_t get_ticks(void) {
+    return (uint32_t)((clock() * 1000) / CLOCKS_PER_SEC);
+}
+
+/* Key code definitions for compatibility */
+#ifndef SDLK_LEFT
+#define SDLK_LEFT 1073741904
+#define SDLK_RIGHT 1073741903
+#define SDLK_SPACE 32
+#define SDLK_p 112
+#define SDLK_ESCAPE 27
+#define SDLK_r 114
+#define SDLK_RETURN 13
+#define SDLK_a 97
+#define SDLK_d 100
+#define SDLK_w 119
+#define SDLK_s 115
+#define SDLK_UP 1073741906
+#define SDLK_DOWN 1073741905
+#define SDLK_F1 1073741882
+#define SDLK_PAUSE 1073741896
+#define KMOD_ALT 0x0100
+#endif
 
 Controller* controller_create(GameModel* model) {
     Controller* controller = malloc(sizeof(Controller));
@@ -20,21 +45,21 @@ Controller* controller_create(GameModel* model) {
         return NULL;
     }
     
-    // Configuration par défaut
+    /* Default configuration */
     controller_set_keybindings(controller, 
                               SDLK_LEFT, SDLK_RIGHT, 
                               SDLK_SPACE, SDLK_p, 
                               SDLK_ESCAPE);
     
-    // Callbacks
+    /* Callbacks */
     controller->render_callback = NULL;
     controller->audio_callback = NULL;
     controller->callback_data = NULL;
     
-    // État
+    /* State */
     controller->quit_requested = false;
     controller->paused = false;
-    controller->last_input_time = SDL_GetTicks();
+    controller->last_input_time = get_ticks();
     
     return controller;
 }
@@ -49,12 +74,16 @@ void controller_destroy(Controller* controller) {
 }
 
 void controller_set_view_context(Controller* controller, void* view_context) {
-    controller->view_context = view_context;
+    if (controller) {
+        controller->view_context = view_context;
+    }
 }
 
 void controller_set_keybindings(Controller* controller, 
                                int left, int right, int shoot, 
                                int pause, int quit) {
+    if (!controller) return;
+    
     controller->key_left = left;
     controller->key_right = right;
     controller->key_shoot = shoot;
@@ -71,6 +100,8 @@ void controller_set_callbacks(Controller* controller,
                              RenderCallback render_cb,
                              AudioCallback audio_cb,
                              void* data) {
+    if (!controller) return;
+    
     controller->render_callback = render_cb;
     controller->audio_callback = audio_cb;
     controller->callback_data = data;
@@ -116,13 +147,12 @@ Command controller_translate_input(InputEvent* event) {
             break;
             
         case INPUT_JOYSTICK:
-            if (event->button == 0) return CMD_SHOOT;      // A
-            if (event->button == 1) return CMD_PAUSE;      // B
-            if (event->button == 2) return CMD_RESET_GAME; // X
-            if (event->button == 3) return CMD_QUIT;       // Y
+            if (event->button == 0) return CMD_SHOOT;
+            if (event->button == 1) return CMD_PAUSE;
+            if (event->button == 2) return CMD_RESET_GAME;
+            if (event->button == 3) return CMD_QUIT;
             
-            // Axes pour mouvement
-            if (event->axis == 0) {  // Axe X
+            if (event->axis == 0) {
                 if (event->value < -16000) return CMD_MOVE_LEFT;
                 if (event->value > 16000) return CMD_MOVE_RIGHT;
             }
@@ -138,7 +168,7 @@ Command controller_translate_input(InputEvent* event) {
 void controller_execute_command(Controller* controller, Command cmd) {
     if (!controller || !controller->model) return;
     
-    controller->last_input_time = SDL_GetTicks();
+    controller->last_input_time = get_ticks();
     
     switch (cmd) {
         case CMD_MOVE_LEFT:
@@ -188,15 +218,15 @@ void controller_execute_command(Controller* controller, Command cmd) {
             break;
             
         case CMD_UP:
-            // Navigation menu (implémenté dans la vue)
+            /* Menu navigation (implemented in view) */
             break;
             
         case CMD_DOWN:
-            // Navigation menu (implémenté dans la vue)
+            /* Menu navigation (implemented in view) */
             break;
             
         case CMD_CONFIRM:
-            // Confirmation menu (implémenté dans la vue)
+            /* Menu confirmation (implemented in view) */
             break;
             
         case CMD_BACK:
@@ -210,12 +240,12 @@ void controller_execute_command(Controller* controller, Command cmd) {
             break;
     }
     
-    // Appeler le callback de rendu si défini
+    /* Call render callback if defined */
     if (controller->render_callback) {
         controller->render_callback(controller->callback_data);
     }
     
-    // Appeler le callback audio si défini
+    /* Call audio callback if defined */
     if (controller->audio_callback) {
         controller->audio_callback(controller->callback_data);
     }
@@ -226,19 +256,19 @@ void controller_process_input(Controller* controller) {
     
     Command cmd = CMD_NONE;
     
-    // Vérifier les entrées du gestionnaire
+    /* Check for commands from input handler */
     if (input_handler_get_command(controller->input_handler, &cmd)) {
         controller_execute_command(controller, cmd);
     }
     
-    // Mise à jour du gestionnaire d'entrées
-    input_handler_update(controller->input_handler, SDL_GetTicks());
+    /* Update input handler */
+    input_handler_update(controller->input_handler, get_ticks());
 }
 
 void controller_handle_event(Controller* controller, InputEvent* event) {
     if (!controller || !event) return;
     
-    // Traduire l'événement en commande
+    /* Translate event to command */
     Command cmd = controller_translate_input(event);
     
     if (cmd != CMD_NONE) {
@@ -247,16 +277,16 @@ void controller_handle_event(Controller* controller, InputEvent* event) {
 }
 
 void controller_update(Controller* controller, float delta_time) {
+    (void)delta_time; /* Suppress warning */
     if (!controller) return;
     
-    // Vérifier l'état de pause
+    /* Check pause state */
     controller->paused = (controller->model->state == STATE_PAUSED);
     
-    // Si en pause, ne pas mettre à jour la logique
+    /* If paused, don't update logic */
     if (controller->paused) return;
     
-    // Mise à jour du modèle (gérée par le contexte principal)
-    // controller->model est mis à jour par le contexte de jeu
+    /* Model is updated by the game context */
 }
 
 bool controller_is_quit_requested(Controller* controller) {
