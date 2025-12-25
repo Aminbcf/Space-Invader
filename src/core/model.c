@@ -133,15 +133,15 @@ static void update_invader_speed(InvaderGrid* invaders) {
     switch (invaders->killed) {
         case 10:
             invaders->speed = 2;
-            invaders->state_speed = 800;
+            invaders->state_speed = 400;
             break;
         case 20:
             invaders->speed = 4;
-            invaders->state_speed = 600;
+            invaders->state_speed = 300;
             break;
         case 30:
             invaders->speed = 8;
-            invaders->state_speed = 200;
+            invaders->state_speed = 100;
             break;
         case 40:
             invaders->speed = 16;
@@ -193,7 +193,7 @@ void model_update_invaders(GameModel* model, float delta_time) {
         
         if (max_x + invaders->speed >= GAME_AREA_WIDTH) {
             invaders->direction = DIR_LEFT;
-            move_invaders_down(invaders);
+            //move_invaders_down(invaders);
             changed_direction = true;
         }
     } else { // DIR_LEFT
@@ -212,7 +212,7 @@ void model_update_invaders(GameModel* model, float delta_time) {
         
         if (min_x - invaders->speed <= 0) {
             invaders->direction = DIR_RIGHT;
-            move_invaders_down(invaders);
+            //move_invaders_down(invaders);
             changed_direction = true;
         }
     }
@@ -433,7 +433,7 @@ void model_check_player_invader_collision(GameModel* model) {
         }
     }
 }
-
+/*
 void model_update(GameModel* model, float delta_time) {
     (void)delta_time;
     if (model->state != STATE_PLAYING) return;
@@ -470,6 +470,48 @@ void model_update(GameModel* model, float delta_time) {
                 }
             }
             next_column:;
+        }
+    }
+}
+
+*/
+//new code
+
+void model_update(GameModel* model, float delta_time) {
+    (void)delta_time;
+    if (model->state != STATE_PLAYING) return;
+    
+    model_update_invaders(model, delta_time);
+    model_update_bullets(model, delta_time);
+    model_update_saucer(model, delta_time);
+    
+    model_check_bullet_collisions(model);
+    model_check_invader_base_collisions(model);
+    model_check_player_invader_collision(model);
+    
+    // Enemy AI shooting - frequency increases with progression
+    // Use shoot_chance from invader grid
+    if (rand() % 30 == 0) {
+        // Find bottom-most alive invader in random column
+        int col = rand() % INVADER_COLS;
+        for (int row = INVADER_ROWS - 1; row >= 0; row--) {
+            if (model->invaders.invaders[row][col].alive) {
+                // Find available enemy bullet
+                for (int b = 0; b < ENEMY_BULLETS; b++) {
+                    if (!model->enemy_bullets[b].alive) {
+                        model->enemy_bullets[b].hitbox.x = 
+                            model->invaders.invaders[row][col].hitbox.x + 
+                            (INVADER_WIDTH / 2) - (BULLET_WIDTH / 2);
+                        model->enemy_bullets[b].hitbox.y = 
+                            model->invaders.invaders[row][col].hitbox.y + 
+                            INVADER_HEIGHT;
+                        model->enemy_bullets[b].alive = true;
+                        model->needs_redraw = true;
+                        break;
+                    }
+                }
+                break;
+            }
         }
     }
 }
