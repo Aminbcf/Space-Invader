@@ -17,11 +17,12 @@ static void init_player(Player* player) {
 
 static void init_invaders(InvaderGrid* invaders) {
     invaders->direction = DIR_RIGHT;
-    invaders->speed = 0.5;
+    invaders->speed = 0.5f;  // Start slow
     invaders->state = 0;
     invaders->killed = 0;
-    invaders->state_speed = 1500;
+    invaders->state_speed = 1500;  // Slow animation
     invaders->state_time = platform_get_ticks();
+    invaders->shoot_chance = 120;  // Start with 1 in 120 chance per frame
 
     for (int i = 0; i < INVADER_ROWS; i++) {
         for (int j = 0; j < INVADER_COLS; j++) {
@@ -88,7 +89,7 @@ void model_init(GameModel* model) {
     
     init_player(&model->player);
     init_invaders(&model->invaders);
-    init_bases(model->bases);
+    //init_bases(model->bases);
     init_bullets(model->player_bullets, PLAYER_BULLETS, true);
     init_bullets(model->enemy_bullets, ENEMY_BULLETS, false);
     init_saucer(&model->saucer);
@@ -103,7 +104,7 @@ void model_init(GameModel* model) {
 void model_reset_game(GameModel* model) {
     init_player(&model->player);
     init_invaders(&model->invaders);
-    init_bases(model->bases);
+    //init_bases(model->bases);
     init_bullets(model->player_bullets, PLAYER_BULLETS, true);
     init_bullets(model->enemy_bullets, ENEMY_BULLETS, false);
     init_saucer(&model->saucer);
@@ -115,48 +116,61 @@ void model_reset_game(GameModel* model) {
 void model_next_level(GameModel* model) {
     model->player.level++;
     init_invaders(&model->invaders);
-    init_bases(model->bases);
+    //init_bases(model->bases);
     init_saucer(&model->saucer);
     
-    // Augmenter la difficulté
-    model->invaders.speed = 1 + (model->player.level - 1);
-    model->invaders.state_speed = 1000 - (model->player.level - 1) * 100;
-    if (model->invaders.state_speed < 200) {
-        model->invaders.state_speed = 200;
+    // Increase difficulty with each level
+    model->invaders.speed = 0.5f + (model->player.level - 1) * 0.3f;
+    model->invaders.state_speed = 1200 - (model->player.level - 1) * 100;
+    if (model->invaders.state_speed < 300) {
+        model->invaders.state_speed = 300;
+    }
+    model->invaders.shoot_chance = 100 - (model->player.level - 1) * 15;
+    if (model->invaders.shoot_chance < 30) {
+        model->invaders.shoot_chance = 30;
     }
     
     model->state = STATE_LEVEL_TRANSITION;
     model->needs_redraw = true;
 }
 
-static void update_invader_speed(InvaderGrid* invaders) {
-    switch (invaders->killed) {
-        case 10:
-            invaders->speed = 2;
-            invaders->state_speed = 400;
-            break;
-        case 20:
-            invaders->speed = 4;
-            invaders->state_speed = 300;
-            break;
-        case 30:
-            invaders->speed = 8;
-            invaders->state_speed = 100;
-            break;
-        case 40:
-            invaders->speed = 16;
-            invaders->state_speed = 0;
-            break;
+static void update_invader_speed_and_shooting(InvaderGrid* invaders, int level, int killed) {
+    // Base speed increases with level
+    float base_speed = 0.5f + (level - 1) * 0.3f;
+    
+    // Speed increases as more invaders are killed (they become more aggressive)
+    float kill_boost = (killed / 10.0f) * 0.5f;
+    invaders->speed = base_speed + kill_boost;
+    
+    // Cap maximum speed
+    if (invaders->speed > 4.0f) {
+        invaders->speed = 4.0f;
     }
-}
-
-static void move_invaders_down(InvaderGrid* invaders) {
-    for (int i = 0; i < INVADER_ROWS; i++) {
-        for (int j = 0; j < INVADER_COLS; j++) {
-            if (invaders->invaders[i][j].alive) {
-                invaders->invaders[i][j].hitbox.y += 15;
-            }
-        }
+    
+    // Animation gets faster
+    invaders->state_speed = 1200 - (level * 80) - (killed * 5);
+    if (invaders->state_speed < 150) {
+        invaders->state_speed = 150;
+    }
+    
+    // Shooting gets more frequent based on level and how many are killed
+    int base_shoot_chance = 120 - (level * 15);
+    int kill_shoot_boost = killed * 2;
+    invaders->shoot_chance = base_shoot_chance - kill_shoot_boost;
+    
+    // Minimum and maximum shooting frequency
+    if (invaders->shoot_chance < 20) {
+        invaders->shoot_chance = 20;  // 1 in 20 chance = very frequent!
+    }
+    if (invaders->shoot_chance > 150) {
+        invaders->shoot_chance = 150; // 1 in 150 chance = very infrequent
+    }
+    
+    // When very few invaders remain, they become extremely aggressive
+    int remaining = (INVADER_ROWS * INVADER_COLS) - killed;
+    if (remaining <= 5) {
+        invaders->speed *= 1.5f; // 50% faster
+        invaders->shoot_chance = 15; // Shoot very frequently
     }
 }
 
@@ -164,7 +178,8 @@ void model_update_invaders(GameModel* model, float delta_time) {
     (void)delta_time;
     InvaderGrid* invaders = &model->invaders;
     
-    update_invader_speed(invaders);
+    // Update speed and shooting frequency based on current state
+    update_invader_speed_and_shooting(invaders, model->player.level, invaders->killed);
     
     // Animation state
     if (platform_get_ticks() > invaders->state_time + invaders->state_speed) {
@@ -173,8 +188,8 @@ void model_update_invaders(GameModel* model, float delta_time) {
         model->needs_redraw = true;
     }
     
-    // Movement
-    bool changed_direction = false;
+    // Movement - only horizontal, no vertical movement
+    bool hit_edge = false;
     
     if (invaders->direction == DIR_RIGHT) {
         // Find rightmost alive invader
@@ -191,10 +206,10 @@ void model_update_invaders(GameModel* model, float delta_time) {
             }
         }
         
-        if (max_x + invaders->speed >= GAME_AREA_WIDTH) {
+        if (max_x + (int)invaders->speed >= GAME_AREA_WIDTH) {
             invaders->direction = DIR_LEFT;
-            //move_invaders_down(invaders);
-            changed_direction = true;
+            hit_edge = true;
+            // NO VERTICAL MOVEMENT - only change direction
         }
     } else { // DIR_LEFT
         // Find leftmost alive invader
@@ -210,27 +225,29 @@ void model_update_invaders(GameModel* model, float delta_time) {
             }
         }
         
-        if (min_x - invaders->speed <= 0) {
+        if (min_x - (int)invaders->speed <= 0) {
             invaders->direction = DIR_RIGHT;
-            //move_invaders_down(invaders);
-            changed_direction = true;
+            hit_edge = true;
+            // NO VERTICAL MOVEMENT - only change direction
         }
     }
     
-    // Move invaders if not changing direction
-    if (!changed_direction) {
-        int move_amount = invaders->speed;
-        if (invaders->direction == DIR_LEFT) {
-            move_amount = -move_amount;
-        }
-        
-        for (int i = 0; i < INVADER_ROWS; i++) {
-            for (int j = 0; j < INVADER_COLS; j++) {
-                if (invaders->invaders[i][j].alive) {
-                    invaders->invaders[i][j].hitbox.x += move_amount;
-                }
+    // Move invaders horizontally
+    int move_amount = (int)invaders->speed;
+    if (invaders->direction == DIR_LEFT) {
+        move_amount = -move_amount;
+    }
+    
+    for (int i = 0; i < INVADER_ROWS; i++) {
+        for (int j = 0; j < INVADER_COLS; j++) {
+            if (invaders->invaders[i][j].alive) {
+                invaders->invaders[i][j].hitbox.x += move_amount;
             }
         }
+    }
+    
+    if (hit_edge) {
+        model->needs_redraw = true;
     }
 }
 
@@ -319,6 +336,29 @@ void model_update_saucer(GameModel* model, float delta_time) {
         model->saucer.alive = false;
     }
 }
+// breaks the code don't use it
+void model_check_invader_base_collisions(GameModel* model) {
+    for (int i = 0; i < INVADER_ROWS; i++) {
+        for (int j = 0; j < INVADER_COLS; j++) {
+            if (!model->invaders.invaders[i][j].alive) continue;
+            
+            for (int b = 0; b < BASE_COUNT; b++) {
+                if (!model->bases[b].alive) continue;
+                
+                if (model_check_collision(model->invaders.invaders[i][j].hitbox,
+                                        model->bases[b].hitbox)) {
+                    // Simple damage to base
+                    model->bases[b].health -= 50;
+                    if (model->bases[b].health <= 0) {
+                        model->bases[b].alive = false;
+                    }
+                    model->needs_redraw = true;
+                }
+            }
+        }
+    }
+}
+
 
 bool model_check_collision(Rect a, Rect b) {
     return !(a.x + a.width < b.x ||
@@ -392,27 +432,6 @@ void model_check_bullet_collisions(GameModel* model) {
     }
 }
 
-void model_check_invader_base_collisions(GameModel* model) {
-    for (int i = 0; i < INVADER_ROWS; i++) {
-        for (int j = 0; j < INVADER_COLS; j++) {
-            if (!model->invaders.invaders[i][j].alive) continue;
-            
-            for (int b = 0; b < BASE_COUNT; b++) {
-                if (!model->bases[b].alive) continue;
-                
-                if (model_check_collision(model->invaders.invaders[i][j].hitbox,
-                                        model->bases[b].hitbox)) {
-                    // Simple damage to base
-                    model->bases[b].health -= 50;
-                    if (model->bases[b].health <= 0) {
-                        model->bases[b].alive = false;
-                    }
-                    model->needs_redraw = true;
-                }
-            }
-        }
-    }
-}
 
 void model_check_player_invader_collision(GameModel* model) {
     for (int i = 0; i < INVADER_ROWS; i++) {
@@ -433,7 +452,7 @@ void model_check_player_invader_collision(GameModel* model) {
         }
     }
 }
-/*
+
 void model_update(GameModel* model, float delta_time) {
     (void)delta_time;
     if (model->state != STATE_PLAYING) return;
@@ -443,13 +462,27 @@ void model_update(GameModel* model, float delta_time) {
     model_update_saucer(model, delta_time);
     
     model_check_bullet_collisions(model);
-    model_check_invader_base_collisions(model);
+    //model_check_bullet_base_collisions(model);
+    //model_check_invader_base_collisions(model);
     model_check_player_invader_collision(model);
     
-    // Enemy AI shooting
-    if (rand() % 100 == 0) { // 1% chance per frame
-        // Find bottom-most alive invader in each column
-        for (int col = 0; col < INVADER_COLS; col++) {
+    // Enemy AI shooting - frequency based on invader's shoot_chance
+    // Also allow multiple invaders to shoot when there are many left
+    int shots_per_frame = 1;
+    int remaining = (INVADER_ROWS * INVADER_COLS) - model->invaders.killed;
+    
+    // More invaders = more potential shooters
+    if (remaining > 30) shots_per_frame = 2;
+    if (remaining > 40) shots_per_frame = 3;
+    
+    for (int shot = 0; shot < shots_per_frame; shot++) {
+        // Use the dynamic shoot_chance that decreases as game progresses
+        if (rand() % model->invaders.shoot_chance == 0) {
+            // Try to find a shooter from a random column
+            int attempts = 0;
+            int col = rand() % INVADER_COLS;
+            
+            // Look for bottom-most alive invader in this column
             for (int row = INVADER_ROWS - 1; row >= 0; row--) {
                 if (model->invaders.invaders[row][col].alive) {
                     // Find available enemy bullet
@@ -463,54 +496,11 @@ void model_update(GameModel* model, float delta_time) {
                                 INVADER_HEIGHT;
                             model->enemy_bullets[b].alive = true;
                             model->needs_redraw = true;
-                            goto next_column;
+                            break;
                         }
                     }
                     break;
                 }
-            }
-            next_column:;
-        }
-    }
-}
-
-*/
-//new code
-
-void model_update(GameModel* model, float delta_time) {
-    (void)delta_time;
-    if (model->state != STATE_PLAYING) return;
-    
-    model_update_invaders(model, delta_time);
-    model_update_bullets(model, delta_time);
-    model_update_saucer(model, delta_time);
-    
-    model_check_bullet_collisions(model);
-    model_check_invader_base_collisions(model);
-    model_check_player_invader_collision(model);
-    
-    // Enemy AI shooting - frequency increases with progression
-    // Use shoot_chance from invader grid
-    if (rand() % 30 == 0) {
-        // Find bottom-most alive invader in random column
-        int col = rand() % INVADER_COLS;
-        for (int row = INVADER_ROWS - 1; row >= 0; row--) {
-            if (model->invaders.invaders[row][col].alive) {
-                // Find available enemy bullet
-                for (int b = 0; b < ENEMY_BULLETS; b++) {
-                    if (!model->enemy_bullets[b].alive) {
-                        model->enemy_bullets[b].hitbox.x = 
-                            model->invaders.invaders[row][col].hitbox.x + 
-                            (INVADER_WIDTH / 2) - (BULLET_WIDTH / 2);
-                        model->enemy_bullets[b].hitbox.y = 
-                            model->invaders.invaders[row][col].hitbox.y + 
-                            INVADER_HEIGHT;
-                        model->enemy_bullets[b].alive = true;
-                        model->needs_redraw = true;
-                        break;
-                    }
-                }
-                break;
             }
         }
     }
@@ -542,6 +532,50 @@ void model_save_high_score(GameModel* model) {
     }
 }
 
+void model_check_bullet_base_collisions(GameModel* model) {
+    // Player bullets vs bases
+    for (int b = 0; b < PLAYER_BULLETS; b++) {
+        if (!model->player_bullets[b].alive) continue;
+        
+        Bullet* bullet = &model->player_bullets[b];
+        
+        // Check bases
+        for (int i = 0; i < BASE_COUNT; i++) {
+            if (model->bases[i].alive) {
+                if (model_check_collision(bullet->hitbox, model->bases[i].hitbox)) {
+                    bullet->alive = false;
+                    model->bases[i].health -= 25; // Reduce base health
+                    if (model->bases[i].health <= 0) {
+                        model->bases[i].alive = false;
+                    }
+                    model->needs_redraw = true;
+                    return;
+                }
+            }
+        }
+    }
+    
+    // Enemy bullets vs bases
+    for (int b = 0; b < ENEMY_BULLETS; b++) {
+        if (!model->enemy_bullets[b].alive) continue;
+        
+        if (model_check_collision(model->enemy_bullets[b].hitbox, 
+                                 model->player.hitbox)) {
+            model->enemy_bullets[b].alive = false;
+            model->player.lives--;
+            model->needs_redraw = true;
+            
+            if (model->player.lives <= 0) {
+                model->state = STATE_GAME_OVER;
+                model_save_high_score(model);
+            }
+        }
+    }
+}
+
+
+
+
 void model_load_high_score(GameModel* model) {
     FILE* file = fopen("highscore.dat", "rb");
     if (file) {
@@ -551,6 +585,10 @@ void model_load_high_score(GameModel* model) {
         model->high_score = 0;
     }
 }
+
+
+
+
 
 // Getters
 int model_get_score(const GameModel* model) { return model->player.score; }

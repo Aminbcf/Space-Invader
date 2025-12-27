@@ -69,11 +69,12 @@ typedef struct {
 typedef struct {
     Invader invaders[INVADER_ROWS][INVADER_COLS];
     Direction direction;
-    int speed;
+    float speed;           // Changed to float for smoother acceleration
     int killed;
-    int state; // 0 or 1 for animation
+    int state;             // 0 or 1 for animation
     uint32_t state_time;
     int state_speed;
+    int shoot_chance;      // Lower number = more frequent shooting (1 in X chance)
 } InvaderGrid;
 
 typedef struct {
@@ -138,6 +139,7 @@ bool model_check_collision(Rect a, Rect b);
 void model_check_bullet_collisions(GameModel* model);
 void model_check_invader_base_collisions(GameModel* model);
 void model_check_player_invader_collision(GameModel* model);
+//void model_check_bullet_base_collisions(GameModel* model);
 
 // Gestion des états
 void model_set_state(GameModel* model, GameState state);

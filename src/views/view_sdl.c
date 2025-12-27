@@ -152,41 +152,109 @@ SDLView* sdl_view_create(void) {
     
     return view;
 }
-
 void sdl_view_destroy(SDLView* view) {
     if (!view) return;
     
     /* Free textures */
-    if (view->screen_texture) SDL_DestroyTexture(view->screen_texture);
-    if (view->title_texture) SDL_DestroyTexture(view->title_texture);
-    if (view->font_texture) SDL_DestroyTexture(view->font_texture);
-    if (view->invaders_texture) SDL_DestroyTexture(view->invaders_texture);
-    if (view->player_texture) SDL_DestroyTexture(view->player_texture);
-    if (view->saucer_texture) SDL_DestroyTexture(view->saucer_texture);
-    for (int i = 0; i < 4; i++) {
-        if (view->base_textures[i]) SDL_DestroyTexture(view->base_textures[i]);
+    if (view->screen_texture) {
+        SDL_DestroyTexture(view->screen_texture);
+        view->screen_texture = NULL;
     }
-    if (view->damage_texture) SDL_DestroyTexture(view->damage_texture);
-    if (view->damage_top_texture) SDL_DestroyTexture(view->damage_top_texture);
-    if (view->game_over_texture) SDL_DestroyTexture(view->game_over_texture);
+    if (view->title_texture) {
+        SDL_DestroyTexture(view->title_texture);
+        view->title_texture = NULL;
+    }
+    if (view->font_texture) {
+        SDL_DestroyTexture(view->font_texture);
+        view->font_texture = NULL;
+    }
+    if (view->invaders_texture) {
+        SDL_DestroyTexture(view->invaders_texture);
+        view->invaders_texture = NULL;
+    }
+    if (view->player_texture) {
+        SDL_DestroyTexture(view->player_texture);
+        view->player_texture = NULL;
+    }
+    if (view->saucer_texture) {
+        SDL_DestroyTexture(view->saucer_texture);
+        view->saucer_texture = NULL;
+    }
+    for (int i = 0; i < 4; i++) {
+        if (view->base_textures[i]) {
+            SDL_DestroyTexture(view->base_textures[i]);
+            view->base_textures[i] = NULL;
+        }
+    }
+    if (view->damage_texture) {
+        SDL_DestroyTexture(view->damage_texture);
+        view->damage_texture = NULL;
+    }
+    if (view->damage_top_texture) {
+        SDL_DestroyTexture(view->damage_top_texture);
+        view->damage_top_texture = NULL;
+    }
+    if (view->game_over_texture) {
+        SDL_DestroyTexture(view->game_over_texture);
+        view->game_over_texture = NULL;
+    }
     
     /* Free surfaces */
-    if (view->screen_surface) SDL_FreeSurface(view->screen_surface);
-    if (view->title_screen) SDL_FreeSurface(view->title_screen);
-    if (view->cmap) SDL_FreeSurface(view->cmap);
-    if (view->invadersmap) SDL_FreeSurface(view->invadersmap);
-    if (view->player_img) SDL_FreeSurface(view->player_img);
-    if (view->saucer_img) SDL_FreeSurface(view->saucer_img);
-    for (int i = 0; i < 4; i++) {
-        if (view->base_img[i]) SDL_FreeSurface(view->base_img[i]);
+    if (view->screen_surface) {
+        SDL_FreeSurface(view->screen_surface);
+        view->screen_surface = NULL;
     }
-    if (view->damage_img) SDL_FreeSurface(view->damage_img);
-    if (view->damage_top_img) SDL_FreeSurface(view->damage_top_img);
-    if (view->game_over_img) SDL_FreeSurface(view->game_over_img);
+    if (view->title_screen) {
+        SDL_FreeSurface(view->title_screen);
+        view->title_screen = NULL;
+    }
+    if (view->cmap) {
+        SDL_FreeSurface(view->cmap);
+        view->cmap = NULL;
+    }
+    if (view->invadersmap) {
+        SDL_FreeSurface(view->invadersmap);
+        view->invadersmap = NULL;
+    }
+    if (view->player_img) {
+        SDL_FreeSurface(view->player_img);
+        view->player_img = NULL;
+    }
+    if (view->saucer_img) {
+        SDL_FreeSurface(view->saucer_img);
+        view->saucer_img = NULL;
+    }
+    for (int i = 0; i < 4; i++) {
+        if (view->base_img[i]) {
+            SDL_FreeSurface(view->base_img[i]);
+            view->base_img[i] = NULL;
+        }
+    }
+    if (view->damage_img) {
+        SDL_FreeSurface(view->damage_img);
+        view->damage_img = NULL;
+    }
+    if (view->damage_top_img) {
+        SDL_FreeSurface(view->damage_top_img);
+        view->damage_top_img = NULL;
+    }
+    if (view->game_over_img) {
+        SDL_FreeSurface(view->game_over_img);
+        view->game_over_img = NULL;
+    }
     
     /* Free SDL objects */
-    if (view->renderer) SDL_DestroyRenderer(view->renderer);
-    if (view->window) SDL_DestroyWindow(view->window);
+    if (view->renderer) {
+        SDL_DestroyRenderer(view->renderer);
+        view->renderer = NULL;
+    }
+    if (view->window) {
+        SDL_DestroyWindow(view->window);
+        view->window = NULL;
+    }
+    
+    /* Quit SDL subsystems */
+    SDL_Quit();
     
     free(view);
 }
@@ -262,14 +330,14 @@ bool sdl_view_load_image(SDLView* view, const char* filename, SDL_Surface** surf
 
     SDL_SetColorKey(temp, SDL_TRUE, SDL_MapRGB(temp->format, r, g, b));
     
-    *surface = SDL_ConvertSurface(temp, view->screen_surface->format, 0);
+    *surface = SDL_ConvertSurfaceFormat(temp, SDL_PIXELFORMAT_ARGB8888, 0);
+    SDL_FreeSurface(temp);  // Free the temp surface
+    
     if (*surface == NULL) {
         fprintf(stderr, "Warning: Unable to convert bitmap: %s\n", SDL_GetError());
-        SDL_FreeSurface(temp);
         return false;
     }
     
-    SDL_FreeSurface(temp);
     return true;
 }
 
@@ -320,7 +388,7 @@ bool sdl_view_load_resources(SDLView* view) {
     } else {
         all_loaded = false;
     }
-    
+    /*
     for (int i = 0; i < 4; i++) {
         if (sdl_view_load_image(view, "assets/base.bmp", &view->base_img[i], 255, 0, 255)) {
             sdl_view_convert_surface_to_texture(view, view->base_img[i], &view->base_textures[i]);
@@ -328,7 +396,7 @@ bool sdl_view_load_resources(SDLView* view) {
             all_loaded = false;
         }
     }
-    
+    */
     if (sdl_view_load_image(view, "assets/gameover.bmp", &view->game_over_img, 255, 0, 255)) {
         sdl_view_convert_surface_to_texture(view, view->game_over_img, &view->game_over_texture);
     }
@@ -490,7 +558,7 @@ void sdl_view_render_game(SDLView* view, const GameModel* model) {
     if (!view || !model || !view->renderer) return;
     
     sdl_view_draw_background(view);
-    sdl_view_draw_bases(view, model);
+    //sdl_view_draw_bases(view, model);
     sdl_view_draw_invaders(view, model);
     sdl_view_draw_saucer(view, model);
     sdl_view_draw_player(view, model);
@@ -535,28 +603,35 @@ void sdl_view_render(SDLView* view, const GameModel* model) {
     
     view->last_frame_time = current_time;
 }
-
 void sdl_view_render_menu(SDLView* view, const GameModel* model) {
     if (!view || !view->renderer) return;
     
     SDL_SetRenderDrawColor(view->renderer, 0, 0, 0, 255);
     SDL_RenderClear(view->renderer);
     
+ 
+    int center_x = view->width / 2;
+    int center_y = view->height / 2 - 50; 
+    
     if (view->title_texture) {
         int tex_w, tex_h;
         SDL_QueryTexture(view->title_texture, NULL, NULL, &tex_w, &tex_h);
-        SDL_Rect dest = {(view->width - tex_w) / 2, 50, tex_w, tex_h};
+        SDL_Rect dest = {center_x - tex_w/2, center_y, tex_w, tex_h};
         SDL_RenderCopy(view->renderer, view->title_texture, NULL, &dest);
+        center_y += tex_h + 40; // Move down after title
     } else {
-        draw_string_simple(view, "SPACE INVADERS", view->width / 2 - 70, 50, 255, 255, 255);
+        draw_string_simple(view, "SPACE INVADERS", center_x - 70, center_y, 255, 255, 255);
+        center_y += 40;
     }
     
-    draw_string_simple(view, "Press SPACE to Start", view->width / 2 - 80, view->height / 2, 255, 255, 255);
-    draw_string_simple(view, "ESC to Quit", view->width / 2 - 50, view->height / 2 + 30, 255, 255, 255);
+    draw_string_simple(view, "Press SPACE to Start", center_x - 80, center_y, 255, 255, 255);
+    center_y += 30;
+    draw_string_simple(view, "ESC to Quit", center_x - 50, center_y, 255, 255, 255);
+    center_y += 30;
     
     char highscore[32];
     snprintf(highscore, sizeof(highscore), "High Score: %d", model->high_score);
-    draw_string_simple(view, highscore, view->width / 2 - 70, view->height / 2 + 60, 255, 255, 0);
+    draw_string_simple(view, highscore, center_x - 70, center_y, 255, 255, 0);
 }
 
 void sdl_view_render_pause(SDLView* view) {

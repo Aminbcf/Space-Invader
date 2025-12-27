@@ -120,7 +120,7 @@ bool ncurses_view_load_resources(NcursesView* view) {
 static void ncurses_draw_player(NcursesView* view, const GameModel* model) {
     int x = view->game_start_x + ncurses_scale_x(model->player.hitbox.x);
     int y = view->game_start_y + ncurses_scale_y(model->player.hitbox.y);
-    mvaddch(y, x, '^');
+    mvaddch(y, x, '-^-');
 }
 
 // Draw aliens
@@ -133,9 +133,9 @@ static void ncurses_draw_aliens(NcursesView* view, const GameModel* model) {
                 int y = view->game_start_y + ncurses_scale_y(inv->hitbox.y);
                 // Different characters for different invader types
                 char c = '#';
-                if (inv->row == 0) c = 'A';  // Top row
-                else if (inv->row < 3) c = 'B'; // Middle rows
-                else c = 'C'; // Bottom rows
+                if (inv->row == 0) c = 'O';  // Top row
+                else if (inv->row < 3) c = 'M'; // Middle rows
+                else c = 'V'; // Bottom rows
                 mvaddch(y, x, c);
             }
         }
@@ -230,7 +230,7 @@ void ncurses_view_render_game(NcursesView* view, const GameModel* model) {
     // Draw game elements
     ncurses_draw_player(view, model);
     ncurses_draw_aliens(view, model);
-    ncurses_draw_bases(view, model);
+    //ncurses_draw_bases(view, model);
     ncurses_draw_saucer(view, model);
     ncurses_draw_bullets(view, model);
     ncurses_draw_hud(view, model);
