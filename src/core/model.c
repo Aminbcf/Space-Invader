@@ -47,7 +47,7 @@ static void init_invaders(InvaderGrid* invaders) {
         }
     }
 }
-
+#if 0
 static void init_bases(Base bases[]) {
     int base_total = BASE_WIDTH * BASE_COUNT;
     int space_left = GAME_AREA_WIDTH - base_total;
@@ -65,7 +65,7 @@ static void init_bases(Base bases[]) {
         x += BASE_WIDTH + even_space;
     }
 }
-
+#endif
 static void init_bullets(Bullet bullets[], int count, bool is_player) {
     for (int i = 0; i < count; i++) {
         bullets[i].hitbox.width = BULLET_WIDTH;
@@ -267,6 +267,7 @@ void model_move_player(GameModel* model, Direction dir) {
     }
 }
 
+// In model_player_shoot function in model.c:
 void model_player_shoot(GameModel* model) {
     // Find available bullet
     for (int i = 0; i < PLAYER_BULLETS; i++) {
@@ -277,7 +278,7 @@ void model_player_shoot(GameModel* model) {
             model->player.shots_fired++;
             model->needs_redraw = true;
             
-            // Check for saucer spawn
+            // Check for saucer spawn - EVERY 20 SHOTS
             if (model->player.shots_fired % 20 == 0) {
                 model->saucer.alive = true;
                 if (rand() % 2 == 0) {
@@ -288,6 +289,7 @@ void model_player_shoot(GameModel* model) {
                     model->saucer.hitbox.x = GAME_AREA_WIDTH - model->saucer.hitbox.width;
                 }
                 model->saucer.hitbox.y = 20;
+                printf("Saucer spawned!\n");  // Add debug print
             }
             break;
         }
@@ -479,7 +481,7 @@ void model_update(GameModel* model, float delta_time) {
         // Use the dynamic shoot_chance that decreases as game progresses
         if (rand() % model->invaders.shoot_chance == 0) {
             // Try to find a shooter from a random column
-            int attempts = 0;
+        
             int col = rand() % INVADER_COLS;
             
             // Look for bottom-most alive invader in this column
@@ -505,6 +507,7 @@ void model_update(GameModel* model, float delta_time) {
         }
     }
 }
+
 
 void model_set_state(GameModel* model, GameState state) {
     model->state = state;

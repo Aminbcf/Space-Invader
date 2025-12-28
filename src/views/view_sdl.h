@@ -7,6 +7,9 @@
 #include <stdbool.h>
 #include "../core/model.h"
 #include "view_base.h"
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_ttf.h>
+#include "font_manager.h"
 
 // Structure pour une texture SDL2
 typedef struct {
@@ -16,6 +19,7 @@ typedef struct {
 } SDLTexture;
 
 // Structure principale de la vue SDL2
+// In view_sdl.h, update the SDLView struct:
 typedef struct {
     // SDL2 components
     SDL_Window* window;
@@ -27,9 +31,8 @@ typedef struct {
     bool fullscreen;
     const char* title;
     
-    // Textures (comme dans le code original)
+    // Textures (remove unused ones)
     SDL_Surface* screen_surface;
-    SDL_Surface* title_screen;
     SDL_Surface* cmap;
     SDL_Surface* invadersmap;
     SDL_Surface* player_img;
@@ -37,11 +40,10 @@ typedef struct {
     SDL_Surface* base_img[4];
     SDL_Surface* damage_img;
     SDL_Surface* damage_top_img;
-    SDL_Surface* game_over_img;
+    // REMOVED: title_screen and game_over_img
     
     // Textures converties
     SDL_Texture* screen_texture;
-    SDL_Texture* title_texture;
     SDL_Texture* font_texture;
     SDL_Texture* invaders_texture;
     SDL_Texture* player_texture;
@@ -49,7 +51,12 @@ typedef struct {
     SDL_Texture* base_textures[4];
     SDL_Texture* damage_texture;
     SDL_Texture* damage_top_texture;
-    SDL_Texture* game_over_texture;
+    //title_texture and game_over_texture
+    
+    // TTF Fonts
+    TTF_Font* big_font;
+    TTF_Font* medium_font;
+    TTF_Font* small_font;
     
     // État
     bool initialized;

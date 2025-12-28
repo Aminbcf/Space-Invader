@@ -1,5 +1,6 @@
 #include "platform.h"
 #include <SDL2/SDL.h>
+#include <stdbool.h>
 
 uint32_t platform_get_ticks(void) {
     return SDL_GetTicks();
@@ -37,8 +38,4 @@ bool platform_joystick_button(int joystick_id, int button) {
     SDL_JoystickClose(joystick);
     
     return pressed;
-}
-
-PlatformType platform_get_type(void) {
-    return PLATFORM_SDL;
 }

@@ -120,7 +120,7 @@ bool ncurses_view_load_resources(NcursesView* view) {
 static void ncurses_draw_player(NcursesView* view, const GameModel* model) {
     int x = view->game_start_x + ncurses_scale_x(model->player.hitbox.x);
     int y = view->game_start_y + ncurses_scale_y(model->player.hitbox.y);
-    mvaddch(y, x, '-^-');
+    mvaddch(y, x, '^');
 }
 
 // Draw aliens

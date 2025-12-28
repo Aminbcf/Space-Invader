@@ -6,8 +6,15 @@
 #include "controller/controller.h"
 #include "views/view_sdl.h"
 
+
+
+
+
 int main(int argc, char* argv[]) {
     printf("Space Invaders MVC - SDL2 Version\n");
+
+    (void)argc;  // Mark as unused
+    (void)argv;  // Mark as unused
     
     // Create game context
     GameContext* context = game_context_create();
