@@ -12,34 +12,40 @@
 #define INVADER_COLS 10
 #define INVADER_WIDTH 30
 #define INVADER_HEIGHT 30
+#define BOSS_WIDTH 90
+#define BOSS_HEIGHT 45
 #define PLAYER_WIDTH 30
-#define PLAYER_HEIGHT 10
+#define PLAYER_HEIGHT 20
 #define BULLET_WIDTH 5
 #define BULLET_HEIGHT 15
 #define PLAYER_BULLETS 3
-#define ENEMY_BULLETS 3
+#define ENEMY_BULLETS 10
 #define BASE_COUNT 4
 #define BASE_WIDTH 60
 #define BASE_HEIGHT 40
 
+// Directions
 typedef enum {
     DIR_LEFT,
     DIR_RIGHT,
     DIR_STATIONARY
 } Direction;
 
+// Color types (Legacy support for Ncurses)
 typedef enum {
     COLOR_RED,
     COLOR_GREEN,
     COLOR_PURPLE
 } ColorType;
 
+// Extended Game States
 typedef enum {
     STATE_MENU,
     STATE_PLAYING,
     STATE_PAUSED,
     STATE_GAME_OVER,
-    STATE_LEVEL_TRANSITION
+    STATE_LEVEL_TRANSITION,
+    STATE_WIN
 } GameState;
 
 typedef enum {
@@ -57,6 +63,7 @@ typedef struct {
     int height;
 } Rect;
 
+// Invader with animation and type support
 typedef struct {
     Rect hitbox;
     ColorType color;
@@ -64,18 +71,31 @@ typedef struct {
     int points;
     int row;
     int col;
+    int type;        // 0=Squid, 1=Crab, 2=Octopus
+    int dying_timer; // >0 means exploding
 } Invader;
 
 typedef struct {
     Invader invaders[INVADER_ROWS][INVADER_COLS];
     Direction direction;
-    float speed;           // Changed to float for smoother acceleration
+    float speed;
     int killed;
-    int state;             // 0 or 1 for animation
+    int state;             // 0 or 1 for animation frame
     uint32_t state_time;
     int state_speed;
-    int shoot_chance;      // Lower number = more frequent shooting (1 in X chance)
+    int shoot_chance;
 } InvaderGrid;
+
+// Boss Structure
+typedef struct {
+    Rect hitbox;
+    bool alive;
+    int health;
+    int max_health;
+    Direction direction;
+    int speed;
+    int shoot_timer;
+} Boss;
 
 typedef struct {
     Rect hitbox;
@@ -105,9 +125,11 @@ typedef struct {
     unsigned int shots_fired;
 } Player;
 
+// The Complete Game Model
 typedef struct {
     Player player;
     InvaderGrid invaders;
+    Boss boss;
     Saucer saucer;
     Base bases[BASE_COUNT];
     Bullet player_bullets[PLAYER_BULLETS];
@@ -118,30 +140,30 @@ typedef struct {
     int high_score;
 } GameModel;
 
-// Initialisation
+// Initialization
 void model_init(GameModel* model);
 void model_reset_game(GameModel* model);
 void model_next_level(GameModel* model);
 
-// Mise à jour
+// Updates
 void model_update(GameModel* model, float delta_time);
 void model_process_command(GameModel* model, int command, void* data);
 
-// Gestion des entités
+// Entity Management
 void model_move_player(GameModel* model, Direction dir);
 void model_player_shoot(GameModel* model);
 void model_update_invaders(GameModel* model, float delta_time);
 void model_update_bullets(GameModel* model, float delta_time);
 void model_update_saucer(GameModel* model, float delta_time);
+void model_update_boss(GameModel* model);
 
-// Détection des collisions
+// Collisions
 bool model_check_collision(Rect a, Rect b);
 void model_check_bullet_collisions(GameModel* model);
 void model_check_invader_base_collisions(GameModel* model);
 void model_check_player_invader_collision(GameModel* model);
-//void model_check_bullet_base_collisions(GameModel* model);
 
-// Gestion des états
+// State Management
 void model_set_state(GameModel* model, GameState state);
 void model_toggle_pause(GameModel* model);
 void model_save_high_score(GameModel* model);
