@@ -167,7 +167,7 @@ static void ncurses_draw_saucer(NcursesView* view, const GameModel* model) {
     if (model->saucer.alive) {
         int x = view->game_start_x + ncurses_scale_x(model->saucer.hitbox.x);
         int y = view->game_start_y + ncurses_scale_y(model->saucer.hitbox.y);
-        mvaddch(y, x, 'O');
+        mvaddch(y, x, '@');
     }
 }
 

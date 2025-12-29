@@ -289,7 +289,7 @@ void model_player_shoot(GameModel* model) {
                     model->saucer.hitbox.x = GAME_AREA_WIDTH - model->saucer.hitbox.width;
                 }
                 model->saucer.hitbox.y = 20;
-                printf("Saucer spawned!\n");  // Add debug print
+                //printf("Saucer spawned!\n");  // Add debug print
             }
             break;
         }

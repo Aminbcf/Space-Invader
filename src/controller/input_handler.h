@@ -3,8 +3,11 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <SDL2/SDL.h>
 #include "commands.h"
+
+#ifdef USE_SDL_VIEW
+#include <SDL3/SDL.h>
+#endif
 
 // Structure pour gérer l'état des touches
 typedef struct {
@@ -37,11 +40,19 @@ typedef struct {
     int joystick_count;
     
     // Mappage des touches
+#ifdef USE_SDL_VIEW
     SDL_Keycode key_left;
     SDL_Keycode key_right;
     SDL_Keycode key_shoot;
     SDL_Keycode key_pause;
     SDL_Keycode key_quit;
+#else
+    int key_left;
+    int key_right;
+    int key_shoot;
+    int key_pause;
+    int key_quit;
+#endif
     
     // Mappage des boutons joystick
     int joy_button_left;
@@ -59,28 +70,46 @@ InputHandler* input_handler_create(void);
 void input_handler_destroy(InputHandler* handler);
 
 // Configuration
+#ifdef USE_SDL_VIEW
 void input_handler_set_keybindings(InputHandler* handler,
                                   SDL_Keycode left, SDL_Keycode right,
                                   SDL_Keycode shoot, SDL_Keycode pause,
                                   SDL_Keycode quit);
+#else
+void input_handler_set_keybindings(InputHandler* handler,
+                                  int left, int right,
+                                  int shoot, int pause,
+                                  int quit);
+#endif
+
 void input_handler_set_joystick_bindings(InputHandler* handler,
                                         int left, int right, int shoot,
                                         int pause, int quit);
 
 // Traitement des événements
-void input_handler_process_sdl_event(InputHandler* handler, SDL_Event* event);
+#ifdef USE_SDL_VIEW
+void input_handler_process_sdl_event(InputHandler* handler, const SDL_Event* event);
+void input_handler_handle_joystick_event(InputHandler* handler, const SDL_Event* event);
+#else
+void input_handler_process_event(InputHandler* handler, void* event);
+#endif
+
 void input_handler_process_ncurses_input(InputHandler* handler, int ch);
 void input_handler_update(InputHandler* handler, uint32_t current_time);
 
 // Récupération de l'état
 bool input_handler_get_command(InputHandler* handler, Command* cmd);
+
+#ifdef USE_SDL_VIEW
 bool input_handler_is_key_pressed(InputHandler* handler, SDL_Keycode key);
 bool input_handler_was_key_pressed(InputHandler* handler, SDL_Keycode key);
+#else
+bool input_handler_is_key_pressed(InputHandler* handler, int key);
+bool input_handler_was_key_pressed(InputHandler* handler, int key);
+#endif
 
 // Joystick
 void input_handler_detect_joysticks(InputHandler* handler);
-void input_handler_handle_joystick_event(InputHandler* handler, 
-                                        SDL_Event* event);
 
 // Gestion des axes analogiques
 float input_handler_get_joystick_axis(InputHandler* handler, 

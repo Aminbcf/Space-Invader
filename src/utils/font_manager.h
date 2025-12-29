@@ -1,9 +1,18 @@
 #ifndef FONT_MANAGER_H
 #define FONT_MANAGER_H
 
-#include <SDL2/SDL_ttf.h>
+#include <SDL3_ttf/SDL_ttf.h>
+#include <stdbool.h>
 
-TTF_Font* load_font(const char* path, int size);
-void free_font(TTF_Font* font);
+/*
+ * NOTE: We use the TTF_Font struct from SDL3_ttf directly.
+ * Do NOT typedef it to void* or similar as it causes conflicts.
+ */
 
-#endif
+// Function prototypes
+bool font_manager_init(void);
+void font_manager_quit(void);
+TTF_Font* font_manager_load(const char* path, int size);
+void font_manager_close(TTF_Font* font);
+
+#endif // FONT_MANAGER_H

@@ -1,15 +1,12 @@
-// At the top of view_sdl.c, add:
-#include <SDL2/SDL_ttf.h>
-#include "font_manager.h"
 #include "view_sdl.h"
 #include "rect_utils.h"
+#include <SDL3_ttf/SDL_ttf.h>
+#include <SDL3_image/SDL_image.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
 #include <time.h>
-#include <SDL2/SDL_image.h> 
-
 
 /* Simple ASCII bitmap font - 5x7 pixels per character */
 static const unsigned char font_data[95][7] = {
@@ -72,7 +69,50 @@ static const unsigned char font_data[95][7] = {
     {0x11,0x11,0x0A,0x04,0x0A,0x11,0x11}, /* X */
     {0x11,0x11,0x11,0x0A,0x04,0x04,0x04}, /* Y */
     {0x1F,0x01,0x02,0x04,0x08,0x10,0x1F}, /* Z */
+    {0x0E,0x08,0x08,0x08,0x08,0x08,0x0E}, /* [ */
+    {0x00,0x10,0x08,0x04,0x02,0x01,0x00}, /* \ */
+    {0x0E,0x02,0x02,0x02,0x02,0x02,0x0E}, /* ] */
+    {0x04,0x0A,0x11,0x00,0x00,0x00,0x00}, /* ^ */
+    {0x00,0x00,0x00,0x00,0x00,0x00,0x1F}, /* _ */
+    {0x08,0x04,0x02,0x00,0x00,0x00,0x00}, /* ` */
+    {0x00,0x00,0x0E,0x01,0x0F,0x11,0x0F}, /* a */
+    {0x10,0x10,0x16,0x19,0x11,0x11,0x1E}, /* b */
+    {0x00,0x00,0x0E,0x10,0x10,0x11,0x0E}, /* c */
+    {0x01,0x01,0x0D,0x13,0x11,0x11,0x0F}, /* d */
+    {0x00,0x00,0x0E,0x11,0x1F,0x10,0x0E}, /* e */
+    {0x06,0x09,0x08,0x1C,0x08,0x08,0x08}, /* f */
+    {0x00,0x0F,0x11,0x11,0x0F,0x01,0x0E}, /* g */
+    {0x10,0x10,0x16,0x19,0x11,0x11,0x11}, /* h */
+    {0x04,0x00,0x0C,0x04,0x04,0x04,0x0E}, /* i */
+    {0x02,0x00,0x06,0x02,0x02,0x12,0x0C}, /* j */
+    {0x10,0x10,0x12,0x14,0x18,0x14,0x12}, /* k */
+    {0x0C,0x04,0x04,0x04,0x04,0x04,0x0E}, /* l */
+    {0x00,0x00,0x1A,0x15,0x15,0x11,0x11}, /* m */
+    {0x00,0x00,0x16,0x19,0x11,0x11,0x11}, /* n */
+    {0x00,0x00,0x0E,0x11,0x11,0x11,0x0E}, /* o */
+    {0x00,0x00,0x1E,0x11,0x1E,0x10,0x10}, /* p */
+    {0x00,0x00,0x0D,0x13,0x0F,0x01,0x01}, /* q */
+    {0x00,0x00,0x16,0x19,0x10,0x10,0x10}, /* r */
+    {0x00,0x00,0x0E,0x10,0x0E,0x01,0x1E}, /* s */
+    {0x08,0x08,0x1C,0x08,0x08,0x09,0x06}, /* t */
+    {0x00,0x00,0x11,0x11,0x11,0x13,0x0D}, /* u */
+    {0x00,0x00,0x11,0x11,0x11,0x0A,0x04}, /* v */
+    {0x00,0x00,0x11,0x11,0x15,0x15,0x0A}, /* w */
+    {0x00,0x00,0x11,0x0A,0x04,0x0A,0x11}, /* x */
+    {0x00,0x00,0x11,0x11,0x0F,0x01,0x0E}, /* y */
+    {0x00,0x00,0x1F,0x02,0x04,0x08,0x1F}, /* z */
+    {0x02,0x04,0x04,0x08,0x04,0x04,0x02}, /* { */
+    {0x04,0x04,0x04,0x04,0x04,0x04,0x04}, /* | */
+    {0x08,0x04,0x04,0x02,0x04,0x04,0x08}, /* } */
+    {0x00,0x00,0x08,0x15,0x02,0x00,0x00}, /* ~ */
 };
+
+/* Helper function for SDL3 text rendering */
+static SDL_Surface* render_text_sdl3(TTF_Font* font, const char* text, SDL_Color color) {
+    if (!font || !text) return NULL;
+    // SDL3 TTF_RenderText_Blended takes the text and color
+    return TTF_RenderText_Blended(font, text, sizeof(text) , color);
+}
 
 /* Improved text rendering using bitmap font */
 static void draw_string_simple(SDLView* view, const char* text, int x, int y, 
@@ -81,29 +121,26 @@ static void draw_string_simple(SDLView* view, const char* text, int x, int y,
     
     SDL_SetRenderDrawColor(view->renderer, r, g, b, 255);
     
-    int char_width = 6;  /* 5 pixels + 1 spacing */
+    int char_width = 6;
     int char_height = 7;
-    int scale = 2;  /* 2x scaling for better visibility */
+    int scale = 2;
     
     for (int i = 0; text[i] != '\0'; i++) {
-        int char_index = text[i] - 32;  /* ASCII offset */
+        int char_index = text[i] - 32;
         
-        /* Skip if out of range */
         if (char_index < 0 || char_index >= 95) {
             continue;
         }
         
-        /* Draw each pixel of the character */
         for (int row = 0; row < char_height; row++) {
             unsigned char line = font_data[char_index][row];
             for (int col = 0; col < 5; col++) {
                 if (line & (1 << (4 - col))) {
-                    /* Draw scaled pixel */
-                    SDL_Rect pixel = {
-                        x + i * char_width * scale + col * scale,
-                        y + row * scale,
-                        scale,
-                        scale
+                    SDL_FRect pixel = {
+                        (float)(x + i * char_width * scale + col * scale),
+                        (float)(y + row * scale),
+                        (float)scale,
+                        (float)scale
                     };
                     SDL_RenderFillRect(view->renderer, &pixel);
                 }
@@ -111,6 +148,7 @@ static void draw_string_simple(SDLView* view, const char* text, int x, int y,
         }
     }
 }
+
 SDLView* sdl_view_create(void) {
     SDLView* view = malloc(sizeof(SDLView));
     if (!view) return NULL;
@@ -122,32 +160,25 @@ SDLView* sdl_view_create(void) {
     view->title = "Space Invaders MVC";
     view->fullscreen = false;
     
-    /* Initialize all pointers to NULL */
     view->window = NULL;
     view->renderer = NULL;
     view->screen_surface = NULL;
-    // REMOVED: view->title_screen = NULL;
-    view->cmap = NULL;
+    
     view->invadersmap = NULL;
     view->player_img = NULL;
     view->saucer_img = NULL;
     for (int i = 0; i < 4; i++) view->base_img[i] = NULL;
     view->damage_img = NULL;
     view->damage_top_img = NULL;
-    // REMOVED: view->game_over_img = NULL;
     
     view->screen_texture = NULL;
-    // REMOVED: view->title_texture = NULL;
-    view->font_texture = NULL;
     view->invaders_texture = NULL;
     view->player_texture = NULL;
     view->saucer_texture = NULL;
     for (int i = 0; i < 4; i++) view->base_textures[i] = NULL;
     view->damage_texture = NULL;
     view->damage_top_texture = NULL;
-    // REMOVED: view->game_over_texture = NULL;
     
-    // Font pointers
     view->big_font = NULL;
     view->medium_font = NULL;
     view->small_font = NULL;
@@ -160,103 +191,39 @@ SDLView* sdl_view_create(void) {
     
     return view;
 }
+
 void sdl_view_destroy(SDLView* view) {
     if (!view) return;
     
-    /* Free textures */
-    if (view->screen_texture) {
-        SDL_DestroyTexture(view->screen_texture);
-        view->screen_texture = NULL;
-    }
-    // REMOVED: title_texture cleanup
-    if (view->font_texture) {
-        SDL_DestroyTexture(view->font_texture);
-        view->font_texture = NULL;
-    }
-    if (view->invaders_texture) {
-        SDL_DestroyTexture(view->invaders_texture);
-        view->invaders_texture = NULL;
-    }
-    if (view->player_texture) {
-        SDL_DestroyTexture(view->player_texture);
-        view->player_texture = NULL;
-    }
-    if (view->saucer_texture) {
-        SDL_DestroyTexture(view->saucer_texture);
-        view->saucer_texture = NULL;
-    }
+    if (view->screen_texture) SDL_DestroyTexture(view->screen_texture);
+    if (view->invaders_texture) SDL_DestroyTexture(view->invaders_texture);
+    if (view->player_texture) SDL_DestroyTexture(view->player_texture);
+    if (view->saucer_texture) SDL_DestroyTexture(view->saucer_texture);
     for (int i = 0; i < 4; i++) {
-        if (view->base_textures[i]) {
-            SDL_DestroyTexture(view->base_textures[i]);
-            view->base_textures[i] = NULL;
-        }
+        if (view->base_textures[i]) SDL_DestroyTexture(view->base_textures[i]);
     }
-    if (view->damage_texture) {
-        SDL_DestroyTexture(view->damage_texture);
-        view->damage_texture = NULL;
-    }
-    if (view->damage_top_texture) {
-        SDL_DestroyTexture(view->damage_top_texture);
-        view->damage_top_texture = NULL;
-    }
-    // REMOVED: game_over_texture cleanup
+    if (view->damage_texture) SDL_DestroyTexture(view->damage_texture);
+    if (view->damage_top_texture) SDL_DestroyTexture(view->damage_top_texture);
     
-    /* Free surfaces */
-    if (view->screen_surface) {
-        SDL_FreeSurface(view->screen_surface);
-        view->screen_surface = NULL;
-    }
-    // REMOVED: title_screen cleanup
-    if (view->cmap) {
-        SDL_FreeSurface(view->cmap);
-        view->cmap = NULL;
-    }
-    if (view->invadersmap) {
-        SDL_FreeSurface(view->invadersmap);
-        view->invadersmap = NULL;
-    }
-    if (view->player_img) {
-        SDL_FreeSurface(view->player_img);
-        view->player_img = NULL;
-    }
-    if (view->saucer_img) {
-        SDL_FreeSurface(view->saucer_img);
-        view->saucer_img = NULL;
-    }
+    if (view->screen_surface) SDL_DestroySurface(view->screen_surface);
+    if (view->invadersmap) SDL_DestroySurface(view->invadersmap);
+    if (view->player_img) SDL_DestroySurface(view->player_img);
+    if (view->saucer_img) SDL_DestroySurface(view->saucer_img);
     for (int i = 0; i < 4; i++) {
-        if (view->base_img[i]) {
-            SDL_FreeSurface(view->base_img[i]);
-            view->base_img[i] = NULL;
-        }
+        if (view->base_img[i]) SDL_DestroySurface(view->base_img[i]);
     }
-    if (view->damage_img) {
-        SDL_FreeSurface(view->damage_img);
-        view->damage_img = NULL;
-    }
-    if (view->damage_top_img) {
-        SDL_FreeSurface(view->damage_top_img);
-        view->damage_top_img = NULL;
-    }
-    // REMOVED: game_over_img cleanup
+    if (view->damage_img) SDL_DestroySurface(view->damage_img);
+    if (view->damage_top_img) SDL_DestroySurface(view->damage_top_img);
     
-    /* Free fonts */
     if (view->big_font) TTF_CloseFont(view->big_font);
     if (view->medium_font) TTF_CloseFont(view->medium_font);
     if (view->small_font) TTF_CloseFont(view->small_font);
     
-    /* Free SDL objects */
-    if (view->renderer) {
-        SDL_DestroyRenderer(view->renderer);
-        view->renderer = NULL;
-    }
-    if (view->window) {
-        SDL_DestroyWindow(view->window);
-        view->window = NULL;
-    }
+    if (view->renderer) SDL_DestroyRenderer(view->renderer);
+    if (view->window) SDL_DestroyWindow(view->window);
     
-    /* Quit SDL subsystems */
     TTF_Quit();
-    IMG_Quit();
+    // SDL3_image no longer needs IMG_Quit() - removed
     SDL_Quit();
     
     free(view);
@@ -265,58 +232,46 @@ void sdl_view_destroy(SDLView* view) {
 bool sdl_view_init(SDLView* view, int width, int height) {
     if (!view) return false;
     
-    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+    if (!SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS)) {
         fprintf(stderr, "SDL_Init Error: %s\n", SDL_GetError());
         return false;
     }
 
-    // Initialize SDL_image
-    int img_flags = IMG_INIT_PNG;
-    if (!(IMG_Init(img_flags) & img_flags)) {
-        fprintf(stderr, "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
-        SDL_Quit();
-        return false;
-    }
-
-      // Initialize SDL_ttf for font support
-    if (TTF_Init() == -1) {
-        fprintf(stderr, "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
-        IMG_Quit();
+    if (!TTF_Init()) {
+        fprintf(stderr, "SDL_ttf could not initialize! SDL_ttf Error: %s\n", SDL_GetError());
         SDL_Quit();
         return false;
     }
     
-    view->window = SDL_CreateWindow(view->title,
-                                   SDL_WINDOWPOS_CENTERED,
-                                   SDL_WINDOWPOS_CENTERED,
-                                   width, height,
-                                   SDL_WINDOW_SHOWN);
+    // SDL3_image no longer needs IMG_Init() - automatic initialization
+    
+    view->window = SDL_CreateWindow(view->title, width, height, SDL_WINDOW_RESIZABLE);
     if (!view->window) {
         fprintf(stderr, "SDL_CreateWindow Error: %s\n", SDL_GetError());
+        TTF_Quit();
         SDL_Quit();
         return false;
     }
     
-    view->renderer = SDL_CreateRenderer(view->window, -1, 
-                                       SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    view->renderer = SDL_CreateRenderer(view->window, NULL);
     if (!view->renderer) {
         fprintf(stderr, "SDL_CreateRenderer Error: %s\n", SDL_GetError());
         SDL_DestroyWindow(view->window);
+        TTF_Quit();
         SDL_Quit();
         return false;
     }
     
-    view->screen_surface = SDL_CreateRGBSurface(0, width, height, 32,
-                                               0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
+    view->screen_surface = SDL_CreateSurface(width, height, SDL_PIXELFORMAT_ARGB8888);
     if (!view->screen_surface) {
-        fprintf(stderr, "SDL_CreateRGBSurface Error: %s\n", SDL_GetError());
+        fprintf(stderr, "SDL_CreateSurface Error: %s\n", SDL_GetError());
         sdl_view_destroy(view);
         return false;
     }
     
     view->screen_texture = SDL_CreateTexture(view->renderer,
                                             SDL_PIXELFORMAT_ARGB8888,
-                                            SDL_TEXTUREACCESS_STREAMING,
+                                            SDL_TEXTUREACCESS_TARGET,
                                             width, height);
     if (!view->screen_texture) {
         fprintf(stderr, "SDL_CreateTexture Error: %s\n", SDL_GetError());
@@ -327,8 +282,9 @@ bool sdl_view_init(SDLView* view, int width, int height) {
     view->width = width;
     view->height = height;
     
-    /* Load resources (optional - game can work without them) */
-    sdl_view_load_resources(view);
+    if (!sdl_view_load_resources(view)) {
+        fprintf(stderr, "Warning: Failed to load some resources\n");
+    }
     
     view->last_frame_time = SDL_GetTicks();
     view->frame_count = 0;
@@ -341,40 +297,41 @@ bool sdl_view_init(SDLView* view, int width, int height) {
 
 bool sdl_view_load_image(SDLView* view, const char* filename, SDL_Surface** surface, 
                         uint8_t r, uint8_t g, uint8_t b) {
+    (void)view;
     
-    (void)view; //masked the warning
-    // Check file extension
-    const char* ext = strrchr(filename, '.');
-    SDL_Surface* temp = NULL;
-    
-    if (ext && (strcmp(ext, ".png") == 0 || strcmp(ext, ".PNG") == 0)) {
-        // Use IMG_Load for PNG files
-        temp = IMG_Load(filename);
-        if (temp == NULL) {
-            fprintf(stderr, "IMG_Load Error for %s: %s\n", filename, IMG_GetError());
-            return false;
-        }
-    } else {
-        // Fall back to SDL_LoadBMP for BMP files
-        temp = SDL_LoadBMP(filename);
-        if (temp == NULL) {
-            fprintf(stderr, "SDL_LoadBMP Error for %s: %s\n", filename, SDL_GetError());
-            return false;
-        }
+    SDL_Surface* temp = IMG_Load(filename);
+    if (temp == NULL) {
+        fprintf(stderr, "IMG_Load Error for %s: %s\n", filename, SDL_GetError());
+        return false;
     }
     
-    // Set color key for transparency (magenta: 255, 0, 255)
-    SDL_SetColorKey(temp, SDL_TRUE, SDL_MapRGB(temp->format, r, g, b));
+    // SDL3: Use SDL_ConvertSurface instead of SDL_ConvertSurfaceFormat
+    SDL_Surface* converted = SDL_ConvertSurface(temp, SDL_PIXELFORMAT_ARGB8888);
+    SDL_DestroySurface(temp);
     
-    // Convert to consistent format
-    *surface = SDL_ConvertSurfaceFormat(temp, SDL_PIXELFORMAT_ARGB8888, 0);
-    SDL_FreeSurface(temp);  // Free the temp surface
-    
-    if (*surface == NULL) {
+    if (converted == NULL) {
         fprintf(stderr, "Warning: Unable to convert surface: %s\n", SDL_GetError());
         return false;
     }
     
+    // If you need to set transparency based on a specific color,
+    // you can manually process the pixels
+    if (r != 255 || g != 0 || b != 255) {  // Only if not magenta
+        // Process pixels to set transparency
+        SDL_LockSurface(converted);
+        Uint32* pixels = (Uint32*)converted->pixels;
+        int pixel_count = converted->w * converted->h;
+        Uint32 transparent_color = (r << 16) | (g << 8) | b | 0xFF000000;
+        
+        for (int i = 0; i < pixel_count; i++) {
+            if ((pixels[i] & 0x00FFFFFF) == (transparent_color & 0x00FFFFFF)) {
+                pixels[i] = 0x00000000;  // Fully transparent
+            }
+        }
+        SDL_UnlockSurface(converted);
+    }
+    
+    *surface = converted;
     return true;
 }
 
@@ -391,10 +348,7 @@ bool sdl_view_convert_surface_to_texture(SDLView* view, SDL_Surface* surface,
     return true;
 }
 
-
 bool sdl_view_load_fonts(SDLView* view) {
-    // Try to load the TTF font from the provided folder
-    // Check which font files actually exist in your fonts/venite-adoremus-font folder
     const char* font_paths[] = {
         "fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf",
         "fonts/venite-adoremus-font/VeniteAdoremusStraight-Yzo6v.ttf",
@@ -403,7 +357,6 @@ bool sdl_view_load_fonts(SDLView* view) {
         NULL
     };
     
-    // Try each font path
     const char* successful_path = NULL;
     for (int i = 0; font_paths[i] != NULL; i++) {
         FILE* test = fopen(font_paths[i], "r");
@@ -415,20 +368,19 @@ bool sdl_view_load_fonts(SDLView* view) {
     }
     
     if (successful_path) {
+        /* USE THE WORKING FONT PATH FOR ALL SIZES */
         view->big_font = TTF_OpenFont(successful_path, 62);
-        if (view->big_font) {
-            // Successfully loaded, try loading smaller sizes
-            view->medium_font = TTF_OpenFont(successful_path, 26);
-            view->small_font = TTF_OpenFont(successful_path, 14);
-            printf("Loaded font: %s\n", successful_path);
-            return true;
-        }
+        view->medium_font = TTF_OpenFont(successful_path, 26);
+        view->small_font = TTF_OpenFont(successful_path, 14);
+        
+        printf("Loaded fonts from: %s\n", successful_path);
+        
+        /* Note: We return true even if some failed, to allow partial loading */
+        return true;
     }
     
-    // Fallback to default SDL font if custom font not found
     fprintf(stderr, "Custom font not found, using fallback font\n");
     
-    // Try to load a default system font as fallback
     const char* system_fonts[] = {
         "/usr/share/fonts/truetype/freefont/FreeSans.ttf",
         "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
@@ -438,9 +390,10 @@ bool sdl_view_load_fonts(SDLView* view) {
     
     for (int i = 0; system_fonts[i] != NULL; i++) {
         view->big_font = TTF_OpenFont(system_fonts[i], 72);
+        view->medium_font = TTF_OpenFont(system_fonts[i], 36);
+        view->small_font = TTF_OpenFont(system_fonts[i], 24);
+        
         if (view->big_font) {
-            view->medium_font = TTF_OpenFont(system_fonts[i], 36);
-            view->small_font = TTF_OpenFont(system_fonts[i], 24);
             printf("Using system font: %s\n", system_fonts[i]);
             return true;
         }
@@ -452,39 +405,31 @@ bool sdl_view_load_fonts(SDLView* view) {
 bool sdl_view_load_resources(SDLView* view) {
     bool all_loaded = true;
     
-    // Load fonts first
     if (!sdl_view_load_fonts(view)) {
         fprintf(stderr, "Warning: Could not load custom fonts\n");
-    }
-    
-    /* Font map is optional */
-    if (sdl_view_load_image(view, "assets/font.png", &view->cmap, 255, 0, 255)) {
-        sdl_view_convert_surface_to_texture(view, view->cmap, &view->font_texture);
-    } else {
-        fprintf(stderr, "Note: Using fallback text rendering\n");
     }
     
     if (sdl_view_load_image(view, "assets/invaders.png", &view->invadersmap, 255, 0, 255)) {
         sdl_view_convert_surface_to_texture(view, view->invadersmap, &view->invaders_texture);
     } else {
+        fprintf(stderr, "Failed to load invaders.png\n");
         all_loaded = false;
     }
     
     if (sdl_view_load_image(view, "assets/player.bmp", &view->player_img, 255, 0, 255)) {
         sdl_view_convert_surface_to_texture(view, view->player_img, &view->player_texture);
     } else {
+        fprintf(stderr, "Failed to load player.bmp\n");
         all_loaded = false;
     }
     
-    if (sdl_view_load_image(view, "assets/saucer.bmp", &view->saucer_img, 255, 0, 255)) {
+    if (sdl_view_load_image(view, "assets/saucer.png", &view->saucer_img, 255, 0, 255)) {
         sdl_view_convert_surface_to_texture(view, view->saucer_img, &view->saucer_texture);
         printf("Loaded saucer texture\n");
     } else {
         printf("Note: Saucer image not found, using fallback rectangle\n");
         all_loaded = false;
     }
-    
-    // REMOVED: titlescreen.png and gameover.png loading
     
     if (sdl_view_load_image(view, "assets/damage.bmp", &view->damage_img, 0, 255, 0)) {
         sdl_view_convert_surface_to_texture(view, view->damage_img, &view->damage_texture);
@@ -497,6 +442,7 @@ bool sdl_view_load_resources(SDLView* view) {
     view->initialized = true;
     return all_loaded;
 }
+
 void sdl_view_draw_background(SDLView* view) {
     if (!view || !view->renderer) return;
     SDL_SetRenderDrawColor(view->renderer, 0, 0, 0, 255);
@@ -509,32 +455,30 @@ void sdl_view_draw_invaders(SDLView* view, const GameModel* model) {
     for (int i = 0; i < INVADER_ROWS; i++) {
         for (int j = 0; j < INVADER_COLS; j++) {
             if (model->invaders.invaders[i][j].alive) {
-                SDL_Rect dest = rect_to_sdl_rect(&model->invaders.invaders[i][j].hitbox);
+                SDL_FRect dest = {
+                    (float)model->invaders.invaders[i][j].hitbox.x,
+                    (float)model->invaders.invaders[i][j].hitbox.y,
+                    (float)model->invaders.invaders[i][j].hitbox.width,
+                    (float)model->invaders.invaders[i][j].hitbox.height
+                };
                 
                 if (view->invaders_texture) {
-                    /* Use texture if available */
-                    SDL_Rect src;
-                    src.w = INVADER_WIDTH;
-                    src.h = INVADER_HEIGHT;
+                    SDL_FRect src = {
+                        0.0f,
+                        (float)(i == 0 ? 0 : (i < 3 ? INVADER_HEIGHT : INVADER_HEIGHT * 2)),
+                        (float)INVADER_WIDTH,
+                        (float)INVADER_HEIGHT
+                    };
                     
-                    if (i == 0) {
-                        src.y = 0;
-                    } else if (i < 3) {
-                        src.y = INVADER_HEIGHT;
-                    } else {
-                        src.y = INVADER_HEIGHT * 2;
-                    }
-                    
-                    src.x = model->invaders.state == 0 ? 0 : INVADER_WIDTH;
-                    SDL_RenderCopy(view->renderer, view->invaders_texture, &src, &dest);
+                    src.x = model->invaders.state == 0 ? 0.0f : (float)INVADER_WIDTH;
+                    SDL_RenderTexture(view->renderer, view->invaders_texture, &src, &dest);
                 } else {
-                    /* Fallback: draw colored rectangles */
                     if (i == 0) {
-                        SDL_SetRenderDrawColor(view->renderer, 128, 0, 128, 255); /* Purple */
+                        SDL_SetRenderDrawColor(view->renderer, 128, 0, 128, 255);
                     } else if (i < 3) {
-                        SDL_SetRenderDrawColor(view->renderer, 0, 255, 0, 255); /* Green */
+                        SDL_SetRenderDrawColor(view->renderer, 0, 255, 0, 255);
                     } else {
-                        SDL_SetRenderDrawColor(view->renderer, 255, 0, 0, 255); /* Red */
+                        SDL_SetRenderDrawColor(view->renderer, 255, 0, 0, 255);
                     }
                     SDL_RenderFillRect(view->renderer, &dest);
                 }
@@ -546,13 +490,17 @@ void sdl_view_draw_invaders(SDLView* view, const GameModel* model) {
 void sdl_view_draw_player(SDLView* view, const GameModel* model) {
     if (!view || !model || !view->renderer) return;
     
-    SDL_Rect dst = rect_to_sdl_rect(&model->player.hitbox);
+    SDL_FRect dst = {
+        (float)model->player.hitbox.x,
+        (float)model->player.hitbox.y,
+        (float)model->player.hitbox.width,
+        (float)model->player.hitbox.height
+    };
     
     if (view->player_texture) {
-        SDL_Rect src = {0, 0, model->player.hitbox.width, model->player.hitbox.height};
-        SDL_RenderCopy(view->renderer, view->player_texture, &src, &dst);
+        SDL_FRect src = {0.0f, 0.0f, (float)model->player.hitbox.width, (float)model->player.hitbox.height};
+        SDL_RenderTexture(view->renderer, view->player_texture, &src, &dst);
     } else {
-        /* Fallback: draw white rectangle */
         SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, 255);
         SDL_RenderFillRect(view->renderer, &dst);
     }
@@ -563,13 +511,17 @@ void sdl_view_draw_bases(SDLView* view, const GameModel* model) {
     
     for (int i = 0; i < BASE_COUNT; i++) {
         if (model->bases[i].alive) {
-            SDL_Rect dst = rect_to_sdl_rect(&model->bases[i].hitbox);
+            SDL_FRect dst = {
+                (float)model->bases[i].hitbox.x,
+                (float)model->bases[i].hitbox.y,
+                (float)model->bases[i].hitbox.width,
+                (float)model->bases[i].hitbox.height
+            };
             
             if (view->base_textures[i]) {
-                SDL_Rect src = {0, 0, BASE_WIDTH, BASE_HEIGHT};
-                SDL_RenderCopy(view->renderer, view->base_textures[i], &src, &dst);
+                SDL_FRect src = {0.0f, 0.0f, (float)BASE_WIDTH, (float)BASE_HEIGHT};
+                SDL_RenderTexture(view->renderer, view->base_textures[i], &src, &dst);
             } else {
-                /* Fallback: draw cyan rectangles */
                 SDL_SetRenderDrawColor(view->renderer, 0, 255, 255, 255);
                 SDL_RenderFillRect(view->renderer, &dst);
             }
@@ -581,13 +533,17 @@ void sdl_view_draw_saucer(SDLView* view, const GameModel* model) {
     if (!view || !model || !view->renderer) return;
     
     if (model->saucer.alive) {
-        SDL_Rect dst = rect_to_sdl_rect(&model->saucer.hitbox);
+        SDL_FRect dst = {
+            (float)model->saucer.hitbox.x,
+            (float)model->saucer.hitbox.y,
+            (float)model->saucer.hitbox.width,
+            (float)model->saucer.hitbox.height
+        };
         
         if (view->saucer_texture) {
-            SDL_Rect src = {0, 0, model->saucer.hitbox.width, model->saucer.hitbox.height};
-            SDL_RenderCopy(view->renderer, view->saucer_texture, &src, &dst);
+            SDL_FRect src = {0.0f, 0.0f, (float)model->saucer.hitbox.width, (float)model->saucer.hitbox.height};
+            SDL_RenderTexture(view->renderer, view->saucer_texture, &src, &dst);
         } else {
-            /* Fallback: draw magenta rectangle */
             SDL_SetRenderDrawColor(view->renderer, 255, 0, 255, 255);
             SDL_RenderFillRect(view->renderer, &dst);
         }
@@ -597,20 +553,28 @@ void sdl_view_draw_saucer(SDLView* view, const GameModel* model) {
 void sdl_view_draw_bullets(SDLView* view, const GameModel* model) {
     if (!view || !model || !view->renderer) return;
     
-    /* Player bullets (white) */
     SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, 255);
     for (int i = 0; i < PLAYER_BULLETS; i++) {
         if (model->player_bullets[i].alive) {
-            SDL_Rect dst = rect_to_sdl_rect(&model->player_bullets[i].hitbox);
+            SDL_FRect dst = {
+                (float)model->player_bullets[i].hitbox.x,
+                (float)model->player_bullets[i].hitbox.y,
+                (float)model->player_bullets[i].hitbox.width,
+                (float)model->player_bullets[i].hitbox.height
+            };
             SDL_RenderFillRect(view->renderer, &dst);
         }
     }
     
-    /* Enemy bullets (red) */
     SDL_SetRenderDrawColor(view->renderer, 255, 0, 0, 255);
     for (int i = 0; i < ENEMY_BULLETS; i++) {
         if (model->enemy_bullets[i].alive) {
-            SDL_Rect dst = rect_to_sdl_rect(&model->enemy_bullets[i].hitbox);
+            SDL_FRect dst = {
+                (float)model->enemy_bullets[i].hitbox.x,
+                (float)model->enemy_bullets[i].hitbox.y,
+                (float)model->enemy_bullets[i].hitbox.width,
+                (float)model->enemy_bullets[i].hitbox.height
+            };
             SDL_RenderFillRect(view->renderer, &dst);
         }
     }
@@ -619,12 +583,11 @@ void sdl_view_draw_bullets(SDLView* view, const GameModel* model) {
 void sdl_view_draw_hud(SDLView* view, const GameModel* model) {
     if (!view || !model || !view->renderer) return;
     
-    /* Draw HUD background */
-    SDL_Rect hud_rect = {GAME_AREA_WIDTH, 0, view->width - GAME_AREA_WIDTH, view->height};
+    SDL_FRect hud_rect = {(float)GAME_AREA_WIDTH, 0.0f, 
+                         (float)(view->width - GAME_AREA_WIDTH), (float)view->height};
     SDL_SetRenderDrawColor(view->renderer, 41, 41, 41, 255);
     SDL_RenderFillRect(view->renderer, &hud_rect);
     
-    /* Draw HUD text using simple rendering */
     char score_text[32];
     char lives_text[32];
     char level_text[32];
@@ -637,7 +600,7 @@ void sdl_view_draw_hud(SDLView* view, const GameModel* model) {
     draw_string_simple(view, lives_text, GAME_AREA_WIDTH + 10, 50, 255, 255, 255);
     draw_string_simple(view, level_text, GAME_AREA_WIDTH + 10, 80, 255, 255, 255);
 }
-// In view_sdl.c, add a debug function:
+
 void sdl_view_draw_debug(SDLView* view, const GameModel* model) {
     if (!view || !model || !view->renderer) return;
     
@@ -649,15 +612,14 @@ void sdl_view_draw_debug(SDLView* view, const GameModel* model) {
              model->saucer.hitbox.x,
              model->saucer.hitbox.y);
     
-    // Draw in top-left corner
     if (view->small_font) {
         SDL_Color white = {255, 255, 255, 255};
-        SDL_Surface* debug_surface = TTF_RenderText_Blended(view->small_font, debug_text, white);
+        SDL_Surface* debug_surface = render_text_sdl3(view->small_font, debug_text, white);
         if (debug_surface) {
             SDL_Texture* debug_texture = SDL_CreateTextureFromSurface(view->renderer, debug_surface);
-            SDL_Rect debug_rect = {10, 10, debug_surface->w, debug_surface->h};
-            SDL_RenderCopy(view->renderer, debug_texture, NULL, &debug_rect);
-            SDL_FreeSurface(debug_surface);
+            SDL_FRect debug_rect = {10.0f, 10.0f, (float)debug_surface->w, (float)debug_surface->h};
+            SDL_RenderTexture(view->renderer, debug_texture, NULL, &debug_rect);
+            SDL_DestroySurface(debug_surface);
             SDL_DestroyTexture(debug_texture);
         }
     } else {
@@ -665,13 +627,10 @@ void sdl_view_draw_debug(SDLView* view, const GameModel* model) {
     }
 }
 
-
-
 void sdl_view_render_game(SDLView* view, const GameModel* model) {
     if (!view || !model || !view->renderer) return;
     
-   sdl_view_draw_background(view);
-    //sdl_view_draw_bases(view, model);
+    sdl_view_draw_background(view);
     sdl_view_draw_invaders(view, model);
     sdl_view_draw_saucer(view, model);  
     sdl_view_draw_player(view, model);
@@ -706,7 +665,6 @@ void sdl_view_render(SDLView* view, const GameModel* model) {
     
     SDL_RenderPresent(view->renderer);
     
-    /* Calculate FPS */
     view->frame_count++;
     uint32_t current_time = SDL_GetTicks();
     if (current_time - view->frame_timer >= 1000) {
@@ -717,6 +675,7 @@ void sdl_view_render(SDLView* view, const GameModel* model) {
     
     view->last_frame_time = current_time;
 }
+
 void sdl_view_render_menu(SDLView* view, const GameModel* model) {
     if (!view || !view->renderer) return;
     
@@ -724,244 +683,227 @@ void sdl_view_render_menu(SDLView* view, const GameModel* model) {
     SDL_RenderClear(view->renderer);
     
     int center_x = view->width / 2;
-    int center_y = 100; // Start position
+    int center_y = 100;
     
-    // Render "SPACE INVADERS" in big font
+    /* Draw Title */
     if (view->big_font) {
         SDL_Color white = {255, 255, 255, 255};
-        SDL_Color yellow = {255, 255, 0, 255};
-        SDL_Color cyan = {0, 255, 255, 255};
-        
-        // "SPACE INVADERS" - big text in center
-        SDL_Surface* title_surface = TTF_RenderText_Blended(view->big_font, "SPACE INVADERS", white);
+        SDL_Surface* title_surface = render_text_sdl3(view->big_font, "SPACE INVADERS", white);
         if (title_surface) {
             SDL_Texture* title_texture = SDL_CreateTextureFromSurface(view->renderer, title_surface);
-            SDL_Rect title_rect = {
-                center_x - title_surface->w / 2,
-                center_y,
-                title_surface->w,
-                title_surface->h
+            SDL_FRect title_rect = {
+                (float)(center_x - title_surface->w / 2),
+                (float)center_y,
+                (float)title_surface->w,
+                (float)title_surface->h
             };
-            SDL_RenderCopy(view->renderer, title_texture, NULL, &title_rect);
-            SDL_FreeSurface(title_surface);
+            SDL_RenderTexture(view->renderer, title_texture, NULL, &title_rect);
+            SDL_DestroySurface(title_surface);
             SDL_DestroyTexture(title_texture);
             center_y += title_surface->h + 30;
         }
-        
-        // "by amine" - smaller text
-        if (view->medium_font) {
-            SDL_Surface* author_surface = TTF_RenderText_Blended(view->medium_font, "by Amine Boucif", cyan);
-            if (author_surface) {
-                SDL_Texture* author_texture = SDL_CreateTextureFromSurface(view->renderer, author_surface);
-                SDL_Rect author_rect = {
-                    center_x - author_surface->w / 2,
-                    center_y,
-                    author_surface->w,
-                    author_surface->h
-                };
-                SDL_RenderCopy(view->renderer, author_texture, NULL, &author_rect);
-                SDL_FreeSurface(author_surface);
-                SDL_DestroyTexture(author_texture);
-                center_y += author_surface->h + 40;
-            }
-        }
-        
-        // High score in yellow
-        if (view->medium_font) {
-            char highscore_text[50];
-            snprintf(highscore_text, sizeof(highscore_text), "HIGH SCORE: %d", model->high_score);
-            
-            SDL_Surface* score_surface = TTF_RenderText_Blended(view->medium_font, highscore_text, yellow);
-            if (score_surface) {
-                SDL_Texture* score_texture = SDL_CreateTextureFromSurface(view->renderer, score_surface);
-                SDL_Rect score_rect = {
-                    center_x - score_surface->w / 2,
-                    center_y,
-                    score_surface->w,
-                    score_surface->h
-                };
-                SDL_RenderCopy(view->renderer, score_texture, NULL, &score_rect);
-                SDL_FreeSurface(score_surface);
-                SDL_DestroyTexture(score_texture);
-                center_y += score_surface->h + 40;
-            }
-        }
-        
-        // "Press SPACE to Start"
-        if (view->medium_font) {
-            SDL_Surface* start_surface = TTF_RenderText_Blended(view->medium_font, "Press SPACE to Start", white);
-            if (start_surface) {
-                SDL_Texture* start_texture = SDL_CreateTextureFromSurface(view->renderer, start_surface);
-                SDL_Rect start_rect = {
-                    center_x - start_surface->w / 2,
-                    center_y,
-                    start_surface->w,
-                    start_surface->h
-                };
-                SDL_RenderCopy(view->renderer, start_texture, NULL, &start_rect);
-                SDL_FreeSurface(start_surface);
-                SDL_DestroyTexture(start_texture);
-                center_y += start_surface->h + 60;
-            }
-        }
-        
-        // Draw controls window
-        SDL_Rect controls_bg = {center_x - 200, center_y, 400, 180};
-        SDL_SetRenderDrawColor(view->renderer, 41, 41, 41, 200);
-        SDL_RenderFillRect(view->renderer, &controls_bg);
-        
-        // Draw border
-        SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, 255);
-        SDL_RenderDrawRect(view->renderer, &controls_bg);
-        
-        // Draw controls text
-        if (view->small_font) {
-            const char* controls_lines[] = {
-                "CONTROLS:",
-                "Left/Right Arrow or A/D: Move",
-                "Space: Shoot",
-                "P: Pause",
-                "R: Restart (when game over)",
-                "ESC: Quit"
+    } else {
+        /* Fallback if big font failed */
+        draw_string_simple(view, "SPACE INVADERS", center_x - 70, center_y, 255, 255, 255);
+        center_y += 60;
+    }
+
+    /* Draw Author */
+    if (view->medium_font) {
+        SDL_Color cyan = {0, 255, 255, 255};
+        SDL_Surface* author_surface = render_text_sdl3(view->medium_font, "by Amine Boucif", cyan);
+        if (author_surface) {
+            SDL_Texture* author_texture = SDL_CreateTextureFromSurface(view->renderer, author_surface);
+            SDL_FRect author_rect = {
+                (float)(center_x - author_surface->w / 2),
+                (float)center_y,
+                (float)author_surface->w,
+                (float)author_surface->h
             };
-            
-            int line_y = center_y + 10;
-            for (int i = 0; i < 6; i++) {
-                SDL_Surface* line_surface = TTF_RenderText_Blended(view->small_font, controls_lines[i], white);
-                if (line_surface) {
-                    SDL_Texture* line_texture = SDL_CreateTextureFromSurface(view->renderer, line_surface);
-                    SDL_Rect line_rect = {
-                        center_x - line_surface->w / 2,
-                        line_y,
-                        line_surface->w,
-                        line_surface->h
-                    };
-                    SDL_RenderCopy(view->renderer, line_texture, NULL, &line_rect);
-                    SDL_FreeSurface(line_surface);
-                    SDL_DestroyTexture(line_texture);
-                    line_y += line_surface->h + 5;
-                }
+            SDL_RenderTexture(view->renderer, author_texture, NULL, &author_rect);
+            SDL_DestroySurface(author_surface);
+            SDL_DestroyTexture(author_texture);
+            center_y += author_surface->h + 40;
+        }
+    } else {
+        draw_string_simple(view, "by Amine Boucif", center_x - 40, center_y, 0, 255, 255);
+        center_y += 40;
+    }
+
+    /* Draw High Score */
+    char highscore_text[50];
+    snprintf(highscore_text, sizeof(highscore_text), "HIGH SCORE: %d", model->high_score);
+
+    if (view->medium_font) {
+        SDL_Color yellow = {255, 255, 0, 255};
+        SDL_Surface* score_surface = render_text_sdl3(view->medium_font, highscore_text, yellow);
+        if (score_surface) {
+            SDL_Texture* score_texture = SDL_CreateTextureFromSurface(view->renderer, score_surface);
+            SDL_FRect score_rect = {
+                (float)(center_x - score_surface->w / 2),
+                (float)center_y,
+                (float)score_surface->w,
+                (float)score_surface->h
+            };
+            SDL_RenderTexture(view->renderer, score_texture, NULL, &score_rect);
+            SDL_DestroySurface(score_surface);
+            SDL_DestroyTexture(score_texture);
+            center_y += score_surface->h + 40;
+        }
+    } else {
+        draw_string_simple(view, highscore_text, center_x - 70, center_y, 255, 255, 0);
+        center_y += 40;
+    }
+
+    /* Draw Start Prompt */
+    if (view->medium_font) {
+        SDL_Color white = {255, 255, 255, 255};
+        SDL_Surface* start_surface = render_text_sdl3(view->medium_font, "Press SPACE to Start", white);
+        if (start_surface) {
+            SDL_Texture* start_texture = SDL_CreateTextureFromSurface(view->renderer, start_surface);
+            SDL_FRect start_rect = {
+                (float)(center_x - start_surface->w / 2),
+                (float)center_y,
+                (float)start_surface->w,
+                (float)start_surface->h
+            };
+            SDL_RenderTexture(view->renderer, start_texture, NULL, &start_rect);
+            SDL_DestroySurface(start_surface);
+            SDL_DestroyTexture(start_texture);
+            center_y += start_surface->h + 60;
+        }
+    } else {
+        draw_string_simple(view, "Press SPACE to Start", center_x - 80, center_y, 255, 255, 255);
+        center_y += 40;
+    }
+    
+    SDL_FRect controls_bg = {(float)(center_x - 200), (float)center_y, 400.0f, 180.0f};
+    SDL_SetRenderDrawColor(view->renderer, 41, 41, 41, 200);
+    SDL_RenderFillRect(view->renderer, &controls_bg);
+    SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, 255);
+    SDL_RenderRect(view->renderer, &controls_bg);
+    
+    const char* controls_lines[] = {
+        "CONTROLS:",
+        "Left/Right Arrow or A/D: Move",
+        "Space: Shoot",
+        "P: Pause",
+        "R: Restart (when game over)",
+        "ESC: Quit"
+    };
+    
+    int line_y = center_y + 10;
+    if (view->small_font) {
+        SDL_Color white2 = {255, 255, 255, 255};
+        for (int i = 0; i < 6; i++) {
+            SDL_Surface* line_surface = render_text_sdl3(view->small_font, controls_lines[i], white2);
+            if (line_surface) {
+                SDL_Texture* line_texture = SDL_CreateTextureFromSurface(view->renderer, line_surface);
+                SDL_FRect line_rect = {
+                    (float)(center_x - line_surface->w / 2),
+                    (float)line_y,
+                    (float)line_surface->w,
+                    (float)line_surface->h
+                };
+                SDL_RenderTexture(view->renderer, line_texture, NULL, &line_rect);
+                SDL_DestroySurface(line_surface);
+                SDL_DestroyTexture(line_texture);
+                line_y += line_surface->h + 5;
             }
         }
     } else {
-        // Fallback to simple text rendering if font not available
-        draw_string_simple(view, "SPACE INVADERS", center_x - 70, center_y, 255, 255, 255);
-        center_y += 40;
-        draw_string_simple(view, "by amine", center_x - 40, center_y, 0, 255, 255);
-        center_y += 30;
-        
-        char highscore[32];
-        snprintf(highscore, sizeof(highscore), "High Score: %d", model->high_score);
-        draw_string_simple(view, highscore, center_x - 70, center_y, 255, 255, 0);
-        center_y += 40;
-        
-        draw_string_simple(view, "Press SPACE to Start", center_x - 80, center_y, 255, 255, 255);
-        center_y += 40;
-        
-        // Controls window
-        draw_string_simple(view, "CONTROLS:", center_x - 40, center_y, 255, 255, 255);
-        center_y += 20;
-        draw_string_simple(view, "Left/Right or A/D: Move", center_x - 100, center_y, 255, 255, 255);
-        center_y += 15;
-        draw_string_simple(view, "Space: Shoot", center_x - 50, center_y, 255, 255, 255);
-        center_y += 15;
-        draw_string_simple(view, "P: Pause", center_x - 40, center_y, 255, 255, 255);
-        center_y += 15;
-        draw_string_simple(view, "R: Restart (game over)", center_x - 90, center_y, 255, 255, 255);
-        center_y += 15;
-        draw_string_simple(view, "ESC: Quit", center_x - 40, center_y, 255, 255, 255);
+         for (int i = 0; i < 6; i++) {
+            draw_string_simple(view, controls_lines[i], center_x - 100, line_y, 255, 255, 255);
+            line_y += 15;
+         }
     }
 }
 
 void sdl_view_render_pause(SDLView* view) {
     if (!view || !view->renderer) return;
     
-    /* Semi-transparent overlay */
     SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
     SDL_SetRenderDrawColor(view->renderer, 0, 0, 0, 180);
-    SDL_Rect overlay = {0, 0, view->width, view->height};
+    SDL_FRect overlay = {0.0f, 0.0f, (float)view->width, (float)view->height};
     SDL_RenderFillRect(view->renderer, &overlay);
     
     draw_string_simple(view, "PAUSED", view->width / 2 - 30, view->height / 2 - 20, 255, 255, 255);
     draw_string_simple(view, "Press P to Resume", view->width / 2 - 70, view->height / 2 + 10, 255, 255, 255);
 }
+
 void sdl_view_render_game_over(SDLView* view) {
     if (!view || !view->renderer) return;
     
-    /* Semi-transparent overlay */
     SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
     SDL_SetRenderDrawColor(view->renderer, 0, 0, 0, 180);
-    SDL_Rect overlay = {0, 0, view->width, view->height};
+    SDL_FRect overlay = {0.0f, 0.0f, (float)view->width, (float)view->height};
     SDL_RenderFillRect(view->renderer, &overlay);
     
     int center_x = view->width / 2;
     int center_y = view->height / 2 - 50;
     
-    // Render "GAME OVER" using custom font
     if (view->big_font) {
         SDL_Color red = {255, 0, 0, 255};
-        SDL_Color white = {255, 255, 255, 255};
-        SDL_Color yellow = {255, 255, 0, 255};
-        
-        // "GAME OVER" in big red font
-        SDL_Surface* gameover_surface = TTF_RenderText_Blended(view->big_font, "GAME OVER", red);
+        SDL_Surface* gameover_surface = render_text_sdl3(view->big_font, "GAME OVER", red);
         if (gameover_surface) {
             SDL_Texture* gameover_texture = SDL_CreateTextureFromSurface(view->renderer, gameover_surface);
-            SDL_Rect gameover_rect = {
-                center_x - gameover_surface->w / 2,
-                center_y,
-                gameover_surface->w,
-                gameover_surface->h
+            SDL_FRect gameover_rect = {
+                (float)(center_x - gameover_surface->w / 2),
+                (float)center_y,
+                (float)gameover_surface->w,
+                (float)gameover_surface->h
             };
-            SDL_RenderCopy(view->renderer, gameover_texture, NULL, &gameover_rect);
-            SDL_FreeSurface(gameover_surface);
+            SDL_RenderTexture(view->renderer, gameover_texture, NULL, &gameover_rect);
+            SDL_DestroySurface(gameover_surface);
             SDL_DestroyTexture(gameover_texture);
             center_y += gameover_surface->h + 30;
         }
+    } else {
+        draw_string_simple(view, "GAME OVER", center_x - 45, center_y, 255, 0, 0);
+        center_y += 30;
+    }
+
+    if (view->medium_font) {
+        SDL_Color white = {255, 255, 255, 255};
+        SDL_Color yellow = {255, 255, 0, 255};
+
+        SDL_Surface* restart_surface = render_text_sdl3(view->medium_font, "Press R to Restart", white);
+        if (restart_surface) {
+            SDL_Texture* restart_texture = SDL_CreateTextureFromSurface(view->renderer, restart_surface);
+            SDL_FRect restart_rect = {
+                (float)(center_x - restart_surface->w / 2),
+                (float)center_y,
+                (float)restart_surface->w,
+                (float)restart_surface->h
+            };
+            SDL_RenderTexture(view->renderer, restart_texture, NULL, &restart_rect);
+            SDL_DestroySurface(restart_surface);
+            SDL_DestroyTexture(restart_texture);
+            center_y += restart_surface->h + 20;
+        }
         
-        // Instructions in smaller font
-        if (view->medium_font) {
-            // "Press R to Restart"
-            SDL_Surface* restart_surface = TTF_RenderText_Blended(view->medium_font, "Press R to Restart", white);
-            if (restart_surface) {
-                SDL_Texture* restart_texture = SDL_CreateTextureFromSurface(view->renderer, restart_surface);
-                SDL_Rect restart_rect = {
-                    center_x - restart_surface->w / 2,
-                    center_y,
-                    restart_surface->w,
-                    restart_surface->h
-                };
-                SDL_RenderCopy(view->renderer, restart_texture, NULL, &restart_rect);
-                SDL_FreeSurface(restart_surface);
-                SDL_DestroyTexture(restart_texture);
-                center_y += restart_surface->h + 20;
-            }
-            
-            // "ESC to Quit"
-            SDL_Surface* quit_surface = TTF_RenderText_Blended(view->medium_font, "ESC to Quit", yellow);
-            if (quit_surface) {
-                SDL_Texture* quit_texture = SDL_CreateTextureFromSurface(view->renderer, quit_surface);
-                SDL_Rect quit_rect = {
-                    center_x - quit_surface->w / 2,
-                    center_y,
-                    quit_surface->w,
-                    quit_surface->h
-                };
-                SDL_RenderCopy(view->renderer, quit_texture, NULL, &quit_rect);
-                SDL_FreeSurface(quit_surface);
-                SDL_DestroyTexture(quit_texture);
-            }
+        SDL_Surface* quit_surface = render_text_sdl3(view->medium_font, "ESC to Quit", yellow);
+        if (quit_surface) {
+            SDL_Texture* quit_texture = SDL_CreateTextureFromSurface(view->renderer, quit_surface);
+            SDL_FRect quit_rect = {
+                (float)(center_x - quit_surface->w / 2),
+                (float)center_y,
+                (float)quit_surface->w,
+                (float)quit_surface->h
+            };
+            SDL_RenderTexture(view->renderer, quit_texture, NULL, &quit_rect);
+            SDL_DestroySurface(quit_surface);
+            SDL_DestroyTexture(quit_texture);
         }
     } else {
-        // Fallback to simple text rendering
-        draw_string_simple(view, "GAME OVER", view->width / 2 - 45, view->height / 2 - 20, 255, 0, 0);
-        draw_string_simple(view, "Press R to Restart", view->width / 2 - 70, view->height / 2 + 20, 255, 255, 255);
-        draw_string_simple(view, "ESC to Quit", view->width / 2 - 50, view->height / 2 + 50, 255, 255, 255);
+        draw_string_simple(view, "Press R to Restart", center_x - 70, center_y, 255, 255, 255);
+        center_y += 20;
+        draw_string_simple(view, "ESC to Quit", center_x - 50, center_y, 255, 255, 255);
     }
 }
 
 bool sdl_view_poll_event(SDLView* view, SDL_Event* event) {
-    (void)view;  /* Suppress unused parameter warning */
+    (void)view;
     if (!event) return false;
     return SDL_PollEvent(event) != 0;
 }
@@ -970,7 +912,7 @@ void sdl_view_draw_rect(SDLView* view, int x, int y, int w, int h,
                        uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
     if (!view || !view->renderer) return;
     
-    SDL_Rect rect = {x, y, w, h};
+    SDL_FRect rect = {(float)x, (float)y, (float)w, (float)h};
     SDL_SetRenderDrawColor(view->renderer, r, g, b, a);
     SDL_RenderFillRect(view->renderer, &rect);
 }

@@ -11,26 +11,6 @@ static uint32_t get_ticks(void) {
     return (uint32_t)((clock() * 1000) / CLOCKS_PER_SEC);
 }
 
-/* Key code definitions for compatibility */
-#ifndef SDLK_LEFT
-#define SDLK_LEFT 1073741904
-#define SDLK_RIGHT 1073741903
-#define SDLK_SPACE 32
-#define SDLK_p 112
-#define SDLK_ESCAPE 27
-#define SDLK_r 114
-#define SDLK_RETURN 13
-#define SDLK_a 97
-#define SDLK_d 100
-#define SDLK_w 119
-#define SDLK_s 115
-#define SDLK_UP 1073741906
-#define SDLK_DOWN 1073741905
-#define SDLK_F1 1073741882
-#define SDLK_PAUSE 1073741896
-#define KMOD_ALT 0x0100
-#endif
-
 Controller* controller_create(GameModel* model) {
     Controller* controller = malloc(sizeof(Controller));
     if (!controller) return NULL;
@@ -45,11 +25,7 @@ Controller* controller_create(GameModel* model) {
         return NULL;
     }
     
-    /* Default configuration */
-    controller_set_keybindings(controller, 
-                              SDLK_LEFT, SDLK_RIGHT, 
-                              SDLK_SPACE, SDLK_p, 
-                              SDLK_ESCAPE);
+    /* Default configuration - keys are already set in input_handler_create */
     
     /* Callbacks */
     controller->render_callback = NULL;
@@ -80,9 +56,9 @@ void controller_set_view_context(Controller* controller, void* view_context) {
 }
 
 void controller_set_keybindings(Controller* controller, 
-                               int left, int right, int shoot, 
-                               int pause, int quit) {
-    if (!controller) return;
+                                int left, int right, int shoot, 
+                                int pause, int quit) {
+    if (!controller || !controller->input_handler) return;
     
     controller->key_left = left;
     controller->key_right = right;
@@ -90,10 +66,15 @@ void controller_set_keybindings(Controller* controller,
     controller->key_pause = pause;
     controller->key_quit = quit;
     
-    if (controller->input_handler) {
-        input_handler_set_keybindings(controller->input_handler,
-                                     left, right, shoot, pause, quit);
-    }
+#ifdef USE_SDL_VIEW
+    input_handler_set_keybindings(controller->input_handler,
+                                 (SDL_Keycode)left, (SDL_Keycode)right,
+                                 (SDL_Keycode)shoot, (SDL_Keycode)pause,
+                                 (SDL_Keycode)quit);
+#else
+    input_handler_set_keybindings(controller->input_handler,
+                                 left, right, shoot, pause, quit);
+#endif
 }
 
 void controller_set_callbacks(Controller* controller,
@@ -112,38 +93,19 @@ Command controller_translate_input(InputEvent* event) {
     
     switch (event->type) {
         case INPUT_KEYBOARD:
-            switch (event->key) {
-                case SDLK_LEFT:
-                case SDLK_a:
-                    return CMD_MOVE_LEFT;
-                case SDLK_RIGHT:
-                case SDLK_d:
-                    return CMD_MOVE_RIGHT;
-                case SDLK_SPACE:
-                    return CMD_SHOOT;
-                case SDLK_p:
-                case SDLK_PAUSE:
-                    return CMD_PAUSE;
-                case SDLK_ESCAPE:
-                    return CMD_QUIT;
-                case SDLK_r:
-                    return CMD_RESET_GAME;
-                case SDLK_RETURN:
-                    if (event->mod & KMOD_ALT) {
-                        return CMD_TOGGLE_VIEW;
-                    }
-                    return CMD_CONFIRM;
-                case SDLK_UP:
-                case SDLK_w:
-                    return CMD_UP;
-                case SDLK_DOWN:
-                case SDLK_s:
-                    return CMD_DOWN;
-                case SDLK_F1:
-                    return CMD_START_GAME;
-                default:
-                    return CMD_NONE;
-            }
+            /* Use simple keycodes */
+            if (event->key == 'a' || event->key == 'A' || event->key == 260) return CMD_MOVE_LEFT;
+            if (event->key == 'd' || event->key == 'D' || event->key == 261) return CMD_MOVE_RIGHT;
+            if (event->key == ' ' || event->key == '\n') return CMD_SHOOT;
+            if (event->key == 'p' || event->key == 'P') return CMD_PAUSE;
+            if (event->key == 27 || event->key == 'q' || event->key == 'Q') return CMD_QUIT;
+            if (event->key == 'r' || event->key == 'R') return CMD_RESET_GAME;
+            if (event->key == '1') return CMD_START_GAME;
+            
+            // Arrow keys (ncurses style)
+            if (event->key == 259 || event->key == 'w' || event->key == 'W') return CMD_UP;
+            if (event->key == 258 || event->key == 's' || event->key == 'S') return CMD_DOWN;
+            
             break;
             
         case INPUT_JOYSTICK:
@@ -218,15 +180,9 @@ void controller_execute_command(Controller* controller, Command cmd) {
             break;
             
         case CMD_UP:
-            /* Menu navigation (implemented in view) */
-            break;
-            
         case CMD_DOWN:
-            /* Menu navigation (implemented in view) */
-            break;
-            
         case CMD_CONFIRM:
-            /* Menu confirmation (implemented in view) */
+            /* Menu navigation logic */
             break;
             
         case CMD_BACK:
@@ -240,12 +196,10 @@ void controller_execute_command(Controller* controller, Command cmd) {
             break;
     }
     
-    /* Call render callback if defined */
     if (controller->render_callback) {
         controller->render_callback(controller->callback_data);
     }
     
-    /* Call audio callback if defined */
     if (controller->audio_callback) {
         controller->audio_callback(controller->callback_data);
     }
@@ -261,14 +215,13 @@ void controller_process_input(Controller* controller) {
         controller_execute_command(controller, cmd);
     }
     
-    /* Update input handler */
+    /* Update input handler timing */
     input_handler_update(controller->input_handler, get_ticks());
 }
 
 void controller_handle_event(Controller* controller, InputEvent* event) {
     if (!controller || !event) return;
     
-    /* Translate event to command */
     Command cmd = controller_translate_input(event);
     
     if (cmd != CMD_NONE) {
@@ -277,16 +230,10 @@ void controller_handle_event(Controller* controller, InputEvent* event) {
 }
 
 void controller_update(Controller* controller, float delta_time) {
-    (void)delta_time; /* Suppress warning */
+    (void)delta_time;
     if (!controller) return;
     
-    /* Check pause state */
     controller->paused = (controller->model->state == STATE_PAUSED);
-    
-    /* If paused, don't update logic */
-    if (controller->paused) return;
-    
-    /* Model is updated by the game context */
 }
 
 bool controller_is_quit_requested(Controller* controller) {

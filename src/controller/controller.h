@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include "../core/model.h"
 #include "commands.h"
+#include "input_handler.h"
 
 // Événements d'entrée
 typedef enum {
@@ -17,14 +18,14 @@ typedef enum {
 // Structure pour les données d'entrée
 typedef struct {
     InputType type;
-    int key;           // Code de touche
-    int scancode;      // Scan code
-    int mod;           // Modificateurs
-    int x, y;          // Coordonnées (pour souris/touch)
-    int button;        // Bouton souris
-    int joy_id;        // ID joystick
-    int axis;          // Axe joystick
-    int value;         // Valeur axe/bouton
+    int key;      // Code de touche
+    int scancode;         // Scan code
+    int mod;       // Modificateurs
+    int x, y;             // Coordonnées (pour souris/touch)
+    int button;           // Bouton souris
+    int joy_id;           // ID joystick
+    int axis;             // Axe joystick
+    int value;            // Valeur axe/bouton
 } InputEvent;
 
 // Callback pour les événements de rendu
@@ -35,7 +36,7 @@ typedef void (*AudioCallback)(void* data);
 typedef struct {
     GameModel* model;
     void* view_context;
-    void* input_handler;
+    InputHandler* input_handler;
     
     // Callbacks
     RenderCallback render_callback;

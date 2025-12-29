@@ -1,29 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL2/SDL.h>
+#include <SDL3/SDL.h>
 #include "core/model.h"
 #include "core/game_state.h"
 #include "controller/controller.h"
+#include "controller/input_handler.h"
 #include "views/view_sdl.h"
 
-
-
-
-
 int main(int argc, char* argv[]) {
-    printf("Space Invaders MVC - SDL2 Version\n");
+    printf("Space Invaders MVC - SDL3 Version\n");
 
-    (void)argc;  // Mark as unused
-    (void)argv;  // Mark as unused
+    (void)argc;
+    (void)argv;
     
-    // Create game context
+    /* Create game context */
     GameContext* context = game_context_create();
     if (!context) {
         fprintf(stderr, "Failed to create game context\n");
         return 1;
     }
     
-    // Create controller
+    /* Create controller */
     Controller* controller = controller_create(context->model);
     if (!controller) {
         fprintf(stderr, "Failed to create controller\n");
@@ -31,7 +28,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     
-    // Create SDL view
+    /* Create SDL view */
     SDLView* view = sdl_view_create();
     if (!view) {
         fprintf(stderr, "Failed to create SDL view\n");
@@ -40,7 +37,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     
-    // Initialize view
+    /* Initialize view */
     if (!sdl_view_init(view, SCREEN_WIDTH, SCREEN_HEIGHT)) {
         fprintf(stderr, "Failed to initialize SDL view\n");
         sdl_view_destroy(view);
@@ -49,78 +46,85 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     
-    // Set view context for controller
+    /* Set view context */
     controller_set_view_context(controller, view);
     
-    // Main game loop
-    SDL_Event event;
-    uint32_t last_update = SDL_GetTicks();
+    /* Game loop timing */
     const int TARGET_FPS = 60;
-    const float FRAME_DELAY = 1000.0f / TARGET_FPS;
+    const uint32_t FRAME_DELAY = 1000 / TARGET_FPS;
+    uint32_t last_update = SDL_GetTicks();
     
-    printf("Game started. Controls:\n");
-    printf("  Left/Right Arrow or A/D: Move\n");
-    printf("  Space: Shoot\n");
-    printf("  P: Pause\n");
-    printf("  R: Restart (when game over)\n");
-    printf("  ESC: Quit\n\n");
+    /* Main loop */
+    bool running = true;
+    SDL_Event event;
     
-    while (!controller_is_quit_requested(controller)) {
+    printf("Game Running. Controls: Arrows/WASD to Move, Space to Shoot, P to Pause, R to Restart.\n");
+
+    while (running && !controller_is_quit_requested(controller)) {
         uint32_t frame_start = SDL_GetTicks();
         
-        // Handle SDL events
+        /* Handle SDL events */
         while (sdl_view_poll_event(view, &event)) {
-            if (event.type == SDL_QUIT) {
-                controller_execute_command(controller, CMD_QUIT);
-            } else if (event.type == SDL_KEYDOWN) {
+            if (event.type == SDL_EVENT_QUIT) {
+                running = false;
+            }
+            else if (event.type == SDL_EVENT_KEY_DOWN || event.type == SDL_EVENT_KEY_UP) {
                 InputEvent input_event;
+                memset(&input_event, 0, sizeof(InputEvent));
+                
                 input_event.type = INPUT_KEYBOARD;
-                input_event.key = event.key.keysym.sym;
-                input_event.scancode = event.key.keysym.scancode;
-                input_event.mod = event.key.keysym.mod;
-                input_event.x = 0;
-                input_event.y = 0;
-                input_event.button = 0;
-                input_event.joy_id = 0;
-                input_event.axis = 0;
-                input_event.value = 0;
+                
+                // MAP SDL KEYS TO CONTROLLER EXPECTED VALUES
+                // Controller expects standard ASCII or Ncurses-style codes (260=Left, 261=Right)
+                if (event.key.key == SDLK_LEFT)       input_event.key = 260;
+                else if (event.key.key == SDLK_RIGHT) input_event.key = 261;
+                else if (event.key.key == SDLK_UP)    input_event.key = 259;
+                else if (event.key.key == SDLK_DOWN)  input_event.key = 258;
+                else                                  input_event.key = (int)event.key.key;
+
+                input_event.scancode = event.key.scancode;
+                input_event.mod = event.key.mod;
+                
+                /* Zero out unused fields */
+                input_event.x = 0; input_event.y = 0; 
+                input_event.button = 0; input_event.joy_id = 0; 
+                input_event.axis = 0; input_event.value = 0;
+                
                 controller_handle_event(controller, &input_event);
             }
         }
         
-        // Process continuous input (held keys)
+        /* Process continuous input (held keys) */
         controller_process_input(controller);
         
-        // Calculate delta time
+        /* Calculate delta time */
         uint32_t current_time = SDL_GetTicks();
         float delta_time = (current_time - last_update) / 1000.0f;
         
-        // Cap delta time to prevent huge jumps
+        /* Cap delta time */
         if (delta_time > 0.1f) delta_time = 0.1f;
         
         last_update = current_time;
         
-        // Update game
+        /* Update game */
         controller_update(controller, delta_time);
         game_context_update(context);
         
-        // Render
+        /* Render */
         sdl_view_render(view, context->model);
         
-        // Cap framerate
+        /* Cap framerate */
         uint32_t frame_time = SDL_GetTicks() - frame_start;
         if (frame_time < FRAME_DELAY) {
             SDL_Delay((uint32_t)(FRAME_DELAY - frame_time));
         }
     }
     
-    // Cleanup
+    /* Cleanup */
     printf("Cleaning up...\n");
     sdl_view_destroy(view);
     controller_destroy(controller);
     game_context_destroy(context);
-    SDL_Quit();
     
-    printf("Game ended. Thanks for playing!\n");
     return 0;
 }
