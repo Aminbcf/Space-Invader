@@ -25,14 +25,10 @@ Controller* controller_create(GameModel* model) {
         return NULL;
     }
     
-    /* Default configuration - keys are already set in input_handler_create */
-    
-    /* Callbacks */
     controller->render_callback = NULL;
     controller->audio_callback = NULL;
     controller->callback_data = NULL;
     
-    /* State */
     controller->quit_requested = false;
     controller->paused = false;
     controller->last_input_time = get_ticks();
@@ -82,7 +78,6 @@ void controller_set_callbacks(Controller* controller,
                              AudioCallback audio_cb,
                              void* data) {
     if (!controller) return;
-    
     controller->render_callback = render_cb;
     controller->audio_callback = audio_cb;
     controller->callback_data = data;
@@ -93,7 +88,6 @@ Command controller_translate_input(InputEvent* event) {
     
     switch (event->type) {
         case INPUT_KEYBOARD:
-            /* Use simple keycodes */
             if (event->key == 'a' || event->key == 'A' || event->key == 260) return CMD_MOVE_LEFT;
             if (event->key == 'd' || event->key == 'D' || event->key == 261) return CMD_MOVE_RIGHT;
             if (event->key == ' ' || event->key == '\n') return CMD_SHOOT;
@@ -102,10 +96,8 @@ Command controller_translate_input(InputEvent* event) {
             if (event->key == 'r' || event->key == 'R') return CMD_RESET_GAME;
             if (event->key == '1') return CMD_START_GAME;
             
-            // Arrow keys (ncurses style)
             if (event->key == 259 || event->key == 'w' || event->key == 'W') return CMD_UP;
             if (event->key == 258 || event->key == 's' || event->key == 'S') return CMD_DOWN;
-            
             break;
             
         case INPUT_JOYSTICK:
@@ -152,6 +144,10 @@ void controller_execute_command(Controller* controller, Command cmd) {
                 model_set_state(controller->model, STATE_PLAYING);
             } else if (controller->model->state == STATE_GAME_OVER) {
                 model_reset_game(controller->model);
+            } else if (controller->model->state == STATE_LEVEL_TRANSITION) {
+                model_set_state(controller->model, STATE_PLAYING);
+            } else if (controller->model->state == STATE_WIN) {
+                model_reset_game(controller->model);
             }
             break;
             
@@ -174,21 +170,9 @@ void controller_execute_command(Controller* controller, Command cmd) {
             
         case CMD_RESET_GAME:
             if (controller->model->state == STATE_GAME_OVER ||
-                controller->model->state == STATE_PLAYING) {
+                controller->model->state == STATE_PLAYING ||
+                controller->model->state == STATE_WIN) {
                 model_reset_game(controller->model);
-            }
-            break;
-            
-        case CMD_UP:
-        case CMD_DOWN:
-        case CMD_CONFIRM:
-            /* Menu navigation logic */
-            break;
-            
-        case CMD_BACK:
-            if (controller->model->state == STATE_PLAYING ||
-                controller->model->state == STATE_PAUSED) {
-                model_set_state(controller->model, STATE_MENU);
             }
             break;
             
@@ -209,21 +193,15 @@ void controller_process_input(Controller* controller) {
     if (!controller || !controller->input_handler) return;
     
     Command cmd = CMD_NONE;
-    
-    /* Check for commands from input handler */
     if (input_handler_get_command(controller->input_handler, &cmd)) {
         controller_execute_command(controller, cmd);
     }
-    
-    /* Update input handler timing */
     input_handler_update(controller->input_handler, get_ticks());
 }
 
 void controller_handle_event(Controller* controller, InputEvent* event) {
     if (!controller || !event) return;
-    
     Command cmd = controller_translate_input(event);
-    
     if (cmd != CMD_NONE) {
         controller_execute_command(controller, cmd);
     }
@@ -232,7 +210,6 @@ void controller_handle_event(Controller* controller, InputEvent* event) {
 void controller_update(Controller* controller, float delta_time) {
     (void)delta_time;
     if (!controller) return;
-    
     controller->paused = (controller->model->state == STATE_PAUSED);
 }
 

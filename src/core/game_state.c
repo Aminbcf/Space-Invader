@@ -47,22 +47,13 @@ void game_context_update(GameContext* context) {
         case STATE_PLAYING:
             model_update(context->model, delta_time * context->time_scale);
             break;
-        case STATE_LEVEL_TRANSITION:
-            /* Wait 2 seconds before next level */
-            if (current_time > context->model->game_time + 2000) {
-                context->model->state = STATE_PLAYING;
-                context->model->game_time = current_time;
-                context->model->needs_redraw = true;
-            }
-            break;
+        // STATE_LEVEL_TRANSITION is now handled by Controller input, not timer
         default:
             break;
     }
 }
 
 void game_context_render(GameContext* context) {
-    /* This function just sets the redraw flag */
-    /* Actual rendering is done by the view */
     if (context->model->needs_redraw) {
         context->model->needs_redraw = false;
     }
