@@ -17,8 +17,8 @@ static void init_player(Player* player) {
     player->shots_fired = 0;
 }
 
-// Internal helper to just reset position without resetting score/lives
-static void reset_player_position(Player* player) {
+// Reset position ONLY (keeps score/lives)
+static void reset_player_pos(Player* player) {
     player->hitbox.x = (GAME_AREA_WIDTH / 2) - (PLAYER_WIDTH / 2);
     player->hitbox.y = SCREEN_HEIGHT - (PLAYER_HEIGHT + 20);
 }
@@ -56,15 +56,10 @@ static void init_invaders(InvaderGrid* invaders, int level) {
             invaders->invaders[i][j].row = i;
             invaders->invaders[i][j].col = j;
             
-            // Assign Types
-            if (i == 0) invaders->invaders[i][j].type = 2;
-            else if (i < 3) invaders->invaders[i][j].type = 1;
-            else invaders->invaders[i][j].type = 0;
-
-            // Points
-            if (i == 0) invaders->invaders[i][j].points = 30;
-            else if (i < 3) invaders->invaders[i][j].points = 20;
-            else invaders->invaders[i][j].points = 10;
+            // Types & Points
+            if (i == 0) { invaders->invaders[i][j].type = 2; invaders->invaders[i][j].points = 30; }
+            else if (i < 3) { invaders->invaders[i][j].type = 1; invaders->invaders[i][j].points = 20; }
+            else { invaders->invaders[i][j].type = 0; invaders->invaders[i][j].points = 10; }
         }
     }
 }
@@ -96,7 +91,7 @@ static void init_saucer(Saucer* saucer) {
     saucer->alive = false; saucer->direction = DIR_RIGHT; saucer->points = 0;
 }
 
-// --- Public Initialization ---
+// --- Public Init ---
 
 void model_init(GameModel* model) {
     memset(model, 0, sizeof(GameModel));
@@ -121,15 +116,15 @@ void model_reset_game(GameModel* model) {
 void model_next_level(GameModel* model) {
     model->player.level++;
     
-    // RESET POSITIONS: Fix for player not resetting
-    reset_player_position(&model->player);
+    // RESET POSITION (User Request)
+    reset_player_pos(&model->player);
     
     // Clear bullets
     init_bullets(model->player_bullets, PLAYER_BULLETS, true);
     init_bullets(model->enemy_bullets, ENEMY_BULLETS, false);
     
     if (model->player.level == 4) {
-        // Level 4 is Boss Fight
+        // Level 4: BOSS FIGHT
         init_boss(&model->boss);
         model->boss.alive = true;
         // Kill regular invaders
@@ -142,7 +137,7 @@ void model_next_level(GameModel* model) {
         return;
     }
     else {
-        // Standard levels
+        // Standard Level
         init_invaders(&model->invaders, model->player.level);
     }
     
@@ -150,13 +145,13 @@ void model_next_level(GameModel* model) {
     model->needs_redraw = true;
 }
 
-// --- Update Logic ---
+// --- Updates ---
 
 void model_update_boss(GameModel* model) {
     if (!model->boss.alive) return;
     Boss* boss = &model->boss;
     
-    // Move Boss
+    // Movement
     if (boss->direction == DIR_RIGHT) {
         boss->hitbox.x += boss->speed;
         if (boss->hitbox.x + boss->hitbox.width >= GAME_AREA_WIDTH) boss->direction = DIR_LEFT;
@@ -165,7 +160,7 @@ void model_update_boss(GameModel* model) {
         if (boss->hitbox.x <= 0) boss->direction = DIR_RIGHT;
     }
     
-    // Boss Shooting
+    // Shooting
     boss->shoot_timer++;
     if (boss->shoot_timer > 30) {
         boss->shoot_timer = 0;
@@ -257,7 +252,7 @@ void model_update(GameModel* model, float delta_time) {
     model_check_player_invader_collision(model);
     model_check_invader_base_collisions(model);
     
-    // Enemy Shooting
+    // Enemy Shooting (only levels 1-3)
     if (model->player.level != 4 && (rand() % model->invaders.shoot_chance == 0)) {
         int col = rand() % INVADER_COLS;
         for (int row = INVADER_ROWS - 1; row >= 0; row--) {
@@ -276,7 +271,7 @@ void model_update(GameModel* model, float delta_time) {
         }
     }
 
-    // Saucer Spawning: Approx 1 in 1200 frames
+    // Saucer
     if (!model->saucer.alive && model->state == STATE_PLAYING) {
         if (rand() % 1200 == 0) {
             model->saucer.alive = true;
@@ -288,7 +283,7 @@ void model_update(GameModel* model, float delta_time) {
 }
 
 void model_move_player(GameModel* model, Direction dir) {
-    int speed = 12; // Increased Speed
+    int speed = 15; 
     if (dir == DIR_LEFT && model->player.hitbox.x > 0) 
         model->player.hitbox.x -= speed;
     if (dir == DIR_RIGHT && model->player.hitbox.x < GAME_AREA_WIDTH - PLAYER_WIDTH) 

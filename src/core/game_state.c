@@ -47,7 +47,7 @@ void game_context_update(GameContext* context) {
         case STATE_PLAYING:
             model_update(context->model, delta_time * context->time_scale);
             break;
-        // STATE_LEVEL_TRANSITION is now handled by Controller input, not timer
+        /* FIXED: No timer based transition here. Controller handles keypress */
         default:
             break;
     }

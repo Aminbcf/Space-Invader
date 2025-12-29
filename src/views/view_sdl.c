@@ -3,6 +3,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
+
+// Includes for SDL3
+#include <SDL3/SDL.h>
+#include <SDL3_image/SDL_image.h>
+#include <SDL3_ttf/SDL_ttf.h>
+
+/* --- Color Constants --- */
+#define COLOR_DARK_SPACE 5, 10, 25, 255
+#define COLOR_SPACE_BG 10, 15, 30, 255
+#define COLOR_HUD_BG 20, 25, 45, 220
+#define COLOR_HUD_BORDER 80, 180, 220, 255
+#define COLOR_PLAYER 0, 200, 255, 255
+#define COLOR_ENEMY 255, 80, 100, 255
+#define COLOR_BULLET_PLAYER 0, 255, 200, 255
+#define COLOR_BULLET_ENEMY 255, 150, 50, 255
+#define COLOR_EXPLOSION 255, 180, 50, 255
+#define COLOR_TEXT_HIGHLIGHT 0, 255, 200, 255
+#define COLOR_TEXT_PRIMARY 220, 240, 255, 255
+#define COLOR_TEXT_SECONDARY 255, 200, 100, 255
 
 /* --- Fallback Font --- */
 void draw_fallback_text(SDLView* view, const char* text, int x, int y, uint8_t r, uint8_t g, uint8_t b) {
@@ -10,9 +30,9 @@ void draw_fallback_text(SDLView* view, const char* text, int x, int y, uint8_t r
     SDL_SetRenderDrawColor(view->renderer, r, g, b, 255);
     int cursor = x;
     for(int i=0; text[i]; i++) {
-        SDL_FRect rect = {(float)cursor, (float)y, 10.0f, 14.0f};
+        SDL_FRect rect = {(float)cursor, (float)y, 8.0f, 12.0f};
         SDL_RenderFillRect(view->renderer, &rect);
-        cursor += 12;
+        cursor += 10;
     }
 }
 
@@ -20,12 +40,19 @@ void draw_fallback_text(SDLView* view, const char* text, int x, int y, uint8_t r
 
 SDLView* sdl_view_create(void) {
     SDLView* view = malloc(sizeof(SDLView));
-    if(view) memset(view, 0, sizeof(SDLView));
+    if(view) {
+        memset(view, 0, sizeof(SDLView));
+        view->last_frame_time = SDL_GetTicks();
+        view->frame_count = 0;
+        view->fps = 0;
+    }
     return view;
 }
 
 void sdl_view_destroy(SDLView* view) {
     if (!view) return;
+    
+    // Textures
     if(view->player_tex) SDL_DestroyTexture(view->player_tex);
     if(view->boss_tex) SDL_DestroyTexture(view->boss_tex);
     if(view->explosion_tex) SDL_DestroyTexture(view->explosion_tex);
@@ -40,8 +67,11 @@ void sdl_view_destroy(SDLView* view) {
         }
     }
     
+    // Fonts
     if(view->font_large) TTF_CloseFont(view->font_large);
     if(view->font_small) TTF_CloseFont(view->font_small);
+    
+    // SDL Core
     if(view->renderer) SDL_DestroyRenderer(view->renderer);
     if(view->window) SDL_DestroyWindow(view->window);
     
@@ -51,57 +81,116 @@ void sdl_view_destroy(SDLView* view) {
 }
 
 bool sdl_view_load_resources(SDLView* view) {
-    const char* font_path = "fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf";
-    view->font_large = TTF_OpenFont(font_path, 48);
-    view->font_small = TTF_OpenFont(font_path, 24);
+    // 1. Fonts
+    const char* font_paths[] = {
+        "fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf",
+        "assets/font.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        NULL
+    };
     
-    if(!view->font_large) printf("Warning: Font not found at %s. Using fallback.\n", font_path);
-
-    #define LOAD(path, dest) { \
-        SDL_Surface* s = IMG_Load(path); \
-        if(s) { dest = SDL_CreateTextureFromSurface(view->renderer, s); SDL_DestroySurface(s); } \
-        else printf("Failed to load %s\n", path); \
+    for(int i = 0; font_paths[i]; i++) {
+        view->font_large = TTF_OpenFont(font_paths[i], 48);
+        if(view->font_large) {
+            view->font_small = TTF_OpenFont(font_paths[i], 18);
+            printf("Loaded font: %s\n", font_paths[i]);
+            break;
+        }
     }
 
-    LOAD("src/pictures/player.bmp", view->player_tex);
-    LOAD("src/pictures/boss.bmp", view->boss_tex);
-    LOAD("src/pictures/explosion.bmp", view->explosion_tex);
-    LOAD("src/pictures/bullet_player.bmp", view->bullet_player_tex);
-    LOAD("src/pictures/bullet_enemy.bmp", view->bullet_enemy_tex);
-    LOAD("src/pictures/saucer.bmp", view->saucer_tex);
-    LOAD("Oldassets/damage.bmp", view->damage_tex);
+    // 2. Textures
+    #define LOAD_TEXTURE(path, dest) { \
+        SDL_Surface* s = IMG_Load(path); \
+        if(s) { \
+            dest = SDL_CreateTextureFromSurface(view->renderer, s); \
+            SDL_DestroySurface(s); \
+            if(dest) { \
+                SDL_SetTextureScaleMode(dest, SDL_SCALEMODE_NEAREST); \
+                SDL_SetTextureBlendMode(dest, SDL_BLENDMODE_BLEND); \
+            } \
+        } \
+    }
+
+    // Load main sprites
+    LOAD_TEXTURE("src/pictures/player.bmp", view->player_tex);
+    LOAD_TEXTURE("src/pictures/boss.bmp", view->boss_tex);
+    LOAD_TEXTURE("src/pictures/explosion.bmp", view->explosion_tex);
+    LOAD_TEXTURE("src/pictures/bullet_player.bmp", view->bullet_player_tex);
+    LOAD_TEXTURE("src/pictures/bullet_enemy.bmp", view->bullet_enemy_tex);
+    LOAD_TEXTURE("src/pictures/saucer.bmp", view->saucer_tex);
     
-    LOAD("src/pictures/invader1_1.bmp", view->invader_tex[0][0]);
-    LOAD("src/pictures/invader1_2.bmp", view->invader_tex[0][1]);
-    LOAD("src/pictures/invader2_1.bmp", view->invader_tex[1][0]);
-    LOAD("src/pictures/invader2_2.bmp", view->invader_tex[1][1]);
-    LOAD("src/pictures/invader3_1.bmp", view->invader_tex[2][0]);
-    LOAD("src/pictures/invader3_2.bmp", view->invader_tex[2][1]);
+    // Load Invader Animation Frames
+    const char* invader_paths[3][2] = {
+        {"src/pictures/invader1_1.bmp", "src/pictures/invader1_2.bmp"},
+        {"src/pictures/invader2_1.bmp", "src/pictures/invader2_2.bmp"},
+        {"src/pictures/invader3_1.bmp", "src/pictures/invader3_2.bmp"}
+    };
+    
+    for(int i=0; i<3; i++) {
+        for(int j=0; j<2; j++) {
+            LOAD_TEXTURE(invader_paths[i][j], view->invader_tex[i][j]);
+        }
+    }
 
     return true;
 }
 
 bool sdl_view_init(SDLView* view, int width, int height) {
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) return false;
-    if (TTF_Init() < 0) return false;
+    // 1. Initialize SDL Video (SDL3 returns true on success!)
+    if (!SDL_Init(SDL_INIT_VIDEO)) {
+        fprintf(stderr, "ERROR: SDL_Init failed: %s\n", SDL_GetError());
+        return false;
+    }
+    
+    // 2. Initialize SDL TTF (SDL3 returns true on success!)
+    if (!TTF_Init()) {
+        fprintf(stderr, "ERROR: TTF_Init failed: %s\n", SDL_GetError());
+        SDL_Quit();
+        return false;
+    }
 
-    view->window = SDL_CreateWindow("Space Invaders", width, height, 0);
+    // 3. Create Window
+    view->window = SDL_CreateWindow("Space Invaders Ultimate", width, height, 0);
+    if (!view->window) {
+        fprintf(stderr, "ERROR: SDL_CreateWindow failed: %s\n", SDL_GetError());
+        TTF_Quit();
+        SDL_Quit();
+        return false;
+    }
+    
+    // 4. Create Renderer
     view->renderer = SDL_CreateRenderer(view->window, NULL);
+    if (!view->renderer) {
+        fprintf(stderr, "ERROR: SDL_CreateRenderer failed: %s\n", SDL_GetError());
+        SDL_DestroyWindow(view->window);
+        TTF_Quit();
+        SDL_Quit();
+        return false;
+    }
+    
+    // 5. Setup Blend Mode
+    SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
     view->width = width;
     view->height = height;
     
+    // 6. Load Resources
     sdl_view_load_resources(view);
     view->initialized = true;
+    
+    printf("SDL View Initialized Successfully (%dx%d)\n", width, height);
     return true;
 }
 
 bool sdl_view_poll_event(SDLView* view, SDL_Event* event) {
-    (void)view; 
+    (void)view;
     return SDL_PollEvent(event);
 }
 
 void draw_text(SDLView* view, const char* text, int x, int y, SDL_Color col) {
+    if(!view || !view->renderer) return;
+    
     if(view->font_small) {
+        // SDL3 TTF requires length, 0 means null-terminated
         SDL_Surface* s = TTF_RenderText_Blended(view->font_small, text, 0, col);
         if(s) {
             SDL_Texture* t = SDL_CreateTextureFromSurface(view->renderer, s);
@@ -116,6 +205,8 @@ void draw_text(SDLView* view, const char* text, int x, int y, SDL_Color col) {
 }
 
 void draw_text_centered(SDLView* view, const char* text, int y, SDL_Color col, bool large) {
+    if(!view || !view->renderer) return;
+    
     TTF_Font* font = large ? view->font_large : view->font_small;
     if(font) {
         SDL_Surface* s = TTF_RenderText_Blended(font, text, 0, col);
@@ -128,157 +219,217 @@ void draw_text_centered(SDLView* view, const char* text, int y, SDL_Color col, b
             SDL_DestroyTexture(t);
         }
     } else {
-        draw_fallback_text(view, text, (view->width - (int)strlen(text)*12)/2, y, col.r, col.g, col.b);
+        draw_fallback_text(view, text, (view->width - (int)strlen(text)*10)/2, y, col.r, col.g, col.b);
     }
 }
 
+void draw_particle_effect(SDLView* view, float x, float y, float size, Uint32 color) {
+    if(!view || !view->renderer) return;
+    
+    SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_ADD);
+    SDL_SetRenderDrawColor(view->renderer,
+        (color >> 16) & 0xFF, (color >> 8) & 0xFF, color & 0xFF, 100);
+    
+    for(int i = 0; i < 4; i++) {
+        float angle = (view->frame_count * 5 + i * 90) * 3.14159f / 180.0f;
+        float px = x + cosf(angle) * size * 0.5f;
+        float py = y + sinf(angle) * size * 0.5f;
+        SDL_FRect particle = {px - 1, py - 1, 2.0f, 2.0f};
+        SDL_RenderFillRect(view->renderer, &particle);
+    }
+    SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
+}
+
 void sdl_view_draw_hud(SDLView* view, const GameModel* model) {
-    SDL_SetRenderDrawColor(view->renderer, 20, 20, 20, 255);
+    // HUD Background
+    SDL_SetRenderDrawColor(view->renderer, 20, 25, 45, 220);
     SDL_FRect hud_bg = {600.0f, 0.0f, 200.0f, 600.0f};
     SDL_RenderFillRect(view->renderer, &hud_bg);
     
+    // Border
+    SDL_SetRenderDrawColor(view->renderer, 60, 100, 150, 255);
+    SDL_FRect border = {600.0f, 0.0f, 200.0f, 600.0f};
+    SDL_RenderRect(view->renderer, &border);
+    
     char buf[64];
-    SDL_Color white = {255,255,255,255};
+    SDL_Color title_col = {COLOR_TEXT_HIGHLIGHT};
+    SDL_Color val_col = {COLOR_TEXT_SECONDARY};
     
-    snprintf(buf, 64, "SCORE"); draw_text(view, buf, 620, 50, white);
-    snprintf(buf, 64, "%06d", model->player.score); draw_text(view, buf, 620, 80, white);
+    snprintf(buf, 64, "SCORE"); draw_text(view, buf, 620, 50, title_col);
+    snprintf(buf, 64, "%06d", model->player.score); draw_text(view, buf, 620, 80, val_col);
     
-    snprintf(buf, 64, "LEVEL"); draw_text(view, buf, 620, 150, white);
-    snprintf(buf, 64, "%d", model->player.level); draw_text(view, buf, 620, 180, white);
+    snprintf(buf, 64, "LEVEL"); draw_text(view, buf, 620, 150, title_col);
+    snprintf(buf, 64, "%d", model->player.level); draw_text(view, buf, 620, 180, val_col);
     
-    snprintf(buf, 64, "LIVES"); draw_text(view, buf, 620, 250, white);
-    for(int i=0; i<model->player.lives; i++) {
-        SDL_FRect life = { (float)(620 + i*35), 280.0f, 30.0f, 20.0f };
+    snprintf(buf, 64, "LIVES"); draw_text(view, buf, 620, 250, title_col);
+    for(int i = 0; i < model->player.lives && i < 5; i++) {
+        SDL_FRect life = {(float)(620 + i * 32), 280.0f, 28.0f, 20.0f};
         if(view->player_tex) SDL_RenderTexture(view->renderer, view->player_tex, NULL, &life);
-        else { SDL_SetRenderDrawColor(view->renderer, 0, 255, 255, 255); SDL_RenderFillRect(view->renderer, &life); }
+        else {
+            SDL_SetRenderDrawColor(view->renderer, COLOR_PLAYER);
+            SDL_RenderFillRect(view->renderer, &life);
+        }
     }
 }
 
 void sdl_view_render_game_scene(SDLView* view, const GameModel* model) {
-    // Draw Player
+    if(!view || !view->renderer || !model) return;
+    
+    // Draw space background
+    SDL_SetRenderDrawColor(view->renderer, COLOR_SPACE_BG);
+    SDL_FRect space_bg = {0.0f, 0.0f, 600.0f, 600.0f};
+    SDL_RenderFillRect(view->renderer, &space_bg);
+    
+    // Stars
+    SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, 100);
+    for(int i = 0; i < 50; i++) {
+        int seed = (i * 137) % 1000;
+        SDL_FRect star = {(float)((seed * 13) % 600), (float)((seed * 17) % 600), 2.0f, 2.0f};
+        SDL_RenderFillRect(view->renderer, &star);
+    }
+    
+    // Player
     SDL_FRect p_dst = {(float)model->player.hitbox.x, (float)model->player.hitbox.y, (float)model->player.hitbox.width, (float)model->player.hitbox.height};
     if(view->player_tex) SDL_RenderTexture(view->renderer, view->player_tex, NULL, &p_dst);
+    else { SDL_SetRenderDrawColor(view->renderer, COLOR_PLAYER); SDL_RenderFillRect(view->renderer, &p_dst); }
     
-    // Draw Bullets
+    // Bullets
     for(int i=0; i<PLAYER_BULLETS; i++) if(model->player_bullets[i].alive) {
         SDL_FRect b = {(float)model->player_bullets[i].hitbox.x, (float)model->player_bullets[i].hitbox.y, (float)model->player_bullets[i].hitbox.width, (float)model->player_bullets[i].hitbox.height};
         if(view->bullet_player_tex) SDL_RenderTexture(view->renderer, view->bullet_player_tex, NULL, &b);
+        else { SDL_SetRenderDrawColor(view->renderer, COLOR_BULLET_PLAYER); SDL_RenderFillRect(view->renderer, &b); }
     }
     for(int i=0; i<ENEMY_BULLETS; i++) if(model->enemy_bullets[i].alive) {
         SDL_FRect b = {(float)model->enemy_bullets[i].hitbox.x, (float)model->enemy_bullets[i].hitbox.y, (float)model->enemy_bullets[i].hitbox.width, (float)model->enemy_bullets[i].hitbox.height};
         if(view->bullet_enemy_tex) SDL_RenderTexture(view->renderer, view->bullet_enemy_tex, NULL, &b);
+        else { SDL_SetRenderDrawColor(view->renderer, COLOR_BULLET_ENEMY); SDL_RenderFillRect(view->renderer, &b); }
     }
 
-    // Draw Saucer
-    if (model->saucer.alive) {
+    // Saucer
+    if(model->saucer.alive) {
         SDL_FRect s_dst = {(float)model->saucer.hitbox.x, (float)model->saucer.hitbox.y, (float)model->saucer.hitbox.width, (float)model->saucer.hitbox.height};
         if(view->saucer_tex) SDL_RenderTexture(view->renderer, view->saucer_tex, NULL, &s_dst);
+        else { SDL_SetRenderDrawColor(view->renderer, 255, 150, 0, 255); SDL_RenderFillRect(view->renderer, &s_dst); }
     }
 
-    // Draw Boss (Level 4)
-    if (model->player.level == 4 && model->boss.alive) {
+    // Boss & Invaders
+    if(model->player.level == 4 && model->boss.alive) {
         SDL_FRect boss = {(float)model->boss.hitbox.x, (float)model->boss.hitbox.y, (float)model->boss.hitbox.width, (float)model->boss.hitbox.height};
         if(view->boss_tex) SDL_RenderTexture(view->renderer, view->boss_tex, NULL, &boss);
-        else { SDL_SetRenderDrawColor(view->renderer, 255, 0, 0, 255); SDL_RenderFillRect(view->renderer, &boss); }
+        else { SDL_SetRenderDrawColor(view->renderer, COLOR_ENEMY); SDL_RenderFillRect(view->renderer, &boss); }
         
-        // Health Bar
+        // Boss Health Bar
+        float pct = (float)model->boss.health / model->boss.max_health;
+        if(pct < 0) pct = 0;
         SDL_FRect bg = {150.0f, 10.0f, 300.0f, 20.0f};
         SDL_SetRenderDrawColor(view->renderer, 50, 0, 0, 255); SDL_RenderFillRect(view->renderer, &bg);
-        float pct = (float)model->boss.health / model->boss.max_health;
-        if (pct < 0) pct = 0;
         SDL_FRect fg = {150.0f, 10.0f, 300.0f * pct, 20.0f};
         SDL_SetRenderDrawColor(view->renderer, 255, 0, 0, 255); SDL_RenderFillRect(view->renderer, &fg);
-        draw_text(view, "BOSS", 150, 35, (SDL_Color){255,0,0,255});
-    }
-    else {
-        // Draw Invaders
-        for(int i=0; i<INVADER_ROWS; i++) {
-            for(int j=0; j<INVADER_COLS; j++) {
+        draw_text(view, "BOSS", 150, 35, (SDL_Color){255, 100, 100, 255});
+    } else {
+        for(int i = 0; i < INVADER_ROWS; i++) {
+            for(int j = 0; j < INVADER_COLS; j++) {
                 const Invader* inv = &model->invaders.invaders[i][j];
                 if(inv->alive) {
                     SDL_FRect idst = {(float)inv->hitbox.x, (float)inv->hitbox.y, (float)inv->hitbox.width, (float)inv->hitbox.height};
                     if(inv->dying_timer > 0) {
-                            if(view->explosion_tex) SDL_RenderTexture(view->renderer, view->explosion_tex, NULL, &idst);
-                            else { SDL_SetRenderDrawColor(view->renderer, 255, 128, 0, 255); SDL_RenderFillRect(view->renderer, &idst); }
+                        if(view->explosion_tex) SDL_RenderTexture(view->renderer, view->explosion_tex, NULL, &idst);
+                        else { SDL_SetRenderDrawColor(view->renderer, COLOR_EXPLOSION); SDL_RenderFillRect(view->renderer, &idst); }
+                        draw_particle_effect(view, idst.x+15, idst.y+15, 10, 0xFFAA00);
                     } else {
                         if(view->invader_tex[inv->type][model->invaders.state])
                             SDL_RenderTexture(view->renderer, view->invader_tex[inv->type][model->invaders.state], NULL, &idst);
-                        else { SDL_SetRenderDrawColor(view->renderer, 0, 255, 0, 255); SDL_RenderFillRect(view->renderer, &idst); }
+                        else {
+                            SDL_SetRenderDrawColor(view->renderer, 0, 255, 0, 255);
+                            SDL_RenderFillRect(view->renderer, &idst);
+                        }
                     }
                 }
             }
         }
     }
+    
     sdl_view_draw_hud(view, model);
 }
 
 void sdl_view_render(SDLView* view, const GameModel* model) {
-    if (!view || !view->renderer) return;
-
-    SDL_SetRenderDrawColor(view->renderer, 0, 0, 0, 255);
+    if(!view || !view->renderer || !model) return;
+    
+    SDL_SetRenderDrawColor(view->renderer, COLOR_DARK_SPACE);
     SDL_RenderClear(view->renderer);
-
-    if (model->state == STATE_MENU) {
-        // Updated Menu Design
-        draw_text_centered(view, "SPACE INVADERS", 150, (SDL_Color){0, 255, 0, 255}, true);
-        draw_text_centered(view, "by Amine Boucif", 210, (SDL_Color){0, 255, 255, 255}, false);
-        
-        draw_text_centered(view, "Press SPACE to Start", 300, (SDL_Color){255, 255, 255, 255}, false);
-        
-        // Controls Box
-        int box_w = 400;
-        int box_h = 200;
-        int box_x = (view->width - box_w) / 2;
-        int box_y = 350;
-        
-        // Semi-transparent background
-        SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
-        SDL_SetRenderDrawColor(view->renderer, 30, 30, 30, 200);
-        SDL_FRect bg = {(float)box_x, (float)box_y, (float)box_w, (float)box_h};
-        SDL_RenderFillRect(view->renderer, &bg);
-        
-        // Border
-        SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, 255);
-        SDL_RenderRect(view->renderer, &bg);
-        
-        // Controls Text
-        SDL_Color yellow = {255, 255, 0, 255};
-        draw_text(view, "CONTROLS:", box_x + 20, box_y + 20, yellow);
-        draw_text(view, "WASD / ARROWS : Move", box_x + 40, box_y + 60, yellow);
-        draw_text(view, "SPACE : Shoot", box_x + 40, box_y + 90, yellow);
-        draw_text(view, "P : Pause", box_x + 40, box_y + 120, yellow);
-        draw_text(view, "R : Reset (Game Over)", box_x + 40, box_y + 150, yellow);
-    }
-    else if (model->state == STATE_WIN) {
-        draw_text_centered(view, "YOU DEFEATED THE INVADERS!", 250, (SDL_Color){0, 255, 0, 255}, true);
-        char buf[64]; snprintf(buf, 64, "Final Score: %d", model->player.score);
-        draw_text_centered(view, buf, 320, (SDL_Color){255, 255, 255, 255}, false);
-    }
-    else if (model->state == STATE_LEVEL_TRANSITION) {
-        // SMOOTHER TRANSITION: Draw the game frozen, then overlay text
-        sdl_view_render_game_scene(view, model);
-        
-        SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
-        SDL_SetRenderDrawColor(view->renderer, 0, 0, 0, 150);
-        SDL_FRect overlay = {0, 0, (float)view->width, (float)view->height};
-        SDL_RenderFillRect(view->renderer, &overlay);
-        
-        char buf[32]; snprintf(buf, 32, "LEVEL %d", model->player.level);
-        draw_text_centered(view, buf, 280, (SDL_Color){0, 255, 0, 255}, true);
-        draw_text_centered(view, "PRESS SPACE", 350, (SDL_Color){255, 255, 255, 255}, false);
-    }
-    else {
-        // Standard Playing / Paused / Game Over
-        sdl_view_render_game_scene(view, model);
-        
-        if (model->state == STATE_GAME_OVER) {
-             draw_text_centered(view, "GAME OVER", 280, (SDL_Color){255, 0, 0, 255}, true);
-             draw_text_centered(view, "Press R to Restart", 350, (SDL_Color){255, 255, 255, 255}, false);
+    
+    switch(model->state) {
+        case STATE_MENU: {
+            // Enhanced Menu
+            for(int i=0; i<view->height; i++) {
+                SDL_SetRenderDrawColor(view->renderer, 10, 15 + i/20, 30 + i/10, 255);
+                SDL_FRect line = {0, (float)i, (float)view->width, 1};
+                SDL_RenderFillRect(view->renderer, &line);
+            }
+            draw_text_centered(view, "SPACE INVADERS", 150, (SDL_Color){COLOR_TEXT_HIGHLIGHT}, true);
+            draw_text_centered(view, "by Amine Boucif", 210, (SDL_Color){COLOR_TEXT_SECONDARY}, false);
+            draw_text_centered(view, "Press SPACE to Start", 300, (SDL_Color){COLOR_TEXT_PRIMARY}, false);
+            
+            // Controls Box
+            int box_x = (view->width - 400)/2;
+            SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
+            SDL_SetRenderDrawColor(view->renderer, 30, 30, 30, 200);
+            SDL_FRect bg = {(float)box_x, 350.0f, 400.0f, 200.0f};
+            SDL_RenderFillRect(view->renderer, &bg);
+            SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, 255);
+            SDL_RenderRect(view->renderer, &bg);
+            
+            SDL_Color yel = {255, 255, 0, 255};
+            draw_text(view, "CONTROLS:", box_x + 20, 370, yel);
+            draw_text(view, "WASD/ARROWS : Move", box_x + 40, 410, yel);
+            draw_text(view, "SPACE : Shoot", box_x + 40, 440, yel);
+            draw_text(view, "P : Pause", box_x + 40, 470, yel);
+            draw_text(view, "R : Reset", box_x + 40, 500, yel);
+            break;
         }
-        else if (model->state == STATE_PAUSED) {
-             draw_text_centered(view, "PAUSED", 300, (SDL_Color){255, 255, 255, 255}, true);
+        case STATE_LEVEL_TRANSITION: {
+            sdl_view_render_game_scene(view, model);
+            SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
+            SDL_SetRenderDrawColor(view->renderer, 0, 0, 0, 150);
+            SDL_FRect overlay = {0, 0, (float)view->width, (float)view->height};
+            SDL_RenderFillRect(view->renderer, &overlay);
+            
+            char buf[64]; snprintf(buf, 64, "LEVEL %d", model->player.level);
+            draw_text_centered(view, buf, 280, (SDL_Color){0, 255, 0, 255}, true);
+            draw_text_centered(view, "PRESS SPACE", 350, (SDL_Color){255, 255, 255, 255}, false);
+            break;
         }
+        case STATE_WIN: {
+            sdl_view_render_game_scene(view, model);
+            draw_text_centered(view, "MISSION ACCOMPLISHED!", 250, (SDL_Color){0, 255, 0, 255}, true);
+            char buf[64]; snprintf(buf, 64, "Final Score: %d", model->player.score);
+            draw_text_centered(view, buf, 320, (SDL_Color){255, 255, 255, 255}, false);
+            break;
+        }
+        case STATE_GAME_OVER: {
+            sdl_view_render_game_scene(view, model);
+            SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
+            SDL_SetRenderDrawColor(view->renderer, 50, 0, 0, 150);
+            SDL_FRect overlay = {0, 0, (float)view->width, (float)view->height};
+            SDL_RenderFillRect(view->renderer, &overlay);
+            draw_text_centered(view, "GAME OVER", 280, (SDL_Color){255, 0, 0, 255}, true);
+            draw_text_centered(view, "Press R to Restart", 350, (SDL_Color){255, 255, 255, 255}, false);
+            break;
+        }
+        case STATE_PAUSED: {
+            sdl_view_render_game_scene(view, model);
+            SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
+            SDL_SetRenderDrawColor(view->renderer, 0, 0, 0, 150);
+            SDL_FRect overlay = {0, 0, (float)view->width, (float)view->height};
+            SDL_RenderFillRect(view->renderer, &overlay);
+            draw_text_centered(view, "PAUSED", 300, (SDL_Color){255, 255, 255, 255}, true);
+            break;
+        }
+        default:
+            sdl_view_render_game_scene(view, model);
+            break;
     }
-
+    
     SDL_RenderPresent(view->renderer);
+    view->frame_count++;
 }

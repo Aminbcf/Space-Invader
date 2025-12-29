@@ -1,4 +1,4 @@
-/* tools/assets_gen.c */
+/* tools/assets_gen.c - Enhanced Version with Beautiful Detailed Sprites */
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -48,22 +48,51 @@ void write_bmp(const char* filename, int w, int h, const char* pattern) {
 
     uint8_t pad_bytes[3] = {0, 0, 0};
 
-    // Legend: . = Black, R=Red, G=Green, P=Purple, W=White, C=Cyan, Y=Yellow
-    // B = Boss Body, ! = Boss Core
+    // Enhanced Color Palette
     for (int y = h - 1; y >= 0; y--) {
         for (int x = 0; x < w; x++) {
             char p = pattern[y * w + x];
             uint8_t b = 0, g = 0, r = 0;
             switch(p) {
-                case 'W': r=255; g=255; b=255; break;
-                case 'R': r=255; g=0;   b=0;   break;
-                case 'G': r=0;   g=255; b=0;   break;
-                case 'P': r=128; g=0;   b=128; break;
-                case 'C': r=0;   g=255; b=255; break;
-                case 'Y': r=255; g=255; b=0;   break;
-                case 'O': r=255; g=165; b=0;   break; // Explosion
-                case 'B': r=139; g=0;   b=0;   break; // Boss Dark
-                case '!': r=255; g=50;  b=50;  break; // Boss Light
+                // Base colors
+                case '.': r=0;   g=0;   b=0;   break; // Black/Transparent
+                case 'W': r=255; g=255; b=255; break; // White
+                case 'K': r=50;  g=50;  b=50;  break; // Dark Gray
+                case 'k': r=100; g=100; b=100; break; // Light Gray
+                
+                // Cyan (Player ship - gradient)
+                case 'C': r=0;   g=255; b=255; break; // Bright Cyan
+                case 'c': r=0;   g=200; b=200; break; // Medium Cyan
+                case 'd': r=0;   g=150; b=150; break; // Dark Cyan
+                case 'e': r=0;   g=100; b=100; break; // Darker Cyan
+                
+                // Purple (Squid - gradient)
+                case 'P': r=200; g=50;  b=255; break; // Bright Purple
+                case 'p': r=150; g=30;  b=200; break; // Medium Purple
+                case 'q': r=100; g=20;  b=150; break; // Dark Purple
+                
+                // Green (Crab - gradient)
+                case 'G': r=50;  g=255; b=50;  break; // Bright Green
+                case 'g': r=30;  g=200; b=30;  break; // Medium Green
+                case 'h': r=20;  g=150; b=20;  break; // Dark Green
+                
+                // Red (Octopus - gradient)
+                case 'R': r=255; g=50;  b=50;  break; // Bright Red
+                case 'r': r=200; g=30;  b=30;  break; // Medium Red
+                case 's': r=150; g=20;  b=20;  break; // Dark Red
+                
+                // Yellow/Orange (Explosion/Saucer)
+                case 'Y': r=255; g=255; b=0;   break; // Yellow
+                case 'y': r=255; g=200; b=0;   break; // Golden
+                case 'O': r=255; g=150; b=0;   break; // Orange
+                case 'o': r=200; g=100; b=0;   break; // Dark Orange
+                
+                // Boss colors
+                case 'B': r=180; g=0;   b=0;   break; // Boss Dark Red
+                case 'b': r=120; g=0;   b=0;   break; // Boss Darker Red
+                case '!': r=255; g=80;  b=80;  break; // Boss Core Bright
+                case '@': r=255; g=120; b=120; break; // Boss Core Light
+                
                 default:  r=0;   g=0;   b=0;   break;
             }
             uint8_t pixel[3] = {b, g, r};
@@ -76,129 +105,205 @@ void write_bmp(const char* filename, int w, int h, const char* pattern) {
 }
 
 int main() {
-    // Player (15x10)
-    write_bmp("src/pictures/player.bmp", 15, 10,
-        ".......C......."
-        "......CCC......"
-        "......CCC......"
-        ".CCCCCCCCCCCCC."
-        "CCCCCCCCCCCCCCC"
-        "CCCCCCCCCCCCCCC"
-        "CCCCCCCCCCCCCCC"
-        "CCCCCCCCCCCCCCC"
-        "CCCCCCCCCCCCCCC"
-        "CCCCCCCCCCCCCCC"
+    // Enhanced Player Ship (20x14) - Sleek fighter design with gradient
+    write_bmp("pictures/player.bmp", 20, 14,
+        ".........CC........."
+        "........CCCC........"
+        ".......CCCCCC......."
+        "......CCCCCCcc......"
+        ".....CCCCCCcccc....."
+        "....CCCCCCccccdd...."
+        "...CCCCCCccccdddd..."
+        "CCCCCCCCCCccccddddCC"
+        "CCCCCCCCCCccccccccCC"
+        "CCCCCCCCccccccccccCC"
+        ".CCCCCCccccccccccC.."
+        "..CCCCccccccccddC..."
+        "...CCccccccdddd....."
+        "....CccccdddC......."
     );
 
-    // Invader 1 (Squid) - Purple
-    write_bmp("src/pictures/invader1_1.bmp", 11, 8,
-        "...PP.PP..."
-        "..PPPPPPP.."
-        ".PP.PPP.PP."
-        "PPPPPPPPPPP"
-        "P.PPPPPPP.P"
-        "P.P.....P.P"
-        "P.........P"
-        ".P.......P."
+    // Enhanced Invader 1 - Squid (16x12) - Frame 1
+    write_bmp("pictures/invader1_1.bmp", 16, 12,
+        ".....PPPP......."
+        "....PPPPPPp....."
+        "...PPPPPPPPpp..."
+        "..PPppPPPPppPP.."
+        ".PPppppPPppppPP."
+        "PPPPPPPPPPPPPPPq"
+        "PPPPPPPPPPPPPPPq"
+        "PPqq..PPPP..qqPP"
+        "Pqq..........qqP"
+        ".qq..........qq."
+        "..q..........q.."
+        "...q........q..."
     );
-    write_bmp("src/pictures/invader1_2.bmp", 11, 8,
-        "...PP.PP..."
-        "..PPPPPPP.."
-        ".PP.PPP.PP."
-        "PPPPPPPPPPP"
-        "P.PPPPPPP.P"
-        "P.P.....P.P"
-        ".P.......P."
-        "P.........P"
-    );
-
-    // Invader 2 (Crab) - Green
-    write_bmp("src/pictures/invader2_1.bmp", 11, 8,
-        "..G.....G.."
-        "...G...G..."
-        "..GGGGGGG.."
-        ".GG.GGG.GG."
-        "GGGGGGGGGGG"
-        "G.GGGGGGG.G"
-        "G.G.....G.G"
-        "...GG.GG..."
-    );
-    write_bmp("src/pictures/invader2_2.bmp", 11, 8,
-        "..G.....G.."
-        ".G.......G."
-        ".GGGGGGGGG."
-        "GG.GGG.GG.G"
-        "GGGGGGGGGGG"
-        ".GGGGGGGGG."
-        "..G.....G.."
-        ".G.......G."
+    
+    // Enhanced Invader 1 - Squid Frame 2
+    write_bmp("pictures/invader1_2.bmp", 16, 12,
+        ".....PPPP......."
+        "....PPPPPPp....."
+        "...PPPPPPPPpp..."
+        "..PPppPPPPppPP.."
+        ".PPppppPPppppPP."
+        "PPPPPPPPPPPPPPPq"
+        "PPPPPPPPPPPPPPPq"
+        "PPqq..PPPP..qqPP"
+        "Pqq..........qqP"
+        "q..............q"
+        "q..............q"
+        ".q............q."
     );
 
-    // Invader 3 (Octopus) - Red
-    write_bmp("src/pictures/invader3_1.bmp", 11, 8,
-        "....RRRR..."
-        ".RRRRRRRRRR"
-        "RRR.RRR.RRR"
-        "RRRRRRRRRRR"
-        "..RRRRRRR.."
-        ".RR.R.R.RR."
-        "RR.......RR"
-        "..........."
+    // Enhanced Invader 2 - Crab (16x12) - Frame 1
+    write_bmp("pictures/invader2_1.bmp", 16, 12,
+        "...GG....GG....."
+        "....GG..GG......"
+        "...GGGGGGGGg...."
+        "..GGggGGGGggGG.."
+        ".GGggggGGggggGGh"
+        "GGGGGGGGGGGGGGGh"
+        "GhGGGGGGGGGGGGhG"
+        "GhGhGGGGGGGGhGhG"
+        "GhhG........Ghhh"
+        ".hh..........hh."
+        "hh............hh"
+        "h..............h"
     );
-    write_bmp("src/pictures/invader3_2.bmp", 11, 8,
-        "....RRRR..."
-        ".RRRRRRRRRR"
-        "RRR.RRR.RRR"
-        "RRRRRRRRRRR"
-        "..RRRRRRR.."
-        "..RR...RR.."
-        "..RR...RR.."
-        "..........."
-    );
-
-    // Boss
-    write_bmp("src/pictures/boss.bmp", 24, 12,
-        "........BBBBBBBB........"
-        "......BBBBBBBBBBBB......"
-        "....BBBBBBBBBBBBBBBB...."
-        "...BBBBBBBBBBBBBBBBBB..."
-        "..BBBB!!!!!!!!!!!!BBBB.."
-        ".BBBBB!!!!!!!!!!!!BBBBB."
-        ".BBBBBBBBBBBBBBBBBBBBBB."
-        ".BBBB.BBBBBBBBBBBB.BBBB."
-        ".BBB...BBBBBBBBBB...BBB."
-        ".......BB.BB.BB........."
-        "......BB..BB..BB........"
-        ".....BB...BB...BB......."
+    
+    // Enhanced Invader 2 - Crab Frame 2
+    write_bmp("pictures/invader2_2.bmp", 16, 12,
+        "...GG....GG....."
+        "....GG..GG......"
+        "...GGGGGGGGg...."
+        "..GGggGGGGggGG.."
+        ".GGggggGGggggGGh"
+        "GGGGGGGGGGGGGGGh"
+        "GhGGGGGGGGGGGGhG"
+        "GhGhGGGGGGGGhGhG"
+        "GhhG........Ghhh"
+        "h..............h"
+        "hh............hh"
+        ".h............h."
     );
 
-    // Explosion
-    write_bmp("src/pictures/explosion.bmp", 12, 8,
-        "...O....O..."
-        ".O..O..O..O."
-        "..O..OO..O.."
-        "OOOOOOOOOOOO"
-        "OOOOOOOOOOOO"
-        "..O..OO..O.."
-        ".O..O..O..O."
-        "...O....O..."
-    );
-
-    // Bullets
-    write_bmp("src/pictures/bullet_player.bmp", 3, 6, ".W..W..W..W..W..W.");
-    write_bmp("src/pictures/bullet_enemy.bmp", 3, 6, ".Y.Y.Y.Y.Y.Y.Y.Y.Y");
-
-    // Saucer
-    write_bmp("src/pictures/saucer.bmp", 16, 7,
+    // Enhanced Invader 3 - Octopus (16x12) - Frame 1
+    write_bmp("pictures/invader3_1.bmp", 16, 12,
         ".....RRRRRR....."
-        "...RRRRRRRRRR..."
-        "..RRRRRRRRRRRR.."
-        ".RR.RR.RR.RR.RR."
-        "RRRRRRRRRRRRRRRR"
-        "..RRR......RRR.."
-        "....R......R...."
+        "....RRRRRRRRr..."
+        "...RRrrRRRRrrRR."
+        "..RRrrrrRRrrrrRR"
+        ".RRRRRRRRRRRRRRRs"
+        "RRRRRRRRRRRRRRRRs"
+        "RsRRRRRRRRRRRRsR"
+        "RssRR......RRssR"
+        "Rsss..RR..RR.sss"
+        ".ss..RRRRRR..ss."
+        ".s.RR......RR.s."
+        "...R........R..."
+    );
+    
+    // Enhanced Invader 3 - Octopus Frame 2
+    write_bmp("pictures/invader3_2.bmp", 16, 12,
+        ".....RRRRRR....."
+        "....RRRRRRRRr..."
+        "...RRrrRRRRrrRR."
+        "..RRrrrrRRrrrrRR"
+        ".RRRRRRRRRRRRRRRs"
+        "RRRRRRRRRRRRRRRRs"
+        "RsRRRRRRRRRRRRsR"
+        "RssRR......RRssR"
+        "Rsss..RR..RR.sss"
+        "R..RR......RR..s"
+        "R.R..........R.s"
+        "..R..........R.."
     );
 
-    printf("Assets generation complete in src/pictures/\n");
+    // Enhanced Boss (32x16) - Massive detailed design
+    write_bmp("pictures/boss.bmp", 32, 16,
+        "..........BBBBBBBBBBBB.........."
+        ".........BBBBBBBBBBBBBBb........"
+        "........BBBBBBBBBBBBBBBBBB......"
+        ".......BBBBBBBBBBBBBBBBBBBB....."
+        "......BBBBb!!!!!!!!!!!!!bBBBB..."
+        ".....BBBBbb!!!@@@@@@@@!!!bbBBBB."
+        "....BBBBbbb!!!@@@@@@@@!!!bbbBBBB"
+        "...BBBBBBbb!!!!!!!!!!!!!bbBBBBBB"
+        "...BBBBBBBBBBBBBBBBBBBBBBBBBBBBb"
+        "..BBBBBBBBBBBBBBBBBBBBBBBBBBBBBb"
+        "..BBBb..bBBBBBBBBBBBBBBBBb..bBBB"
+        "..BBb....bBBBBBBBBBBBBBBb....bBB"
+        "..Bb......BBBBBBBBBBBBBb......bB"
+        "...........BB..BB..BB..........."
+        "..........BB..BB..BB............"
+        ".........BB..BB..BB............."
+    );
+
+    // Enhanced Explosion (16x16) - More dramatic
+    write_bmp("pictures/explosion.bmp", 16, 16,
+        "...Y....O...O..."
+        "..YYY..OOO.OOO.."
+        ".Y.YYY.OOoOOOo.."
+        ".YYYyYYOOOOOOoo."
+        "Y.YyyyyOOOooooO."
+        "YYYyyyyOooooooOO"
+        ".YyyyyooooooOOOo"
+        "..YyyoooooooOOo."
+        "..YyyoooooooOOo."
+        ".YyyyyooooooOOOo"
+        "YYYyyyyOooooooOO"
+        "Y.YyyyyOOOooooO."
+        ".YYYyYYOOOOOOoo."
+        ".Y.YYY.OOoOOOo.."
+        "..YYY..OOO.OOO.."
+        "...Y....O...O..."
+    );
+
+    // Enhanced Player Bullet (4x8) - Bright energy beam
+    write_bmp("pictures/bullet_player.bmp", 4, 8,
+        ".CC."
+        "CCCC"
+        "CCCC"
+        "CCCC"
+        "CCCC"
+        "CCCC"
+        "CCCC"
+        ".CC."
+    );
+    
+    // Enhanced Enemy Bullet (4x8) - Yellow/orange energy
+    write_bmp("pictures/bullet_enemy.bmp", 4, 8,
+        ".YY."
+        "YYYY"
+        "YYyy"
+        "YYyy"
+        "YYyy"
+        "YYyy"
+        "YYYY"
+        ".YY."
+    );
+
+    // Enhanced Saucer (20x10) - UFO with more detail
+    write_bmp("pictures/saucer.bmp", 20, 10,
+        "........RRRR........"
+        ".......RRRRRRr......"
+        "......RRrrRRrrR....."
+        ".....RRRRRRRRRRRr..."
+        "....RRrrrrRRrrrrRR.."
+        "...RR.rr.RR.RR.rr.RR"
+        "..RRRRRRRRRRRRRRRRRr"
+        "..RRRRRRRRRRRRRRRRRr"
+        "...RRRRr....rRRRRr.."
+        ".....RR......RR....."
+    );
+
+    printf("\n=================================\n");
+    printf("Enhanced assets generated!\n");
+    printf("All sprites now have:\n");
+    printf("- Gradient shading\n");
+    printf("- More detail and depth\n");
+    printf("- Larger dimensions\n");
+    printf("- Better visual quality\n");
+    printf("=================================\n");
     return 0;
 }

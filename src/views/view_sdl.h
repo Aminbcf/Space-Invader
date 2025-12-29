@@ -7,27 +7,32 @@
 #include "../core/model.h"
 #include <stdbool.h>
 
-typedef struct {
+// view_sdl.h - add these to your SDLView struct
+typedef struct SDLView {
     SDL_Window* window;
     SDL_Renderer* renderer;
+    bool initialized;
+    int width;
+    int height;
     
     // Textures
     SDL_Texture* player_tex;
-    SDL_Texture* invader_tex[3][2]; // 3 Types, 2 Animation Frames
-    SDL_Texture* explosion_tex;
     SDL_Texture* boss_tex;
+    SDL_Texture* explosion_tex;
     SDL_Texture* bullet_player_tex;
     SDL_Texture* bullet_enemy_tex;
     SDL_Texture* saucer_tex;
-    SDL_Texture* damage_tex; // From Oldassets
+    SDL_Texture* damage_tex;
+    SDL_Texture* invader_tex[3][2];
     
     // Fonts
     TTF_Font* font_large;
     TTF_Font* font_small;
     
-    int width, height;
-    bool initialized;
-    uint32_t last_frame_time;
+    // Timing
+    Uint32 frame_count;
+    Uint32 fps;
+    Uint32 last_frame_time;
 } SDLView;
 
 SDLView* sdl_view_create(void);
