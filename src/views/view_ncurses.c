@@ -8,6 +8,7 @@
 // Helper function to convert pixel coordinates to grid coordinates
 int ncurses_scale_x(int pixel_x) {
     // Convert pixel X to character X within game area
+    // Scale: 600px / 60 chars = 10 pixels per char
     int char_x = pixel_x / CHAR_SCALE_X;
     if (char_x < 0) char_x = 0;
     if (char_x >= NCURSES_GAME_WIDTH) char_x = NCURSES_GAME_WIDTH - 1;
@@ -16,6 +17,7 @@ int ncurses_scale_x(int pixel_x) {
 
 int ncurses_scale_y(int pixel_y) {
     // Convert pixel Y to character Y within game area
+    // Scale: 600px / 20 chars = 30 pixels per char
     int char_y = pixel_y / CHAR_SCALE_Y;
     if (char_y < 0) char_y = 0;
     if (char_y >= NCURSES_GAME_HEIGHT) char_y = NCURSES_GAME_HEIGHT - 1;
@@ -120,46 +122,62 @@ bool ncurses_view_load_resources(NcursesView* view) {
 static void ncurses_draw_player(NcursesView* view, const GameModel* model) {
     int x = view->game_start_x + ncurses_scale_x(model->player.hitbox.x);
     int y = view->game_start_y + ncurses_scale_y(model->player.hitbox.y);
+    
+    // Draw simple shape
     mvaddch(y, x, '^');
+    if (x > view->game_start_x) mvaddch(y, x-1, '<');
+    if (x < view->game_start_x + NCURSES_GAME_WIDTH - 1) mvaddch(y, x+1, '>');
 }
 
 // Draw aliens
 static void ncurses_draw_aliens(NcursesView* view, const GameModel* model) {
+    if (model->player.level == 4) return; // Don't draw aliens during boss fight
+
     for (int i = 0; i < INVADER_ROWS; ++i) {
         for (int j = 0; j < INVADER_COLS; ++j) {
             const Invader* inv = &model->invaders.invaders[i][j];
-            if (inv->alive) {
+            if (inv->alive && inv->dying_timer == 0) {
                 int x = view->game_start_x + ncurses_scale_x(inv->hitbox.x);
                 int y = view->game_start_y + ncurses_scale_y(inv->hitbox.y);
                 // Different characters for different invader types
                 char c = '#';
-                if (inv->row == 0) c = 'O';  // Top row
-                else if (inv->row < 3) c = 'M'; // Middle rows
-                else c = 'V'; // Bottom rows
+                if (inv->row == 0) c = 'Y';  // Top row (Squid/Octopus)
+                else if (inv->row < 3) c = 'X'; // Middle rows
+                else c = 'W'; // Bottom rows
                 mvaddch(y, x, c);
+            } else if (inv->alive && inv->dying_timer > 0) {
+                // Explosion
+                int x = view->game_start_x + ncurses_scale_x(inv->hitbox.x);
+                int y = view->game_start_y + ncurses_scale_y(inv->hitbox.y);
+                mvaddch(y, x, '*');
             }
         }
     }
 }
 
-// Draw bases
-static void ncurses_draw_bases(NcursesView* view, const GameModel* model) {
-    for (int i = 0; i < BASE_COUNT; ++i) {
-        const Base* base = &model->bases[i];
-        if (base->alive) {
-            int x = view->game_start_x + ncurses_scale_x(base->hitbox.x);
-            int y = view->game_start_y + ncurses_scale_y(base->hitbox.y);
-            // Draw base as a block of characters
-            for (int dx = 0; dx < 3; dx++) {
-                for (int dy = 0; dy < 2; dy++) {
-                    if (x + dx < view->game_start_x + NCURSES_GAME_WIDTH &&
-                        y + dy < view->game_start_y + NCURSES_GAME_HEIGHT) {
-                        mvaddch(y + dy, x + dx, '#');
-                    }
-                }
-            }
-        }
-    }
+// Draw Boss (NEW)
+static void ncurses_draw_boss(NcursesView* view, const GameModel* model) {
+    if (!model->boss.alive) return;
+
+    int x = view->game_start_x + ncurses_scale_x(model->boss.hitbox.x);
+    int y = view->game_start_y + ncurses_scale_y(model->boss.hitbox.y);
+    
+    // Map bounds check
+    if (x < view->game_start_x) x = view->game_start_x;
+    if (x > view->game_start_x + NCURSES_GAME_WIDTH - 9) x = view->game_start_x + NCURSES_GAME_WIDTH - 9;
+
+    // Draw Boss ASCII Art (approx 9 chars wide)
+    // Line 1
+    if (y >= view->game_start_y && y < view->game_start_y + NCURSES_GAME_HEIGHT)
+        mvprintw(y, x,   " /=======\\ ");
+    
+    // Line 2
+    if (y+1 >= view->game_start_y && y+1 < view->game_start_y + NCURSES_GAME_HEIGHT)
+        mvprintw(y+1, x, "<( O X O )>");
+        
+    // Line 3
+    if (y+2 >= view->game_start_y && y+2 < view->game_start_y + NCURSES_GAME_HEIGHT)
+        mvprintw(y+2, x, " \\^^^^^^^/ ");
 }
 
 // Draw saucer
@@ -167,24 +185,30 @@ static void ncurses_draw_saucer(NcursesView* view, const GameModel* model) {
     if (model->saucer.alive) {
         int x = view->game_start_x + ncurses_scale_x(model->saucer.hitbox.x);
         int y = view->game_start_y + ncurses_scale_y(model->saucer.hitbox.y);
-        mvaddch(y, x, '@');
+        
+        if (x >= view->game_start_x && x < view->game_start_x + NCURSES_GAME_WIDTH)
+            mvprintw(y, x, "<@>");
     }
 }
 
 // Draw bullets
 static void ncurses_draw_bullets(NcursesView* view, const GameModel* model) {
+    // Player bullets
     for (int i = 0; i < PLAYER_BULLETS; ++i) {
         if (model->player_bullets[i].alive) {
             int x = view->game_start_x + ncurses_scale_x(model->player_bullets[i].hitbox.x);
             int y = view->game_start_y + ncurses_scale_y(model->player_bullets[i].hitbox.y);
-            mvaddch(y, x, '|');
+            if (y >= view->game_start_y && y < view->game_start_y + NCURSES_GAME_HEIGHT)
+                mvaddch(y, x, '|');
         }
     }
+    // Enemy bullets
     for (int i = 0; i < ENEMY_BULLETS; ++i) {
         if (model->enemy_bullets[i].alive) {
             int x = view->game_start_x + ncurses_scale_x(model->enemy_bullets[i].hitbox.x);
             int y = view->game_start_y + ncurses_scale_y(model->enemy_bullets[i].hitbox.y);
-            mvaddch(y, x, 'o');
+            if (y >= view->game_start_y && y < view->game_start_y + NCURSES_GAME_HEIGHT)
+                mvaddch(y, x, '*'); // Changed to '*' for better visibility
         }
     }
 }
@@ -213,12 +237,28 @@ static void ncurses_draw_hud(NcursesView* view, const GameModel* model) {
     mvprintw(score_y + 6, score_x, "HIGH: %d", model->high_score);
     
     // Controls help
-    mvprintw(score_y + 10, score_x, "CONTROLS:");
-    mvprintw(score_y + 11, score_x, "A/D: Move");
-    mvprintw(score_y + 12, score_x, "SPACE: Shoot");
-    mvprintw(score_y + 13, score_x, "P: Pause");
-    mvprintw(score_y + 14, score_x, "R: Restart");
-    mvprintw(score_y + 15, score_x, "Q: Quit");
+    mvprintw(score_y + 9, score_x, "CONTROLS:");
+    mvprintw(score_y + 10, score_x, "ARROWS: Move");
+    mvprintw(score_y + 11, score_x, "SPACE: Shoot");
+    mvprintw(score_y + 12, score_x, "P: Pause");
+    mvprintw(score_y + 13, score_x, "R: Restart");
+    mvprintw(score_y + 14, score_x, "Q: Quit");
+
+    // Boss Health Bar (Only in Level 4)
+    if (model->player.level == 4 && model->boss.alive) {
+        mvprintw(score_y + 16, score_x, "BOSS HP:");
+        mvprintw(score_y + 17, score_x, "[");
+        
+        int bars = (model->boss.health * 10) / model->boss.max_health;
+        if (bars < 0) bars = 0;
+        if (bars > 10) bars = 10;
+        
+        for(int i=0; i<10; i++) {
+            if (i < bars) addch('=');
+            else addch(' ');
+        }
+        addch(']');
+    }
 }
 
 void ncurses_view_render_game(NcursesView* view, const GameModel* model) {
@@ -229,8 +269,13 @@ void ncurses_view_render_game(NcursesView* view, const GameModel* model) {
     
     // Draw game elements
     ncurses_draw_player(view, model);
-    ncurses_draw_aliens(view, model);
-    //ncurses_draw_bases(view, model);
+    
+    if (model->player.level == 4) {
+        ncurses_draw_boss(view, model);
+    } else {
+        ncurses_draw_aliens(view, model);
+    }
+    
     ncurses_draw_saucer(view, model);
     ncurses_draw_bullets(view, model);
     ncurses_draw_hud(view, model);
@@ -256,12 +301,16 @@ void ncurses_view_render(NcursesView* view, const GameModel* model) {
             ncurses_view_render_game(view, model);
             ncurses_view_render_game_over(view, 0);
             break;
+        case STATE_WIN:
+            ncurses_view_render_game(view, model);
+            ncurses_view_render_game_over(view, 1);
+            break;
         case STATE_LEVEL_TRANSITION:
             ncurses_view_render_game(view, model);
             // Show level transition message
             mvprintw(view->game_start_y + NCURSES_GAME_HEIGHT/2,
-                    view->game_start_x + (NCURSES_GAME_WIDTH/2) - 8,
-                    "LEVEL %d", model->player.level);
+                    view->game_start_x + (NCURSES_GAME_WIDTH/2) - 10,
+                    "LEVEL %d - PRESS SPACE", model->player.level);
             refresh();
             break;
         default:
@@ -276,30 +325,21 @@ void ncurses_view_render_menu(NcursesView* view, const GameModel* model) {
     int center_x = view->width / 2;
     int center_y = view->height / 2;
     
-    mvprintw(center_y - 3, center_x - 7, "SPACE INVADERS");
-    mvprintw(center_y - 1, center_x - 10, "====================");
-    mvprintw(center_y + 1, center_x - 8, "1. Start Game");
-    mvprintw(center_y + 2, center_x - 8, "2. High Score: %d", model->high_score);
-    mvprintw(center_y + 3, center_x - 8, "3. Controls");
-    mvprintw(center_y + 4, center_x - 8, "4. Quit");
-    mvprintw(center_y + 6, center_x - 12, "Press 1-4 to select");
+    mvprintw(center_y - 4, center_x - 14, "=== SPACE INVADERS ===");
+    mvprintw(center_y - 2, center_x - 10, "by Amine Boucif");
+    
+    mvprintw(center_y + 1, center_x - 8, "PRESS SPACE TO START");
+    mvprintw(center_y + 3, center_x - 8, "High Score: %d", model->high_score);
     
     // Draw a simple spaceship
-    mvprintw(center_y - 6, center_x - 3, "  ^  ");
-    mvprintw(center_y - 5, center_x - 3, " / \\ ");
-    mvprintw(center_y - 4, center_x - 3, "/___\\");
+    mvprintw(center_y - 8, center_x - 3, "  ^  ");
+    mvprintw(center_y - 7, center_x - 3, " / \\ ");
+    mvprintw(center_y - 6, center_x - 3, "/___\\");
     
     refresh();
 }
 
 void ncurses_view_render_pause(NcursesView* view) {
-    // Draw semi-transparent overlay
-    for (int y = view->game_start_y; y < view->game_start_y + NCURSES_GAME_HEIGHT; y++) {
-        for (int x = view->game_start_x; x < view->game_start_x + NCURSES_GAME_WIDTH; x++) {
-            mvaddch(y, x, '.'); // Dots to indicate paused state
-        }
-    }
-    
     mvprintw(view->game_start_y + NCURSES_GAME_HEIGHT/2,
             view->game_start_x + (NCURSES_GAME_WIDTH/2) - 3,
             "PAUSED");
@@ -310,26 +350,18 @@ void ncurses_view_render_pause(NcursesView* view) {
 }
 
 void ncurses_view_render_game_over(NcursesView* view, int win) {
-    // Keep the game screen but overlay message
+    int center_y = view->game_start_y + NCURSES_GAME_HEIGHT/2;
+    int center_x = view->game_start_x + (NCURSES_GAME_WIDTH/2);
+
     if (win) {
-        mvprintw(view->game_start_y + NCURSES_GAME_HEIGHT/2 - 1,
-                view->game_start_x + (NCURSES_GAME_WIDTH/2) - 4,
-                "YOU WIN!");
+        mvprintw(center_y - 1, center_x - 6, "YOU WIN!");
     } else {
-        mvprintw(view->game_start_y + NCURSES_GAME_HEIGHT/2 - 1,
-                view->game_start_x + (NCURSES_GAME_WIDTH/2) - 5,
-                "GAME OVER");
+        mvprintw(center_y - 1, center_x - 5, "GAME OVER");
     }
     
-    mvprintw(view->game_start_y + NCURSES_GAME_HEIGHT/2,
-            view->game_start_x + (NCURSES_GAME_WIDTH/2) - 10,
-            "Score: %d", view->last_score);
-    mvprintw(view->game_start_y + NCURSES_GAME_HEIGHT/2 + 1,
-            view->game_start_x + (NCURSES_GAME_WIDTH/2) - 10,
-            "Press R to restart");
-    mvprintw(view->game_start_y + NCURSES_GAME_HEIGHT/2 + 2,
-            view->game_start_x + (NCURSES_GAME_WIDTH/2) - 8,
-            "Press Q to quit");
+    mvprintw(center_y, center_x - 10, "Score: %d", view->last_score);
+    mvprintw(center_y + 1, center_x - 10, "Press R to restart");
+    mvprintw(center_y + 2, center_x - 8, "Press Q to quit");
     
     refresh();
 }
