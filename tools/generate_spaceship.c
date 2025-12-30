@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <string.h>
 
-// Increased size for better detail (Odd width 31 for perfect center symmetry)
+// Dimensions
 #define WIDTH  31
 #define HEIGHT 32
 
@@ -31,75 +32,66 @@ typedef struct {
 #pragma pack(pop)
 
 /* PALETTE MAP:
-   0 = Empty/Black
-   1 = Dark Outline (Dark Grey)
-   2 = Main Hull Color (Blue)
-   3 = Highlight (Light Blue/White)
-   4 = Shadow (Dark Blue)
-   5 = Cockpit (Glass/Cyan)
-   6 = Metal/Guns (Grey)
-   7 = Engine Glow (Orange/Yellow)
+   0 = Empty
+   7 = Engine Core (Will animate)
+   8 = Engine Outer Flame (Will animate)
 */
 
-// A 31x32 Sprite Map (Visualized sideways here, but top-down in game)
+// A 31x32 Sprite Map
 const int sprite_map[HEIGHT][WIDTH] = {
-    // 0: Nose Tip
+    // 0-3: Nose Tip
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0},
     
-    // 4: Nose Body
+    // 4-7: Nose Body
     {0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,3,2,2,1,0,0,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,0,0,1,2,4,4,4,2,1,0,0,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,0,1,2,4,5,5,5,4,2,1,0,0,0,0,0,0,0,0,0,0,0},
     
-    // 8: Cockpit Area
+    // 8-11: Cockpit Area
     {0,0,0,0,0,0,0,0,0,0,0,1,2,4,5,5,5,4,2,1,0,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,0,1,2,4,5,5,5,4,2,1,0,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,1,6,2,2,4,4,4,2,2,6,1,0,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,0,1,6,2,2,2,3,2,2,2,6,1,0,0,0,0,0,0,0,0,0,0},
     
-    // 12: Guns appear
+    // 12-15: Guns appear
     {0,0,0,0,0,0,0,0,0,1,6,6,1,2,2,3,2,2,1,6,6,1,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,0,1,6,6,1,2,2,3,2,2,1,6,6,1,0,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,0,1,2,1,1,1,2,2,3,2,2,1,1,1,2,1,0,0,0,0,0,0,0,0},
     {0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,1,0,0,0,0,0,0,0},
     
-    // 16: Wings Start
+    // 16-19: Wings Start
     {0,0,0,0,0,0,1,2,2,2,2,4,4,4,4,4,4,4,4,4,2,2,2,2,1,0,0,0,0,0,0},
     {0,0,0,0,0,1,2,2,2,4,4,6,6,6,6,6,6,6,6,6,4,4,2,2,2,1,0,0,0,0,0},
     {0,0,0,0,1,2,2,4,4,6,6,2,2,2,2,3,2,2,2,2,6,6,4,4,2,2,1,0,0,0,0},
     {0,0,0,1,2,2,4,6,6,2,2,2,2,2,2,3,2,2,2,2,2,2,6,6,4,2,2,1,0,0,0},
     
-    // 20: Wings Wide
+    // 20-23: Wings Wide
     {0,0,1,2,2,4,6,2,2,2,4,4,4,4,4,4,4,4,4,4,4,2,2,2,6,4,2,2,1,0,0},
     {0,1,2,2,4,6,2,2,4,4,2,2,2,2,2,3,2,2,2,2,2,4,4,2,2,6,4,2,2,1,0},
     {1,2,2,4,6,2,2,4,2,2,2,2,2,2,2,3,2,2,2,2,2,2,2,4,2,2,6,4,2,2,1},
     {1,3,3,4,6,2,4,2,2,2,2,1,1,1,1,1,1,1,1,1,2,2,2,2,4,2,6,4,3,3,1},
     
-    // 24: Rear Section
+    // 24-27: Rear Section
     {1,3,3,4,6,2,4,2,2,2,1,6,6,6,6,6,6,6,6,6,1,2,2,2,4,2,6,4,3,3,1},
     {1,3,3,4,6,2,4,2,2,1,6,6,6,6,6,6,6,6,6,6,6,1,2,2,4,2,6,4,3,3,1},
     {1,1,1,4,6,2,4,2,1,6,6,6,6,6,6,6,6,6,6,6,6,6,1,2,4,2,6,4,1,1,1},
     {0,1,1,1,6,2,4,1,6,6,6,1,1,1,1,1,1,1,1,1,6,6,6,1,4,2,6,1,1,1,0},
     
-    // 28: Engines / Exhaust
-    {0,0,0,1,1,2,4,1,6,6,1,0,0,7,7,7,7,7,0,0,1,6,6,1,4,2,1,1,0,0,0},
-    {0,0,0,0,1,1,1,1,1,1,0,0,0,7,7,7,7,7,0,0,0,1,1,1,1,1,1,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+    // 28-31: Engines / Exhaust (Using 7 for core, 8 for outer flame)
+    {0,0,0,1,1,2,4,1,6,6,1,7,7,7,7,7,7,7,7,7,1,6,6,1,4,2,1,1,0,0,0},
+    {0,0,0,0,1,1,1,1,1,1,0,8,7,7,7,7,7,7,7,8,0,1,1,1,1,1,1,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0,0,8,8,7,7,7,7,7,8,8,0,0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0,0,0,8,8,7,7,7,8,8,0,0,0,0,0,0,0,0,0,0,0,0},
 };
 
-int main(void) {
-    FILE *f = fopen("spaceship_detailed.bmp", "wb");
-    if (!f) {
-        printf("Error creating file.\n");
-        return 1;
-    }
+void generate_frame(int frame_num, const char* filename) {
+    FILE *f = fopen(filename, "wb");
+    if (!f) return;
 
-    // BMP Padding calc
     int padding = (4 - (WIDTH * 3) % 4) % 4;
     int imageSize = (WIDTH * 3 + padding) * HEIGHT;
 
@@ -121,37 +113,49 @@ int main(void) {
 
     unsigned char pad[3] = {0};
 
-    // Draw from Bottom to Top (BMP Standard)
+    // Draw from Bottom to Top
     for (int y = HEIGHT - 1; y >= 0; y--) {
         for (int x = 0; x < WIDTH; x++) {
             unsigned char b=0, g=0, r=0;
+            int pixel_type = sprite_map[y][x];
 
-            switch (sprite_map[y][x]) {
-                case 0: // Empty/Black
-                    r=0; g=0; b=0; break;
-                case 1: // Dark Outline (Dark Grey/Black)
-                    r=20; g=20; b=25; break;
-                case 2: // Main Hull (Royal Blue) -> CHANGE HERE FOR RED SHIP
-                    r=30; g=60; b=180; break;
-                case 3: // Highlight (Cyan/White)
-                    r=150; g=220; b=255; break;
-                case 4: // Shadow (Darker Blue)
-                    r=10; g=30; b=100; break;
-                case 5: // Cockpit Glass (Teal)
-                    r=0; g=200; b=220; break;
-                case 6: // Metal Details (Grey)
-                    r=120; g=125; b=130; break;
-                case 7: // Engine Glow (Bright Orange/Yellow)
-                    r=255; g=160; b=0; break;
+            // ANIMATION LOGIC FOR ENGINE
+            if (pixel_type == 7 || pixel_type == 8) {
+                if (frame_num == 1) {
+                    // Frame 1: Turbo Mode (Brighter, Whiter, Hotter)
+                    if (pixel_type == 7) { r=255; g=255; b=150; } // White Hot Core
+                    else { r=255; g=200; b=50; } // Bright Yellow Outer
+                } else {
+                    // Frame 0: Standard Cruise (Orange/Yellow)
+                    if (pixel_type == 7) { r=255; g=160; b=0; } // Orange Core
+                    else { r=200; g=100; b=0; } // Darker Orange Outer
+                }
+            } else {
+                // Standard Colors
+                switch (pixel_type) {
+                    case 0: r=5, g=10, b=30; break; // Background
+                    case 1: r=20, g=20, b=25; break; // Outline
+                    case 2: r=30, g=60, b=180; break; // Main Hull
+                    case 3: r=150, g=220, b=255; break; // Highlight
+                    case 4: r=10, g=30, b=100; break; // Shadow
+                    case 5: r=0, g=200, b=220; break; // Cockpit
+                    case 6: r=120, g=125, b=130; break; // Metal
+                }
             }
 
-            unsigned char pixel[3] = {b, g, r}; // BMP is BGR
+            unsigned char pixel[3] = {b, g, r};
             fwrite(pixel, 1, 3, f);
         }
         fwrite(pad, 1, padding, f);
     }
 
     fclose(f);
-    printf("Generated spaceship_detailed.bmp (%dx%d)\n", WIDTH, HEIGHT);
+    printf("Generated %s\n", filename);
+}
+
+int main(void) {
+    // Generate two frames for animation
+    generate_frame(0, "pictures/player.bmp");   // Normal Engine
+    generate_frame(1, "pictures/player2.bmp");  // Fast Engine (White Hot)
     return 0;
 }

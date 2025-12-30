@@ -7,7 +7,7 @@
 #include "../core/model.h"
 #include <stdbool.h>
 
-// view_sdl.h - add these to your SDLView struct
+// view_sdl.h - Updated SDLView struct for Player, Boss, and Saucer animations
 typedef struct SDLView {
     SDL_Window* window;
     SDL_Renderer* renderer;
@@ -16,12 +16,16 @@ typedef struct SDLView {
     int height;
     
     // Textures
-    SDL_Texture* player_tex;
-    SDL_Texture* boss_tex;
+    // Player is now an array 
+    SDL_Texture* player_tex[2];
+    
+    // Boss and Saucer are arrays [2]
+    SDL_Texture* boss_tex[2];    
+    SDL_Texture* saucer_tex[2]; 
+    
     SDL_Texture* explosion_tex;
     SDL_Texture* bullet_player_tex;
     SDL_Texture* bullet_enemy_tex;
-    SDL_Texture* saucer_tex;
     SDL_Texture* damage_tex;
     SDL_Texture* invader_tex[3][2];
     
