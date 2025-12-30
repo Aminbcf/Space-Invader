@@ -1,0 +1,25 @@
+
+Obliger de travailler avec sdl2 pour le son , pas de support pour sdl3
+x cd ~/SDL_mixer
+git tag | tail -30
+candidate-2.5.1
+prerelease-2.5.2
+prerelease-2.5.3
+prerelease-2.7.2
+release-1.2.10
+release-1.2.11
+release-1.2.12
+release-1.2.7
+release-1.2.8
+release-1.2.9
+release-1.2.9a
+release-2.0.0
+release-2.0.1
+release-2.0.2
+release-2.0.4
+release-2.6.0
+release-2.6.1
+release-2.6.2
+release-2.6.3
+release-2.8.0
+release-2.8.1

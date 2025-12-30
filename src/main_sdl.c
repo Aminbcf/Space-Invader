@@ -68,14 +68,17 @@ int main(int argc, char* argv[]) {
             if (event.type == SDL_EVENT_QUIT) {
                 running = false;
             }
-            else if (event.type == SDL_EVENT_KEY_DOWN || event.type == SDL_EVENT_KEY_UP) {
+            // FIX: Only handle KEY_DOWN events. 
+            // Ncurses only sends "key pressed", so SDL must behave the same way 
+            // to work with the shared controller logic. Ignoring KEY_UP prevents
+            // the "toggle on press, toggle back on release" glitch.
+            else if (event.type == SDL_EVENT_KEY_DOWN) {
                 InputEvent input_event;
                 memset(&input_event, 0, sizeof(InputEvent));
                 
                 input_event.type = INPUT_KEYBOARD;
                 
                 // MAP SDL KEYS TO CONTROLLER EXPECTED VALUES
-                // Controller expects standard ASCII or Ncurses-style codes (260=Left, 261=Right)
                 if (event.key.key == SDLK_LEFT)       input_event.key = 260;
                 else if (event.key.key == SDLK_RIGHT) input_event.key = 261;
                 else if (event.key.key == SDLK_UP)    input_event.key = 259;
@@ -84,11 +87,12 @@ int main(int argc, char* argv[]) {
 
                 input_event.scancode = event.key.scancode;
                 input_event.mod = event.key.mod;
+                input_event.value = 1; // Mark as pressed
                 
                 /* Zero out unused fields */
                 input_event.x = 0; input_event.y = 0; 
                 input_event.button = 0; input_event.joy_id = 0; 
-                input_event.axis = 0; input_event.value = 0;
+                input_event.axis = 0; 
                 
                 controller_handle_event(controller, &input_event);
             }
