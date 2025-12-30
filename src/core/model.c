@@ -180,6 +180,7 @@ void model_update_invaders(GameModel* model, float delta_time) {
     (void)delta_time;
     InvaderGrid* g = &model->invaders;
     
+    // 1. Update Animation State (Wiggle)
     if (platform_get_ticks() > g->state_time + g->state_speed) {
         g->state_time = platform_get_ticks();
         g->state = !g->state;
@@ -192,10 +193,22 @@ void model_update_invaders(GameModel* model, float delta_time) {
     
     for (int i=0; i<INVADER_ROWS; i++) {
         for (int j=0; j<INVADER_COLS; j++) {
-            if (g->invaders[i][j].alive && g->invaders[i][j].dying_timer == 0) {
-                g->invaders[i][j].hitbox.x += speed;
-                if (g->direction == DIR_RIGHT && g->invaders[i][j].hitbox.x + INVADER_WIDTH >= GAME_AREA_WIDTH) hit_edge = true;
-                if (g->direction == DIR_LEFT && g->invaders[i][j].hitbox.x <= 0) hit_edge = true;
+            Invader* inv = &g->invaders[i][j];
+
+            if (inv->alive && inv->dying_timer > 0) {
+                inv->dying_timer--;
+                if (inv->dying_timer <= 0) {
+                    inv->alive = false; // Explosion finished, remove invader
+                }
+                continue; // Don't move while exploding
+            }
+
+
+            // Move only if alive and NOT exploding
+            if (inv->alive && inv->dying_timer == 0) {
+                inv->hitbox.x += speed;
+                if (g->direction == DIR_RIGHT && inv->hitbox.x + INVADER_WIDTH >= GAME_AREA_WIDTH) hit_edge = true;
+                if (g->direction == DIR_LEFT && inv->hitbox.x <= 0) hit_edge = true;
             }
         }
     }
@@ -354,13 +367,11 @@ void model_check_bullet_collisions(GameModel* model) {
                             }
                             goto next_bullet;
                         }
-                    } else if (inv->alive && inv->dying_timer > 0) {
-                        inv->dying_timer--;
-                        if (inv->dying_timer == 0) inv->alive = false;
-                    }
-                }
-            }
-        }
+                    } 
+                } 
+            } 
+        } 
+        
         next_bullet:;
     }
     
