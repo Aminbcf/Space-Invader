@@ -96,21 +96,21 @@ void sdl_view_destroy(SDLView* view) {
 bool sdl_view_load_resources(SDLView* view) {
     // --- LOAD AUDIO (Miniaudio) ---
     // Using MA_SOUND_FLAG_DECODE for SFX to prevent latency
-    if (ma_sound_init_from_file(&view->audio_engine, "src/assets/shooting.mp3", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_shoot) != MA_SUCCESS) {
-        printf("Failed to load src/assets/shooting.mp3\n");
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/shooting.mp3", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_shoot) != MA_SUCCESS) {
+        printf("Failed to load assets/shooting.mp3\n");
     }
     
-    if (ma_sound_init_from_file(&view->audio_engine, "src/assets/explosion.mp3", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_explosion) != MA_SUCCESS) {
-        printf("Failed to load src/assets/explosion.mp3\n");
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/explosion.mp3", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_explosion) != MA_SUCCESS) {
+        printf("Failed to load assets/explosion.mp3\n");
     }
     
     // Music (Stream from disk, Loop)
-    if (ma_sound_init_from_file(&view->audio_engine, "src/assets/music.mp3", MA_SOUND_FLAG_STREAM, NULL, NULL, &view->music_bg) == MA_SUCCESS) {
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/music.mp3", MA_SOUND_FLAG_STREAM, NULL, NULL, &view->music_bg) == MA_SUCCESS) {
         ma_sound_set_looping(&view->music_bg, MA_TRUE);
         ma_sound_set_volume(&view->music_bg, 0.5f); 
         ma_sound_start(&view->music_bg);
     } else {
-        printf("Failed to load src/assets/music.mp3\n");
+        printf("Failed to load assets/music.mp3\n");
     }
 
     // --- LOAD FONTS ---
@@ -143,23 +143,23 @@ bool sdl_view_load_resources(SDLView* view) {
         } \
     }
 
-    LOAD_TEXTURE("src/pictures/player.bmp", view->player_tex[0]);
-    LOAD_TEXTURE("src/pictures/player2.bmp", view->player_tex[1]);
-    LOAD_TEXTURE("src/pictures/explosion.bmp", view->explosion_tex);
-    LOAD_TEXTURE("src/pictures/bullet_player.bmp", view->bullet_player_tex);
-    LOAD_TEXTURE("src/pictures/bullet_enemy.bmp", view->bullet_enemy_tex);
+    LOAD_TEXTURE("pictures/player.bmp", view->player_tex[0]);
+    LOAD_TEXTURE("pictures/player2.bmp", view->player_tex[1]);
+    LOAD_TEXTURE("pictures/explosion.bmp", view->explosion_tex);
+    LOAD_TEXTURE("pictures/bullet_player.bmp", view->bullet_player_tex);
+    LOAD_TEXTURE("pictures/bullet_enemy.bmp", view->bullet_enemy_tex);
 
-    const char* boss_paths[2] = { "src/pictures/boss_dreadnought_f1.bmp", "src/pictures/boss_dreadnought_f2.bmp" };
-    const char* saucer_paths[2] = { "src/pictures/bonus_saucer_f1.bmp", "src/pictures/bonus_saucer_f2.bmp" };
+    const char* boss_paths[2] = { "pictures/boss_dreadnought_f1.bmp", "pictures/boss_dreadnought_f2.bmp" };
+    const char* saucer_paths[2] = { "pictures/bonus_saucer_f1.bmp", "pictures/bonus_saucer_f2.bmp" };
     for(int j=0; j<2; j++) {
         LOAD_TEXTURE(boss_paths[j], view->boss_tex[j]);
         LOAD_TEXTURE(saucer_paths[j], view->saucer_tex[j]);
     }
     
     const char* invader_paths[3][2] = {
-        {"src/pictures/invader1_1.bmp", "src/pictures/invader1_2.bmp"},
-        {"src/pictures/invader2_1.bmp", "src/pictures/invader2_2.bmp"},
-        {"src/pictures/invader3_1.bmp", "src/pictures/invader3_2.bmp"}
+        {"pictures/invader1_1.bmp", "pictures/invader1_2.bmp"},
+        {"pictures/invader2_1.bmp", "pictures/invader2_2.bmp"},
+        {"pictures/invader3_1.bmp", "pictures/invader3_2.bmp"}
     };
     for(int i=0; i<3; i++) {
         for(int j=0; j<2; j++) {

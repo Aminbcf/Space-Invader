@@ -1,0 +1,472 @@
+generate full readme based on this : Projet
+Résumé de section
+Introduction
+Space Invaders est un jeu d’arcade classique où le joueur contrôle un vaisseau horizontal en bas de l’écran et doit détruire des vagues d’ennemis qui descendent (https://fr.wikipedia.org/wiki/Space_Invaders).
+Dans ce projet, vous développerez une version de Space Invaders en langage C pouvant fonctionner sur deux interfaces : une interface texte (ncurses) et une interface graphique (SDL). L’architecture du projet doit respecter le modèle MVC (Modèle–Vue–Contrôleur) pour séparer clairement la logique du jeu, l’affichage et la gestion des entrées.
+
+Objectif
+Concevoir et implémenter un Space Invaders jouable en C, avec deux vues (ncurses + SDL) interchangeables au lancement, en respectant le modèle MVC. Le projet doit être modulaire, documenté et exécutable sur Linux.
+
+Fonctionnalités requises
+Modèle
+Gestion de l’état du jeu : positions des ennemis, du vaisseau, projectiles, boucliers, scores, vies, niveau courant.
+
+Logique de déplacement des ennemis (mouvement en groupe, changement de direction, accélération selon le nombre d’ennemis restants).
+
+Gestion des tirs : tirs du joueur et tirs ennemis, collisions (projectile ↔ ennemi, projectile ↔ vaisseau, projectile ↔ bouclier).
+
+Gestion des niveaux : génération de vagues, progression de la difficulté.
+
+Système de score et vies.
+
+Sauvegarde/chargement optionnel des meilleurs scores (fichier local).
+
+Le modèle ne doit pas dépendre des vues ou du contrôleur (pas d’appels à ncurses ou SDL depuis le modèle).
+
+Vue — ncurses
+Affichage texte du plateau de jeu (vaisseau, ennemis, projectiles, boucliers, score, vies, niveau).
+
+Représentation claire et lisible dans le terminal, gestion de la taille minimale du terminal.
+
+Indication d’états (pause, game over, affichage du menu).
+
+Vue — SDL
+Affichage graphique avec SDL3 offrant : sprite simple pour le vaisseau, ennemis et projectiles, barre d’information (score/vies/niveau).
+
+Animations basiques (déplacement ennemi, explosion simple).
+
+Option : affichage plein écran ou fenêtre redimensionnable.
+
+Contrôleur
+Traitement des entrées clavier (gauche/droite, tirer, pause, changer d’interface si demandé au démarrage).
+
+Interface unique du contrôleur vers le modèle (ex : commandes abstraites : MOVE_LEFT, MOVE_RIGHT, SHOOT, PAUSE).
+
+Gestion des événements provenant de ncurses ou SDL via un adaptateur qui traduit événements UI → commandes contrôleur.
+
+Exigences techniques
+Basculer au lancement : le jeu doit proposer (via option en ligne de commande ou menu au démarrage) de choisir la vue (ncurses ou SDL). Le basculement à chaud pendant l’exécution n’est pas requis, mais le modèle doit être réutilisable par les deux vues.
+
+MVC strict : le modèle ne dépend d’aucune bibliothèque d’affichage, la Vue ne contient pas la logique du jeu, et le Contrôleur orchestre les interactions.
+
+Langage : C (ISO C99 ou plus récent). Pas d’utilisation d’OO en C++.
+
+Construction : fournir un Makefile (ou CMake) pour compiler sur Linux (Debian/Ubuntu). Les dépendances (ncurses, SDL3) doivent être documentées.
+
+Framerate & boucle de jeu : boucle de jeu avec timestep fixe ou semi-fixe pour assurer comportement identique entre les vues.
+
+Modularité : code découpé en modules (ex : model.c/h, controller.c/h, view_ncurses.c/h, view_sdl.c/h, utils/), et commentaires explicatifs.
+
+Robustesse : gestion propre des erreurs (allocation, fichier, initialisation SDL/ncurses).
+
+Mémoire : pas de fuite mémoire ; fournir une preuve via valgrind (rapport court).
+
+Licence : préciser la licence du code (MIT/Unlicense, etc.) dans le dépôt.
+
+Bonus (facultatif)
+Effets sonores et musique en SDL (utiliser SDL_mixer).
+
+Animations avancées et sprites.
+
+Niveaux multiples et boss.
+
+IA améliorée (ennemis qui ciblent le joueur ou patterns différents).
+
+Mode deux joueurs en local (partage clavier) ou en réseau (socket) — attention : le réseau augmente fortement la complexité.
+
+Sauvegarde persistante du classement (fichier JSON ou texte).
+
+Interface de configuration (réglage sensibilité, keybindings).
+
+Mode « directions relatives » pour contrôles alternatifs (voir ton idée moto/tron).
+
+Interface automatisée de tests unitaires sur la logique (scripts de tests pour le modèle).
+
+Support des manettes via SDL.
+
+Livrables
+Code source complet organisé en répertoires (src/, include/, assets/, doc/, build/).
+
+Makefile (ou CMakeLists.txt) avec cibles : make, make run-ncurses, make run-sdl, make clean, make valgrind.
+
+README détaillé : compilation, dépendances (versions recommandées), exécution, commandes clavier, description de l’architecture MVC.
+
+Rapport écrit ( ~4 pages ) expliquant : architecture, diagramme simple (modules), décisions de conception, difficultés, tests réalisés.
+
+Vidéo (~10 minutes) présentant l’architecture, choix techniques, points critiques, puis une démo montrant les deux interfaces (ncurses + SDL).
+
+Rapport Valgrind (preuve d’absence de fuites majeures).
+
+(Facultatif) fichiers de configuration, scripts d’installation, et scores persistants.
+
+and tests and update the makefile make sure it include all pf those options based no my projects : # Space Invaders MVC - Build System (SDL3)
+# Platform: Linux
+# SDL3 with TTF support enabled
+
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -Wextra -g -std=c11 -I./src -I./src/controller -I./src/core -I./src/utils -I./src/views
+SDL_CFLAGS = $(shell pkg-config sdl3 --cflags 2>/dev/null || echo "-I/usr/local/include/SDL3 -D_REENTRANT") -I/usr/local/include/SDL3_ttf -I/usr/local/include/SDL3_image
+SDL_LDFLAGS = $(shell pkg-config sdl3 --libs 2>/dev/null || echo "-L/usr/local/lib -lSDL3") -L/usr/local/lib -lSDL3_ttf -lSDL3_image
+NCURSES_LDFLAGS = -lncurses
+TEST_LDFLAGS = -lcheck -lm -lpthread -lrt
+
+# Directories
+SRC_DIR = src
+BUILD_DIR = build
+SDL_BUILD_DIR = $(BUILD_DIR)/sdl
+NCURSES_BUILD_DIR = $(BUILD_DIR)/ncurses
+TEST_BUILD_DIR = $(BUILD_DIR)/tests
+BIN_DIR = bin
+
+# Common source files (shared between versions)
+COMMON_SRCS = \
+    $(SRC_DIR)/controller/controller.c \
+    $(SRC_DIR)/controller/input_handler.c \
+    $(SRC_DIR)/core/game_state.c \
+    $(SRC_DIR)/core/model.c \
+    $(SRC_DIR)/utils/font_manager.c \
+    $(SRC_DIR)/utils/generate_spaceship.c \
+    $(SRC_DIR)/utils/platform_sdl.c \
+    $(SRC_DIR)/utils/simple_time.c
+
+# Common header files
+COMMON_HDRS = \
+    $(SRC_DIR)/controller/commands.h \
+    $(SRC_DIR)/controller/controller.h \
+    $(SRC_DIR)/controller/input_handler.h \
+    $(SRC_DIR)/core/game_state.h \
+    $(SRC_DIR)/core/model.h \
+    $(SRC_DIR)/utils/font_manager.h \
+    $(SRC_DIR)/utils/platform.h \
+    $(SRC_DIR)/views/rect_utils.h \
+    $(SRC_DIR)/views/view_base.h
+
+# SDL-specific source files
+SDL_SRCS = \
+    $(COMMON_SRCS) \
+    $(SRC_DIR)/views/view_sdl.c \
+    $(SRC_DIR)/main_sdl.c
+
+# ncurses-specific source files
+NCURSES_SRCS = \
+    $(COMMON_SRCS) \
+    $(SRC_DIR)/views/view_ncurses.c \
+    $(SRC_DIR)/main_ncurses.c
+
+# Test source files
+TEST_SRCS = \
+    $(SRC_DIR)/tests/test_model.c
+
+# Convert source files to object files
+SDL_OBJS = $(patsubst $(SRC_DIR)/%, $(SDL_BUILD_DIR)/%, $(SDL_SRCS:.c=.o))
+NCURSES_OBJS = $(patsubst $(SRC_DIR)/%, $(NCURSES_BUILD_DIR)/%, $(NCURSES_SRCS:.c=.o))
+TEST_OBJS = $(patsubst $(SRC_DIR)/%, $(TEST_BUILD_DIR)/%, $(TEST_SRCS:.c=.o))
+
+# Executables
+SDL_EXEC = $(BIN_DIR)/space_invaders_sdl
+NCURSES_EXEC = $(BIN_DIR)/space_invaders_ncurses
+TEST_EXEC = $(BIN_DIR)/test_runner
+
+# Tools
+TOOL_SRCS = $(wildcard tools/*.c)
+TOOLS = $(patsubst tools/%.c, $(BIN_DIR)/%, $(TOOL_SRCS))
+
+.PHONY: all sdl ncurses tools run-sdl run-ncurses run-tests clean \
+        valgrind-sdl valgrind-ncurses valgrind-tests install-deps \
+        info prepare-assets check-style check-memory leak-check \
+        doc generate-docs install uninstall dist package \
+        help check-project rebuild debug release profile \
+        check-sdl-deps
+
+# Default target
+all: sdl ncurses tools
+
+# Build SDL version
+sdl: $(SDL_EXEC)
+
+# Build ncurses version
+ncurses: $(NCURSES_EXEC)
+
+# Build utility tools
+tools: $(TOOLS)
+
+# Run SDL version
+run-sdl: sdl
+	@echo "Running SDL version..."
+	@$(SDL_EXEC)
+
+# Run ncurses version
+run-ncurses: ncurses
+	@echo "Running ncurses version..."
+	@$(NCURSES_EXEC)
+
+# Run tests
+run-tests: $(TEST_EXEC)
+	@echo "Running tests..."
+	@$(TEST_EXEC)
+
+# Clean build files
+clean:
+	@echo "Cleaning build files..."
+	@rm -rf $(BUILD_DIR) $(BIN_DIR)
+	@rm -f *.o *.a *.so *.gcno *.gcda *.gcov
+	@rm -f space_invaders_sdl space_invaders_ncurses test_runner
+	@rm -f gmon.out callgrind.out.*
+	@rm -rf docs/html docs/latex
+	@rm -f dist/*.tar.gz dist/*.zip
+	@echo "Clean complete."
+
+# Valgrind checks
+valgrind-sdl: sdl
+	@echo "Running valgrind on SDL version..."
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1 $(SDL_EXEC)
+
+valgrind-ncurses: ncurses
+	@echo "Running valgrind on ncurses version..."
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1 $(NCURSES_EXEC)
+
+valgrind-tests: $(TEST_EXEC)
+	@echo "Running valgrind on tests..."
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1 $(TEST_EXEC)
+
+# Install dependencies (updated for non-apt systems)
+install-deps:
+	@echo "Installing dependencies..."
+	@echo "Checking for package manager..."
+	@if command -v dnf >/dev/null 2>&1; then \
+		sudo dnf install -y SDL3-devel SDL3_ttf-devel ncurses-devel check valgrind doxygen graphviz pkg-config make gcc git; \
+	elif command -v yum >/dev/null 2>&1; then \
+		sudo yum install -y SDL3-devel SDL3_ttf-devel ncurses-devel check valgrind doxygen graphviz pkg-config make gcc git; \
+	elif command -v zypper >/dev/null 2>&1; then \
+		sudo zypper install -y SDL3-devel SDL3_ttf-devel ncurses-devel check valgrind doxygen graphviz pkg-config make gcc git; \
+	elif command -v pacman >/dev/null 2>&1; then \
+		sudo pacman -S --noconfirm sdl3 sdl3_ttf ncurses check valgrind doxygen graphviz pkg-config make gcc git; \
+	elif command -v apk >/dev/null 2>&1; then \
+		sudo apk add sdl3-dev sdl3_ttf-dev ncurses-dev check valgrind doxygen graphviz pkgconfig make gcc git; \
+	else \
+		echo "Unknown package manager. Please install manually:"; \
+		echo "- SDL3 development files"; \
+		echo "- SDL3_ttf development files"; \
+		echo "- ncurses development files"; \
+		echo "- check framework"; \
+		echo "- valgrind"; \
+		echo "- doxygen and graphviz"; \
+		echo "- pkg-config"; \
+		echo "- make, gcc, git"; \
+	fi
+
+# Show build information
+info:
+	@echo "=== Space Invaders MVC Build Information ==="
+	@echo "Platform: Linux"
+	@echo "Compiler: $(CC)"
+	@echo "CFLAGS: $(CFLAGS)"
+	@echo "SDL CFLAGS: $(SDL_CFLAGS)"
+	@echo "SDL LDFLAGS: $(SDL_LDFLAGS)"
+	@echo "NCURSES LDFLAGS: $(NCURSES_LDFLAGS)"
+	@echo "Build directories:"
+	@echo "  Source: $(SRC_DIR)"
+	@echo "  Build: $(BUILD_DIR)"
+	@echo "  Binaries: $(BIN_DIR)"
+	@echo "Executables:"
+	@echo "  SDL: $(SDL_EXEC)"
+	@echo "  NCURSES: $(NCURSES_EXEC)"
+	@echo "  Test: $(TEST_EXEC)"
+	@echo "================================"
+
+# Prepare assets and fonts
+prepare-assets: $(BIN_DIR)
+	@echo "Preparing assets and fonts..."
+	@mkdir -p $(BIN_DIR)/fonts
+	@mkdir -p $(BIN_DIR)/misc
+	@if [ -d "fonts" ]; then cp -r fonts/* $(BIN_DIR)/fonts/ 2>/dev/null || true; fi
+	@if [ -d "misc" ]; then cp -r misc/* $(BIN_DIR)/misc/ 2>/dev/null || true; fi
+	@cp -f highscore.dat $(BIN_DIR)/ 2>/dev/null || true
+	@cp -f README.md $(BIN_DIR)/ 2>/dev/null || true
+	@echo "Assets prepared."
+
+# Check code style
+check-style:
+	@echo "Checking code style..."
+	@if command -v clang-format >/dev/null 2>&1; then \
+		find $(SRC_DIR) -name "*.c" -o -name "*.h" | xargs clang-format --dry-run --Werror; \
+		echo "Style check passed."; \
+	else \
+		echo "clang-format not found, skipping style check."; \
+	fi
+
+# Memory checking
+check-memory: valgrind-sdl valgrind-ncurses
+
+# Leak check only
+leak-check:
+	@valgrind --leak-check=summary $(SDL_EXEC)
+
+# Generate documentation
+doc: generate-docs
+
+generate-docs:
+	@echo "Generating documentation..."
+	@mkdir -p docs
+	@if command -v doxygen >/dev/null 2>&1; then \
+		doxygen Doxyfile 2>/dev/null || doxygen -g Doxyfile 2>/dev/null && doxygen Doxyfile; \
+		echo "Documentation generated in docs/html/"; \
+	else \
+		echo "Doxygen not found, install with your package manager"; \
+	fi
+
+# Install to system
+install: all
+	@echo "Installing to /usr/local/bin..."
+	@sudo install -m 755 $(SDL_EXEC) /usr/local/bin/space_invaders_sdl
+	@sudo install -m 755 $(NCURSES_EXEC) /usr/local/bin/space_invaders_ncurses
+	@echo "Installation complete."
+
+# Uninstall from system
+uninstall:
+	@echo "Uninstalling..."
+	@sudo rm -f /usr/local/bin/space_invaders_sdl
+	@sudo rm -f /usr/local/bin/space_invaders_ncurses
+	@echo "Uninstall complete."
+
+# Create distribution package
+dist: clean all doc
+	@echo "Creating distribution package..."
+	@mkdir -p dist
+	@VERSION=$$(date +%Y%m%d); \
+	TARNAME=space_invaders_mvc_$$VERSION.tar.gz; \
+	tar -czf dist/$$TARNAME --exclude=".*" --exclude="build" --exclude="bin" --exclude="dist" .; \
+	echo "Distribution package created: dist/$$TARNAME"
+
+# Package for release
+package: dist
+
+# Check project structure
+check-project:
+	@echo "Checking project structure..."
+	@./checkproject.sh || true
+	@echo "Project structure check complete."
+
+# Rebuild everything
+rebuild: clean all
+
+# Debug build with extra flags
+debug: CFLAGS += -DDEBUG -O0 -fno-omit-frame-pointer
+debug: rebuild
+
+# Release build with optimizations
+release: CFLAGS = -Wall -Wextra -O3 -flto -I./src -I./src/controller -I./src/core -I./src/utils -I./src/views
+release: rebuild
+
+# Profile build
+profile: CFLAGS += -pg
+profile: rebuild
+
+# Help message
+help:
+	@echo "Space Invaders MVC - Build System (SDL3)"
+	@echo "Platform: Linux"
+	@echo "SDL3 with TTF support enabled"
+	@echo ""
+	@echo "Targets:"
+	@echo "  make all                - Build both versions"
+	@echo "  make sdl                - Build SDL version (with TTF)"
+	@echo "  make ncurses            - Build ncurses version"
+	@echo "  make tools              - Build utility tools"
+	@echo "  make run-sdl            - Build and run SDL"
+	@echo "  make run-ncurses        - Build and run ncurses"
+	@echo "  make run-tests          - Build and run tests"
+	@echo "  make clean              - Remove build files"
+	@echo "  make valgrind-sdl       - Run valgrind on SDL version"
+	@echo "  make valgrind-ncurses   - Run valgrind on ncurses version"
+	@echo "  make valgrind-tests     - Run valgrind on tests"
+	@echo "  make install-deps       - Install dependencies"
+	@echo "  make info               - Show build information"
+	@echo "  make prepare-assets     - Prepare assets and fonts"
+	@echo "  make check-style        - Check code style"
+	@echo "  make check-memory       - Run memory checks on both versions"
+	@echo "  make leak-check         - Quick leak check"
+	@echo "  make doc                - Generate documentation"
+	@echo "  make install            - Install to system"
+	@echo "  make uninstall          - Uninstall from system"
+	@echo "  make dist               - Create distribution package"
+	@echo "  make package            - Alias for dist"
+	@echo "  make check-project      - Check project structure"
+	@echo "  make rebuild            - Clean and rebuild everything"
+	@echo "  make debug              - Build with debug flags"
+	@echo "  make release            - Build with optimizations"
+	@echo "  make profile            - Build with profiling"
+	@echo "  make help               - Show this help message"
+
+# Rule to build SDL executable
+$(SDL_EXEC): $(SDL_OBJS) | $(BIN_DIR)
+	@echo "Building SDL executable..."
+	$(CC) $(CFLAGS) $(SDL_CFLAGS) $^ -o $@ $(SDL_LDFLAGS)
+	@echo "SDL executable built: $@"
+
+# Rule to build ncurses executable
+$(NCURSES_EXEC): $(NCURSES_OBJS) | $(BIN_DIR)
+	@echo "Building ncurses executable..."
+	$(CC) $(CFLAGS) $^ -o $@ $(NCURSES_LDFLAGS)
+	@echo "ncurses executable built: $@"
+
+# Rule to build test executable
+$(TEST_EXEC): $(TEST_OBJS) $(filter-out %/main_sdl.o %/main_ncurses.o %/view_sdl.o %/view_ncurses.o, $(NCURSES_OBJS)) | $(BIN_DIR)
+	@echo "Building test runner..."
+	$(CC) $(CFLAGS) $^ -o $@ $(TEST_LDFLAGS)
+	@echo "Test runner built: $@"
+
+# Rule to build tools
+$(BIN_DIR)/%: tools/%.c | $(BIN_DIR)
+	@echo "Building tool: $@"
+	$(CC) $(CFLAGS) $< -o $@
+	@chmod +x $@
+
+# Rule to compile SDL .c files to .o files
+$(SDL_BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(COMMON_HDRS)
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(SDL_CFLAGS) -c $< -o $@
+
+# Rule to compile ncurses .c files to .o files
+$(NCURSES_BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(COMMON_HDRS)
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Rule to compile test .c files to .o files
+$(TEST_BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Create directories
+$(BIN_DIR):
+	@mkdir -p $@
+
+# Check SDL dependencies (simplified version)
+check-sdl-deps:
+	@echo "Checking SDL3 dependencies..."
+	@if [ ! -f /usr/local/include/SDL3_ttf/SDL_ttf.h ] && [ ! -f /usr/include/SDL3_ttf/SDL_ttf.h ]; then \
+		echo "SDL3_ttf headers not found."; \
+		echo "Expected in /usr/local/include/SDL3_ttf/ or /usr/include/SDL3_ttf/"; \
+		echo "Install SDL3_ttf from source: https://github.com/libsdl-org/SDL_ttf"; \
+		exit 1; \
+	fi
+	@if [ ! -f /usr/local/lib/libSDL3_ttf.so ] && [ ! -f /usr/lib/libSDL3_ttf.so ]; then \
+		echo "SDL3_ttf library not found."; \
+		echo "Expected libSDL3_ttf.so in /usr/local/lib/ or /usr/lib/"; \
+		exit 1; \
+	fi
+	@echo "SDL3 dependencies OK."
+
+# Default target when running just 'make'
+.DEFAULT_GOAL := help
+
+# Include dependency files if they exist
+-include $(SDL_OBJS:.o=.d)
+-include $(NCURSES_OBJS:.o=.d)
+-include $(TEST_OBJS:.o=.d)
+
+# Generate dependency files (optional)
+%.d: %.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -MM -MT $(@:.d=.o) -MT $@ $< > $@
