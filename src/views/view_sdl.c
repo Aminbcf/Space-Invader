@@ -143,11 +143,12 @@ bool sdl_view_load_resources(SDLView* view) {
         printf("Failed to load assets/music_boss.wav\n");
     }
     
-    // Victory music (one-shot)
-    if (ma_sound_init_from_file(&view->audio_engine, "assets/music_victory.wav", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->music_victory) == MA_SUCCESS) {
-        ma_sound_set_volume(&view->music_victory, 0.7f);
+    // Victory music
+    if (ma_sound_init_from_file(&view->audio_engine, "bin/assets/music_victory.wav", 0, NULL, NULL, &view->music_victory) != MA_SUCCESS) {
+        fprintf(stderr, "Failed to load victory music\n");
     } else {
-        printf("Failed to load assets/music_victory.wav\n");
+        ma_sound_set_volume(&view->music_victory, 0.7f);
+        ma_sound_set_looping(&view->music_victory, MA_TRUE);  // FIXED: Added looping
     }
 
     // --- LOAD FONTS ---
@@ -313,6 +314,164 @@ void sdl_view_draw_hud(SDLView* view, const GameModel* model) {
     }
 }
 
+// Menu rendering helper functions
+static void sdl_view_render_main_menu(SDLView* view, const GameModel* model) {
+    // Background gradient
+    for(int i=0; i<view->height; i++) {
+        SDL_SetRenderDrawColor(view->renderer, 10, 15 + i/20, 30 + i/10, 255);
+        SDL_FRect line = {0, (float)i, (float)view->width, 1};
+        SDL_RenderFillRect(view->renderer, &line);
+    }
+    
+    draw_text_centered(view, "SPACE INVADERS", 100, (SDL_Color){COLOR_TEXT_HIGHLIGHT}, true);
+    draw_text_centered(view, "by Amine Boucif", 160, (SDL_Color){COLOR_TEXT_SECONDARY}, false);
+    
+    // Menu items
+    const char* items[] = {"START", "SETTINGS", "QUIT"};
+    int y_start = 250;
+    int y_spacing = 60;
+    
+    for (int i = 0; i < 3; i++) {
+        SDL_Color color = (model->menu_selection == i) ? 
+            (SDL_Color){255, 255, 0, 255} : (SDL_Color){COLOR_TEXT_PRIMARY};
+        
+        const char* prefix = (model->menu_selection == i) ? "> " : "  ";
+        char text[64];
+        snprintf(text, sizeof(text), "%s%s", prefix, items[i]);
+        draw_text_centered(view, text, y_start + i * y_spacing, color, false);
+    }
+    
+    draw_text_centered(view, "Use UP/DOWN arrows to navigate, ENTER to select", 
+                      view->height - 50, (SDL_Color){COLOR_TEXT_SECONDARY}, false);
+}
+
+static void sdl_view_render_difficulty_menu(SDLView* view, const GameModel* model) {
+    // Background gradient  
+    for(int i=0; i<view->height; i++) {
+        SDL_SetRenderDrawColor(view->renderer, 10, 15 + i/20, 30 + i/10, 255);
+        SDL_FRect line = {0, (float)i, (float)view->width, 1};
+        SDL_RenderFillRect(view->renderer, &line);
+    }
+    
+    draw_text_centered(view, "SELECT DIFFICULTY", 100, (SDL_Color){COLOR_TEXT_HIGHLIGHT}, true);
+    
+    // Difficulty items with descriptions
+    const char* items[] = {"EASY   - 3 Levels Only", "NORMAL - 4 Levels with Boss", "HARD   - Faster & Harder"};
+    int y_start = 250;
+    int y_spacing = 70;
+    
+    for (int i = 0; i < 3; i++) {
+        SDL_Color color = (model->menu_selection == i) ? 
+            (SDL_Color){255, 255, 0, 255} : (SDL_Color){COLOR_TEXT_PRIMARY};
+        
+        const char* prefix = (model->menu_selection == i) ? "> " : "  ";
+        char text[128];
+        snprintf(text, sizeof(text), "%s%s", prefix, items[i]);
+        draw_text_centered(view, text, y_start + i * y_spacing, color, false);
+    }
+    
+    draw_text_centered(view, "ENTER to select, ESC to go back", 
+                      view->height - 50, (SDL_Color){COLOR_TEXT_SECONDARY}, false);
+}
+
+static void sdl_view_render_settings_menu(SDLView* view, const GameModel* model) {
+    // Background gradient
+    for(int i=0; i<view->height; i++) {
+        SDL_SetRenderDrawColor(view->renderer, 10, 15 + i/20, 30 + i/10, 255);
+        SDL_FRect line = {0, (float)i, (float)view->width, 1};
+        SDL_RenderFillRect(view->renderer, &line);
+    }
+    
+    draw_text_centered(view, "SETTINGS", 100, (SDL_Color){COLOR_TEXT_HIGHLIGHT}, true);
+    
+    // Menu items
+    int y_start = 230;
+    int y_spacing = 70;
+    
+    // Controls
+    SDL_Color color0 = (model->menu_selection == 0) ? 
+        (SDL_Color){255, 255, 0, 255} : (SDL_Color){COLOR_TEXT_PRIMARY};
+    draw_text_centered(view, model->menu_selection == 0 ? "> CONTROLS" : "  CONTROLS", 
+                      y_start, color0, false);
+    
+    // Music Volume with slider
+    SDL_Color color1 = (model->menu_selection == 1) ? 
+        (SDL_Color){255, 255, 0, 255} : (SDL_Color){COLOR_TEXT_PRIMARY};
+    char vol_text[64];
+    int vol_percent = (int)(model->music_volume * 100);
+    snprintf(vol_text, sizeof(vol_text), "%s MUSIC VOLUME: %d%%", 
+             model->menu_selection == 1 ? ">" : " ", vol_percent);
+    draw_text_centered(view, vol_text, y_start + y_spacing, color1, false);
+    
+    // Volume slider bar
+    if (model->menu_selection == 1) {
+        int bar_width = 300;
+        int bar_x = (view->width - bar_width) / 2;
+        int bar_y = y_start + y_spacing + 40;
+        
+        // Background bar
+        SDL_SetRenderDrawColor(view->renderer, 50, 50, 50, 255);
+        SDL_FRect bar_bg = {(float)bar_x, (float)bar_y, (float)bar_width, 20};
+        SDL_RenderFillRect(view->renderer, &bar_bg);
+        
+        // Filled portion
+        SDL_SetRenderDrawColor(view->renderer, 0, 255, 100, 255);
+        SDL_FRect bar_fill = {(float)bar_x, (float)bar_y, bar_width * model->music_volume, 20};
+        SDL_RenderFillRect(view->renderer, &bar_fill);
+        
+        draw_text_centered(view, "Use LEFT/RIGHT to adjust", 
+                          bar_y + 40, (SDL_Color){200, 200, 200, 255}, false);
+    }
+    
+    // Back
+    SDL_Color color2 = (model->menu_selection == 2) ? 
+        (SDL_Color){255, 255, 0, 255} : (SDL_Color){COLOR_TEXT_PRIMARY};
+    draw_text_centered(view, model->menu_selection == 2 ? "> BACK" : "  BACK", 
+                      y_start + 2 * y_spacing + 80, color2, false);
+    
+    draw_text_centered(view, "ENTER to select, ESC to go back", 
+                      view->height - 50, (SDL_Color){COLOR_TEXT_SECONDARY}, false);
+}
+
+static void sdl_view_render_controls_menu(SDLView* view, const GameModel* model) {
+    (void)model;
+    
+    // Background gradient
+    for(int i=0; i<view->height; i++) {
+        SDL_SetRenderDrawColor(view->renderer, 10, 15 + i/20, 30 + i/10, 255);
+        SDL_FRect line = {0, (float)i, (float)view->width, 1};
+        SDL_RenderFillRect(view->renderer, &line);
+    }
+    
+    draw_text_centered(view, "CONTROLS", 80, (SDL_Color){COLOR_TEXT_HIGHLIGHT}, true);
+    
+    // Controls box
+    int box_x = (view->width - 500)/2;
+    SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
+    SDL_SetRenderDrawColor(view->renderer, 30, 30, 30, 220);
+    SDL_FRect bg = {(float)box_x, 150.0f, 500.0f, 350.0f};
+    SDL_RenderFillRect(view->renderer, &bg);
+    SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, 255);
+    SDL_RenderRect(view->renderer, &bg);
+    
+    SDL_Color yel = {255, 255, 100, 255};
+    SDL_Color white = {255, 255, 255, 255};
+    
+    draw_text(view, "MOVEMENT:", box_x + 30, 180, yel);
+    draw_text(view, "W / UP ARROW    - Move Up (menus)", box_x + 50, 220, white);
+    draw_text(view, "A / LEFT ARROW  - Move Left", box_x + 50, 250, white);
+    draw_text(view, "S / DOWN ARROW  - Move Down (menus)", box_x + 50, 280, white);
+    draw_text(view, "D / RIGHT ARROW - Move Right", box_x + 50, 310, white);
+    
+    draw_text(view, "ACTIONS:", box_x + 30, 360, yel);
+    draw_text(view, "SPACE - Shoot", box_x + 50, 400, white);
+    draw_text(view, "ENTER - Select (menus)", box_x + 50, 430, white);
+    draw_text(view, "P     - Pause", box_x + 50, 460, white);
+    
+    draw_text_centered(view, "Press ESC or ENTER to return", 
+                      view->height - 50, (SDL_Color){COLOR_TEXT_SECONDARY}, false);
+}
+
 void sdl_view_render_game_scene(SDLView* view, const GameModel* model) {
     if(!view || !view->renderer || !model) return;
     
@@ -397,25 +556,43 @@ void sdl_view_render_game_scene(SDLView* view, const GameModel* model) {
 void sdl_view_render(SDLView* view, const GameModel* model) {
     if(!view || !view->renderer || !model) return;
     
-    // --- AUDIO LOGIC ---
-    // 1. Detect Shot (Rewind and Play)
-    if (model->player.shots_fired > view->last_shots_fired) {
-        if(ma_sound_is_playing(&view->sfx_shoot)) {
-            ma_sound_seek_to_pcm_frame(&view->sfx_shoot, 0);
-        } else {
-            ma_sound_start(&view->sfx_shoot);
-        }
-        view->last_shots_fired = model->player.shots_fired;
-    }
+    // Apply music volume from settings
+    ma_sound_set_volume(&view->music_game, model->music_volume * 0.5f);
+    ma_sound_set_volume(&view->music_boss, model->music_volume * 0.6f);
+    ma_sound_set_volume(&view->music_victory, model->music_volume * 0.7f);
     
-    // 2. Detect Enemy Death (Score change)
-    if (model->player.score > view->last_score) {
-        if(ma_sound_is_playing(&view->sfx_death)) {
-            ma_sound_seek_to_pcm_frame(&view->sfx_death, 0);
-        } else {
-            ma_sound_start(&view->sfx_death);
+    // Reset audio tracking when starting new game from menu
+    static GameState last_state = STATE_MENU;
+    if (last_state == STATE_MENU && model->state == STATE_PLAYING) {
+        view->last_shots_fired = 0;
+        view->last_score = 0;
+        view->last_enemy_bullet_count = 0;
+        view->last_player_lives = model->player.lives;
+    }
+    last_state = model->state;
+    
+    // --- AUDIO LOGIC ---
+    // Only play sounds during active gameplay
+    if (model->state == STATE_PLAYING) {
+        // 1. Detect Shot (Rewind and Play)
+        if (model->player.shots_fired > view->last_shots_fired) {
+            if(ma_sound_is_playing(&view->sfx_shoot)) {
+                ma_sound_seek_to_pcm_frame(&view->sfx_shoot, 0);
+            } else {
+                ma_sound_start(&view->sfx_shoot);
+            }
+            view->last_shots_fired = model->player.shots_fired;
         }
-        view->last_score = model->player.score;
+        
+        // 2. Detect Enemy Death (Score change)
+        if (model->player.score > view->last_score) {
+            if(ma_sound_is_playing(&view->sfx_death)) {
+                ma_sound_seek_to_pcm_frame(&view->sfx_death, 0);
+            } else {
+                ma_sound_start(&view->sfx_death);
+            }
+            view->last_score = model->player.score;
+        }
     }
     
     // 3. Detect Enemy Bullets (count active enemy bullets)
@@ -457,8 +634,13 @@ void sdl_view_render(SDLView* view, const GameModel* model) {
     }
     
     // 6. Music Switching Logic
+    // Start menu music on initial load or when returning to menu
+    if (model->state == STATE_MENU && view->current_music_track == 0) {
+        ma_sound_start(&view->music_game);
+        view->current_music_track = 1;
+    }
     // Switch to boss music on level 4
-    if (model->state == STATE_PLAYING && model->player.level == 4 && model->boss.alive && view->current_music_track != 2) {
+    else if (model->state == STATE_PLAYING && model->player.level == 4 && model->boss.alive && view->current_music_track != 2) {
         ma_sound_stop(&view->music_game);
         ma_sound_start(&view->music_boss);
         view->current_music_track = 2;
@@ -476,16 +658,19 @@ void sdl_view_render(SDLView* view, const GameModel* model) {
         ma_sound_start(&view->music_victory);
         view->current_music_track = 3;
     }
-    // Resume game music when entering STATE_PLAYING (fixes replay bug)
+    // Resume game music when entering STATE_PLAYING from menu
     else if (model->state == STATE_PLAYING && view->current_music_track == 0) {
         ma_sound_start(&view->music_game);
         view->current_music_track = 1;
         view->last_player_lives = model->player.lives;  // Sync lives on game start
     }
-    // Resume game music when returning to menu from victory
-    else if (model->state == STATE_MENU && view->current_music_track == 3) {
+    // Resume menu music when returning from victory or game over
+    else if (model->state == STATE_MENU && (view->current_music_track == 3 || view->current_music_track != 1)) {
         ma_sound_stop(&view->music_victory);
-        ma_sound_start(&view->music_game);
+        ma_sound_stop(&view->music_boss);
+        if (!ma_sound_is_playing(&view->music_game)) {
+            ma_sound_start(&view->music_game);
+        }
         view->current_music_track = 1;
     }
 
@@ -496,30 +681,21 @@ void sdl_view_render(SDLView* view, const GameModel* model) {
     // Use {} for every case to prevent redeclaration errors
     switch(model->state) {
         case STATE_MENU: {
-            for(int i=0; i<view->height; i++) {
-                SDL_SetRenderDrawColor(view->renderer, 10, 15 + i/20, 30 + i/10, 255);
-                SDL_FRect line = {0, (float)i, (float)view->width, 1};
-                SDL_RenderFillRect(view->renderer, &line);
+            //  Render the appropriate menu based on menu_state
+            switch(model->menu_state) {
+                case MENU_MAIN:
+                    sdl_view_render_main_menu(view, model);
+                    break;
+                case MENU_DIFFICULTY:
+                    sdl_view_render_difficulty_menu(view, model);
+                    break;
+                case MENU_SETTINGS:
+                    sdl_view_render_settings_menu(view, model);
+                    break;
+                case MENU_CONTROLS:
+                    sdl_view_render_controls_menu(view, model);
+                    break;
             }
-            draw_text_centered(view, "SPACE INVADERS", 150, (SDL_Color){COLOR_TEXT_HIGHLIGHT}, true);
-            draw_text_centered(view, "by Amine Boucif", 210, (SDL_Color){COLOR_TEXT_SECONDARY}, false);
-            draw_text_centered(view, "Press SPACE to Start", 300, (SDL_Color){COLOR_TEXT_PRIMARY}, false);
-            
-            // --- RESTORED CONTROLS BOX ---
-            int box_x = (view->width - 400)/2;
-            SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
-            SDL_SetRenderDrawColor(view->renderer, 30, 30, 30, 200);
-            SDL_FRect bg = {(float)box_x, 350.0f, 400.0f, 200.0f};
-            SDL_RenderFillRect(view->renderer, &bg);
-            SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, 255);
-            SDL_RenderRect(view->renderer, &bg);
-            
-            SDL_Color yel = {255, 255, 0, 255};
-            draw_text(view, "CONTROLS:", box_x + 20, 370, yel);
-            draw_text(view, "WASD/ARROWS : Move", box_x + 40, 410, yel);
-            draw_text(view, "SPACE : Shoot", box_x + 40, 440, yel);
-            draw_text(view, "P : Pause", box_x + 40, 470, yel);
-            draw_text(view, "R : Reset", box_x + 40, 500, yel);
             break;
         }
         case STATE_LEVEL_TRANSITION: {

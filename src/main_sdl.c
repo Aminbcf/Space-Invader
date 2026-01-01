@@ -60,7 +60,7 @@ int main(int argc, char* argv[]) {
     
     printf("Game Running. Controls: Arrows/WASD to Move, Space to Shoot, P to Pause, R to Restart.\n");
 
-    while (running && !controller_is_quit_requested(controller)) {
+    while (running && !controller_is_quit_requested(controller) && context->model->state != STATE_QUIT) {
         uint32_t frame_start = SDL_GetTicks();
         
         /* Handle SDL events */

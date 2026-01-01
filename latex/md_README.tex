@@ -1,0 +1,915 @@
+\chapter{Space Invaders MVC -\/ Documentation du Projet }
+\hypertarget{md_README}{}\label{md_README}\index{Space Invaders MVC -\/ Documentation du Projet@{Space Invaders MVC -\/ Documentation du Projet}}
+\label{md_README_autotoc_md30}%
+\Hypertarget{md_README_autotoc_md30}%
+\hypertarget{md_README_autotoc_md31}{}\doxysection{\texorpdfstring{Table des Matières}{Table des Matières}}\label{md_README_autotoc_md31}
+
+\begin{DoxyEnumerate}
+\item Vue d\textquotesingle{}Ensemble
+\item Architecture
+\item Installation
+\item Compilation
+\item Utilisation
+\item Structure du Projet
+\item Dépendances
+\item Tests et Validation
+\item Contrôles
+\item Développement
+\item Licence
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md33}{}\doxysection{\texorpdfstring{Vue d\textquotesingle{}Ensemble}{Vue d\textquotesingle{}Ensemble}}\label{md_README_autotoc_md33}
+{\bfseries{Space Invaders MVC}} est une implémentation moderne du jeu d\textquotesingle{}arcade classique Space Invaders, développée en langage C (norme C11) selon l\textquotesingle{}architecture Modèle-\/\+Vue-\/\+Contrôleur (MVC). Le projet offre deux interfaces utilisateur distinctes \+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Interface graphique SDL3}} \+: Version complète avec graphismes, textures, polices TTF et support d\textquotesingle{}images
+\item {\bfseries{Interface texte ncurses}} \+: Version terminal légère pour une compatibilité maximale
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md34}{}\doxysubsection{\texorpdfstring{Caractéristiques Principales}{Caractéristiques Principales}}\label{md_README_autotoc_md34}
+
+\begin{DoxyItemize}
+\item Architecture MVC stricte avec séparation claire des responsabilités
+\item Double implémentation de vue (SDL3 et ncurses) partageant le même modèle
+\item Code modulaire et réutilisable
+\item Gestion robuste de la mémoire (vérifiée avec Valgrind)
+\item Compilation séparée pour chaque interface
+\item Support complet sur Linux (Debian/\+Ubuntu et distributions dérivées)
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md36}{}\doxysection{\texorpdfstring{Architecture}{Architecture}}\label{md_README_autotoc_md36}
+Le projet suit rigoureusement le modèle MVC \+:\hypertarget{md_README_autotoc_md37}{}\doxysubsection{\texorpdfstring{Modèle (Model)}{Modèle (Model)}}\label{md_README_autotoc_md37}
+Le modèle contient toute la logique métier du jeu et est totalement indépendant de l\textquotesingle{}interface utilisateur \+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily src/core/model.\+h} / {\ttfamily model.\+c}}} \+: Logique centrale du jeu
+\begin{DoxyItemize}
+\item Gestion de l\textquotesingle{}état du jeu (positions, collisions, score)
+\item Déplacement des ennemis et du joueur
+\item Système de tir et détection de collisions
+\item Progression des niveaux
+\end{DoxyItemize}
+\item {\bfseries{{\ttfamily src/core/game\+\_\+state.\+h} / {\ttfamily game\+\_\+state.\+c}}} \+: Gestion des états
+\begin{DoxyItemize}
+\item États du jeu (menu, en jeu, pause, game over, victoire)
+\item Transitions entre les états
+\item Contexte global du jeu
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md38}{}\doxysubsection{\texorpdfstring{Vue (View)}{Vue (View)}}\label{md_README_autotoc_md38}
+Deux implémentations distinctes de la vue, interchangeables au lancement \+:\hypertarget{md_README_autotoc_md39}{}\doxysubsubsection{\texorpdfstring{Vue SDL}{Vue SDL}}\label{md_README_autotoc_md39}
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily src/views/view\+\_\+sdl.\+h} / {\ttfamily view\+\_\+sdl.\+c}}} \+: Rendu graphique
+\begin{DoxyItemize}
+\item Utilisation de SDL3 pour le rendu
+\item Support des textures via SDL3\+\_\+image
+\item Rendu de texte avec SDL3\+\_\+ttf
+\item Interface graphique complète
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md40}{}\doxysubsubsection{\texorpdfstring{Vue ncurses}{Vue ncurses}}\label{md_README_autotoc_md40}
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily src/views/view\+\_\+ncurses.\+h} / {\ttfamily view\+\_\+ncurses.\+c}}} \+: Rendu terminal
+\begin{DoxyItemize}
+\item Affichage texte ASCII
+\item Interface légère pour terminal
+\item Compatibilité étendue
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md41}{}\doxysubsection{\texorpdfstring{Contrôleur (Controller)}{Contrôleur (Controller)}}\label{md_README_autotoc_md41}
+Le contrôleur fait le lien entre les entrées utilisateur et le modèle \+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily src/controller/controller.\+h} / {\ttfamily controller.\+c}}} \+: Contrôleur principal
+\begin{DoxyItemize}
+\item Orchestration des interactions
+\item Communication entre modèle et vue
+\end{DoxyItemize}
+\item {\bfseries{{\ttfamily src/controller/input\+\_\+handler.\+h} / {\ttfamily input\+\_\+handler.\+c}}} \+: Gestion des entrées
+\begin{DoxyItemize}
+\item Abstraction des entrées clavier
+\item Support SDL et ncurses
+\end{DoxyItemize}
+\item {\bfseries{{\ttfamily src/controller/commands.\+h}}} \+: Définition des commandes
+\begin{DoxyItemize}
+\item Commandes abstraites du jeu
+\item Indépendantes de l\textquotesingle{}implémentation des entrées
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md42}{}\doxysubsection{\texorpdfstring{Utilitaires}{Utilitaires}}\label{md_README_autotoc_md42}
+
+\begin{DoxyItemize}
+\item {\bfseries{{\ttfamily src/utils/platform.\+h} / {\ttfamily platform\+\_\+sdl.\+c}}} \+: Abstraction de plateforme
+\begin{DoxyItemize}
+\item Fonctions spécifiques à la plateforme
+\item API unifiée pour SDL et ncurses
+\end{DoxyItemize}
+\item {\bfseries{{\ttfamily src/utils/font\+\_\+manager.\+h} / {\ttfamily font\+\_\+manager.\+c}}} \+: Gestion des polices
+\begin{DoxyItemize}
+\item Chargement et gestion des polices TTF pour SDL
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md44}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{md_README_autotoc_md44}
+\hypertarget{md_README_autotoc_md45}{}\doxysubsection{\texorpdfstring{Prérequis Système}{Prérequis Système}}\label{md_README_autotoc_md45}
+
+\begin{DoxyItemize}
+\item Distribution Linux (Debian, Ubuntu, Fedora, Arch, ou dérivées)
+\item GCC (version 7.\+0 ou supérieure)
+\item Make
+\item pkg-\/config
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md46}{}\doxysubsection{\texorpdfstring{Installation des Dépendances}{Installation des Dépendances}}\label{md_README_autotoc_md46}
+\hypertarget{md_README_autotoc_md47}{}\doxysubsubsection{\texorpdfstring{Méthode Automatique}{Méthode Automatique}}\label{md_README_autotoc_md47}
+Le Makefile inclut une cible pour installer automatiquement toutes les dépendances \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ install-\/deps}
+
+\end{DoxyCode}
+
+
+Cette commande détecte automatiquement votre gestionnaire de paquets (apt, dnf, pacman, zypper) et installe les dépendances nécessaires.\hypertarget{md_README_autotoc_md48}{}\doxysubsubsection{\texorpdfstring{Installation Manuelle}{Installation Manuelle}}\label{md_README_autotoc_md48}
+\hypertarget{md_README_autotoc_md49}{}\doxysubsubsubsection{\texorpdfstring{Debian/\+Ubuntu}{Debian/\+Ubuntu}}\label{md_README_autotoc_md49}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt-\/get\ update}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ -\/y\ libsdl3-\/dev\ libsdl3-\/ttf-\/dev\ libsdl3-\/image-\/dev\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ libncurses-\/dev\ check\ valgrind\ doxygen\ graphviz\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pkg-\/config\ make\ gcc\ git\ clang-\/format}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md50}{}\doxysubsubsubsection{\texorpdfstring{Fedora}{Fedora}}\label{md_README_autotoc_md50}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ dnf\ install\ -\/y\ SDL3-\/devel\ SDL3\_ttf-\/devel\ SDL3\_image-\/devel\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ncurses-\/devel\ check-\/devel\ valgrind\ doxygen\ graphviz\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pkg-\/config\ make\ gcc\ git\ clang-\/tools-\/extra}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md51}{}\doxysubsubsubsection{\texorpdfstring{Arch Linux}{Arch Linux}}\label{md_README_autotoc_md51}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ pacman\ -\/S\ -\/-\/noconfirm\ sdl3\ sdl3\_ttf\ sdl3\_image\ ncurses\ check\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valgrind\ doxygen\ graphviz\ pkg-\/config\ make\ gcc\ git\ clang}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md52}{}\doxysubsection{\texorpdfstring{Vérification des Dépendances}{Vérification des Dépendances}}\label{md_README_autotoc_md52}
+Vérifiez que les dépendances SDL3 sont correctement installées \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ check-\/sdl-\/deps}
+\DoxyCodeLine{make\ check-\/ncurses-\/deps}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md54}{}\doxysection{\texorpdfstring{Compilation}{Compilation}}\label{md_README_autotoc_md54}
+Le projet utilise un Makefile unique avec plusieurs cibles pour faciliter la compilation.\hypertarget{md_README_autotoc_md55}{}\doxysubsection{\texorpdfstring{Compilation Complète}{Compilation Complète}}\label{md_README_autotoc_md55}
+Pour compiler les deux versions (SDL et ncurses) ainsi que les outils \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ all}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md56}{}\doxysubsection{\texorpdfstring{Compilation Sélective}{Compilation Sélective}}\label{md_README_autotoc_md56}
+\hypertarget{md_README_autotoc_md57}{}\doxysubsubsection{\texorpdfstring{Version SDL uniquement}{Version SDL uniquement}}\label{md_README_autotoc_md57}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ sdl}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md58}{}\doxysubsubsection{\texorpdfstring{Version ncurses uniquement}{Version ncurses uniquement}}\label{md_README_autotoc_md58}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ ncurses}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md59}{}\doxysubsubsection{\texorpdfstring{Outils auxiliaires}{Outils auxiliaires}}\label{md_README_autotoc_md59}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ tools}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md60}{}\doxysubsection{\texorpdfstring{Modes de Compilation Spéciaux}{Modes de Compilation Spéciaux}}\label{md_README_autotoc_md60}
+\hypertarget{md_README_autotoc_md61}{}\doxysubsubsection{\texorpdfstring{Mode Debug}{Mode Debug}}\label{md_README_autotoc_md61}
+Compilation avec symboles de débogage et sanitizers \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ debug}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md62}{}\doxysubsubsection{\texorpdfstring{Mode Release}{Mode Release}}\label{md_README_autotoc_md62}
+Compilation optimisée pour la production (niveau d\textquotesingle{}optimisation O3) \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ release}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md63}{}\doxysubsubsection{\texorpdfstring{Mode Profiling}{Mode Profiling}}\label{md_README_autotoc_md63}
+Compilation avec support du profiling (gprof) \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ profile}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md64}{}\doxysubsection{\texorpdfstring{Recompilation Complète}{Recompilation Complète}}\label{md_README_autotoc_md64}
+Pour nettoyer et recompiler depuis zéro \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ rebuild}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md65}{}\doxysubsection{\texorpdfstring{Informations de Compilation}{Informations de Compilation}}\label{md_README_autotoc_md65}
+Afficher les informations sur la configuration de compilation \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ info}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md67}{}\doxysection{\texorpdfstring{Utilisation}{Utilisation}}\label{md_README_autotoc_md67}
+\hypertarget{md_README_autotoc_md68}{}\doxysubsection{\texorpdfstring{Lancement du Jeu}{Lancement du Jeu}}\label{md_README_autotoc_md68}
+\hypertarget{md_README_autotoc_md69}{}\doxysubsubsection{\texorpdfstring{Version SDL}{Version SDL}}\label{md_README_autotoc_md69}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ run-\/sdl}
+
+\end{DoxyCode}
+
+
+Ou directement après compilation \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./bin/space\_invaders\_sdl}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md70}{}\doxysubsubsection{\texorpdfstring{Version ncurses}{Version ncurses}}\label{md_README_autotoc_md70}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ run-\/ncurses}
+
+\end{DoxyCode}
+
+
+Ou directement après compilation \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./bin/space\_invaders\_ncurses}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md71}{}\doxysubsection{\texorpdfstring{Préparation des Ressources}{Préparation des Ressources}}\label{md_README_autotoc_md71}
+Avant la première exécution, il est recommandé de préparer les ressources (polices, fichiers de score) \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ prepare-\/assets}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md73}{}\doxysection{\texorpdfstring{Structure du Projet}{Structure du Projet}}\label{md_README_autotoc_md73}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.}
+\DoxyCodeLine{├──\ Makefile\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Système\ de\ compilation\ principal}
+\DoxyCodeLine{├──\ README.md\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Cette\ documentation}
+\DoxyCodeLine{├──\ checkproject.sh\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Script\ de\ validation\ de\ la\ structure}
+\DoxyCodeLine{├──\ highscore.dat\ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Fichier\ de\ sauvegarde\ des\ scores}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ bin/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Exécutables\ compilés}
+\DoxyCodeLine{│\ \ \ ├──\ space\_invaders\_sdl}
+\DoxyCodeLine{│\ \ \ ├──\ space\_invaders\_ncurses}
+\DoxyCodeLine{│\ \ \ └──\ fonts/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Polices\ copiées\ pour\ l'exécution}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ build/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Fichiers\ objets\ de\ compilation}
+\DoxyCodeLine{│\ \ \ ├──\ sdl/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Objets\ pour\ la\ version\ SDL}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ controller/}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ core/}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ utils/}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ views/}
+\DoxyCodeLine{│\ \ \ └──\ ncurses/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Objets\ pour\ la\ version\ ncurses}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ controller/}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ core/}
+\DoxyCodeLine{│\ \ \ \ \ \ \ └──\ views/}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ src/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Code\ source}
+\DoxyCodeLine{│\ \ \ ├──\ controller/\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Contrôleur\ (MVC)}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ commands.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ controller.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ controller.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ input\_handler.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ input\_handler.c}
+\DoxyCodeLine{│\ \ \ │}
+\DoxyCodeLine{│\ \ \ ├──\ core/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Modèle\ (MVC)}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ model.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ model.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ game\_state.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ game\_state.c}
+\DoxyCodeLine{│\ \ \ │}
+\DoxyCodeLine{│\ \ \ ├──\ views/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Vues\ (MVC)}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ view\_base.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ view\_sdl.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ view\_sdl.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ view\_ncurses.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ view\_ncurses.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ rect\_utils.h}
+\DoxyCodeLine{│\ \ \ │}
+\DoxyCodeLine{│\ \ \ ├──\ utils/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Utilitaires}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ platform.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ platform\_sdl.c}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ font\_manager.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ font\_manager.c}
+\DoxyCodeLine{│\ \ \ │}
+\DoxyCodeLine{│\ \ \ ├──\ main\_sdl.c\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Point\ d'entrée\ SDL}
+\DoxyCodeLine{│\ \ \ └──\ main\_ncurses.c\ \ \ \ \ \ \ \ \ \#\ Point\ d'entrée\ ncurses}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ tests/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Tests\ unitaires}
+\DoxyCodeLine{│\ \ \ └──\ test\_model.c}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ tools/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Outils\ de\ génération\ d'assets}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ fonts/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Polices\ de\ caractères}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ docs/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Documentation\ générée\ (Doxygen)}
+\DoxyCodeLine{│}
+\DoxyCodeLine{├──\ reports/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Rapports\ Valgrind}
+\DoxyCodeLine{│\ \ \ ├──\ valgrind-\/sdl-\/rapport.txt}
+\DoxyCodeLine{│\ \ \ ├──\ valgrind-\/ncurses-\/rapport.txt}
+\DoxyCodeLine{│\ \ \ ├──\ valgrind-\/tests-\/rapport.txt}
+\DoxyCodeLine{│\ \ \ └──\ valgrind-\/rapport-\/complet.txt}
+\DoxyCodeLine{│}
+\DoxyCodeLine{└──\ dist/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Packages\ de\ distribution}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md75}{}\doxysection{\texorpdfstring{Dépendances}{Dépendances}}\label{md_README_autotoc_md75}
+\hypertarget{md_README_autotoc_md76}{}\doxysubsection{\texorpdfstring{Bibliothèques Principales}{Bibliothèques Principales}}\label{md_README_autotoc_md76}
+\hypertarget{md_README_autotoc_md77}{}\doxysubsubsection{\texorpdfstring{Pour la Version SDL}{Pour la Version SDL}}\label{md_README_autotoc_md77}
+
+\begin{DoxyItemize}
+\item {\bfseries{SDL3}} (libsdl3-\/dev) \+: Bibliothèque graphique principale
+\item {\bfseries{SDL3\+\_\+ttf}} (libsdl3-\/ttf-\/dev) \+: Support des polices True\+Type
+\item {\bfseries{SDL3\+\_\+image}} (libsdl3-\/image-\/dev) \+: Chargement d\textquotesingle{}images (BMP, PNG)
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md78}{}\doxysubsubsection{\texorpdfstring{Pour la Version ncurses}{Pour la Version ncurses}}\label{md_README_autotoc_md78}
+
+\begin{DoxyItemize}
+\item {\bfseries{ncurses}} (libncurses-\/dev) \+: Bibliothèque pour interface terminal
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md79}{}\doxysubsubsection{\texorpdfstring{Pour les Tests}{Pour les Tests}}\label{md_README_autotoc_md79}
+
+\begin{DoxyItemize}
+\item {\bfseries{Check}} (check ou check-\/devel) \+: Framework de tests unitaires en C
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md80}{}\doxysubsubsection{\texorpdfstring{Pour le Développement}{Pour le Développement}}\label{md_README_autotoc_md80}
+
+\begin{DoxyItemize}
+\item {\bfseries{Valgrind}} \+: Détection de fuites mémoire
+\item {\bfseries{Doxygen}} \+: Génération de documentation
+\item {\bfseries{Graphviz}} \+: Diagrammes pour la documentation
+\item {\bfseries{clang-\/format}} \+: Formatage automatique du code
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md81}{}\doxysubsection{\texorpdfstring{Versions Recommandées}{Versions Recommandées}}\label{md_README_autotoc_md81}
+
+\begin{DoxyItemize}
+\item SDL3 \+: version 3.\+0.\+0 ou supérieure
+\item ncurses \+: version 6.\+0 ou supérieure
+\item GCC \+: version 7.\+0 ou supérieure (support C11)
+\item Check \+: version 0.\+10.\+0 ou supérieure
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md83}{}\doxysection{\texorpdfstring{Tests et Validation}{Tests et Validation}}\label{md_README_autotoc_md83}
+Le projet inclut plusieurs mécanismes de test et de validation pour assurer la qualité du code.\hypertarget{md_README_autotoc_md84}{}\doxysubsection{\texorpdfstring{Tests Unitaires}{Tests Unitaires}}\label{md_README_autotoc_md84}
+Exécuter les tests unitaires \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ run-\/tests}
+
+\end{DoxyCode}
+
+
+Ou simplement \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ test}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md85}{}\doxysubsection{\texorpdfstring{Analyse Mémoire avec Valgrind}{Analyse Mémoire avec Valgrind}}\label{md_README_autotoc_md85}
+\hypertarget{md_README_autotoc_md86}{}\doxysubsubsection{\texorpdfstring{Analyse de la Version SDL}{Analyse de la Version SDL}}\label{md_README_autotoc_md86}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ valgrind-\/sdl}
+
+\end{DoxyCode}
+
+
+Le rapport détaillé sera sauvegardé dans {\ttfamily reports/valgrind-\/sdl-\/rapport.\+txt}.\hypertarget{md_README_autotoc_md87}{}\doxysubsubsection{\texorpdfstring{Analyse de la Version ncurses}{Analyse de la Version ncurses}}\label{md_README_autotoc_md87}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ valgrind-\/ncurses}
+
+\end{DoxyCode}
+
+
+Le rapport détaillé sera sauvegardé dans {\ttfamily reports/valgrind-\/ncurses-\/rapport.\+txt}.\hypertarget{md_README_autotoc_md88}{}\doxysubsubsection{\texorpdfstring{Analyse des Tests}{Analyse des Tests}}\label{md_README_autotoc_md88}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ valgrind-\/tests}
+
+\end{DoxyCode}
+
+
+Le rapport détaillé sera sauvegardé dans {\ttfamily reports/valgrind-\/tests-\/rapport.\+txt}.\hypertarget{md_README_autotoc_md89}{}\doxysubsubsection{\texorpdfstring{Rapport Valgrind Complet}{Rapport Valgrind Complet}}\label{md_README_autotoc_md89}
+Pour générer un rapport consolidé de toutes les analyses Valgrind \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ valgrind-\/report}
+
+\end{DoxyCode}
+
+
+Ce rapport combiné sera sauvegardé dans {\ttfamily reports/valgrind-\/rapport-\/complet.\+txt} et inclut \+:
+\begin{DoxyItemize}
+\item Rapport SDL
+\item Rapport ncurses
+\item Rapport des tests
+\item Horodatage de génération
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md90}{}\doxysubsubsection{\texorpdfstring{Vérification Mémoire Complète}{Vérification Mémoire Complète}}\label{md_README_autotoc_md90}
+Pour exécuter toutes les analyses mémoire \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ check-\/memory}
+
+\end{DoxyCode}
+
+
+Ou \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ memcheck}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md91}{}\doxysubsubsection{\texorpdfstring{Vérification Rapide des Fuites}{Vérification Rapide des Fuites}}\label{md_README_autotoc_md91}
+Pour une vérification rapide (résumé uniquement) \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ leak-\/check}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md92}{}\doxysubsection{\texorpdfstring{Vérification du Style de Code}{Vérification du Style de Code}}\label{md_README_autotoc_md92}
+Vérifier la conformité du code avec les standards de style \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ check-\/style}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md93}{}\doxysubsection{\texorpdfstring{Formatage Automatique du Code}{Formatage Automatique du Code}}\label{md_README_autotoc_md93}
+Formater automatiquement le code selon les standards \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ format}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md94}{}\doxysubsection{\texorpdfstring{Vérification Complète du Projet}{Vérification Complète du Projet}}\label{md_README_autotoc_md94}
+Pour une vérification complète (compilation, tests, mémoire, style) \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ fullcheck}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md95}{}\doxysubsection{\texorpdfstring{Validation de la Structure du Projet}{Validation de la Structure du Projet}}\label{md_README_autotoc_md95}
+Vérifier que tous les fichiers requis sont présents \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ check-\/project}
+
+\end{DoxyCode}
+
+
+Ou directement \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./checkproject.sh}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md97}{}\doxysection{\texorpdfstring{Contrôles}{Contrôles}}\label{md_README_autotoc_md97}
+\hypertarget{md_README_autotoc_md98}{}\doxysubsection{\texorpdfstring{Version SDL}{Version SDL}}\label{md_README_autotoc_md98}
+
+\begin{DoxyItemize}
+\item {\bfseries{Déplacement}} \+: Flèches gauche/droite ou touches A/D
+\item {\bfseries{Tir}} \+: Barre d\textquotesingle{}espace
+\item {\bfseries{Pause}} \+: Touche P
+\item {\bfseries{Quitter}} \+: Touche Échap ou Q
+\item {\bfseries{Redémarrer}} \+: Touche R (après game over)
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md99}{}\doxysubsection{\texorpdfstring{Version ncurses}{Version ncurses}}\label{md_README_autotoc_md99}
+
+\begin{DoxyItemize}
+\item {\bfseries{Déplacement}} \+: Touches A (gauche) et D (droite)
+\item {\bfseries{Tir}} \+: Barre d\textquotesingle{}espace
+\item {\bfseries{Pause}} \+: Touche P
+\item {\bfseries{Quitter}} \+: Touche Q
+\item {\bfseries{Redémarrer}} \+: Touche R (après game over)
+\end{DoxyItemize}
+
+Les contrôles peuvent être personnalisés en modifiant les constantes dans les fichiers du contrôleur.
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md101}{}\doxysection{\texorpdfstring{Développement}{Développement}}\label{md_README_autotoc_md101}
+\hypertarget{md_README_autotoc_md102}{}\doxysubsection{\texorpdfstring{Génération de la Documentation}{Génération de la Documentation}}\label{md_README_autotoc_md102}
+Générer la documentation Doxygen \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ doc}
+
+\end{DoxyCode}
+
+
+ou
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ generate-\/docs}
+
+\end{DoxyCode}
+
+
+La documentation sera générée dans {\ttfamily docs/html/}. Ouvrez {\ttfamily docs/html/index.\+html} dans un navigateur.\hypertarget{md_README_autotoc_md103}{}\doxysubsection{\texorpdfstring{Système de Couverture de Code}{Système de Couverture de Code}}\label{md_README_autotoc_md103}
+Pour générer un rapport de couverture de code (à implémenter) \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ coverage}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md104}{}\doxysubsection{\texorpdfstring{Benchmarks de Performance}{Benchmarks de Performance}}\label{md_README_autotoc_md104}
+Pour exécuter des tests de performance (à implémenter) \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ benchmark}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md105}{}\doxysubsection{\texorpdfstring{Nettoyage}{Nettoyage}}\label{md_README_autotoc_md105}
+\hypertarget{md_README_autotoc_md106}{}\doxysubsubsection{\texorpdfstring{Nettoyage Standard}{Nettoyage Standard}}\label{md_README_autotoc_md106}
+Supprimer tous les fichiers générés (objets, exécutables, rapports) \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ clean}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md107}{}\doxysubsubsection{\texorpdfstring{Fichiers Supprimés}{Fichiers Supprimés}}\label{md_README_autotoc_md107}
+
+\begin{DoxyItemize}
+\item Répertoire {\ttfamily build/}
+\item Répertoire {\ttfamily bin/}
+\item Fichiers objets ({\itshape .o)}
+\item {\itshape Fichiers de profiling (gmon.\+out, callgrind.\+out.})
+\item Documentation générée ({\ttfamily docs/html}, {\ttfamily docs/latex})
+\item Rapports Valgrind ({\ttfamily reports/})
+\item Packages de distribution ({\ttfamily dist/\texorpdfstring{$\ast$}{*}.tar.\+gz}, {\ttfamily dist/\texorpdfstring{$\ast$}{*}.zip})
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md108}{}\doxysubsection{\texorpdfstring{Installation Système}{Installation Système}}\label{md_README_autotoc_md108}
+\hypertarget{md_README_autotoc_md109}{}\doxysubsubsection{\texorpdfstring{Installer les Exécutables}{Installer les Exécutables}}\label{md_README_autotoc_md109}
+Installer les exécutables dans {\ttfamily /usr/local/bin/} \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ make\ install}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md110}{}\doxysubsubsection{\texorpdfstring{Désinstaller}{Désinstaller}}\label{md_README_autotoc_md110}
+Supprimer les exécutables installés \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ make\ uninstall}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md111}{}\doxysubsection{\texorpdfstring{Création de Packages de Distribution}{Création de Packages de Distribution}}\label{md_README_autotoc_md111}
+Créer un package de distribution (archive tar.\+gz) \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ dist}
+
+\end{DoxyCode}
+
+
+ou
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ package}
+
+\end{DoxyCode}
+
+
+Le package sera créé dans le répertoire {\ttfamily dist/} avec un nom incluant la date et l\textquotesingle{}heure de création.
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md113}{}\doxysection{\texorpdfstring{Standards de Code}{Standards de Code}}\label{md_README_autotoc_md113}
+\hypertarget{md_README_autotoc_md114}{}\doxysubsection{\texorpdfstring{Conventions de Nommage}{Conventions de Nommage}}\label{md_README_autotoc_md114}
+
+\begin{DoxyItemize}
+\item {\bfseries{Variables et fonctions}} \+: {\ttfamily snake\+\_\+case} (ex\+: {\ttfamily player\+\_\+position}, {\ttfamily update\+\_\+game\+\_\+state()})
+\item {\bfseries{Constantes et macros}} \+: {\ttfamily UPPER\+\_\+\+CASE} (ex\+: {\ttfamily MAX\+\_\+\+ENEMIES}, {\ttfamily SCREEN\+\_\+\+WIDTH})
+\item {\bfseries{Types (structures, enums)}} \+: {\ttfamily Pascal\+Case} avec typedef (ex\+: {\ttfamily Game\+State}, {\ttfamily Player\+Data})
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md115}{}\doxysubsection{\texorpdfstring{Style de Code}{Style de Code}}\label{md_README_autotoc_md115}
+
+\begin{DoxyItemize}
+\item {\bfseries{Indentation}} \+: 4 espaces (pas de tabulations)
+\item {\bfseries{Accolades}} \+: Style K\&R (accolade ouvrante sur la même ligne)
+\item {\bfseries{Longueur de ligne}} \+: Maximum 100 caractères
+\item {\bfseries{Commentaires}} \+: Style C99 ({\ttfamily //}) pour les commentaires courts, {\ttfamily /\texorpdfstring{$\ast$}{*} \texorpdfstring{$\ast$}{*}/} pour les blocs
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md116}{}\doxysubsection{\texorpdfstring{Organisation des Fichiers}{Organisation des Fichiers}}\label{md_README_autotoc_md116}
+Chaque module doit contenir \+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Fichier d\textquotesingle{}en-\/tête (.h)}} \+:
+\begin{DoxyItemize}
+\item Protection contre les inclusions multiples ({\ttfamily \#ifndef}, {\ttfamily \#define}, {\ttfamily \#endif})
+\item Déclarations des structures publiques
+\item Prototypes des fonctions publiques
+\item Commentaires de documentation
+\end{DoxyItemize}
+\item {\bfseries{Fichier d\textquotesingle{}implémentation (.c)}} \+:
+\begin{DoxyItemize}
+\item Inclusion du fichier d\textquotesingle{}en-\/tête correspondant
+\item Structures et fonctions privées (static)
+\item Implémentation des fonctions publiques
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md117}{}\doxysubsection{\texorpdfstring{Gestion de la Mémoire}{Gestion de la Mémoire}}\label{md_README_autotoc_md117}
+
+\begin{DoxyItemize}
+\item Toute allocation ({\ttfamily malloc}, {\ttfamily calloc}) doit avoir une libération ({\ttfamily free}) correspondante
+\item Vérifier systématiquement le retour des allocations (NULL)
+\item Utiliser {\ttfamily valgrind} pour détecter les fuites mémoire
+\item Préférer l\textquotesingle{}allocation sur la pile quand c\textquotesingle{}est possible
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md118}{}\doxysubsection{\texorpdfstring{Documentation du Code}{Documentation du Code}}\label{md_README_autotoc_md118}
+
+\begin{DoxyItemize}
+\item Documenter toutes les fonctions publiques (style Doxygen recommandé)
+\item Expliquer les algorithmes complexes
+\item Inclure des exemples d\textquotesingle{}utilisation pour les APIs publiques
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md120}{}\doxysection{\texorpdfstring{Exigences du Projet}{Exigences du Projet}}\label{md_README_autotoc_md120}
+Ce projet respecte les exigences suivantes conformément au cahier des charges \+:\hypertarget{md_README_autotoc_md121}{}\doxysubsection{\texorpdfstring{Fonctionnalités Requises}{Fonctionnalités Requises}}\label{md_README_autotoc_md121}
+
+\begin{DoxyItemize}
+\item[\DoxyChecked] Modèle MVC strict avec séparation claire
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Deux vues interchangeables (SDL et ncurses)
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Gestion complète de l\textquotesingle{}état du jeu
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Logique de déplacement des ennemis
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Système de tir et collisions
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Gestion des niveaux et progression
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Système de score et vies
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Makefile avec cibles requises
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] README détaillé
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Architecture propre et modulaire
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md122}{}\doxysubsection{\texorpdfstring{Tests et Validation}{Tests et Validation}}\label{md_README_autotoc_md122}
+
+\begin{DoxyItemize}
+\item[\DoxyChecked] Tests unitaires pour le modèle
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Validation Valgrind (pas de fuites mémoire)
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Support de compilation sur Linux
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Documentation du code
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md123}{}\doxysubsection{\texorpdfstring{Livrables}{Livrables}}\label{md_README_autotoc_md123}
+
+\begin{DoxyItemize}
+\item[\DoxyChecked] Code source complet et organisé
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Makefile avec toutes les cibles requises
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] README détaillé
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Script de validation du projet
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item[\DoxyChecked] Rapports Valgrind
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md125}{}\doxysection{\texorpdfstring{Cibles Makefile Disponibles}{Cibles Makefile Disponibles}}\label{md_README_autotoc_md125}
+\hypertarget{md_README_autotoc_md126}{}\doxysubsection{\texorpdfstring{Compilation}{Compilation}}\label{md_README_autotoc_md126}
+
+\begin{DoxyItemize}
+\item {\ttfamily make all} \+: Compile SDL, ncurses et les outils
+\item {\ttfamily make sdl} \+: Compile uniquement la version SDL
+\item {\ttfamily make ncurses} \+: Compile uniquement la version ncurses
+\item {\ttfamily make tools} \+: Compile les outils auxiliaires
+\item {\ttfamily make rebuild} \+: Nettoie et recompile tout
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md127}{}\doxysubsection{\texorpdfstring{Exécution}{Exécution}}\label{md_README_autotoc_md127}
+
+\begin{DoxyItemize}
+\item {\ttfamily make run-\/sdl} \+: Compile et lance la version SDL
+\item {\ttfamily make run-\/ncurses} \+: Compile et lance la version ncurses
+\item {\ttfamily make run-\/tests} \+: Compile et exécute les tests
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md128}{}\doxysubsection{\texorpdfstring{Tests et Vérifications}{Tests et Vérifications}}\label{md_README_autotoc_md128}
+
+\begin{DoxyItemize}
+\item {\ttfamily make test} \+: Exécute les tests unitaires
+\item {\ttfamily make valgrind-\/sdl} \+: Analyse mémoire (SDL)
+\item {\ttfamily make valgrind-\/ncurses} \+: Analyse mémoire (ncurses)
+\item {\ttfamily make valgrind-\/tests} \+: Analyse mémoire (tests)
+\item {\ttfamily make valgrind-\/report} \+: Génère un rapport Valgrind complet
+\item {\ttfamily make check-\/memory} \+: Analyse mémoire complète
+\item {\ttfamily make leak-\/check} \+: Vérification rapide des fuites
+\item {\ttfamily make check-\/style} \+: Vérifie le style du code
+\item {\ttfamily make format} \+: Formate automatiquement le code
+\item {\ttfamily make fullcheck} \+: Vérification complète du projet
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md129}{}\doxysubsection{\texorpdfstring{Documentation}{Documentation}}\label{md_README_autotoc_md129}
+
+\begin{DoxyItemize}
+\item {\ttfamily make doc} \+: Génère la documentation Doxygen
+\item {\ttfamily make info} \+: Affiche les informations de build
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md130}{}\doxysubsection{\texorpdfstring{Dépendances}{Dépendances}}\label{md_README_autotoc_md130}
+
+\begin{DoxyItemize}
+\item {\ttfamily make install-\/deps} \+: Installe les dépendances nécessaires
+\item {\ttfamily make check-\/sdl-\/deps} \+: Vérifie les dépendances SDL3
+\item {\ttfamily make check-\/ncurses-\/deps} \+: Vérifie les dépendances ncurses
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md131}{}\doxysubsection{\texorpdfstring{Nettoyage}{Nettoyage}}\label{md_README_autotoc_md131}
+
+\begin{DoxyItemize}
+\item {\ttfamily make clean} \+: Supprime tous les fichiers générés
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md132}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{md_README_autotoc_md132}
+
+\begin{DoxyItemize}
+\item {\ttfamily make install} \+: Installe dans /usr/local/bin
+\item {\ttfamily make uninstall} \+: Désinstalle du système
+\item {\ttfamily make dist} \+: Crée un package de distribution
+\item {\ttfamily make package} \+: Alias pour dist
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md133}{}\doxysubsection{\texorpdfstring{Modes de Compilation Spéciaux}{Modes de Compilation Spéciaux}}\label{md_README_autotoc_md133}
+
+\begin{DoxyItemize}
+\item {\ttfamily make debug} \+: Compile en mode débogage (sanitizers)
+\item {\ttfamily make release} \+: Compile en mode optimisé (production)
+\item {\ttfamily make profile} \+: Compile avec support du profiling
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md134}{}\doxysubsection{\texorpdfstring{Utilitaires}{Utilitaires}}\label{md_README_autotoc_md134}
+
+\begin{DoxyItemize}
+\item {\ttfamily make prepare-\/assets} \+: Prépare les ressources (polices, etc.)
+\item {\ttfamily make check-\/project} \+: Vérifie la structure du projet
+\item {\ttfamily make help} \+: Affiche l\textquotesingle{}aide complète
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md136}{}\doxysection{\texorpdfstring{Dépannage}{Dépannage}}\label{md_README_autotoc_md136}
+\hypertarget{md_README_autotoc_md137}{}\doxysubsection{\texorpdfstring{Problèmes Courants}{Problèmes Courants}}\label{md_README_autotoc_md137}
+\hypertarget{md_README_autotoc_md138}{}\doxysubsubsection{\texorpdfstring{SDL3 non trouvé}{SDL3 non trouvé}}\label{md_README_autotoc_md138}
+{\bfseries{Erreur}} \+: {\ttfamily pkg-\/config\+: command not found} ou {\ttfamily SDL3 not found}
+
+{\bfseries{Solution}} \+:
+\begin{DoxyEnumerate}
+\item Vérifiez que pkg-\/config est installé \+: {\ttfamily which pkg-\/config}
+\item Vérifiez que SDL3 est détectable \+: {\ttfamily pkg-\/config -\/-\/modversion sdl3}
+\item Vérifiez la variable PKG\+\_\+\+CONFIG\+\_\+\+PATH \+: {\ttfamily echo \$PKG\+\_\+\+CONFIG\+\_\+\+PATH}
+\item Si nécessaire, ajoutez le chemin vers les fichiers .pc de SDL3
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md139}{}\doxysubsubsection{\texorpdfstring{Erreurs de compilation avec ncurses}{Erreurs de compilation avec ncurses}}\label{md_README_autotoc_md139}
+{\bfseries{Erreur}} \+: {\ttfamily ncurses.\+h\+: No such file or directory}
+
+{\bfseries{Solution}} \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ libncurses-\/dev\ \ \#\ Debian/Ubuntu}
+\DoxyCodeLine{sudo\ dnf\ install\ ncurses-\/devel\ \ \ \ \ \ \ \#\ Fedora}
+\DoxyCodeLine{sudo\ pacman\ -\/S\ ncurses\ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Arch\ Linux}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md140}{}\doxysubsubsection{\texorpdfstring{Fuites mémoire détectées}{Fuites mémoire détectées}}\label{md_README_autotoc_md140}
+{\bfseries{Problème}} \+: Valgrind signale des fuites mémoire
+
+{\bfseries{Solution}} \+:
+\begin{DoxyEnumerate}
+\item Exécutez {\ttfamily make valgrind-\/report} pour obtenir un rapport détaillé
+\item Consultez le fichier {\ttfamily reports/valgrind-\/rapport-\/complet.\+txt}
+\item Vérifiez chaque allocation avec son {\ttfamily free()} correspondant
+\item Utilisez le débogueur gdb si nécessaire
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md141}{}\doxysubsubsection{\texorpdfstring{Erreurs de permissions lors de l\textquotesingle{}installation}{Erreurs de permissions lors de l\textquotesingle{}installation}}\label{md_README_autotoc_md141}
+{\bfseries{Erreur}} \+: {\ttfamily Permission denied} lors de {\ttfamily make install}
+
+{\bfseries{Solution}} \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ make\ install}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md143}{}\doxysection{\texorpdfstring{Contribution}{Contribution}}\label{md_README_autotoc_md143}
+Les contributions sont les bienvenues. Veuillez suivre ces directives \+:
+
+
+\begin{DoxyEnumerate}
+\item Respecter l\textquotesingle{}architecture MVC
+\item Suivre les standards de code définis
+\item Ajouter des tests pour les nouvelles fonctionnalités
+\item Vérifier l\textquotesingle{}absence de fuites mémoire avec Valgrind
+\item Documenter le code avec des commentaires clairs
+\item Tester sur les deux interfaces (SDL et ncurses)
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md145}{}\doxysection{\texorpdfstring{Licence}{Licence}}\label{md_README_autotoc_md145}
+Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.\hypertarget{md_README_autotoc_md146}{}\doxysubsection{\texorpdfstring{Attributions}{Attributions}}\label{md_README_autotoc_md146}
+
+\begin{DoxyItemize}
+\item {\bfseries{Concept original}} \+: Space Invaders (Taito, 1978)
+\item {\bfseries{Architecture}} \+: Basée sur les design patterns classiques (MVC)
+\item {\bfseries{Bibliothèques utilisées}} \+:
+\begin{DoxyItemize}
+\item SDL3 \+: Licence Zlib
+\item SDL3\+\_\+ttf \+: Licence Zlib
+\item SDL3\+\_\+image \+: Licence Zlib
+\item ncurses \+: Licence X11
+\item Check \+: Licence LGPL
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md148}{}\doxysection{\texorpdfstring{Contact et Support}{Contact et Support}}\label{md_README_autotoc_md148}
+Pour toute question ou problème \+:
+
+
+\begin{DoxyEnumerate}
+\item Consultez d\textquotesingle{}abord cette documentation
+\item Vérifiez les problèmes courants dans la section Dépannage
+\item Exécutez {\ttfamily make check-\/project} pour valider votre installation
+\item Consultez les rapports Valgrind pour les problèmes de mémoire
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md150}{}\doxysection{\texorpdfstring{Références}{Références}}\label{md_README_autotoc_md150}
+
+\begin{DoxyItemize}
+\item \href{https://wiki.libsdl.org/SDL3/FrontPage}{\texttt{SDL3 Documentation}}
+\item \href{https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/}{\texttt{ncurses Programming Guide}}
+\item \href{https://www.adamtornhill.com/Patterns\%20in\%20C.pdf}{\texttt{Design Patterns in C}}
+\item \href{https://valgrind.org/docs/manual/manual.html}{\texttt{Valgrind User Manual}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+{\bfseries{Version du Document}} \+: 1.\+0 ~\newline
+ {\bfseries{Dernière Mise à Jour}} \+: 2025-\/12-\/31 ~\newline
+ {\bfseries{Auteur}} \+: Projet Space Invaders MVC 

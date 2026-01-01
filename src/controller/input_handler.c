@@ -136,6 +136,9 @@ void input_handler_process_sdl_event(InputHandler* handler, const SDL_Event* eve
     bool is_shoot = false;
     bool is_pause = false;
     bool is_quit = false;
+    bool is_up = false;
+    bool is_down = false;
+    bool is_enter = false;
     
     if (event->type == SDL_EVENT_KEY_DOWN || event->type == SDL_EVENT_KEY_UP) {
         SDL_Keycode key = event->key.key;
@@ -146,6 +149,9 @@ void input_handler_process_sdl_event(InputHandler* handler, const SDL_Event* eve
         is_shoot = (key == handler->key_shoot);
         is_pause = (key == handler->key_pause) || (key == SDLK_P);
         is_quit  = (key == handler->key_quit)  || (key == SDLK_Q);
+        is_up    = (key == SDLK_UP) || (key == SDLK_W);
+        is_down  = (key == SDLK_DOWN) || (key == SDLK_S);
+        is_enter = (key == SDLK_RETURN) || (key == SDLK_RETURN2) || (key == SDLK_KP_ENTER);
     }
 
     switch (event->type) {
@@ -155,6 +161,9 @@ void input_handler_process_sdl_event(InputHandler* handler, const SDL_Event* eve
             if (is_shoot) handler->keyboard_state.shoot_pressed = true;
             if (is_pause) handler->keyboard_state.pause_pressed = true;
             if (is_quit)  handler->keyboard_state.quit_pressed = true;
+            if (is_up)    handler->keyboard_state.up_pressed = true;
+            if (is_down)  handler->keyboard_state.down_pressed = true;
+            if (is_enter) handler->keyboard_state.enter_pressed = true;
             break;
             
         case SDL_EVENT_KEY_UP:
@@ -179,6 +188,18 @@ void input_handler_process_sdl_event(InputHandler* handler, const SDL_Event* eve
             }
             if (is_quit) {
                 handler->keyboard_state.quit_pressed = false;
+            }
+            if (is_up) {
+                handler->keyboard_state.up_pressed = false;
+                handler->keyboard_state.up_was_pressed = false;
+            }
+            if (is_down) {
+                handler->keyboard_state.down_pressed = false;
+                handler->keyboard_state.down_was_pressed = false;
+            }
+            if (is_enter) {
+                handler->keyboard_state.enter_pressed = false;
+                handler->keyboard_state.enter_was_pressed = false;
             }
             break;
             

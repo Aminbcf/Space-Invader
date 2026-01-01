@@ -1,0 +1,467 @@
+# Space Invaders MVC - Script Vidéo Français
+
+**Durée totale**: 10 minutes  
+**Structure**: 5 min gameplay + 5 min technique  
+**Format**: Capture d'écran avec voix off
+
+---
+
+## PARTIE 1 - GAMEPLAY ET DÉMONSTRATION (0:00 - 5:00)
+
+### Introduction (0:00 - 0:30)
+
+**[Montrer le dossier du projet]**
+
+> "Bonjour! Aujourd'hui je vous présente Space Invaders MVC - une réimplémentation moderne du classique arcade en langage C, suivant strictement l'architecture Modèle-Vue-Contrôleur."
+
+**[Aperçu rapide de la structure]**
+
+> "Le projet propose deux interfaces: SDL3 pour le graphisme et ncurses pour le terminal, toutes deux partageant la même logique de jeu."
+
+---
+
+### Système de Menu (0:30 - 1:30)
+
+**[Terminal: `make run-sdl`]**
+
+> "Lançons le jeu. Compilation et démarrage de la version SDL..."
+
+**[Le jeu démarre - afficher le menu principal]**
+
+> "Voici notre menu principal. La navigation se fait avec les flèches ou WASD."
+
+**[Naviguer dans le menu]**
+
+**Option START**:
+> "Le bouton START nous amène vers la sélection de difficulté"
+
+**[Afficher le sous-menu de difficulté]**
+- **EASY** (sélectionner mais ne pas valider)
+  > "Mode Facile: 3 niveaux seulement, sans combat de boss"
+- **NORMAL** (sélectionner)
+  > "Normal: 4 niveaux avec un boss final - le mode standard"  
+- **HARD** (sélectionner)
+  > "Mode Difficile: les ennemis se déplacent 1,5 fois plus vite dès le niveau 1, tirent plus fréquemment, et surtout - tous les scores sont DOUBLÉS!"
+
+**[Retour au menu principal]**
+
+**Option SETTINGS**:
+> "Dans les paramètres, on trouve plusieurs options"
+
+**[Naviguer vers SETTINGS → MUSIC VOLUME]**
+> "Le curseur de volume est entièrement fonctionnel - utilisez les flèches gauche/droite pour ajuster"
+
+**[Changer le volume de 50% à 100% puis à 30%]**
+
+**[Naviguer vers SETTINGS → CONTROLS]**
+> "L'écran des contrôles affiche toutes les touches du jeu"
+
+**[Afficher brièvement puis retourner au menu principal]**
+
+---
+
+### Démonstration Gameplay - Mode HARD (1:30 - 3:30)
+
+**[START → Sélectionner HARD]**
+
+> "Jouons en mode Difficile pour montrer les différences de gameplay."
+
+**[Le jeu démarre - Niveau 1]**
+
+> "Remarquez immédiatement la vitesse des envahisseurs - c'est nettement plus rapide que le mode normal!"
+
+**[Jouer activement - 2 minutes de gameplay]**
+
+**Actions à montrer**:
+
+1. **Déplacement et tir** (10 sec):
+   > "Le contrôle est fluide, les tirs rapides"
+   
+2. **Éliminer des ennemis** (20 sec):
+   > "Chaque ennemi éliminé rapporte le double de points en mode Difficile"
+   **[Montrer le score augmenter - par ex. +60 points au lieu de +30]**
+
+3. **Se faire toucher** (5 sec):
+   > "Le son de dégât se joue quand on est touché"
+   **[Perdre une vie intentionnellement]**
+
+4. **Montrer les tirs ennemis** (10 sec):
+   > "Les ennemis tirent beaucoup plus fréquemment - regardez la densité de projectiles!"
+
+5. **Soucoupe bonus** (15 sec):
+   **[Attendre qu'elle apparaisse ou continuer de jouer]**
+   > "La soucoupe bonus apparaît aléatoirement et vaut entre 400 et 600 points en mode Difficile!"
+
+6. **Compléter le niveau** (30 sec):
+   **[Finir le niveau 1]**
+   > "Excellent! Passage au niveau 2..."
+
+7. **Niveau 2** (30 sec):
+   > "Le niveau 2 est encore plus difficile..."
+   **[Jouer brièvement]**
+
+---
+
+### Combat de Boss (3:30 - 4:30)
+
+**[Si possible, éditer le code temporairement pour commencer au niveau 4, OU jouer très vite, OU monter un enregistrement pré-fait]**
+
+**[Niveau 4 - Boss apparaît]**
+
+> "Voici le niveau 4 - le combat final contre le Dreadnought!"
+
+**[La musique change]**
+> "Notez comment la musique change automatiquement pour une ambiance de combat intense"
+
+**[Combattre le boss - 30-45 secondes]**
+
+**Points à montrer**:
+- Le boss se déplace horizontalement
+- Il tire des projectiles
+- Il encaisse plusieurs coups
+- Sa barre de vie diminue
+
+> "Le boss nécessite plusieurs impacts pour être détruit. En mode Difficile, sa défaite rapporte 10 000 points - le double des 5 000 points normaux!"
+
+**[Si possible, détruire le boss]**
+> "Victoire!"
+
+---
+
+### Écran de Victoire (4:30 - 5:00)
+
+**[Montrer l'écran de victoire]**
+
+> "L'écran de victoire affiche notre score final"
+
+**[La musique de victoire joue]**
+> "La musique de victoire se lance automatiquement"
+
+**[Appuyer sur ESPACE]**
+> "En appuyant sur ESPACE, on retourne au menu principal - pas de redémarrage automatique"
+
+**[Retour au menu]**
+> "De retour au menu, on peut choisir une autre difficulté, ajuster les paramètres, ou quitter le jeu."
+
+---
+
+## PARTIE 2 - ASPECTS TECHNIQUES (5:00 - 10:00)
+
+### Architecture MVC (5:00 - 6:00)
+
+**[Ouvrir VSCode ou explorer de fichiers - montrer src/]**
+
+> "Passons maintenant aux aspects techniques. Le projet suit rigoureusement l'architecture MVC:"
+
+**[Naviguer dans src/core/]**
+> "Le **Modèle** se trouve dans src/core/ - c'est la logique pure du jeu, totalement indépendante de l'interface"
+
+**[Montrer model.h brièvement - chercher l'enum Difficulty]**
+> "Regardez ici - l'énumération Difficulty définie dans le modèle avec EASY, NORMAL et HARD"
+
+**[Naviguer dans src/views/]**
+> "Les **Vues** se trouvent dans src/views/ - nous avons deux implémentations complètes:"
+- `view_sdl.c` - "Version graphique avec SDL3"
+- `view_ncurses.c` - "Version terminal avec ncurses"
+
+**[Naviguer dans src/controller/]**
+> "Le **Contrôleur** gère les entrées utilisateur et fait le pont entre la vue et le modèle"
+
+**[Montrer rapidement commands.h]**
+> "Les commandes sont abstraites - CMD_SHOOT, CMD_MOVE_LEFT, etc. - indépendantes de l'implémentation"
+
+---
+
+### Système de Compilation (6:00 - 7:00)
+
+**[Terminal - montrer le Makefile]**
+
+> "Le projet utilise un système de compilation Makefile complet avec plus de 40 cibles"
+
+**[Taper: `make help`]**
+> "La commande make help affiche toutes les options disponibles"
+
+**[Scroller rapidement dans l'aide]**
+
+**[Compiler:]**
+```bash
+make clean
+```
+
+> "Nettoyage des fichiers de compilation..."
+
+```bash
+make all
+```
+
+> "Make all compile les deux versions - SDL et ncurses - ainsi que les outils auxiliaires"
+
+**[Pendant la compilation, parler]**
+
+> "Notez comment les fichiers sont compilés séparément:"
+- "build/sdl/ pour la version SDL"
+- "build/ncurses/ pour la version ncurses"  
+- "Mais ils partagent le même code source pour le modèle!"
+
+**[Compilation terminée]**
+
+> "Les exécutables sont générés dans bin/"
+
+---
+
+### Tests Unitaires et Validation (7:00 - 8:00)
+
+**[Lancer les tests]**
+```bash
+make test
+```
+
+> "Le projet inclut 11 tests unitaires couvrant:"
+- "La logique du modèle"
+- "Les commandes du contrôleur"
+- "La gestion des entrées"
+- "Les transitions d'état"
+
+**[Montrer les résultats - tous PASS]**
+> "Les 11 tests passent avec succès - 100% de réussite!"
+
+**[Analyse mémoire]**
+```bash
+make valgrind-sdl
+```
+
+> "Valgrind effectue une analyse mémoire complète..."
+
+**[Pendant que ça tourne - 10-15 secondes]**
+
+> "Valgrind vérifie:"
+- "Les fuites mémoire"
+- "Les accès invalides"
+- "Les débordements de tampon"
+
+**[Montrer le résultat final]**
+> "Résultat: zéro fuite mémoire! Toute la mémoire allouée est correctement libérée"
+
+---
+
+### Version ncurses (8:00 - 8:40)
+
+**[Lancer la version ncurses]**
+```bash
+make run-ncurses
+```
+
+> "Voici la version ncurses - même logique de jeu, interface différente"
+
+**[Le jeu démarre en mode texte]**
+
+> "Cette version fonctionne dans n'importe quel terminal:"
+- "Parfait pour SSH"
+- "Environnements bas-ressources"
+- "Serveurs sans interface graphique"
+
+**[Jouer quelques secondes]**
+> "Les contrôles sont identiques, seul le rendu change"
+
+**[Quitter]**
+
+---
+
+### Fonctionnalités Avancées (8:40 - 9:30)
+
+**[Retour au terminal - montrer le code]**
+
+> "Parlons des fonctionnalités avancées:"
+
+**1. Système Audio** (20 sec):
+**[Montrer bin/assets/]**
+> "Le jeu inclut plusieurs pistes musicales:"
+- `music_game.wav` - "Pour le menu et le gameplay"
+- `music_boss.wav` - "Pour le combat de boss"  
+- `music_victory.wav` - "Pour la victoire"
+
+> "Plus des effets sonores: tirs, explosions, dégâts"
+
+> "Toute la musique est générée procéduralement en Python!"
+
+**2. Système de Scores** (15 sec):
+**[Montrer du code - model.c, fonction apply_difficulty_multiplier]**
+```c
+static int apply_difficulty_multiplier(GameModel* model, int base_score) {
+    switch(model->difficulty) {
+        case DIFFICULTY_EASY:    return base_score;
+        case DIFFICULTY_NORMAL:  return (int)(base_score * 1.5f);
+        case DIFFICULTY_HARD:    return base_score * 2;
+    }
+}
+```
+
+> "Chaque élimination d'ennemi applique le multiplicateur de difficulté"
+
+**3. Sauvegarde** (10 sec):
+**[Montrer highscore.dat]**
+> "Le meilleur score est sauvegardé automatiquement dans un fichier binaire"
+
+---
+
+### Documentation (9:30 - 9:50)
+
+**[Générer la documentation]**
+```bash
+make doc
+```
+
+> "La documentation Doxygen se génère automatiquement depuis le code"
+
+**[Pendant la génération]**
+
+> "Doxygen parse tous les commentaires du code et crée:"
+- "Une documentation HTML complète"
+- "Des diagrammes de dépendances"  
+- "Un index des fonctions et structures"
+
+**[Montrer docs/html/ - ouvrir index.html dans navigateur]**
+
+> "Voici la documentation générée - navigation facile, recherche intégrée"
+
+---
+
+### Conclusion (9:50 - 10:00)
+
+**[Retour au menu du jeu ou écran final]**
+
+> "Space Invaders MVC démontre:"
+✓ "Architecture MVC rigoureuse avec séparation stricte"
+✓ "Deux interfaces complètes depuis un seul code source"
+✓ "Développement C moderne avec tests et sécurité mémoire"
+✓ "Fonctionnalités complètes: menus, difficultés, audio, progression"
+✓ "Documentation automatique et validation robuste"
+
+**[Texte à l'écran ou README]**
+
+> "Merci d'avoir regardé cette présentation! Le code est disponible sur le dépôt du projet."
+
+---
+
+## NOTES DE PRODUCTION
+
+### Préparation Avant Enregistrement
+
+1. **Modification temporaire du code** (optionnel):
+   - Pour sauter directement au niveau 4 (boss), modifier `model->player.level = 4` au début
+
+2. **Compilation propre**:
+   ```bash
+   make clean && make all
+   ```
+
+3. **Tester tous les flux**:
+   - Menu → Difficultés → Settings
+   - Gameplay sur chaque difficulté
+   - Boss fight
+   - Victoire/défaite
+
+### Paramètres d'Enregistrement
+
+**Vidéo**:
+- Résolution: 1080p minimum
+- FPS: 60 (pour gameplay fluide)
+- Codec: H.264
+- Bitrate: 8-10 Mbps
+
+**Audio**:
+- Enregistrer l'audio système (musique + effets)
+- Voix off séparée (48 kHz, mono)
+- Mixer: musique à -15 dB, voix à 0 dB
+- Normaliser l'audio final
+
+### Organisation du Montage
+
+**Timeline suggérée**:
+
+```
+0:00 ├─ Introduction (30s)
+0:30 ├─ Menu système (1min)
+1:30 ├─ Gameplay HARD (2min)
+3:30 ├─ Boss fight (1min)
+4:30 ├─ Victoire (30s)
+     │
+5:00 ├─ Architecture (1min)
+6:00 ├─ Compilation (1min)
+7:00 ├─ Tests/Valgrind (1min)
+8:00 ├─ Version ncurses (40s)
+8:40 ├─ Fonctionnalités (50s)
+9:30 ├─ Documentation (20s)
+9:50 └─ Conclusion (10s)
+```
+
+### Effets et Transitions
+
+**Partie Gameplay (0-5min)**:
+- Transitions douces entre sections
+- Zoom sur le score quand il augmente
+- Slow motion sur les moments clés (boss hit)
+- Sous-titres pour les points importants
+
+**Partie Technique (5-10min)**:
+- Split screen: code + résultat
+- Surlignage du code important
+- Animations de schémas pour MVC
+- Accélérer la compilation (1.5x ou 2x)
+
+### Textes à l'Écran (Overlays)
+
+**À ajouter pendant le montage**:
+
+Partie Gameplay:
+- "Mode HARD: Vitesse x1.5"
+- "Score x2 sur tous les ennemis"
+- "300 → 600 points!" (lors du saucer)
+- "Boss: 10,000 points!"
+
+Partie Technique:
+- "11/11 tests réussis ✓"
+- "0 fuites mémoire ✓"
+- "Architecture MVC stricte"
+- "2 interfaces, 1 codebase"
+
+### B-Roll Suggestions
+
+**Pour varier visuellement**:
+1. Diagramme MVC animé
+2. Tree structure du projet
+3. Graphiques de tests (success rate)
+4. Logos: C11, SDL3, ncurses
+5. Commits Git (si pertinent)
+6. Doxygen documentation navigation
+
+### Checklist Avant Export Final
+
+- [ ] Vérifier le timing (exactement 10 min)
+- [ ] Balance audio musique/voix correcte
+- [ ] Tous les textes lisibles
+- [ ] Transitions fluides
+- [ ] Aucun lag visible dans gameplay
+- [ ] Intro/outro professionnels
+- [ ] Générique final (nom, projet, date)
+- [ ] Export en 1080p60
+- [ ] Tester sur différents écrans
+
+---
+
+## SCRIPT ALTERNATIF (Si contraintes techniques)
+
+Si impossible de montrer le boss en live:
+
+**Option A**: Pré-enregistrer le boss fight, l'insérer au montage  
+**Option B**: Remplacer boss fight par plus de technique:
+  - 2 min gameplay normal
+  - 6 min technique étendue (coverage, profiling, etc.)
+
+Si problèmes de compilation en direct:
+
+**Option**: Pré-compiler, montrer seulement `make info` et résultats
+
+---
+
+**Bon courage pour l'enregistrement! 🎬🎮**

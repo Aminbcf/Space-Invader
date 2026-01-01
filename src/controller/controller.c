@@ -92,9 +92,10 @@ Command controller_translate_input(InputEvent* event) {
             if (event->key == 'd' || event->key == 'D' || event->key == 261) return CMD_MOVE_RIGHT;
             if (event->key == ' ' || event->key == '\n') return CMD_SHOOT;
             if (event->key == 'p' || event->key == 'P') return CMD_PAUSE;
-            if (event->key == 27 || event->key == 'q' || event->key == 'Q') return CMD_QUIT;
+            if (event->key == 27 || event->key == 'q' || event->key == 'Q') return CMD_BACK;  // ESC for back
             if (event->key == 'r' || event->key == 'R') return CMD_RESET_GAME;
             if (event->key == '1') return CMD_START_GAME;
+            if (event->key == 13) return CMD_CONFIRM;  // Enter key
             
             if (event->key == 259 || event->key == 'w' || event->key == 'W') return CMD_UP;
             if (event->key == 258 || event->key == 's' || event->key == 'S') return CMD_DOWN;
@@ -124,6 +125,48 @@ void controller_execute_command(Controller* controller, Command cmd) {
     
     controller->last_input_time = get_ticks();
     
+    // Menu navigation
+    if (controller->model->state == STATE_MENU) {
+        switch(cmd) {
+            case CMD_UP:
+                model_process_menu_input(controller->model, -1);
+                return;
+            case CMD_DOWN:
+                model_process_menu_input(controller->model, 1);
+                return;
+            case CMD_MOVE_LEFT:
+                if (controller->model->menu_state == MENU_SETTINGS && controller->model->menu_selection == 1) {
+                    model_adjust_music_volume(controller->model, -1);
+                }
+                return;
+            case CMD_MOVE_RIGHT:
+                if (controller->model->menu_state == MENU_SETTINGS && controller->model->menu_selection == 1) {
+                    model_adjust_music_volume(controller->model, 1);
+                }
+                return;
+            case CMD_CONFIRM:
+                model_process_menu_input(controller->model, 0);
+                return;
+            case CMD_BACK:
+                // ESC to go back in menus
+                if (controller->model->menu_state != MENU_MAIN) {
+                    controller->model->menu_state = (controller->model->menu_state == MENU_DIFFICULTY) ? MENU_MAIN :
+                                                     (controller->model->menu_state == MENU_CONTROLS) ? MENU_SETTINGS : MENU_MAIN;
+                    controller->model->menu_selection = 0;
+                    controller->model->needs_redraw = true;
+                } else {
+                    controller->quit_requested = true;  // ESC on main menu = quit
+                }
+                return;
+            case CMD_SHOOT:  // Space also works as select
+                model_process_menu_input(controller->model, 0);
+                return;
+            default:
+                break;
+        }
+    }
+    
+    // Game commands
     switch (cmd) {
         case CMD_MOVE_LEFT:
             if (controller->model->state == STATE_PLAYING) {
@@ -140,14 +183,12 @@ void controller_execute_command(Controller* controller, Command cmd) {
         case CMD_SHOOT:
             if (controller->model->state == STATE_PLAYING) {
                 model_player_shoot(controller->model);
-            } else if (controller->model->state == STATE_MENU) {
-                model_set_state(controller->model, STATE_PLAYING);
             } else if (controller->model->state == STATE_GAME_OVER) {
-                model_reset_game(controller->model);
+                model_init(controller->model);  // Return to main menu
             } else if (controller->model->state == STATE_LEVEL_TRANSITION) {
                 model_set_state(controller->model, STATE_PLAYING);
             } else if (controller->model->state == STATE_WIN) {
-                model_reset_game(controller->model);
+                model_init(controller->model);  // Return to main menu
             }
             break;
             
@@ -164,8 +205,14 @@ void controller_execute_command(Controller* controller, Command cmd) {
             }
             break;
             
-        case CMD_QUIT:
-            controller->quit_requested = true;
+        case CMD_BACK:
+            if (controller->model->state == STATE_PLAYING || 
+                controller->model->state == STATE_PAUSED) {
+                model_init(controller->model);  // Return to menu
+            } else if (controller->model->state == STATE_GAME_OVER || 
+                       controller->model->state == STATE_WIN) {
+                model_init(controller->model);  // Return to menu
+            }
             break;
             
         case CMD_RESET_GAME:
@@ -174,6 +221,10 @@ void controller_execute_command(Controller* controller, Command cmd) {
                 controller->model->state == STATE_WIN) {
                 model_reset_game(controller->model);
             }
+            break;
+            
+        case CMD_QUIT:
+            controller->quit_requested = true;
             break;
             
         default:

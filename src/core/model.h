@@ -45,8 +45,24 @@ typedef enum {
     STATE_PAUSED,
     STATE_GAME_OVER,
     STATE_LEVEL_TRANSITION,
-    STATE_WIN
+    STATE_WIN,
+    STATE_QUIT
 } GameState;
+
+// Difficulty Levels
+typedef enum {
+    DIFFICULTY_EASY,
+    DIFFICULTY_NORMAL,
+    DIFFICULTY_HARD
+} Difficulty;
+
+// Menu States
+typedef enum {
+    MENU_MAIN,
+    MENU_DIFFICULTY,
+    MENU_SETTINGS,
+    MENU_CONTROLS
+} MenuState;
 
 typedef enum {
     ENTITY_PLAYER,
@@ -137,6 +153,10 @@ typedef struct {
     Bullet player_bullets[PLAYER_BULLETS];
     Bullet enemy_bullets[ENEMY_BULLETS];
     GameState state;
+    Difficulty difficulty;
+    MenuState menu_state;
+    int menu_selection;       // Current selected menu item
+    float music_volume;       // 0.0 to 1.0
     uint32_t game_time;
     bool needs_redraw;
     int high_score;
@@ -176,5 +196,11 @@ int model_get_score(const GameModel* model);
 int model_get_lives(const GameModel* model);
 int model_get_level(const GameModel* model);
 GameState model_get_state(const GameModel* model);
+
+// Menu and Difficulty
+void model_process_menu_input(GameModel* model, int direction);  // -1=up, 1=down, 0=select
+void model_apply_difficulty(GameModel* model);
+void model_adjust_music_volume(GameModel* model, int direction);  // -1=decrease, 1=increase
+int model_get_max_menu_items(const GameModel* model);
 
 #endif // MODEL_H

@@ -97,6 +97,8 @@ static void init_saucer(Saucer* saucer) {
 
 void model_init(GameModel* model) {
     memset(model, 0, sizeof(GameModel));
+    
+    // Initialize game entities
     init_player(&model->player);
     init_invaders(&model->invaders, 1);
     init_boss(&model->boss);
@@ -104,7 +106,13 @@ void model_init(GameModel* model) {
     init_bullets(model->player_bullets, PLAYER_BULLETS, true);
     init_bullets(model->enemy_bullets, ENEMY_BULLETS, false);
     init_saucer(&model->saucer);
+    
+    // Game state
     model->state = STATE_MENU;
+    model->difficulty = DIFFICULTY_NORMAL;
+    model->menu_state = MENU_MAIN;
+    model->menu_selection = 0;
+    model->music_volume = 0.5f;  // 50% volume by default
     model->game_time = platform_get_ticks();
     model->needs_redraw = true;
     model_load_high_score(model);
@@ -118,6 +126,9 @@ void model_reset_game(GameModel* model) {
 void model_next_level(GameModel* model) {
     model->player.level++;
     
+    // Check win condition based on difficulty
+    int max_level = (model->difficulty == DIFFICULTY_EASY) ? 3 : 4;
+    
     // RESET POSITION (User Request)
     reset_player_pos(&model->player);
     
@@ -125,8 +136,14 @@ void model_next_level(GameModel* model) {
     init_bullets(model->player_bullets, PLAYER_BULLETS, true);
     init_bullets(model->enemy_bullets, ENEMY_BULLETS, false);
     
-    if (model->player.level == 4) {
-        // Level 4: BOSS FIGHT
+    // Easy difficulty: Win after level 3 (no boss)
+    if (model->difficulty == DIFFICULTY_EASY && model->player.level > 3) {
+        model->state = STATE_WIN;
+        return;
+    }
+    
+    if (model->player.level == 4 && model->difficulty != DIFFICULTY_EASY) {
+        // Level 4: BOSS FIGHT (not in Easy mode)
         init_boss(&model->boss);
         model->boss.alive = true;
         // Kill regular invaders
@@ -134,13 +151,14 @@ void model_next_level(GameModel* model) {
             for(int j=0; j<INVADER_COLS; j++)
                 model->invaders.invaders[i][j].alive = false;
     } 
-    else if (model->player.level > 4) {
+    else if (model->player.level > max_level) {
         model->state = STATE_WIN;
         return;
     }
     else {
         // Standard Level
         init_invaders(&model->invaders, model->player.level);
+        model_apply_difficulty(model);  // CRITICAL: Apply difficulty modifiers
     }
     
     model->state = STATE_LEVEL_TRANSITION;
@@ -332,6 +350,20 @@ bool model_check_collision(Rect a, Rect b) {
             a.y < b.y + b.height && a.y + a.height > b.y);
 }
 
+// Helper function to calculate score with difficulty multiplier
+static int apply_difficulty_multiplier(GameModel* model, int base_score) {
+    switch(model->difficulty) {
+        case DIFFICULTY_EASY:
+            return base_score;  // 1.0x multiplier
+        case DIFFICULTY_NORMAL:
+            return (int)(base_score * 1.5f);  // 1.5x multiplier
+        case DIFFICULTY_HARD:
+            return base_score * 2;  // 2.0x multiplier
+        default:
+            return base_score;
+    }
+}
+
 void model_check_bullet_collisions(GameModel* model) {
     // Player Bullets
     for (int b = 0; b < PLAYER_BULLETS; b++) {
@@ -342,10 +374,10 @@ void model_check_bullet_collisions(GameModel* model) {
             if (model_check_collision(model->player_bullets[b].hitbox, model->boss.hitbox)) {
                 model->player_bullets[b].alive = false;
                 model->boss.health--;
-                model->player.score += 5;
+                model->player.score += apply_difficulty_multiplier(model, 5);
                 if (model->boss.health <= 0) {
                     model->boss.alive = false;
-                    model->player.score += 5000;
+                    model->player.score += apply_difficulty_multiplier(model, 5000);
                     model_next_level(model);
                 }
                 continue;
@@ -356,7 +388,7 @@ void model_check_bullet_collisions(GameModel* model) {
         if (model->saucer.alive && model_check_collision(model->player_bullets[b].hitbox, model->saucer.hitbox)) {
             model->saucer.alive = false;
             model->player_bullets[b].alive = false;
-            model->player.score += 200 + (rand() % 100);
+            model->player.score += apply_difficulty_multiplier(model, 200 + (rand() % 100));
             continue;
         }
 
@@ -369,7 +401,7 @@ void model_check_bullet_collisions(GameModel* model) {
                         if (model_check_collision(model->player_bullets[b].hitbox, inv->hitbox)) {
                             model->player_bullets[b].alive = false;
                             inv->dying_timer = 5;
-                            model->player.score += inv->points;
+                            model->player.score += apply_difficulty_multiplier(model, inv->points);
                             model->invaders.killed++;
                             if (model->invaders.killed >= INVADER_ROWS * INVADER_COLS) {
                                 model_next_level(model);
@@ -450,3 +482,106 @@ int model_get_lives(const GameModel* model) { return model->player.lives; }
 int model_get_level(const GameModel* model) { return model->player.level; }
 GameState model_get_state(const GameModel* model) { return model->state; }
 void model_process_command(GameModel* model, int command, void* data) { (void)model; (void)command; (void)data; }
+// --- Menu and Difficulty Functions ---
+
+int model_get_max_menu_items(const GameModel* model) {
+    switch(model->menu_state) {
+        case MENU_MAIN: return 3;        // Start, Settings, Quit
+        case MENU_DIFFICULTY: return 3;  // Easy, Normal, Hard
+        case MENU_SETTINGS: return 3;    // Controls, Music Volume, Back
+        case MENU_CONTROLS: return 1;    // Back
+        default: return 1;
+    }
+}
+
+void model_process_menu_input(GameModel* model, int direction) {
+    int max_items = model_get_max_menu_items(model);
+    
+    if (direction == -1) {  // Up
+        model->menu_selection--;
+        if (model->menu_selection < 0) model->menu_selection = max_items - 1;
+    }
+    else if (direction == 1) {  // Down
+        model->menu_selection++;
+        if (model->menu_selection >= max_items) model->menu_selection = 0;
+    }
+    else if (direction == 0) {  // Select
+        switch(model->menu_state) {
+            case MENU_MAIN:
+                if (model->menu_selection == 0) {  // Start
+                    model->menu_state = MENU_DIFFICULTY;
+                    model->menu_selection = 1;  // Default to Normal
+                }
+                else if (model->menu_selection == 1) {  // Settings
+                    model->menu_state = MENU_SETTINGS;
+                    model->menu_selection = 0;
+                }
+                else if (model->menu_selection == 2) {  // Quit
+                    model->state = STATE_QUIT;
+                }
+                break;
+                
+            case MENU_DIFFICULTY:
+                model->difficulty = (Difficulty)model->menu_selection;
+                model_reset_game(model);
+                model->state = STATE_PLAYING;
+                model_apply_difficulty(model);  // Apply after reset
+                break;
+                
+            case MENU_SETTINGS:
+                if (model->menu_selection == 0) {  // Controls
+                    model->menu_state = MENU_CONTROLS;
+                    model->menu_selection = 0;
+                }
+                else if (model->menu_selection == 2) {  // Back
+                    model->menu_state = MENU_MAIN;
+                    model->menu_selection = 0;
+                }
+                break;
+                
+            case MENU_CONTROLS:
+                // Back to settings
+                model->menu_state = MENU_SETTINGS;
+                model->menu_selection = 0;
+                break;
+        }
+    }
+    model->needs_redraw = true;
+}
+
+void model_apply_difficulty(GameModel* model) {
+    int level = model->player.level;
+    
+    switch(model->difficulty) {
+        case DIFFICULTY_EASY:
+            // Easy: 3 levels (no boss), normal speeds
+            model->invaders.speed = 0.5f + (level * 0.5f);
+            model->invaders.shoot_chance = (level > 2) ? 40 : (120 - (level * 20));
+            break;
+            
+        case DIFFICULTY_NORMAL:
+            // Normal: 4 levels with boss, default speeds
+            model->invaders.speed = 0.5f + (level * 0.5f);
+            model->invaders.shoot_chance = (level > 2) ? 40 : (120 - (level * 20));
+            break;
+            
+        case DIFFICULTY_HARD:
+            // Hard: 4 levels with boss, 1.5x faster, more shots
+            model->invaders.speed = (0.5f + (level * 0.5f)) * 1.5f;
+            int base_chance = (level > 2) ? 40 : (120 - (level * 20));
+            model->invaders.shoot_chance = (int)(base_chance * 0.67f);
+            break;
+    }
+}
+
+void model_adjust_music_volume(GameModel* model, int direction) {
+    if (direction == -1) {  // Decrease
+        model->music_volume -= 0.1f;
+        if (model->music_volume < 0.0f) model->music_volume = 0.0f;
+    }
+    else if (direction == 1) {  // Increase
+        model->music_volume += 0.1f;
+        if (model->music_volume > 1.0f) model->music_volume = 1.0f;
+    }
+    model->needs_redraw = true;
+}

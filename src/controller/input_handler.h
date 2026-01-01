@@ -16,12 +16,18 @@ typedef struct {
     bool shoot_pressed;
     bool pause_pressed;
     bool quit_pressed;
+    bool up_pressed;
+    bool down_pressed;
+    bool enter_pressed;
     
     // État précédent pour détection de front
     bool left_was_pressed;
     bool right_was_pressed;
     bool shoot_was_pressed;
     bool pause_was_pressed;
+    bool up_was_pressed;
+    bool down_was_pressed;
+    bool enter_was_pressed;
     
     // Temps de répétition
     uint32_t left_repeat_time;
