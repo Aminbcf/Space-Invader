@@ -50,6 +50,10 @@ SDLView* sdl_view_create(void) {
         view->fps = 0;
         view->last_shots_fired = 0;
         view->last_score = 0;
+        view->last_enemy_bullet_count = 0;
+        view->last_player_lives = 3;  // Initialize with starting lives
+        view->game_over_played = false;
+        view->current_music_track = 0;
     }
     return view;
 }
@@ -59,8 +63,13 @@ void sdl_view_destroy(SDLView* view) {
     
     // 1. Cleanup Audio
     ma_sound_uninit(&view->sfx_shoot);
-    ma_sound_uninit(&view->sfx_explosion);
-    ma_sound_uninit(&view->music_bg);
+    ma_sound_uninit(&view->sfx_death);
+    ma_sound_uninit(&view->sfx_enemy_bullet);
+    ma_sound_uninit(&view->sfx_gameover);
+    ma_sound_uninit(&view->sfx_damage);
+    ma_sound_uninit(&view->music_game);
+    ma_sound_uninit(&view->music_boss);
+    ma_sound_uninit(&view->music_victory);
     ma_engine_uninit(&view->audio_engine);
 
     // 2. Cleanup Textures
@@ -96,21 +105,49 @@ void sdl_view_destroy(SDLView* view) {
 bool sdl_view_load_resources(SDLView* view) {
     // --- LOAD AUDIO (Miniaudio) ---
     // Using MA_SOUND_FLAG_DECODE for SFX to prevent latency
-    if (ma_sound_init_from_file(&view->audio_engine, "assets/shooting.mp3", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_shoot) != MA_SUCCESS) {
-        printf("Failed to load assets/shooting.mp3\n");
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/shooting_improved.wav", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_shoot) != MA_SUCCESS) {
+        printf("Failed to load assets/shooting_improved.wav\n");
     }
     
-    if (ma_sound_init_from_file(&view->audio_engine, "assets/explosion.mp3", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_explosion) != MA_SUCCESS) {
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/explosion.mp3", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_death) != MA_SUCCESS) {
         printf("Failed to load assets/explosion.mp3\n");
     }
     
-    // Music (Stream from disk, Loop)
-    if (ma_sound_init_from_file(&view->audio_engine, "assets/music.mp3", MA_SOUND_FLAG_STREAM, NULL, NULL, &view->music_bg) == MA_SUCCESS) {
-        ma_sound_set_looping(&view->music_bg, MA_TRUE);
-        ma_sound_set_volume(&view->music_bg, 0.5f); 
-        ma_sound_start(&view->music_bg);
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/enemy_bullet.wav", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_enemy_bullet) != MA_SUCCESS) {
+        printf("Failed to load assets/enemy_bullet.wav\n");
+    }
+    
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/gameover.wav", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_gameover) != MA_SUCCESS) {
+        printf("Failed to load assets/gameover.wav\n");
+    }
+    
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/damage.wav", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->sfx_damage) != MA_SUCCESS) {
+        printf("Failed to load assets/damage.wav\n");
+    }
+    
+    // Music - Game music (Stream from disk, Loop)
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/music_game.wav", MA_SOUND_FLAG_STREAM, NULL, NULL, &view->music_game) == MA_SUCCESS) {
+        ma_sound_set_looping(&view->music_game, MA_TRUE);
+        ma_sound_set_volume(&view->music_game, 0.5f); 
+        ma_sound_start(&view->music_game);
+        view->current_music_track = 1;  // Game music playing
     } else {
-        printf("Failed to load assets/music.mp3\n");
+        printf("Failed to load assets/music_game.wav\n");
+    }
+    
+    // Boss fight music (loop)
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/music_boss.wav", MA_SOUND_FLAG_STREAM, NULL, NULL, &view->music_boss) == MA_SUCCESS) {
+        ma_sound_set_looping(&view->music_boss, MA_TRUE);
+        ma_sound_set_volume(&view->music_boss, 0.6f);
+    } else {
+        printf("Failed to load assets/music_boss.wav\n");
+    }
+    
+    // Victory music (one-shot)
+    if (ma_sound_init_from_file(&view->audio_engine, "assets/music_victory.wav", MA_SOUND_FLAG_DECODE, NULL, NULL, &view->music_victory) == MA_SUCCESS) {
+        ma_sound_set_volume(&view->music_victory, 0.7f);
+    } else {
+        printf("Failed to load assets/music_victory.wav\n");
     }
 
     // --- LOAD FONTS ---
@@ -326,7 +363,7 @@ void sdl_view_render_game_scene(SDLView* view, const GameModel* model) {
     // Invaders / Boss
     if(model->player.level == 4 && model->boss.alive) {
         SDL_FRect boss = {(float)model->boss.hitbox.x, (float)model->boss.hitbox.y, (float)model->boss.hitbox.width, (float)model->boss.hitbox.height};
-        int anim_state = model->invaders.state;
+        int anim_state = model->boss.anim_frame;  // Use boss's own animation frame
         if(view->boss_tex[anim_state]) SDL_RenderTexture(view->renderer, view->boss_tex[anim_state], NULL, &boss);
         else { SDL_SetRenderDrawColor(view->renderer, COLOR_ENEMY); SDL_RenderFillRect(view->renderer, &boss); }
         float pct = (float)model->boss.health / model->boss.max_health;
@@ -371,14 +408,85 @@ void sdl_view_render(SDLView* view, const GameModel* model) {
         view->last_shots_fired = model->player.shots_fired;
     }
     
-    // 2. Detect Explosion (Score change is a simple proxy for enemy death)
+    // 2. Detect Enemy Death (Score change)
     if (model->player.score > view->last_score) {
-        if(ma_sound_is_playing(&view->sfx_explosion)) {
-            ma_sound_seek_to_pcm_frame(&view->sfx_explosion, 0);
+        if(ma_sound_is_playing(&view->sfx_death)) {
+            ma_sound_seek_to_pcm_frame(&view->sfx_death, 0);
         } else {
-            ma_sound_start(&view->sfx_explosion);
+            ma_sound_start(&view->sfx_death);
         }
         view->last_score = model->player.score;
+    }
+    
+    // 3. Detect Enemy Bullets (count active enemy bullets)
+    int current_enemy_bullets = 0;
+    for(int i = 0; i < ENEMY_BULLETS; i++) {
+        if(model->enemy_bullets[i].alive) current_enemy_bullets++;
+    }
+    if (current_enemy_bullets > view->last_enemy_bullet_count) {
+        if(ma_sound_is_playing(&view->sfx_enemy_bullet)) {
+            ma_sound_seek_to_pcm_frame(&view->sfx_enemy_bullet, 0);
+        } else {
+            ma_sound_start(&view->sfx_enemy_bullet);
+        }
+    }
+    view->last_enemy_bullet_count = current_enemy_bullets;
+    
+    // 4. Detect Player Damage (life decrease)
+    if (model->player.lives < view->last_player_lives) {
+        if(ma_sound_is_playing(&view->sfx_damage)) {
+            ma_sound_seek_to_pcm_frame(&view->sfx_damage, 0);
+        } else {
+            ma_sound_start(&view->sfx_damage);
+        }
+        view->last_player_lives = model->player.lives;
+    }
+    // Update lives if they increased (shouldn't happen, but for safety)
+    if (model->player.lives > view->last_player_lives) {
+        view->last_player_lives = model->player.lives;
+    }
+    
+    // 5. Detect Game Over
+    if (model->state == STATE_GAME_OVER && !view->game_over_played) {
+        ma_sound_start(&view->sfx_gameover);
+        view->game_over_played = true;
+    }
+    // Reset flag when not in game over state
+    if (model->state != STATE_GAME_OVER) {
+        view->game_over_played = false;
+    }
+    
+    // 6. Music Switching Logic
+    // Switch to boss music on level 4
+    if (model->state == STATE_PLAYING && model->player.level == 4 && model->boss.alive && view->current_music_track != 2) {
+        ma_sound_stop(&view->music_game);
+        ma_sound_start(&view->music_boss);
+        view->current_music_track = 2;
+    }
+    // Switch back to game music when leaving level 4 or boss defeated
+    else if (model->state == STATE_PLAYING && (model->player.level != 4 || !model->boss.alive) && view->current_music_track == 2) {
+        ma_sound_stop(&view->music_boss);
+        ma_sound_start(&view->music_game);
+        view->current_music_track = 1;
+    }
+    // Play victory music on win
+    else if (model->state == STATE_WIN && view->current_music_track != 3) {
+        ma_sound_stop(&view->music_game);
+        ma_sound_stop(&view->music_boss);
+        ma_sound_start(&view->music_victory);
+        view->current_music_track = 3;
+    }
+    // Resume game music when entering STATE_PLAYING (fixes replay bug)
+    else if (model->state == STATE_PLAYING && view->current_music_track == 0) {
+        ma_sound_start(&view->music_game);
+        view->current_music_track = 1;
+        view->last_player_lives = model->player.lives;  // Sync lives on game start
+    }
+    // Resume game music when returning to menu from victory
+    else if (model->state == STATE_MENU && view->current_music_track == 3) {
+        ma_sound_stop(&view->music_victory);
+        ma_sound_start(&view->music_game);
+        view->current_music_track = 1;
     }
 
     // --- RENDER LOGIC ---

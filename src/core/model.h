@@ -95,6 +95,8 @@ typedef struct {
     Direction direction;
     int speed;
     int shoot_timer;
+    int anim_frame;      // Animation frame (0 or 1)
+    int anim_counter;    // Counter for animation timing
 } Boss;
 
 typedef struct {

@@ -87,7 +87,12 @@ NCURSES_SRCS = \
 # FICHIERS SOURCES DE TESTS
 # ----------------------------------------------------------------------------
 TEST_SRCS = \
-	$(TEST_DIR)/test_model.c
+	$(TEST_DIR)/src/test_main.c \
+	$(TEST_DIR)/src/test_model.c \
+	$(TEST_DIR)/src/test_controller.c \
+	$(TEST_DIR)/src/test_input_handler.c \
+	$(TEST_DIR)/src/test_game_state.c \
+	$(TEST_DIR)/src/mock_platform.c
 
 # ----------------------------------------------------------------------------
 # CONVERSION DES FICHIERS SOURCES EN FICHIERS OBJETS
@@ -172,7 +177,9 @@ run-ncurses: ncurses prepare-assets
 # ----------------------------------------------------------------------------
 # run-tests : Compile et exécute les tests unitaires
 # ----------------------------------------------------------------------------
-run-tests: test
+run-tests: $(TEST_EXEC)
+	@echo "▶ Exécution des tests unitaires..."
+	@$(TEST_EXEC)
 
 # ----------------------------------------------------------------------------
 # test : Exécute les tests unitaires
@@ -204,9 +211,9 @@ $(NCURSES_EXEC): $(NCURSES_OBJS) | $(BIN_DIR)
 # ----------------------------------------------------------------------------
 # Compilation de l'exécutable de tests
 # ----------------------------------------------------------------------------
-$(TEST_EXEC): check-test-deps $(TEST_OBJS) $(filter-out %/main_sdl.o %/main_ncurses.o %/view_sdl.o %/view_ncurses.o, $(NCURSES_OBJS)) | $(BIN_DIR)
+$(TEST_EXEC): $(TEST_OBJS) $(filter-out %/main_sdl.o %/main_ncurses.o %/view_sdl.o %/view_ncurses.o, $(NCURSES_OBJS)) | $(BIN_DIR) check-test-deps
 	@echo "→ Édition des liens pour les tests..."
-	@$(CC) $(CFLAGS) $^ -o $@ $(TEST_LDFLAGS)
+	@$(CC) $(CFLAGS) $(filter %.o,$^) -o $@ $(TEST_LDFLAGS)
 	@echo "✓ Exécutable de tests créé : $@"
 
 # ----------------------------------------------------------------------------
@@ -239,7 +246,7 @@ $(NCURSES_BUILD_DIR)/%.o: $(SRC_DIR)/%.c $(COMMON_HDRS)
 $(TEST_BUILD_DIR)/%.o: $(TEST_DIR)/%.c
 	@mkdir -p $(dir $@)
 	@echo "  CC [TST] $<"
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(TEST_DIR)/include -c $< -o $@
 
 # ----------------------------------------------------------------------------
 # Création du répertoire bin
@@ -277,7 +284,6 @@ check-ncurses-deps:
 # ----------------------------------------------------------------------------
 # check-test-deps : Vérifie les dépendances pour les tests
 # ----------------------------------------------------------------------------  
-check-test-deps:
 check-test-deps:
 	@echo "→ Vérification des dépendances de test (Check)..."
 	@pkg-config --exists check || { \
@@ -436,10 +442,7 @@ format:
 		exit 1; \
 	fi
 
-# ----------------------------------------------------------------------------
-# test : Alias pour run-tests
-# ----------------------------------------------------------------------------
-test: run-tests
+
 
 # ----------------------------------------------------------------------------
 # coverage : Génère un rapport de couverture de code (TODO)

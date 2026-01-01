@@ -28,12 +28,21 @@ typedef struct SDLView {
     // --- AUDIO (Miniaudio) ---
     ma_engine audio_engine;      // The main audio system
     ma_sound sfx_shoot;          // Sound object
-    ma_sound sfx_explosion;      // Sound object
-    ma_sound music_bg;           // Background music
+    ma_sound sfx_death;          // Enemy death sound (renamed from explosion)
+    ma_sound sfx_enemy_bullet;   // Enemy bullet sound
+    ma_sound sfx_gameover;       // Game over sound
+    ma_sound sfx_damage;         // Player damage sound
+    ma_sound music_game;         // Game music (levels 1-3)
+    ma_sound music_boss;         // Boss fight music
+    ma_sound music_victory;      // Victory music
     
     // Audio State Tracking
     unsigned int last_shots_fired;
     int last_score;
+    int last_enemy_bullet_count;
+    int last_player_lives;
+    bool game_over_played;
+    int current_music_track;     // 0=none, 1=game, 2=boss, 3=victory
     
     // Fonts
     TTF_Font* font_large;

@@ -34,6 +34,8 @@ static void init_boss(Boss* boss) {
     boss->direction = DIR_RIGHT;
     boss->speed = 3;
     boss->shoot_timer = 0;
+    boss->anim_frame = 0;
+    boss->anim_counter = 0;
 }
 
 static void init_invaders(InvaderGrid* invaders, int level) {
@@ -150,6 +152,13 @@ void model_next_level(GameModel* model) {
 void model_update_boss(GameModel* model) {
     if (!model->boss.alive) return;
     Boss* boss = &model->boss;
+    
+    // Animation
+    boss->anim_counter++;
+    if (boss->anim_counter >= 15) {  // Change frame every 15 updates (~250ms at 60fps)
+        boss->anim_counter = 0;
+        boss->anim_frame = (boss->anim_frame == 0) ? 1 : 0;
+    }
     
     // Movement
     if (boss->direction == DIR_RIGHT) {
