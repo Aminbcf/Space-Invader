@@ -70,6 +70,7 @@ void sdl_view_destroy(SDLView *view) {
   ma_sound_uninit(&view->sfx_enemy_bullet);
   ma_sound_uninit(&view->sfx_gameover);
   ma_sound_uninit(&view->sfx_damage);
+  ma_sound_uninit(&view->sfx_select);
   ma_sound_uninit(&view->music_game);
   ma_sound_uninit(&view->music_boss);
   ma_sound_uninit(&view->music_victory);
@@ -98,8 +99,17 @@ void sdl_view_destroy(SDLView *view) {
     SDL_DestroyTexture(view->bullet_player_tex);
   if (view->bullet_enemy_tex)
     SDL_DestroyTexture(view->bullet_enemy_tex);
+  if (view->bullet_laser_tex)
+    SDL_DestroyTexture(view->bullet_laser_tex);
+  if (view->bullet_zigzag_tex)
+    SDL_DestroyTexture(view->bullet_zigzag_tex);
   if (view->damage_tex)
     SDL_DestroyTexture(view->damage_tex);
+
+  for (int p = 0; p < 5; p++) {
+    if (view->pwr_tex[p])
+      SDL_DestroyTexture(view->pwr_tex[p]);
+  }
 
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 2; j++) {
@@ -119,7 +129,6 @@ void sdl_view_destroy(SDLView *view) {
     SDL_DestroyWindow(view->window);
 
   TTF_Quit();
-  // SDL3_image cleanup is handled by SDL_Quit in SDL3 or not needed
   SDL_Quit();
 
   free(view);

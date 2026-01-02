@@ -118,3 +118,32 @@
    match-leak-kinds: definite,indirect
    obj:*/libLLVM*.so*
 }
+{
+   Ignore driver backend_create_device leak
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   ...
+   fun:backend_create_device
+}
+{
+   Ignore driver gbm_create_device leak
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   ...
+   fun:gbm_create_device
+}
+{
+   Ignore driver SDL_EGL_LoadLibrary leak
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   ...
+   fun:SDL_EGL_LoadLibrary
+}
+{
+   Ignore driver Wayland_GLES_LoadLibrary leak
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   ...
+   fun:Wayland_GLES_LoadLibrary
+}
+

@@ -1,148 +1,66 @@
-==39148== Memcheck, a memory error detector
-==39148== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==39148== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
-==39148== Command: ./space_invaders_sdl --valgrind-test
-==39148== Parent PID: 39147
-==39148== 
-==39148== realloc() with size 0
-==39148==    at 0x4953E4F: realloc (vg_replace_malloc.c:1801)
-==39148==    by 0x10A6C549: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A73D7B: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A8B9BE: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A8BE1C: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A82E3E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0xFE88DB0: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFE88E94: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFF07A85: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFE87076: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFE8FEF8: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0x1003B81C: UnknownInlinedFun (platform-base.c:119)
-==39148==    by 0x1003B81C: loadEGLExternalPlatform (wayland-platform.c:94)
-==39148==  Address 0x177c4a40 is 0 bytes after a block of size 0 alloc'd
-==39148==    at 0x494C7A8: malloc (vg_replace_malloc.c:446)
-==39148==    by 0x10A6C536: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A73D7B: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A8B9BE: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A8BE1C: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A82E3E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0xFE88DB0: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFE88E94: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFF07A85: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFE87076: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFE8FEF8: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0x1003B81C: UnknownInlinedFun (platform-base.c:119)
-==39148==    by 0x1003B81C: loadEGLExternalPlatform (wayland-platform.c:94)
-==39148== 
-==39148== posix_memalign() invalid size value: 0
-==39148==    at 0x4954A58: posix_memalign (vg_replace_malloc.c:2226)
-==39148==    by 0x10A6C579: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A73D7B: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A8B9BE: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A8BE1C: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0x10A82E3E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.590.48.01)
-==39148==    by 0xFE88DB0: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFE88E94: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFF07A85: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFE87076: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0xFE8FEF8: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
-==39148==    by 0x1003B81C: UnknownInlinedFun (platform-base.c:119)
-==39148==    by 0x1003B81C: loadEGLExternalPlatform (wayland-platform.c:94)
-==39148== 
-==39148== 
-==39148== HEAP SUMMARY:
-==39148==     in use at exit: 295,081 bytes in 2,861 blocks
-==39148==   total heap usage: 68,641 allocs, 65,780 frees, 101,097,971 bytes allocated
-==39148== 
-==39148== 32 bytes in 1 blocks are definitely lost in loss record 336 of 2,574
-==39148==    at 0x494C7A8: malloc (vg_replace_malloc.c:446)
-==39148==    by 0x400CD5A: ma__malloc_default (miniaudio.h:13506)
-==39148==    by 0x405A365: ma_malloc (miniaudio.h:58942)
-==39148==    by 0x407EFBF: ma_engine_node_init (miniaudio.h:77265)
-==39148==    by 0x4081664: ma_sound_init_from_data_source_internal (miniaudio.h:78322)
-==39148==    by 0x4081B6A: ma_sound_init_from_file_internal (miniaudio.h:78424)
-==39148==    by 0x408250D: ma_sound_init_ex (miniaudio.h:78555)
-==39148==    by 0x4081E1E: ma_sound_init_from_file (miniaudio.h:78451)
-==39148==    by 0x40D2BF0: sdl_view_load_resources (view_sdl.c:164)
-==39148==    by 0x40D4A36: sdl_view_init (view_sdl.c:334)
-==39148==    by 0x40DAA3E: main (main_sdl.c:51)
-==39148== 
-==39148== 112 bytes in 1 blocks are definitely lost in loss record 2,531 of 2,574
-==39148==    at 0x4953C13: calloc (vg_replace_malloc.c:1675)
-==39148==    by 0xFBDFCEC: ???
-==39148==    by 0xFBE0469: ???
-==39148==    by 0xFBDFF17: ???
-==39148==    by 0xFBDE979: ???
-==39148==    by 0x1005D1F1: backend_create_device (backend.c:95)
-==39148==    by 0x1005D1F1: load_backend_by_name (backend.c:135)
-==39148==    by 0x1005D2CD: _gbm_create_device (backend.c:160)
-==39148==    by 0x1005D376: gbm_create_device (gbm.c:138)
-==39148==    by 0x100392E6: ???
-==39148==    by 0x1003B4B4: ???
-==39148==    by 0x10034853: ???
-==39148==    by 0xFF06B68: ???
-==39148== 
-==39148== 112 bytes in 1 blocks are definitely lost in loss record 2,532 of 2,574
-==39148==    at 0x4953C13: calloc (vg_replace_malloc.c:1675)
-==39148==    by 0x26B5DCEC: ???
-==39148==    by 0x26B5E469: ???
-==39148==    by 0x26B5DF17: ???
-==39148==    by 0x26B5C979: ???
-==39148==    by 0x1005D1F1: backend_create_device (backend.c:95)
-==39148==    by 0x1005D1F1: load_backend_by_name (backend.c:135)
-==39148==    by 0x1005D2CD: _gbm_create_device (backend.c:160)
-==39148==    by 0x1005D376: gbm_create_device (gbm.c:138)
-==39148==    by 0x100392E6: ???
-==39148==    by 0x1003B6F4: ???
-==39148==    by 0x100342EA: ???
-==39148==    by 0xFF02642: ???
-==39148== 
-==39148== 744 bytes in 1 blocks are definitely lost in loss record 2,553 of 2,574
-==39148==    at 0x494C7A8: malloc (vg_replace_malloc.c:446)
-==39148==    by 0x400CD5A: ma__malloc_default (miniaudio.h:13506)
-==39148==    by 0x405A365: ma_malloc (miniaudio.h:58942)
-==39148==    by 0x408186D: ma_sound_init_from_file_internal (miniaudio.h:78381)
-==39148==    by 0x408250D: ma_sound_init_ex (miniaudio.h:78555)
-==39148==    by 0x4081E1E: ma_sound_init_from_file (miniaudio.h:78451)
-==39148==    by 0x40D2BF0: sdl_view_load_resources (view_sdl.c:164)
-==39148==    by 0x40D4A36: sdl_view_init (view_sdl.c:334)
-==39148==    by 0x40DAA3E: main (main_sdl.c:51)
-==39148== 
-==39148== 1,711 bytes in 1 blocks are definitely lost in loss record 2,560 of 2,574
-==39148==    at 0x494C7A8: malloc (vg_replace_malloc.c:446)
-==39148==    by 0x1003AB32: ???
-==39148==    by 0x1003B4B4: ???
-==39148==    by 0x10034853: ???
-==39148==    by 0xFF06B68: ???
-==39148==    by 0xFEA14FE: ???
-==39148==    by 0x503025D: ???
-==39148==    by 0x4B28E72: SDL_EGL_LoadLibrary (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148==    by 0x4BEE12F: Wayland_GLES_LoadLibrary (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148==    by 0x4B64735: SDL_GL_LoadLibrary_REAL (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148==    by 0x4B6534B: SDL_ReconfigureWindow (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148==    by 0x4A37D4F: GL_CreateRenderer (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148== 
-==39148== 1,711 bytes in 1 blocks are definitely lost in loss record 2,561 of 2,574
-==39148==    at 0x494C7A8: malloc (vg_replace_malloc.c:446)
-==39148==    by 0x1003AB32: ???
-==39148==    by 0x1003B6F4: ???
-==39148==    by 0x100342EA: ???
-==39148==    by 0xFF02642: ???
-==39148==    by 0xFE9C837: ???
-==39148==    by 0x4B28D81: SDL_EGL_LoadLibrary (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148==    by 0x4BEE12F: Wayland_GLES_LoadLibrary (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148==    by 0x4B64735: SDL_GL_LoadLibrary_REAL (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148==    by 0x4B6534B: SDL_ReconfigureWindow (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148==    by 0x4A37D4F: GL_CreateRenderer (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148==    by 0x4A2FAC2: SDL_CreateRendererWithProperties_REAL (in /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0)
-==39148== 
-==39148== LEAK SUMMARY:
-==39148==    definitely lost: 4,422 bytes in 6 blocks
-==39148==    indirectly lost: 0 bytes in 0 blocks
-==39148==      possibly lost: 0 bytes in 0 blocks
-==39148==    still reachable: 290,659 bytes in 2,855 blocks
-==39148==         suppressed: 0 bytes in 0 blocks
-==39148== Reachable blocks (those to which a pointer was found) are not shown.
-==39148== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==39148== 
-==39148== For lists of detected and suppressed errors, rerun with: -s
-==39148== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 0 from 0)
+==42819== Memcheck, a memory error detector
+==42819== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==42819== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==42819== Command: ./space_invaders_sdl --valgrind-test
+==42819== Parent PID: 42818
+==42819== 
+==42819== realloc() with size 0
+==42819==    at 0x4953E4F: realloc (vg_replace_malloc.c:1801)
+==42819==    by 0x10A6C549: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A73D7B: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A8B9BE: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A8BE1C: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A82E3E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0xFE88DB0: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFE88E94: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFF07A85: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFE87076: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFE8FEF8: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0x1003B81C: UnknownInlinedFun (platform-base.c:119)
+==42819==    by 0x1003B81C: loadEGLExternalPlatform (wayland-platform.c:94)
+==42819==  Address 0x177c4770 is 0 bytes after a block of size 0 alloc'd
+==42819==    at 0x494C7A8: malloc (vg_replace_malloc.c:446)
+==42819==    by 0x10A6C536: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A73D7B: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A8B9BE: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A8BE1C: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A82E3E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0xFE88DB0: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFE88E94: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFF07A85: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFE87076: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFE8FEF8: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0x1003B81C: UnknownInlinedFun (platform-base.c:119)
+==42819==    by 0x1003B81C: loadEGLExternalPlatform (wayland-platform.c:94)
+==42819== 
+==42819== posix_memalign() invalid size value: 0
+==42819==    at 0x4954A58: posix_memalign (vg_replace_malloc.c:2226)
+==42819==    by 0x10A6C579: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A73D7B: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A8B9BE: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A8BE1C: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0x10A82E3E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==42819==    by 0xFE88DB0: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFE88E94: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFF07A85: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFE87076: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0xFE8FEF8: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==42819==    by 0x1003B81C: UnknownInlinedFun (platform-base.c:119)
+==42819==    by 0x1003B81C: loadEGLExternalPlatform (wayland-platform.c:94)
+==42819== 
+==42819== 
+==42819== HEAP SUMMARY:
+==42819==     in use at exit: 294,281 bytes in 2,859 blocks
+==42819==   total heap usage: 68,516 allocs, 65,657 frees, 101,071,741 bytes allocated
+==42819== 
+==42819== LEAK SUMMARY:
+==42819==    definitely lost: 0 bytes in 0 blocks
+==42819==    indirectly lost: 0 bytes in 0 blocks
+==42819==      possibly lost: 0 bytes in 0 blocks
+==42819==    still reachable: 290,635 bytes in 2,855 blocks
+==42819==         suppressed: 3,646 bytes in 4 blocks
+==42819== Reachable blocks (those to which a pointer was found) are not shown.
+==42819== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==42819== 
+==42819== For lists of detected and suppressed errors, rerun with: -s
+==42819== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 4 from 4)
