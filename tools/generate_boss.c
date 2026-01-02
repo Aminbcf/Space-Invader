@@ -157,8 +157,8 @@ void generate_boss_frame(int frame_num, const char* filename) {
             // STATIC MATERIALS
             else {
                 switch (pixel_type) {
-                    case 0: // Background (5, 10, 30)
-                        r=5; g=10; b=30; break;
+                    case 0: // Background (Black)
+                        r=0; g=0; b=0; break;
                     case 1: // Chassis (Dark Grey)
                         r=40; g=40; b=45; break;
                     case 2: // Heavy Armor (Crimson)

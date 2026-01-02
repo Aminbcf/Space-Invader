@@ -125,8 +125,8 @@ void generate_invader_frame(int frame_num, const char* filename) {
 
             // --- PALETTE (Red Theme) ---
             switch (pixel_type) {
-                case 0: // Background (Fixed: 5, 10, 30)
-                    r=5; g=10; b=30; 
+                case 0: // Background (Black)
+                    r=0; g=0; b=0; 
                     break;
                 case 1: // Shadow/Outline (Deep Maroon)
                     r=60; g=0; b=20; 
@@ -144,7 +144,7 @@ void generate_invader_frame(int frame_num, const char* filename) {
                     else { r=0; g=255; b=255; } // Steady Cyan
                     break;
                 default:
-                    r=5; g=10; b=30; 
+                    r=0; g=0; b=0; 
                     break;
             }
 

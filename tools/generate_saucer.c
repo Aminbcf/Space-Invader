@@ -117,8 +117,8 @@ void generate_saucer_frame(int frame_num, const char* filename) {
 
             // --- PALETTE ---
             switch (pixel_type) {
-                case 0: // Background (5, 10, 30)
-                    r=5; g=10; b=30; break;
+                case 0: // Background (Black)
+                    r=0; g=0; b=0; break;
                 case 1: // Shadow/Outline (Deep Maroon)
                     r=80; g=0; b=20; break;
                 case 2: // Main Hull (Bright Red)
@@ -132,7 +132,7 @@ void generate_saucer_frame(int frame_num, const char* filename) {
                 case 8: // LIGHT ON (Bright White/Cyan)
                     r=200; g=255; b=255; break;
                 default: // Fallback (Same as BG)
-                    r=5; g=10; b=30; break;
+                    r=0; g=0; b=0; break;
             }
 
             unsigned char pixel[3] = {b, g, r};

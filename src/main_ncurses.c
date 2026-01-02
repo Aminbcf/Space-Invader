@@ -54,8 +54,12 @@ static void sleep_ms(uint32_t ms) {
 
 
 int main(int argc, char* argv[]) {
-    (void)argc;
-    (void)argv;
+    bool valgrind_test = false;
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "--valgrind-test") == 0) {
+            valgrind_test = true;
+        }
+    }
     
     printf("Space Invaders MVC - NCURSES Version\n");
     printf("Initializing...\n");
@@ -95,7 +99,12 @@ int main(int argc, char* argv[]) {
     
     /* Set view context for controller */
     controller_set_view_context(controller, view);
-    
+
+    /* Setup Default Keybindings */
+    // NCURSES mapping: Arrows (258-261), WASD (lowercase), SPACE (32), ESC (27)
+    controller_set_keybindings(controller, 0, 'w', 's', 'a', 'd', ' ', 'p', 'q');
+    controller_set_keybindings(controller, 1, '8', '5', '4', '6', '7', 0, 0); // P2 on numpad?
+
     /* Main game loop */
     int ch;
     uint32_t last_update = get_time_ms();
@@ -103,7 +112,11 @@ int main(int argc, char* argv[]) {
     const float FRAME_DELAY = 1000.0f / TARGET_FPS;
     
     /* Main loop */
-    while (!controller_is_quit_requested(controller)) {
+    int frame_count = 0;
+    while (!controller_is_quit_requested(controller) && context->model->state != STATE_QUIT) {
+        if (valgrind_test && frame_count++ >= 60) {
+            break;
+        }
         uint32_t frame_start = get_time_ms();
         
         /* Handle ncurses input - non-blocking */
@@ -112,29 +125,33 @@ int main(int argc, char* argv[]) {
             memset(&input_event, 0, sizeof(InputEvent));
             input_event.type = INPUT_KEYBOARD;
             
-            // Pass the key directly. 
-            // Ncurses defines KEY_LEFT as 0404 (260), which matches what controller.c expects.
-            input_event.key = ch;
-            
-            controller_handle_event(controller, &input_event);
+            // Check if we're waiting for a keybind
+            if (context->model->waiting_for_key) {
+              model_set_keybind(context->model, ch);
+            } else {
+              // Map Arrows to controller expected values if needed
+              if (ch == 259) input_event.key = 'w';
+              else if (ch == 258) input_event.key = 's';
+              else if (ch == 260) input_event.key = 'a';
+              else if (ch == 261) input_event.key = 'd';
+              else input_event.key = ch;
+              
+              controller_handle_event(controller, &input_event);
+            }
         }
         
-        /* Process continuous input */
-        controller_process_input(controller);
+        /* Process continuous input (not easy in ncurses, stick to event based) */
         
         /* Calculate delta time */
         uint32_t current_time = get_time_ms();
         float delta_time = (current_time - last_update) / 1000.0f;
-        
-        /* Cap delta time to prevent huge jumps */
         if (delta_time > 0.1f) delta_time = 0.1f;
-        if (delta_time < 0.0f) delta_time = 0.0f;
-        
         last_update = current_time;
         
         /* Update game */
         controller_update(controller, delta_time);
-        game_context_update(context);
+        model_update(context->model, delta_time);
+
         
         /* Render */
         ncurses_view_render(view, context->model);

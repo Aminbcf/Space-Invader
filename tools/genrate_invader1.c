@@ -111,7 +111,7 @@ void generate_invader_frame(int frame_num, const char* filename) {
             // 2. Color Palette & Pulsing Effects
             switch (pixel_type) {
                 case 0: // Background
-                    r=5; g=10; b=30; 
+                    r=0; g=0; b=0; 
                     break;
                 case 1: // Shadow/Dark Outline
                     r=10; g=30; b=10; 
@@ -135,7 +135,7 @@ void generate_invader_frame(int frame_num, const char* filename) {
                     }
                     break;
                 default: // Should be 0 if hidden leg
-                    r=5; g=10; b=25;
+                    r=0; g=0; b=0;
                     break;
             }
 

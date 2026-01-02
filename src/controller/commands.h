@@ -3,22 +3,30 @@
 
 // Commandes disponibles pour le jeu
 typedef enum {
-    CMD_NONE,
-    CMD_MOVE_LEFT,
-    CMD_MOVE_RIGHT,
-    CMD_SHOOT,
-    CMD_PAUSE,
-    CMD_START_GAME,
-    CMD_QUIT,
-    CMD_RESET_GAME,
-    CMD_TOGGLE_VIEW,
-    CMD_SELECT_OPTION,
-    CMD_UP,
-    CMD_DOWN,
-    CMD_LEFT,
-    CMD_RIGHT,
-    CMD_CONFIRM,
-    CMD_BACK
+  CMD_NONE,
+  CMD_MOVE_LEFT,
+  CMD_MOVE_RIGHT,
+  CMD_MOVE_UP,
+  CMD_MOVE_DOWN,
+  CMD_SHOOT,
+  CMD_PAUSE,
+  CMD_START_GAME,
+  CMD_QUIT,
+  CMD_RESET_GAME,
+  CMD_TOGGLE_VIEW,
+  CMD_SELECT_OPTION,
+  CMD_UP,
+  CMD_DOWN,
+  CMD_LEFT,
+  CMD_RIGHT,
+  CMD_CONFIRM,
+  CMD_BACK,
+  // Player 2 Commands
+  CMD_P2_MOVE_LEFT,
+  CMD_P2_MOVE_RIGHT,
+  CMD_P2_MOVE_UP,
+  CMD_P2_MOVE_DOWN,
+  CMD_P2_SHOOT
 } Command;
 
 #endif // COMMANDS_H

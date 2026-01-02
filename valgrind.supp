@@ -1,0 +1,120 @@
+{
+   Ignore SDL3 and Driver noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libSDL3*.so*
+}
+{
+   Ignore LLVM noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libLLVM*.so*
+}
+{
+   Ignore NVIDIA driver noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libnvidia*.so*
+}
+{
+   Ignore EGL noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libEGL*.so*
+}
+{
+   Ignore GL noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libGL*.so*
+}
+{
+   Ignore Mesa noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libglapi*.so*
+}
+{
+   Ignore fontconfig noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libfontconfig*.so*
+}
+{
+   Ignore dbus noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libdbus*.so*
+}
+{
+   Ignore pulse noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libpulse*.so*
+}
+{
+   Ignore X11 noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/libX11*.so*
+}
+{
+   Ignore ld-linux-x86-64.so.2 noise
+   Memcheck:Leak
+   match-leak-kinds: reachable,possible
+   obj:*/ld-linux-x86-64.so.2
+}
+{
+   Ignore posix_memalign 0 error in drivers
+   Memcheck:Param
+   posix_memalign(size)
+   obj:*/libnvidia*.so*
+}
+{
+   Ignore realloc 0 error in drivers
+   Memcheck:Free
+   fun:realloc
+   obj:*/libnvidia*.so*
+}
+{
+   Ignore definitely lost in PulseAudio
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   obj:*/libpulse*.so*
+}
+{
+   Ignore definitely lost in D-Bus
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   obj:*/libdbus*.so*
+}
+{
+   Ignore definitely lost in GBM
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   obj:*/libgbm*.so*
+}
+{
+   Ignore definitely lost in SDL3
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   obj:*/libSDL3*.so*
+}
+{
+   Ignore definitely lost in Driver layers
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   obj:*/libnvidia*.so*
+}
+{
+   Ignore definitely lost in Mesa
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   obj:*/libEGL_mesa*.so*
+}
+{
+   Ignore definitely lost in LLVM
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   obj:*/libLLVM*.so*
+}

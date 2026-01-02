@@ -88,7 +88,7 @@ const int sprite_map[HEIGHT][WIDTH] = {
     {0,0,0,0,0,0,0,0,0,0,0,0,8,8,7,7,7,8,8,0,0,0,0,0,0,0,0,0,0,0,0},
 };
 
-void generate_frame(int frame_num, const char* filename) {
+void generate_frame(int player_id, int frame_num, const char* filename) {
     FILE *f = fopen(filename, "wb");
     if (!f) return;
 
@@ -127,18 +127,36 @@ void generate_frame(int frame_num, const char* filename) {
                     else { r=255; g=200; b=50; } // Bright Yellow Outer
                 } else {
                     // Frame 0: Standard Cruise (Orange/Yellow)
-                    if (pixel_type == 7) { r=255; g=160; b=0; } // Orange Core
-                    else { r=200; g=100; b=0; } // Darker Orange Outer
+                    if (pixel_type == 7) { r=255; g=120; b=0; } // Orange Core
+                    else { r=200; g=60; b=0; } // Darker Orange Outer
+                }
+                
+                // P2 Flame variation (Blueish flames for P2?)
+                if (player_id == 1) {
+                    unsigned char temp = r;
+                    r = b;
+                    b = temp;
                 }
             } else {
                 // Standard Colors
                 switch (pixel_type) {
-                    case 0: r=5, g=10, b=30; break; // Background
+                    case 0: r=0, g=0, b=0; break; // Background: PURE BLACK
                     case 1: r=20, g=20, b=25; break; // Outline
-                    case 2: r=30, g=60, b=180; break; // Main Hull
-                    case 3: r=150, g=220, b=255; break; // Highlight
-                    case 4: r=10, g=30, b=100; break; // Shadow
-                    case 5: r=0, g=200, b=220; break; // Cockpit
+                    case 2: // Main Hull
+                        if (player_id == 0) { r=30; g=60; b=180; } // P1: Blue
+                        else { r=180; g=30; b=50; } // P2: Red
+                        break;
+                    case 3: // Highlight
+                        if (player_id == 0) { r=150; g=220; b=255; }
+                        else { r=255; g=150; b=180; }
+                        break;
+                    case 4: // Shadow
+                        if (player_id == 0) { r=10; g=30; b=100; }
+                        else { r=100; g=10; b=30; }
+                        break;
+                    case 5: // Cockpit
+                        r=0, g=200, b=220; 
+                        break;
                     case 6: r=120, g=125, b=130; break; // Metal
                 }
             }
@@ -154,8 +172,11 @@ void generate_frame(int frame_num, const char* filename) {
 }
 
 int main(void) {
-    // Generate two frames for animation
-    generate_frame(0, "pictures/player.bmp");   // Normal Engine
-    generate_frame(1, "pictures/player2.bmp");  // Fast Engine (White Hot)
+    // Player 1
+    generate_frame(0, 0, "pictures/player_p1_f1.bmp");
+    generate_frame(0, 1, "pictures/player_p1_f2.bmp");
+    // Player 2
+    generate_frame(1, 0, "pictures/player_p2_f1.bmp");
+    generate_frame(1, 1, "pictures/player_p2_f2.bmp");
     return 0;
 }

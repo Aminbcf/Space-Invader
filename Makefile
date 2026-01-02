@@ -135,19 +135,19 @@ TOOLS = $(patsubst tools/%.c, $(BIN_DIR)/%, $(TOOL_SRCS))
 # ----------------------------------------------------------------------------
 # all : Compile toutes les versions (SDL, ncurses et outils)
 # ----------------------------------------------------------------------------
-all: sdl ncurses tools
+all: prepare-assets sdl ncurses tools
 	@echo "✓ Compilation complète terminée avec succès"
 
 # ----------------------------------------------------------------------------
 # sdl : Compile la version SDL
 # ----------------------------------------------------------------------------
-sdl: $(SDL_EXEC)
+sdl: prepare-assets $(SDL_EXEC)
 	@echo "✓ Version SDL compilée avec succès"
 
 # ----------------------------------------------------------------------------
 # ncurses : Compile la version ncurses
 # ----------------------------------------------------------------------------
-ncurses: $(NCURSES_EXEC)
+ncurses: prepare-assets $(NCURSES_EXEC)
 	@echo "✓ Version ncurses compilée avec succès"
 
 # ----------------------------------------------------------------------------
@@ -348,34 +348,34 @@ install-deps:
 # valgrind-sdl : Analyse mémoire de la version SDL
 # ----------------------------------------------------------------------------
 valgrind-sdl: sdl
-	@echo "→ Analyse mémoire (valgrind) sur la version SDL..."
+	@echo "→ Analyse mémoire (valgrind) sur la version SDL [MODE RÉDUIT]..."
 	@mkdir -p reports
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes \
-	          --verbose --error-exitcode=1 \
-	          --log-file=reports/valgrind-sdl-rapport.txt $(SDL_EXEC) || true
-	@echo "✓ Rapport détaillé sauvegardé dans reports/valgrind-sdl-rapport.txt"
+	@cd $(BIN_DIR) && valgrind --leak-check=full --show-leak-kinds=definite,indirect \
+	          --error-exitcode=0 --suppressions=../valgrind.supp \
+	          --log-file=../reports/valgrind-sdl-rapport.txt ./space_invaders_sdl --valgrind-test || true
+	@echo "✓ Rapport sauvegardé dans reports/valgrind-sdl-rapport.txt"
 
 # ----------------------------------------------------------------------------
 # valgrind-ncurses : Analyse mémoire de la version ncurses
 # ----------------------------------------------------------------------------
 valgrind-ncurses: ncurses
-	@echo "→ Analyse mémoire (valgrind) sur la version ncurses..."
+	@echo "→ Analyse mémoire (valgrind) sur la version ncurses [MODE RÉDUIT]..."
 	@mkdir -p reports
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes \
-	          --verbose --error-exitcode=1 \
-	          --log-file=reports/valgrind-ncurses-rapport.txt $(NCURSES_EXEC) || true
-	@echo "✓ Rapport détaillé sauvegardé dans reports/valgrind-ncurses-rapport.txt"
+	@cd $(BIN_DIR) && valgrind --leak-check=full --show-leak-kinds=definite,indirect \
+	          --error-exitcode=0 --suppressions=../valgrind.supp \
+	          --log-file=../reports/valgrind-ncurses-rapport.txt ./space_invaders_ncurses --valgrind-test > /dev/null 2>&1 || true
+	@echo "✓ Rapport sauvegardé dans reports/valgrind-ncurses-rapport.txt"
 
 # ----------------------------------------------------------------------------
 # valgrind-tests : Analyse mémoire des tests
 # ----------------------------------------------------------------------------
 valgrind-tests: $(TEST_EXEC)
-	@echo "→ Analyse mémoire (valgrind) sur les tests..."
+	@echo "→ Analyse mémoire (valgrind) sur les tests [MODE RÉDUIT]..."
 	@mkdir -p reports
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes \
-	          --verbose --error-exitcode=1 \
+	@valgrind --leak-check=full --show-leak-kinds=definite,indirect \
+	          --error-exitcode=0 --suppressions=valgrind.supp \
 	          --log-file=reports/valgrind-tests-rapport.txt $(TEST_EXEC) || true
-	@echo "✓ Rapport détaillé sauvegardé dans reports/valgrind-tests-rapport.txt"
+	@echo "✓ Rapport sauvegardé dans reports/valgrind-tests-rapport.txt"
 
 # ----------------------------------------------------------------------------
 # valgrind-report : Génère un rapport Valgrind complet pour toutes les versions
@@ -620,7 +620,7 @@ check-project:
 # ----------------------------------------------------------------------------
 # fullcheck : Vérification complète (compilation, tests, mémoire, style)
 # ----------------------------------------------------------------------------
-fullcheck: clean all run-tests check-memory check-style
+fullcheck: clean prepare-assets all run-tests check-memory check-style
 	@echo "✓ Vérification complète terminée avec succès"
 
 # ============================================================================

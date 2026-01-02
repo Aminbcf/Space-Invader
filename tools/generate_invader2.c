@@ -121,8 +121,8 @@ void generate_invader_frame(int frame_num, const char* filename) {
 
             // --- PALETTE ---
             switch (pixel_type) {
-                case 0: // Background (Requested: 5, 10, 30)
-                    r=5; g=10; b=30; 
+                case 0: // Background (Black)
+                    r=0; g=0; b=0; 
                     break;
                 case 1: // Shadow/Outline
                     r=0; g=30; b=50; 
@@ -141,7 +141,7 @@ void generate_invader_frame(int frame_num, const char* filename) {
                     break;
                 default:
                     // Default to Background
-                    r=5; g=10; b=30; 
+                    r=0; g=0; b=0; 
                     break;
             }
 
