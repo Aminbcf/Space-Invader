@@ -37,7 +37,6 @@ typedef struct {
   int frame_count;
 } NcursesView;
 
-
 // Creation/destruction
 NcursesView *ncurses_view_create(void);
 void ncurses_view_destroy(NcursesView *view);

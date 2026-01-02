@@ -11,9 +11,9 @@ bool test_game_state_creation(void) {
     TEST_ASSERT_EQ(context->time_scale, 1.0f);
     
     // Test model initialization via context
-    TEST_ASSERT_EQ(context->model->player.lives, 3);
-    TEST_ASSERT_EQ(context->model->player.score, 0);
-    TEST_ASSERT_EQ(context->model->player.level, 1);
+    TEST_ASSERT_EQ(context->model->players[0].lives, 3);
+    TEST_ASSERT_EQ(context->model->players[0].score, 0);
+    TEST_ASSERT_EQ(context->model->players[0].level, 1);
     
     game_context_destroy(context);
     return true;

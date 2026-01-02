@@ -81,8 +81,9 @@ void controller_execute_command(Controller *controller, Command cmd);
 void controller_update(Controller *controller, float delta_time);
 
 // Configuration
-void controller_set_keybindings(Controller *controller, int player_id, int up, int down, int left, int right,
-                                int shoot, int pause, int quit);
+void controller_set_keybindings(Controller *controller, int player_id, int up,
+                                int down, int left, int right, int shoot,
+                                int pause, int quit);
 void controller_set_callbacks(Controller *controller, RenderCallback render_cb,
                               AudioCallback audio_cb, void *data);
 

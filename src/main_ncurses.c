@@ -52,7 +52,7 @@ static Direction current_move_dir_p1 = DIR_STATIONARY;
 static uint32_t last_input_time_p1 = 0;
 static Direction current_move_dir_p2 = DIR_STATIONARY;
 static uint32_t last_input_time_p2 = 0;
-static const uint32_t INPUT_TIMEOUT_MS = 40; // Reduced for crisper stop
+static const uint32_t INPUT_TIMEOUT_MS = 100; // Large buffer for smooth movement on all terminals
 
 /* Process a single key for gameplay - updates state only */
 static void process_gameplay_key(GameModel *model, Controller *controller, int ch) {

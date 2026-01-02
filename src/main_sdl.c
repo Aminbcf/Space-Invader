@@ -31,11 +31,12 @@ int main(int argc, char *argv[]) {
     game_context_destroy(context);
     return 1;
   }
-  
+
   // Unbind default gameplay keys from InputHandler to prevent "ghost keys"
   // We will handle gameplay inputs exclusively via Model Keybinds below.
   // Keep Pause (P) and Quit (ESC) to allow controller fallback to handle them.
-  input_handler_set_keybindings(controller->input_handler, 0, 0, 0, SDLK_P, SDLK_ESCAPE);
+  input_handler_set_keybindings(controller->input_handler, 0, 0, 0, SDLK_P,
+                                SDLK_ESCAPE);
 
   /* Create SDL view */
   SDLView *view = sdl_view_create();
@@ -54,7 +55,7 @@ int main(int argc, char *argv[]) {
     game_context_destroy(context);
     return 1;
   }
-  
+
   // Set window title correctly
   SDL_SetWindowTitle(view->window, "Space Invader");
 
@@ -92,18 +93,22 @@ int main(int argc, char *argv[]) {
     while (sdl_view_poll_event(view, &event)) {
       if (event.type == SDL_EVENT_QUIT) {
         running = false;
-      }
-      else if (event.type == SDL_EVENT_KEY_DOWN) {
+      } else if (event.type == SDL_EVENT_KEY_DOWN) {
         // Check if we're waiting for a keybind
         if (context->model->waiting_for_key) {
           model_set_keybind(context->model, (int)event.key.key);
         } else {
-          // If playing, check model keybindings first to support custom controls
+          // If playing, check model keybindings first to support custom
+          // controls
           bool handled = false;
           int key = (int)event.key.key;
-          
-          // Helper for discrete event checks
-          #define CHECK_EVENT_KEY(bind, cmd) if (key == (bind)) { controller_execute_command(controller, cmd); handled = true; }
+
+// Helper for discrete event checks
+#define CHECK_EVENT_KEY(bind, cmd)                                             \
+  if (key == (bind)) {                                                         \
+    controller_execute_command(controller, cmd);                               \
+    handled = true;                                                            \
+  }
 
           // Always check model keybindings for P1 commands (Menu & Gameplay)
           CHECK_EVENT_KEY(context->model->keybinds_p1[0], CMD_LEFT);
@@ -111,60 +116,64 @@ int main(int argc, char *argv[]) {
           CHECK_EVENT_KEY(context->model->keybinds_p1[2], CMD_UP);
           CHECK_EVENT_KEY(context->model->keybinds_p1[3], CMD_DOWN);
           CHECK_EVENT_KEY(context->model->keybinds_p1[4], CMD_SHOOT);
-          
+
           if (context->model->state == STATE_PLAYING) {
-              // Player 2
-              CHECK_EVENT_KEY(context->model->keybinds_p2[0], CMD_P2_MOVE_LEFT);
-              CHECK_EVENT_KEY(context->model->keybinds_p2[1], CMD_P2_MOVE_RIGHT);
-              CHECK_EVENT_KEY(context->model->keybinds_p2[2], CMD_P2_MOVE_UP);
-              CHECK_EVENT_KEY(context->model->keybinds_p2[3], CMD_P2_MOVE_DOWN);
-              CHECK_EVENT_KEY(context->model->keybinds_p2[4], CMD_P2_SHOOT);
+            // Player 2
+            CHECK_EVENT_KEY(context->model->keybinds_p2[0], CMD_P2_MOVE_LEFT);
+            CHECK_EVENT_KEY(context->model->keybinds_p2[1], CMD_P2_MOVE_RIGHT);
+            CHECK_EVENT_KEY(context->model->keybinds_p2[2], CMD_P2_MOVE_UP);
+            CHECK_EVENT_KEY(context->model->keybinds_p2[3], CMD_P2_MOVE_DOWN);
+            CHECK_EVENT_KEY(context->model->keybinds_p2[4], CMD_P2_SHOOT);
           }
-          
-          // Fallback to controller mappings (e.g. Pause, Quit, Menu Nav) if not handled
+
+          // Fallback to controller mappings (e.g. Pause, Quit, Menu Nav) if not
+          // handled
           if (!handled) {
-              InputEvent input_event;
-              memset(&input_event, 0, sizeof(InputEvent));
-              input_event.type = INPUT_KEYBOARD;
-              input_event.key = (int)event.key.key;
-              input_event.value = 1;
-              controller_handle_event(controller, &input_event);
+            InputEvent input_event;
+            memset(&input_event, 0, sizeof(InputEvent));
+            input_event.type = INPUT_KEYBOARD;
+            input_event.key = (int)event.key.key;
+            input_event.value = 1;
+            controller_handle_event(controller, &input_event);
           }
         }
       }
     }
 
-
-    /* Process continuous input (held keys) using SDL state and model keybindings */
+    /* Process continuous input (held keys) using SDL state and model
+     * keybindings */
     int num_keys;
     const bool *state = SDL_GetKeyboardState(&num_keys);
-    
-    // Helper to check key by keycode from model
-    #define CHECK_MODEL_KEY(keycode, cmd) { \
-        SDL_Scancode sc = SDL_GetScancodeFromKey(keycode, NULL); \
-        if ((int)sc < num_keys && state[sc]) controller_execute_command(controller, cmd); \
-    }
+
+// Helper to check key by keycode from model
+#define CHECK_MODEL_KEY(keycode, cmd)                                          \
+  {                                                                            \
+    SDL_Scancode sc = SDL_GetScancodeFromKey(keycode, NULL);                   \
+    if ((int)sc < num_keys && state[sc])                                       \
+      controller_execute_command(controller, cmd);                             \
+  }
 
     if (context->model->state == STATE_PLAYING) {
-        // P1 Model Keybinds (Continuous input for movement)
-        CHECK_MODEL_KEY(context->model->keybinds_p1[0], CMD_LEFT);
-        CHECK_MODEL_KEY(context->model->keybinds_p1[1], CMD_RIGHT);
-        CHECK_MODEL_KEY(context->model->keybinds_p1[2], CMD_UP);
-        CHECK_MODEL_KEY(context->model->keybinds_p1[3], CMD_DOWN);
-        CHECK_MODEL_KEY(context->model->keybinds_p1[4], CMD_SHOOT);
-        
-        // P2 uses model keybindings
-        CHECK_MODEL_KEY(context->model->keybinds_p2[0], CMD_P2_MOVE_LEFT);
-        CHECK_MODEL_KEY(context->model->keybinds_p2[1], CMD_P2_MOVE_RIGHT);
-        CHECK_MODEL_KEY(context->model->keybinds_p2[2], CMD_P2_MOVE_UP);
-        CHECK_MODEL_KEY(context->model->keybinds_p2[3], CMD_P2_MOVE_DOWN);
-        CHECK_MODEL_KEY(context->model->keybinds_p2[4], CMD_P2_SHOOT);
+      // P1 Model Keybinds (Continuous input for movement)
+      CHECK_MODEL_KEY(context->model->keybinds_p1[0], CMD_LEFT);
+      CHECK_MODEL_KEY(context->model->keybinds_p1[1], CMD_RIGHT);
+      CHECK_MODEL_KEY(context->model->keybinds_p1[2], CMD_UP);
+      CHECK_MODEL_KEY(context->model->keybinds_p1[3], CMD_DOWN);
+      CHECK_MODEL_KEY(context->model->keybinds_p1[4], CMD_SHOOT);
+
+      // P2 uses model keybindings
+      CHECK_MODEL_KEY(context->model->keybinds_p2[0], CMD_P2_MOVE_LEFT);
+      CHECK_MODEL_KEY(context->model->keybinds_p2[1], CMD_P2_MOVE_RIGHT);
+      CHECK_MODEL_KEY(context->model->keybinds_p2[2], CMD_P2_MOVE_UP);
+      CHECK_MODEL_KEY(context->model->keybinds_p2[3], CMD_P2_MOVE_DOWN);
+      CHECK_MODEL_KEY(context->model->keybinds_p2[4], CMD_P2_SHOOT);
     }
 
     /* Calculate delta time */
     uint32_t current_time = SDL_GetTicks();
     float delta_time = (current_time - last_update) / 1000.0f;
-    if (delta_time > 0.1f) delta_time = 0.1f;
+    if (delta_time > 0.1f)
+      delta_time = 0.1f;
     last_update = current_time;
 
     /* Update game */

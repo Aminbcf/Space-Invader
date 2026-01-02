@@ -13,14 +13,14 @@ bool test_model_init(void) {
     model_init(&model);
     
     // Test initial values
-    TEST_ASSERT_EQ(model.player.lives, 3);
-    TEST_ASSERT_EQ(model.player.score, 0);
-    TEST_ASSERT_EQ(model.player.level, 1);
+    TEST_ASSERT_EQ(model.players[0].lives, 3);
+    TEST_ASSERT_EQ(model.players[0].score, 0);
+    TEST_ASSERT_EQ(model.players[0].level, 1);
     TEST_ASSERT_EQ(model.state, STATE_MENU);
     
     // Test player position
-    TEST_ASSERT_EQ(model.player.hitbox.x, (GAME_AREA_WIDTH / 2) - (PLAYER_WIDTH / 2));
-    TEST_ASSERT_EQ(model.player.hitbox.y, SCREEN_HEIGHT - (PLAYER_HEIGHT + 20));
+    TEST_ASSERT_EQ(model.players[0].hitbox.x, (GAME_AREA_WIDTH / 2) - (PLAYER_WIDTH / 2) - 50);
+    TEST_ASSERT_EQ(model.players[0].hitbox.y, SCREEN_HEIGHT - (PLAYER_HEIGHT + 20));
     
     // Test all invaders are alive
     for (int i = 0; i < INVADER_ROWS; i++) {
@@ -35,9 +35,14 @@ bool test_model_init(void) {
         TEST_ASSERT_EQ(model.bases[i].health, 100);
     }
     
-    // Test bullets are not alive
+    // Test bullets are not alive (Player 1)
     for (int i = 0; i < PLAYER_BULLETS; i++) {
-        TEST_ASSERT(model.player_bullets[i].alive == false);
+        TEST_ASSERT(model.player_bullets[0][i].alive == false);
+    }
+    
+    // Test bullets are not alive (Player 2)
+    for (int i = 0; i < PLAYER_BULLETS; i++) {
+        TEST_ASSERT(model.player_bullets[1][i].alive == false);
     }
     
     for (int i = 0; i < ENEMY_BULLETS; i++) {
@@ -52,26 +57,26 @@ bool test_model_player_movement(void) {
     model_init(&model);
     model.state = STATE_PLAYING;
     
-    int initial_x = model.player.hitbox.x;
+    int initial_x = model.players[0].hitbox.x;
     
     // Move left
-    model_move_player(&model, DIR_LEFT);
-    TEST_ASSERT_LT(model.player.hitbox.x, initial_x);
+    model_move_player(&model, 0, DIR_LEFT);
+    TEST_ASSERT_LT(model.players[0].hitbox.x, initial_x);
     
     // Move right
-    int new_x = model.player.hitbox.x;
-    model_move_player(&model, DIR_RIGHT);
-    TEST_ASSERT_GT(model.player.hitbox.x, new_x);
+    int new_x = model.players[0].hitbox.x;
+    model_move_player(&model, 0, DIR_RIGHT);
+    TEST_ASSERT_GT(model.players[0].hitbox.x, new_x);
     
     // Test boundary - left
-    model.player.hitbox.x = 0;
-    model_move_player(&model, DIR_LEFT);
-    TEST_ASSERT_EQ(model.player.hitbox.x, 0); // Should not go below 0
+    model.players[0].hitbox.x = 0;
+    model_move_player(&model, 0, DIR_LEFT);
+    TEST_ASSERT_EQ(model.players[0].hitbox.x, 0); // Should not go below 0
     
     // Test boundary - right
-    model.player.hitbox.x = GAME_AREA_WIDTH - PLAYER_WIDTH;
-    model_move_player(&model, DIR_RIGHT);
-    TEST_ASSERT_EQ(model.player.hitbox.x, GAME_AREA_WIDTH - PLAYER_WIDTH);
+    model.players[0].hitbox.x = GAME_AREA_WIDTH - PLAYER_WIDTH;
+    model_move_player(&model, 0, DIR_RIGHT);
+    TEST_ASSERT_EQ(model.players[0].hitbox.x, GAME_AREA_WIDTH - PLAYER_WIDTH);
     
     return true;
 }
@@ -81,20 +86,20 @@ bool test_model_shooting(void) {
     model_init(&model);
     model.state = STATE_PLAYING;
     
-    unsigned int initial_shots = model.player.shots_fired;
+    unsigned int initial_shots = model.players[0].shots_fired;
     
     // Fire first bullet
-    model_player_shoot(&model);
-    TEST_ASSERT_EQ(model.player.shots_fired, initial_shots + 1);
+    model_player_shoot(&model, 0);
+    TEST_ASSERT_EQ(model.players[0].shots_fired, initial_shots + 1);
     
     // Check one bullet is alive
     bool bullet_found = false;
     for (int i = 0; i < PLAYER_BULLETS; i++) {
-        if (model.player_bullets[i].alive) {
+        if (model.player_bullets[0][i].alive) {
             bullet_found = true;
-            TEST_ASSERT_EQ(model.player_bullets[i].hitbox.x, 
-                          model.player.hitbox.x + (PLAYER_WIDTH/2) - (BULLET_WIDTH/2));
-            TEST_ASSERT_EQ(model.player_bullets[i].hitbox.y, model.player.hitbox.y);
+            TEST_ASSERT_EQ(model.player_bullets[0][i].hitbox.x, 
+                          model.players[0].hitbox.x + (PLAYER_WIDTH/2) - (BULLET_WIDTH/2));
+            TEST_ASSERT_EQ(model.player_bullets[0][i].hitbox.y, model.players[0].hitbox.y);
             break;
         }
     }
@@ -102,13 +107,13 @@ bool test_model_shooting(void) {
     
     // Fire all bullets
     for (int i = 0; i < PLAYER_BULLETS; i++) {
-        model_player_shoot(&model);
+        model_player_shoot(&model, 0);
     }
     
     // All bullets should be alive now
     int alive_bullets = 0;
     for (int i = 0; i < PLAYER_BULLETS; i++) {
-        if (model.player_bullets[i].alive) alive_bullets++;
+        if (model.player_bullets[0][i].alive) alive_bullets++;
     }
     TEST_ASSERT_EQ(alive_bullets, PLAYER_BULLETS);
     
@@ -143,19 +148,19 @@ bool test_model_level_transition(void) {
     model.state = STATE_PLAYING;
     
     // Test level 1 to 2 transition
-    int initial_level = model.player.level;
+    int initial_level = model.players[0].level;
     model_next_level(&model);
     
-    TEST_ASSERT_EQ(model.player.level, initial_level + 1);
+    TEST_ASSERT_EQ(model.players[0].level, initial_level + 1);
     TEST_ASSERT_EQ(model.state, STATE_LEVEL_TRANSITION);
     
     // Test player position reset
-    TEST_ASSERT_EQ(model.player.hitbox.x, (GAME_AREA_WIDTH / 2) - (PLAYER_WIDTH / 2));
-    TEST_ASSERT_EQ(model.player.hitbox.y, SCREEN_HEIGHT - (PLAYER_HEIGHT + 20));
+    TEST_ASSERT_EQ(model.players[0].hitbox.x, (GAME_AREA_WIDTH / 2) - (PLAYER_WIDTH / 2) - 50);
+    TEST_ASSERT_EQ(model.players[0].hitbox.y, SCREEN_HEIGHT - (PLAYER_HEIGHT + 20));
     
     // Test bullets are cleared
     for (int i = 0; i < PLAYER_BULLETS; i++) {
-        TEST_ASSERT(model.player_bullets[i].alive == false);
+        TEST_ASSERT(model.player_bullets[0][i].alive == false);
     }
     
     return true;

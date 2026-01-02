@@ -221,7 +221,7 @@ $(TEST_EXEC): $(TEST_OBJS) $(filter-out %/main_sdl.o %/main_ncurses.o %/view_sdl
 # ----------------------------------------------------------------------------
 $(BIN_DIR)/%: tools/%.c | $(BIN_DIR)
 	@echo "→ Compilation de l'outil : $@"
-	@$(CC) $(CFLAGS) $< -o $@
+	@$(CC) $(CFLAGS) $< -o $@ -lm
 	@chmod +x $@
 
 # ----------------------------------------------------------------------------

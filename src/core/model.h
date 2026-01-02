@@ -27,10 +27,25 @@
 #define BIG_INVADER_HEIGHT 50
 
 // Directions
-typedef enum { DIR_LEFT, DIR_RIGHT, DIR_UP, DIR_DOWN, DIR_STATIONARY } Direction;
+typedef enum {
+  DIR_LEFT,
+  DIR_RIGHT,
+  DIR_UP,
+  DIR_DOWN,
+  DIR_STATIONARY
+} Direction;
 
 // Color types (Legacy support for Ncurses)
-typedef enum { COLOR_RED, COLOR_GREEN, COLOR_PURPLE, COLOR_YELLOW, COLOR_CYAN, COLOR_WHITE, COLOR_ORANGE, COLOR_PINK } ColorType;
+typedef enum {
+  COLOR_RED,
+  COLOR_GREEN,
+  COLOR_PURPLE,
+  COLOR_YELLOW,
+  COLOR_CYAN,
+  COLOR_WHITE,
+  COLOR_ORANGE,
+  COLOR_PINK
+} ColorType;
 
 typedef enum {
   PWR_NONE,
@@ -52,7 +67,12 @@ typedef enum {
 } GameState;
 
 // Difficulty Levels
-typedef enum { DIFFICULTY_EASY, DIFFICULTY_NORMAL, DIFFICULTY_HARD, DIFFICULTY_ROGUE } Difficulty;
+typedef enum {
+  DIFFICULTY_EASY,
+  DIFFICULTY_NORMAL,
+  DIFFICULTY_HARD,
+  DIFFICULTY_ROGUE
+} Difficulty;
 
 // Menu States
 typedef enum {
@@ -85,9 +105,9 @@ typedef struct {
   int points;
   int row;
   int col;
-  int type;        // 0=Squid, 1=Crab, 2=Octopus, 3=Big Invader
-  int dying_timer; // >0 means exploding
-  int health;      // For big invaders only
+  int type;             // 0=Squid, 1=Crab, 2=Octopus, 3=Big Invader
+  int dying_timer;      // >0 means exploding
+  int health;           // For big invaders only
   float speed_modifier; // Individual speed for special invaders
 } Invader;
 
@@ -127,8 +147,8 @@ typedef struct {
   float speed_x;
   float speed_y;
   int shoot_timer;
-  int anim_frame;   // Animation frame (0 or 1)
-  int anim_counter; // Counter for animation timing
+  int anim_frame;     // Animation frame (0 or 1)
+  int anim_counter;   // Counter for animation timing
   int attack_pattern; // 0=Horizontal, 1=Circular
   float attack_timer;
 } Boss;
@@ -174,11 +194,11 @@ typedef struct {
   uint32_t last_kill_time;
   bool is_active;
   int player_id;
-  
+
   // Power-ups
   PowerUpType active_powerup;
   float powerup_timer;
-  
+
   // Damage immunity
   float invincibility_timer;
 } Player;
@@ -204,7 +224,7 @@ typedef struct {
   bool two_player_mode;
   uint32_t last_update_time;
   float win_timer; // Timer for auto-return to menu after win
-  
+
   // Keybindings (key codes) - P1: left, right, up, down, shoot; P2: same
   int keybinds_p1[5]; // left, right, up, down, shoot
   int keybinds_p2[5];

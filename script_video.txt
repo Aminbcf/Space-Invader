@@ -16,7 +16,7 @@
 
 **[Aperçu rapide de la structure]**
 
-> "Le projet propose deux interfaces: SDL3 pour le graphisme et ncurses pour le terminal, toutes deux partageant la même logique de jeu."
+> "Le projet propose deux interfaces: SDL3 avec un effet de fond 'Warp Speed' 3D dynamique, et ncurses pour le terminal avec un lissage des entrées pour une fluidité maximale, toutes deux partageant la même logique de jeu."
 
 ---
 
@@ -54,7 +54,7 @@
 **[Changer le volume de 50% à 100% puis à 30%]**
 
 **[Naviguer vers SETTINGS → CONTROLS]**
-> "L'écran des contrôles affiche toutes les touches du jeu"
+> "L'écran des contrôles permet de reconfigurer entièrement les touches pour les deux versions (SDL et Terminal)."
 
 **[Afficher brièvement puis retourner au menu principal]**
 
@@ -121,7 +121,7 @@
 - Il encaisse plusieurs coups
 - Sa barre de vie diminue
 
-> "Le boss nécessite plusieurs impacts pour être détruit. En mode Difficile, sa défaite rapporte 10 000 points - le double des 5 000 points normaux!"
+> "Le boss Dreadnought utilise des motifs d'attaque complexes et change d'état visuel (couleurs) selon ses PV. En mode Difficile, sa défaite rapporte 10 000 points!"
 
 **[Si possible, détruire le boss]**
 > "Victoire!"

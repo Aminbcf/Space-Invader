@@ -1,241 +1,161 @@
 # Space Invaders MVC
 
-A modern C implementation of the classic Space Invaders arcade game using strict Model-View-Controller architecture.
+A modern, robust C implementation of the classic arcade game *Space Invaders*, built with a strict **Model-View-Controller (MVC)** architecture. This project demonstrates high-quality C programming practices, including memory safety, modular design, and dual-interface support (Graphical & Terminal).
 
-## Features
+## 🚀 Features
 
-### Game Features
-- **Menu System**: Full-featured menu with difficulty selection and settings
-- **Three Difficulty Levels**:
-  - **Easy**: 3 levels, no boss fight
-  - **Normal**: 4 levels with boss fight
-  - **Hard**: 1.5x faster enemies, more bullets, 2x score multiplier
-- **Score Bonuses**: Difficulty-based multipliers (Easy 1x, Normal 1.5x, Hard 2x)
-- **Progressive Levels**: 4 levels with increasing difficulty
-- **Boss Fight**: Epic level 4 boss battle with special music
-- **Audio System**: Multiple music tracks and sound effects
-  - Menu/gameplay music
-  - Boss battle music
-  - Victory music
-  - Shooting, explosion, damage, and game over sounds
-- **High Score Tracking**: Persistent high score save system
+### Core Architectural Features
+- **Strict MVC Pattern**: Complete separation between Logic (Model), Input (Controller), and Rendering (View).
+- **Dual Interface**:
+    - **SDL3**: High-performance graphical view with sprites, particles, and 3D warp effects.
+    - **Ncurses**: ASCII-art terminal view playable over SSH.
+- **Shared Model**: Both interfaces run on the exact same game logic engine.
+- **Memory Safety**: Verified "Zero Leaks" with Valgrind.
 
-### Technical Features
-- **Strict MVC Architecture**: Clean separation of concerns
-- **Dual Interface**: SDL3 (graphics) and ncurses (terminal)
-- **Shared Model**: Same game logic for both interfaces
-- **Memory Safe**: Valgrind-verified, zero leaks
-- **Unit Tested**: 11 passing unit tests
-- **Modular Design**: Easy to extend and maintain
-
-## Quick Start
-
-### Installation
-
-```bash
-# Install dependencies (auto-detects your package manager)
-make install-deps
-
-# Or manually for Arch Linux:
-sudo pacman -S sdl3 sdl3_ttf sdl3_image ncurses check valgrind doxygen
-```
-
-### Compilation & Running
-
-```bash
-# Compile and run SDL version
-make run-sdl
-
-# Compile and run terminal version
-make run-ncurses
-
-# Run tests
-make test
-
-# Build everything
-make all
-```
-
-## Controls
-
-### SDL Version
-- **Movement**: Arrow keys or A/D
-- **Shoot**: Space
-- **Menu Navigation**: Arrow keys, Enter to select
-- **Volume Adjust**: Left/Right arrows (in settings)
-- **Pause**: P
-- **Return to Menu**: ESC
-- **Quit**: ESC (from main menu)
-
-### ncurses Version
-- **Movement**: A (left), D (right)
-- **Shoot**: Space
-- **Pause**: P
-- **Quit**: Q
-
-## Architecture
-
-```
-src/
-├── core/           # Model (game logic)
-│   ├── model.c/h
-│   └── game_state.c/h
-├── views/          # View (SDL + ncurses)
-│   ├── view_sdl.c/h
-│   └── view_ncurses.c/h
-├── controller/     # Controller (input handling)
-│   ├── controller.c/h
-│   └── input_handler.c/h
-└── utils/          # Platform abstraction
-    ├── platform.h
-    └── font_manager.c/h
-```
-
-## Difficulty System
-
-| Feature | Easy | Normal | Hard |
-|---------|------|--------|------|
-| **Levels** | 3 | 4 | 4 |
-| **Boss Fight** | ❌ | ✅ | ✅ |
-| **Enemy Speed** | 1.0x | 1.0x | 1.5x |
-| **Bullet Frequency** | Normal | Normal | 1.5x |
-| **Player Speed** | Normal | Normal | 1.3x |
-| **Score Multiplier** | 1.0x | 1.5x | 2.0x |
-
-### Score Examples (Hard Difficulty)
-- Invader kill: 30 → **60 points** (2x)
-- Saucer: 200-300 → **400-600 points** (2x)
-- Boss defeat: 5,000 → **10,000 points** (2x)
-
-## Audio System
-
-- **Menu/Gameplay**: `music_game.wav` - Energetic E minor, 130 BPM
-- **Boss Fight**: `music_boss.wav` - Intense battle music
-- **Victory**: `music_victory.wav` - Triumphant fanfare
-- **Sound Effects**: Shooting, explosions, damage, game over
-
-Music automatically transitions between game states and loops continuously.
-
-## Development
-
-### Testing
-```bash
-make test              # Run unit tests
-make valgrind-sdl      # Memory leak check (SDL)
-make valgrind-ncurses  # Memory leak check (ncurses)
-make fullcheck         # Complete validation
-```
-
-### Documentation
-```bash
-make doc  # Generate Doxygen documentation
-```
-
-### Code Style
-```bash
-make check-style  # Verify code style
-make format       # Auto-format code
-```
-
-## Building
-
-### Makefile Targets
-
-**Compilation**:
-- `make all` - Build SDL, ncurses, and tools
-- `make sdl` - Build SDL version only
-- `make ncurses` - Build ncurses version only
-- `make rebuild` - Clean and rebuild everything
-
-**Running**:
-- `make run-sdl` - Compile and launch SDL version
-- `make run-ncurses` - Compile and launch ncurses version
-- `make run-tests` - Compile and run tests
-
-**Testing**:
-- `make test` - Run unit tests  
-- `make valgrind-sdl` - Memory check SDL
-- `make valgrind-ncurses` - Memory check ncurses
-- `make check-memory` - Complete memory analysis
-
-**Documentation**:
-- `make doc` - Generate documentation
-- `make help` - Show all available targets
-
-**Utilities**:
-- `make clean` - Remove build files
-- `make install` - Install to system
-- `make dist` - Create distribution package
-
-## Requirements
-
-- **C Compiler**: GCC 7.0+ (C11 support)
-- **SDL3**: libsdl3-dev, libsdl3-ttf-dev, libsdl3-image-dev
-- **ncurses**: libncurses-dev
-- **Check**: Unit testing framework
-- **Make**: Build system
-- **Optional**: Valgrind, Doxygen, clang-format
-
-## Project Structure
-
-```
-.
-├── src/                # Source code
-│   ├── core/          # Game model
-│   ├── views/         # SDL + ncurses views
-│   ├── controller/    # Input handling
-│   ├── utils/         # Utilities
-│   ├── assets/        # Audio files, images
-│   └── main_*.c       # Entry points
-├── tests/             # Unit tests
-├── bin/               # Compiled executables
-├── build/             # Object files
-├── docs/              # Generated documentation
-├── Makefile           # Build system
-└── README.md          # This file
-```
-
-## Menu System
-
-### Main Menu
-- **START**: Opens difficulty selection
-- **SETTINGS**: Configure volume and view controls
-- **QUIT**: Exit game
-
-### Settings
-- **CONTROLS**: View all key bindings
-- **MUSIC VOLUME**: Adjust volume (0-100%) with arrow keys
-- **BACK**: Return to main menu
-
-### Difficulty Selection
-Choose between Easy, Normal, or Hard before starting the game.
-
-## Return to Menu
-
-After winning or losing, press **SPACE** to return to the main menu (not restart). From there you can:
-- Choose a different difficulty
-- Adjust settings
-- View your high score
-- Quit the game
-
-## Memory Safety
-
-All code is Valgrind-checked with zero memory leaks:
-```bash
-make valgrind-report  # Generate complete memory report
-```
-
-## License
-
-Academic project - see project documentation for details.
-
-## Author
-
-**Amine Boucif**  
-Space Invaders MVC - C Implementation
+### Gameplay Features
+- **Advanced Boss Fight**: Level 4 features the "Dreadnought" boss with multi-phase attacks and changing visual states.
+- **Dynamic Difficulty**:
+    - **Easy**: 3 Levels, Slower enemies.
+    - **Normal**: 4 Levels, Standard speed, Boss fight.
+    - **Hard**: Faster enemies (1.5x), Aggressive firing, Double Score Points.
+- **Procedural Audio**: Real-time synthesized sound effects and music (managed via `miniaudio`).
+- **High Scores**: Persistent score tracking.
+- **Customizable Controls**: Full keybinding remapping for both SDL and Terminal views.
 
 ---
 
-**Built with**: C11, SDL3, ncurses, MVC architecture  
-**Tested with**: Valgrind, Check framework  
-**Documented with**: Doxygen
+## 🛠️ Installation
+
+### Prerequisites
+
+| Component | Requirement |
+|-----------|-------------|
+| Compiler | GCC or Clang (C11 support) |
+| Build System | GNU Make |
+| Graphics | SDL3, SDL3_image, SDL3_ttf |
+| Terminal | Ncurses |
+| Audio | Miniaudio (Included) |
+
+### Linux Dependencies
+
+**Debian / Ubuntu:**
+```bash
+sudo apt update
+sudo apt install build-essential libsdl3-dev libsdl3-image-dev libsdl3-ttf-dev libncurses5-dev valgrind doxygen
+```
+*Note: If SDL3 is not yet in your repo, you may need to build it from source or use a PPA.*
+
+**Arch Linux:**
+```bash
+sudo pacman -S base-devel sdl3 sdl3_image sdl3_ttf ncurses valgrind doxygen
+```
+
+**Fedora:**
+```bash
+sudo dnf install gcc make SDL3-devel SDL3_image-devel SDL3_ttf-devel ncurses-devel valgrind doxygen
+```
+
+### Building the Project
+
+The `Makefile` handles the entire build process.
+
+```bash
+# Clone the repository
+git clone https://github.com/your-repo/space-invaders-mvc.git
+cd space-invaders-mvc
+
+# Build everything (SDL + Ncurses + Tools)
+make all
+
+# Build only SDL version
+make sdl
+
+# Build only Terminal version
+make ncurses
+```
+
+---
+
+## 🎮 Gameplay Manual
+
+### Controls
+
+| Action | SDL Key | Ncurses Key |
+|--------|---------|-------------|
+| **Move Left** | Left Arrow / A | Left Arrow / A |
+| **Move Right** | Right Arrow / D | Right Arrow / D |
+| **Shoot** | Space | Space |
+| **Pause** | P | P |
+| **Confirm** | Enter | Enter |
+| **Back/Quit** | ESC | Q |
+
+> **Note**: You can customize these keys in **Settings > Controls**.
+
+### Enemies & Scoring
+
+| Enemy Type | Visual (SDL) | Visual (Ncurses) | Points (Normal) | Points (Hard - 2x) |
+|------------|--------------|------------------|-----------------|--------------------|
+| **Squid** | Small, Top Row | `^` | 30 | 60 |
+| **Crab** | Medium, Middle | `M` | 20 | 40 |
+| **Octopus** | Large, Bottom | `W` | 10 | 20 |
+| **Saucer** | Red Flying Ship | `<=>` | 100 - 300 | 200 - 600 |
+| **Boss** | Dreadnought | `[BOSS]` | 5000 | 10,000 |
+
+### The Boss (Dreadnought)
+Appears at Level 4 (Normal/Hard).
+- **Phase 1**: Green shield, slow tracking.
+- **Phase 2**: Purple shield, rapid fire, aggressive tracking.
+- **Strategy**: Keep moving. The boss anticipates your position. Destroying it triggers the Victory screen.
+
+---
+
+## 🏗️ Architecture Deep Dive
+
+### Project Structure
+```
+.
+├── src/
+│   ├── core/           # MODEL: Game Logic (Physics, AI, State)
+│   ├── views/          # VIEW: Rendering code (SDL & Ncurses)
+│   ├── controller/     # CONTROLLER: Input mapping & Event handling
+│   ├── assets/         # Raw assets (images, sounds)
+│   └── main_*.c        # Entry points
+├── bin/                # Executables & Runtime assets
+├── build/              # Computed object files
+└── tests/              # Unit tests (Check framework)
+```
+
+### The MVC Loop
+1.  **Input**: User presses a key.
+2.  **Controller**: `input_handler.c` captures the raw keycode and maps it to a semantic `Command` (e.g., `CMD_SHOOT`).
+3.  **Model**: `model.c` processes the command, updates game state (entity positions, collisions). **The Model knows nothing about the View.**
+4.  **View**: `view_sdl.c` or `view_ncurses.c` reads the updated Model state and renders the frame.
+
+### Key Files
+-   `src/core/model.h`: The "Single Source of Truth". Defines `GameModel`, `Player`, `Invader` structs.
+-   `src/views/view_base.h`: Defines the polymorphic `View` interface (`render`, `cleanup`).
+-   `src/controller/controller.c`: The bridge that executes commands on the model.
+
+---
+
+## 🔧 Troubleshooting
+
+**1. "Error initialization SDL" / "Window closes immediately"**
+*   Check that `bin/assets/` exists and contains images/sounds.
+*   Run `make install-deps` (if script available) or verify SDL3 installation.
+
+**2. "Assets not found"**
+*   Ensure you run the game from the project root, or that the executables in `bin/` can find the `assets/` folder relative to them.
+*   The Makefile copies assets automatically. Try `make clean && make all`.
+
+**3. Audio Latency / Glitches**
+*   This uses `miniaudio.h`. If you are on Linux with PulseAudio/PipeWire, it should work out of the box.
+*   If using WSL, audio configurations can be tricky.
+
+---
+
+## 📜 License
+
+This project is an academic reimplementation for educational purposes.
+Original Space Invaders concept © Taito Corporation.
+Code licensed under MIT.
