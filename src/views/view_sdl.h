@@ -20,6 +20,7 @@ typedef struct SDLView {
   SDL_Texture *pwr_tex[5]; // PWR_MAX is 5
   SDL_Texture *boss_tex[2];
   SDL_Texture *saucer_tex[2];
+  SDL_Texture *big_invader_tex[2];
   SDL_Texture *explosion_tex;
   SDL_Texture *bullet_player_tex;
   SDL_Texture *bullet_enemy_tex;
@@ -55,6 +56,14 @@ typedef struct SDLView {
   Uint32 frame_count;
   Uint32 fps;
   Uint32 last_frame_time;
+  
+  // Background Stars
+  struct {
+    float x, y;
+    float speed;
+    int size;
+    uint8_t alpha;
+  } stars[100];
 } SDLView;
 
 SDLView *sdl_view_create(void);

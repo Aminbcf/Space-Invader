@@ -19,7 +19,9 @@ bool platform_joystick_button(int joystick_id, int button);
 #include <time.h>
 
 static inline uint32_t platform_get_ticks(void) {
-  return (uint32_t)((clock() * 1000) / CLOCKS_PER_SEC);
+  struct timespec ts;
+  clock_gettime(CLOCK_MONOTONIC, &ts);
+  return (uint32_t)(ts.tv_sec * 1000 + ts.tv_nsec / 1000000);
 }
 
 static inline void platform_delay(uint32_t ms) {

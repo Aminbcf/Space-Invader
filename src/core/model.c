@@ -22,6 +22,7 @@ static void init_player_params(Player *player, int id) {
   player->player_id = id;
   player->active_powerup = PWR_NONE;
   player->powerup_timer = 0;
+  player->invincibility_timer = 0.0f;
 }
 
 static void reset_player_pos(Player *player, int id) {
@@ -58,7 +59,20 @@ static void init_invaders(InvaderGrid *invaders, int level, Difficulty difficult
   invaders->killed = 0;
   invaders->state_speed = (level > 3) ? 200 : (1000 - (level * 150));
   invaders->state_time = platform_get_ticks();
-  invaders->shoot_chance = (level > 2) ? 40 : (120 - (level * 20));
+  invaders->shoot_chance = (level > 2) ? 150 : (300 - (level * 30)); // Extremely conservative firing
+
+  invaders->big_invader_spawn_timer = 0;
+  
+  // Initialize big invader as inactive
+  invaders->big_invader.alive = false;
+  invaders->big_invader.hitbox.width = BIG_INVADER_WIDTH;
+  invaders->big_invader.hitbox.height = BIG_INVADER_HEIGHT;
+  invaders->big_invader.max_health = 40 + level * 5; // More health (was 10)
+  invaders->big_invader.health = invaders->big_invader.max_health;
+  invaders->big_invader.points = 200;
+  invaders->big_invader.speed = 70.0f; // Faster (was 40.0) to avoid sticking
+  invaders->big_invader.shoot_timer = 0;
+  invaders->big_invader.attack_type = 0;
 
   for (int i = 0; i < INVADER_ROWS; i++) {
     for (int j = 0; j < INVADER_COLS; j++) {
@@ -70,6 +84,8 @@ static void init_invaders(InvaderGrid *invaders, int level, Difficulty difficult
       invaders->invaders[i][j].dying_timer = 0;
       invaders->invaders[i][j].row = i;
       invaders->invaders[i][j].col = j;
+      invaders->invaders[i][j].health = 1; // Normal invaders have 1 HP
+      invaders->invaders[i][j].speed_modifier = 1.0f;
 
       if (i == 0) { invaders->invaders[i][j].type = 2; invaders->invaders[i][j].points = 30; }
       else if (i < 3) { invaders->invaders[i][j].type = 1; invaders->invaders[i][j].points = 20; }
@@ -186,7 +202,17 @@ void model_reset_game(GameModel *model) {
   Difficulty old_diff = model->difficulty;
   bool old_2p = model->two_player_mode;
   
+  // Save keybindings
+  int saved_p1[5];
+  int saved_p2[5];
+  memcpy(saved_p1, model->keybinds_p1, sizeof(int) * 5);
+  memcpy(saved_p2, model->keybinds_p2, sizeof(int) * 5);
+  
   model_init(model);
+  
+  // Restore keybindings
+  memcpy(model->keybinds_p1, saved_p1, sizeof(int) * 5);
+  memcpy(model->keybinds_p2, saved_p2, sizeof(int) * 5);
   
   model->state = STATE_PLAYING;
   model->difficulty = old_diff;
@@ -364,7 +390,10 @@ void model_update_invaders(GameModel *model, float delta_time) {
   for(int i=0; i<INVADER_ROWS; i++)
     for(int j=0; j<INVADER_COLS; j++) if(g->invaders[i][j].alive) any_alive = true;
   
-  if(!any_alive) return;
+  // Include big invader in "any alive" check
+  if (g->big_invader.alive) any_alive = true;
+  
+  if(!any_alive && !g->big_invader.alive) return;
 
   if (platform_get_ticks() > g->state_time + g->state_speed) {
     g->state_time = platform_get_ticks();
@@ -384,11 +413,12 @@ void model_update_invaders(GameModel *model, float delta_time) {
         continue;
       }
       if (inv->alive) {
+        float inv_shift = shift * inv->speed_modifier;
         if (g->direction == DIR_RIGHT) {
-          inv->hitbox.x += shift;
+          inv->hitbox.x += inv_shift;
           if (inv->hitbox.x + inv->hitbox.width >= GAME_AREA_WIDTH) hit_edge = true;
         } else {
-          inv->hitbox.x -= shift;
+          inv->hitbox.x -= inv_shift;
           if (inv->hitbox.x <= 0) hit_edge = true;
         }
       }
@@ -401,7 +431,78 @@ void model_update_invaders(GameModel *model, float delta_time) {
       for (int j = 0; j < INVADER_COLS; j++)
         if (g->invaders[i][j].alive) g->invaders[i][j].hitbox.y += 15;
   }
+  
+  // Big Invader spawning (spawn every ~15 seconds if not alive)
+  if (!g->big_invader.alive && !model->boss.alive) {
+    g->big_invader_spawn_timer += delta_time;
+    if (g->big_invader_spawn_timer >= 15.0f) {
+      g->big_invader_spawn_timer = 0;
+      g->big_invader.alive = true;
+      g->big_invader.hitbox.x = (rand() % 2 == 0) ? -BIG_INVADER_WIDTH : GAME_AREA_WIDTH;
+      g->big_invader.hitbox.y = 80;
+      g->big_invader.direction = (g->big_invader.hitbox.x < 0) ? DIR_RIGHT : DIR_LEFT;
+      g->big_invader.health = g->big_invader.max_health;
+      g->big_invader.attack_type = rand() % 2;
+    }
+  }
+  
+  // Big Invader update
+  if (g->big_invader.alive) {
+    BigInvader *bi = &g->big_invader;
+    
+    // Slow horizontal movement
+    float bi_move = bi->speed * delta_time;
+    if (bi->direction == DIR_RIGHT) {
+      bi->hitbox.x += bi_move;
+      if (bi->hitbox.x >= GAME_AREA_WIDTH + 20) bi->alive = false; // Exit screen
+    } else {
+      bi->hitbox.x -= bi_move;
+      if (bi->hitbox.x + bi->hitbox.width <= -20) bi->alive = false;
+    }
+    
+    // Big invader shooting - BIG SLOW PROJECTILES
+    bi->shoot_timer += delta_time;
+    if (bi->shoot_timer >= 2.0f) { // Shoot every 2 seconds
+      bi->shoot_timer = 0;
+      
+      if (bi->attack_type == 0) {
+        // Big slow shot - hard to dodge!
+        for (int b = 0; b < ENEMY_BULLETS; b++) {
+          if (!model->enemy_bullets[b].alive) {
+            model->enemy_bullets[b].alive = true;
+            model->enemy_bullets[b].type = 2; // Laser type visual
+            model->enemy_bullets[b].hitbox.x = bi->hitbox.x + bi->hitbox.width/2 - 25;
+            model->enemy_bullets[b].hitbox.y = bi->hitbox.y + bi->hitbox.height;
+            model->enemy_bullets[b].hitbox.width = 35; // Smaller (was 50) to allow dodging
+            model->enemy_bullets[b].hitbox.height = 50;
+            model->enemy_bullets[b].speed_x = 0;
+            model->enemy_bullets[b].speed_y = 100.0f; // Faster (was 80) to clear screen
+            break;
+          }
+        }
+      } else {
+        // Spread shot - 5 shots in a fan pattern
+        for (int s = 0; s < 5; s++) {
+          for (int b = 0; b < ENEMY_BULLETS; b++) {
+            if (!model->enemy_bullets[b].alive) {
+              model->enemy_bullets[b].alive = true;
+              model->enemy_bullets[b].type = 0;
+              model->enemy_bullets[b].hitbox.x = bi->hitbox.x + bi->hitbox.width/2;
+              model->enemy_bullets[b].hitbox.y = bi->hitbox.y + bi->hitbox.height;
+              model->enemy_bullets[b].hitbox.width = 8;
+              model->enemy_bullets[b].hitbox.height = 8;
+              float angle = -0.4f + (s * 0.2f); // Fan from -0.4 to 0.4 radians
+              model->enemy_bullets[b].speed_x = sinf(angle) * 200.0f;
+              model->enemy_bullets[b].speed_y = cosf(angle) * 200.0f;
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
 
 void model_update_bullets(GameModel *model, float delta_time) {
   for (int p = 0; p < 2; p++) {
@@ -485,34 +586,72 @@ void model_update(GameModel *model, float delta_time) {
   if (!model->boss.alive && (rand() % model->invaders.shoot_chance == 0)) {
     int col = rand() % INVADER_COLS;
     for (int row = INVADER_ROWS - 1; row >= 0; row--) {
-      if (model->invaders.invaders[row][col].alive) {
-        for (int b = 0; b < ENEMY_BULLETS; b++) {
-          if (!model->enemy_bullets[b].alive) {
-            model->enemy_bullets[b].alive = true;
-            model->enemy_bullets[b].hitbox.x = model->invaders.invaders[row][col].hitbox.x + 10;
-            model->enemy_bullets[b].hitbox.y = model->invaders.invaders[row][col].hitbox.y + 30;
-            
-            // Unique attacks based on row type
-            if (row >= 4) { // Bottom row - Fast Laser
-              model->enemy_bullets[b].type = 2;
-              model->enemy_bullets[b].speed_x = 0;
-              model->enemy_bullets[b].speed_y = 500.0f;
-            } else if (row >= 2) { // Middle rows - ZigZag
-              model->enemy_bullets[b].type = 1;
-              model->enemy_bullets[b].speed_x = 0;
-              model->enemy_bullets[b].speed_y = 350.0f;
-            } else { // Top rows - Standard
-              model->enemy_bullets[b].type = 0;
-              model->enemy_bullets[b].speed_x = 0;
-              model->enemy_bullets[b].speed_y = 300.0f + (model->players[0].level * 20.0f);
+      if (model->invaders.invaders[row][col].alive && model->invaders.invaders[row][col].dying_timer == 0) {
+        // Determine attack pattern based on type + randomness
+        int attack_rand = rand() % 100;
+        int num_shots = 1;
+        bool is_angled = false;
+        bool is_big_slow = false;
+        
+        // Top row (type 2) - occasional double shot
+        if (row == 0 && attack_rand < 20) num_shots = 2;
+        // Middle rows (type 1) - occasional angled shot
+        else if (row >= 1 && row < 3 && attack_rand < 15) is_angled = true;
+        // Rare big slow shot from any invader
+        else if (attack_rand < 5) is_big_slow = true;
+        
+        for (int shot = 0; shot < num_shots; shot++) {
+          for (int b = 0; b < ENEMY_BULLETS; b++) {
+            if (!model->enemy_bullets[b].alive) {
+              model->enemy_bullets[b].alive = true;
+              model->enemy_bullets[b].hitbox.x = model->invaders.invaders[row][col].hitbox.x + 10 + (shot * 10 - 5);
+              model->enemy_bullets[b].hitbox.y = model->invaders.invaders[row][col].hitbox.y + 30;
+              
+              if (is_big_slow) {
+                // Big slow projectile - hard to dodge!
+                model->enemy_bullets[b].type = 2;
+                model->enemy_bullets[b].hitbox.width = 25;
+                model->enemy_bullets[b].hitbox.height = 25;
+                model->enemy_bullets[b].speed_x = ((rand() % 60) - 30);
+                model->enemy_bullets[b].speed_y = 100.0f;
+              } else if (is_angled) {
+                // Angled shot - aims toward player
+                model->enemy_bullets[b].type = 0;
+                model->enemy_bullets[b].hitbox.width = 5;
+                model->enemy_bullets[b].hitbox.height = 15;
+                float target_x = model->players[0].hitbox.x;
+                float inv_x = model->invaders.invaders[row][col].hitbox.x;
+                model->enemy_bullets[b].speed_x = (target_x - inv_x) * 0.5f;
+                model->enemy_bullets[b].speed_x = fmaxf(-200.0f, fminf(200.0f, model->enemy_bullets[b].speed_x));
+                model->enemy_bullets[b].speed_y = 300.0f;
+              } else if (row >= 4) { // Bottom row - Fast Laser
+                model->enemy_bullets[b].type = 2;
+                model->enemy_bullets[b].hitbox.width = 5;
+                model->enemy_bullets[b].hitbox.height = 15;
+                model->enemy_bullets[b].speed_x = 0;
+                model->enemy_bullets[b].speed_y = 500.0f;
+              } else if (row >= 2) { // Middle rows - ZigZag
+                model->enemy_bullets[b].type = 1;
+                model->enemy_bullets[b].hitbox.width = 5;
+                model->enemy_bullets[b].hitbox.height = 15;
+                model->enemy_bullets[b].speed_x = 0;
+                model->enemy_bullets[b].speed_y = 350.0f;
+              } else { // Top rows - Standard with speed variance
+                model->enemy_bullets[b].type = 0;
+                model->enemy_bullets[b].hitbox.width = 5;
+                model->enemy_bullets[b].hitbox.height = 15;
+                model->enemy_bullets[b].speed_x = 0;
+                model->enemy_bullets[b].speed_y = 280.0f + (rand() % 60) + (model->players[0].level * 20.0f);
+              }
+              break;
             }
-            break;
           }
         }
         break;
       }
     }
   }
+
 
   if (!model->saucer.alive && (rand() % 1500 == 0)) {
     model->saucer.alive = true;
@@ -542,18 +681,26 @@ void model_update(GameModel *model, float delta_time) {
   
   // Powerup timer logic
   for (int p=0; p<2; p++) {
-    if (model->players[p].is_active && model->players[p].active_powerup != PWR_NONE) {
-      model->players[p].powerup_timer -= delta_time;
-      if (model->players[p].powerup_timer <= 0) {
-        model->players[p].active_powerup = PWR_NONE;
-      }
+    if (model->players[p].is_active) {
+        if (model->players[p].active_powerup != PWR_NONE) {
+          model->players[p].powerup_timer -= delta_time;
+          if (model->players[p].powerup_timer <= 0) {
+            model->players[p].active_powerup = PWR_NONE;
+          }
+        }
+        // Invincibility logic
+        if (model->players[p].invincibility_timer > 0) {
+            model->players[p].invincibility_timer -= delta_time;
+            if (model->players[p].invincibility_timer < 0) model->players[p].invincibility_timer = 0;
+            model->needs_redraw = true; // Blink effect relies on this
+        }
     }
   }
 }
 
 void model_move_player(GameModel *model, int player_id, Direction dir) {
   if (player_id < 0 || player_id > 1 || !model->players[player_id].is_active) return;
-  float speed = 400.0f * 0.016f; // Simulation step
+  float speed = 6.4f; // Pixels per frame at 60fps = 384 pixels/sec
   Player *p = &model->players[player_id];
   
   if (dir == DIR_LEFT && p->hitbox.x > 0) p->hitbox.x -= speed;
@@ -563,6 +710,7 @@ void model_move_player(GameModel *model, int player_id, Direction dir) {
   
   model->needs_redraw = true;
 }
+
 
 void model_player_shoot(GameModel *model, int player_id) {
   if (player_id < 0 || player_id > 1 || !model->players[player_id].is_active) return;
@@ -638,6 +786,21 @@ void model_check_bullet_collisions(GameModel *model) {
         continue;
       }
 
+      // Big Invader collision
+      if (model->invaders.big_invader.alive && model_check_collision(pb->hitbox, model->invaders.big_invader.hitbox)) {
+        BigInvader *bi = &model->invaders.big_invader;
+        bi->health -= (pb->is_strong ? 3 : 1);
+        if (!pb->is_strong) pb->alive = false;
+        model->players[p_idx].score += apply_difficulty_multiplier(model, 15);
+        if (bi->health <= 0) {
+          bi->alive = false;
+          model->players[p_idx].score += apply_difficulty_multiplier(model, bi->points);
+          model_drop_powerup(model, bi->hitbox.x, bi->hitbox.y);
+        }
+        continue;
+      }
+
+
       for (int i = 0; i < INVADER_ROWS; i++) {
         for (int j = 0; j < INVADER_COLS; j++) {
           Invader *inv = &model->invaders.invaders[i][j];
@@ -668,10 +831,16 @@ void model_check_bullet_collisions(GameModel *model) {
         if (model->players[p].active_powerup == PWR_SHIELD) {
             model->players[p].active_powerup = PWR_NONE;
             model->players[p].powerup_timer = 0;
+            model->players[p].invincibility_timer = 2.0f; // Brief immunity after shield break
             model->needs_redraw = true;
-        } else {
+        } else if (model->players[p].invincibility_timer <= 0) {
             model->players[p].lives--;
+            model->players[p].invincibility_timer = 2.0f; // 2 seconds of immunity
             model->players[p].combo_count = 0;
+            
+            // Reposition player to center to avoid death loop in corner?
+            // Optional: reset_player_pos(&model->players[p], p); 
+            
             if (model->players[0].lives <= 0 && (!model->two_player_mode || model->players[1].lives <= 0)) {
               model->state = STATE_GAME_OVER;
               model_save_high_score(model);
@@ -806,18 +975,26 @@ void model_adjust_music_volume(GameModel *model, int direction) {
 void model_set_keybind(GameModel *model, int keycode) {
   if (!model->waiting_for_key || model->editing_keybind < 0) return;
   
-  // Check for duplicates across all keybindings
+  int idx = model->editing_keybind;
+  int old_key;
+  // Get the old key currently assigned to the action we are editing
+  if (idx < 5) old_key = model->keybinds_p1[idx];
+  else old_key = model->keybinds_p2[idx - 5];
+
+  // Check for conflicts and SWAP
+  // If another action uses the new key, give it our old key
   for (int i = 0; i < 5; i++) {
-    if (model->keybinds_p1[i] == keycode || model->keybinds_p2[i] == keycode) {
-      // Key already in use - don't assign, just cancel editing
-      model->waiting_for_key = false;
-      model->editing_keybind = -1;
-      model->needs_redraw = true;
-      return;
+    if (model->keybinds_p1[i] == keycode) {
+      model->keybinds_p1[i] = old_key;
+    }
+  }
+  for (int i = 0; i < 5; i++) {
+    if (model->keybinds_p2[i] == keycode) {
+      model->keybinds_p2[i] = old_key;
     }
   }
   
-  int idx = model->editing_keybind;
+  // Assign the new key
   if (idx < 5) {
     model->keybinds_p1[idx] = keycode;
   } else if (idx < 10) {

@@ -88,6 +88,8 @@ void sdl_view_destroy(SDLView *view) {
       SDL_DestroyTexture(view->boss_tex[j]);
     if (view->saucer_tex[j])
       SDL_DestroyTexture(view->saucer_tex[j]);
+    if (view->big_invader_tex[j])
+      SDL_DestroyTexture(view->big_invader_tex[j]);
   }
 
   if (view->explosion_tex)
@@ -159,17 +161,21 @@ bool sdl_view_load_resources(SDLView *view) {
     fprintf(stderr, "Warning: Failed to load assets/damage.wav\n");
   }
 
-  ma_sound_init_from_file(&view->audio_engine, "assets/music_game.wav",
-                          MA_SOUND_FLAG_STREAM, NULL, NULL, &view->music_game);
+  if (ma_sound_init_from_file(&view->audio_engine, "assets/music_game.wav",
+                          MA_SOUND_FLAG_DECODE, NULL, NULL, &view->music_game) != MA_SUCCESS) {
+    fprintf(stderr, "AUDIO ERROR: Failed to load assets/music_game.wav\n");
+  } else {
+    printf("AUDIO: Loaded assets/music_game.wav successfully\n");
+  }
   ma_sound_set_looping(&view->music_game, MA_TRUE);
-  ma_sound_set_volume(&view->music_game, 0.5f);
+  ma_sound_set_volume(&view->music_game, 1.0f); // Max volume
 
   ma_sound_init_from_file(&view->audio_engine, "assets/music_boss.wav",
-                          MA_SOUND_FLAG_STREAM, NULL, NULL, &view->music_boss);
+                          MA_SOUND_FLAG_DECODE, NULL, NULL, &view->music_boss);
   ma_sound_set_looping(&view->music_boss, MA_TRUE);
 
   ma_sound_init_from_file(&view->audio_engine, "assets/music_victory.wav",
-                          MA_SOUND_FLAG_STREAM, NULL, NULL,
+                          MA_SOUND_FLAG_DECODE, NULL, NULL,
                           &view->music_victory);
   ma_sound_set_looping(&view->music_victory, MA_TRUE);
 
@@ -238,6 +244,9 @@ bool sdl_view_load_resources(SDLView *view) {
     LOAD_TEXTURE_SAFE(boss_paths[j], view->boss_tex[j]);
     LOAD_TEXTURE_SAFE(saucer_paths[j], view->saucer_tex[j]);
   }
+  
+  LOAD_TEXTURE_SAFE("pictures/big_invader1.bmp", view->big_invader_tex[0]);
+  LOAD_TEXTURE_SAFE("pictures/big_invader2.bmp", view->big_invader_tex[1]);
 
   const char *invader_paths[3][2] = {
       {"pictures/invader1_1.bmp", "pictures/invader1_2.bmp"},
@@ -247,6 +256,15 @@ bool sdl_view_load_resources(SDLView *view) {
     for (int j = 0; j < 2; j++) {
       LOAD_TEXTURE_SAFE(invader_paths[i][j], view->invader_tex[i][j]);
     }
+  }
+
+  // --- INIT STARS ---
+  for (int i = 0; i < 100; i++) {
+    view->stars[i].x = (float)(rand() % view->width);
+    view->stars[i].y = (float)(rand() % view->height);
+    view->stars[i].speed = 80.0f + (rand() % 250); // Fast falling effect
+    view->stars[i].size = (rand() % 3) + 2; // 2-4 pixels
+    view->stars[i].alpha = 150 + (rand() % 105); // Brighter
   }
 
   return success;
@@ -263,8 +281,9 @@ bool sdl_view_init(SDLView *view, int width, int height) {
   // --- INIT MINIAUDIO ---
   ma_result result = ma_engine_init(NULL, &view->audio_engine);
   if (result != MA_SUCCESS) {
-    printf(
-        "Failed to initialize audio engine. Game will play without sound.\n");
+    fprintf(stderr, "AUDIO ERROR: Failed to initialize audio engine (error %d). Game will play without sound.\n", result);
+  } else {
+    printf("AUDIO: Engine initialized successfully.\n");
   }
 
   view->window = SDL_CreateWindow("Space Invader", width, height, SDL_WINDOW_RESIZABLE);
@@ -899,7 +918,41 @@ void sdl_view_render_game_scene(SDLView *view, const GameModel *model) {
         }
       }
     }
+    
+    // Big Invader rendering
+    if (model->invaders.big_invader.alive) {
+      float bi_scale = 2.0f;
+      const BigInvader *bi = &model->invaders.big_invader;
+      SDL_FRect bi_dst = {
+        (float)bi->hitbox.x,
+        (float)bi->hitbox.y,
+        (float)bi->hitbox.width * bi_scale,
+        (float)bi->hitbox.height * bi_scale
+      };
+      
+      // Draw big invader
+      SDL_Texture *tex = view->big_invader_tex[model->invaders.state];
+      if (tex) {
+        SDL_RenderTexture(view->renderer, tex, NULL, &bi_dst);
+      } else {
+        SDL_SetRenderDrawColor(view->renderer, 180, 50, 255, 255); // Purple
+        SDL_RenderFillRect(view->renderer, &bi_dst);
+      }
+      
+      // Particle effect around big invader
+      draw_particle_effect(view, bi_dst.x + bi_dst.w/2, bi_dst.y + bi_dst.h/2, 30.0f, 0xFF00FF);
+      
+      // HP bar above big invader
+      float hp_pct = (float)bi->health / bi->max_health;
+      SDL_FRect hp_bg = {bi_dst.x, bi_dst.y - 10, bi_dst.w, 8};
+      SDL_SetRenderDrawColor(view->renderer, 50, 0, 50, 255);
+      SDL_RenderFillRect(view->renderer, &hp_bg);
+      SDL_FRect hp_fill = {bi_dst.x, bi_dst.y - 10, bi_dst.w * hp_pct, 8};
+      SDL_SetRenderDrawColor(view->renderer, 255, 0, 255, 255);
+      SDL_RenderFillRect(view->renderer, &hp_fill);
+    }
   }
+
   sdl_view_draw_hud(view, model);
 }
 
@@ -907,10 +960,10 @@ void sdl_view_render(SDLView *view, const GameModel *model) {
   if (!view || !view->renderer || !model)
     return;
 
-  // Apply music volume from settings
-  ma_sound_set_volume(&view->music_game, model->music_volume * 0.5f);
-  ma_sound_set_volume(&view->music_boss, model->music_volume * 0.6f);
-  ma_sound_set_volume(&view->music_victory, model->music_volume * 0.7f);
+  // Apply music volume from settings (Force MAX volume for debugging)
+  ma_sound_set_volume(&view->music_game, 1.0f); 
+  ma_sound_set_volume(&view->music_boss, 1.0f);
+  ma_sound_set_volume(&view->music_victory, 1.0f);
 
   // Reset audio tracking when starting new game from menu
   static GameState last_state = STATE_MENU;
@@ -928,7 +981,7 @@ void sdl_view_render(SDLView *view, const GameModel *model) {
     // 1. Detect Shot (Rewind and Play)
     // 1. Detect Shot (Rewind and Play)
     int total_shots = model->players[0].shots_fired + model->players[1].shots_fired;
-    if (total_shots > view->last_shots_fired) {
+    if (total_shots > (int)view->last_shots_fired) {
       if (ma_sound_is_playing(&view->sfx_shoot)) {
         ma_sound_seek_to_pcm_frame(&view->sfx_shoot, 0);
       } else {
@@ -992,7 +1045,11 @@ void sdl_view_render(SDLView *view, const GameModel *model) {
   // 6. Music Switching Logic
   // Start menu music on initial load or when returning to menu
   if (model->state == STATE_MENU && view->current_music_track == 0) {
-    ma_sound_start(&view->music_game);
+    printf("AUDIO: Starting game music on menu (track was 0)...\n");
+    ma_result r = ma_sound_start(&view->music_game);
+    if (r != MA_SUCCESS) {
+      printf("AUDIO ERROR: ma_sound_start failed with code %d\n", r);
+    }
     view->current_music_track = 1;
   }
   // Switch to boss music on level 4 or boss alive
@@ -1030,9 +1087,15 @@ void sdl_view_render(SDLView *view, const GameModel *model) {
     view->current_music_track = 1;
     view->last_player_lives = model->players[0].lives + model->players[1].lives; // Sync lives on game start
   }
+  // Start/Resume menu music when in menu
+  else if (model->state == STATE_MENU && view->current_music_track == 0) {
+    printf("AUDIO: Starting menu music...\n");
+    ma_sound_start(&view->music_game); // Play game music on menu too
+    view->current_music_track = 1;
+  }
   // Resume menu music when returning from victory or game over
   else if (model->state == STATE_MENU &&
-           (view->current_music_track == 3 || view->current_music_track == 4 || view->current_music_track != 1)) {
+           (view->current_music_track == 3 || view->current_music_track == 4)) {
     ma_sound_stop(&view->music_victory);
     ma_sound_stop(&view->music_boss);
     if (!ma_sound_is_playing(&view->music_game)) {
@@ -1044,6 +1107,25 @@ void sdl_view_render(SDLView *view, const GameModel *model) {
   // --- RENDER LOGIC ---
   SDL_SetRenderDrawColor(view->renderer, 0, 0, 0, 255);
   SDL_RenderClear(view->renderer);
+
+  // --- RENDER STARS ---
+  SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_BLEND);
+  float delta = 0.016f; // approximate constant speed for background
+  
+  for(int i=0; i<100; i++) {
+     // Update
+     view->stars[i].y += view->stars[i].speed * delta;
+     if (view->stars[i].y > view->height) {
+         view->stars[i].y = 0;
+         view->stars[i].x = (float)(rand() % view->width);
+     }
+     
+     // Draw
+     SDL_SetRenderDrawColor(view->renderer, 255, 255, 255, view->stars[i].alpha);
+     SDL_FRect r = {view->stars[i].x, view->stars[i].y, (float)view->stars[i].size, (float)view->stars[i].size};
+     SDL_RenderFillRect(view->renderer, &r);
+  }
+  SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_NONE); // Reset
 
   // Use {} for every case to prevent redeclaration errors
   switch (model->state) {

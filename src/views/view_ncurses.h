@@ -33,7 +33,10 @@ typedef struct {
   int game_start_x;
   int game_start_y;
   int score_start_x;
+  // Animation frame counter
+  int frame_count;
 } NcursesView;
+
 
 // Creation/destruction
 NcursesView *ncurses_view_create(void);

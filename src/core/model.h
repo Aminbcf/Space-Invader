@@ -23,6 +23,8 @@
 #define BASE_COUNT 4
 #define BASE_WIDTH 60
 #define BASE_HEIGHT 40
+#define BIG_INVADER_WIDTH 60
+#define BIG_INVADER_HEIGHT 50
 
 // Directions
 typedef enum { DIR_LEFT, DIR_RIGHT, DIR_UP, DIR_DOWN, DIR_STATIONARY } Direction;
@@ -83,9 +85,24 @@ typedef struct {
   int points;
   int row;
   int col;
-  int type;        // 0=Squid, 1=Crab, 2=Octopus
+  int type;        // 0=Squid, 1=Crab, 2=Octopus, 3=Big Invader
   int dying_timer; // >0 means exploding
+  int health;      // For big invaders only
+  float speed_modifier; // Individual speed for special invaders
 } Invader;
+
+// Big Invader - special slow powerful enemy
+typedef struct {
+  Rect hitbox;
+  bool alive;
+  int health;
+  int max_health;
+  int points;
+  Direction direction;
+  float speed;
+  float shoot_timer;
+  int attack_type; // 0=Big Slow Shot, 1=Spread Shot
+} BigInvader;
 
 typedef struct {
   Invader invaders[INVADER_ROWS][INVADER_COLS];
@@ -96,6 +113,8 @@ typedef struct {
   uint32_t state_time;
   int state_speed;
   int shoot_chance;
+  BigInvader big_invader; // Special big slow enemy
+  float big_invader_spawn_timer;
 } InvaderGrid;
 
 // Boss Structure
@@ -159,6 +178,9 @@ typedef struct {
   // Power-ups
   PowerUpType active_powerup;
   float powerup_timer;
+  
+  // Damage immunity
+  float invincibility_timer;
 } Player;
 
 // The Complete Game Model

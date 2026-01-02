@@ -5,6 +5,39 @@
 #include <string.h>
 #include <unistd.h>
 
+// Helper function to convert keycode to human-readable name
+static const char* get_ncurses_key_name(int key) {
+    static char buf[16];
+    switch (key) {
+        case KEY_UP:  return "UP";
+        case KEY_DOWN: return "DOWN";
+        case KEY_LEFT: return "LEFT";
+        case KEY_RIGHT: return "RIGHT";
+        case 32:  return "SPACE";
+        case 27:  return "ESC";
+        case 10:  return "ENTER";
+        case 13:  return "ENTER";
+        case 9:   return "TAB";
+        case 127: return "BKSP";
+        case KEY_BACKSPACE: return "BKSP";
+        // Common SDL keycodes (for display if loaded from SDL config)
+        case 1073741904: return "L-ARROW";
+        case 1073741903: return "R-ARROW";
+        case 1073741906: return "U-ARROW";
+        case 1073741905: return "D-ARROW";
+        case 1073742049: return "L-SHIFT";
+        default:
+            if (key >= 32 && key <= 126) {
+                buf[0] = (char)key;
+                buf[1] = '\0';
+                return buf;
+            }
+            snprintf(buf, 16, "<%d>", key);
+            return buf;
+    }
+}
+
+
 // Helper function to convert pixel coordinates to grid coordinates
 int ncurses_scale_x(int pixel_x) {
   int char_x = pixel_x / CHAR_SCALE_X;
@@ -99,12 +132,29 @@ bool ncurses_view_load_resources(NcursesView *view) {
 static void ncurses_draw_player(NcursesView *view, const GameModel *model) {
   for (int p=0; p<2; p++) {
     if (!model->players[p].is_active) continue;
-    int x = view->game_start_x + ncurses_scale_x(model->players[p].hitbox.x);
+    // Fix: Alignment issue - calculate center of player in pixels, then scale
+    // Previous code used top-left which caused visual to be shifted left of hitbox
+    int center_px = model->players[p].hitbox.x + PLAYER_WIDTH / 2;
+    int x = view->game_start_x + ncurses_scale_x(center_px);
     int y = view->game_start_y + ncurses_scale_y(model->players[p].hitbox.y);
+    
+    // Blink if invincible
+    if (model->players[p].invincibility_timer > 0) {
+        // Fast blink: visible if timer * 10 is even
+        int blink = (int)(model->players[p].invincibility_timer * 10) % 2;
+        if (blink) {
+             attron(A_DIM); 
+        } else {
+             continue; // Skip drawing this frame for blink effect
+        }
+    }
+    
     attron(COLOR_PAIR(p == 0 ? 1 : 4));
     mvaddch(y, x, p == 0 ? '^' : 'A');
     mvaddch(y, x - 1, '<');
     mvaddch(y, x + 1, '>');
+    attroff(COLOR_PAIR(p == 0 ? 1 : 4));
+    attroff(A_DIM);
     attroff(COLOR_PAIR(p == 0 ? 1 : 4));
   }
 }
@@ -132,7 +182,25 @@ static void ncurses_draw_aliens(NcursesView *view, const GameModel *model) {
     }
   }
   attroff(COLOR_PAIR(2));
+  
+  // Draw Big Invader
+  if (model->invaders.big_invader.alive) {
+    int x = view->game_start_x + ncurses_scale_x(model->invaders.big_invader.hitbox.x);
+    int y = view->game_start_y + ncurses_scale_y(model->invaders.big_invader.hitbox.y);
+    attron(COLOR_PAIR(5) | A_BOLD); // Magenta, bold
+    mvprintw(y, x, "[###]");
+    mvprintw(y+1, x, "\\===/" );
+    // Show HP bar
+    int hp_bars = (model->invaders.big_invader.health * 5) / model->invaders.big_invader.max_health;
+    mvprintw(y-1, x, "[");
+    for (int i = 0; i < 5; i++) {
+        addch(i < hp_bars ? '=' : ' ');
+    }
+    addch(']');
+    attroff(COLOR_PAIR(5) | A_BOLD);
+  }
 }
+
 
 // Draw Boss (ASCII Art)
 static void ncurses_draw_boss(NcursesView *view, const GameModel *model) {
@@ -264,10 +332,14 @@ void ncurses_view_render_game(NcursesView *view, const GameModel *model) {
   if (!view || !model)
     return;
 
-  // Clear game area
+  // Increment frame counter for animation
+  view->frame_count++;
+
+  // Clear game area with space background
   for (int y = view->game_start_y; y < view->game_start_y + NCURSES_GAME_HEIGHT; y++) {
     mvhline(y, view->game_start_x, ' ', NCURSES_GAME_WIDTH);
   }
+  
 
   ncurses_draw_player(view, model);
   ncurses_draw_boss(view, model);
@@ -325,17 +397,26 @@ void ncurses_view_render_menu(NcursesView *view, const GameModel *model) {
 
   switch (model->menu_state) {
   case MENU_MAIN:
+    box(stdscr, 0, 0); // Add border
+    attron(COLOR_PAIR(2) | A_BOLD); // Green Title
     mvprintw(cy, cx - 7, "SPACE INVADERS");
+    attroff(COLOR_PAIR(2) | A_BOLD);
     mvprintw(cy + 1, cx - 10, "by Amine Boucif");
 
     const char *main_items[] = {"START 1P", "START 2P", "SETTINGS", "QUIT"};
     for (int i = 0; i < 4; i++) {
-      if (i == model->menu_selection)
-        mvprintw(cy + 5 + i * 2, cx - 8, "> %s <", main_items[i]);
+      if (i == model->menu_selection) {
+        attron(COLOR_PAIR(1) | A_REVERSE | A_BOLD); // Cyan Highlight
+        mvprintw(cy + 5 + i * 2, cx - 8, "  %s  ", main_items[i]);
+        attroff(COLOR_PAIR(1) | A_REVERSE | A_BOLD);
+      }
       else
-        mvprintw(cy + 5 + i * 2, cx - 6, "  %s  ", main_items[i]);
+        mvprintw(cy + 5 + i * 2, cx - 8, "  %s  ", main_items[i]);
     }
+    
+    attron(A_DIM);
     mvprintw(cy + 12, cx - 8, "High Score: %d", model->high_score);
+    attroff(A_DIM);
     break;
 
   case MENU_DIFFICULTY:
@@ -385,13 +466,15 @@ void ncurses_view_render_menu(NcursesView *view, const GameModel *model) {
     
     const char* actions[] = {"LEFT", "RIGHT", "UP", "DOWN", "SHOOT"};
     
+
     // Player 1 keybindings
     attron(COLOR_PAIR(1));
     mvprintw(cy + 4, cx - 6, "PLAYER 1");
     attroff(COLOR_PAIR(1));
     for (int i = 0; i < 5; i++) {
         if (model->menu_selection == i) attron(A_REVERSE);
-        mvprintw(cy + 5 + i, cx - 8, "%s: %d", actions[i], model->keybinds_p1[i]);
+        const char* keyname = get_ncurses_key_name(model->keybinds_p1[i]);
+        mvprintw(cy + 5 + i, cx - 10, "%s: %s", actions[i], keyname);
         if (model->menu_selection == i) attroff(A_REVERSE);
     }
     
@@ -401,7 +484,8 @@ void ncurses_view_render_menu(NcursesView *view, const GameModel *model) {
     attroff(COLOR_PAIR(3));
     for (int i = 0; i < 5; i++) {
         if (model->menu_selection == 5 + i) attron(A_REVERSE);
-        mvprintw(cy + 12 + i, cx - 8, "%s: %d", actions[i], model->keybinds_p2[i]);
+        const char* keyname = get_ncurses_key_name(model->keybinds_p2[i]);
+        mvprintw(cy + 12 + i, cx - 10, "%s: %s", actions[i], keyname);
         if (model->menu_selection == 5 + i) attroff(A_REVERSE);
     }
     
@@ -412,6 +496,7 @@ void ncurses_view_render_menu(NcursesView *view, const GameModel *model) {
     break;
   }
   }
+
   refresh();
 }
 
