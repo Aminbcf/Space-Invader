@@ -24,6 +24,7 @@ static void init_player_params(Player *player, int id) {
   player->active_powerup = PWR_NONE;
   player->powerup_timer = 0;
   player->invincibility_timer = 0.0f;
+  player->shoot_timer = 0.0f;
 }
 
 static void reset_player_pos(Player *player, int id) {
@@ -54,8 +55,11 @@ static void init_invaders(InvaderGrid *invaders, int level,
                           Difficulty difficulty) {
   invaders->direction = DIR_RIGHT;
   float base_speed = 0.5f + (level * 0.5f);
-  if (difficulty == DIFFICULTY_HARD)
+  invaders->shoot_chance = (level > 2) ? 150 : (300 - (level * 30));
+  if (difficulty == DIFFICULTY_HARD) {
     base_speed *= 2.0f;
+    invaders->shoot_chance = 15; // EXTREME: Shoot ~4 times per second globally
+  }
   if (difficulty == DIFFICULTY_ROGUE)
     base_speed *= 1.2f;
 
@@ -64,8 +68,6 @@ static void init_invaders(InvaderGrid *invaders, int level,
   invaders->killed = 0;
   invaders->state_speed = (level > 3) ? 200 : (1000 - (level * 150));
   invaders->state_time = platform_get_ticks();
-  invaders->shoot_chance =
-      (level > 2) ? 150 : (300 - (level * 30)); // Extremely conservative firing
 
   invaders->big_invader_spawn_timer = 0;
 
@@ -143,8 +145,8 @@ static void init_powerups(PowerUp powerups[], int count) {
 }
 
 static void model_drop_powerup(GameModel *model, float x, float y) {
-  if ((rand() % 100) > 5)
-    return; // 5% drop rate
+  if ((rand() % 100) > 15) // Increased to 15% chance
+    return;
 
   for (int i = 0; i < 10; i++) {
     if (!model->powerups[i].alive) {
@@ -189,7 +191,8 @@ void model_init(GameModel *model) {
   model->difficulty = DIFFICULTY_NORMAL;
   model->menu_state = MENU_MAIN;
   model->menu_selection = 0;
-  model->music_volume = 0.5f;
+  // Music volume is handled by persistence in reset_game or main
+  if (model->music_volume <= 0.05f) model->music_volume = 1.0f; // Default to MAX if 0 or too low
   model->game_time = platform_get_ticks();
   model->last_update_time = model->game_time;
   model->needs_redraw = true;
@@ -217,17 +220,19 @@ void model_reset_game(GameModel *model) {
   Difficulty old_diff = model->difficulty;
   bool old_2p = model->two_player_mode;
 
-  // Save keybindings
+  // Save keybindings and volume
   int saved_p1[5];
   int saved_p2[5];
+  float saved_vol = model->music_volume;
   memcpy(saved_p1, model->keybinds_p1, sizeof(int) * 5);
   memcpy(saved_p2, model->keybinds_p2, sizeof(int) * 5);
 
   model_init(model);
 
-  // Restore keybindings
+  // Restore keybindings and volume
   memcpy(model->keybinds_p1, saved_p1, sizeof(int) * 5);
   memcpy(model->keybinds_p2, saved_p2, sizeof(int) * 5);
+  model->music_volume = saved_vol;
 
   model->state = STATE_PLAYING;
   model->difficulty = old_diff;
@@ -593,8 +598,8 @@ void model_update_saucer(GameModel *model, float delta_time) {
   if (model->saucer.direction == DIR_LEFT)
     speed = -speed;
   model->saucer.hitbox.x += speed;
-  if (model->saucer.hitbox.x < -50 ||
-      model->saucer.hitbox.x > GAME_AREA_WIDTH + 50)
+  if (model->saucer.hitbox.x < -200 ||
+      model->saucer.hitbox.x > GAME_AREA_WIDTH + 200)
     model->saucer.alive = false;
 }
 
@@ -646,80 +651,59 @@ void model_update(GameModel *model, float delta_time) {
   model_check_player_invader_collision(model);
   model_check_invader_base_collisions(model);
 
-  if (!model->boss.alive && (rand() % model->invaders.shoot_chance == 0)) {
-    int col = rand() % INVADER_COLS;
-    for (int row = INVADER_ROWS - 1; row >= 0; row--) {
-      if (model->invaders.invaders[row][col].alive &&
-          model->invaders.invaders[row][col].dying_timer == 0) {
-        // Determine attack pattern based on type + randomness
-        int attack_rand = rand() % 100;
-        int num_shots = 1;
-        bool is_angled = false;
-        bool is_big_slow = false;
+  if (!model->boss.alive) {
+    int attempts = 3; // Normal: check 3 columns
+    if (model->difficulty >= DIFFICULTY_HARD) attempts = INVADER_COLS; // Hard: check ALL columns
 
-        // Top row (type 2) - occasional double shot
-        if (row == 0 && attack_rand < 20)
-          num_shots = 2;
-        // Middle rows (type 1) - occasional angled shot
-        else if (row >= 1 && row < 3 && attack_rand < 15)
-          is_angled = true;
-        // Rare big slow shot from any invader
-        else if (attack_rand < 5)
-          is_big_slow = true;
-
-        for (int shot = 0; shot < num_shots; shot++) {
-          for (int b = 0; b < ENEMY_BULLETS; b++) {
-            if (!model->enemy_bullets[b].alive) {
-              model->enemy_bullets[b].alive = true;
-              model->enemy_bullets[b].hitbox.x =
-                  model->invaders.invaders[row][col].hitbox.x + 10 +
-                  (shot * 10 - 5);
-              model->enemy_bullets[b].hitbox.y =
-                  model->invaders.invaders[row][col].hitbox.y + 30;
-
-              if (is_big_slow) {
-                // Big slow projectile - hard to dodge!
-                model->enemy_bullets[b].type = 2;
-                model->enemy_bullets[b].hitbox.width = 25;
-                model->enemy_bullets[b].hitbox.height = 25;
-                model->enemy_bullets[b].speed_x = ((rand() % 60) - 30);
-                model->enemy_bullets[b].speed_y = 100.0f;
-              } else if (is_angled) {
-                // Angled shot - aims toward player
-                model->enemy_bullets[b].type = 0;
-                model->enemy_bullets[b].hitbox.width = 5;
-                model->enemy_bullets[b].hitbox.height = 15;
-                float target_x = model->players[0].hitbox.x;
-                float inv_x = model->invaders.invaders[row][col].hitbox.x;
-                model->enemy_bullets[b].speed_x = (target_x - inv_x) * 0.5f;
-                model->enemy_bullets[b].speed_x = fmaxf(
-                    -200.0f, fminf(200.0f, model->enemy_bullets[b].speed_x));
-                model->enemy_bullets[b].speed_y = 300.0f;
-              } else if (row >= 4) { // Bottom row - Fast Laser
-                model->enemy_bullets[b].type = 2;
-                model->enemy_bullets[b].hitbox.width = 5;
-                model->enemy_bullets[b].hitbox.height = 15;
-                model->enemy_bullets[b].speed_x = 0;
-                model->enemy_bullets[b].speed_y = 500.0f;
-              } else if (row >= 2) { // Middle rows - ZigZag
-                model->enemy_bullets[b].type = 1;
-                model->enemy_bullets[b].hitbox.width = 5;
-                model->enemy_bullets[b].hitbox.height = 15;
-                model->enemy_bullets[b].speed_x = 0;
-                model->enemy_bullets[b].speed_y = 350.0f;
-              } else { // Top rows - Standard with speed variance
-                model->enemy_bullets[b].type = 0;
-                model->enemy_bullets[b].hitbox.width = 5;
-                model->enemy_bullets[b].hitbox.height = 15;
-                model->enemy_bullets[b].speed_x = 0;
-                model->enemy_bullets[b].speed_y =
-                    280.0f + (rand() % 60) + (model->players[0].level * 20.0f);
-              }
-              break;
-            }
-          }
+    for (int a = 0; a < attempts; a++) {
+      int col = (model->difficulty >= DIFFICULTY_HARD) ? a : (rand() % INVADER_COLS);
+      
+      int row = -1;
+      // Find bottom-most alive invader in this column
+      for (int r = INVADER_ROWS - 1; r >= 0; r--) {
+        if (model->invaders.invaders[r][col].alive && 
+            model->invaders.invaders[r][col].dying_timer == 0) {
+          row = r;
+          break;
         }
-        break;
+      }
+
+      if (row != -1) { 
+        // Found a shooter. Check chance.
+        // For Hard mode, we want a high volume of fire, so checks are per-column.
+        if (rand() % model->invaders.shoot_chance == 0) { 
+             
+             // Dynamic Shot Type based on row
+             int type = 0;
+             float sx = 0, sy = 300.0f;
+             if (row < 2) { // Top rows: Fast
+                 sy = 350.0f; 
+                 type = 0;
+             } else if (row < 4) { // Middle: ZigZag
+                 sy = 300.0f;
+                 type = 1;
+             } else { // Bottom: Laser
+                 sy = 450.0f;
+                 type = 2;
+             }
+             
+             // Spawn Bullet
+             for (int b = 0; b < ENEMY_BULLETS; b++) {
+               if (!model->enemy_bullets[b].alive) {
+                 model->enemy_bullets[b].alive = true;
+                 model->enemy_bullets[b].hitbox.x = 
+                    model->invaders.invaders[row][col].hitbox.x + INVADER_WIDTH/2 - BULLET_WIDTH/2;
+                 model->enemy_bullets[b].hitbox.y = 
+                    model->invaders.invaders[row][col].hitbox.y + INVADER_HEIGHT;
+                 model->enemy_bullets[b].hitbox.width = BULLET_WIDTH;
+                 model->enemy_bullets[b].hitbox.height = BULLET_HEIGHT;
+                 model->enemy_bullets[b].type = type;
+                 model->enemy_bullets[b].speed_x = sx;
+                 model->enemy_bullets[b].speed_y = sy;
+                 break;
+               }
+             }
+        }
       }
     }
   }
@@ -728,8 +712,8 @@ void model_update(GameModel *model, float delta_time) {
     model->saucer.alive = true;
     model->saucer.direction = (rand() % 2 == 0) ? DIR_RIGHT : DIR_LEFT;
     model->saucer.hitbox.x =
-        (model->saucer.direction == DIR_RIGHT) ? -40 : GAME_AREA_WIDTH;
-    model->saucer.hitbox.y = 40;
+        (model->saucer.direction == DIR_RIGHT) ? -100 : GAME_AREA_WIDTH + 100;
+    model->saucer.hitbox.y = 70;
   }
 
   // Update Powerups
@@ -770,6 +754,10 @@ void model_update(GameModel *model, float delta_time) {
           model->players[p].invincibility_timer = 0;
         model->needs_redraw = true; // Blink effect relies on this
       }
+
+      if (model->players[p].shoot_timer > 0) {
+        model->players[p].shoot_timer -= delta_time;
+      }
     }
   }
 }
@@ -797,9 +785,27 @@ void model_player_shoot(GameModel *model, int player_id) {
     return;
   Player *p = &model->players[player_id];
 
-  bool is_triple =
-      (p->combo_count >= 5 || p->active_powerup == PWR_TRIPLE_SHOT);
+  // Cooldown check
+  if (p->shoot_timer > 0)
+    return;
+
+  bool is_triple = (p->active_powerup == PWR_TRIPLE_SHOT);
   bool is_strong = (p->active_powerup == PWR_STRONG_MISSILE);
+
+  // Active bullet limit check
+  int active_bullets = 0;
+  for (int i = 0; i < PLAYER_BULLETS; i++) {
+    if (model->player_bullets[player_id][i].alive)
+      active_bullets++;
+  }
+
+  // Strict 1 bullet limit unless powered up
+  int max_allowed = 1;
+  if (p->active_powerup != PWR_NONE)
+    max_allowed = 5; // Allow rapid fire / multiple shots if powered up
+
+  if (active_bullets >= max_allowed)
+    return;
 
   int shots = is_triple ? 3 : 1;
   int fired = 0;
@@ -829,9 +835,12 @@ void model_player_shoot(GameModel *model, int player_id) {
       model->player_bullets[player_id][i].hitbox.y = p->hitbox.y;
       model->player_bullets[player_id][i].speed_y = -700.0f;
       fired++;
-      if (fired == 1)
-        p->shots_fired++;
     }
+  }
+
+  if (fired > 0) {
+    p->shots_fired++;
+    p->shoot_timer = 0.09f; // 90ms cooldown (much faster)
   }
 }
 

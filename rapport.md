@@ -6,63 +6,112 @@ lang: fr-FR
 geometry: margin=2.5cm
 ---
 
-# 1. Introduction & Objectifs
+# 1. Introduction
 
-Ce projet présente une réimplémentation moderne du jeu d'arcade *Space Invaders* en langage C (C11), conçue autour de l'architecture **Modèle-Vue-Contrôleur (MVC)**. L'objectif principal était de démontrer une séparation stricte des responsabilités, permettant au même code logique (Modèle) de piloter deux interfaces radicalement différentes : une interface graphique riche via **SDL3** et une interface textuelle via **ncurses**.
+Ce projet consiste en une réimplémentation moderne et robuste du classique *Space Invaders*, développée en langage C. L'objectif principal est de démontrer une architecture logicielle rigoureuse basée sur le patron **Modèle-Vue-Contrôleur (MVC)**. Le jeu offre une expérience multi-plateforme avec deux interfaces distinctes (graphique via SDL3 et textuelle via Ncurses), tout en garantissant une gestion mémoire irréprochable et des mécaniques de jeu avancées comme le mode "Bullet Hell".
 
-Les objectifs pédagogiques incluent la maîtrise de la gestion mémoire (vérifiée par Valgrind), la compilation modulaire (Makefile), et l'intégration de systèmes complexes comme l'audio procédural et la gestion d'états.
+# 2. Décisions Techniques
 
-# 2. Architecture Logicielle (MVC)
+Plusieurs choix technologiques et architecturaux ont été faits pour garantir la performance et la propreté du code :
+- **Architecture MVC Stricte** : Le Modèle est totalement indépendant des entrées-sorties. Cela facilite le portage et le test de la logique métier.
+- **Gestion Mémoire** : Utilisation systématique de Valgrind pour garantir l'absence de fuites mémoire (standard "Zero Leaks").
+- **Double Vue Polymorphique** : Utilisation d'une structure de données permettant de basculer dynamiquement entre SDL3 (rendu GPU) et Ncurses (rendu CPU/Terminal).
+- **Moteur Audio Procédural** : Intégration de la bibliothèque `miniaudio` pour une gestion fluide des sons sans bloquer la boucle de jeu principale.
 
-L'architecture est le cœur du projet, garantissant modularité et extensibilité.
+# 3. Diagramme de Classes (Architecture)
 
-## 2.1 Schéma Structurel
-Le Modèle est totalement indépendant de la Vue et du Contrôleur. La Vue observe le Modèle en lecture seule, et le Contrôleur modifie le Modèle via des actions abstraites.
+Le projet est structuré autour de composants modulaires représentés ici :
 
+```mermaid
+classDiagram
+    class GameModel {
+        +Player players[2]
+        +InvaderGrid invaders
+        +Boss boss
+        +Saucer saucer
+        +GameState state
+        +Difficulty difficulty
+        +update(delta_time)
+        +process_command(cmd)
+    }
+    class Player {
+        +Rect hitbox
+        +int score
+        +int lives
+        +PowerUpType active_pwr
+    }
+    class View {
+        <<interface>>
+        +init()
+        +render(model)
+        +cleanup()
+    }
+    class SDLView {
+        +SDL_Renderer renderer
+        +ma_engine audio
+    }
+    class NcursesView {
+        +WINDOW* main_win
+    }
+    class Controller {
+        +capture_input()
+        +map_to_command()
+    }
+
+    GameModel *-- Player
+    View <|-- SDLView
+    View <|-- NcursesView
+    Controller ..> GameModel : modifie
+    View ..> GameModel : lit
 ```
-[ UTILISATEUR ]
-      | (Inputs)
-      v
-[ CONTRÔLEUR ] ----------------> [ MODÈLE ] <---------------- [ VUE ]
-(Translate Inputs -> Commands)   (Logique/État)          (SDL3 / Ncurses)
+
+# 4. Cas d'Utilisation et Diagramme de Séquence
+
+## 4.1 Cas d'Utilisation (Use Case)
+
+```mermaid
+usecaseDiagram
+    actor "Joueur" as J
+    package "Space Invaders System" {
+        usecase "Se Déplacer (P1/P2)" as UC1
+        usecase "Tirer" as UC2
+        usecase "Gérer la Difficulté" as UC3
+        usecase "Mettre à jour la Physique" as UC4
+        usecase "Rendre le jeu (SDL/Ncurses)" as UC5
+    }
+    J --> UC1
+    J --> UC2
+    J --> UC3
+    UC4 ..> UC5 : triggers
 ```
 
-## 2.2 Composants
-*   **Modèle (`src/core/`)**: Contient toute la logique de jeu, la physique, les collisions, et l'état des entités (Joueur, Ennemis, Boss). Il ne contient **aucun code spécifique à l'affichage**.
-*   **Vue (`src/views/`)**: Utilise une interface abstraite (`View` struct) permettre le polymorphisme.
-    *   *SDL3*: Rendu matériel, sprites, effets de fond "Warp Speed", audio.
-    *   *Ncurses*: Rendu ASCII fluide, optimisé pour terminaux.
-*   **Contrôleur (`src/controller/`)**: Intercepte les événements clavier et les traduit en commandes sémantiques (`CMD_SHOOT`, `CMD_MOVE_LEFT`), découplant les touches physiques de la logique.
+## 4.2 Diagramme de Séquence (Boucle de Jeu)
 
-# 3. Fonctionnalités Avancées
+Ce diagramme illustre le flux d'une frame, de l'entrée utilisateur au rendu final :
 
-## 3.1 Gameplay & Boss System
-Le jeu propose trois niveaux de difficulté (Easy, Normal, Hard) influençant la vitesse, le score et les ennemis.
-*   **Boss Dreadnought** (Niveau 4): Une entité complexe avec patterns de tir multiples et changements visuels dynamiques selon ses points de vie.
-*   **Système de Score**: Bonus multiplicateurs selon la difficulté (x2 en Hard).
+```mermaid
+sequenceDiagram
+    participant U as Utilisateur
+    participant C as Contrôleur
+    participant M as Modèle
+    participant V as Vue (SDL/Ncurses)
 
-## 3.2 Moteur Audio Procédural
-L'audio n'est pas statique ; les pistes musicales (Menu, Jeu, Boss, Victoire) sont générées algorithmiquement via Python et intégrées via `miniaudio`, assurant des transitions fluides sans interruption du gameplay.
+    loop Chaque Frame
+        U->>C: Appui Touche
+        C->>M: Commande (ex: CMD_SHOOT)
+        M->>M: Mise à jour positions & collisions
+        M-->>V: Lecture État (Lecture seule)
+        V->>V: Rendu graphique / Audio
+        V->>U: Affichage Écran
+    end
+```
 
-## 3.3 Graphismes & Effets
-*   **SDL**: Implémentation d'un effet "Warp Speed" radial 3D pour le fond, donnant une impression de vitesse, et gestion des sprites avec transparence.
-*   **Ncurses**: Algorithme de lissage des entrées pour compenser le délai de répétition des touches terminal.
+# 5. Difficultés Rencontrées
 
-## 3.4 Personnalisation
-Un menu de paramètres complet permet la **reconfiguration totale des touches** (Keybindings) pour les deux vues, sauvegardées en mémoire.
+1.  **Synchronisation Audio/Modèle** : Le Modèle ne devant pas connaître l'audio, la Vue doit détecter les changements d'état (ex: incrément de `shots_fired`) pour déclencher les sons.
+2.  **Gestion de la Difficulté "Bullet Hell"** : L'implémentation de tirs simultanés de toutes les colonnes d'ennemis a nécessité une optimisation de la gestion des entités pour éviter tout ralentissement.
+3.  **Bordures et Redimensionnement** : Assurer que le HUD reste à `x=600` tout en supportant le redimensionnement de fenêtre SDL3 via une présentation logique (`SDL_LOGICAL_PRESENTATION_LETTERBOX`).
 
-# 4. Défis Techniques & Solutions
+# 6. Conclusion
 
-## 4.1 Gestion Mémoire (Zero Leaks)
-Une attention particulière a été portée à la sécurité mémoire. Chaque allocation est suivie, et l'utilisation de **Valgrind** est intégrée au pipeline de test (`make valgrind-sdl`). Le projet atteint le standard "Zero Leaks" même lors de crashs simulés ou de fermetures abruptes.
-
-## 4.2 Synchronisation Audio/Vidéo
-Le défi majeur fut de synchroniser les événements sonores (tirs, impacts) sans que le Modèle n'appelle de fonctions audio.
-*   *Solution*: La Vue surveille les changements de variables d'état (ex: `shots_fired` increment) à chaque frame pour déclencher les sons, préservant l'isolation du Modèle.
-
-## 4.3 Double Rendu (SDL/Ncurses)
-Faire cohabiter SDL et Ncurses dans le même binaire a nécessité une abstraction rigoureuse de la boucle principale et une gestion fine des signaux système pour l'interface terminal.
-
-# 5. Conclusion
-
-*Space Invaders MVC* démontre qu'une architecture rigoureuse permet de créer des logiciels robustes et portables. Le projet réussit à combiner des concepts bas niveau (gestion mémoire C) avec des abstractions haut niveau (MVC, Audio Procédural), aboutissant à un jeu complet, performant et bug-free.
+Ce projet a permis de fusionner des concepts de bas niveau (gestion de la mémoire en C) avec des abstractions architecturales modernes. Le résultat est un jeu complet, fluide et extensible, respectant les standards de l'industrie en matière de séparation des responsabilités et de robustesse technique. La capacité à piloter deux moteurs de rendu radicalement différents avec la même logique métier valide la pertinence du design MVC adopté.

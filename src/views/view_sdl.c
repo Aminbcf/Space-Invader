@@ -161,12 +161,18 @@ bool sdl_view_load_resources(SDLView *view) {
     fprintf(stderr, "Warning: Failed to load assets/damage.wav\n");
   }
 
-  if (ma_sound_init_from_file(&view->audio_engine, "assets/music_game.wav",
+  if (ma_sound_init_from_file(&view->audio_engine, "assets/select.wav",
+                              MA_SOUND_FLAG_DECODE, NULL, NULL,
+                              &view->sfx_select) != MA_SUCCESS) {
+    fprintf(stderr, "Warning: Failed to load assets/select.wav\n");
+  }
+
+  if (ma_sound_init_from_file(&view->audio_engine, "assets/music_game.mp3",
                               MA_SOUND_FLAG_DECODE, NULL, NULL,
                               &view->music_game) != MA_SUCCESS) {
-    fprintf(stderr, "AUDIO ERROR: Failed to load assets/music_game.wav\n");
+    fprintf(stderr, "AUDIO ERROR: Failed to load assets/music_game.mp3\n");
   } else {
-    printf("AUDIO: Loaded assets/music_game.wav successfully\n");
+    printf("AUDIO: Loaded assets/music_game.mp3 successfully\n");
   }
   ma_sound_set_looping(&view->music_game, MA_TRUE);
   ma_sound_set_volume(&view->music_game, 1.0f); // Max volume
@@ -226,7 +232,6 @@ bool sdl_view_load_resources(SDLView *view) {
       success = false;                                                         \
     }                                                                          \
   }
-
   LOAD_TEXTURE_SAFE("pictures/player_p1_f1.bmp", view->player_tex[0][0]);
   LOAD_TEXTURE_SAFE("pictures/player_p1_f2.bmp", view->player_tex[0][1]);
   LOAD_TEXTURE_SAFE("pictures/player_p2_f1.bmp", view->player_tex[1][0]);
@@ -409,9 +414,12 @@ void sdl_view_draw_hud(SDLView *view, const GameModel *model) {
 
   // 2. Game Border
   SDL_SetRenderDrawColor(view->renderer, 0, 200, 255, 150); // Cyan glow
-  SDL_FRect border_rect = {10, 55, (float)view->width - 20,
-                           (float)view->height - 65};
+  SDL_FRect border_rect = {10.0f, 55.0f, 580.0f, 535.0f};
   SDL_RenderRect(view->renderer, &border_rect);
+
+  // 3. Vertical Separator
+  SDL_SetRenderDrawColor(view->renderer, 100, 100, 100, 255);
+  SDL_RenderLine(view->renderer, 600.0f, 0, 600.0f, 600.0f);
 
   SDL_SetRenderDrawBlendMode(view->renderer, SDL_BLENDMODE_NONE);
 
@@ -492,7 +500,7 @@ void sdl_view_draw_hud(SDLView *view, const GameModel *model) {
 
   // Boss HP
   if (model->boss.alive) {
-    draw_text(view, "BOSS HP", 620, 380, (SDL_Color){255, 50, 50, 255});
+    draw_text(view, "MOTHERSHIP HP", 620, 380, (SDL_Color){255, 50, 50, 255});
     SDL_SetRenderDrawColor(view->renderer, 50, 0, 0, 255);
     SDL_FRect hp_bg = {620.0f, 410.0f, 150.0f, 15.0f};
     SDL_RenderFillRect(view->renderer, &hp_bg);
@@ -1006,13 +1014,13 @@ void sdl_view_render_game_scene(SDLView *view, const GameModel *model) {
       SDL_RenderFillRect(view->renderer, &boss);
     }
     float pct = (float)model->boss.health / model->boss.max_health;
-    SDL_FRect bg = {150.0f, 10.0f, 300.0f, 20.0f};
+    SDL_FRect bg = {150.0f, 60.0f, 300.0f, 20.0f};
     SDL_SetRenderDrawColor(view->renderer, 50, 0, 0, 255);
     SDL_RenderFillRect(view->renderer, &bg);
-    SDL_FRect fg = {150.0f, 10.0f, 300.0f * (pct > 0 ? pct : 0), 20.0f};
+    SDL_FRect fg = {150.0f, 60.0f, 300.0f * (pct > 0 ? pct : 0), 20.0f};
     SDL_SetRenderDrawColor(view->renderer, 255, 0, 0, 255);
     SDL_RenderFillRect(view->renderer, &fg);
-    draw_text(view, "BOSS", 150, 35, (SDL_Color){255, 100, 100, 255});
+    draw_text(view, "MOTHERSHIP", 150, 85, (SDL_Color){255, 100, 100, 255});
   } else {
     for (int i = 0; i < INVADER_ROWS; i++) {
       for (int j = 0; j < INVADER_COLS; j++) {
@@ -1100,6 +1108,18 @@ void sdl_view_render(SDLView *view, const GameModel *model) {
     view->last_enemy_bullet_count = 0;
     view->last_player_lives = model->players[0].lives;
   }
+
+  // Menu Navigation Sound
+  if (model->state == STATE_MENU) {
+    if (model->menu_selection != view->last_menu_selection ||
+        model->menu_state != view->last_menu_state) {
+      ma_sound_seek_to_pcm_frame(&view->sfx_select, 0);
+      ma_sound_start(&view->sfx_select);
+      view->last_menu_selection = model->menu_selection;
+      view->last_menu_state = model->menu_state;
+    }
+  }
+
   last_state = model->state;
 
   // --- AUDIO LOGIC ---

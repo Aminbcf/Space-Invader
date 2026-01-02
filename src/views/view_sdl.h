@@ -36,6 +36,8 @@ typedef struct SDLView {
   ma_sound sfx_enemy_bullet; // Enemy bullet sound
   ma_sound sfx_gameover;     // Game over sound
   ma_sound sfx_damage;       // Player damage sound
+  ma_sound sfx_select;       // Navigation sound
+  ma_sound sfx_level_complete; // Level win sound
   ma_sound music_game;       // Game music (levels 1-3)
   ma_sound music_boss;       // Boss fight music
   ma_sound music_victory;    // Victory music
@@ -47,6 +49,9 @@ typedef struct SDLView {
   int last_player_lives;
   bool game_over_played;
   int current_music_track; // 0=none, 1=game, 2=boss, 3=victory
+  int last_menu_selection;
+  MenuState last_menu_state;
+  int last_state;
 
   // Fonts
   TTF_Font *font_large;

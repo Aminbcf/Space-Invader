@@ -17,12 +17,36 @@ CFLAGS = -Wall -Wextra -g -std=c11 -D_GNU_SOURCE \
 # ----------------------------------------------------------------------------
 # CONFIGURATION AUTOMATIQUE DES BIBLIOTHÈQUES
 # ----------------------------------------------------------------------------
-# Détection automatique via pkg-config pour SDL3 et ses extensions
-SDL_CFLAGS = $(shell pkg-config --cflags sdl3 sdl3-image sdl3-ttf 2>/dev/null || \
-              echo "-I/usr/local/include/SDL3 -D_REENTRANT -I/usr/local/include/SDL3_ttf -I/usr/local/include/SDL3_image")
+# Support for Local SDL Build
+LOCAL_SDL_DIR = 3rdParty/SDL
+LOCAL_SDL_BUILD_DIR = $(LOCAL_SDL_DIR)/build
 
-SDL_LDFLAGS = $(shell pkg-config --libs sdl3 sdl3-image sdl3-ttf 2>/dev/null || \
-               echo "-L/usr/local/lib -lSDL3 -lSDL3_ttf -lSDL3_image") -lm
+LOCAL_IMAGE_DIR = 3rdParty/SDL_image
+LOCAL_IMAGE_BUILD_DIR = $(LOCAL_IMAGE_DIR)/build
+
+LOCAL_TTF_DIR = 3rdParty/SDL_ttf
+LOCAL_TTF_BUILD_DIR = $(LOCAL_TTF_DIR)/build
+
+ifneq "$(wildcard $(LOCAL_SDL_DIR)/CMakeLists.txt)" ""
+    # Local SDL found
+    SDL_CFLAGS = -I$(LOCAL_SDL_DIR)/include -I$(LOCAL_IMAGE_DIR)/include -I$(LOCAL_TTF_DIR)/include -D_REENTRANT
+    
+    # Link against local libraries
+    SDL_LDFLAGS = -L$(LOCAL_SDL_BUILD_DIR) -lSDL3 \
+                  -L$(LOCAL_IMAGE_BUILD_DIR) -lSDL3_image \
+                  -L$(LOCAL_TTF_BUILD_DIR) -lSDL3_ttf \
+                  -Wl,-rpath,$(abspath $(LOCAL_SDL_BUILD_DIR)) \
+                  -Wl,-rpath,$(abspath $(LOCAL_IMAGE_BUILD_DIR)) \
+                  -Wl,-rpath,$(abspath $(LOCAL_TTF_BUILD_DIR)) \
+                  -lm
+else
+    # System SDL
+    SDL_CFLAGS = $(shell pkg-config --cflags sdl3 sdl3-image sdl3-ttf 2>/dev/null || \
+                  echo "-I/usr/local/include/SDL3 -D_REENTRANT -I/usr/local/include/SDL3_ttf -I/usr/local/include/SDL3_image")
+
+    SDL_LDFLAGS = $(shell pkg-config --libs sdl3 sdl3-image sdl3-ttf 2>/dev/null || \
+                   echo "-L/usr/local/lib -lSDL3 -lSDL3_ttf -lSDL3_image") -lm
+endif
 
 # Bibliothèques pour ncurses et tests
 NCURSES_LDFLAGS = -lncurses -lm
@@ -165,7 +189,7 @@ tools: $(TOOLS)
 # ----------------------------------------------------------------------------
 run-sdl: sdl prepare-assets
 	@echo "▶ Lancement de la version SDL..."
-	@cd $(BIN_DIR) && ./space_invaders_sdl
+	cd $(BIN_DIR) && ./space_invaders_sdl
 
 # ----------------------------------------------------------------------------
 # run-ncurses : Compile et exécute la version ncurses
@@ -480,6 +504,48 @@ doc generate-docs:
 	fi
 
 # ============================================================================
+# GESTION DES BIBLIOTHÈQUES LOCALES
+# ============================================================================
+
+libs-build: $(LOCAL_SDL_BUILD_DIR)/libSDL3.so $(LOCAL_IMAGE_BUILD_DIR)/libSDL3_image.so $(LOCAL_TTF_BUILD_DIR)/libSDL3_ttf.so
+
+# 1. Build SDL3
+$(LOCAL_SDL_BUILD_DIR)/libSDL3.so:
+	@echo "→ Compilation de SDL3 locale..."
+	@mkdir -p $(LOCAL_SDL_BUILD_DIR)
+	@cd $(LOCAL_SDL_BUILD_DIR) && cmake .. -DCMAKE_BUILD_TYPE=Release -DSDL_STATIC=OFF -DSDL_SHARED=ON && make -j$(shell nproc)
+	@echo "✓ SDL3 locale compilée"
+
+# 2. Build SDL3_image (Depends on SDL3)
+$(LOCAL_IMAGE_BUILD_DIR)/libSDL3_image.so: $(LOCAL_SDL_BUILD_DIR)/libSDL3.so
+	@echo "→ Compilation de SDL3_image locale..."
+	@mkdir -p $(LOCAL_IMAGE_BUILD_DIR)
+	@# Point to local SDL3 build used -DSDL3_DIR
+	@# Disable heavy formats to avoid extra dependencies (NASM, etc)
+	@cd $(LOCAL_IMAGE_BUILD_DIR) && cmake .. \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DSDLIMAGE_BACKEND_STB=ON \
+		-DSDLIMAGE_VENDORED=ON \
+		-DSDLIMAGE_AVIF=OFF \
+		-DSDLIMAGE_JXL=OFF \
+		-DSDLIMAGE_WEBP=OFF \
+		-DSDLIMAGE_TIF=OFF \
+		-DSDL3_DIR=$(abspath $(LOCAL_SDL_BUILD_DIR)) \
+		&& make -j$(shell nproc)
+	@echo "✓ SDL3_image locale compilée"
+
+# 3. Build SDL3_ttf (Depends on SDL3)
+$(LOCAL_TTF_BUILD_DIR)/libSDL3_ttf.so: $(LOCAL_SDL_BUILD_DIR)/libSDL3.so
+	@echo "→ Compilation de SDL3_ttf locale..."
+	@mkdir -p $(LOCAL_TTF_BUILD_DIR)
+	@cd $(LOCAL_TTF_BUILD_DIR) && cmake .. \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DSDLTTF_VENDORED=ON \
+		-DSDL3_DIR=$(abspath $(LOCAL_SDL_BUILD_DIR)) \
+		&& make -j$(shell nproc)
+	@echo "✓ SDL3_ttf locale compilée"
+
+# ============================================================================
 # PRÉPARATION DES RESSOURCES
 # ============================================================================
 
@@ -487,6 +553,7 @@ doc generate-docs:
 # prepare-assets : Prépare les ressources (polices, fichiers de scores, etc.)
 # ----------------------------------------------------------------------------
 prepare-assets: | $(BIN_DIR)
+	@if [ -d "$(LOCAL_SDL_DIR)" ]; then $(MAKE) libs-build; fi
 	@echo "→ Préparation des ressources..."
 	@mkdir -p $(BIN_DIR)/fonts
 	@mkdir -p $(BIN_DIR)/misc

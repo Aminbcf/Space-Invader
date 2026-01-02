@@ -18,7 +18,7 @@
 #define PLAYER_HEIGHT 20
 #define BULLET_WIDTH 5
 #define BULLET_HEIGHT 15
-#define PLAYER_BULLETS 3
+#define PLAYER_BULLETS 20
 #define ENEMY_BULLETS 10
 #define BASE_COUNT 4
 #define BASE_WIDTH 60
@@ -201,6 +201,9 @@ typedef struct {
 
   // Damage immunity
   float invincibility_timer;
+  
+  // Shooting Cooldown
+  float shoot_timer;
 } Player;
 
 // The Complete Game Model

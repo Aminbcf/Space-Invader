@@ -147,6 +147,46 @@ def generate_damage_sound():
     
     return sound, sample_rate
 
+def generate_ui_sounds():
+    """Generate simple UI sounds (select, level complete)"""
+    sample_rate = 44100
+    
+    # --- Select / Navigation Blip ---
+    duration = 0.1
+    t = np.linspace(0, duration, int(sample_rate * duration))
+    # High pitched blip
+    freq = 880
+    tone = np.sin(2 * np.pi * freq * t)
+    # Fast decay
+    envelope = np.exp(-10 * t)
+    select_sound = tone * envelope * 0.5
+    
+    # --- Level Complete / Win ---
+    duration = 2.0
+    t = np.linspace(0, duration, int(sample_rate * duration))
+    # Arpeggio: C major (C E G C)
+    notes = [523.25, 659.25, 783.99, 1046.50]
+    note_duration = 0.15
+    melody = np.zeros_like(t)
+    
+    for i, note_freq in enumerate(notes):
+        start = i * note_duration
+        end = start + 0.4 # Overlap
+        mask = (t >= start) & (t < end)
+        curr_t = t[mask] - start
+        
+        # Bell-like tone (fundamental + harmonics)
+        tone_part = np.sin(2 * np.pi * note_freq * curr_t) * 0.5 + \
+                    np.sin(2 * np.pi * note_freq * 2 * curr_t) * 0.2
+        
+        # Envelope
+        decay = np.exp(-5 * curr_t)
+        melody[mask] += tone_part * decay
+        
+    win_sound = melody * 0.5
+    
+    return select_sound, win_sound, sample_rate
+
 def main():
     output_dir = "src/assets"
     
@@ -161,6 +201,13 @@ def main():
     sound, sr = generate_damage_sound()
     write_wav(f"{output_dir}/damage.wav", sound, sr)
     print(f"  ✓ Created {output_dir}/damage.wav")
+
+    print("Generating UI sounds...")
+    select_snd, win_snd, sr = generate_ui_sounds()
+    write_wav(f"{output_dir}/select.wav", select_snd, sr)
+    write_wav(f"{output_dir}/level_complete.wav", win_snd, sr)
+    print(f"  ✓ Created {output_dir}/select.wav")
+    print(f"  ✓ Created {output_dir}/level_complete.wav")
     
     print("\n✓ All audio files generated successfully!")
     print("\nAudio files created:")

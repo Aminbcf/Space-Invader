@@ -7,20 +7,21 @@ A modern, robust C implementation of the classic arcade game *Space Invaders*, b
 ### Core Architectural Features
 - **Strict MVC Pattern**: Complete separation between Logic (Model), Input (Controller), and Rendering (View).
 - **Dual Interface**:
-    - **SDL3**: High-performance graphical view with sprites, particles, and 3D warp effects.
-    - **Ncurses**: ASCII-art terminal view playable over SSH.
 - **Shared Model**: Both interfaces run on the exact same game logic engine.
 - **Memory Safety**: Verified "Zero Leaks" with Valgrind.
 
 ### Gameplay Features
-- **Advanced Boss Fight**: Level 4 features the "Dreadnought" boss with multi-phase attacks and changing visual states.
-- **Dynamic Difficulty**:
-    - **Easy**: 3 Levels, Slower enemies.
-    - **Normal**: 4 Levels, Standard speed, Boss fight.
-    - **Hard**: Faster enemies (1.5x), Aggressive firing, Double Score Points.
+- **MOTHERSHIP Boss Fight**: Level 4 features the colossal "MOTHERSHIP" boss with adaptive attack patterns and a visual health bar.
+- **Bullet Hell Difficulty**: 
+    - **HARD/ROGUE**: Enemies use advanced firing patterns, launching projectiles from all columns simultaneously ("Bullet Hell").
+    - **Dynamic Shot Types**: Invaders fire different projectiles (ZigZag, Orbs, Lasers) based on their row rank.
+- **Improved HUD & Grid**: A dedicated 600px game grid with a visual vertical separator and safe HUD zones.
+- **Dual Interface**:
+    - **SDL3**: High-performance graphical view with radial 3D warp stars, particles, and smooth animations.
+    - **Ncurses**: ASCII-art terminal view playable over SSH.
+- **Customizable Controls**: Full keybinding remapping for both SDL and Terminal views (supports 2-player mode).
 - **Procedural Audio**: Real-time synthesized sound effects and music (managed via `miniaudio`).
 - **High Scores**: Persistent score tracking.
-- **Customizable Controls**: Full keybinding remapping for both SDL and Terminal views.
 
 ---
 
@@ -80,36 +81,41 @@ make ncurses
 
 ### Controls
 
-| Action | SDL Key | Ncurses Key |
-|--------|---------|-------------|
-| **Move Left** | Left Arrow / A | Left Arrow / A |
-| **Move Right** | Right Arrow / D | Right Arrow / D |
-| **Shoot** | Space | Space |
-| **Pause** | P | P |
-| **Confirm** | Enter | Enter |
-| **Back/Quit** | ESC | Q |
+| Action | Player 1 (SDL) | Player 2 (SDL) | Ncurses |
+|--------|----------------|----------------|---------|
+| **Move Left** | Left Arrow | A | Left Arrow |
+| **Move Right**| Right Arrow | D | Right Arrow |
+| **Shoot**     | Space | Left Shift | Space |
+| **Pause**     | P | P | P |
+| **Menu/Back** | ESC | ESC | Q |
 
-> **Note**: You can customize these keys in **Settings > Controls**.
+> **Note**: Remix your controls in **Settings > Controls**.
 
 ### Enemies & Scoring
 
-| Enemy Type | Visual (SDL) | Visual (Ncurses) | Points (Normal) | Points (Hard - 2x) |
-|------------|--------------|------------------|-----------------|--------------------|
-| **Squid** | Small, Top Row | `^` | 30 | 60 |
-| **Crab** | Medium, Middle | `M` | 20 | 40 |
-| **Octopus** | Large, Bottom | `W` | 10 | 20 |
-| **Saucer** | Red Flying Ship | `<=>` | 100 - 300 | 200 - 600 |
-| **Boss** | Dreadnought | `[BOSS]` | 5000 | 10,000 |
+| Enemy Type | Visual (SDL) | Visual (Ncurses) | Basis Points |
+|------------|--------------|------------------|--------------|
+| **Squid**  | Small (Top)  | `^` | 30 |
+| **Crab**   | Medium (Mid) | `M` | 20 |
+| **Octopus**| Large (Bot)  | `W` | 10 |
+| **Saucer** | Flying Ship  | `<=>` | 100 - 300 |
+| **MOTHERSHIP**| Dreadnought | `[BOSS]` | 5000 |
 
-### The Boss (Dreadnought)
-Appears at Level 4 (Normal/Hard).
-- **Phase 1**: Green shield, slow tracking.
-- **Phase 2**: Purple shield, rapid fire, aggressive tracking.
-- **Strategy**: Keep moving. The boss anticipates your position. Destroying it triggers the Victory screen.
+### The MOTHERSHIP
+Appears at Level 4 (Normal+ Difficulty).
+- **Targeting**: The Mothership tracks player positions and launches heavy barrage attacks.
+- **Bullet Hell**: On HARD, the Mothership is supported by continuous invader fire from the entire grid.
+- **Weak Point**: Its center core. Watch the HP bar above the grid!
 
 ---
 
 ## 🏗️ Architecture Deep Dive
+
+### The 600x600 Game Grid
+The game uses a logical coordinate system restricted to a **600px wide area**.
+- **0px - 600px**: Active Game Area (Enemies, Player, Saucer).
+- **600px - 800px**: HUD/Sidebar (Scores, Lives, Power-up Timers).
+- **Vertical Line**: A gray separator clearly demarcates the "Grid" from the "Interface".
 
 ### Project Structure
 ```
