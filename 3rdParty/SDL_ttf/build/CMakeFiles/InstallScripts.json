@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/cmake_install.cmake",
+		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/external/harfbuzz-build/cmake_install.cmake",
+		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/external/freetype-build/cmake_install.cmake",
+		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/external/plutovg-build/cmake_install.cmake",
+		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/external/plutosvg-guild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,17 @@
+# Hashes of file build rules.
+0f4dedaf14746e9cf06f12e8067316f6 CMakeFiles/uninstall
+7a72ead74a29c09dc1f9c2398e2f5b06 external/libpng-build/CMakeFiles/png_genfiles
+14fc80d1cf49373dd216855c2b31144f external/libpng-build/CMakeFiles/png_genprebuilt
+bb90ba480e6da29e3231b3de7e0f9c23 external/libpng-build/libpng.sym
+df345bd164635f9620fc7f5867db4acb external/libpng-build/libpng.vers
+8b98eb87f1dbefd46665ce5412d46bc1 external/libpng-build/pnglibconf.c
+84a1724869d24aaee78de579579b1736 external/libpng-build/pnglibconf.h
+7aeaa15ee07a90e227985546bf7da93d external/libpng-build/pnglibconf.out
+59a998f3c4b5ca2443ba759a345b8053 external/libpng-build/pngprefix.h
+7693c2cbcd54537a1bf4d32a8b1e545e external/libpng-build/scripts/intprefix.out
+6844a818b929d6a4c1ee341107fa1f6b external/libpng-build/scripts/pnglibconf.c
+8366b9c9b14ca558b37d1ae2d07a8b21 external/libpng-build/scripts/prefix.out
+e03a24bf3da2b33c33b814ac080df2ed external/libpng-build/scripts/sym.out
+e55a23dfece56a2379897ddb8704999b external/libpng-build/scripts/symbols.chk
+eef7721d62be57f63642f73edc4edd2b external/libpng-build/scripts/symbols.out
+1dbefd8efef3b25e34fcca1034ded283 external/libpng-build/scripts/vers.out

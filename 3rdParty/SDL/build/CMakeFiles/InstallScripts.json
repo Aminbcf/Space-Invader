@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/cmake_install.cmake",
+		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

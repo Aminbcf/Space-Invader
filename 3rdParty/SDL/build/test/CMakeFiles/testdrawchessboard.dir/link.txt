@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/testdrawchessboard.dir/link.d CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o -o testdrawchessboard  -Wl,-rpath,/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build ../libSDL3_test.a ../libSDL3.so.0.5.0 /usr/lib/libunwind-generic.so /usr/lib/libunwind.so

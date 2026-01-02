@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/testyuv.dir/link.d CMakeFiles/testyuv.dir/testyuv.c.o CMakeFiles/testyuv.dir/testyuv_cvt.c.o CMakeFiles/sdltests_utils.dir/testutils.c.o -o testyuv  -Wl,-rpath,/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build ../libSDL3_test.a ../libSDL3.so.0.5.0 /usr/lib/libunwind-generic.so /usr/lib/libunwind.so
