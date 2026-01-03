@@ -147,7 +147,7 @@ TOOLS = $(patsubst tools/%.c, $(BIN_DIR)/%, $(TOOL_SRCS))
         doc generate-docs install uninstall dist package \
         help check-project rebuild debug release profile \
         check-sdl-deps check-ncurses-deps check-test-deps memcheck fullcheck \
-        format test coverage benchmark
+        format test coverage benchmark report-docx
 
 # ============================================================================
 # CIBLES PRINCIPALES
@@ -161,6 +161,20 @@ TOOLS = $(patsubst tools/%.c, $(BIN_DIR)/%, $(TOOL_SRCS))
 # ----------------------------------------------------------------------------
 all: prepare-assets sdl ncurses tools
 	@echo "✓ Compilation complète terminée avec succès"
+
+# ----------------------------------------------------------------------------
+# report-docx : Convertit le rapport Markdown en DOCX
+# ----------------------------------------------------------------------------
+report-docx:
+	@echo "→ Conversion de rapport.md vers rapport.docx..."
+	@if command -v pandoc >/dev/null 2>&1; then \
+		pandoc -s rapport.md -o rapport.docx; \
+		echo "✓ Rapport converti avec succès : rapport.docx"; \
+	else \
+		echo "✗ ERREUR : Pandoc n'est pas installé."; \
+		echo "  Veuillez l'installer avec : sudo apt install pandoc"; \
+		exit 1; \
+	fi
 
 # ----------------------------------------------------------------------------
 # sdl : Compile la version SDL
