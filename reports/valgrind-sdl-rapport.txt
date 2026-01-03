@@ -1,0 +1,66 @@
+==9420== Memcheck, a memory error detector
+==9420== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==9420== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==9420== Command: ./space_invaders_sdl --valgrind-test
+==9420== Parent PID: 9419
+==9420== 
+==9420== realloc() with size 0
+==9420==    at 0x4953E4F: realloc (vg_replace_malloc.c:1801)
+==9420==    by 0x10A6C549: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A73D7B: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A8B9BE: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A8BE1C: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A82E3E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0xFE88DB0: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFE88E94: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFF07A85: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFE87076: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFE8FEF8: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0x1003B81C: UnknownInlinedFun (platform-base.c:119)
+==9420==    by 0x1003B81C: loadEGLExternalPlatform (wayland-platform.c:94)
+==9420==  Address 0x177c5ad0 is 0 bytes after a block of size 0 alloc'd
+==9420==    at 0x494C7A8: malloc (vg_replace_malloc.c:446)
+==9420==    by 0x10A6C536: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A73D7B: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A8B9BE: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A8BE1C: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A82E3E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0xFE88DB0: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFE88E94: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFF07A85: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFE87076: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFE8FEF8: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0x1003B81C: UnknownInlinedFun (platform-base.c:119)
+==9420==    by 0x1003B81C: loadEGLExternalPlatform (wayland-platform.c:94)
+==9420== 
+==9420== posix_memalign() invalid size value: 0
+==9420==    at 0x4954A58: posix_memalign (vg_replace_malloc.c:2226)
+==9420==    by 0x10A6C579: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A73D7B: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A8B9BE: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A8BE1C: ??? (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0x10A82E3E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.590.48.01)
+==9420==    by 0xFE88DB0: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFE88E94: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFF07A85: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFE87076: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0xFE8FEF8: ??? (in /usr/lib/libEGL_nvidia.so.590.48.01)
+==9420==    by 0x1003B81C: UnknownInlinedFun (platform-base.c:119)
+==9420==    by 0x1003B81C: loadEGLExternalPlatform (wayland-platform.c:94)
+==9420== 
+==9420== 
+==9420== HEAP SUMMARY:
+==9420==     in use at exit: 294,389 bytes in 2,863 blocks
+==9420==   total heap usage: 68,557 allocs, 65,694 frees, 101,063,717 bytes allocated
+==9420== 
+==9420== LEAK SUMMARY:
+==9420==    definitely lost: 0 bytes in 0 blocks
+==9420==    indirectly lost: 0 bytes in 0 blocks
+==9420==      possibly lost: 0 bytes in 0 blocks
+==9420==    still reachable: 290,743 bytes in 2,859 blocks
+==9420==         suppressed: 3,646 bytes in 4 blocks
+==9420== Reachable blocks (those to which a pointer was found) are not shown.
+==9420== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==9420== 
+==9420== For lists of detected and suppressed errors, rerun with: -s
+==9420== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 4 from 4)
