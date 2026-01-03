@@ -862,6 +862,7 @@ void model_check_bullet_collisions(GameModel *model) {
       if (model->boss.alive &&
           model_check_collision(pb->hitbox, model->boss.hitbox)) {
         model->boss.health -= (pb->is_strong ? 5 : 1);
+        model->needs_redraw = true; // Trigger HUD update
         if (!pb->is_strong)
           pb->alive = false;
         model->players[p_idx].score += apply_difficulty_multiplier(model, 10);
@@ -892,6 +893,7 @@ void model_check_bullet_collisions(GameModel *model) {
                                 model->invaders.big_invader.hitbox)) {
         BigInvader *bi = &model->invaders.big_invader;
         bi->health -= (pb->is_strong ? 3 : 1);
+        model->needs_redraw = true; // Trigger HUD update
         if (!pb->is_strong)
           pb->alive = false;
         model->players[p_idx].score += apply_difficulty_multiplier(model, 15);
@@ -965,21 +967,45 @@ void model_check_bullet_collisions(GameModel *model) {
 }
 
 void model_check_player_invader_collision(GameModel *model) {
-  if (model->boss.alive)
-    return;
   for (int i = 0; i < INVADER_ROWS; i++) {
     for (int j = 0; j < INVADER_COLS; j++) {
-      if (model->invaders.invaders[i][j].alive) {
+      Invader *inv = &model->invaders.invaders[i][j];
+      if (inv->alive) {
+        // 1. Check if ANY invader reaches the bottom (regardless of player position)
+        if (inv->hitbox.y + inv->hitbox.height >= SCREEN_HEIGHT - 50) {
+          model->state = STATE_GAME_OVER;
+          model_save_high_score(model);
+          return;
+        }
+
+        // 2. Check for actual AABB collision with each player
         for (int p = 0; p < 2; p++) {
           if (model->players[p].is_active &&
-              model->invaders.invaders[i][j].hitbox.y + INVADER_HEIGHT >=
-                  model->players[p].hitbox.y) {
+              model_check_collision(inv->hitbox, model->players[p].hitbox)) {
             model->players[p].lives = 0;
             if (model->players[0].lives <= 0 &&
                 (!model->two_player_mode || model->players[1].lives <= 0)) {
               model->state = STATE_GAME_OVER;
+              model_save_high_score(model);
+              return;
             }
           }
+        }
+      }
+    }
+  }
+
+  // 3. Also check Boss for collision with players if alive
+  if (model->boss.alive) {
+    for (int p = 0; p < 2; p++) {
+      if (model->players[p].is_active &&
+          model_check_collision(model->boss.hitbox, model->players[p].hitbox)) {
+        model->players[p].lives = 0;
+        if (model->players[0].lives <= 0 &&
+            (!model->two_player_mode || model->players[1].lives <= 0)) {
+          model->state = STATE_GAME_OVER;
+          model_save_high_score(model);
+          return;
         }
       }
     }

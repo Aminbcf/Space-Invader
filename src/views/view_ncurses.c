@@ -172,9 +172,9 @@ static void ncurses_draw_player(NcursesView *view, const GameModel *model) {
     mvaddch(y, x, p == 0 ? '^' : 'A');
     mvaddch(y, x - 1, '<');
     mvaddch(y, x + 1, '>');
+    // Ensure cleanup of attributes
     attroff(COLOR_PAIR(p == 0 ? 1 : 4));
-    attroff(A_DIM);
-    attroff(COLOR_PAIR(p == 0 ? 1 : 4));
+    if (model->players[p].invincibility_timer > 0) attroff(A_DIM);
   }
 }
 
@@ -187,16 +187,20 @@ static void ncurses_draw_aliens(NcursesView *view, const GameModel *model) {
   for (int i = 0; i < INVADER_ROWS; ++i) {
     for (int j = 0; j < INVADER_COLS; ++j) {
       const Invader *inv = &model->invaders.invaders[i][j];
+      int x = view->game_start_x + ncurses_scale_x(inv->hitbox.x + INVADER_WIDTH/2);
+      int y = view->game_start_y + ncurses_scale_y(inv->hitbox.y + INVADER_HEIGHT/2);
+      
       if (inv->alive && inv->dying_timer == 0) {
-        int x = view->game_start_x + ncurses_scale_x(inv->hitbox.x);
-        int y = view->game_start_y + ncurses_scale_y(inv->hitbox.y);
         char c = (inv->row == 0) ? 'Y' : (inv->row < 3 ? 'X' : 'W');
+        // Draw a 3-char wide representation for better hitbox feel
+        mvaddch(y, x-1, '[');
         mvaddch(y, x, c);
+        mvaddch(y, x+1, ']');
       } else if (inv->alive && inv->dying_timer > 0) {
-        int x = view->game_start_x + ncurses_scale_x(inv->hitbox.x);
-        int y = view->game_start_y + ncurses_scale_y(inv->hitbox.y);
         attron(COLOR_PAIR(3));
-        mvaddch(y, x, '*');
+        mvaddch(y, x-1, '*');
+        mvaddch(y, x, ' ');
+        mvaddch(y, x+1, '*');
         attroff(COLOR_PAIR(3));
       }
     }
@@ -223,14 +227,14 @@ static void ncurses_draw_aliens(NcursesView *view, const GameModel *model) {
     }
     attroff(COLOR_PAIR(5));
 
-    // Show HP bar (Centered above)
-    int hp_bars = (model->invaders.big_invader.health * 5) /
+    // Show HP bar and numerical health (Centered above)
+    int hp_bars = (model->invaders.big_invader.health * 10) /
                   model->invaders.big_invader.max_health;
-    mvprintw(y - 1, x + 1, "["); // Offset +1 to center roughly
-    for (int i = 0; i < 5; i++) {
+    mvprintw(y - 1, x, "[");
+    for (int i = 0; i < 10; i++) {
       addch(i < hp_bars ? '=' : ' ');
     }
-    addch(']');
+    printw("] %d/%d", model->invaders.big_invader.health, model->invaders.big_invader.max_health);
     attroff(COLOR_PAIR(5) | A_BOLD);
   }
 }
@@ -240,13 +244,13 @@ static void ncurses_draw_boss(NcursesView *view, const GameModel *model) {
   if (!model->boss.alive)
     return;
 
-  int x = view->game_start_x + ncurses_scale_x(model->boss.hitbox.x);
+  int x = view->game_start_x + ncurses_scale_x(model->boss.hitbox.x + BOSS_WIDTH/2);
   int y = view->game_start_y + ncurses_scale_y(model->boss.hitbox.y);
 
   attron(COLOR_PAIR(5));
-  mvprintw(y, x, " /=======\\ ");
-  mvprintw(y + 1, x, "<( O X O )>");
-  mvprintw(y + 2, x, " \\^^^^^^^/ ");
+  mvprintw(y, x - 5, " /=======\\ ");
+  mvprintw(y + 1, x - 5, "<( O X O )>");
+  mvprintw(y + 2, x - 5, " \\^^^^^^^/ ");
   attroff(COLOR_PAIR(5));
 }
 
@@ -280,10 +284,10 @@ static void ncurses_draw_powerups(NcursesView *view, const GameModel *model) {
 // Draw saucer
 static void ncurses_draw_saucer(NcursesView *view, const GameModel *model) {
   if (model->saucer.alive) {
-    int x = view->game_start_x + ncurses_scale_x(model->saucer.hitbox.x);
+    int x = view->game_start_x + ncurses_scale_x(model->saucer.hitbox.x + 15); // Center of saucer
     int y = view->game_start_y + ncurses_scale_y(model->saucer.hitbox.y);
     attron(COLOR_PAIR(4));
-    mvprintw(y, x, "<@>");
+    mvprintw(y, x - 1, "<@>");
     attroff(COLOR_PAIR(4));
   }
 }
@@ -345,79 +349,77 @@ static void ncurses_draw_hud(NcursesView *view, const GameModel *model) {
   
   // -- PLAYER 1 --
   attron(COLOR_PAIR(8) | A_BOLD);
-  mvprintw(sy + 1, sx, " P1 STATUS ");
+  mvprintw(sy, sx, " P1 STATUS ");
   attroff(COLOR_PAIR(8) | A_BOLD);
   
   attron(COLOR_PAIR(6));
-  mvprintw(sy + 3, sx, "SCORE:");
+  mvprintw(sy + 1, sx, "SCORE:");
   attron(COLOR_PAIR(6) | A_BOLD);
-  mvprintw(sy + 3, sx + 7, "%06d", model->players[0].score);
+  mvprintw(sy + 1, sx + 7, "%06d", model->players[0].score);
   attroff(A_BOLD);
   
-  mvprintw(sy + 5, sx, "LIVES:");
+  mvprintw(sy + 2, sx, "LIVES:");
   for(int i=0; i<model->players[0].lives; i++) {
       attron(COLOR_PAIR(1));
-      mvaddch(sy + 5, sx + 7 + i*2, '^');
+      mvaddch(sy + 2, sx + 7 + i*2, '^');
       attroff(COLOR_PAIR(1));
   }
 
   // Active Powerup P1
-  mvprintw(sy + 7, sx, "PWR:");
+  mvprintw(sy + 3, sx, "PWR:");
   if(model->players[0].active_powerup != PWR_NONE) {
       const char* pwr_name = "NONE";
       int pwr_color = 4;
       switch(model->players[0].active_powerup) {
-          case PWR_TRIPLE_SHOT: pwr_name="TRIPLE"; pwr_color=4; break;
-          case PWR_STRONG_MISSILE: pwr_name="STRONG"; pwr_color=3; break;
-          case PWR_SHIELD: pwr_name="SHIELD"; pwr_color=7; break;
+          case PWR_TRIPLE_SHOT: pwr_name="TRIP"; pwr_color=4; break;
+          case PWR_STRONG_MISSILE: pwr_name="STRG"; pwr_color=3; break;
+          case PWR_SHIELD: pwr_name="SHLD"; pwr_color=7; break;
           default: break;
       }
       attron(COLOR_PAIR(pwr_color) | A_BOLD);
-      mvprintw(sy+7, sx+5, "%s", pwr_name);
-      // Timer bar
-      int bar_len = (int)(model->players[0].powerup_timer / 10.0f * 5.0f); // Assuming 10s max
-      for(int k=0; k<bar_len; k++) addch('.');
+      mvprintw(sy+3, sx+5, "%s", pwr_name);
       attroff(COLOR_PAIR(pwr_color) | A_BOLD);
   } else {
-      mvprintw(sy+7, sx+5, "---");
+      mvprintw(sy+3, sx+5, "---");
   }
 
   // -- PLAYER 2 --
   if (model->two_player_mode) {
+      sy += 5;
       attron(COLOR_PAIR(8) | A_BOLD);
-      mvprintw(sy + 10, sx, " P2 STATUS ");
+      mvprintw(sy, sx, " P2 STATUS ");
       attroff(COLOR_PAIR(8) | A_BOLD);
       
       attron(COLOR_PAIR(6));
-      mvprintw(sy + 12, sx, "SCORE:");
+      mvprintw(sy + 1, sx, "SCORE:");
       attron(COLOR_PAIR(6) | A_BOLD);
-      mvprintw(sy + 12, sx + 7, "%06d", model->players[1].score);
+      mvprintw(sy + 1, sx + 7, "%06d", model->players[1].score);
       attroff(A_BOLD);
       
-      mvprintw(sy + 14, sx, "LIVES:");
+      mvprintw(sy + 2, sx, "LIVES:");
       for(int i=0; i<model->players[1].lives; i++) {
           attron(COLOR_PAIR(4));
-          mvaddch(sy + 14, sx + 7 + i*2, 'A');
+          mvaddch(sy + 2, sx + 7 + i*2, 'A');
           attroff(COLOR_PAIR(4));
       }
   }
 
   // -- GAME INFO --
-  sy += 18;
+  sy = view->game_start_y + 11;
   attron(COLOR_PAIR(6));
-  mvhline(sy - 1, sx, '-', w - 2);
+  mvhline(sy - 1, sx, '-', w - 1);
   
   mvprintw(sy, sx, "LEVEL: %d", model->players[0].level);
-  mvprintw(sy + 2, sx, "HI-SCORE:");
+  mvprintw(sy + 1, sx, "HI-SCORE:");
   attron(COLOR_PAIR(4) | A_BOLD);
-  mvprintw(sy + 3, sx, "%06d", model->high_score);
+  mvprintw(sy + 2, sx, "%06d", model->high_score);
   attroff(COLOR_PAIR(4) | A_BOLD);
 
   // Boss HP
   if (model->boss.alive) {
-    sy += 6;
+    sy += 4;
     attron(COLOR_PAIR(3) | A_BOLD);
-    mvprintw(sy, sx, "!! BOSS !!");
+    mvprintw(sy, sx, "!MOTHERSHIP!");
     attroff(COLOR_PAIR(3) | A_BOLD);
     mvprintw(sy + 1, sx, "[");
     int bars = (model->boss.health * 10) / model->boss.max_health;
@@ -428,6 +430,7 @@ static void ncurses_draw_hud(NcursesView *view, const GameModel *model) {
     attroff(COLOR_PAIR(3));
     attron(COLOR_PAIR(6));
     addch(']');
+    mvprintw(sy + 2, sx, "%d/%d", model->boss.health, model->boss.max_health);
     attroff(COLOR_PAIR(6));
   }
   
@@ -444,7 +447,7 @@ void ncurses_view_render_game(NcursesView *view, const GameModel *model) {
   // Clear game area with space background
   for (int y = view->game_start_y; y < view->game_start_y + NCURSES_GAME_HEIGHT;
        y++) {
-    mvhline(y, view->game_start_x, ' ', NCURSES_GAME_WIDTH);
+    mvhline(y, view->game_start_x, ' ', NCURSES_SCREEN_WIDTH);
   }
 
   ncurses_draw_player(view, model);

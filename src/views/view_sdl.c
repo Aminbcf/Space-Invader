@@ -518,6 +518,10 @@ void sdl_view_draw_hud(SDLView *view, const GameModel *model) {
     float hp_w = (model->boss.health * 150.0f) / model->boss.max_health;
     SDL_FRect hp_fill = {620.0f, 410.0f, hp_w, 15.0f};
     SDL_RenderFillRect(view->renderer, &hp_fill);
+
+    char hp_txt[32];
+    snprintf(hp_txt, 32, "%d/%d", model->boss.health, model->boss.max_health);
+    draw_text(view, hp_txt, 620, 428, (SDL_Color){255, 255, 255, 255});
   }
 
   snprintf(buf, 64, "HIGH SCORE");
@@ -1094,6 +1098,10 @@ void sdl_view_render_game_scene(SDLView *view, const GameModel *model) {
       SDL_FRect hp_fill = {bi_dst.x, bi_dst.y - 10, bi_dst.w * hp_pct, 8};
       SDL_SetRenderDrawColor(view->renderer, 255, 0, 255, 255);
       SDL_RenderFillRect(view->renderer, &hp_fill);
+
+      char bi_hp_txt[32];
+      snprintf(bi_hp_txt, 32, "%d/%d", bi->health, bi->max_health);
+      draw_text(view, bi_hp_txt, (int)bi_dst.x, (int)bi_dst.y - 25, (SDL_Color){255, 255, 255, 255});
     }
   }
 
