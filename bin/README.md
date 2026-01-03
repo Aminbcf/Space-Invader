@@ -1,167 +1,136 @@
-# Space Invaders MVC
+# Space Invaders MVC - High-Performance Game Engine
 
-A modern, robust C implementation of the classic arcade game *Space Invaders*, built with a strict **Model-View-Controller (MVC)** architecture. This project demonstrates high-quality C programming practices, including memory safety, modular design, and dual-interface support (Graphical & Terminal).
+Space Invaders MVC is a robust, modular implementation of the classic arcade title, engineered in ISO C11 with a focus on strict Model-View-Controller (MVC) architectural principles. The project features a dual-rendering system supporting both high-performance graphical output (SDL3) and terminal-based ASCII rendering (Ncurses), while maintaining a hardware-independent core logic.
 
-## 🚀 Features
+## Technical Specifications
 
-### Core Architectural Features
-- **Strict MVC Pattern**: Complete separation between Logic (Model), Input (Controller), and Rendering (View).
-- **Dual Interface**:
-- **Shared Model**: Both interfaces run on the exact same game logic engine.
-- **Memory Safety**: Verified "Zero Leaks" with Valgrind.
+### Architecture
+- **Strict MVC Separation**: The core logic (Model) is entirely decoupled from rendering (View) and input processing (Controller).
+- **Logical Resolution**: The game engine operates on a fixed logical grid of 600x600 units, ensuring consistent physics and collision detection regardless of display scale.
+- **Polymorphic Rendering**: Abstract view interface allowing seamless switching between SDL3 and Ncurses.
+- **Memory Management**: Zero-leak policy enforced through rigorous Valgrind analysis and customized suppression profiles for system-level drivers.
 
-### Gameplay Features
-- **MOTHERSHIP Boss Fight**: Level 4 features the colossal "MOTHERSHIP" boss with adaptive attack patterns and a visual health bar.
-- **Bullet Hell Difficulty**: 
-    - **HARD/ROGUE**: Enemies use advanced firing patterns, launching projectiles from all columns simultaneously ("Bullet Hell").
-    - **Dynamic Shot Types**: Invaders fire different projectiles (ZigZag, Orbs, Lasers) based on their row rank.
-- **Improved HUD & Grid**: A dedicated 600px game grid with a visual vertical separator and safe HUD zones.
-- **Dual Interface**:
-    - **SDL3**: High-performance graphical view with radial 3D warp stars, particles, and smooth animations.
-    - **Ncurses**: ASCII-art terminal view playable over SSH.
-- **Customizable Controls**: Full keybinding remapping for both SDL and Terminal views (supports 2-player mode).
-- **Procedural Audio**: Real-time synthesized sound effects and music (managed via `miniaudio`).
-- **High Scores**: Persistent score tracking.
+### Core Features
+- **Deterministic Physics**: Frame-rate independent movement and collision systems.
+- **Advanced AI Patterns**: Tiered enemy behaviors including "Bullet Hell" mechanics in high-difficulty modes.
+- **Dynamic Audio Engine**: Real-time procedural audio synthesis and mixing via the `miniaudio` library.
+- **Expansion Support**: Modular entity system for easy addition of new projectile types, power-ups, and boss mechanics.
 
----
+## System Prerequisites
 
-## 🛠️ Installation
+### Core Development Tools
+- **Compiler**: GCC 11.0+ or Clang 13.0+ (requires C11 standard support).
+- **Build System**: GNU Make 4.0+.
+- **Analysis Tools**: Valgrind (for memory profiling), Doxygen (for documentation).
 
-### Prerequisites
+### Libraries
+| Library | Minimum Version | Purpose |
+|---------|-----------------|---------|
+| SDL3 | 3.0.0+ | Graphical Rendering, Event Handling |
+| SDL3_image | 3.0.0+ | Asset Loading (PNG, JPG) |
+| SDL3_ttf | 3.0.0+ | TrueType Font Rendering |
+| Ncurses | 6.0+ | Terminal Graphics |
+| Check | 0.15.0+ | Unit Testing Framework |
+| Miniaudio | Internal | Audio Backend (Header-only) |
 
-| Component | Requirement |
-|-----------|-------------|
-| Compiler | GCC or Clang (C11 support) |
-| Build System | GNU Make |
-| Graphics | SDL3, SDL3_image, SDL3_ttf |
-| Terminal | Ncurses |
-| Audio | Miniaudio (Included) |
+## Installation and Dependency Management
 
-### Linux Dependencies
+### Linux Distribution Packages
 
-**Debian / Ubuntu:**
+#### Debian / Ubuntu / Mint
 ```bash
 sudo apt update
-sudo apt install build-essential libsdl3-dev libsdl3-image-dev libsdl3-ttf-dev libncurses5-dev valgrind doxygen
+sudo apt install build-essential libsdl3-dev libsdl3-image-dev libsdl3-ttf-dev \
+                 libncurses5-dev check valgrind doxygen graphviz pkg-config
 ```
-*Note: If SDL3 is not yet in your repo, you may need to build it from source or use a PPA.*
 
-**Arch Linux:**
+#### Arch Linux
 ```bash
-sudo pacman -S base-devel sdl3 sdl3_image sdl3_ttf ncurses valgrind doxygen
+sudo pacman -S base-devel sdl3 sdl3_image sdl3_ttf ncurses check \
+               valgrind doxygen graphviz pkg-config
 ```
 
-**Fedora:**
+#### Fedora
 ```bash
-sudo dnf install gcc make SDL3-devel SDL3_image-devel SDL3_ttf-devel ncurses-devel valgrind doxygen
+sudo dnf install gcc make SDL3-devel SDL3_image-devel SDL3_ttf-devel \
+                 ncurses-devel check-devel valgrind doxygen graphviz pkg-config
 ```
 
-### Building the Project
+## Build System Integration
 
-The `Makefile` handles the entire build process.
+The project utilizes a comprehensive Makefile to manage the build lifecycle.
 
-```bash
-# Clone the repository
-git clone https://github.com/your-repo/space-invaders-mvc.git
-cd space-invaders-mvc
+### Standard Build Targets
+| Target | Description |
+|--------|-------------|
+| `make all` | Compiles SDL and Ncurses versions, and all auxiliary tools. |
+| `make sdl` | Builds the graphical version (`bin/space_invaders_sdl`). |
+| `make ncurses` | Builds the terminal version (`bin/space_invaders_ncurses`). |
+| `make tools` | Compiles specialized asset generation and testing tools. |
+| `make clean` | Removes all build artifacts, binaries, and temporary files. |
 
-# Build everything (SDL + Ncurses + Tools)
-make all
+### Execution Targets
+| Target | Description |
+|--------|-------------|
+| `make run-sdl` | Compiles and executes the SDL3 version. |
+| `make run-ncurses` | Compiles and executes the Ncurses version. |
+| `make test` | Executes the unit test suite via the Check framework. |
 
-# Build only SDL version
-make sdl
+### Advanced Verification
+| Target | Description |
+|--------|-------------|
+| `make fullcheck` | Performs a comprehensive audit: Clean build -> Tests -> Memory Check -> Style Check. |
+| `make valgrind-report` | Generates detailed memory leak reports in the `reports/` directory. |
+| `make doc` | Generates Doxygen documentation in `docs/html/`. |
+| `make debug` | Compiles with AddressSanitizer (ASan) and UndefinedBehaviorSanitizer (UBSan). |
+| `make release` | Compiles with full optimizations (`-O3`) and link-time optimization (`-flto`). |
 
-# Build only Terminal version
-make ncurses
-```
+## Project Structure
 
----
-
-## 🎮 Gameplay Manual
-
-### Controls
-
-| Action | Player 1 (SDL) | Player 2 (SDL) | Ncurses |
-|--------|----------------|----------------|---------|
-| **Move Left** | Left Arrow | A | Left Arrow |
-| **Move Right**| Right Arrow | D | Right Arrow |
-| **Shoot**     | Space | Left Shift | Space |
-| **Pause**     | P | P | P |
-| **Menu/Back** | ESC | ESC | Q |
-
-> **Note**: Remix your controls in **Settings > Controls**.
-
-### Enemies & Scoring
-
-| Enemy Type | Visual (SDL) | Visual (Ncurses) | Basis Points |
-|------------|--------------|------------------|--------------|
-| **Squid**  | Small (Top)  | `^` | 30 |
-| **Crab**   | Medium (Mid) | `M` | 20 |
-| **Octopus**| Large (Bot)  | `W` | 10 |
-| **Saucer** | Flying Ship  | `<=>` | 100 - 300 |
-| **MOTHERSHIP**| Dreadnought | `[BOSS]` | 5000 |
-
-### The MOTHERSHIP
-Appears at Level 4 (Normal+ Difficulty).
-- **Targeting**: The Mothership tracks player positions and launches heavy barrage attacks.
-- **Bullet Hell**: On HARD, the Mothership is supported by continuous invader fire from the entire grid.
-- **Weak Point**: Its center core. Watch the HP bar above the grid!
-
----
-
-## 🏗️ Architecture Deep Dive
-
-### The 600x600 Game Grid
-The game uses a logical coordinate system restricted to a **600px wide area**.
-- **0px - 600px**: Active Game Area (Enemies, Player, Saucer).
-- **600px - 800px**: HUD/Sidebar (Scores, Lives, Power-up Timers).
-- **Vertical Line**: A gray separator clearly demarcates the "Grid" from the "Interface".
-
-### Project Structure
-```
+```text
 .
-├── src/
-│   ├── core/           # MODEL: Game Logic (Physics, AI, State)
-│   ├── views/          # VIEW: Rendering code (SDL & Ncurses)
-│   ├── controller/     # CONTROLLER: Input mapping & Event handling
-│   ├── assets/         # Raw assets (images, sounds)
-│   └── main_*.c        # Entry points
-├── bin/                # Executables & Runtime assets
-├── build/              # Computed object files
-└── tests/              # Unit tests (Check framework)
+├── src/                # Implementation Source Code
+│   ├── core/           # Model: Physics, AI, State Management
+│   ├── views/          # View: SDL3 and Ncurses renderers
+│   ├── controller/     # Controller: Input handling and Command mapping
+│   ├── utils/          # Cross-platform utilities and Font management
+│   └── main_*.c        # Executable entry points
+├── tests/              # Unit tests and Mock environments
+├── tools/              # Static asset generators and development scripts
+├── bin/                # Compiled binaries and runtime assets
+├── assets/             # Raw media resources
+└── docs/               # Generated technical documentation
 ```
 
-### The MVC Loop
-1.  **Input**: User presses a key.
-2.  **Controller**: `input_handler.c` captures the raw keycode and maps it to a semantic `Command` (e.g., `CMD_SHOOT`).
-3.  **Model**: `model.c` processes the command, updates game state (entity positions, collisions). **The Model knows nothing about the View.**
-4.  **View**: `view_sdl.c` or `view_ncurses.c` reads the updated Model state and renders the frame.
+## Operational Manual
 
-### Key Files
--   `src/core/model.h`: The "Single Source of Truth". Defines `GameModel`, `Player`, `Invader` structs.
--   `src/views/view_base.h`: Defines the polymorphic `View` interface (`render`, `cleanup`).
--   `src/controller/controller.c`: The bridge that executes commands on the model.
+### Controls Configuration
+The game supports runtime keybinding modification via the Settings menu.
+
+| Action | Primary (SDL) | Secondary (SDL) | Ncurses Default |
+|--------|---------------|-----------------|-----------------|
+| Move Left | Left Arrow | A | Left Arrow |
+| Move Right | Right Arrow | D | Right Arrow |
+| Fire | Space | Left Shift | Space |
+| Pause | P | P | P |
+| Exit/Back | ESC | ESC | Q |
+
+### Entity Difficulty Scaling
+- **Level 1-3**: Standard movement and firing cooldowns.
+- **Level 4+ (Boss Phase)**: Activation of the Mothership. This entity features high health, phase-based attack patterns, and tracks player proximity.
+- **Hard/Rogue Mode**: Activates "Bullet Hell" protocols where invaders ignore standard column firing restrictions.
+
+## Troubleshooting and FAQ
+
+**1. SDL3 Header Not Found**
+Ensure `PKG_CONFIG_PATH` includes the directory containing `sdl3.pc`. On some systems, SDL3 must be compiled from source if not available in the default repositories.
+
+**2. Missing Assets at Runtime**
+Execute binaries from the project root or use `make prepare-assets` to ensure the `bin/` directory is synchronized with the latest resources.
+
+**3. Memory Report Errors**
+System-level leaks (e.g., within NVIDIA or Mesa drivers) are filtered via `valgrind.supp`. Only report leaks originating from the `src/` directory.
 
 ---
-
-## 🔧 Troubleshooting
-
-**1. "Error initialization SDL" / "Window closes immediately"**
-*   Check that `bin/assets/` exists and contains images/sounds.
-*   Run `make install-deps` (if script available) or verify SDL3 installation.
-
-**2. "Assets not found"**
-*   Ensure you run the game from the project root, or that the executables in `bin/` can find the `assets/` folder relative to them.
-*   The Makefile copies assets automatically. Try `make clean && make all`.
-
-**3. Audio Latency / Glitches**
-*   This uses `miniaudio.h`. If you are on Linux with PulseAudio/PipeWire, it should work out of the box.
-*   If using WSL, audio configurations can be tricky.
-
----
-
-## 📜 License
-
-This project is an academic reimplementation for educational purposes.
-Original Space Invaders concept © Taito Corporation.
-Code licensed under MIT.
+© 2026 Academic Research Project. Developed under the MIT license.
+Original Space Invaders concept owned by Taito Corporation.

@@ -184,7 +184,7 @@ bool sdl_view_load_resources(SDLView *view) {
     printf("AUDIO: Loaded assets/music_game.mp3 successfully\n");
   }
   ma_sound_set_looping(&view->music_game, MA_TRUE);
-  ma_sound_set_volume(&view->music_game, 1.0f); // Max volume
+  ma_sound_set_volume(&view->music_game, 1.0f); // Default initial volume, will be updated by model
 
   ma_sound_init_from_file(&view->audio_engine, "assets/music_boss.wav",
                           MA_SOUND_FLAG_DECODE, NULL, NULL, &view->music_boss);
@@ -1104,10 +1104,18 @@ void sdl_view_render(SDLView *view, const GameModel *model) {
   if (!view || !view->renderer || !model)
     return;
 
-  // Apply music volume from settings (Force MAX volume for debugging)
-  ma_sound_set_volume(&view->music_game, 1.0f);
-  ma_sound_set_volume(&view->music_boss, 1.0f);
-  ma_sound_set_volume(&view->music_victory, 1.0f);
+  // Apply music volume from settings
+  ma_sound_set_volume(&view->music_game, model->music_volume);
+  ma_sound_set_volume(&view->music_boss, model->music_volume);
+  ma_sound_set_volume(&view->music_victory, model->music_volume);
+
+  // Also apply volume to SFX for consistency (since there is no separate SFX slider yet)
+  ma_sound_set_volume(&view->sfx_shoot, model->music_volume);
+  ma_sound_set_volume(&view->sfx_death, model->music_volume);
+  ma_sound_set_volume(&view->sfx_enemy_bullet, model->music_volume);
+  ma_sound_set_volume(&view->sfx_gameover, model->music_volume);
+  ma_sound_set_volume(&view->sfx_damage, model->music_volume);
+  ma_sound_set_volume(&view->sfx_select, model->music_volume);
 
   // Reset audio tracking when starting new game from menu
   static GameState last_state = STATE_MENU;
