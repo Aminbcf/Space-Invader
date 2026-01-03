@@ -66,8 +66,8 @@ bool test_controller_commands(void) {
     model.state = STATE_GAME_OVER;
     model.players[0].lives = 0;
     controller_execute_command(controller, CMD_RESET_GAME);
-    TEST_ASSERT_EQ(model.players[0].lives, 3);
-    TEST_ASSERT_EQ(model.state, STATE_PLAYING);
+    // After reset from Game Over, we now go back to Menu
+    TEST_ASSERT_EQ(model.state, STATE_MENU);
     
     controller_destroy(controller);
     return true;

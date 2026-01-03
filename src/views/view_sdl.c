@@ -1367,6 +1367,8 @@ void sdl_view_render(SDLView *view, const GameModel *model) {
     snprintf(buf, 64, "Final Score: %d",
              model->players[0].score + model->players[1].score);
     draw_text_centered(view, buf, 320, (SDL_Color){255, 255, 255, 255}, false);
+    draw_text_centered(view, "Press any key for Menu", 380,
+                       (SDL_Color){255, 255, 255, 255}, false);
     break;
   }
   case STATE_GAME_OVER: {
@@ -1377,7 +1379,7 @@ void sdl_view_render(SDLView *view, const GameModel *model) {
     SDL_RenderFillRect(view->renderer, &overlay2);
     draw_text_centered(view, "GAME OVER", 280, (SDL_Color){255, 0, 0, 255},
                        true);
-    draw_text_centered(view, "Press R to Restart", 350,
+    draw_text_centered(view, "Press any key for Menu", 350,
                        (SDL_Color){255, 255, 255, 255}, false);
     break;
   }

@@ -29,12 +29,6 @@ bool test_model_init(void) {
         }
     }
     
-    // Test bases
-    for (int i = 0; i < BASE_COUNT; i++) {
-        TEST_ASSERT(model.bases[i].alive == true);
-        TEST_ASSERT_EQ(model.bases[i].health, 100);
-    }
-    
     // Test bullets are not alive (Player 1)
     for (int i = 0; i < PLAYER_BULLETS; i++) {
         TEST_ASSERT(model.player_bullets[0][i].alive == false);
@@ -110,12 +104,17 @@ bool test_model_shooting(void) {
         model_player_shoot(&model, 0);
     }
     
-    // All bullets should be alive now
+    // Fire all bullets - only 1 should succeed due to cooldown and limit
+    for (int i = 0; i < PLAYER_BULLETS; i++) {
+        model_player_shoot(&model, 0);
+    }
+    
+    // Only 1 bullet should be alive now (due to 1-bullet limit and cooldown)
     int alive_bullets = 0;
     for (int i = 0; i < PLAYER_BULLETS; i++) {
         if (model.player_bullets[0][i].alive) alive_bullets++;
     }
-    TEST_ASSERT_EQ(alive_bullets, PLAYER_BULLETS);
+    TEST_ASSERT_EQ(alive_bullets, 1);
     
     return true;
 }

@@ -20,9 +20,6 @@
 #define BULLET_HEIGHT 15
 #define PLAYER_BULLETS 20
 #define ENEMY_BULLETS 10
-#define BASE_COUNT 4
-#define BASE_WIDTH 60
-#define BASE_HEIGHT 40
 #define BIG_INVADER_WIDTH 60
 #define BIG_INVADER_HEIGHT 50
 
@@ -86,8 +83,7 @@ typedef enum {
   ENTITY_PLAYER,
   ENTITY_INVADER,
   ENTITY_SAUCER,
-  ENTITY_BULLET,
-  ENTITY_BASE
+  ENTITY_BULLET
 } EntityType;
 
 typedef struct {
@@ -162,12 +158,6 @@ typedef struct {
 
 typedef struct {
   Rect hitbox;
-  int health;
-  bool alive;
-} Base;
-
-typedef struct {
-  Rect hitbox;
   bool alive;
   bool is_player_bullet;
   int player_id; // 0 or 1
@@ -212,7 +202,6 @@ typedef struct {
   InvaderGrid invaders;
   Boss boss;
   Saucer saucer;
-  Base bases[BASE_COUNT];
   Bullet player_bullets[2][PLAYER_BULLETS];
   Bullet enemy_bullets[ENEMY_BULLETS];
   PowerUp powerups[10];
@@ -255,7 +244,6 @@ void model_update_boss(GameModel *model, float delta_time);
 // Collisions
 bool model_check_collision(Rect a, Rect b);
 void model_check_bullet_collisions(GameModel *model);
-void model_check_invader_base_collisions(GameModel *model);
 void model_check_player_invader_collision(GameModel *model);
 
 // State Management

@@ -624,7 +624,7 @@ void ncurses_view_render_game_over(NcursesView *view, int win) {
     mvprintw(cy - 1, cx - 4, "YOU WIN!");
   else
     mvprintw(cy - 1, cx - 5, "GAME OVER");
-  mvprintw(cy + 1, cx - 8, "Press R to Restart");
+  mvprintw(cy + 1, cx - 11, "Press any key for Menu");
   refresh();
 }
 

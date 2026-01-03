@@ -109,18 +109,6 @@ static void init_invaders(InvaderGrid *invaders, int level,
   }
 }
 
-static void init_bases(Base bases[]) {
-  int spacing = GAME_AREA_WIDTH / BASE_COUNT;
-  for (int i = 0; i < BASE_COUNT; i++) {
-    bases[i].hitbox.width = BASE_WIDTH;
-    bases[i].hitbox.height = BASE_HEIGHT;
-    bases[i].hitbox.x = (spacing * i) + (spacing / 2) - (BASE_WIDTH / 2);
-    bases[i].hitbox.y = SCREEN_HEIGHT - 100;
-    bases[i].health = 100;
-    bases[i].alive = true;
-  }
-}
-
 static void init_bullets(Bullet bullets[], int count, bool is_player,
                          int p_id) {
   for (int i = 0; i < count; i++) {
@@ -178,7 +166,6 @@ void model_init(GameModel *model) {
 
   init_invaders(&model->invaders, 1, DIFFICULTY_NORMAL);
   init_boss(&model->boss);
-  init_bases(model->bases);
 
   for (int p = 0; p < 2; p++)
     init_bullets(model->player_bullets[p], PLAYER_BULLETS, true, p);
@@ -649,7 +636,6 @@ void model_update(GameModel *model, float delta_time) {
 
   model_check_bullet_collisions(model);
   model_check_player_invader_collision(model);
-  model_check_invader_base_collisions(model);
 
   if (!model->boss.alive) {
     int attempts = 3; // Normal: check 3 columns
@@ -975,16 +961,6 @@ void model_check_bullet_collisions(GameModel *model) {
         }
       }
     }
-    for (int i = 0; i < BASE_COUNT; i++) {
-      if (model->bases[i].alive &&
-          model_check_collision(model->enemy_bullets[b].hitbox,
-                                model->bases[i].hitbox)) {
-        model->enemy_bullets[b].alive = false;
-        model->bases[i].health -= 10;
-        if (model->bases[i].health <= 0)
-          model->bases[i].alive = false;
-      }
-    }
   }
 }
 
@@ -1004,23 +980,6 @@ void model_check_player_invader_collision(GameModel *model) {
               model->state = STATE_GAME_OVER;
             }
           }
-        }
-      }
-    }
-  }
-}
-
-void model_check_invader_base_collisions(GameModel *model) {
-  if (model->boss.alive)
-    return;
-  for (int i = 0; i < INVADER_ROWS; i++) {
-    for (int j = 0; j < INVADER_COLS; j++) {
-      if (model->invaders.invaders[i][j].alive) {
-        for (int b = 0; b < BASE_COUNT; b++) {
-          if (model->bases[b].alive &&
-              model_check_collision(model->invaders.invaders[i][j].hitbox,
-                                    model->bases[b].hitbox))
-            model->bases[b].alive = false;
         }
       }
     }

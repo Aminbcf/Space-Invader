@@ -225,12 +225,11 @@ void controller_execute_command(Controller *controller, Command cmd) {
   // Handle Game Over / Win
   if (controller->model->state == STATE_GAME_OVER ||
       controller->model->state == STATE_WIN) {
-    if (cmd == CMD_RESET_GAME) {
-      model_reset_game(controller->model);
-      controller->model->state = STATE_PLAYING;
-    }
-    if (cmd == CMD_BACK) {
+    if (cmd == CMD_RESET_GAME || cmd == CMD_BACK || cmd == CMD_CONFIRM || cmd == CMD_SHOOT) {
       controller->model->state = STATE_MENU;
+      controller->model->menu_state = MENU_MAIN;
+      controller->model->menu_selection = 0;
+      controller->model->needs_redraw = true;
     }
     return;
   }
