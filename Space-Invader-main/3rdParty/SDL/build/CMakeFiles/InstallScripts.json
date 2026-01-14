@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Amine/Downloads/Space-Invader-main/Space-Invader-main/3rdParty/SDL/build/cmake_install.cmake",
+		"C:/Users/Amine/Downloads/Space-Invader-main/Space-Invader-main/3rdParty/SDL/build/test/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

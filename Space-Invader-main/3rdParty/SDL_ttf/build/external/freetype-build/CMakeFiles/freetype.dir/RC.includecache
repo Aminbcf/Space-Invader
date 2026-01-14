@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Amine/Downloads/Space-Invader-main/Space-Invader-main/3rdParty/SDL_ttf/external/freetype/src/base/ftver.rc
+windows.h
+-
+
