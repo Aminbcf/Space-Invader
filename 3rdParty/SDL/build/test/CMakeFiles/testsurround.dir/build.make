@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testsurround.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testsurround.dir/codegen:
 .PHONY : test/CMakeFiles/testsurround.dir/codegen
 
 test/CMakeFiles/testsurround.dir/testsurround.c.o: test/CMakeFiles/testsurround.dir/flags.make
-test/CMakeFiles/testsurround.dir/testsurround.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testsurround.c
+test/CMakeFiles/testsurround.dir/testsurround.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testsurround.c
 test/CMakeFiles/testsurround.dir/testsurround.c.o: test/CMakeFiles/testsurround.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testsurround.dir/testsurround.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testsurround.dir/testsurround.c.o -MF CMakeFiles/testsurround.dir/testsurround.c.o.d -o CMakeFiles/testsurround.dir/testsurround.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testsurround.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testsurround.dir/testsurround.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testsurround.dir/testsurround.c.o -MF CMakeFiles/testsurround.dir/testsurround.c.o.d -o CMakeFiles/testsurround.dir/testsurround.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testsurround.c
 
 test/CMakeFiles/testsurround.dir/testsurround.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testsurround.dir/testsurround.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testsurround.c > CMakeFiles/testsurround.dir/testsurround.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testsurround.c > CMakeFiles/testsurround.dir/testsurround.c.i
 
 test/CMakeFiles/testsurround.dir/testsurround.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testsurround.dir/testsurround.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testsurround.c -o CMakeFiles/testsurround.dir/testsurround.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testsurround.c -o CMakeFiles/testsurround.dir/testsurround.c.s
 
 # Object files for target testsurround
 testsurround_OBJECTS = \
@@ -100,20 +100,20 @@ test/testsurround: libSDL3_test.a
 test/testsurround: libSDL3.so.0.5.0
 test/testsurround: /usr/lib/libunwind-generic.so
 test/testsurround: /usr/lib/libunwind.so
-test/testsurround: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testsurround: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testsurround: test/CMakeFiles/testsurround.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testsurround"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testsurround.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testsurround"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testsurround.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testsurround.dir/build: test/testsurround
 .PHONY : test/CMakeFiles/testsurround.dir/build
 
 test/CMakeFiles/testsurround.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testsurround.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testsurround.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testsurround.dir/clean
 
 test/CMakeFiles/testsurround.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testsurround.dir/DependInfo.cmake "--color=$(COLOR)" testsurround
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testsurround.dir/DependInfo.cmake "--color=$(COLOR)" testsurround
 .PHONY : test/CMakeFiles/testsurround.dir/depend
 

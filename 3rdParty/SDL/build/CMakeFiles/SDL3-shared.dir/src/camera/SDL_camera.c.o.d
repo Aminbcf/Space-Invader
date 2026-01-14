@@ -1,16 +1,16 @@
 CMakeFiles/SDL3-shared.dir/src/camera/SDL_camera.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/SDL_camera.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/SDL_camera.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/SDL_syscamera.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/../SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/../video/SDL_surface_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/../video/SDL_blit.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/SDL_camera_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/../video/SDL_pixels_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/../thread/SDL_systhread.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/../thread/SDL_thread_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/../thread/pthread/SDL_systhread_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/SDL_syscamera.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/../SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/../video/SDL_surface_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/../video/SDL_blit.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/SDL_camera_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/../video/SDL_pixels_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/../thread/SDL_systhread.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/../thread/SDL_thread_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/../thread/pthread/SDL_systhread_c.h \
  /usr/include/pthread.h /usr/include/features.h /usr/include/sched.h \
  /usr/include/bits/types.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
@@ -33,5 +33,5 @@ CMakeFiles/SDL3-shared.dir/src/camera/SDL_camera.c.o: \
  /usr/include/bits/wordsize.h /usr/include/bits/types/__sigset_t.h \
  /usr/include/bits/types/struct___jmp_buf_tag.h \
  /usr/include/bits/pthread_stack_min-dynamic.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/../thread/../SDL_error_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/../thread/../SDL_internal.h
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/../thread/../SDL_error_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/../thread/../SDL_internal.h

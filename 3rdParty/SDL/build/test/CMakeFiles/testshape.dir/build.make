@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testshape.dir/depend.make
@@ -69,27 +69,27 @@ include test/CMakeFiles/testshape.dir/progress.make
 # Include the compile flags for this target's objects.
 include test/CMakeFiles/testshape.dir/flags.make
 
-test/glass.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating glass.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/glass.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/glass.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/glass.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/glass.h
+test/glass.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating glass.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/glass.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/glass.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/glass.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/glass.h
 
 test/CMakeFiles/testshape.dir/codegen:
 .PHONY : test/CMakeFiles/testshape.dir/codegen
 
 test/CMakeFiles/testshape.dir/testshape.c.o: test/CMakeFiles/testshape.dir/flags.make
-test/CMakeFiles/testshape.dir/testshape.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testshape.c
+test/CMakeFiles/testshape.dir/testshape.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testshape.c
 test/CMakeFiles/testshape.dir/testshape.c.o: test/CMakeFiles/testshape.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testshape.dir/testshape.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testshape.dir/testshape.c.o -MF CMakeFiles/testshape.dir/testshape.c.o.d -o CMakeFiles/testshape.dir/testshape.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testshape.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testshape.dir/testshape.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testshape.dir/testshape.c.o -MF CMakeFiles/testshape.dir/testshape.c.o.d -o CMakeFiles/testshape.dir/testshape.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testshape.c
 
 test/CMakeFiles/testshape.dir/testshape.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testshape.dir/testshape.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testshape.c > CMakeFiles/testshape.dir/testshape.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testshape.c > CMakeFiles/testshape.dir/testshape.c.i
 
 test/CMakeFiles/testshape.dir/testshape.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testshape.dir/testshape.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testshape.c -o CMakeFiles/testshape.dir/testshape.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testshape.c -o CMakeFiles/testshape.dir/testshape.c.s
 
 # Object files for target testshape
 testshape_OBJECTS = \
@@ -105,20 +105,20 @@ test/testshape: libSDL3_test.a
 test/testshape: libSDL3.so.0.5.0
 test/testshape: /usr/lib/libunwind-generic.so
 test/testshape: /usr/lib/libunwind.so
-test/testshape: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testshape: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testshape: test/CMakeFiles/testshape.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testshape"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testshape.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testshape"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testshape.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testshape.dir/build: test/testshape
 .PHONY : test/CMakeFiles/testshape.dir/build
 
 test/CMakeFiles/testshape.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testshape.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testshape.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testshape.dir/clean
 
 test/CMakeFiles/testshape.dir/depend: test/glass.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testshape.dir/DependInfo.cmake "--color=$(COLOR)" testshape
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testshape.dir/DependInfo.cmake "--color=$(COLOR)" testshape
 .PHONY : test/CMakeFiles/testshape.dir/depend
 

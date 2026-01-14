@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/filesystem/posix/SDL_sysfsops.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/filesystem/posix/SDL_sysfsops.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/filesystem/posix/SDL_sysfsops.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/filesystem/posix/../SDL_sysfilesystem.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/filesystem/posix/../SDL_sysfilesystem.h \
  /usr/include/stdio.h /usr/include/string.h /usr/include/errno.h \
  /usr/include/features.h /usr/include/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/asm/errno.h \

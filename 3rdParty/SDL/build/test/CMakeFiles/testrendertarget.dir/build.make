@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testrendertarget.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testrendertarget.dir/codegen:
 .PHONY : test/CMakeFiles/testrendertarget.dir/codegen
 
 test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o: test/CMakeFiles/testrendertarget.dir/flags.make
-test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrendertarget.c
+test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrendertarget.c
 test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o: test/CMakeFiles/testrendertarget.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o -MF CMakeFiles/testrendertarget.dir/testrendertarget.c.o.d -o CMakeFiles/testrendertarget.dir/testrendertarget.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrendertarget.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o -MF CMakeFiles/testrendertarget.dir/testrendertarget.c.o.d -o CMakeFiles/testrendertarget.dir/testrendertarget.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrendertarget.c
 
 test/CMakeFiles/testrendertarget.dir/testrendertarget.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testrendertarget.dir/testrendertarget.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrendertarget.c > CMakeFiles/testrendertarget.dir/testrendertarget.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrendertarget.c > CMakeFiles/testrendertarget.dir/testrendertarget.c.i
 
 test/CMakeFiles/testrendertarget.dir/testrendertarget.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testrendertarget.dir/testrendertarget.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrendertarget.c -o CMakeFiles/testrendertarget.dir/testrendertarget.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrendertarget.c -o CMakeFiles/testrendertarget.dir/testrendertarget.c.s
 
 # Object files for target testrendertarget
 testrendertarget_OBJECTS = \
@@ -92,7 +92,7 @@ testrendertarget_OBJECTS = \
 
 # External object files for target testrendertarget
 testrendertarget_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testrendertarget: test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o
 test/testrendertarget: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testrendertarget: libSDL3_test.a
 test/testrendertarget: libSDL3.so.0.5.0
 test/testrendertarget: /usr/lib/libunwind-generic.so
 test/testrendertarget: /usr/lib/libunwind.so
-test/testrendertarget: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testrendertarget: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testrendertarget: test/CMakeFiles/testrendertarget.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testrendertarget"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testrendertarget.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testrendertarget"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testrendertarget.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testrendertarget.dir/build: test/testrendertarget
 .PHONY : test/CMakeFiles/testrendertarget.dir/build
 
 test/CMakeFiles/testrendertarget.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testrendertarget.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testrendertarget.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testrendertarget.dir/clean
 
 test/CMakeFiles/testrendertarget.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testrendertarget.dir/DependInfo.cmake "--color=$(COLOR)" testrendertarget
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testrendertarget.dir/DependInfo.cmake "--color=$(COLOR)" testrendertarget
 .PHONY : test/CMakeFiles/testrendertarget.dir/depend
 

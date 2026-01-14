@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testtray.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testtray.dir/codegen:
 .PHONY : test/CMakeFiles/testtray.dir/codegen
 
 test/CMakeFiles/testtray.dir/testtray.c.o: test/CMakeFiles/testtray.dir/flags.make
-test/CMakeFiles/testtray.dir/testtray.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testtray.c
+test/CMakeFiles/testtray.dir/testtray.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testtray.c
 test/CMakeFiles/testtray.dir/testtray.c.o: test/CMakeFiles/testtray.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testtray.dir/testtray.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testtray.dir/testtray.c.o -MF CMakeFiles/testtray.dir/testtray.c.o.d -o CMakeFiles/testtray.dir/testtray.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testtray.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testtray.dir/testtray.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testtray.dir/testtray.c.o -MF CMakeFiles/testtray.dir/testtray.c.o.d -o CMakeFiles/testtray.dir/testtray.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testtray.c
 
 test/CMakeFiles/testtray.dir/testtray.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testtray.dir/testtray.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testtray.c > CMakeFiles/testtray.dir/testtray.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testtray.c > CMakeFiles/testtray.dir/testtray.c.i
 
 test/CMakeFiles/testtray.dir/testtray.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testtray.dir/testtray.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testtray.c -o CMakeFiles/testtray.dir/testtray.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testtray.c -o CMakeFiles/testtray.dir/testtray.c.s
 
 # Object files for target testtray
 testtray_OBJECTS = \
@@ -92,7 +92,7 @@ testtray_OBJECTS = \
 
 # External object files for target testtray
 testtray_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testtray: test/CMakeFiles/testtray.dir/testtray.c.o
 test/testtray: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testtray: libSDL3_test.a
 test/testtray: libSDL3.so.0.5.0
 test/testtray: /usr/lib/libunwind-generic.so
 test/testtray: /usr/lib/libunwind.so
-test/testtray: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testtray: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testtray: test/CMakeFiles/testtray.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testtray"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testtray.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testtray"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testtray.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testtray.dir/build: test/testtray
 .PHONY : test/CMakeFiles/testtray.dir/build
 
 test/CMakeFiles/testtray.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testtray.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testtray.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testtray.dir/clean
 
 test/CMakeFiles/testtray.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testtray.dir/DependInfo.cmake "--color=$(COLOR)" testtray
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testtray.dir/DependInfo.cmake "--color=$(COLOR)" testtray
 .PHONY : test/CMakeFiles/testtray.dir/depend
 

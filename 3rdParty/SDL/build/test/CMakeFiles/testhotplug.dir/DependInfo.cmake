@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testhotplug.c" "test/CMakeFiles/testhotplug.dir/testhotplug.c.o" "gcc" "test/CMakeFiles/testhotplug.dir/testhotplug.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testhotplug.c" "test/CMakeFiles/testhotplug.dir/testhotplug.c.o" "gcc" "test/CMakeFiles/testhotplug.dir/testhotplug.c.o.d"
   "" "test/testhotplug" "gcc" "test/CMakeFiles/testhotplug.dir/link.d"
   )
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testiconv.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testiconv.dir/codegen:
 .PHONY : test/CMakeFiles/testiconv.dir/codegen
 
 test/CMakeFiles/testiconv.dir/testiconv.c.o: test/CMakeFiles/testiconv.dir/flags.make
-test/CMakeFiles/testiconv.dir/testiconv.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testiconv.c
+test/CMakeFiles/testiconv.dir/testiconv.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testiconv.c
 test/CMakeFiles/testiconv.dir/testiconv.c.o: test/CMakeFiles/testiconv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testiconv.dir/testiconv.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testiconv.dir/testiconv.c.o -MF CMakeFiles/testiconv.dir/testiconv.c.o.d -o CMakeFiles/testiconv.dir/testiconv.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testiconv.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testiconv.dir/testiconv.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testiconv.dir/testiconv.c.o -MF CMakeFiles/testiconv.dir/testiconv.c.o.d -o CMakeFiles/testiconv.dir/testiconv.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testiconv.c
 
 test/CMakeFiles/testiconv.dir/testiconv.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testiconv.dir/testiconv.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testiconv.c > CMakeFiles/testiconv.dir/testiconv.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testiconv.c > CMakeFiles/testiconv.dir/testiconv.c.i
 
 test/CMakeFiles/testiconv.dir/testiconv.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testiconv.dir/testiconv.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testiconv.c -o CMakeFiles/testiconv.dir/testiconv.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testiconv.c -o CMakeFiles/testiconv.dir/testiconv.c.s
 
 # Object files for target testiconv
 testiconv_OBJECTS = \
@@ -92,7 +92,7 @@ testiconv_OBJECTS = \
 
 # External object files for target testiconv
 testiconv_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testiconv: test/CMakeFiles/testiconv.dir/testiconv.c.o
 test/testiconv: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testiconv: libSDL3_test.a
 test/testiconv: libSDL3.so.0.5.0
 test/testiconv: /usr/lib/libunwind-generic.so
 test/testiconv: /usr/lib/libunwind.so
-test/testiconv: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testiconv: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testiconv: test/CMakeFiles/testiconv.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testiconv"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testiconv.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testiconv"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testiconv.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testiconv.dir/build: test/testiconv
 .PHONY : test/CMakeFiles/testiconv.dir/build
 
 test/CMakeFiles/testiconv.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testiconv.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testiconv.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testiconv.dir/clean
 
 test/CMakeFiles/testiconv.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testiconv.dir/DependInfo.cmake "--color=$(COLOR)" testiconv
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testiconv.dir/DependInfo.cmake "--color=$(COLOR)" testiconv
 .PHONY : test/CMakeFiles/testiconv.dir/depend
 

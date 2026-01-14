@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testaudiostreamdynamicresample.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testaudiostreamdynamicresample.dir/codegen:
 .PHONY : test/CMakeFiles/testaudiostreamdynamicresample.dir/codegen
 
 test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o: test/CMakeFiles/testaudiostreamdynamicresample.dir/flags.make
-test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testaudiostreamdynamicresample.c
+test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testaudiostreamdynamicresample.c
 test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o: test/CMakeFiles/testaudiostreamdynamicresample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o -MF CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o.d -o CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testaudiostreamdynamicresample.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o -MF CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o.d -o CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testaudiostreamdynamicresample.c
 
 test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testaudiostreamdynamicresample.c > CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testaudiostreamdynamicresample.c > CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.i
 
 test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testaudiostreamdynamicresample.c -o CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testaudiostreamdynamicresample.c -o CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.s
 
 # Object files for target testaudiostreamdynamicresample
 testaudiostreamdynamicresample_OBJECTS = \
@@ -92,7 +92,7 @@ testaudiostreamdynamicresample_OBJECTS = \
 
 # External object files for target testaudiostreamdynamicresample
 testaudiostreamdynamicresample_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testaudiostreamdynamicresample: test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o
 test/testaudiostreamdynamicresample: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testaudiostreamdynamicresample: libSDL3_test.a
 test/testaudiostreamdynamicresample: libSDL3.so.0.5.0
 test/testaudiostreamdynamicresample: /usr/lib/libunwind-generic.so
 test/testaudiostreamdynamicresample: /usr/lib/libunwind.so
-test/testaudiostreamdynamicresample: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testaudiostreamdynamicresample: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testaudiostreamdynamicresample: test/CMakeFiles/testaudiostreamdynamicresample.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testaudiostreamdynamicresample"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testaudiostreamdynamicresample.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testaudiostreamdynamicresample"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testaudiostreamdynamicresample.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testaudiostreamdynamicresample.dir/build: test/testaudiostreamdynamicresample
 .PHONY : test/CMakeFiles/testaudiostreamdynamicresample.dir/build
 
 test/CMakeFiles/testaudiostreamdynamicresample.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testaudiostreamdynamicresample.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testaudiostreamdynamicresample.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testaudiostreamdynamicresample.dir/clean
 
 test/CMakeFiles/testaudiostreamdynamicresample.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testaudiostreamdynamicresample.dir/DependInfo.cmake "--color=$(COLOR)" testaudiostreamdynamicresample
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testaudiostreamdynamicresample.dir/DependInfo.cmake "--color=$(COLOR)" testaudiostreamdynamicresample
 .PHONY : test/CMakeFiles/testaudiostreamdynamicresample.dir/depend
 

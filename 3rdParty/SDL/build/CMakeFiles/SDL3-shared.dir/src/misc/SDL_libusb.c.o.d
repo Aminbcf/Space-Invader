@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/misc/SDL_libusb.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/misc/SDL_libusb.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/misc/SDL_libusb.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/misc/SDL_libusb.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/misc/SDL_libusb.h \
  /usr/include/libusb-1.0/libusb.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h \

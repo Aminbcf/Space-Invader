@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpu_spinning_cube.c" "test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.o" "gcc" "test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpu_spinning_cube.c" "test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.o" "gcc" "test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.o.d"
   "" "test/testgpu_spinning_cube" "gcc" "test/CMakeFiles/testgpu_spinning_cube.dir/link.d"
   )
 

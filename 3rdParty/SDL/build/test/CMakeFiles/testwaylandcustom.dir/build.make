@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testwaylandcustom.dir/depend.make
@@ -73,32 +73,32 @@ test/CMakeFiles/testwaylandcustom.dir/codegen:
 .PHONY : test/CMakeFiles/testwaylandcustom.dir/codegen
 
 test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o: test/CMakeFiles/testwaylandcustom.dir/flags.make
-test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testwaylandcustom.c
+test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testwaylandcustom.c
 test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o: test/CMakeFiles/testwaylandcustom.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o -MF CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o.d -o CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testwaylandcustom.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o -MF CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o.d -o CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testwaylandcustom.c
 
 test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testwaylandcustom.c > CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testwaylandcustom.c > CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.i
 
 test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testwaylandcustom.c -o CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testwaylandcustom.c -o CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.s
 
 test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o: test/CMakeFiles/testwaylandcustom.dir/flags.make
 test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o: wayland-generated-protocols/xdg-shell-protocol.c
 test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o: test/CMakeFiles/testwaylandcustom.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o -MF CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o.d -o CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o -MF CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o.d -o CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c
 
 test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c > CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c > CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i
 
 test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c -o CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c -o CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s
 
 # Object files for target testwaylandcustom
 testwaylandcustom_OBJECTS = \
@@ -118,20 +118,20 @@ test/testwaylandcustom: /usr/lib/libunwind-generic.so
 test/testwaylandcustom: /usr/lib/libunwind.so
 test/testwaylandcustom: /usr/lib/libwayland-client.so
 test/testwaylandcustom: /usr/lib/libm.so
-test/testwaylandcustom: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testwaylandcustom: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testwaylandcustom: test/CMakeFiles/testwaylandcustom.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testwaylandcustom"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testwaylandcustom.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testwaylandcustom"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testwaylandcustom.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testwaylandcustom.dir/build: test/testwaylandcustom
 .PHONY : test/CMakeFiles/testwaylandcustom.dir/build
 
 test/CMakeFiles/testwaylandcustom.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testwaylandcustom.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testwaylandcustom.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testwaylandcustom.dir/clean
 
 test/CMakeFiles/testwaylandcustom.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testwaylandcustom.dir/DependInfo.cmake "--color=$(COLOR)" testwaylandcustom
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testwaylandcustom.dir/DependInfo.cmake "--color=$(COLOR)" testwaylandcustom
 .PHONY : test/CMakeFiles/testwaylandcustom.dir/depend
 

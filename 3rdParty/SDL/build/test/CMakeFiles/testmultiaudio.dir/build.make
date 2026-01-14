@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testmultiaudio.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testmultiaudio.dir/codegen:
 .PHONY : test/CMakeFiles/testmultiaudio.dir/codegen
 
 test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o: test/CMakeFiles/testmultiaudio.dir/flags.make
-test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmultiaudio.c
+test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmultiaudio.c
 test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o: test/CMakeFiles/testmultiaudio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o -MF CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o.d -o CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmultiaudio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o -MF CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o.d -o CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmultiaudio.c
 
 test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testmultiaudio.dir/testmultiaudio.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmultiaudio.c > CMakeFiles/testmultiaudio.dir/testmultiaudio.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmultiaudio.c > CMakeFiles/testmultiaudio.dir/testmultiaudio.c.i
 
 test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testmultiaudio.dir/testmultiaudio.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmultiaudio.c -o CMakeFiles/testmultiaudio.dir/testmultiaudio.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmultiaudio.c -o CMakeFiles/testmultiaudio.dir/testmultiaudio.c.s
 
 # Object files for target testmultiaudio
 testmultiaudio_OBJECTS = \
@@ -92,7 +92,7 @@ testmultiaudio_OBJECTS = \
 
 # External object files for target testmultiaudio
 testmultiaudio_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testmultiaudio: test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o
 test/testmultiaudio: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testmultiaudio: libSDL3_test.a
 test/testmultiaudio: libSDL3.so.0.5.0
 test/testmultiaudio: /usr/lib/libunwind-generic.so
 test/testmultiaudio: /usr/lib/libunwind.so
-test/testmultiaudio: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testmultiaudio: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testmultiaudio: test/CMakeFiles/testmultiaudio.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testmultiaudio"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testmultiaudio.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testmultiaudio"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testmultiaudio.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testmultiaudio.dir/build: test/testmultiaudio
 .PHONY : test/CMakeFiles/testmultiaudio.dir/build
 
 test/CMakeFiles/testmultiaudio.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testmultiaudio.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testmultiaudio.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testmultiaudio.dir/clean
 
 test/CMakeFiles/testmultiaudio.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testmultiaudio.dir/DependInfo.cmake "--color=$(COLOR)" testmultiaudio
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testmultiaudio.dir/DependInfo.cmake "--color=$(COLOR)" testmultiaudio
 .PHONY : test/CMakeFiles/testmultiaudio.dir/depend
 

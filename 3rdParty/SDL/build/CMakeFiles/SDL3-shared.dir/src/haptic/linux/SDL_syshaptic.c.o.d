@@ -1,11 +1,11 @@
 CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/haptic/linux/SDL_syshaptic.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/haptic/linux/SDL_syshaptic.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/haptic/linux/../SDL_syshaptic.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/haptic/linux/../../joystick/SDL_sysjoystick.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/haptic/linux/../../joystick/SDL_joystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/haptic/linux/../../joystick/linux/SDL_sysjoystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/haptic/linux/../SDL_syshaptic.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/haptic/linux/../../joystick/SDL_sysjoystick.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/haptic/linux/../../joystick/SDL_joystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/haptic/linux/../../joystick/linux/SDL_sysjoystick_c.h \
  /usr/include/linux/input.h /usr/include/sys/time.h \
  /usr/include/features.h /usr/include/bits/types.h \
  /usr/include/bits/types/time_t.h \
@@ -23,8 +23,8 @@ CMakeFiles/SDL3-shared.dir/src/haptic/linux/SDL_syshaptic.c.o: \
  /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
  /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
  /usr/include/linux/input-event-codes.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/haptic/linux/../../core/linux/SDL_evdev_capabilities.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/haptic/linux/../../core/linux/SDL_udev.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/haptic/linux/../../core/linux/SDL_evdev_capabilities.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/haptic/linux/../../core/linux/SDL_udev.h \
  /usr/include/libudev.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
  /usr/include/sys/sysmacros.h /usr/include/bits/sysmacros.h \

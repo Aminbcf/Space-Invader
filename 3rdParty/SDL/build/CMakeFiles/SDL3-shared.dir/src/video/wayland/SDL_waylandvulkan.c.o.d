@@ -1,9 +1,9 @@
 CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandvulkan.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandvulkan.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../SDL_vulkan_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../wayland/SDL_waylanddyn.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../SDL_vulkan_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../wayland/SDL_waylanddyn.h \
  /usr/include/wayland-cursor.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
  /usr/include/wayland-util.h /usr/include/math.h \
@@ -18,27 +18,27 @@ CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o: \
  /usr/include/xkbcommon/xkbcommon-compose.h \
  /usr/include/wayland-client-core.h /usr/include/wayland-util.h \
  /usr/include/wayland-version.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../wayland/SDL_waylandsym.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/wayland-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../wayland/SDL_waylandsym.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/wayland-client-protocol.h \
  /usr/include/wayland-client.h /usr/include/wayland-client-core.h \
  /usr/include/wayland-client-protocol.h /usr/include/wayland-egl.h \
  /usr/include/wayland-egl-core.h /usr/include/libdecor-0/libdecor.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vk_platform.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan_core.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h264std.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codecs_common.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h264std_encode.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h264std.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h265std.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h265std_encode.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h265std.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h264std_decode.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h265std_decode.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_av1std.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_av1std_decode.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_av1std.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan_wayland.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vk_platform.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan_core.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h264std.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codecs_common.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h264std_encode.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h264std.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h265std.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h265std_encode.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h265std.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h264std_decode.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_h265std_decode.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_av1std.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_av1std_decode.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/../vk_video/vulkan_video_codec_av1std.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan_wayland.h \
  /usr/include/xcb/xcb.h /usr/include/sys/types.h /usr/include/sys/uio.h \
  /usr/include/features.h /usr/include/bits/types/struct_iovec.h \
  /usr/include/bits/uio_lim.h /usr/include/bits/uio-ext.h \
@@ -63,23 +63,23 @@ CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o: \
  /usr/include/bits/types/struct___jmp_buf_tag.h \
  /usr/include/bits/pthread_stack_min-dynamic.h /usr/include/xcb/xproto.h \
  /usr/include/xcb/xcb.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan_xcb.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan_xcb.h \
  /usr/include/X11/Xlib.h /usr/include/X11/X.h \
  /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan_xlib.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_error.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_video.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_close_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/.././khronos/vulkan/vulkan_xlib.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_error.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_video.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_close_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandvideo.h \
  /usr/include/EGL/egl.h /usr/include/EGL/eglplatform.h \
  /usr/include/KHR/khrplatform.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../SDL_sysvideo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../SDL_surface_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../SDL_blit.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_dbus.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../SDL_surface_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../SDL_blit.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_dbus.h \
  /usr/include/dbus-1.0/dbus/dbus.h \
  /usr/lib/dbus-1.0/include/dbus/dbus-arch-deps.h \
  /usr/include/dbus-1.0/dbus/dbus-macros.h \
@@ -98,9 +98,9 @@ CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandvulkan.c.o: \
  /usr/include/dbus-1.0/dbus/dbus-signature.h \
  /usr/include/dbus-1.0/dbus/dbus-syntax.h \
  /usr/include/dbus-1.0/dbus/dbus-threads.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_ime.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylanddyn.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandwindow.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_touch_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandshmbuffer.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandvulkan.h
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_ime.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylanddyn.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandwindow.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_touch_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandshmbuffer.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandvulkan.h

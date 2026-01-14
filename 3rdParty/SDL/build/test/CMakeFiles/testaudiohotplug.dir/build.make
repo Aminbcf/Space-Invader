@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testaudiohotplug.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testaudiohotplug.dir/codegen:
 .PHONY : test/CMakeFiles/testaudiohotplug.dir/codegen
 
 test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o: test/CMakeFiles/testaudiohotplug.dir/flags.make
-test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testaudiohotplug.c
+test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testaudiohotplug.c
 test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o: test/CMakeFiles/testaudiohotplug.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o -MF CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o.d -o CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testaudiohotplug.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o -MF CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o.d -o CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testaudiohotplug.c
 
 test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testaudiohotplug.c > CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testaudiohotplug.c > CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.i
 
 test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testaudiohotplug.c -o CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testaudiohotplug.c -o CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.s
 
 # Object files for target testaudiohotplug
 testaudiohotplug_OBJECTS = \
@@ -92,7 +92,7 @@ testaudiohotplug_OBJECTS = \
 
 # External object files for target testaudiohotplug
 testaudiohotplug_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testaudiohotplug: test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o
 test/testaudiohotplug: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testaudiohotplug: libSDL3_test.a
 test/testaudiohotplug: libSDL3.so.0.5.0
 test/testaudiohotplug: /usr/lib/libunwind-generic.so
 test/testaudiohotplug: /usr/lib/libunwind.so
-test/testaudiohotplug: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testaudiohotplug: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testaudiohotplug: test/CMakeFiles/testaudiohotplug.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testaudiohotplug"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testaudiohotplug.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testaudiohotplug"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testaudiohotplug.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testaudiohotplug.dir/build: test/testaudiohotplug
 .PHONY : test/CMakeFiles/testaudiohotplug.dir/build
 
 test/CMakeFiles/testaudiohotplug.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testaudiohotplug.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testaudiohotplug.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testaudiohotplug.dir/clean
 
 test/CMakeFiles/testaudiohotplug.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testaudiohotplug.dir/DependInfo.cmake "--color=$(COLOR)" testaudiohotplug
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testaudiohotplug.dir/DependInfo.cmake "--color=$(COLOR)" testaudiohotplug
 .PHONY : test/CMakeFiles/testaudiohotplug.dir/depend
 

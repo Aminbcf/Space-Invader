@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testwm.c" "test/CMakeFiles/testwm.dir/testwm.c.o" "gcc" "test/CMakeFiles/testwm.dir/testwm.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testwm.c" "test/CMakeFiles/testwm.dir/testwm.c.o" "gcc" "test/CMakeFiles/testwm.dir/testwm.c.o.d"
   "" "test/testwm" "gcc" "test/CMakeFiles/testwm.dir/link.d"
   )
 

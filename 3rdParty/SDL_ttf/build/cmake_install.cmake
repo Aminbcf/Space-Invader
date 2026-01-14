@@ -1,4 +1,4 @@
-# Install script for directory: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf
+# Install script for directory: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -55,8 +55,8 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/libSDL3_ttf.so.0.3.0"
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/libSDL3_ttf.so.0"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/libSDL3_ttf.so.0.3.0"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/libSDL3_ttf.so.0"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libSDL3_ttf.so.0.3.0"
@@ -66,7 +66,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
        NOT IS_SYMLINK "${file}")
       file(RPATH_CHANGE
            FILE "${file}"
-           OLD_RPATH "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build:"
+           OLD_RPATH "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build:"
            NEW_RPATH "")
       if(CMAKE_INSTALL_DO_STRIP)
         execute_process(COMMAND "/usr/bin/strip" "${file}")
@@ -76,20 +76,29 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/libSDL3_ttf.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/libSDL3_ttf.so")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/SDL3_ttf" TYPE FILE FILES
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/include/SDL3_ttf/SDL_textengine.h"
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/include/SDL3_ttf/SDL_ttf.h"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/include/SDL3_ttf/SDL_textengine.h"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/include/SDL3_ttf/SDL_ttf.h"
     )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_ttf" TYPE FILE FILES
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/SDL3_ttfConfig.cmake"
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/SDL3_ttfConfigVersion.cmake"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/SDL3_ttfConfig.cmake"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/SDL3_ttfConfigVersion.cmake"
+    )
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_ttf" TYPE FILE FILES
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/cmake/PkgConfigHelper.cmake"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/cmake/Findharfbuzz.cmake"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/cmake/Findplutosvg.cmake"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/cmake/Findplutovg.cmake"
     )
 endif()
 
@@ -97,7 +106,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_ttf/SDL3_ttf-shared-targets.cmake")
     file(DIFFERENT _cmake_export_file_changed FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_ttf/SDL3_ttf-shared-targets.cmake"
-         "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles/Export/1aef9053b29433b7b1ad141cf388ac90/SDL3_ttf-shared-targets.cmake")
+         "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles/Export/1aef9053b29433b7b1ad141cf388ac90/SDL3_ttf-shared-targets.cmake")
     if(_cmake_export_file_changed)
       file(GLOB _cmake_old_config_files "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_ttf/SDL3_ttf-shared-targets-*.cmake")
       if(_cmake_old_config_files)
@@ -110,24 +119,24 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
     endif()
     unset(_cmake_export_file_changed)
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_ttf" TYPE FILE FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles/Export/1aef9053b29433b7b1ad141cf388ac90/SDL3_ttf-shared-targets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_ttf" TYPE FILE FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles/Export/1aef9053b29433b7b1ad141cf388ac90/SDL3_ttf-shared-targets.cmake")
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_ttf" TYPE FILE FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles/Export/1aef9053b29433b7b1ad141cf388ac90/SDL3_ttf-shared-targets-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_ttf" TYPE FILE FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles/Export/1aef9053b29433b7b1ad141cf388ac90/SDL3_ttf-shared-targets-release.cmake")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/sdl3-ttf.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/sdl3-ttf.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/SDL3_ttf" TYPE FILE FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/LICENSE.txt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/SDL3_ttf" TYPE FILE FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/LICENSE.txt")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/install_local_manifest.txt"
+  file(WRITE "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -143,6 +152,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

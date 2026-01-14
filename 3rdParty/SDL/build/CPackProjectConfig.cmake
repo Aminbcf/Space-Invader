@@ -2,7 +2,7 @@ if(CPACK_PACKAGE_FILE_NAME MATCHES ".*-src$")
     message(FATAL_ERROR "Creating source archives for SDL 3.5.0 is not supported.")
 endif()
 
-set(PROJECT_SOURCE_DIR "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL")
+set(PROJECT_SOURCE_DIR "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL")
 set(SDL_CMAKE_PLATFORM "Linux")
 set(SDL_CPU_NAMES "")
 list(SORT SDL_CPU_NAMES)

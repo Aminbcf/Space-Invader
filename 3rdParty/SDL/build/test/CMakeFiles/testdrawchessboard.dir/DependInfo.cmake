@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdrawchessboard.c" "test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o" "gcc" "test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdrawchessboard.c" "test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o" "gcc" "test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o.d"
   "" "test/testdrawchessboard" "gcc" "test/CMakeFiles/testdrawchessboard.dir/link.d"
   )
 

@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/misc/unix/SDL_sysurl.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/misc/unix/SDL_sysurl.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/misc/unix/SDL_sysurl.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/misc/unix/../SDL_sysurl.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/misc/unix/../SDL_sysurl.h \
  /usr/include/stdio.h /usr/include/stdlib.h /usr/include/string.h \
  /usr/include/unistd.h /usr/include/features.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \

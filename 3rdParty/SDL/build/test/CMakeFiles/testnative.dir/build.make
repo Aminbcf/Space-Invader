@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testnative.dir/depend.make
@@ -73,60 +73,60 @@ test/CMakeFiles/testnative.dir/codegen:
 .PHONY : test/CMakeFiles/testnative.dir/codegen
 
 test/CMakeFiles/testnative.dir/testnative.c.o: test/CMakeFiles/testnative.dir/flags.make
-test/CMakeFiles/testnative.dir/testnative.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnative.c
+test/CMakeFiles/testnative.dir/testnative.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnative.c
 test/CMakeFiles/testnative.dir/testnative.c.o: test/CMakeFiles/testnative.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testnative.dir/testnative.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testnative.dir/testnative.c.o -MF CMakeFiles/testnative.dir/testnative.c.o.d -o CMakeFiles/testnative.dir/testnative.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnative.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testnative.dir/testnative.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testnative.dir/testnative.c.o -MF CMakeFiles/testnative.dir/testnative.c.o.d -o CMakeFiles/testnative.dir/testnative.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnative.c
 
 test/CMakeFiles/testnative.dir/testnative.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testnative.dir/testnative.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnative.c > CMakeFiles/testnative.dir/testnative.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnative.c > CMakeFiles/testnative.dir/testnative.c.i
 
 test/CMakeFiles/testnative.dir/testnative.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testnative.dir/testnative.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnative.c -o CMakeFiles/testnative.dir/testnative.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnative.c -o CMakeFiles/testnative.dir/testnative.c.s
 
 test/CMakeFiles/testnative.dir/testnativex11.c.o: test/CMakeFiles/testnative.dir/flags.make
-test/CMakeFiles/testnative.dir/testnativex11.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativex11.c
+test/CMakeFiles/testnative.dir/testnativex11.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativex11.c
 test/CMakeFiles/testnative.dir/testnativex11.c.o: test/CMakeFiles/testnative.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testnative.dir/testnativex11.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testnative.dir/testnativex11.c.o -MF CMakeFiles/testnative.dir/testnativex11.c.o.d -o CMakeFiles/testnative.dir/testnativex11.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativex11.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testnative.dir/testnativex11.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testnative.dir/testnativex11.c.o -MF CMakeFiles/testnative.dir/testnativex11.c.o.d -o CMakeFiles/testnative.dir/testnativex11.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativex11.c
 
 test/CMakeFiles/testnative.dir/testnativex11.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testnative.dir/testnativex11.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativex11.c > CMakeFiles/testnative.dir/testnativex11.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativex11.c > CMakeFiles/testnative.dir/testnativex11.c.i
 
 test/CMakeFiles/testnative.dir/testnativex11.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testnative.dir/testnativex11.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativex11.c -o CMakeFiles/testnative.dir/testnativex11.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativex11.c -o CMakeFiles/testnative.dir/testnativex11.c.s
 
 test/CMakeFiles/testnative.dir/testnativewayland.c.o: test/CMakeFiles/testnative.dir/flags.make
-test/CMakeFiles/testnative.dir/testnativewayland.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativewayland.c
+test/CMakeFiles/testnative.dir/testnativewayland.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativewayland.c
 test/CMakeFiles/testnative.dir/testnativewayland.c.o: test/CMakeFiles/testnative.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object test/CMakeFiles/testnative.dir/testnativewayland.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testnative.dir/testnativewayland.c.o -MF CMakeFiles/testnative.dir/testnativewayland.c.o.d -o CMakeFiles/testnative.dir/testnativewayland.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativewayland.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object test/CMakeFiles/testnative.dir/testnativewayland.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testnative.dir/testnativewayland.c.o -MF CMakeFiles/testnative.dir/testnativewayland.c.o.d -o CMakeFiles/testnative.dir/testnativewayland.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativewayland.c
 
 test/CMakeFiles/testnative.dir/testnativewayland.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testnative.dir/testnativewayland.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativewayland.c > CMakeFiles/testnative.dir/testnativewayland.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativewayland.c > CMakeFiles/testnative.dir/testnativewayland.c.i
 
 test/CMakeFiles/testnative.dir/testnativewayland.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testnative.dir/testnativewayland.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativewayland.c -o CMakeFiles/testnative.dir/testnativewayland.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativewayland.c -o CMakeFiles/testnative.dir/testnativewayland.c.s
 
 test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o: test/CMakeFiles/testnative.dir/flags.make
 test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o: wayland-generated-protocols/xdg-shell-protocol.c
 test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o: test/CMakeFiles/testnative.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o -MF CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o.d -o CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o -MF CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o.d -o CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c
 
 test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c > CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c > CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i
 
 test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c -o CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c -o CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s
 
 # Object files for target testnative
 testnative_OBJECTS = \
@@ -137,7 +137,7 @@ testnative_OBJECTS = \
 
 # External object files for target testnative
 testnative_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testnative: test/CMakeFiles/testnative.dir/testnative.c.o
 test/testnative: test/CMakeFiles/testnative.dir/testnativex11.c.o
@@ -153,20 +153,20 @@ test/testnative: /usr/lib/libunwind-generic.so
 test/testnative: /usr/lib/libunwind.so
 test/testnative: /usr/lib/libwayland-client.so
 test/testnative: /usr/lib/libm.so
-test/testnative: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testnative: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testnative: test/CMakeFiles/testnative.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable testnative"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testnative.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable testnative"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testnative.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testnative.dir/build: test/testnative
 .PHONY : test/CMakeFiles/testnative.dir/build
 
 test/CMakeFiles/testnative.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testnative.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testnative.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testnative.dir/clean
 
 test/CMakeFiles/testnative.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testnative.dir/DependInfo.cmake "--color=$(COLOR)" testnative
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testnative.dir/DependInfo.cmake "--color=$(COLOR)" testnative
 .PHONY : test/CMakeFiles/testnative.dir/depend
 

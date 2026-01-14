@@ -4,7 +4,7 @@ showimage: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/showimage.dir/examples/showimage.c.o \
   libSDL3_image.so.0.3.2 \
-  /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0 \
+  /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/libSDL3.so.0.5.0 \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libgcc_s.so \
@@ -38,7 +38,7 @@ CMakeFiles/showimage.dir/examples/showimage.c.o:
 
 libSDL3_image.so.0.3.2:
 
-/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0:
+/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/libSDL3.so.0.5.0:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a:
 

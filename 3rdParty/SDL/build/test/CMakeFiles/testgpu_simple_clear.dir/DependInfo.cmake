@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpu_simple_clear.c" "test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o" "gcc" "test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpu_simple_clear.c" "test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o" "gcc" "test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o.d"
   "" "test/testgpu_simple_clear" "gcc" "test/CMakeFiles/testgpu_simple_clear.dir/link.d"
   )
 

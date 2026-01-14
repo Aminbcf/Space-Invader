@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/showfps.c" "CMakeFiles/showfps.dir/examples/showfps.c.o" "gcc" "CMakeFiles/showfps.dir/examples/showfps.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/showfps.c" "CMakeFiles/showfps.dir/examples/showfps.c.o" "gcc" "CMakeFiles/showfps.dir/examples/showfps.c.o.d"
   "" "showfps" "gcc" "CMakeFiles/showfps.dir/link.d"
   )
 

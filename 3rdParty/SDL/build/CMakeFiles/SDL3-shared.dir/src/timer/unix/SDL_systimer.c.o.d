@@ -1,7 +1,7 @@
 CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/timer/unix/SDL_systimer.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/timer/unix/SDL_systimer.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
  /usr/include/stdio.h /usr/include/sys/time.h /usr/include/features.h \
  /usr/include/bits/types.h /usr/include/bits/types/time_t.h \
  /usr/include/bits/types/struct_timeval.h /usr/include/sys/select.h \
@@ -14,7 +14,7 @@ CMakeFiles/SDL3-shared.dir/src/timer/unix/SDL_systimer.c.o: \
  /usr/include/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
  /usr/include/asm-generic/errno-base.h /usr/include/bits/types/error_t.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/timer/unix/../SDL_timer_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/timer/unix/../SDL_timer_c.h \
  /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
  /usr/include/bits/types/clock_t.h /usr/include/bits/types/struct_tm.h \
  /usr/include/bits/types/struct_timespec.h \

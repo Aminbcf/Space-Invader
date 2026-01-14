@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testrendercopyex.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testrendercopyex.dir/codegen:
 .PHONY : test/CMakeFiles/testrendercopyex.dir/codegen
 
 test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o: test/CMakeFiles/testrendercopyex.dir/flags.make
-test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrendercopyex.c
+test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrendercopyex.c
 test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o: test/CMakeFiles/testrendercopyex.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o -MF CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o.d -o CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrendercopyex.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o -MF CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o.d -o CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrendercopyex.c
 
 test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testrendercopyex.dir/testrendercopyex.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrendercopyex.c > CMakeFiles/testrendercopyex.dir/testrendercopyex.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrendercopyex.c > CMakeFiles/testrendercopyex.dir/testrendercopyex.c.i
 
 test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testrendercopyex.dir/testrendercopyex.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrendercopyex.c -o CMakeFiles/testrendercopyex.dir/testrendercopyex.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrendercopyex.c -o CMakeFiles/testrendercopyex.dir/testrendercopyex.c.s
 
 # Object files for target testrendercopyex
 testrendercopyex_OBJECTS = \
@@ -92,7 +92,7 @@ testrendercopyex_OBJECTS = \
 
 # External object files for target testrendercopyex
 testrendercopyex_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testrendercopyex: test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o
 test/testrendercopyex: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testrendercopyex: libSDL3_test.a
 test/testrendercopyex: libSDL3.so.0.5.0
 test/testrendercopyex: /usr/lib/libunwind-generic.so
 test/testrendercopyex: /usr/lib/libunwind.so
-test/testrendercopyex: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testrendercopyex: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testrendercopyex: test/CMakeFiles/testrendercopyex.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testrendercopyex"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testrendercopyex.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testrendercopyex"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testrendercopyex.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testrendercopyex.dir/build: test/testrendercopyex
 .PHONY : test/CMakeFiles/testrendercopyex.dir/build
 
 test/CMakeFiles/testrendercopyex.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testrendercopyex.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testrendercopyex.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testrendercopyex.dir/clean
 
 test/CMakeFiles/testrendercopyex.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testrendercopyex.dir/DependInfo.cmake "--color=$(COLOR)" testrendercopyex
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testrendercopyex.dir/DependInfo.cmake "--color=$(COLOR)" testrendercopyex
 .PHONY : test/CMakeFiles/testrendercopyex.dir/depend
 

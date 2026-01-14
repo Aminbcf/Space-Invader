@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c" "test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o" "gcc" "test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o.d"
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnative.c" "test/CMakeFiles/testnative.dir/testnative.c.o" "gcc" "test/CMakeFiles/testnative.dir/testnative.c.o.d"
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativewayland.c" "test/CMakeFiles/testnative.dir/testnativewayland.c.o" "gcc" "test/CMakeFiles/testnative.dir/testnativewayland.c.o.d"
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testnativex11.c" "test/CMakeFiles/testnative.dir/testnativex11.c.o" "gcc" "test/CMakeFiles/testnative.dir/testnativex11.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c" "test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o" "gcc" "test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnative.c" "test/CMakeFiles/testnative.dir/testnative.c.o" "gcc" "test/CMakeFiles/testnative.dir/testnative.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativewayland.c" "test/CMakeFiles/testnative.dir/testnativewayland.c.o" "gcc" "test/CMakeFiles/testnative.dir/testnativewayland.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testnativex11.c" "test/CMakeFiles/testnative.dir/testnativex11.c.o" "gcc" "test/CMakeFiles/testnative.dir/testnativex11.c.o.d"
   "" "test/testnative" "gcc" "test/CMakeFiles/testnative.dir/link.d"
   )
 

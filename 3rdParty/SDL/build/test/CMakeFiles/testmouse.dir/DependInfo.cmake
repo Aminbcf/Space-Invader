@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmouse.c" "test/CMakeFiles/testmouse.dir/testmouse.c.o" "gcc" "test/CMakeFiles/testmouse.dir/testmouse.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmouse.c" "test/CMakeFiles/testmouse.dir/testmouse.c.o" "gcc" "test/CMakeFiles/testmouse.dir/testmouse.c.o.d"
   "" "test/testmouse" "gcc" "test/CMakeFiles/testmouse.dir/link.d"
   )
 

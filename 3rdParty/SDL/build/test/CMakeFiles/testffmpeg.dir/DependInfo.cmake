@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg.c" "test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o" "gcc" "test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o.d"
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg_vulkan.c" "test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o" "gcc" "test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg.c" "test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o" "gcc" "test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg_vulkan.c" "test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o" "gcc" "test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o.d"
   "" "test/testffmpeg" "gcc" "test/CMakeFiles/testffmpeg.dir/link.d"
   )
 

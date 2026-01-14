@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Utility rule file for generate-gamepad_image_headers.
 
@@ -66,118 +66,118 @@ include test/CMakeFiles/generate-gamepad_image_headers.dir/compiler_depend.make
 # Include the progress variables for this target.
 include test/CMakeFiles/generate-gamepad_image_headers.dir/progress.make
 
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis_arrow.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis_arrow.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_axis_arrow.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_axis.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_back.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_back.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_back.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_battery.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery_wired.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery_wired.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_battery_wired.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_background.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_background.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_button_background.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_button.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_small.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_small.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_button_small.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_abxy.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_abxy.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_face_abxy.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_axby.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_axby.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_face_axby.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_bayx.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_bayx.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_face_bayx.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_sony.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_sony.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_face_sony.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_front.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_front.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_front.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_touchpad.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_touchpad.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_touchpad.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wired.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wired.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_wired.h
-test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wireless.h
+test/CMakeFiles/generate-gamepad_image_headers: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wireless.h
 test/CMakeFiles/generate-gamepad_image_headers: test/gamepad_wireless.h
 
-test/gamepad_axis.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating gamepad_axis.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_axis.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_axis.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis.h
+test/gamepad_axis.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating gamepad_axis.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_axis.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_axis.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis.h
 
-test/gamepad_axis_arrow.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating gamepad_axis_arrow.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis_arrow.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_axis_arrow.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_axis_arrow.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis_arrow.h
+test/gamepad_axis_arrow.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating gamepad_axis_arrow.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis_arrow.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_axis_arrow.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_axis_arrow.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis_arrow.h
 
-test/gamepad_back.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating gamepad_back.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_back.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_back.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_back.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_back.h
+test/gamepad_back.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating gamepad_back.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_back.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_back.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_back.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_back.h
 
-test/gamepad_battery.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating gamepad_battery.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_battery.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_battery.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery.h
+test/gamepad_battery.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating gamepad_battery.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_battery.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_battery.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery.h
 
-test/gamepad_battery_wired.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating gamepad_battery_wired.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery_wired.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_battery_wired.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_battery_wired.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery_wired.h
+test/gamepad_battery_wired.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating gamepad_battery_wired.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery_wired.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_battery_wired.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_battery_wired.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery_wired.h
 
-test/gamepad_button.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating gamepad_button.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_button.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_button.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button.h
+test/gamepad_button.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating gamepad_button.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_button.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_button.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button.h
 
-test/gamepad_button_background.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating gamepad_button_background.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_background.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_button_background.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_button_background.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_background.h
+test/gamepad_button_background.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating gamepad_button_background.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_background.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_button_background.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_button_background.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_background.h
 
-test/gamepad_button_small.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating gamepad_button_small.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_small.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_button_small.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_button_small.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_small.h
+test/gamepad_button_small.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating gamepad_button_small.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_small.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_button_small.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_button_small.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_small.h
 
-test/gamepad_face_abxy.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating gamepad_face_abxy.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_abxy.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_abxy.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_abxy.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_abxy.h
+test/gamepad_face_abxy.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating gamepad_face_abxy.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_abxy.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_abxy.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_abxy.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_abxy.h
 
-test/gamepad_face_axby.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating gamepad_face_axby.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_axby.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_axby.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_axby.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_axby.h
+test/gamepad_face_axby.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating gamepad_face_axby.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_axby.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_axby.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_axby.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_axby.h
 
-test/gamepad_face_bayx.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating gamepad_face_bayx.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_bayx.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_bayx.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_bayx.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_bayx.h
+test/gamepad_face_bayx.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating gamepad_face_bayx.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_bayx.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_bayx.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_bayx.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_bayx.h
 
-test/gamepad_face_sony.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating gamepad_face_sony.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_sony.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_sony.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_sony.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_sony.h
+test/gamepad_face_sony.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating gamepad_face_sony.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_sony.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_sony.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_sony.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_sony.h
 
-test/gamepad_front.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating gamepad_front.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_front.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_front.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_front.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_front.h
+test/gamepad_front.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating gamepad_front.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_front.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_front.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_front.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_front.h
 
-test/gamepad_touchpad.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating gamepad_touchpad.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_touchpad.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_touchpad.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_touchpad.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_touchpad.h
+test/gamepad_touchpad.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating gamepad_touchpad.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_touchpad.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_touchpad.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_touchpad.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_touchpad.h
 
-test/gamepad_wired.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating gamepad_wired.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wired.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_wired.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_wired.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wired.h
+test/gamepad_wired.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating gamepad_wired.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wired.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_wired.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_wired.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wired.h
 
-test/gamepad_wireless.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating gamepad_wireless.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wireless.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_wireless.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_wireless.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wireless.h
+test/gamepad_wireless.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating gamepad_wireless.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wireless.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_wireless.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_wireless.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wireless.h
 
 test/CMakeFiles/generate-gamepad_image_headers.dir/codegen:
 .PHONY : test/CMakeFiles/generate-gamepad_image_headers.dir/codegen
@@ -207,10 +207,10 @@ test/CMakeFiles/generate-gamepad_image_headers.dir/build: generate-gamepad_image
 .PHONY : test/CMakeFiles/generate-gamepad_image_headers.dir/build
 
 test/CMakeFiles/generate-gamepad_image_headers.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/generate-gamepad_image_headers.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/generate-gamepad_image_headers.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/generate-gamepad_image_headers.dir/clean
 
 test/CMakeFiles/generate-gamepad_image_headers.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/generate-gamepad_image_headers.dir/DependInfo.cmake "--color=$(COLOR)" generate-gamepad_image_headers
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/generate-gamepad_image_headers.dir/DependInfo.cmake "--color=$(COLOR)" generate-gamepad_image_headers
 .PHONY : test/CMakeFiles/generate-gamepad_image_headers.dir/depend
 

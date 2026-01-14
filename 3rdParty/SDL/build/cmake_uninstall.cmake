@@ -1,8 +1,8 @@
-if (NOT EXISTS "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/install_manifest.txt\"")
+if (NOT EXISTS "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/install_manifest.txt\"")
 endif()
 
-file(READ "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/install_manifest.txt" files)
+file(READ "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach(file ${files})
     message(STATUS "Uninstalling \"$ENV{DESTDIR}${file}\"")

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/sdltests_utils.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/sdltests_utils.dir/codegen:
 .PHONY : test/CMakeFiles/sdltests_utils.dir/codegen
 
 test/CMakeFiles/sdltests_utils.dir/testutils.c.o: test/CMakeFiles/sdltests_utils.dir/flags.make
-test/CMakeFiles/sdltests_utils.dir/testutils.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testutils.c
+test/CMakeFiles/sdltests_utils.dir/testutils.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testutils.c
 test/CMakeFiles/sdltests_utils.dir/testutils.c.o: test/CMakeFiles/sdltests_utils.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/sdltests_utils.dir/testutils.c.o -MF CMakeFiles/sdltests_utils.dir/testutils.c.o.d -o CMakeFiles/sdltests_utils.dir/testutils.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testutils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/sdltests_utils.dir/testutils.c.o -MF CMakeFiles/sdltests_utils.dir/testutils.c.o.d -o CMakeFiles/sdltests_utils.dir/testutils.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testutils.c
 
 test/CMakeFiles/sdltests_utils.dir/testutils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/sdltests_utils.dir/testutils.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testutils.c > CMakeFiles/sdltests_utils.dir/testutils.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testutils.c > CMakeFiles/sdltests_utils.dir/testutils.c.i
 
 test/CMakeFiles/sdltests_utils.dir/testutils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/sdltests_utils.dir/testutils.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testutils.c -o CMakeFiles/sdltests_utils.dir/testutils.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testutils.c -o CMakeFiles/sdltests_utils.dir/testutils.c.s
 
 sdltests_utils: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
 sdltests_utils: test/CMakeFiles/sdltests_utils.dir/build.make
@@ -95,10 +95,10 @@ test/CMakeFiles/sdltests_utils.dir/build: sdltests_utils
 .PHONY : test/CMakeFiles/sdltests_utils.dir/build
 
 test/CMakeFiles/sdltests_utils.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/sdltests_utils.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/sdltests_utils.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/sdltests_utils.dir/clean
 
 test/CMakeFiles/sdltests_utils.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/DependInfo.cmake "--color=$(COLOR)" sdltests_utils
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/DependInfo.cmake "--color=$(COLOR)" sdltests_utils
 .PHONY : test/CMakeFiles/sdltests_utils.dir/depend
 

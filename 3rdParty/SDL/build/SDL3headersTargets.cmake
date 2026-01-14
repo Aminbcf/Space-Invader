@@ -50,7 +50,7 @@ unset(_cmake_expected_targets)
 add_library(SDL3::Headers INTERFACE IMPORTED)
 
 set_target_properties(SDL3::Headers PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/include-revision;/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/include-revision;/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include"
 )
 
 # This file does not depend on other imported targets which have

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testcustomcursor.c" "test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.o" "gcc" "test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testcustomcursor.c" "test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.o" "gcc" "test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.o.d"
   "" "test/testcustomcursor" "gcc" "test/CMakeFiles/testcustomcursor.dir/link.d"
   )
 

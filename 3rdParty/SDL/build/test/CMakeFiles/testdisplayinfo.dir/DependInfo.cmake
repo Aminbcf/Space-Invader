@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdisplayinfo.c" "test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.o" "gcc" "test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdisplayinfo.c" "test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.o" "gcc" "test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.o.d"
   "" "test/testdisplayinfo" "gcc" "test/CMakeFiles/testdisplayinfo.dir/link.d"
   )
 

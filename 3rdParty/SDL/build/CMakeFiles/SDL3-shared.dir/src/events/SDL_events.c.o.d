@@ -1,35 +1,35 @@
 CMakeFiles/SDL3-shared.dir/src/events/SDL_events.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_events.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_events.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_events_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../video/SDL_sysvideo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_error.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_video.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_close_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../video/SDL_surface_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../video/SDL_blit.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_clipboardevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_displayevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_dropevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_keyboard_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_keymap_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_mouse_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_touch_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_pen_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_windowevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/SDL_eventwatch_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../SDL_hints_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../audio/SDL_audio_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../camera/SDL_camera_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../camera/../SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../timer/SDL_timer_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../core/linux/SDL_udev.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_events_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../video/SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_error.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_video.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_close_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../video/SDL_surface_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../video/SDL_blit.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_clipboardevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_displayevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_dropevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_keyboard_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_keymap_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_mouse_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_touch_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_pen_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_windowevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/SDL_eventwatch_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../SDL_hints_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../audio/SDL_audio_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../camera/SDL_camera_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../camera/../SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../timer/SDL_timer_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../core/linux/SDL_udev.h \
  /usr/include/libudev.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
  /usr/include/sys/sysmacros.h /usr/include/features.h \
@@ -50,9 +50,9 @@ CMakeFiles/SDL3-shared.dir/src/events/SDL_events.c.o: \
  /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
  /usr/include/asm-generic/posix_types.h \
  /usr/include/linux/input-event-codes.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../joystick/SDL_joystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../sensor/SDL_sensor_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/core/linux/SDL_dbus.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../joystick/SDL_joystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../sensor/SDL_sensor_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/core/linux/SDL_dbus.h \
  /usr/include/dbus-1.0/dbus/dbus.h \
  /usr/lib/dbus-1.0/include/dbus/dbus-arch-deps.h \
  /usr/include/dbus-1.0/dbus/dbus-macros.h \
@@ -72,6 +72,6 @@ CMakeFiles/SDL3-shared.dir/src/events/SDL_events.c.o: \
  /usr/include/dbus-1.0/dbus/dbus-signature.h \
  /usr/include/dbus-1.0/dbus/dbus-syntax.h \
  /usr/include/dbus-1.0/dbus/dbus-threads.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/events/../tray/SDL_tray_utils.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/events/../tray/SDL_tray_utils.h \
  /usr/include/X11/Xlib.h /usr/include/X11/X.h \
  /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h

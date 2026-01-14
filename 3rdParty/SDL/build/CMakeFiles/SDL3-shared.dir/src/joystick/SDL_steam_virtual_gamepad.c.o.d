@@ -1,10 +1,10 @@
 CMakeFiles/SDL3-shared.dir/src/joystick/SDL_steam_virtual_gamepad.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/SDL_steam_virtual_gamepad.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/SDL_steam_virtual_gamepad.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/SDL_joystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/SDL_steam_virtual_gamepad.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/../core/unix/SDL_appid.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/SDL_joystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/SDL_steam_virtual_gamepad.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/../core/unix/SDL_appid.h \
  /usr/include/sys/types.h /usr/include/sys/stat.h /usr/include/features.h \
  /usr/include/bits/types.h /usr/include/bits/types/struct_timespec.h \
  /usr/include/bits/types/time_t.h /usr/include/bits/stat.h \

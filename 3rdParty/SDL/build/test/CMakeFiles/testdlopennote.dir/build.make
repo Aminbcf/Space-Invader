@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testdlopennote.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testdlopennote.dir/codegen:
 .PHONY : test/CMakeFiles/testdlopennote.dir/codegen
 
 test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o: test/CMakeFiles/testdlopennote.dir/flags.make
-test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdlopennote.c
+test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdlopennote.c
 test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o: test/CMakeFiles/testdlopennote.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o -MF CMakeFiles/testdlopennote.dir/testdlopennote.c.o.d -o CMakeFiles/testdlopennote.dir/testdlopennote.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdlopennote.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o -MF CMakeFiles/testdlopennote.dir/testdlopennote.c.o.d -o CMakeFiles/testdlopennote.dir/testdlopennote.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdlopennote.c
 
 test/CMakeFiles/testdlopennote.dir/testdlopennote.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testdlopennote.dir/testdlopennote.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdlopennote.c > CMakeFiles/testdlopennote.dir/testdlopennote.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdlopennote.c > CMakeFiles/testdlopennote.dir/testdlopennote.c.i
 
 test/CMakeFiles/testdlopennote.dir/testdlopennote.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testdlopennote.dir/testdlopennote.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdlopennote.c -o CMakeFiles/testdlopennote.dir/testdlopennote.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdlopennote.c -o CMakeFiles/testdlopennote.dir/testdlopennote.c.s
 
 # Object files for target testdlopennote
 testdlopennote_OBJECTS = \
@@ -92,7 +92,7 @@ testdlopennote_OBJECTS = \
 
 # External object files for target testdlopennote
 testdlopennote_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testdlopennote: test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o
 test/testdlopennote: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testdlopennote: libSDL3_test.a
 test/testdlopennote: libSDL3.so.0.5.0
 test/testdlopennote: /usr/lib/libunwind-generic.so
 test/testdlopennote: /usr/lib/libunwind.so
-test/testdlopennote: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testdlopennote: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testdlopennote: test/CMakeFiles/testdlopennote.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testdlopennote"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testdlopennote.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testdlopennote"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testdlopennote.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testdlopennote.dir/build: test/testdlopennote
 .PHONY : test/CMakeFiles/testdlopennote.dir/build
 
 test/CMakeFiles/testdlopennote.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testdlopennote.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testdlopennote.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testdlopennote.dir/clean
 
 test/CMakeFiles/testdlopennote.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testdlopennote.dir/DependInfo.cmake "--color=$(COLOR)" testdlopennote
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testdlopennote.dir/DependInfo.cmake "--color=$(COLOR)" testdlopennote
 .PHONY : test/CMakeFiles/testdlopennote.dir/depend
 

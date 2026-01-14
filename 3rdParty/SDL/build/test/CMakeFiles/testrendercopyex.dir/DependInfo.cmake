@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrendercopyex.c" "test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o" "gcc" "test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrendercopyex.c" "test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o" "gcc" "test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o.d"
   "" "test/testrendercopyex" "gcc" "test/CMakeFiles/testrendercopyex.dir/link.d"
   )
 

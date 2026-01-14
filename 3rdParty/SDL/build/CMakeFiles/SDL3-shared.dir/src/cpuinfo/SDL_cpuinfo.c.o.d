@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/cpuinfo/SDL_cpuinfo.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/cpuinfo/SDL_cpuinfo.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/cpuinfo/SDL_cpuinfo.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/cpuinfo/SDL_cpuinfo_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/cpuinfo/SDL_cpuinfo_c.h \
  /usr/include/unistd.h /usr/include/features.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/wordsize.h /usr/include/bits/types.h \

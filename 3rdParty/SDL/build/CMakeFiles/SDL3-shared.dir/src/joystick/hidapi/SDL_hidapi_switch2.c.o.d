@@ -1,10 +1,10 @@
 CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/hidapi/SDL_hidapi_switch2.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/hidapi/SDL_hidapi_switch2.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/hidapi/../../SDL_hints_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/hidapi/../../SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/hidapi/../../misc/SDL_libusb.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/hidapi/../../SDL_hints_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/hidapi/../../SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/hidapi/../../misc/SDL_libusb.h \
  /usr/include/libusb-1.0/libusb.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h \
@@ -27,8 +27,8 @@ CMakeFiles/SDL3-shared.dir/src/joystick/hidapi/SDL_hidapi_switch2.c.o: \
  /usr/include/bits/types/clockid_t.h /usr/include/bits/types/timer_t.h \
  /usr/include/bits/types/struct_itimerspec.h \
  /usr/include/bits/types/locale_t.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/hidapi/../SDL_sysjoystick.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/hidapi/../SDL_joystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/hidapi/SDL_hidapijoystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/hidapi/../usb_ids.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/hidapi/SDL_hidapi_rumble.h
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/hidapi/../SDL_sysjoystick.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/hidapi/../SDL_joystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/hidapi/SDL_hidapijoystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/hidapi/../usb_ids.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/hidapi/SDL_hidapi_rumble.h

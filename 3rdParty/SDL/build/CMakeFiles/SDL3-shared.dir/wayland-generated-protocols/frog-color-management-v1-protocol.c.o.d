@@ -1,5 +1,5 @@
 CMakeFiles/SDL3-shared.dir/wayland-generated-protocols/frog-color-management-v1-protocol.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/frog-color-management-v1-protocol.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/frog-color-management-v1-protocol.c \
  /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  /usr/include/stdlib.h \

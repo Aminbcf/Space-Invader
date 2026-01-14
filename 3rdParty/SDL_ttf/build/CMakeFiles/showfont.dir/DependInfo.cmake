@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/editbox.c" "CMakeFiles/showfont.dir/examples/editbox.c.o" "gcc" "CMakeFiles/showfont.dir/examples/editbox.c.o.d"
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/showfont.c" "CMakeFiles/showfont.dir/examples/showfont.c.o" "gcc" "CMakeFiles/showfont.dir/examples/showfont.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/editbox.c" "CMakeFiles/showfont.dir/examples/editbox.c.o" "gcc" "CMakeFiles/showfont.dir/examples/editbox.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/showfont.c" "CMakeFiles/showfont.dir/examples/showfont.c.o" "gcc" "CMakeFiles/showfont.dir/examples/showfont.c.o.d"
   "" "showfont" "gcc" "CMakeFiles/showfont.dir/link.d"
   )
 

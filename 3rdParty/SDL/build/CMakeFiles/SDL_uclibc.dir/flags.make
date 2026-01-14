@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DUSING_GENERATED_CONFIG_H
 
-C_INCLUDES = -I/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/include-config-release/build_config -I/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src -I/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include
+C_INCLUDES = -I/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/include-config-release/build_config -I/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src -I/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include
 
 C_FLAGS = -O3 -DNDEBUG -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fdiagnostics-color=always
 

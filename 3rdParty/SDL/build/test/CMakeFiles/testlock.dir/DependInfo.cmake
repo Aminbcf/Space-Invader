@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testlock.c" "test/CMakeFiles/testlock.dir/testlock.c.o" "gcc" "test/CMakeFiles/testlock.dir/testlock.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testlock.c" "test/CMakeFiles/testlock.dir/testlock.c.o" "gcc" "test/CMakeFiles/testlock.dir/testlock.c.o.d"
   "" "test/testlock" "gcc" "test/CMakeFiles/testlock.dir/link.d"
   )
 

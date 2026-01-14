@@ -1,9 +1,9 @@
 CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/jack/SDL_jackaudio.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/jack/SDL_jackaudio.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/jack/../SDL_sysaudio.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/jack/SDL_jackaudio.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/jack/../SDL_sysaudio.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/jack/SDL_jackaudio.h \
  /usr/include/jack/jack.h /usr/include/jack/systemdeps.h \
  /usr/include/inttypes.h /usr/include/pthread.h /usr/include/features.h \
  /usr/include/sched.h /usr/include/bits/types.h \
@@ -29,8 +29,8 @@ CMakeFiles/SDL3-shared.dir/src/audio/jack/SDL_jackaudio.c.o: \
  /usr/include/bits/pthread_stack_min-dynamic.h /usr/include/sys/types.h \
  /usr/include/jack/types.h /usr/include/jack/transport.h \
  /usr/include/jack/weakmacros.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/jack/../../thread/SDL_systhread.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/jack/../../thread/SDL_thread_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/jack/../../thread/pthread/SDL_systhread_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/jack/../../thread/../SDL_error_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/jack/../../thread/../SDL_internal.h
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/jack/../../thread/SDL_systhread.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/jack/../../thread/SDL_thread_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/jack/../../thread/pthread/SDL_systhread_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/jack/../../thread/../SDL_error_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/jack/../../thread/../SDL_internal.h

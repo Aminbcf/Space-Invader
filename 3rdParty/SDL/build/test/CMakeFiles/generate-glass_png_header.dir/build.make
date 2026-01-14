@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Utility rule file for generate-glass_png_header.
 
@@ -66,13 +66,13 @@ include test/CMakeFiles/generate-glass_png_header.dir/compiler_depend.make
 # Include the progress variables for this target.
 include test/CMakeFiles/generate-glass_png_header.dir/progress.make
 
-test/CMakeFiles/generate-glass_png_header: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/glass.h
+test/CMakeFiles/generate-glass_png_header: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/glass.h
 test/CMakeFiles/generate-glass_png_header: test/glass.h
 
-test/glass.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating glass.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/glass.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/glass.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/glass.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/glass.h
+test/glass.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating glass.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/glass.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/glass.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/glass.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/glass.h
 
 test/CMakeFiles/generate-glass_png_header.dir/codegen:
 .PHONY : test/CMakeFiles/generate-glass_png_header.dir/codegen
@@ -87,10 +87,10 @@ test/CMakeFiles/generate-glass_png_header.dir/build: generate-glass_png_header
 .PHONY : test/CMakeFiles/generate-glass_png_header.dir/build
 
 test/CMakeFiles/generate-glass_png_header.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/generate-glass_png_header.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/generate-glass_png_header.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/generate-glass_png_header.dir/clean
 
 test/CMakeFiles/generate-glass_png_header.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/generate-glass_png_header.dir/DependInfo.cmake "--color=$(COLOR)" generate-glass_png_header
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/generate-glass_png_header.dir/DependInfo.cmake "--color=$(COLOR)" generate-glass_png_header
 .PHONY : test/CMakeFiles/generate-glass_png_header.dir/depend
 

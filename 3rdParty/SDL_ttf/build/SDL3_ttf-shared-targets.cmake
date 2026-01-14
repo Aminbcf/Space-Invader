@@ -51,7 +51,7 @@ add_library(SDL3_ttf::SDL3_ttf-shared SHARED IMPORTED)
 
 set_target_properties(SDL3_ttf::SDL3_ttf-shared PROPERTIES
   COMPATIBLE_INTERFACE_BOOL "SDL3_SHARED"
-  INTERFACE_INCLUDE_DIRECTORIES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/include"
   INTERFACE_LINK_LIBRARIES "SDL3::Headers"
   INTERFACE_SDL3_SHARED "ON"
 )
@@ -60,7 +60,7 @@ set_target_properties(SDL3_ttf::SDL3_ttf-shared PROPERTIES
 set_property(TARGET SDL3_ttf::SDL3_ttf-shared APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(SDL3_ttf::SDL3_ttf-shared PROPERTIES
   IMPORTED_LINK_DEPENDENT_LIBRARIES_RELEASE "SDL3::SDL3-shared"
-  IMPORTED_LOCATION_RELEASE "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/libSDL3_ttf.so.0.3.0"
+  IMPORTED_LOCATION_RELEASE "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/libSDL3_ttf.so.0.3.0"
   IMPORTED_SONAME_RELEASE "libSDL3_ttf.so.0"
   )
 

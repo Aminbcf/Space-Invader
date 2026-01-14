@@ -1,7 +1,7 @@
 CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/SDL_sysjoystick.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/SDL_sysjoystick.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
  /usr/include/sys/stat.h /usr/include/features.h \
  /usr/include/bits/types.h /usr/include/bits/types/struct_timespec.h \
  /usr/include/bits/types/time_t.h /usr/include/bits/stat.h \
@@ -47,36 +47,36 @@ CMakeFiles/SDL3-shared.dir/src/joystick/linux/SDL_sysjoystick.c.o: \
  /usr/include/linux/input.h /usr/include/sys/time.h \
  /usr/include/bits/types/struct_timeval.h /usr/include/sys/select.h \
  /usr/include/sys/types.h /usr/include/linux/input-event-codes.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_events_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/../video/SDL_sysvideo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_error.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_video.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_close_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/../video/SDL_surface_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/../video/SDL_blit.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_clipboardevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_displayevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_dropevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_keyboard_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_keymap_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_mouse_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_touch_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_pen_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/../SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../events/SDL_windowevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../core/linux/SDL_evdev.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../SDL_sysjoystick.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../SDL_joystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../SDL_joystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../usb_ids.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/SDL_sysjoystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../hidapi/SDL_hidapijoystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../hidapi/../usb_ids.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../core/linux/SDL_evdev_capabilities.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/linux/../../core/linux/SDL_udev.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_events_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/../video/SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_error.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_video.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_close_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/../video/SDL_surface_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/../video/SDL_blit.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_clipboardevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_displayevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_dropevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_keyboard_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_keymap_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_mouse_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_touch_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_pen_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/../SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../events/SDL_windowevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../core/linux/SDL_evdev.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../SDL_sysjoystick.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../SDL_joystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../SDL_joystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../usb_ids.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/SDL_sysjoystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../hidapi/SDL_hidapijoystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../hidapi/../usb_ids.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../core/linux/SDL_evdev_capabilities.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/linux/../../core/linux/SDL_udev.h \
  /usr/include/libudev.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
  /usr/include/sys/sysmacros.h /usr/include/bits/sysmacros.h

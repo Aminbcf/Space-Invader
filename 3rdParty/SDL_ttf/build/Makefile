@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -107,7 +107,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\" \"devel\" \"headers\" \"library\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"devel\" \"library\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -152,16 +152,16 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
@@ -265,58 +265,6 @@ testgputext: cmake_check_build_system
 testgputext/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testgputext.dir/build.make CMakeFiles/testgputext.dir/build
 .PHONY : testgputext/fast
-
-#=============================================================================
-# Target rules for targets named harfbuzz
-
-# Build rule for target.
-harfbuzz: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 harfbuzz
-.PHONY : harfbuzz
-
-# fast build rule for target.
-harfbuzz/fast:
-	$(MAKE) $(MAKESILENT) -f external/harfbuzz-build/CMakeFiles/harfbuzz.dir/build.make external/harfbuzz-build/CMakeFiles/harfbuzz.dir/build
-.PHONY : harfbuzz/fast
-
-#=============================================================================
-# Target rules for targets named freetype
-
-# Build rule for target.
-freetype: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 freetype
-.PHONY : freetype
-
-# fast build rule for target.
-freetype/fast:
-	$(MAKE) $(MAKESILENT) -f external/freetype-build/CMakeFiles/freetype.dir/build.make external/freetype-build/CMakeFiles/freetype.dir/build
-.PHONY : freetype/fast
-
-#=============================================================================
-# Target rules for targets named plutovg
-
-# Build rule for target.
-plutovg: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plutovg
-.PHONY : plutovg
-
-# fast build rule for target.
-plutovg/fast:
-	$(MAKE) $(MAKESILENT) -f external/plutovg-build/CMakeFiles/plutovg.dir/build.make external/plutovg-build/CMakeFiles/plutovg.dir/build
-.PHONY : plutovg/fast
-
-#=============================================================================
-# Target rules for targets named plutosvg
-
-# Build rule for target.
-plutosvg: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plutosvg
-.PHONY : plutosvg
-
-# fast build rule for target.
-plutosvg/fast:
-	$(MAKE) $(MAKESILENT) -f external/plutosvg-guild/CMakeFiles/plutosvg.dir/build.make external/plutosvg-guild/CMakeFiles/plutosvg.dir/build
-.PHONY : plutosvg/fast
 
 examples/editbox.o: examples/editbox.c.o
 .PHONY : examples/editbox.o
@@ -622,11 +570,7 @@ help:
 	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... SDL3_ttf-shared"
-	@echo "... freetype"
 	@echo "... glfont"
-	@echo "... harfbuzz"
-	@echo "... plutosvg"
-	@echo "... plutovg"
 	@echo "... showfont"
 	@echo "... showfps"
 	@echo "... testapp"

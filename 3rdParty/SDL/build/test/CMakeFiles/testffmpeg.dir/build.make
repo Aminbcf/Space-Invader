@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testffmpeg.dir/depend.make
@@ -69,41 +69,41 @@ include test/CMakeFiles/testffmpeg.dir/progress.make
 # Include the compile flags for this target's objects.
 include test/CMakeFiles/testffmpeg.dir/flags.make
 
-test/icon.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating icon.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/icon.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/icon.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon.h
+test/icon.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating icon.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/icon.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/icon.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon.h
 
 test/CMakeFiles/testffmpeg.dir/codegen:
 .PHONY : test/CMakeFiles/testffmpeg.dir/codegen
 
 test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o: test/CMakeFiles/testffmpeg.dir/flags.make
-test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg.c
+test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg.c
 test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o: test/CMakeFiles/testffmpeg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o -MF CMakeFiles/testffmpeg.dir/testffmpeg.c.o.d -o CMakeFiles/testffmpeg.dir/testffmpeg.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o -MF CMakeFiles/testffmpeg.dir/testffmpeg.c.o.d -o CMakeFiles/testffmpeg.dir/testffmpeg.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg.c
 
 test/CMakeFiles/testffmpeg.dir/testffmpeg.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testffmpeg.dir/testffmpeg.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg.c > CMakeFiles/testffmpeg.dir/testffmpeg.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg.c > CMakeFiles/testffmpeg.dir/testffmpeg.c.i
 
 test/CMakeFiles/testffmpeg.dir/testffmpeg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testffmpeg.dir/testffmpeg.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg.c -o CMakeFiles/testffmpeg.dir/testffmpeg.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg.c -o CMakeFiles/testffmpeg.dir/testffmpeg.c.s
 
 test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o: test/CMakeFiles/testffmpeg.dir/flags.make
-test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg_vulkan.c
+test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg_vulkan.c
 test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o: test/CMakeFiles/testffmpeg.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o -MF CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o.d -o CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg_vulkan.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o -MF CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o.d -o CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg_vulkan.c
 
 test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg_vulkan.c > CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg_vulkan.c > CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.i
 
 test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testffmpeg_vulkan.c -o CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testffmpeg_vulkan.c -o CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.s
 
 # Object files for target testffmpeg
 testffmpeg_OBJECTS = \
@@ -127,20 +127,20 @@ test/testffmpeg: /usr/lib/libswscale.so
 test/testffmpeg: /usr/lib/libunwind-generic.so
 test/testffmpeg: /usr/lib/libunwind.so
 test/testffmpeg: /usr/lib/libOpenGL.so
-test/testffmpeg: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testffmpeg: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testffmpeg: test/CMakeFiles/testffmpeg.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable testffmpeg"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testffmpeg.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable testffmpeg"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testffmpeg.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testffmpeg.dir/build: test/testffmpeg
 .PHONY : test/CMakeFiles/testffmpeg.dir/build
 
 test/CMakeFiles/testffmpeg.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testffmpeg.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testffmpeg.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testffmpeg.dir/clean
 
 test/CMakeFiles/testffmpeg.dir/depend: test/icon.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testffmpeg.dir/DependInfo.cmake "--color=$(COLOR)" testffmpeg
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testffmpeg.dir/DependInfo.cmake "--color=$(COLOR)" testffmpeg
 .PHONY : test/CMakeFiles/testffmpeg.dir/depend
 

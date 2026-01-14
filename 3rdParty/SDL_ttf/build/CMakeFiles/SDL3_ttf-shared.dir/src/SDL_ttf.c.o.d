@@ -1,9 +1,9 @@
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_ttf.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_ttf.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_platform_defines.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_platform_defines.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
  /usr/include/string.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -23,76 +23,76 @@ CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o: \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_close_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_assert.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_asyncio.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_atomic.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_audio.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_endian.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_close_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_assert.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_asyncio.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_atomic.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_audio.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_endian.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
  /usr/include/bits/endianness.h /usr/include/bits/byteswap.h \
  /usr/include/bits/uintn-identity.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_error.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_mutex.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_thread.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_properties.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_iostream.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_bits.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_blendmode.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_camera.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_pixels.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_surface.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_rect.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_clipboard.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_cpuinfo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_dialog.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_video.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_dlopennote.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_events.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_gamepad.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_guid.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_joystick.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_power.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_sensor.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_keyboard.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_keycode.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_scancode.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_mouse.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_pen.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_touch.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_filesystem.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_gpu.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_haptic.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_hidapi.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_hints.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_init.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_loadso.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_locale.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_log.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_messagebox.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_metal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_misc.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_platform.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_process.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_render.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_storage.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_system.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_time.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_timer.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_tray.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_version.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_oldnames.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/include/SDL3_ttf/SDL_ttf.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/include/SDL3_ttf/SDL_textengine.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable_names.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/ft2build.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/config/ftheader.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/freetype.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/external/freetype-build/include/freetype/config/ftconfig.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/external/freetype-build/include/freetype/config/ftoption.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/config/ftstdlib.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_error.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_mutex.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_thread.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_properties.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_iostream.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_bits.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_blendmode.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_camera.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_pixels.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_surface.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_rect.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_clipboard.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_cpuinfo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_dialog.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_video.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_dlopennote.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_events.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_gamepad.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_guid.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_joystick.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_power.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_sensor.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_keyboard.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_keycode.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_scancode.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_mouse.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_pen.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_touch.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_filesystem.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_gpu.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_haptic.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_hidapi.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_hints.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_init.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_loadso.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_locale.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_log.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_messagebox.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_metal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_misc.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_platform.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_process.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_render.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_storage.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_system.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_time.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_timer.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_tray.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_version.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_oldnames.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/include/SDL3_ttf/SDL_ttf.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/include/SDL3_ttf/SDL_textengine.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable_names.h \
+ /usr/include/freetype2/ft2build.h \
+ /usr/include/freetype2/freetype/config/ftheader.h \
+ /usr/include/freetype2/freetype/freetype.h \
+ /usr/include/freetype2/freetype/config/ftconfig.h \
+ /usr/include/freetype2/freetype/config/ftoption.h \
+ /usr/include/freetype2/freetype/config/ftstdlib.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
@@ -119,41 +119,30 @@ CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o: \
  /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
  /usr/include/setjmp.h /usr/include/bits/setjmp.h \
  /usr/include/bits/types/struct___jmp_buf_tag.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/config/integer-types.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/config/public-macros.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/config/mac-support.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/fttypes.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/ftsystem.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/ftimage.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/fterrors.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/ftmoderr.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/fterrdef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/ftoutln.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/ftstroke.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/ftglyph.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/ttnameid.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/tttables.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/freetype/include/freetype/ftmodapi.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-blob.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-common.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-buffer.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-unicode.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-font.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-face.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-map.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-set.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-draw.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-paint.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-deprecated.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-shape.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-shape-plan.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-style.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-version.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/harfbuzz/src/hb-ft.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/plutosvg/source/plutosvg.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/external/plutovg/include/plutovg.h \
+ /usr/include/freetype2/freetype/config/integer-types.h \
+ /usr/include/freetype2/freetype/config/public-macros.h \
+ /usr/include/freetype2/freetype/config/mac-support.h \
+ /usr/include/freetype2/freetype/fttypes.h \
+ /usr/include/freetype2/freetype/ftsystem.h \
+ /usr/include/freetype2/freetype/ftimage.h \
+ /usr/include/freetype2/freetype/fterrors.h \
+ /usr/include/freetype2/freetype/ftmoderr.h \
+ /usr/include/freetype2/freetype/fterrdef.h \
+ /usr/include/freetype2/freetype/ftoutln.h \
+ /usr/include/freetype2/freetype/ftstroke.h \
+ /usr/include/freetype2/freetype/ftglyph.h \
+ /usr/include/freetype2/freetype/ttnameid.h \
+ /usr/include/freetype2/freetype/tttables.h \
+ /usr/include/freetype2/freetype/ftmodapi.h /usr/include/harfbuzz/hb.h \
+ /usr/include/harfbuzz/hb-blob.h /usr/include/harfbuzz/hb-common.h \
+ /usr/include/harfbuzz/hb-script-list.h /usr/include/harfbuzz/hb-buffer.h \
+ /usr/include/harfbuzz/hb-unicode.h /usr/include/harfbuzz/hb-font.h \
+ /usr/include/harfbuzz/hb-face.h /usr/include/harfbuzz/hb-map.h \
+ /usr/include/harfbuzz/hb-set.h /usr/include/harfbuzz/hb-draw.h \
+ /usr/include/harfbuzz/hb.h /usr/include/harfbuzz/hb-paint.h \
+ /usr/include/harfbuzz/hb-deprecated.h /usr/include/harfbuzz/hb-shape.h \
+ /usr/include/harfbuzz/hb-shape-plan.h /usr/include/harfbuzz/hb-style.h \
+ /usr/include/harfbuzz/hb-version.h /usr/include/harfbuzz/hb-ft.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/emmintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xmmintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mmintrin.h \

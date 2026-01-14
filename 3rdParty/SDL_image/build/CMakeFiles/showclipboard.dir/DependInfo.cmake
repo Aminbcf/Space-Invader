@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/examples/showclipboard.c" "CMakeFiles/showclipboard.dir/examples/showclipboard.c.o" "gcc" "CMakeFiles/showclipboard.dir/examples/showclipboard.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/examples/showclipboard.c" "CMakeFiles/showclipboard.dir/examples/showclipboard.c.o" "gcc" "CMakeFiles/showclipboard.dir/examples/showclipboard.c.o.d"
   "" "showclipboard" "gcc" "CMakeFiles/showclipboard.dir/link.d"
   )
 

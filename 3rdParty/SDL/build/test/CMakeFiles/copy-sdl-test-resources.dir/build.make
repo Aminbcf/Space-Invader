@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Utility rule file for copy-sdl-test-resources.
 
@@ -104,153 +104,153 @@ test/CMakeFiles/copy-sdl-test-resources: test/trashcan.png
 test/CMakeFiles/copy-sdl-test-resources: test/unifont-15.1.05.hex
 test/CMakeFiles/copy-sdl-test-resources: test/utf8.txt
 
-test/audiofile.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/audiofile.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating audiofile.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/audiofile.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/audiofile.png
+test/audiofile.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/audiofile.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating audiofile.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/audiofile.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/audiofile.png
 
-test/gamepad_axis.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating gamepad_axis.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_axis.png
+test/gamepad_axis.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating gamepad_axis.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_axis.png
 
-test/gamepad_axis_arrow.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis_arrow.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating gamepad_axis_arrow.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_axis_arrow.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_axis_arrow.png
+test/gamepad_axis_arrow.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis_arrow.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating gamepad_axis_arrow.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_axis_arrow.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_axis_arrow.png
 
-test/gamepad_back.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_back.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating gamepad_back.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_back.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_back.png
+test/gamepad_back.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_back.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating gamepad_back.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_back.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_back.png
 
-test/gamepad_battery.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating gamepad_battery.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_battery.png
+test/gamepad_battery.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating gamepad_battery.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_battery.png
 
-test/gamepad_battery_unknown.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery_unknown.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating gamepad_battery_unknown.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery_unknown.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_battery_unknown.png
+test/gamepad_battery_unknown.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery_unknown.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating gamepad_battery_unknown.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery_unknown.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_battery_unknown.png
 
-test/gamepad_battery_wired.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery_wired.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating gamepad_battery_wired.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_battery_wired.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_battery_wired.png
+test/gamepad_battery_wired.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery_wired.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating gamepad_battery_wired.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_battery_wired.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_battery_wired.png
 
-test/gamepad_button.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating gamepad_button.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_button.png
+test/gamepad_button.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating gamepad_button.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_button.png
 
-test/gamepad_button_background.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_background.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating gamepad_button_background.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_background.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_button_background.png
+test/gamepad_button_background.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_background.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating gamepad_button_background.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_background.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_button_background.png
 
-test/gamepad_button_small.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_small.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating gamepad_button_small.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_button_small.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_button_small.png
+test/gamepad_button_small.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_small.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating gamepad_button_small.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_button_small.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_button_small.png
 
-test/gamepad_face_abxy.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_abxy.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating gamepad_face_abxy.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_abxy.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_abxy.png
+test/gamepad_face_abxy.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_abxy.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating gamepad_face_abxy.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_abxy.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_abxy.png
 
-test/gamepad_face_axby.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_axby.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating gamepad_face_axby.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_axby.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_axby.png
+test/gamepad_face_axby.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_axby.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating gamepad_face_axby.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_axby.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_axby.png
 
-test/gamepad_face_bayx.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_bayx.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating gamepad_face_bayx.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_bayx.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_bayx.png
+test/gamepad_face_bayx.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_bayx.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating gamepad_face_bayx.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_bayx.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_bayx.png
 
-test/gamepad_face_sony.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_sony.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating gamepad_face_sony.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_face_sony.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_face_sony.png
+test/gamepad_face_sony.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_sony.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating gamepad_face_sony.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_face_sony.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_face_sony.png
 
-test/gamepad_front.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_front.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating gamepad_front.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_front.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_front.png
+test/gamepad_front.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_front.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating gamepad_front.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_front.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_front.png
 
-test/gamepad_touchpad.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_touchpad.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating gamepad_touchpad.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_touchpad.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_touchpad.png
+test/gamepad_touchpad.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_touchpad.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating gamepad_touchpad.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_touchpad.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_touchpad.png
 
-test/gamepad_wired.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wired.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating gamepad_wired.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wired.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_wired.png
+test/gamepad_wired.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wired.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating gamepad_wired.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wired.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_wired.png
 
-test/gamepad_wireless.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wireless.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating gamepad_wireless.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepad_wireless.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/gamepad_wireless.png
+test/gamepad_wireless.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wireless.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating gamepad_wireless.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepad_wireless.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/gamepad_wireless.png
 
-test/glass.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/glass.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating glass.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/glass.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/glass.png
+test/glass.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/glass.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating glass.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/glass.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/glass.png
 
-test/icon.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating icon.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/icon.png
+test/icon.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating icon.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/icon.png
 
-test/icon2x.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon2x.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating icon2x.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon2x.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/icon2x.png
+test/icon2x.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon2x.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating icon2x.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon2x.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/icon2x.png
 
-test/logaudiodev.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/logaudiodev.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating logaudiodev.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/logaudiodev.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/logaudiodev.png
+test/logaudiodev.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/logaudiodev.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating logaudiodev.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/logaudiodev.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/logaudiodev.png
 
-test/moose.dat: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/moose.dat
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating moose.dat"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/moose.dat /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/moose.dat
+test/moose.dat: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/moose.dat
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating moose.dat"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/moose.dat /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/moose.dat
 
-test/msdf_font.csv: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/msdf_font.csv
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating msdf_font.csv"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/msdf_font.csv /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/msdf_font.csv
+test/msdf_font.csv: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/msdf_font.csv
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating msdf_font.csv"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/msdf_font.csv /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/msdf_font.csv
 
-test/msdf_font.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/msdf_font.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating msdf_font.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/msdf_font.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/msdf_font.png
+test/msdf_font.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/msdf_font.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating msdf_font.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/msdf_font.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/msdf_font.png
 
-test/physaudiodev.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/physaudiodev.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating physaudiodev.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/physaudiodev.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/physaudiodev.png
+test/physaudiodev.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/physaudiodev.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating physaudiodev.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/physaudiodev.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/physaudiodev.png
 
-test/sample.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/sample.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating sample.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/sample.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/sample.png
+test/sample.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/sample.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating sample.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/sample.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/sample.png
 
-test/sample.wav: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/sample.wav
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating sample.wav"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/sample.wav /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/sample.wav
+test/sample.wav: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/sample.wav
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating sample.wav"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/sample.wav /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/sample.wav
 
-test/sdl-test_round.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/sdl-test_round.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating sdl-test_round.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/sdl-test_round.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/sdl-test_round.png
+test/sdl-test_round.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/sdl-test_round.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating sdl-test_round.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/sdl-test_round.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/sdl-test_round.png
 
-test/soundboard.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/soundboard.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating soundboard.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/soundboard.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/soundboard.png
+test/soundboard.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/soundboard.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating soundboard.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/soundboard.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/soundboard.png
 
-test/soundboard_levels.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/soundboard_levels.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating soundboard_levels.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/soundboard_levels.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/soundboard_levels.png
+test/soundboard_levels.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/soundboard_levels.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating soundboard_levels.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/soundboard_levels.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/soundboard_levels.png
 
-test/speaker.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/speaker.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating speaker.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/speaker.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/speaker.png
+test/speaker.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/speaker.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating speaker.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/speaker.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/speaker.png
 
-test/sword.wav: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/sword.wav
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating sword.wav"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/sword.wav /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/sword.wav
+test/sword.wav: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/sword.wav
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating sword.wav"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/sword.wav /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/sword.wav
 
-test/testyuv.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating testyuv.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/testyuv.png
+test/testyuv.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating testyuv.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/testyuv.png
 
-test/trashcan.png: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/trashcan.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating trashcan.png"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/trashcan.png /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/trashcan.png
+test/trashcan.png: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/trashcan.png
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating trashcan.png"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/trashcan.png /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/trashcan.png
 
-test/unifont-15.1.05.hex: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/unifont-15.1.05.hex
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating unifont-15.1.05.hex"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/unifont-15.1.05.hex /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/unifont-15.1.05.hex
+test/unifont-15.1.05.hex: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/unifont-15.1.05.hex
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating unifont-15.1.05.hex"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/unifont-15.1.05.hex /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/unifont-15.1.05.hex
 
-test/utf8.txt: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/utf8.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating utf8.txt"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/utf8.txt /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/utf8.txt
+test/utf8.txt: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/utf8.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating utf8.txt"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/utf8.txt /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/utf8.txt
 
 test/CMakeFiles/copy-sdl-test-resources.dir/codegen:
 .PHONY : test/CMakeFiles/copy-sdl-test-resources.dir/codegen
@@ -301,10 +301,10 @@ test/CMakeFiles/copy-sdl-test-resources.dir/build: copy-sdl-test-resources
 .PHONY : test/CMakeFiles/copy-sdl-test-resources.dir/build
 
 test/CMakeFiles/copy-sdl-test-resources.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/copy-sdl-test-resources.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/copy-sdl-test-resources.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/copy-sdl-test-resources.dir/clean
 
 test/CMakeFiles/copy-sdl-test-resources.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/copy-sdl-test-resources.dir/DependInfo.cmake "--color=$(COLOR)" copy-sdl-test-resources
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/copy-sdl-test-resources.dir/DependInfo.cmake "--color=$(COLOR)" copy-sdl-test-resources
 .PHONY : test/CMakeFiles/copy-sdl-test-resources.dir/depend
 

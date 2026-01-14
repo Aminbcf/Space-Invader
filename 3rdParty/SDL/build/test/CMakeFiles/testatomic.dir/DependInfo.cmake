@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testatomic.c" "test/CMakeFiles/testatomic.dir/testatomic.c.o" "gcc" "test/CMakeFiles/testatomic.dir/testatomic.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testatomic.c" "test/CMakeFiles/testatomic.dir/testatomic.c.o" "gcc" "test/CMakeFiles/testatomic.dir/testatomic.c.o.d"
   "" "test/testatomic" "gcc" "test/CMakeFiles/testatomic.dir/link.d"
   )
 

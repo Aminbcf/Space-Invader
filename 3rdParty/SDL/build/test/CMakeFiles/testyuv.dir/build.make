@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testyuv.dir/depend.make
@@ -73,32 +73,32 @@ test/CMakeFiles/testyuv.dir/codegen:
 .PHONY : test/CMakeFiles/testyuv.dir/codegen
 
 test/CMakeFiles/testyuv.dir/testyuv.c.o: test/CMakeFiles/testyuv.dir/flags.make
-test/CMakeFiles/testyuv.dir/testyuv.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv.c
+test/CMakeFiles/testyuv.dir/testyuv.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv.c
 test/CMakeFiles/testyuv.dir/testyuv.c.o: test/CMakeFiles/testyuv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testyuv.dir/testyuv.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testyuv.dir/testyuv.c.o -MF CMakeFiles/testyuv.dir/testyuv.c.o.d -o CMakeFiles/testyuv.dir/testyuv.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testyuv.dir/testyuv.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testyuv.dir/testyuv.c.o -MF CMakeFiles/testyuv.dir/testyuv.c.o.d -o CMakeFiles/testyuv.dir/testyuv.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv.c
 
 test/CMakeFiles/testyuv.dir/testyuv.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testyuv.dir/testyuv.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv.c > CMakeFiles/testyuv.dir/testyuv.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv.c > CMakeFiles/testyuv.dir/testyuv.c.i
 
 test/CMakeFiles/testyuv.dir/testyuv.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testyuv.dir/testyuv.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv.c -o CMakeFiles/testyuv.dir/testyuv.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv.c -o CMakeFiles/testyuv.dir/testyuv.c.s
 
 test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o: test/CMakeFiles/testyuv.dir/flags.make
-test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv_cvt.c
+test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv_cvt.c
 test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o: test/CMakeFiles/testyuv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o -MF CMakeFiles/testyuv.dir/testyuv_cvt.c.o.d -o CMakeFiles/testyuv.dir/testyuv_cvt.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv_cvt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o -MF CMakeFiles/testyuv.dir/testyuv_cvt.c.o.d -o CMakeFiles/testyuv.dir/testyuv_cvt.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv_cvt.c
 
 test/CMakeFiles/testyuv.dir/testyuv_cvt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testyuv.dir/testyuv_cvt.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv_cvt.c > CMakeFiles/testyuv.dir/testyuv_cvt.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv_cvt.c > CMakeFiles/testyuv.dir/testyuv_cvt.c.i
 
 test/CMakeFiles/testyuv.dir/testyuv_cvt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testyuv.dir/testyuv_cvt.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv_cvt.c -o CMakeFiles/testyuv.dir/testyuv_cvt.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv_cvt.c -o CMakeFiles/testyuv.dir/testyuv_cvt.c.s
 
 # Object files for target testyuv
 testyuv_OBJECTS = \
@@ -107,7 +107,7 @@ testyuv_OBJECTS = \
 
 # External object files for target testyuv
 testyuv_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testyuv: test/CMakeFiles/testyuv.dir/testyuv.c.o
 test/testyuv: test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o
@@ -118,20 +118,20 @@ test/testyuv: libSDL3_test.a
 test/testyuv: libSDL3.so.0.5.0
 test/testyuv: /usr/lib/libunwind-generic.so
 test/testyuv: /usr/lib/libunwind.so
-test/testyuv: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testyuv: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testyuv: test/CMakeFiles/testyuv.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testyuv"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testyuv.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testyuv"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testyuv.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testyuv.dir/build: test/testyuv
 .PHONY : test/CMakeFiles/testyuv.dir/build
 
 test/CMakeFiles/testyuv.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testyuv.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testyuv.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testyuv.dir/clean
 
 test/CMakeFiles/testyuv.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testyuv.dir/DependInfo.cmake "--color=$(COLOR)" testyuv
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testyuv.dir/DependInfo.cmake "--color=$(COLOR)" testyuv
 .PHONY : test/CMakeFiles/testyuv.dir/depend
 

@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/gamepadutils.c" "test/CMakeFiles/testcontroller.dir/gamepadutils.c.o" "gcc" "test/CMakeFiles/testcontroller.dir/gamepadutils.c.o.d"
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testcontroller.c" "test/CMakeFiles/testcontroller.dir/testcontroller.c.o" "gcc" "test/CMakeFiles/testcontroller.dir/testcontroller.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/gamepadutils.c" "test/CMakeFiles/testcontroller.dir/gamepadutils.c.o" "gcc" "test/CMakeFiles/testcontroller.dir/gamepadutils.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testcontroller.c" "test/CMakeFiles/testcontroller.dir/testcontroller.c.o" "gcc" "test/CMakeFiles/testcontroller.dir/testcontroller.c.o.d"
   "" "test/testcontroller" "gcc" "test/CMakeFiles/testcontroller.dir/link.d"
   )
 

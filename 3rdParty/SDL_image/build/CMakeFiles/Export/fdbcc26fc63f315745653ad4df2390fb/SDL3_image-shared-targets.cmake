@@ -19,7 +19,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_cmake_targets_defined "")
 set(_cmake_targets_not_defined "")
 set(_cmake_expected_targets "")
-foreach(_cmake_expected_target IN ITEMS SDL3_image::SDL3_image-shared SDL3_image::external_libpng)
+foreach(_cmake_expected_target IN ITEMS SDL3_image::SDL3_image-shared)
   list(APPEND _cmake_expected_targets "${_cmake_expected_target}")
   if(TARGET "${_cmake_expected_target}")
     list(APPEND _cmake_targets_defined "${_cmake_expected_target}")
@@ -63,14 +63,6 @@ set_target_properties(SDL3_image::SDL3_image-shared PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_LINK_LIBRARIES "SDL3::Headers"
   INTERFACE_SDL3_SHARED "TRUE"
-)
-
-# Create imported target SDL3_image::external_libpng
-add_library(SDL3_image::external_libpng SHARED IMPORTED)
-
-set_target_properties(SDL3_image::external_libpng PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/libpng16"
-  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "include/libpng16"
 )
 
 # Load information for each installed configuration.

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testspriteminimal.c" "test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o" "gcc" "test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testspriteminimal.c" "test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o" "gcc" "test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o.d"
   "" "test/testspriteminimal" "gcc" "test/CMakeFiles/testspriteminimal.dir/link.d"
   )
 

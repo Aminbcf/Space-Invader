@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/examples/showanim.c" "CMakeFiles/showanim.dir/examples/showanim.c.o" "gcc" "CMakeFiles/showanim.dir/examples/showanim.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/examples/showanim.c" "CMakeFiles/showanim.dir/examples/showanim.c.o" "gcc" "CMakeFiles/showanim.dir/examples/showanim.c.o.d"
   "" "showanim" "gcc" "CMakeFiles/showanim.dir/link.d"
   )
 

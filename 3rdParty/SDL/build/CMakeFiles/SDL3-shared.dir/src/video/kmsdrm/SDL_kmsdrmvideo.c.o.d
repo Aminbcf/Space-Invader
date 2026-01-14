@@ -1,39 +1,39 @@
 CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmvideo.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmvideo.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../SDL_egl_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_egl.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_platform_defines.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../SDL_egl_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_egl.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_platform_defines.h \
  /usr/include/EGL/egl.h /usr/include/EGL/eglplatform.h \
  /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
  /usr/include/EGL/eglext.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../SDL_sysvideo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_error.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_video.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_close_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../SDL_surface_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../SDL_blit.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_events_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/../video/SDL_sysvideo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_clipboardevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_displayevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_dropevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_keyboard_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_keymap_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_mouse_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_touch_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_pen_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/../SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_windowevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_keyboard_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_mouse_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../../core/linux/SDL_evdev.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmdyn.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_error.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_video.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_close_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../SDL_surface_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../SDL_blit.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_events_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/../video/SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_clipboardevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_displayevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_dropevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_keyboard_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_keymap_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_mouse_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_touch_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_pen_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/../SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_windowevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_keyboard_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../events/SDL_mouse_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../../core/linux/SDL_evdev.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmdyn.h \
  /usr/include/xf86drm.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
  /usr/include/sys/types.h /usr/include/libdrm/drm.h \
@@ -49,11 +49,11 @@ CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o: \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
  /usr/include/gbm.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmsym.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmevents.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmmouse.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmvideo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/../SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmsym.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmevents.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmmouse.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/../SDL_sysvideo.h \
  /usr/include/fcntl.h /usr/include/features.h /usr/include/bits/types.h \
  /usr/include/bits/fcntl.h /usr/include/bits/fcntl-linux.h \
  /usr/include/bits/types/struct_iovec.h /usr/include/linux/falloc.h \
@@ -63,8 +63,8 @@ CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmvideo.c.o: \
  /usr/include/bits/wordsize.h /usr/include/bits/confname.h \
  /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
  /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmopengles.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmvulkan.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmopengles.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmvulkan.h \
  /usr/include/dirent.h /usr/include/bits/dirent.h \
  /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
  /usr/include/linux/limits.h \

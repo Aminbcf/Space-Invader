@@ -8,6 +8,6 @@ Description: ttf library for Simple DirectMedia Layer with FreeType 2 support
 Version: 3.3.0
 Requires: sdl3 >= 3.2.6
 Libs: -L${libdir} -lSDL3_ttf
-Requires.private: 
+Requires.private: harfbuzz freetype2
 Libs.private: 
 Cflags: -I${includedir}

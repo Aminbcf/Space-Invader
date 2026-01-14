@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testmanymouse.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testmanymouse.dir/codegen:
 .PHONY : test/CMakeFiles/testmanymouse.dir/codegen
 
 test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o: test/CMakeFiles/testmanymouse.dir/flags.make
-test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmanymouse.c
+test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmanymouse.c
 test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o: test/CMakeFiles/testmanymouse.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o -MF CMakeFiles/testmanymouse.dir/testmanymouse.c.o.d -o CMakeFiles/testmanymouse.dir/testmanymouse.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmanymouse.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o -MF CMakeFiles/testmanymouse.dir/testmanymouse.c.o.d -o CMakeFiles/testmanymouse.dir/testmanymouse.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmanymouse.c
 
 test/CMakeFiles/testmanymouse.dir/testmanymouse.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testmanymouse.dir/testmanymouse.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmanymouse.c > CMakeFiles/testmanymouse.dir/testmanymouse.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmanymouse.c > CMakeFiles/testmanymouse.dir/testmanymouse.c.i
 
 test/CMakeFiles/testmanymouse.dir/testmanymouse.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testmanymouse.dir/testmanymouse.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmanymouse.c -o CMakeFiles/testmanymouse.dir/testmanymouse.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmanymouse.c -o CMakeFiles/testmanymouse.dir/testmanymouse.c.s
 
 # Object files for target testmanymouse
 testmanymouse_OBJECTS = \
@@ -100,20 +100,20 @@ test/testmanymouse: libSDL3_test.a
 test/testmanymouse: libSDL3.so.0.5.0
 test/testmanymouse: /usr/lib/libunwind-generic.so
 test/testmanymouse: /usr/lib/libunwind.so
-test/testmanymouse: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testmanymouse: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testmanymouse: test/CMakeFiles/testmanymouse.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testmanymouse"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testmanymouse.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testmanymouse"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testmanymouse.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testmanymouse.dir/build: test/testmanymouse
 .PHONY : test/CMakeFiles/testmanymouse.dir/build
 
 test/CMakeFiles/testmanymouse.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testmanymouse.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testmanymouse.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testmanymouse.dir/clean
 
 test/CMakeFiles/testmanymouse.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testmanymouse.dir/DependInfo.cmake "--color=$(COLOR)" testmanymouse
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testmanymouse.dir/DependInfo.cmake "--color=$(COLOR)" testmanymouse
 .PHONY : test/CMakeFiles/testmanymouse.dir/depend
 

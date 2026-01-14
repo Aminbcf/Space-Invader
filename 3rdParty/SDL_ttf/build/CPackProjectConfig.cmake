@@ -4,7 +4,7 @@ endif()
 
 set(PROJECT_NAME "SDL3_ttf")
 set(PROJECT_VERSION "3.3.0")
-set(PROJECT_SOURCE_DIR "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf")
+set(PROJECT_SOURCE_DIR "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf")
 set(SDL_CMAKE_PLATFORM "Linux")
 set(SDL_CPU_NAMES "X64")
 list(SORT SDL_CPU_NAMES)

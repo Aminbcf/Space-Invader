@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testasyncio.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testasyncio.dir/codegen:
 .PHONY : test/CMakeFiles/testasyncio.dir/codegen
 
 test/CMakeFiles/testasyncio.dir/testasyncio.c.o: test/CMakeFiles/testasyncio.dir/flags.make
-test/CMakeFiles/testasyncio.dir/testasyncio.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testasyncio.c
+test/CMakeFiles/testasyncio.dir/testasyncio.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testasyncio.c
 test/CMakeFiles/testasyncio.dir/testasyncio.c.o: test/CMakeFiles/testasyncio.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testasyncio.dir/testasyncio.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testasyncio.dir/testasyncio.c.o -MF CMakeFiles/testasyncio.dir/testasyncio.c.o.d -o CMakeFiles/testasyncio.dir/testasyncio.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testasyncio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testasyncio.dir/testasyncio.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testasyncio.dir/testasyncio.c.o -MF CMakeFiles/testasyncio.dir/testasyncio.c.o.d -o CMakeFiles/testasyncio.dir/testasyncio.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testasyncio.c
 
 test/CMakeFiles/testasyncio.dir/testasyncio.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testasyncio.dir/testasyncio.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testasyncio.c > CMakeFiles/testasyncio.dir/testasyncio.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testasyncio.c > CMakeFiles/testasyncio.dir/testasyncio.c.i
 
 test/CMakeFiles/testasyncio.dir/testasyncio.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testasyncio.dir/testasyncio.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testasyncio.c -o CMakeFiles/testasyncio.dir/testasyncio.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testasyncio.c -o CMakeFiles/testasyncio.dir/testasyncio.c.s
 
 # Object files for target testasyncio
 testasyncio_OBJECTS = \
@@ -92,7 +92,7 @@ testasyncio_OBJECTS = \
 
 # External object files for target testasyncio
 testasyncio_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testasyncio: test/CMakeFiles/testasyncio.dir/testasyncio.c.o
 test/testasyncio: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testasyncio: libSDL3_test.a
 test/testasyncio: libSDL3.so.0.5.0
 test/testasyncio: /usr/lib/libunwind-generic.so
 test/testasyncio: /usr/lib/libunwind.so
-test/testasyncio: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testasyncio: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testasyncio: test/CMakeFiles/testasyncio.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testasyncio"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testasyncio.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testasyncio"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testasyncio.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testasyncio.dir/build: test/testasyncio
 .PHONY : test/CMakeFiles/testasyncio.dir/build
 
 test/CMakeFiles/testasyncio.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testasyncio.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testasyncio.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testasyncio.dir/clean
 
 test/CMakeFiles/testasyncio.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testasyncio.dir/DependInfo.cmake "--color=$(COLOR)" testasyncio
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testasyncio.dir/DependInfo.cmake "--color=$(COLOR)" testasyncio
 .PHONY : test/CMakeFiles/testasyncio.dir/depend
 

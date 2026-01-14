@@ -1,7 +1,7 @@
 CMakeFiles/SDL3-shared.dir/src/io/SDL_iostream.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/io/SDL_iostream.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/io/SDL_iostream.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
  /usr/include/unistd.h /usr/include/features.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/wordsize.h /usr/include/bits/types.h \
@@ -33,4 +33,4 @@ CMakeFiles/SDL3-shared.dir/src/io/SDL_iostream.c.o: \
  /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/bits/uio_lim.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/io/SDL_iostream_c.h
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/io/SDL_iostream_c.h

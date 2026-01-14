@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testspriteminimal.dir/depend.make
@@ -69,27 +69,27 @@ include test/CMakeFiles/testspriteminimal.dir/progress.make
 # Include the compile flags for this target's objects.
 include test/CMakeFiles/testspriteminimal.dir/flags.make
 
-test/icon.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating icon.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/icon.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/icon.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon.h
+test/icon.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating icon.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/icon.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/icon.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon.h
 
 test/CMakeFiles/testspriteminimal.dir/codegen:
 .PHONY : test/CMakeFiles/testspriteminimal.dir/codegen
 
 test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o: test/CMakeFiles/testspriteminimal.dir/flags.make
-test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testspriteminimal.c
+test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testspriteminimal.c
 test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o: test/CMakeFiles/testspriteminimal.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o -MF CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o.d -o CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testspriteminimal.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o -MF CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o.d -o CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testspriteminimal.c
 
 test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testspriteminimal.dir/testspriteminimal.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testspriteminimal.c > CMakeFiles/testspriteminimal.dir/testspriteminimal.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testspriteminimal.c > CMakeFiles/testspriteminimal.dir/testspriteminimal.c.i
 
 test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testspriteminimal.dir/testspriteminimal.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testspriteminimal.c -o CMakeFiles/testspriteminimal.dir/testspriteminimal.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testspriteminimal.c -o CMakeFiles/testspriteminimal.dir/testspriteminimal.c.s
 
 # Object files for target testspriteminimal
 testspriteminimal_OBJECTS = \
@@ -105,20 +105,20 @@ test/testspriteminimal: libSDL3_test.a
 test/testspriteminimal: libSDL3.so.0.5.0
 test/testspriteminimal: /usr/lib/libunwind-generic.so
 test/testspriteminimal: /usr/lib/libunwind.so
-test/testspriteminimal: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testspriteminimal: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testspriteminimal: test/CMakeFiles/testspriteminimal.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testspriteminimal"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testspriteminimal.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testspriteminimal"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testspriteminimal.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testspriteminimal.dir/build: test/testspriteminimal
 .PHONY : test/CMakeFiles/testspriteminimal.dir/build
 
 test/CMakeFiles/testspriteminimal.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testspriteminimal.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testspriteminimal.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testspriteminimal.dir/clean
 
 test/CMakeFiles/testspriteminimal.dir/depend: test/icon.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testspriteminimal.dir/DependInfo.cmake "--color=$(COLOR)" testspriteminimal
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testspriteminimal.dir/DependInfo.cmake "--color=$(COLOR)" testspriteminimal
 .PHONY : test/CMakeFiles/testspriteminimal.dir/depend
 

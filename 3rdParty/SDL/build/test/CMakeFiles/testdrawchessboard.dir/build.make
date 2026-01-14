@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testdrawchessboard.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testdrawchessboard.dir/codegen:
 .PHONY : test/CMakeFiles/testdrawchessboard.dir/codegen
 
 test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o: test/CMakeFiles/testdrawchessboard.dir/flags.make
-test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdrawchessboard.c
+test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdrawchessboard.c
 test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o: test/CMakeFiles/testdrawchessboard.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o -MF CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o.d -o CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdrawchessboard.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o -MF CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o.d -o CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdrawchessboard.c
 
 test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdrawchessboard.c > CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdrawchessboard.c > CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.i
 
 test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdrawchessboard.c -o CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdrawchessboard.c -o CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.s
 
 # Object files for target testdrawchessboard
 testdrawchessboard_OBJECTS = \
@@ -100,20 +100,20 @@ test/testdrawchessboard: libSDL3_test.a
 test/testdrawchessboard: libSDL3.so.0.5.0
 test/testdrawchessboard: /usr/lib/libunwind-generic.so
 test/testdrawchessboard: /usr/lib/libunwind.so
-test/testdrawchessboard: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testdrawchessboard: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testdrawchessboard: test/CMakeFiles/testdrawchessboard.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testdrawchessboard"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testdrawchessboard.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testdrawchessboard"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testdrawchessboard.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testdrawchessboard.dir/build: test/testdrawchessboard
 .PHONY : test/CMakeFiles/testdrawchessboard.dir/build
 
 test/CMakeFiles/testdrawchessboard.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testdrawchessboard.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testdrawchessboard.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testdrawchessboard.dir/clean
 
 test/CMakeFiles/testdrawchessboard.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testdrawchessboard.dir/DependInfo.cmake "--color=$(COLOR)" testdrawchessboard
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testdrawchessboard.dir/DependInfo.cmake "--color=$(COLOR)" testdrawchessboard
 .PHONY : test/CMakeFiles/testdrawchessboard.dir/depend
 

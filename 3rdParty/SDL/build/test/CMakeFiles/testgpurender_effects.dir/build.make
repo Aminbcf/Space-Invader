@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testgpurender_effects.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testgpurender_effects.dir/codegen:
 .PHONY : test/CMakeFiles/testgpurender_effects.dir/codegen
 
 test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o: test/CMakeFiles/testgpurender_effects.dir/flags.make
-test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpurender_effects.c
+test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpurender_effects.c
 test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o: test/CMakeFiles/testgpurender_effects.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o -MF CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o.d -o CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpurender_effects.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o -MF CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o.d -o CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpurender_effects.c
 
 test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpurender_effects.c > CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpurender_effects.c > CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.i
 
 test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpurender_effects.c -o CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpurender_effects.c -o CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.s
 
 # Object files for target testgpurender_effects
 testgpurender_effects_OBJECTS = \
@@ -92,7 +92,7 @@ testgpurender_effects_OBJECTS = \
 
 # External object files for target testgpurender_effects
 testgpurender_effects_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testgpurender_effects: test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o
 test/testgpurender_effects: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testgpurender_effects: libSDL3_test.a
 test/testgpurender_effects: libSDL3.so.0.5.0
 test/testgpurender_effects: /usr/lib/libunwind-generic.so
 test/testgpurender_effects: /usr/lib/libunwind.so
-test/testgpurender_effects: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testgpurender_effects: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testgpurender_effects: test/CMakeFiles/testgpurender_effects.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testgpurender_effects"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testgpurender_effects.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testgpurender_effects"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testgpurender_effects.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testgpurender_effects.dir/build: test/testgpurender_effects
 .PHONY : test/CMakeFiles/testgpurender_effects.dir/build
 
 test/CMakeFiles/testgpurender_effects.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testgpurender_effects.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testgpurender_effects.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testgpurender_effects.dir/clean
 
 test/CMakeFiles/testgpurender_effects.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testgpurender_effects.dir/DependInfo.cmake "--color=$(COLOR)" testgpurender_effects
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testgpurender_effects.dir/DependInfo.cmake "--color=$(COLOR)" testgpurender_effects
 .PHONY : test/CMakeFiles/testgpurender_effects.dir/depend
 

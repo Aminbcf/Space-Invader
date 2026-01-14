@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_appid.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/core/unix/SDL_appid.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/core/unix/SDL_appid.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/core/unix/SDL_appid.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/core/unix/SDL_appid.h \
  /usr/include/unistd.h /usr/include/features.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/wordsize.h /usr/include/bits/types.h \

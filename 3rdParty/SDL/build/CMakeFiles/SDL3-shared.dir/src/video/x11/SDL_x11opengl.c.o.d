@@ -1,19 +1,19 @@
 CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11opengl.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11opengl.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11video.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/../SDL_sysvideo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_error.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_video.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_close_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/../SDL_surface_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/../SDL_blit.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/../../events/SDL_keymap_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/../../core/linux/SDL_dbus.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11video.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/../SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_error.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_video.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_close_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/../SDL_surface_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/../SDL_blit.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/../../events/SDL_keymap_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/../../core/linux/SDL_dbus.h \
  /usr/include/dbus-1.0/dbus/dbus.h \
  /usr/lib/dbus-1.0/include/dbus/dbus-arch-deps.h \
  /usr/include/dbus-1.0/dbus/dbus-macros.h \
@@ -34,8 +34,8 @@ CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o: \
  /usr/include/dbus-1.0/dbus/dbus-signature.h \
  /usr/include/dbus-1.0/dbus/dbus-syntax.h \
  /usr/include/dbus-1.0/dbus/dbus-threads.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/../../core/linux/SDL_ime.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11dyn.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/../../core/linux/SDL_ime.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11dyn.h \
  /usr/include/X11/Xlib.h /usr/include/sys/types.h /usr/include/X11/X.h \
  /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
  /usr/include/X11/Xutil.h /usr/include/X11/keysym.h \
@@ -94,30 +94,30 @@ CMakeFiles/SDL3-shared.dir/src/video/x11/SDL_x11opengl.c.o: \
  /usr/include/X11/extensions/XTest.h \
  /usr/include/X11/extensions/xtestconst.h \
  /usr/include/X11/extensions/XInput.h /usr/include/X11/extensions/XI.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11sym.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11clipboard.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11events.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11keyboard.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11modes.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11settings.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/xsettings-client.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11mouse.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11opengl.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_opengl.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_platform.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_opengl_glext.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11sym.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11clipboard.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11events.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11keyboard.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11modes.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11settings.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/xsettings-client.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11mouse.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11opengl.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_opengl.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_platform.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_opengl_glext.h \
  /usr/include/GL/glx.h /usr/include/GL/gl.h /usr/include/GL/glxext.h \
  /usr/include/inttypes.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11window.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11window.h \
  /usr/include/EGL/egl.h /usr/include/EGL/eglplatform.h \
  /usr/include/KHR/khrplatform.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11vulkan.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11xsync.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/SDL_x11opengles.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/../SDL_egl_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_egl.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_platform_defines.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11vulkan.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11xsync.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/SDL_x11opengles.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/../SDL_egl_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_egl.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_platform_defines.h \
  /usr/include/EGL/eglext.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/x11/../SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/x11/../SDL_sysvideo.h \
  /usr/include/dlfcn.h /usr/include/bits/dlfcn.h \
  /usr/include/bits/dl_find_object.h

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testspritesurface.dir/depend.make
@@ -69,27 +69,27 @@ include test/CMakeFiles/testspritesurface.dir/progress.make
 # Include the compile flags for this target's objects.
 include test/CMakeFiles/testspritesurface.dir/flags.make
 
-test/icon.h: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/cmake/xxd.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating icon.h"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon.png -o /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/icon.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/icon.h /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/icon.h
+test/icon.h: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/cmake/xxd.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating icon.h"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/python3.13 /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/../cmake/xxd.py -i /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon.png -o /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/icon.h
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cmake -E copy_if_different /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/icon.h /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/icon.h
 
 test/CMakeFiles/testspritesurface.dir/codegen:
 .PHONY : test/CMakeFiles/testspritesurface.dir/codegen
 
 test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o: test/CMakeFiles/testspritesurface.dir/flags.make
-test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testspritesurface.c
+test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testspritesurface.c
 test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o: test/CMakeFiles/testspritesurface.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o -MF CMakeFiles/testspritesurface.dir/testspritesurface.c.o.d -o CMakeFiles/testspritesurface.dir/testspritesurface.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testspritesurface.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o -MF CMakeFiles/testspritesurface.dir/testspritesurface.c.o.d -o CMakeFiles/testspritesurface.dir/testspritesurface.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testspritesurface.c
 
 test/CMakeFiles/testspritesurface.dir/testspritesurface.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testspritesurface.dir/testspritesurface.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testspritesurface.c > CMakeFiles/testspritesurface.dir/testspritesurface.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testspritesurface.c > CMakeFiles/testspritesurface.dir/testspritesurface.c.i
 
 test/CMakeFiles/testspritesurface.dir/testspritesurface.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testspritesurface.dir/testspritesurface.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testspritesurface.c -o CMakeFiles/testspritesurface.dir/testspritesurface.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testspritesurface.c -o CMakeFiles/testspritesurface.dir/testspritesurface.c.s
 
 # Object files for target testspritesurface
 testspritesurface_OBJECTS = \
@@ -105,20 +105,20 @@ test/testspritesurface: libSDL3_test.a
 test/testspritesurface: libSDL3.so.0.5.0
 test/testspritesurface: /usr/lib/libunwind-generic.so
 test/testspritesurface: /usr/lib/libunwind.so
-test/testspritesurface: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testspritesurface: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testspritesurface: test/CMakeFiles/testspritesurface.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testspritesurface"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testspritesurface.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable testspritesurface"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testspritesurface.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testspritesurface.dir/build: test/testspritesurface
 .PHONY : test/CMakeFiles/testspritesurface.dir/build
 
 test/CMakeFiles/testspritesurface.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testspritesurface.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testspritesurface.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testspritesurface.dir/clean
 
 test/CMakeFiles/testspritesurface.dir/depend: test/icon.h
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testspritesurface.dir/DependInfo.cmake "--color=$(COLOR)" testspritesurface
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testspritesurface.dir/DependInfo.cmake "--color=$(COLOR)" testspritesurface
 .PHONY : test/CMakeFiles/testspritesurface.dir/depend
 

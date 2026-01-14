@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/glfont.c" "CMakeFiles/glfont.dir/examples/glfont.c.o" "gcc" "CMakeFiles/glfont.dir/examples/glfont.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/glfont.c" "CMakeFiles/glfont.dir/examples/glfont.c.o" "gcc" "CMakeFiles/glfont.dir/examples/glfont.c.o.d"
   "" "glfont" "gcc" "CMakeFiles/glfont.dir/link.d"
   )
 

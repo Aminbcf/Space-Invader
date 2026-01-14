@@ -1,33 +1,33 @@
 CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandevents.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandevents.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../core/unix/SDL_poll.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_events_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/../video/SDL_sysvideo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_error.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_video.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include/SDL3/SDL_close_code.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/../video/SDL_surface_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/../video/SDL_blit.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_clipboardevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_displayevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_dropevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_keyboard_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_keymap_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_mouse_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_touch_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_pen_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/../SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_windowevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_scancode_tables_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_keysym_to_keycode_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_system_theme.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../SDL_sysvideo.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../core/unix/SDL_poll.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_events_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/../video/SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_vulkan.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_stdinc.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_error.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_video.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_begin_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include/SDL3/SDL_close_code.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/../video/SDL_surface_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/../video/SDL_blit.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_clipboardevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_displayevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_dropevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_keyboard_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_keymap_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_mouse_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_touch_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_pen_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/../SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_windowevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_scancode_tables_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_keysym_to_keycode_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_system_theme.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../SDL_sysvideo.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandvideo.h \
  /usr/include/EGL/egl.h /usr/include/EGL/eglplatform.h \
  /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
@@ -35,7 +35,7 @@ CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o: \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
  /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_dbus.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_dbus.h \
  /usr/include/dbus-1.0/dbus/dbus.h \
  /usr/lib/dbus-1.0/include/dbus/dbus-arch-deps.h \
  /usr/include/dbus-1.0/dbus/dbus-macros.h \
@@ -54,8 +54,8 @@ CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o: \
  /usr/include/dbus-1.0/dbus/dbus-signature.h \
  /usr/include/dbus-1.0/dbus/dbus-syntax.h \
  /usr/include/dbus-1.0/dbus/dbus-threads.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_ime.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylanddyn.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../core/linux/SDL_ime.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylanddyn.h \
  /usr/include/wayland-cursor.h /usr/include/xkbcommon/xkbcommon.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  /usr/include/stdio.h /usr/include/xkbcommon/xkbcommon-names.h \
@@ -64,33 +64,33 @@ CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o: \
  /usr/include/xkbcommon/xkbcommon-compose.h \
  /usr/include/wayland-client-core.h /usr/include/wayland-util.h \
  /usr/include/wayland-version.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandsym.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/wayland-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandsym.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/wayland-client-protocol.h \
  /usr/include/wayland-client.h /usr/include/wayland-client-core.h \
  /usr/include/wayland-client-protocol.h /usr/include/wayland-egl.h \
  /usr/include/wayland-egl-core.h /usr/include/libdecor-0/libdecor.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandevents_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_keymap_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_mouse_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_pen_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandwindow.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_touch_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandshmbuffer.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylanddatamanager.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandmouse.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandclipboard.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandkeyboard.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/pointer-constraints-unstable-v1-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/relative-pointer-unstable-v1-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/text-input-unstable-v3-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/tablet-v2-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/primary-selection-unstable-v1-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/input-timestamps-unstable-v1-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/pointer-gestures-unstable-v1-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/cursor-shape-v1-client-protocol.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/viewporter-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandevents_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_keymap_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_mouse_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_pen_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandwindow.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_touch_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandshmbuffer.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylanddatamanager.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandmouse.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandclipboard.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandkeyboard.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/pointer-constraints-unstable-v1-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/relative-pointer-unstable-v1-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/text-input-unstable-v3-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/tablet-v2-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/primary-selection-unstable-v1-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/input-timestamps-unstable-v1-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/pointer-gestures-unstable-v1-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/cursor-shape-v1-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/viewporter-client-protocol.h \
  /usr/include/linux/input.h /usr/include/sys/time.h \
  /usr/include/features.h /usr/include/bits/types.h \
  /usr/include/bits/types/time_t.h \
@@ -108,8 +108,8 @@ CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylandevents.c.o: \
  /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
  /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
  /usr/include/linux/input-event-codes.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/SDL_keysym_to_scancode_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/../../events/imKStoUCS.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/SDL_keysym_to_scancode_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/../../events/imKStoUCS.h \
  /usr/include/errno.h /usr/include/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \

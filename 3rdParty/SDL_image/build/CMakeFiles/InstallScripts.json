@@ -1,9 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/cmake_install.cmake",
-		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/external/zlib-build/cmake_install.cmake",
-		"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/external/libpng-build/cmake_install.cmake"
+		"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

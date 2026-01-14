@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c" "test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o" "gcc" "test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o.d"
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testwaylandcustom.c" "test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o" "gcc" "test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/xdg-shell-protocol.c" "test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o" "gcc" "test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testwaylandcustom.c" "test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o" "gcc" "test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o.d"
   "" "test/testwaylandcustom" "gcc" "test/CMakeFiles/testwaylandcustom.dir/link.d"
   )
 

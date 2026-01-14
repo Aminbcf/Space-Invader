@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testgeometry.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testgeometry.dir/codegen:
 .PHONY : test/CMakeFiles/testgeometry.dir/codegen
 
 test/CMakeFiles/testgeometry.dir/testgeometry.c.o: test/CMakeFiles/testgeometry.dir/flags.make
-test/CMakeFiles/testgeometry.dir/testgeometry.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgeometry.c
+test/CMakeFiles/testgeometry.dir/testgeometry.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgeometry.c
 test/CMakeFiles/testgeometry.dir/testgeometry.c.o: test/CMakeFiles/testgeometry.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testgeometry.dir/testgeometry.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testgeometry.dir/testgeometry.c.o -MF CMakeFiles/testgeometry.dir/testgeometry.c.o.d -o CMakeFiles/testgeometry.dir/testgeometry.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgeometry.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testgeometry.dir/testgeometry.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testgeometry.dir/testgeometry.c.o -MF CMakeFiles/testgeometry.dir/testgeometry.c.o.d -o CMakeFiles/testgeometry.dir/testgeometry.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgeometry.c
 
 test/CMakeFiles/testgeometry.dir/testgeometry.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testgeometry.dir/testgeometry.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgeometry.c > CMakeFiles/testgeometry.dir/testgeometry.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgeometry.c > CMakeFiles/testgeometry.dir/testgeometry.c.i
 
 test/CMakeFiles/testgeometry.dir/testgeometry.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testgeometry.dir/testgeometry.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgeometry.c -o CMakeFiles/testgeometry.dir/testgeometry.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgeometry.c -o CMakeFiles/testgeometry.dir/testgeometry.c.s
 
 # Object files for target testgeometry
 testgeometry_OBJECTS = \
@@ -92,7 +92,7 @@ testgeometry_OBJECTS = \
 
 # External object files for target testgeometry
 testgeometry_EXTERNAL_OBJECTS = \
-"/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
+"/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/sdltests_utils.dir/testutils.c.o"
 
 test/testgeometry: test/CMakeFiles/testgeometry.dir/testgeometry.c.o
 test/testgeometry: test/CMakeFiles/sdltests_utils.dir/testutils.c.o
@@ -102,20 +102,20 @@ test/testgeometry: libSDL3_test.a
 test/testgeometry: libSDL3.so.0.5.0
 test/testgeometry: /usr/lib/libunwind-generic.so
 test/testgeometry: /usr/lib/libunwind.so
-test/testgeometry: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testgeometry: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testgeometry: test/CMakeFiles/testgeometry.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testgeometry"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testgeometry.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testgeometry"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testgeometry.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testgeometry.dir/build: test/testgeometry
 .PHONY : test/CMakeFiles/testgeometry.dir/build
 
 test/CMakeFiles/testgeometry.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testgeometry.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testgeometry.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testgeometry.dir/clean
 
 test/CMakeFiles/testgeometry.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testgeometry.dir/DependInfo.cmake "--color=$(COLOR)" testgeometry
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testgeometry.dir/DependInfo.cmake "--color=$(COLOR)" testgeometry
 .PHONY : test/CMakeFiles/testgeometry.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testsoftwaretransparent.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testsoftwaretransparent.dir/codegen:
 .PHONY : test/CMakeFiles/testsoftwaretransparent.dir/codegen
 
 test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o: test/CMakeFiles/testsoftwaretransparent.dir/flags.make
-test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testsoftwaretransparent.c
+test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testsoftwaretransparent.c
 test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o: test/CMakeFiles/testsoftwaretransparent.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o -MF CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o.d -o CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testsoftwaretransparent.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o -MF CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o.d -o CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testsoftwaretransparent.c
 
 test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testsoftwaretransparent.c > CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testsoftwaretransparent.c > CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.i
 
 test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testsoftwaretransparent.c -o CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testsoftwaretransparent.c -o CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.s
 
 # Object files for target testsoftwaretransparent
 testsoftwaretransparent_OBJECTS = \
@@ -100,20 +100,20 @@ test/testsoftwaretransparent: libSDL3_test.a
 test/testsoftwaretransparent: libSDL3.so.0.5.0
 test/testsoftwaretransparent: /usr/lib/libunwind-generic.so
 test/testsoftwaretransparent: /usr/lib/libunwind.so
-test/testsoftwaretransparent: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testsoftwaretransparent: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testsoftwaretransparent: test/CMakeFiles/testsoftwaretransparent.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testsoftwaretransparent"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testsoftwaretransparent.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testsoftwaretransparent"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testsoftwaretransparent.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testsoftwaretransparent.dir/build: test/testsoftwaretransparent
 .PHONY : test/CMakeFiles/testsoftwaretransparent.dir/build
 
 test/CMakeFiles/testsoftwaretransparent.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testsoftwaretransparent.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testsoftwaretransparent.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testsoftwaretransparent.dir/clean
 
 test/CMakeFiles/testsoftwaretransparent.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testsoftwaretransparent.dir/DependInfo.cmake "--color=$(COLOR)" testsoftwaretransparent
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testsoftwaretransparent.dir/DependInfo.cmake "--color=$(COLOR)" testsoftwaretransparent
 .PHONY : test/CMakeFiles/testsoftwaretransparent.dir/depend
 

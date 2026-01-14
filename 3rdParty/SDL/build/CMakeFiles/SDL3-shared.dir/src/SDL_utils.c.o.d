@@ -1,7 +1,7 @@
 CMakeFiles/SDL3-shared.dir/src/SDL_utils.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_utils.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_utils.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
  /usr/include/unistd.h /usr/include/features.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/wordsize.h /usr/include/bits/types.h \
@@ -9,5 +9,5 @@ CMakeFiles/SDL3-shared.dir/src/SDL_utils.c.o: \
  /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
  /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/joystick/SDL_joystick_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/joystick/SDL_joystick_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h

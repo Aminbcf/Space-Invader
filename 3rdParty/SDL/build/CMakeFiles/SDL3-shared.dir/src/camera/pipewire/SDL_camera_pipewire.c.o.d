@@ -1,12 +1,12 @@
 CMakeFiles/SDL3-shared.dir/src/camera/pipewire/SDL_camera_pipewire.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/pipewire/SDL_camera_pipewire.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/pipewire/SDL_camera_pipewire.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/pipewire/../SDL_syscamera.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/pipewire/../../SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/pipewire/../../video/SDL_surface_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/pipewire/../../video/SDL_blit.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/camera/pipewire/../../core/linux/SDL_dbus.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/pipewire/../SDL_syscamera.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/pipewire/../../SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/pipewire/../../video/SDL_surface_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/pipewire/../../video/SDL_blit.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/camera/pipewire/../../core/linux/SDL_dbus.h \
  /usr/include/dbus-1.0/dbus/dbus.h \
  /usr/lib/dbus-1.0/include/dbus/dbus-arch-deps.h \
  /usr/include/dbus-1.0/dbus/dbus-macros.h \

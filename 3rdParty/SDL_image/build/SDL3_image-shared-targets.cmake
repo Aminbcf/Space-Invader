@@ -19,7 +19,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_cmake_targets_defined "")
 set(_cmake_targets_not_defined "")
 set(_cmake_expected_targets "")
-foreach(_cmake_expected_target IN ITEMS SDL3_image::SDL3_image-shared SDL3_image::external_libpng)
+foreach(_cmake_expected_target IN ITEMS SDL3_image::SDL3_image-shared)
   list(APPEND _cmake_expected_targets "${_cmake_expected_target}")
   if(TARGET "${_cmake_expected_target}")
     list(APPEND _cmake_targets_defined "${_cmake_expected_target}")
@@ -51,31 +51,17 @@ add_library(SDL3_image::SDL3_image-shared SHARED IMPORTED)
 
 set_target_properties(SDL3_image::SDL3_image-shared PROPERTIES
   COMPATIBLE_INTERFACE_BOOL "SDL3_SHARED"
-  INTERFACE_INCLUDE_DIRECTORIES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/include"
   INTERFACE_LINK_LIBRARIES "SDL3::Headers"
   INTERFACE_SDL3_SHARED "TRUE"
-)
-
-# Create imported target SDL3_image::external_libpng
-add_library(SDL3_image::external_libpng SHARED IMPORTED)
-
-set_target_properties(SDL3_image::external_libpng PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/external/libpng;/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/external/libpng-build"
 )
 
 # Import target "SDL3_image::SDL3_image-shared" for configuration "Release"
 set_property(TARGET SDL3_image::SDL3_image-shared APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(SDL3_image::SDL3_image-shared PROPERTIES
   IMPORTED_LINK_DEPENDENT_LIBRARIES_RELEASE "SDL3::SDL3-shared"
-  IMPORTED_LOCATION_RELEASE "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/libSDL3_image.so.0.3.2"
+  IMPORTED_LOCATION_RELEASE "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/libSDL3_image.so.0.3.2"
   IMPORTED_SONAME_RELEASE "libSDL3_image.so.0"
-  )
-
-# Import target "SDL3_image::external_libpng" for configuration "Release"
-set_property(TARGET SDL3_image::external_libpng APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-set_target_properties(SDL3_image::external_libpng PROPERTIES
-  IMPORTED_LOCATION_RELEASE "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/external/libpng-build/libpng16.so.16.53.0"
-  IMPORTED_SONAME_RELEASE "libpng16.so.16"
   )
 
 # This file does not depend on other imported targets which have

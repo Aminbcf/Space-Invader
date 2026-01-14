@@ -1,4 +1,4 @@
-# Install script for directory: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test
+# Install script for directory: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,6 +45,6 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/install_local_manifest.txt"
+  file(WRITE "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

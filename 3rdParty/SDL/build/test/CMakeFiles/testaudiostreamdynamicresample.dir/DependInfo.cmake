@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testaudiostreamdynamicresample.c" "test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o" "gcc" "test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testaudiostreamdynamicresample.c" "test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o" "gcc" "test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o.d"
   "" "test/testaudiostreamdynamicresample" "gcc" "test/CMakeFiles/testaudiostreamdynamicresample.dir/link.d"
   )
 

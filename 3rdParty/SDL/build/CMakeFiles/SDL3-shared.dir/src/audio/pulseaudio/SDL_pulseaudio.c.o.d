@@ -1,7 +1,7 @@
 CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/pulseaudio/SDL_pulseaudio.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/pulseaudio/SDL_pulseaudio.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
  /usr/include/signal.h /usr/include/features.h /usr/include/bits/types.h \
  /usr/include/bits/signum-generic.h /usr/include/bits/signum-arch.h \
  /usr/include/bits/types/sig_atomic_t.h \
@@ -25,8 +25,8 @@ CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o: \
  /usr/include/bits/pthreadtypes.h /usr/include/bits/sigthread.h \
  /usr/include/bits/types/__sigset_t.h /usr/include/bits/signal_ext.h \
  /usr/include/sys/types.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/pulseaudio/../SDL_sysaudio.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/pulseaudio/SDL_pulseaudio.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/pulseaudio/../SDL_sysaudio.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/pulseaudio/SDL_pulseaudio.h \
  /usr/include/pulse/pulseaudio.h /usr/include/pulse/direction.h \
  /usr/include/pulse/def.h /usr/include/inttypes.h /usr/include/sys/time.h \
  /usr/include/bits/types/time_t.h \
@@ -55,9 +55,9 @@ CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o: \
  /usr/include/pulse/mainloop.h /usr/include/pulse/mainloop-signal.h \
  /usr/include/pulse/util.h /usr/include/pulse/timeval.h \
  /usr/include/pulse/rtclock.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/pulseaudio/../../thread/SDL_systhread.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/pulseaudio/../../thread/SDL_thread_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/pulseaudio/../../thread/pthread/SDL_systhread_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/pulseaudio/../../thread/SDL_systhread.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/pulseaudio/../../thread/SDL_thread_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/pulseaudio/../../thread/pthread/SDL_systhread_c.h \
  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
  /usr/include/linux/sched/types.h /usr/include/linux/types.h \
  /usr/include/asm/types.h /usr/include/asm-generic/types.h \
@@ -73,5 +73,5 @@ CMakeFiles/SDL3-shared.dir/src/audio/pulseaudio/SDL_pulseaudio.c.o: \
  /usr/include/bits/types/locale_t.h /usr/include/bits/endian.h \
  /usr/include/bits/setjmp.h \
  /usr/include/bits/types/struct___jmp_buf_tag.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/pulseaudio/../../thread/../SDL_error_c.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/pulseaudio/../../thread/../SDL_internal.h
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/pulseaudio/../../thread/../SDL_error_c.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/pulseaudio/../../thread/../SDL_internal.h

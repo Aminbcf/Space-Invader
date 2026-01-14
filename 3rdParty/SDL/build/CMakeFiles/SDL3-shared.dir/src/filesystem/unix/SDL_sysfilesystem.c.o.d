@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/filesystem/unix/SDL_sysfilesystem.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/filesystem/unix/SDL_sysfilesystem.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/filesystem/unix/SDL_sysfilesystem.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/filesystem/unix/../SDL_sysfilesystem.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/filesystem/unix/../SDL_sysfilesystem.h \
  /usr/include/stdio.h /usr/include/sys/stat.h /usr/include/features.h \
  /usr/include/bits/types.h /usr/include/bits/types/struct_timespec.h \
  /usr/include/bits/types/time_t.h /usr/include/bits/stat.h \

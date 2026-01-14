@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testrwlock.c" "test/CMakeFiles/testrwlock.dir/testrwlock.c.o" "gcc" "test/CMakeFiles/testrwlock.dir/testrwlock.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testrwlock.c" "test/CMakeFiles/testrwlock.dir/testrwlock.c.o" "gcc" "test/CMakeFiles/testrwlock.dir/testrwlock.c.o.d"
   "" "test/testrwlock" "gcc" "test/CMakeFiles/testrwlock.dir/link.d"
   )
 

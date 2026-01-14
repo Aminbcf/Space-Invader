@@ -1,9 +1,9 @@
 CMakeFiles/SDL3-shared.dir/src/audio/alsa/SDL_alsa_audio.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/alsa/SDL_alsa_audio.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/alsa/SDL_alsa_audio.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/alsa/../SDL_sysaudio.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/alsa/SDL_alsa_audio.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/alsa/../SDL_sysaudio.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/alsa/SDL_alsa_audio.h \
  /usr/include/alsa/asoundlib.h /usr/include/unistd.h \
  /usr/include/features.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/environments.h /usr/include/bits/wordsize.h \
@@ -42,7 +42,7 @@ CMakeFiles/SDL3-shared.dir/src/audio/alsa/SDL_alsa_audio.c.o: \
  /usr/include/alsa/ump_msg.h /usr/include/alsa/seq_event.h \
  /usr/include/alsa/seq.h /usr/include/alsa/seqmid.h \
  /usr/include/alsa/seq_midi_event.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/audio/alsa/../../core/linux/SDL_udev.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/audio/alsa/../../core/linux/SDL_udev.h \
  /usr/include/libudev.h /usr/include/sys/sysmacros.h \
  /usr/include/bits/sysmacros.h /usr/include/linux/input.h \
  /usr/include/sys/time.h /usr/include/sys/select.h \

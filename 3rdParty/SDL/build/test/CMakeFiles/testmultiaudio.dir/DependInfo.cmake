@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testmultiaudio.c" "test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o" "gcc" "test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testmultiaudio.c" "test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o" "gcc" "test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o.d"
   "" "test/testmultiaudio" "gcc" "test/CMakeFiles/testmultiaudio.dir/link.d"
   )
 

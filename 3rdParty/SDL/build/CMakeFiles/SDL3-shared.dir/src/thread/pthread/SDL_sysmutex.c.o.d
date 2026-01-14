@@ -1,7 +1,7 @@
 CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/thread/pthread/SDL_sysmutex.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/thread/pthread/SDL_sysmutex.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
  /usr/include/errno.h /usr/include/features.h /usr/include/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
@@ -27,4 +27,4 @@ CMakeFiles/SDL3-shared.dir/src/thread/pthread/SDL_sysmutex.c.o: \
  /usr/include/bits/wordsize.h /usr/include/bits/types/__sigset_t.h \
  /usr/include/bits/types/struct___jmp_buf_tag.h \
  /usr/include/bits/pthread_stack_min-dynamic.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/thread/pthread/SDL_sysmutex_c.h
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/thread/pthread/SDL_sysmutex_c.h

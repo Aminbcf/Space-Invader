@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SDL3_test.dir/depend.make
@@ -73,144 +73,144 @@ CMakeFiles/SDL3_test.dir/codegen:
 .PHONY : CMakeFiles/SDL3_test.dir/codegen
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_assert.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_assert.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_assert.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_assert.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_assert.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_assert.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_assert.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_assert.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.s
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_common.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_common.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_common.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_common.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_common.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_common.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_common.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_common.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.s
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_compare.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_compare.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_compare.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_compare.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_compare.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_compare.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_compare.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_compare.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.s
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_crc32.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_crc32.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_crc32.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_crc32.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_crc32.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_crc32.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_crc32.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_crc32.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.s
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_font.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_font.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_font.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_font.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_font.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_font.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_font.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_font.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.s
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_fuzzer.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_fuzzer.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_fuzzer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_fuzzer.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_fuzzer.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_fuzzer.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_fuzzer.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_fuzzer.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.s
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_harness.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_harness.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_harness.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_harness.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_harness.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_harness.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_harness.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_harness.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.s
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_log.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_log.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_log.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_log.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_log.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_log.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_log.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_log.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.s
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_md5.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_md5.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_md5.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_md5.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_md5.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_md5.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_md5.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_md5.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.s
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o: CMakeFiles/SDL3_test.dir/flags.make
-CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_memory.c
+CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_memory.c
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o: CMakeFiles/SDL3_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_memory.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o -MF CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o.d -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_memory.c
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_memory.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_memory.c > CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.i
 
 CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/test/SDL_test_memory.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/test/SDL_test_memory.c -o CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.s
 
 # Object files for target SDL3_test
 SDL3_test_OBJECTS = \
@@ -240,7 +240,7 @@ libSDL3_test.a: CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o
 libSDL3_test.a: CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o
 libSDL3_test.a: CMakeFiles/SDL3_test.dir/build.make
 libSDL3_test.a: CMakeFiles/SDL3_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C static library libSDL3_test.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C static library libSDL3_test.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/SDL3_test.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SDL3_test.dir/link.txt --verbose=$(VERBOSE)
 
@@ -253,6 +253,6 @@ CMakeFiles/SDL3_test.dir/clean:
 .PHONY : CMakeFiles/SDL3_test.dir/clean
 
 CMakeFiles/SDL3_test.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles/SDL3_test.dir/DependInfo.cmake "--color=$(COLOR)" SDL3_test
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles/SDL3_test.dir/DependInfo.cmake "--color=$(COLOR)" SDL3_test
 .PHONY : CMakeFiles/SDL3_test.dir/depend
 

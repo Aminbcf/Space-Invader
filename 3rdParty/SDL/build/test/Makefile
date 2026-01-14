@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -162,14 +162,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test//CMakeFiles/progress.marks
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles 0
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test//CMakeFiles/progress.marks
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/clean
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/clean
 .PHONY : clean
 
 # The main clean target
@@ -178,23 +178,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -P /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -P /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/CMakeFiles/sdltests_utils.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/sdltests_utils.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/sdltests_utils.dir/rule
 .PHONY : test/CMakeFiles/sdltests_utils.dir/rule
 
 # Convenience name for target.
@@ -203,12 +203,12 @@ sdltests_utils: test/CMakeFiles/sdltests_utils.dir/rule
 
 # fast build rule for target.
 sdltests_utils/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/sdltests_utils.dir/build.make test/CMakeFiles/sdltests_utils.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/sdltests_utils.dir/build.make test/CMakeFiles/sdltests_utils.dir/build
 .PHONY : sdltests_utils/fast
 
 # Convenience name for target.
 test/CMakeFiles/copy-sdl-test-resources.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/copy-sdl-test-resources.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/copy-sdl-test-resources.dir/rule
 .PHONY : test/CMakeFiles/copy-sdl-test-resources.dir/rule
 
 # Convenience name for target.
@@ -217,12 +217,12 @@ copy-sdl-test-resources: test/CMakeFiles/copy-sdl-test-resources.dir/rule
 
 # fast build rule for target.
 copy-sdl-test-resources/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/copy-sdl-test-resources.dir/build.make test/CMakeFiles/copy-sdl-test-resources.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/copy-sdl-test-resources.dir/build.make test/CMakeFiles/copy-sdl-test-resources.dir/build
 .PHONY : copy-sdl-test-resources/fast
 
 # Convenience name for target.
 test/CMakeFiles/generate-gamepad_image_headers.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/generate-gamepad_image_headers.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/generate-gamepad_image_headers.dir/rule
 .PHONY : test/CMakeFiles/generate-gamepad_image_headers.dir/rule
 
 # Convenience name for target.
@@ -231,12 +231,12 @@ generate-gamepad_image_headers: test/CMakeFiles/generate-gamepad_image_headers.d
 
 # fast build rule for target.
 generate-gamepad_image_headers/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/generate-gamepad_image_headers.dir/build.make test/CMakeFiles/generate-gamepad_image_headers.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/generate-gamepad_image_headers.dir/build.make test/CMakeFiles/generate-gamepad_image_headers.dir/build
 .PHONY : generate-gamepad_image_headers/fast
 
 # Convenience name for target.
 test/CMakeFiles/generate-icon_png_header.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/generate-icon_png_header.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/generate-icon_png_header.dir/rule
 .PHONY : test/CMakeFiles/generate-icon_png_header.dir/rule
 
 # Convenience name for target.
@@ -245,12 +245,12 @@ generate-icon_png_header: test/CMakeFiles/generate-icon_png_header.dir/rule
 
 # fast build rule for target.
 generate-icon_png_header/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/generate-icon_png_header.dir/build.make test/CMakeFiles/generate-icon_png_header.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/generate-icon_png_header.dir/build.make test/CMakeFiles/generate-icon_png_header.dir/build
 .PHONY : generate-icon_png_header/fast
 
 # Convenience name for target.
 test/CMakeFiles/generate-glass_png_header.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/generate-glass_png_header.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/generate-glass_png_header.dir/rule
 .PHONY : test/CMakeFiles/generate-glass_png_header.dir/rule
 
 # Convenience name for target.
@@ -259,12 +259,12 @@ generate-glass_png_header: test/CMakeFiles/generate-glass_png_header.dir/rule
 
 # fast build rule for target.
 generate-glass_png_header/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/generate-glass_png_header.dir/build.make test/CMakeFiles/generate-glass_png_header.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/generate-glass_png_header.dir/build.make test/CMakeFiles/generate-glass_png_header.dir/build
 .PHONY : generate-glass_png_header/fast
 
 # Convenience name for target.
 test/CMakeFiles/testffmpeg.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testffmpeg.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testffmpeg.dir/rule
 .PHONY : test/CMakeFiles/testffmpeg.dir/rule
 
 # Convenience name for target.
@@ -273,12 +273,12 @@ testffmpeg: test/CMakeFiles/testffmpeg.dir/rule
 
 # fast build rule for target.
 testffmpeg/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/build
 .PHONY : testffmpeg/fast
 
 # Convenience name for target.
 test/CMakeFiles/checkkeys.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/checkkeys.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/checkkeys.dir/rule
 .PHONY : test/CMakeFiles/checkkeys.dir/rule
 
 # Convenience name for target.
@@ -287,12 +287,12 @@ checkkeys: test/CMakeFiles/checkkeys.dir/rule
 
 # fast build rule for target.
 checkkeys/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/checkkeys.dir/build.make test/CMakeFiles/checkkeys.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/checkkeys.dir/build.make test/CMakeFiles/checkkeys.dir/build
 .PHONY : checkkeys/fast
 
 # Convenience name for target.
 test/CMakeFiles/loopwave.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/loopwave.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/loopwave.dir/rule
 .PHONY : test/CMakeFiles/loopwave.dir/rule
 
 # Convenience name for target.
@@ -301,12 +301,12 @@ loopwave: test/CMakeFiles/loopwave.dir/rule
 
 # fast build rule for target.
 loopwave/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/loopwave.dir/build.make test/CMakeFiles/loopwave.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/loopwave.dir/build.make test/CMakeFiles/loopwave.dir/build
 .PHONY : loopwave/fast
 
 # Convenience name for target.
 test/CMakeFiles/testsurround.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsurround.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsurround.dir/rule
 .PHONY : test/CMakeFiles/testsurround.dir/rule
 
 # Convenience name for target.
@@ -315,12 +315,12 @@ testsurround: test/CMakeFiles/testsurround.dir/rule
 
 # fast build rule for target.
 testsurround/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsurround.dir/build.make test/CMakeFiles/testsurround.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsurround.dir/build.make test/CMakeFiles/testsurround.dir/build
 .PHONY : testsurround/fast
 
 # Convenience name for target.
 test/CMakeFiles/testresample.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testresample.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testresample.dir/rule
 .PHONY : test/CMakeFiles/testresample.dir/rule
 
 # Convenience name for target.
@@ -329,12 +329,12 @@ testresample: test/CMakeFiles/testresample.dir/rule
 
 # fast build rule for target.
 testresample/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testresample.dir/build.make test/CMakeFiles/testresample.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testresample.dir/build.make test/CMakeFiles/testresample.dir/build
 .PHONY : testresample/fast
 
 # Convenience name for target.
 test/CMakeFiles/testaudioinfo.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudioinfo.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudioinfo.dir/rule
 .PHONY : test/CMakeFiles/testaudioinfo.dir/rule
 
 # Convenience name for target.
@@ -343,12 +343,12 @@ testaudioinfo: test/CMakeFiles/testaudioinfo.dir/rule
 
 # fast build rule for target.
 testaudioinfo/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudioinfo.dir/build.make test/CMakeFiles/testaudioinfo.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudioinfo.dir/build.make test/CMakeFiles/testaudioinfo.dir/build
 .PHONY : testaudioinfo/fast
 
 # Convenience name for target.
 test/CMakeFiles/testaudiostreamdynamicresample.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudiostreamdynamicresample.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudiostreamdynamicresample.dir/rule
 .PHONY : test/CMakeFiles/testaudiostreamdynamicresample.dir/rule
 
 # Convenience name for target.
@@ -357,12 +357,12 @@ testaudiostreamdynamicresample: test/CMakeFiles/testaudiostreamdynamicresample.d
 
 # fast build rule for target.
 testaudiostreamdynamicresample/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiostreamdynamicresample.dir/build.make test/CMakeFiles/testaudiostreamdynamicresample.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiostreamdynamicresample.dir/build.make test/CMakeFiles/testaudiostreamdynamicresample.dir/build
 .PHONY : testaudiostreamdynamicresample/fast
 
 # Convenience name for target.
 test/CMakeFiles/testautomation.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testautomation.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testautomation.dir/rule
 .PHONY : test/CMakeFiles/testautomation.dir/rule
 
 # Convenience name for target.
@@ -371,12 +371,12 @@ testautomation: test/CMakeFiles/testautomation.dir/rule
 
 # fast build rule for target.
 testautomation/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/build
 .PHONY : testautomation/fast
 
 # Convenience name for target.
 test/CMakeFiles/testmultiaudio.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmultiaudio.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmultiaudio.dir/rule
 .PHONY : test/CMakeFiles/testmultiaudio.dir/rule
 
 # Convenience name for target.
@@ -385,12 +385,12 @@ testmultiaudio: test/CMakeFiles/testmultiaudio.dir/rule
 
 # fast build rule for target.
 testmultiaudio/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmultiaudio.dir/build.make test/CMakeFiles/testmultiaudio.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmultiaudio.dir/build.make test/CMakeFiles/testmultiaudio.dir/build
 .PHONY : testmultiaudio/fast
 
 # Convenience name for target.
 test/CMakeFiles/testaudiohotplug.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudiohotplug.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudiohotplug.dir/rule
 .PHONY : test/CMakeFiles/testaudiohotplug.dir/rule
 
 # Convenience name for target.
@@ -399,12 +399,12 @@ testaudiohotplug: test/CMakeFiles/testaudiohotplug.dir/rule
 
 # fast build rule for target.
 testaudiohotplug/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiohotplug.dir/build.make test/CMakeFiles/testaudiohotplug.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiohotplug.dir/build.make test/CMakeFiles/testaudiohotplug.dir/build
 .PHONY : testaudiohotplug/fast
 
 # Convenience name for target.
 test/CMakeFiles/testaudiorecording.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudiorecording.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudiorecording.dir/rule
 .PHONY : test/CMakeFiles/testaudiorecording.dir/rule
 
 # Convenience name for target.
@@ -413,12 +413,12 @@ testaudiorecording: test/CMakeFiles/testaudiorecording.dir/rule
 
 # fast build rule for target.
 testaudiorecording/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiorecording.dir/build.make test/CMakeFiles/testaudiorecording.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiorecording.dir/build.make test/CMakeFiles/testaudiorecording.dir/build
 .PHONY : testaudiorecording/fast
 
 # Convenience name for target.
 test/CMakeFiles/testatomic.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testatomic.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testatomic.dir/rule
 .PHONY : test/CMakeFiles/testatomic.dir/rule
 
 # Convenience name for target.
@@ -427,12 +427,12 @@ testatomic: test/CMakeFiles/testatomic.dir/rule
 
 # fast build rule for target.
 testatomic/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testatomic.dir/build.make test/CMakeFiles/testatomic.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testatomic.dir/build.make test/CMakeFiles/testatomic.dir/build
 .PHONY : testatomic/fast
 
 # Convenience name for target.
 test/CMakeFiles/testintersections.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testintersections.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testintersections.dir/rule
 .PHONY : test/CMakeFiles/testintersections.dir/rule
 
 # Convenience name for target.
@@ -441,12 +441,12 @@ testintersections: test/CMakeFiles/testintersections.dir/rule
 
 # fast build rule for target.
 testintersections/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testintersections.dir/build.make test/CMakeFiles/testintersections.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testintersections.dir/build.make test/CMakeFiles/testintersections.dir/build
 .PHONY : testintersections/fast
 
 # Convenience name for target.
 test/CMakeFiles/testrelative.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrelative.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrelative.dir/rule
 .PHONY : test/CMakeFiles/testrelative.dir/rule
 
 # Convenience name for target.
@@ -455,12 +455,12 @@ testrelative: test/CMakeFiles/testrelative.dir/rule
 
 # fast build rule for target.
 testrelative/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrelative.dir/build.make test/CMakeFiles/testrelative.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrelative.dir/build.make test/CMakeFiles/testrelative.dir/build
 .PHONY : testrelative/fast
 
 # Convenience name for target.
 test/CMakeFiles/testhittesting.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testhittesting.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testhittesting.dir/rule
 .PHONY : test/CMakeFiles/testhittesting.dir/rule
 
 # Convenience name for target.
@@ -469,12 +469,12 @@ testhittesting: test/CMakeFiles/testhittesting.dir/rule
 
 # fast build rule for target.
 testhittesting/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhittesting.dir/build.make test/CMakeFiles/testhittesting.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhittesting.dir/build.make test/CMakeFiles/testhittesting.dir/build
 .PHONY : testhittesting/fast
 
 # Convenience name for target.
 test/CMakeFiles/testdraw.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdraw.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdraw.dir/rule
 .PHONY : test/CMakeFiles/testdraw.dir/rule
 
 # Convenience name for target.
@@ -483,12 +483,12 @@ testdraw: test/CMakeFiles/testdraw.dir/rule
 
 # fast build rule for target.
 testdraw/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdraw.dir/build.make test/CMakeFiles/testdraw.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdraw.dir/build.make test/CMakeFiles/testdraw.dir/build
 .PHONY : testdraw/fast
 
 # Convenience name for target.
 test/CMakeFiles/testdrawchessboard.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdrawchessboard.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdrawchessboard.dir/rule
 .PHONY : test/CMakeFiles/testdrawchessboard.dir/rule
 
 # Convenience name for target.
@@ -497,12 +497,12 @@ testdrawchessboard: test/CMakeFiles/testdrawchessboard.dir/rule
 
 # fast build rule for target.
 testdrawchessboard/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdrawchessboard.dir/build.make test/CMakeFiles/testdrawchessboard.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdrawchessboard.dir/build.make test/CMakeFiles/testdrawchessboard.dir/build
 .PHONY : testdrawchessboard/fast
 
 # Convenience name for target.
 test/CMakeFiles/testdropfile.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdropfile.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdropfile.dir/rule
 .PHONY : test/CMakeFiles/testdropfile.dir/rule
 
 # Convenience name for target.
@@ -511,12 +511,12 @@ testdropfile: test/CMakeFiles/testdropfile.dir/rule
 
 # fast build rule for target.
 testdropfile/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdropfile.dir/build.make test/CMakeFiles/testdropfile.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdropfile.dir/build.make test/CMakeFiles/testdropfile.dir/build
 .PHONY : testdropfile/fast
 
 # Convenience name for target.
 test/CMakeFiles/testerror.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testerror.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testerror.dir/rule
 .PHONY : test/CMakeFiles/testerror.dir/rule
 
 # Convenience name for target.
@@ -525,12 +525,12 @@ testerror: test/CMakeFiles/testerror.dir/rule
 
 # fast build rule for target.
 testerror/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testerror.dir/build.make test/CMakeFiles/testerror.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testerror.dir/build.make test/CMakeFiles/testerror.dir/build
 .PHONY : testerror/fast
 
 # Convenience name for target.
 test/CMakeFiles/testsymbols.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsymbols.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsymbols.dir/rule
 .PHONY : test/CMakeFiles/testsymbols.dir/rule
 
 # Convenience name for target.
@@ -539,12 +539,12 @@ testsymbols: test/CMakeFiles/testsymbols.dir/rule
 
 # fast build rule for target.
 testsymbols/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsymbols.dir/build.make test/CMakeFiles/testsymbols.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsymbols.dir/build.make test/CMakeFiles/testsymbols.dir/build
 .PHONY : testsymbols/fast
 
 # Convenience name for target.
 test/CMakeFiles/testevdev.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testevdev.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testevdev.dir/rule
 .PHONY : test/CMakeFiles/testevdev.dir/rule
 
 # Convenience name for target.
@@ -553,12 +553,12 @@ testevdev: test/CMakeFiles/testevdev.dir/rule
 
 # fast build rule for target.
 testevdev/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testevdev.dir/build.make test/CMakeFiles/testevdev.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testevdev.dir/build.make test/CMakeFiles/testevdev.dir/build
 .PHONY : testevdev/fast
 
 # Convenience name for target.
 test/CMakeFiles/testnative.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testnative.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testnative.dir/rule
 .PHONY : test/CMakeFiles/testnative.dir/rule
 
 # Convenience name for target.
@@ -567,12 +567,12 @@ testnative: test/CMakeFiles/testnative.dir/rule
 
 # fast build rule for target.
 testnative/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/build
 .PHONY : testnative/fast
 
 # Convenience name for target.
 test/CMakeFiles/testasyncio.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testasyncio.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testasyncio.dir/rule
 .PHONY : test/CMakeFiles/testasyncio.dir/rule
 
 # Convenience name for target.
@@ -581,12 +581,12 @@ testasyncio: test/CMakeFiles/testasyncio.dir/rule
 
 # fast build rule for target.
 testasyncio/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testasyncio.dir/build.make test/CMakeFiles/testasyncio.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testasyncio.dir/build.make test/CMakeFiles/testasyncio.dir/build
 .PHONY : testasyncio/fast
 
 # Convenience name for target.
 test/CMakeFiles/testaudio.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudio.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testaudio.dir/rule
 .PHONY : test/CMakeFiles/testaudio.dir/rule
 
 # Convenience name for target.
@@ -595,12 +595,12 @@ testaudio: test/CMakeFiles/testaudio.dir/rule
 
 # fast build rule for target.
 testaudio/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudio.dir/build.make test/CMakeFiles/testaudio.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudio.dir/build.make test/CMakeFiles/testaudio.dir/build
 .PHONY : testaudio/fast
 
 # Convenience name for target.
 test/CMakeFiles/testcolorspace.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testcolorspace.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testcolorspace.dir/rule
 .PHONY : test/CMakeFiles/testcolorspace.dir/rule
 
 # Convenience name for target.
@@ -609,12 +609,12 @@ testcolorspace: test/CMakeFiles/testcolorspace.dir/rule
 
 # fast build rule for target.
 testcolorspace/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcolorspace.dir/build.make test/CMakeFiles/testcolorspace.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcolorspace.dir/build.make test/CMakeFiles/testcolorspace.dir/build
 .PHONY : testcolorspace/fast
 
 # Convenience name for target.
 test/CMakeFiles/testfile.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testfile.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testfile.dir/rule
 .PHONY : test/CMakeFiles/testfile.dir/rule
 
 # Convenience name for target.
@@ -623,12 +623,12 @@ testfile: test/CMakeFiles/testfile.dir/rule
 
 # fast build rule for target.
 testfile/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfile.dir/build.make test/CMakeFiles/testfile.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfile.dir/build.make test/CMakeFiles/testfile.dir/build
 .PHONY : testfile/fast
 
 # Convenience name for target.
 test/CMakeFiles/testcontroller.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testcontroller.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testcontroller.dir/rule
 .PHONY : test/CMakeFiles/testcontroller.dir/rule
 
 # Convenience name for target.
@@ -637,12 +637,12 @@ testcontroller: test/CMakeFiles/testcontroller.dir/rule
 
 # fast build rule for target.
 testcontroller/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/build
 .PHONY : testcontroller/fast
 
 # Convenience name for target.
 test/CMakeFiles/testdlopennote.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdlopennote.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdlopennote.dir/rule
 .PHONY : test/CMakeFiles/testdlopennote.dir/rule
 
 # Convenience name for target.
@@ -651,12 +651,12 @@ testdlopennote: test/CMakeFiles/testdlopennote.dir/rule
 
 # fast build rule for target.
 testdlopennote/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdlopennote.dir/build.make test/CMakeFiles/testdlopennote.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdlopennote.dir/build.make test/CMakeFiles/testdlopennote.dir/build
 .PHONY : testdlopennote/fast
 
 # Convenience name for target.
 test/CMakeFiles/testgeometry.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgeometry.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgeometry.dir/rule
 .PHONY : test/CMakeFiles/testgeometry.dir/rule
 
 # Convenience name for target.
@@ -665,12 +665,12 @@ testgeometry: test/CMakeFiles/testgeometry.dir/rule
 
 # fast build rule for target.
 testgeometry/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgeometry.dir/build.make test/CMakeFiles/testgeometry.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgeometry.dir/build.make test/CMakeFiles/testgeometry.dir/build
 .PHONY : testgeometry/fast
 
 # Convenience name for target.
 test/CMakeFiles/testgl.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgl.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgl.dir/rule
 .PHONY : test/CMakeFiles/testgl.dir/rule
 
 # Convenience name for target.
@@ -679,12 +679,12 @@ testgl: test/CMakeFiles/testgl.dir/rule
 
 # fast build rule for target.
 testgl/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgl.dir/build.make test/CMakeFiles/testgl.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgl.dir/build.make test/CMakeFiles/testgl.dir/build
 .PHONY : testgl/fast
 
 # Convenience name for target.
 test/CMakeFiles/testgles.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgles.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgles.dir/rule
 .PHONY : test/CMakeFiles/testgles.dir/rule
 
 # Convenience name for target.
@@ -693,12 +693,12 @@ testgles: test/CMakeFiles/testgles.dir/rule
 
 # fast build rule for target.
 testgles/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles.dir/build.make test/CMakeFiles/testgles.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles.dir/build.make test/CMakeFiles/testgles.dir/build
 .PHONY : testgles/fast
 
 # Convenience name for target.
 test/CMakeFiles/testgpu_simple_clear.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgpu_simple_clear.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgpu_simple_clear.dir/rule
 .PHONY : test/CMakeFiles/testgpu_simple_clear.dir/rule
 
 # Convenience name for target.
@@ -707,12 +707,12 @@ testgpu_simple_clear: test/CMakeFiles/testgpu_simple_clear.dir/rule
 
 # fast build rule for target.
 testgpu_simple_clear/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_simple_clear.dir/build.make test/CMakeFiles/testgpu_simple_clear.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_simple_clear.dir/build.make test/CMakeFiles/testgpu_simple_clear.dir/build
 .PHONY : testgpu_simple_clear/fast
 
 # Convenience name for target.
 test/CMakeFiles/testgpu_spinning_cube.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgpu_spinning_cube.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgpu_spinning_cube.dir/rule
 .PHONY : test/CMakeFiles/testgpu_spinning_cube.dir/rule
 
 # Convenience name for target.
@@ -721,12 +721,12 @@ testgpu_spinning_cube: test/CMakeFiles/testgpu_spinning_cube.dir/rule
 
 # fast build rule for target.
 testgpu_spinning_cube/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_spinning_cube.dir/build.make test/CMakeFiles/testgpu_spinning_cube.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_spinning_cube.dir/build.make test/CMakeFiles/testgpu_spinning_cube.dir/build
 .PHONY : testgpu_spinning_cube/fast
 
 # Convenience name for target.
 test/CMakeFiles/testgpurender_effects.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgpurender_effects.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgpurender_effects.dir/rule
 .PHONY : test/CMakeFiles/testgpurender_effects.dir/rule
 
 # Convenience name for target.
@@ -735,12 +735,12 @@ testgpurender_effects: test/CMakeFiles/testgpurender_effects.dir/rule
 
 # fast build rule for target.
 testgpurender_effects/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_effects.dir/build.make test/CMakeFiles/testgpurender_effects.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_effects.dir/build.make test/CMakeFiles/testgpurender_effects.dir/build
 .PHONY : testgpurender_effects/fast
 
 # Convenience name for target.
 test/CMakeFiles/testgpurender_msdf.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgpurender_msdf.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgpurender_msdf.dir/rule
 .PHONY : test/CMakeFiles/testgpurender_msdf.dir/rule
 
 # Convenience name for target.
@@ -749,12 +749,12 @@ testgpurender_msdf: test/CMakeFiles/testgpurender_msdf.dir/rule
 
 # fast build rule for target.
 testgpurender_msdf/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_msdf.dir/build.make test/CMakeFiles/testgpurender_msdf.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_msdf.dir/build.make test/CMakeFiles/testgpurender_msdf.dir/build
 .PHONY : testgpurender_msdf/fast
 
 # Convenience name for target.
 test/CMakeFiles/testgles2.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgles2.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testgles2.dir/rule
 .PHONY : test/CMakeFiles/testgles2.dir/rule
 
 # Convenience name for target.
@@ -763,12 +763,12 @@ testgles2: test/CMakeFiles/testgles2.dir/rule
 
 # fast build rule for target.
 testgles2/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles2.dir/build.make test/CMakeFiles/testgles2.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles2.dir/build.make test/CMakeFiles/testgles2.dir/build
 .PHONY : testgles2/fast
 
 # Convenience name for target.
 test/CMakeFiles/testhaptic.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testhaptic.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testhaptic.dir/rule
 .PHONY : test/CMakeFiles/testhaptic.dir/rule
 
 # Convenience name for target.
@@ -777,12 +777,12 @@ testhaptic: test/CMakeFiles/testhaptic.dir/rule
 
 # fast build rule for target.
 testhaptic/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhaptic.dir/build.make test/CMakeFiles/testhaptic.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhaptic.dir/build.make test/CMakeFiles/testhaptic.dir/build
 .PHONY : testhaptic/fast
 
 # Convenience name for target.
 test/CMakeFiles/testhotplug.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testhotplug.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testhotplug.dir/rule
 .PHONY : test/CMakeFiles/testhotplug.dir/rule
 
 # Convenience name for target.
@@ -791,12 +791,12 @@ testhotplug: test/CMakeFiles/testhotplug.dir/rule
 
 # fast build rule for target.
 testhotplug/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhotplug.dir/build.make test/CMakeFiles/testhotplug.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhotplug.dir/build.make test/CMakeFiles/testhotplug.dir/build
 .PHONY : testhotplug/fast
 
 # Convenience name for target.
 test/CMakeFiles/testpen.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testpen.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testpen.dir/rule
 .PHONY : test/CMakeFiles/testpen.dir/rule
 
 # Convenience name for target.
@@ -805,12 +805,12 @@ testpen: test/CMakeFiles/testpen.dir/rule
 
 # fast build rule for target.
 testpen/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpen.dir/build.make test/CMakeFiles/testpen.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpen.dir/build.make test/CMakeFiles/testpen.dir/build
 .PHONY : testpen/fast
 
 # Convenience name for target.
 test/CMakeFiles/testrumble.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrumble.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrumble.dir/rule
 .PHONY : test/CMakeFiles/testrumble.dir/rule
 
 # Convenience name for target.
@@ -819,12 +819,12 @@ testrumble: test/CMakeFiles/testrumble.dir/rule
 
 # fast build rule for target.
 testrumble/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrumble.dir/build.make test/CMakeFiles/testrumble.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrumble.dir/build.make test/CMakeFiles/testrumble.dir/build
 .PHONY : testrumble/fast
 
 # Convenience name for target.
 test/CMakeFiles/testthread.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testthread.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testthread.dir/rule
 .PHONY : test/CMakeFiles/testthread.dir/rule
 
 # Convenience name for target.
@@ -833,12 +833,12 @@ testthread: test/CMakeFiles/testthread.dir/rule
 
 # fast build rule for target.
 testthread/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testthread.dir/build.make test/CMakeFiles/testthread.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testthread.dir/build.make test/CMakeFiles/testthread.dir/build
 .PHONY : testthread/fast
 
 # Convenience name for target.
 test/CMakeFiles/testiconv.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testiconv.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testiconv.dir/rule
 .PHONY : test/CMakeFiles/testiconv.dir/rule
 
 # Convenience name for target.
@@ -847,12 +847,12 @@ testiconv: test/CMakeFiles/testiconv.dir/rule
 
 # fast build rule for target.
 testiconv/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testiconv.dir/build.make test/CMakeFiles/testiconv.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testiconv.dir/build.make test/CMakeFiles/testiconv.dir/build
 .PHONY : testiconv/fast
 
 # Convenience name for target.
 test/CMakeFiles/testime.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testime.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testime.dir/rule
 .PHONY : test/CMakeFiles/testime.dir/rule
 
 # Convenience name for target.
@@ -861,12 +861,12 @@ testime: test/CMakeFiles/testime.dir/rule
 
 # fast build rule for target.
 testime/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testime.dir/build.make test/CMakeFiles/testime.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testime.dir/build.make test/CMakeFiles/testime.dir/build
 .PHONY : testime/fast
 
 # Convenience name for target.
 test/CMakeFiles/testkeys.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testkeys.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testkeys.dir/rule
 .PHONY : test/CMakeFiles/testkeys.dir/rule
 
 # Convenience name for target.
@@ -875,12 +875,12 @@ testkeys: test/CMakeFiles/testkeys.dir/rule
 
 # fast build rule for target.
 testkeys/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testkeys.dir/build.make test/CMakeFiles/testkeys.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testkeys.dir/build.make test/CMakeFiles/testkeys.dir/build
 .PHONY : testkeys/fast
 
 # Convenience name for target.
 test/CMakeFiles/testloadso.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testloadso.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testloadso.dir/rule
 .PHONY : test/CMakeFiles/testloadso.dir/rule
 
 # Convenience name for target.
@@ -889,12 +889,12 @@ testloadso: test/CMakeFiles/testloadso.dir/rule
 
 # fast build rule for target.
 testloadso/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testloadso.dir/build.make test/CMakeFiles/testloadso.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testloadso.dir/build.make test/CMakeFiles/testloadso.dir/build
 .PHONY : testloadso/fast
 
 # Convenience name for target.
 test/CMakeFiles/testlocale.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testlocale.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testlocale.dir/rule
 .PHONY : test/CMakeFiles/testlocale.dir/rule
 
 # Convenience name for target.
@@ -903,12 +903,12 @@ testlocale: test/CMakeFiles/testlocale.dir/rule
 
 # fast build rule for target.
 testlocale/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlocale.dir/build.make test/CMakeFiles/testlocale.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlocale.dir/build.make test/CMakeFiles/testlocale.dir/build
 .PHONY : testlocale/fast
 
 # Convenience name for target.
 test/CMakeFiles/testlock.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testlock.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testlock.dir/rule
 .PHONY : test/CMakeFiles/testlock.dir/rule
 
 # Convenience name for target.
@@ -917,12 +917,12 @@ testlock: test/CMakeFiles/testlock.dir/rule
 
 # fast build rule for target.
 testlock/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlock.dir/build.make test/CMakeFiles/testlock.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlock.dir/build.make test/CMakeFiles/testlock.dir/build
 .PHONY : testlock/fast
 
 # Convenience name for target.
 test/CMakeFiles/testrwlock.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrwlock.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrwlock.dir/rule
 .PHONY : test/CMakeFiles/testrwlock.dir/rule
 
 # Convenience name for target.
@@ -931,12 +931,12 @@ testrwlock: test/CMakeFiles/testrwlock.dir/rule
 
 # fast build rule for target.
 testrwlock/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrwlock.dir/build.make test/CMakeFiles/testrwlock.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrwlock.dir/build.make test/CMakeFiles/testrwlock.dir/build
 .PHONY : testrwlock/fast
 
 # Convenience name for target.
 test/CMakeFiles/testmouse.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmouse.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmouse.dir/rule
 .PHONY : test/CMakeFiles/testmouse.dir/rule
 
 # Convenience name for target.
@@ -945,12 +945,12 @@ testmouse: test/CMakeFiles/testmouse.dir/rule
 
 # fast build rule for target.
 testmouse/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmouse.dir/build.make test/CMakeFiles/testmouse.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmouse.dir/build.make test/CMakeFiles/testmouse.dir/build
 .PHONY : testmouse/fast
 
 # Convenience name for target.
 test/CMakeFiles/testoverlay.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testoverlay.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testoverlay.dir/rule
 .PHONY : test/CMakeFiles/testoverlay.dir/rule
 
 # Convenience name for target.
@@ -959,12 +959,12 @@ testoverlay: test/CMakeFiles/testoverlay.dir/rule
 
 # fast build rule for target.
 testoverlay/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoverlay.dir/build.make test/CMakeFiles/testoverlay.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoverlay.dir/build.make test/CMakeFiles/testoverlay.dir/build
 .PHONY : testoverlay/fast
 
 # Convenience name for target.
 test/CMakeFiles/testplatform.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testplatform.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testplatform.dir/rule
 .PHONY : test/CMakeFiles/testplatform.dir/rule
 
 # Convenience name for target.
@@ -973,12 +973,12 @@ testplatform: test/CMakeFiles/testplatform.dir/rule
 
 # fast build rule for target.
 testplatform/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testplatform.dir/build.make test/CMakeFiles/testplatform.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testplatform.dir/build.make test/CMakeFiles/testplatform.dir/build
 .PHONY : testplatform/fast
 
 # Convenience name for target.
 test/CMakeFiles/testpower.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testpower.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testpower.dir/rule
 .PHONY : test/CMakeFiles/testpower.dir/rule
 
 # Convenience name for target.
@@ -987,12 +987,12 @@ testpower: test/CMakeFiles/testpower.dir/rule
 
 # fast build rule for target.
 testpower/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpower.dir/build.make test/CMakeFiles/testpower.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpower.dir/build.make test/CMakeFiles/testpower.dir/build
 .PHONY : testpower/fast
 
 # Convenience name for target.
 test/CMakeFiles/testfilesystem.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testfilesystem.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testfilesystem.dir/rule
 .PHONY : test/CMakeFiles/testfilesystem.dir/rule
 
 # Convenience name for target.
@@ -1001,12 +1001,12 @@ testfilesystem: test/CMakeFiles/testfilesystem.dir/rule
 
 # fast build rule for target.
 testfilesystem/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfilesystem.dir/build.make test/CMakeFiles/testfilesystem.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfilesystem.dir/build.make test/CMakeFiles/testfilesystem.dir/build
 .PHONY : testfilesystem/fast
 
 # Convenience name for target.
 test/CMakeFiles/testrendertarget.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrendertarget.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrendertarget.dir/rule
 .PHONY : test/CMakeFiles/testrendertarget.dir/rule
 
 # Convenience name for target.
@@ -1015,12 +1015,12 @@ testrendertarget: test/CMakeFiles/testrendertarget.dir/rule
 
 # fast build rule for target.
 testrendertarget/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendertarget.dir/build.make test/CMakeFiles/testrendertarget.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendertarget.dir/build.make test/CMakeFiles/testrendertarget.dir/build
 .PHONY : testrendertarget/fast
 
 # Convenience name for target.
 test/CMakeFiles/testrotate.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrotate.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrotate.dir/rule
 .PHONY : test/CMakeFiles/testrotate.dir/rule
 
 # Convenience name for target.
@@ -1029,12 +1029,12 @@ testrotate: test/CMakeFiles/testrotate.dir/rule
 
 # fast build rule for target.
 testrotate/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrotate.dir/build.make test/CMakeFiles/testrotate.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrotate.dir/build.make test/CMakeFiles/testrotate.dir/build
 .PHONY : testrotate/fast
 
 # Convenience name for target.
 test/CMakeFiles/testscale.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testscale.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testscale.dir/rule
 .PHONY : test/CMakeFiles/testscale.dir/rule
 
 # Convenience name for target.
@@ -1043,12 +1043,12 @@ testscale: test/CMakeFiles/testscale.dir/rule
 
 # fast build rule for target.
 testscale/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testscale.dir/build.make test/CMakeFiles/testscale.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testscale.dir/build.make test/CMakeFiles/testscale.dir/build
 .PHONY : testscale/fast
 
 # Convenience name for target.
 test/CMakeFiles/testsem.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsem.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsem.dir/rule
 .PHONY : test/CMakeFiles/testsem.dir/rule
 
 # Convenience name for target.
@@ -1057,12 +1057,12 @@ testsem: test/CMakeFiles/testsem.dir/rule
 
 # fast build rule for target.
 testsem/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsem.dir/build.make test/CMakeFiles/testsem.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsem.dir/build.make test/CMakeFiles/testsem.dir/build
 .PHONY : testsem/fast
 
 # Convenience name for target.
 test/CMakeFiles/testsensor.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsensor.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsensor.dir/rule
 .PHONY : test/CMakeFiles/testsensor.dir/rule
 
 # Convenience name for target.
@@ -1071,12 +1071,12 @@ testsensor: test/CMakeFiles/testsensor.dir/rule
 
 # fast build rule for target.
 testsensor/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsensor.dir/build.make test/CMakeFiles/testsensor.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsensor.dir/build.make test/CMakeFiles/testsensor.dir/build
 .PHONY : testsensor/fast
 
 # Convenience name for target.
 test/CMakeFiles/testshader.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testshader.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testshader.dir/rule
 .PHONY : test/CMakeFiles/testshader.dir/rule
 
 # Convenience name for target.
@@ -1085,12 +1085,12 @@ testshader: test/CMakeFiles/testshader.dir/rule
 
 # fast build rule for target.
 testshader/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshader.dir/build.make test/CMakeFiles/testshader.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshader.dir/build.make test/CMakeFiles/testshader.dir/build
 .PHONY : testshader/fast
 
 # Convenience name for target.
 test/CMakeFiles/testshape.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testshape.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testshape.dir/rule
 .PHONY : test/CMakeFiles/testshape.dir/rule
 
 # Convenience name for target.
@@ -1099,12 +1099,12 @@ testshape: test/CMakeFiles/testshape.dir/rule
 
 # fast build rule for target.
 testshape/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshape.dir/build.make test/CMakeFiles/testshape.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshape.dir/build.make test/CMakeFiles/testshape.dir/build
 .PHONY : testshape/fast
 
 # Convenience name for target.
 test/CMakeFiles/testsoftwaretransparent.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsoftwaretransparent.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsoftwaretransparent.dir/rule
 .PHONY : test/CMakeFiles/testsoftwaretransparent.dir/rule
 
 # Convenience name for target.
@@ -1113,12 +1113,12 @@ testsoftwaretransparent: test/CMakeFiles/testsoftwaretransparent.dir/rule
 
 # fast build rule for target.
 testsoftwaretransparent/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsoftwaretransparent.dir/build.make test/CMakeFiles/testsoftwaretransparent.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsoftwaretransparent.dir/build.make test/CMakeFiles/testsoftwaretransparent.dir/build
 .PHONY : testsoftwaretransparent/fast
 
 # Convenience name for target.
 test/CMakeFiles/testsprite.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsprite.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testsprite.dir/rule
 .PHONY : test/CMakeFiles/testsprite.dir/rule
 
 # Convenience name for target.
@@ -1127,12 +1127,12 @@ testsprite: test/CMakeFiles/testsprite.dir/rule
 
 # fast build rule for target.
 testsprite/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsprite.dir/build.make test/CMakeFiles/testsprite.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsprite.dir/build.make test/CMakeFiles/testsprite.dir/build
 .PHONY : testsprite/fast
 
 # Convenience name for target.
 test/CMakeFiles/testspriteminimal.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testspriteminimal.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testspriteminimal.dir/rule
 .PHONY : test/CMakeFiles/testspriteminimal.dir/rule
 
 # Convenience name for target.
@@ -1141,12 +1141,12 @@ testspriteminimal: test/CMakeFiles/testspriteminimal.dir/rule
 
 # fast build rule for target.
 testspriteminimal/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspriteminimal.dir/build.make test/CMakeFiles/testspriteminimal.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspriteminimal.dir/build.make test/CMakeFiles/testspriteminimal.dir/build
 .PHONY : testspriteminimal/fast
 
 # Convenience name for target.
 test/CMakeFiles/testspritesurface.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testspritesurface.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testspritesurface.dir/rule
 .PHONY : test/CMakeFiles/testspritesurface.dir/rule
 
 # Convenience name for target.
@@ -1155,12 +1155,12 @@ testspritesurface: test/CMakeFiles/testspritesurface.dir/rule
 
 # fast build rule for target.
 testspritesurface/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspritesurface.dir/build.make test/CMakeFiles/testspritesurface.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspritesurface.dir/build.make test/CMakeFiles/testspritesurface.dir/build
 .PHONY : testspritesurface/fast
 
 # Convenience name for target.
 test/CMakeFiles/testpalette.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testpalette.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testpalette.dir/rule
 .PHONY : test/CMakeFiles/testpalette.dir/rule
 
 # Convenience name for target.
@@ -1169,12 +1169,12 @@ testpalette: test/CMakeFiles/testpalette.dir/rule
 
 # fast build rule for target.
 testpalette/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpalette.dir/build.make test/CMakeFiles/testpalette.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpalette.dir/build.make test/CMakeFiles/testpalette.dir/build
 .PHONY : testpalette/fast
 
 # Convenience name for target.
 test/CMakeFiles/testtimer.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testtimer.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testtimer.dir/rule
 .PHONY : test/CMakeFiles/testtimer.dir/rule
 
 # Convenience name for target.
@@ -1183,12 +1183,12 @@ testtimer: test/CMakeFiles/testtimer.dir/rule
 
 # fast build rule for target.
 testtimer/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtimer.dir/build.make test/CMakeFiles/testtimer.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtimer.dir/build.make test/CMakeFiles/testtimer.dir/build
 .PHONY : testtimer/fast
 
 # Convenience name for target.
 test/CMakeFiles/testurl.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testurl.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testurl.dir/rule
 .PHONY : test/CMakeFiles/testurl.dir/rule
 
 # Convenience name for target.
@@ -1197,12 +1197,12 @@ testurl: test/CMakeFiles/testurl.dir/rule
 
 # fast build rule for target.
 testurl/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testurl.dir/build.make test/CMakeFiles/testurl.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testurl.dir/build.make test/CMakeFiles/testurl.dir/build
 .PHONY : testurl/fast
 
 # Convenience name for target.
 test/CMakeFiles/testver.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testver.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testver.dir/rule
 .PHONY : test/CMakeFiles/testver.dir/rule
 
 # Convenience name for target.
@@ -1211,12 +1211,12 @@ testver: test/CMakeFiles/testver.dir/rule
 
 # fast build rule for target.
 testver/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testver.dir/build.make test/CMakeFiles/testver.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testver.dir/build.make test/CMakeFiles/testver.dir/build
 .PHONY : testver/fast
 
 # Convenience name for target.
 test/CMakeFiles/testcamera.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testcamera.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testcamera.dir/rule
 .PHONY : test/CMakeFiles/testcamera.dir/rule
 
 # Convenience name for target.
@@ -1225,12 +1225,12 @@ testcamera: test/CMakeFiles/testcamera.dir/rule
 
 # fast build rule for target.
 testcamera/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcamera.dir/build.make test/CMakeFiles/testcamera.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcamera.dir/build.make test/CMakeFiles/testcamera.dir/build
 .PHONY : testcamera/fast
 
 # Convenience name for target.
 test/CMakeFiles/testclipboard.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testclipboard.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testclipboard.dir/rule
 .PHONY : test/CMakeFiles/testclipboard.dir/rule
 
 # Convenience name for target.
@@ -1239,12 +1239,12 @@ testclipboard: test/CMakeFiles/testclipboard.dir/rule
 
 # fast build rule for target.
 testclipboard/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testclipboard.dir/build.make test/CMakeFiles/testclipboard.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testclipboard.dir/build.make test/CMakeFiles/testclipboard.dir/build
 .PHONY : testclipboard/fast
 
 # Convenience name for target.
 test/CMakeFiles/testviewport.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testviewport.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testviewport.dir/rule
 .PHONY : test/CMakeFiles/testviewport.dir/rule
 
 # Convenience name for target.
@@ -1253,12 +1253,12 @@ testviewport: test/CMakeFiles/testviewport.dir/rule
 
 # fast build rule for target.
 testviewport/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testviewport.dir/build.make test/CMakeFiles/testviewport.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testviewport.dir/build.make test/CMakeFiles/testviewport.dir/build
 .PHONY : testviewport/fast
 
 # Convenience name for target.
 test/CMakeFiles/testwm.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testwm.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testwm.dir/rule
 .PHONY : test/CMakeFiles/testwm.dir/rule
 
 # Convenience name for target.
@@ -1267,12 +1267,12 @@ testwm: test/CMakeFiles/testwm.dir/rule
 
 # fast build rule for target.
 testwm/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwm.dir/build.make test/CMakeFiles/testwm.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwm.dir/build.make test/CMakeFiles/testwm.dir/build
 .PHONY : testwm/fast
 
 # Convenience name for target.
 test/CMakeFiles/testyuv.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testyuv.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testyuv.dir/rule
 .PHONY : test/CMakeFiles/testyuv.dir/rule
 
 # Convenience name for target.
@@ -1281,12 +1281,12 @@ testyuv: test/CMakeFiles/testyuv.dir/rule
 
 # fast build rule for target.
 testyuv/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/build
 .PHONY : testyuv/fast
 
 # Convenience name for target.
 test/CMakeFiles/torturethread.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/torturethread.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/torturethread.dir/rule
 .PHONY : test/CMakeFiles/torturethread.dir/rule
 
 # Convenience name for target.
@@ -1295,12 +1295,12 @@ torturethread: test/CMakeFiles/torturethread.dir/rule
 
 # fast build rule for target.
 torturethread/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/torturethread.dir/build.make test/CMakeFiles/torturethread.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/torturethread.dir/build.make test/CMakeFiles/torturethread.dir/build
 .PHONY : torturethread/fast
 
 # Convenience name for target.
 test/CMakeFiles/testrendercopyex.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrendercopyex.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testrendercopyex.dir/rule
 .PHONY : test/CMakeFiles/testrendercopyex.dir/rule
 
 # Convenience name for target.
@@ -1309,12 +1309,12 @@ testrendercopyex: test/CMakeFiles/testrendercopyex.dir/rule
 
 # fast build rule for target.
 testrendercopyex/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendercopyex.dir/build.make test/CMakeFiles/testrendercopyex.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendercopyex.dir/build.make test/CMakeFiles/testrendercopyex.dir/build
 .PHONY : testrendercopyex/fast
 
 # Convenience name for target.
 test/CMakeFiles/testmessage.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmessage.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmessage.dir/rule
 .PHONY : test/CMakeFiles/testmessage.dir/rule
 
 # Convenience name for target.
@@ -1323,12 +1323,12 @@ testmessage: test/CMakeFiles/testmessage.dir/rule
 
 # fast build rule for target.
 testmessage/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmessage.dir/build.make test/CMakeFiles/testmessage.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmessage.dir/build.make test/CMakeFiles/testmessage.dir/build
 .PHONY : testmessage/fast
 
 # Convenience name for target.
 test/CMakeFiles/testdisplayinfo.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdisplayinfo.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdisplayinfo.dir/rule
 .PHONY : test/CMakeFiles/testdisplayinfo.dir/rule
 
 # Convenience name for target.
@@ -1337,12 +1337,12 @@ testdisplayinfo: test/CMakeFiles/testdisplayinfo.dir/rule
 
 # fast build rule for target.
 testdisplayinfo/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdisplayinfo.dir/build.make test/CMakeFiles/testdisplayinfo.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdisplayinfo.dir/build.make test/CMakeFiles/testdisplayinfo.dir/build
 .PHONY : testdisplayinfo/fast
 
 # Convenience name for target.
 test/CMakeFiles/testqsort.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testqsort.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testqsort.dir/rule
 .PHONY : test/CMakeFiles/testqsort.dir/rule
 
 # Convenience name for target.
@@ -1351,12 +1351,12 @@ testqsort: test/CMakeFiles/testqsort.dir/rule
 
 # fast build rule for target.
 testqsort/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testqsort.dir/build.make test/CMakeFiles/testqsort.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testqsort.dir/build.make test/CMakeFiles/testqsort.dir/build
 .PHONY : testqsort/fast
 
 # Convenience name for target.
 test/CMakeFiles/testbounds.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testbounds.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testbounds.dir/rule
 .PHONY : test/CMakeFiles/testbounds.dir/rule
 
 # Convenience name for target.
@@ -1365,12 +1365,12 @@ testbounds: test/CMakeFiles/testbounds.dir/rule
 
 # fast build rule for target.
 testbounds/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testbounds.dir/build.make test/CMakeFiles/testbounds.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testbounds.dir/build.make test/CMakeFiles/testbounds.dir/build
 .PHONY : testbounds/fast
 
 # Convenience name for target.
 test/CMakeFiles/testcustomcursor.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testcustomcursor.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testcustomcursor.dir/rule
 .PHONY : test/CMakeFiles/testcustomcursor.dir/rule
 
 # Convenience name for target.
@@ -1379,12 +1379,12 @@ testcustomcursor: test/CMakeFiles/testcustomcursor.dir/rule
 
 # fast build rule for target.
 testcustomcursor/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcustomcursor.dir/build.make test/CMakeFiles/testcustomcursor.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcustomcursor.dir/build.make test/CMakeFiles/testcustomcursor.dir/build
 .PHONY : testcustomcursor/fast
 
 # Convenience name for target.
 test/CMakeFiles/testvulkan.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testvulkan.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testvulkan.dir/rule
 .PHONY : test/CMakeFiles/testvulkan.dir/rule
 
 # Convenience name for target.
@@ -1393,12 +1393,12 @@ testvulkan: test/CMakeFiles/testvulkan.dir/rule
 
 # fast build rule for target.
 testvulkan/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testvulkan.dir/build.make test/CMakeFiles/testvulkan.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testvulkan.dir/build.make test/CMakeFiles/testvulkan.dir/build
 .PHONY : testvulkan/fast
 
 # Convenience name for target.
 test/CMakeFiles/testoffscreen.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testoffscreen.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testoffscreen.dir/rule
 .PHONY : test/CMakeFiles/testoffscreen.dir/rule
 
 # Convenience name for target.
@@ -1407,12 +1407,12 @@ testoffscreen: test/CMakeFiles/testoffscreen.dir/rule
 
 # fast build rule for target.
 testoffscreen/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoffscreen.dir/build.make test/CMakeFiles/testoffscreen.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoffscreen.dir/build.make test/CMakeFiles/testoffscreen.dir/build
 .PHONY : testoffscreen/fast
 
 # Convenience name for target.
 test/CMakeFiles/testpopup.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testpopup.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testpopup.dir/rule
 .PHONY : test/CMakeFiles/testpopup.dir/rule
 
 # Convenience name for target.
@@ -1421,12 +1421,12 @@ testpopup: test/CMakeFiles/testpopup.dir/rule
 
 # fast build rule for target.
 testpopup/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpopup.dir/build.make test/CMakeFiles/testpopup.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpopup.dir/build.make test/CMakeFiles/testpopup.dir/build
 .PHONY : testpopup/fast
 
 # Convenience name for target.
 test/CMakeFiles/testdialog.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdialog.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testdialog.dir/rule
 .PHONY : test/CMakeFiles/testdialog.dir/rule
 
 # Convenience name for target.
@@ -1435,12 +1435,12 @@ testdialog: test/CMakeFiles/testdialog.dir/rule
 
 # fast build rule for target.
 testdialog/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdialog.dir/build.make test/CMakeFiles/testdialog.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdialog.dir/build.make test/CMakeFiles/testdialog.dir/build
 .PHONY : testdialog/fast
 
 # Convenience name for target.
 test/CMakeFiles/testtime.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testtime.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testtime.dir/rule
 .PHONY : test/CMakeFiles/testtime.dir/rule
 
 # Convenience name for target.
@@ -1449,12 +1449,12 @@ testtime: test/CMakeFiles/testtime.dir/rule
 
 # fast build rule for target.
 testtime/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtime.dir/build.make test/CMakeFiles/testtime.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtime.dir/build.make test/CMakeFiles/testtime.dir/build
 .PHONY : testtime/fast
 
 # Convenience name for target.
 test/CMakeFiles/testmanymouse.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmanymouse.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmanymouse.dir/rule
 .PHONY : test/CMakeFiles/testmanymouse.dir/rule
 
 # Convenience name for target.
@@ -1463,12 +1463,12 @@ testmanymouse: test/CMakeFiles/testmanymouse.dir/rule
 
 # fast build rule for target.
 testmanymouse/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmanymouse.dir/build.make test/CMakeFiles/testmanymouse.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmanymouse.dir/build.make test/CMakeFiles/testmanymouse.dir/build
 .PHONY : testmanymouse/fast
 
 # Convenience name for target.
 test/CMakeFiles/testmodal.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmodal.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testmodal.dir/rule
 .PHONY : test/CMakeFiles/testmodal.dir/rule
 
 # Convenience name for target.
@@ -1477,12 +1477,12 @@ testmodal: test/CMakeFiles/testmodal.dir/rule
 
 # fast build rule for target.
 testmodal/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmodal.dir/build.make test/CMakeFiles/testmodal.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmodal.dir/build.make test/CMakeFiles/testmodal.dir/build
 .PHONY : testmodal/fast
 
 # Convenience name for target.
 test/CMakeFiles/testtray.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testtray.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testtray.dir/rule
 .PHONY : test/CMakeFiles/testtray.dir/rule
 
 # Convenience name for target.
@@ -1491,12 +1491,12 @@ testtray: test/CMakeFiles/testtray.dir/rule
 
 # fast build rule for target.
 testtray/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtray.dir/build.make test/CMakeFiles/testtray.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtray.dir/build.make test/CMakeFiles/testtray.dir/build
 .PHONY : testtray/fast
 
 # Convenience name for target.
 test/CMakeFiles/testprocess.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testprocess.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testprocess.dir/rule
 .PHONY : test/CMakeFiles/testprocess.dir/rule
 
 # Convenience name for target.
@@ -1505,12 +1505,12 @@ testprocess: test/CMakeFiles/testprocess.dir/rule
 
 # fast build rule for target.
 testprocess/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testprocess.dir/build.make test/CMakeFiles/testprocess.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testprocess.dir/build.make test/CMakeFiles/testprocess.dir/build
 .PHONY : testprocess/fast
 
 # Convenience name for target.
 test/CMakeFiles/childprocess.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/childprocess.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/childprocess.dir/rule
 .PHONY : test/CMakeFiles/childprocess.dir/rule
 
 # Convenience name for target.
@@ -1519,12 +1519,12 @@ childprocess: test/CMakeFiles/childprocess.dir/rule
 
 # fast build rule for target.
 childprocess/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/childprocess.dir/build.make test/CMakeFiles/childprocess.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/childprocess.dir/build.make test/CMakeFiles/childprocess.dir/build
 .PHONY : childprocess/fast
 
 # Convenience name for target.
 test/CMakeFiles/testwaylandcustom.dir/rule:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testwaylandcustom.dir/rule
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/testwaylandcustom.dir/rule
 .PHONY : test/CMakeFiles/testwaylandcustom.dir/rule
 
 # Convenience name for target.
@@ -1533,7 +1533,7 @@ testwaylandcustom: test/CMakeFiles/testwaylandcustom.dir/rule
 
 # fast build rule for target.
 testwaylandcustom/fast:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/build
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/build
 .PHONY : testwaylandcustom/fast
 
 __/wayland-generated-protocols/xdg-shell-protocol.o: __/wayland-generated-protocols/xdg-shell-protocol.c.o
@@ -1541,8 +1541,8 @@ __/wayland-generated-protocols/xdg-shell-protocol.o: __/wayland-generated-protoc
 
 # target to build an object file
 __/wayland-generated-protocols/xdg-shell-protocol.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.o
 .PHONY : __/wayland-generated-protocols/xdg-shell-protocol.c.o
 
 __/wayland-generated-protocols/xdg-shell-protocol.i: __/wayland-generated-protocols/xdg-shell-protocol.c.i
@@ -1550,8 +1550,8 @@ __/wayland-generated-protocols/xdg-shell-protocol.i: __/wayland-generated-protoc
 
 # target to preprocess a source file
 __/wayland-generated-protocols/xdg-shell-protocol.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.i
 .PHONY : __/wayland-generated-protocols/xdg-shell-protocol.c.i
 
 __/wayland-generated-protocols/xdg-shell-protocol.s: __/wayland-generated-protocols/xdg-shell-protocol.c.s
@@ -1559,8 +1559,8 @@ __/wayland-generated-protocols/xdg-shell-protocol.s: __/wayland-generated-protoc
 
 # target to generate assembly for a file
 __/wayland-generated-protocols/xdg-shell-protocol.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/__/wayland-generated-protocols/xdg-shell-protocol.c.s
 .PHONY : __/wayland-generated-protocols/xdg-shell-protocol.c.s
 
 checkkeys.o: checkkeys.c.o
@@ -1568,7 +1568,7 @@ checkkeys.o: checkkeys.c.o
 
 # target to build an object file
 checkkeys.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/checkkeys.dir/build.make test/CMakeFiles/checkkeys.dir/checkkeys.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/checkkeys.dir/build.make test/CMakeFiles/checkkeys.dir/checkkeys.c.o
 .PHONY : checkkeys.c.o
 
 checkkeys.i: checkkeys.c.i
@@ -1576,7 +1576,7 @@ checkkeys.i: checkkeys.c.i
 
 # target to preprocess a source file
 checkkeys.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/checkkeys.dir/build.make test/CMakeFiles/checkkeys.dir/checkkeys.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/checkkeys.dir/build.make test/CMakeFiles/checkkeys.dir/checkkeys.c.i
 .PHONY : checkkeys.c.i
 
 checkkeys.s: checkkeys.c.s
@@ -1584,7 +1584,7 @@ checkkeys.s: checkkeys.c.s
 
 # target to generate assembly for a file
 checkkeys.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/checkkeys.dir/build.make test/CMakeFiles/checkkeys.dir/checkkeys.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/checkkeys.dir/build.make test/CMakeFiles/checkkeys.dir/checkkeys.c.s
 .PHONY : checkkeys.c.s
 
 childprocess.o: childprocess.c.o
@@ -1592,7 +1592,7 @@ childprocess.o: childprocess.c.o
 
 # target to build an object file
 childprocess.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/childprocess.dir/build.make test/CMakeFiles/childprocess.dir/childprocess.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/childprocess.dir/build.make test/CMakeFiles/childprocess.dir/childprocess.c.o
 .PHONY : childprocess.c.o
 
 childprocess.i: childprocess.c.i
@@ -1600,7 +1600,7 @@ childprocess.i: childprocess.c.i
 
 # target to preprocess a source file
 childprocess.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/childprocess.dir/build.make test/CMakeFiles/childprocess.dir/childprocess.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/childprocess.dir/build.make test/CMakeFiles/childprocess.dir/childprocess.c.i
 .PHONY : childprocess.c.i
 
 childprocess.s: childprocess.c.s
@@ -1608,7 +1608,7 @@ childprocess.s: childprocess.c.s
 
 # target to generate assembly for a file
 childprocess.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/childprocess.dir/build.make test/CMakeFiles/childprocess.dir/childprocess.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/childprocess.dir/build.make test/CMakeFiles/childprocess.dir/childprocess.c.s
 .PHONY : childprocess.c.s
 
 gamepadutils.o: gamepadutils.c.o
@@ -1616,7 +1616,7 @@ gamepadutils.o: gamepadutils.c.o
 
 # target to build an object file
 gamepadutils.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/gamepadutils.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/gamepadutils.c.o
 .PHONY : gamepadutils.c.o
 
 gamepadutils.i: gamepadutils.c.i
@@ -1624,7 +1624,7 @@ gamepadutils.i: gamepadutils.c.i
 
 # target to preprocess a source file
 gamepadutils.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/gamepadutils.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/gamepadutils.c.i
 .PHONY : gamepadutils.c.i
 
 gamepadutils.s: gamepadutils.c.s
@@ -1632,7 +1632,7 @@ gamepadutils.s: gamepadutils.c.s
 
 # target to generate assembly for a file
 gamepadutils.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/gamepadutils.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/gamepadutils.c.s
 .PHONY : gamepadutils.c.s
 
 loopwave.o: loopwave.c.o
@@ -1640,7 +1640,7 @@ loopwave.o: loopwave.c.o
 
 # target to build an object file
 loopwave.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/loopwave.dir/build.make test/CMakeFiles/loopwave.dir/loopwave.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/loopwave.dir/build.make test/CMakeFiles/loopwave.dir/loopwave.c.o
 .PHONY : loopwave.c.o
 
 loopwave.i: loopwave.c.i
@@ -1648,7 +1648,7 @@ loopwave.i: loopwave.c.i
 
 # target to preprocess a source file
 loopwave.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/loopwave.dir/build.make test/CMakeFiles/loopwave.dir/loopwave.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/loopwave.dir/build.make test/CMakeFiles/loopwave.dir/loopwave.c.i
 .PHONY : loopwave.c.i
 
 loopwave.s: loopwave.c.s
@@ -1656,7 +1656,7 @@ loopwave.s: loopwave.c.s
 
 # target to generate assembly for a file
 loopwave.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/loopwave.dir/build.make test/CMakeFiles/loopwave.dir/loopwave.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/loopwave.dir/build.make test/CMakeFiles/loopwave.dir/loopwave.c.s
 .PHONY : loopwave.c.s
 
 testasyncio.o: testasyncio.c.o
@@ -1664,7 +1664,7 @@ testasyncio.o: testasyncio.c.o
 
 # target to build an object file
 testasyncio.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testasyncio.dir/build.make test/CMakeFiles/testasyncio.dir/testasyncio.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testasyncio.dir/build.make test/CMakeFiles/testasyncio.dir/testasyncio.c.o
 .PHONY : testasyncio.c.o
 
 testasyncio.i: testasyncio.c.i
@@ -1672,7 +1672,7 @@ testasyncio.i: testasyncio.c.i
 
 # target to preprocess a source file
 testasyncio.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testasyncio.dir/build.make test/CMakeFiles/testasyncio.dir/testasyncio.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testasyncio.dir/build.make test/CMakeFiles/testasyncio.dir/testasyncio.c.i
 .PHONY : testasyncio.c.i
 
 testasyncio.s: testasyncio.c.s
@@ -1680,7 +1680,7 @@ testasyncio.s: testasyncio.c.s
 
 # target to generate assembly for a file
 testasyncio.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testasyncio.dir/build.make test/CMakeFiles/testasyncio.dir/testasyncio.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testasyncio.dir/build.make test/CMakeFiles/testasyncio.dir/testasyncio.c.s
 .PHONY : testasyncio.c.s
 
 testatomic.o: testatomic.c.o
@@ -1688,7 +1688,7 @@ testatomic.o: testatomic.c.o
 
 # target to build an object file
 testatomic.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testatomic.dir/build.make test/CMakeFiles/testatomic.dir/testatomic.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testatomic.dir/build.make test/CMakeFiles/testatomic.dir/testatomic.c.o
 .PHONY : testatomic.c.o
 
 testatomic.i: testatomic.c.i
@@ -1696,7 +1696,7 @@ testatomic.i: testatomic.c.i
 
 # target to preprocess a source file
 testatomic.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testatomic.dir/build.make test/CMakeFiles/testatomic.dir/testatomic.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testatomic.dir/build.make test/CMakeFiles/testatomic.dir/testatomic.c.i
 .PHONY : testatomic.c.i
 
 testatomic.s: testatomic.c.s
@@ -1704,7 +1704,7 @@ testatomic.s: testatomic.c.s
 
 # target to generate assembly for a file
 testatomic.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testatomic.dir/build.make test/CMakeFiles/testatomic.dir/testatomic.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testatomic.dir/build.make test/CMakeFiles/testatomic.dir/testatomic.c.s
 .PHONY : testatomic.c.s
 
 testaudio.o: testaudio.c.o
@@ -1712,7 +1712,7 @@ testaudio.o: testaudio.c.o
 
 # target to build an object file
 testaudio.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudio.dir/build.make test/CMakeFiles/testaudio.dir/testaudio.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudio.dir/build.make test/CMakeFiles/testaudio.dir/testaudio.c.o
 .PHONY : testaudio.c.o
 
 testaudio.i: testaudio.c.i
@@ -1720,7 +1720,7 @@ testaudio.i: testaudio.c.i
 
 # target to preprocess a source file
 testaudio.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudio.dir/build.make test/CMakeFiles/testaudio.dir/testaudio.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudio.dir/build.make test/CMakeFiles/testaudio.dir/testaudio.c.i
 .PHONY : testaudio.c.i
 
 testaudio.s: testaudio.c.s
@@ -1728,7 +1728,7 @@ testaudio.s: testaudio.c.s
 
 # target to generate assembly for a file
 testaudio.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudio.dir/build.make test/CMakeFiles/testaudio.dir/testaudio.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudio.dir/build.make test/CMakeFiles/testaudio.dir/testaudio.c.s
 .PHONY : testaudio.c.s
 
 testaudiohotplug.o: testaudiohotplug.c.o
@@ -1736,7 +1736,7 @@ testaudiohotplug.o: testaudiohotplug.c.o
 
 # target to build an object file
 testaudiohotplug.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiohotplug.dir/build.make test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiohotplug.dir/build.make test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.o
 .PHONY : testaudiohotplug.c.o
 
 testaudiohotplug.i: testaudiohotplug.c.i
@@ -1744,7 +1744,7 @@ testaudiohotplug.i: testaudiohotplug.c.i
 
 # target to preprocess a source file
 testaudiohotplug.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiohotplug.dir/build.make test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiohotplug.dir/build.make test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.i
 .PHONY : testaudiohotplug.c.i
 
 testaudiohotplug.s: testaudiohotplug.c.s
@@ -1752,7 +1752,7 @@ testaudiohotplug.s: testaudiohotplug.c.s
 
 # target to generate assembly for a file
 testaudiohotplug.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiohotplug.dir/build.make test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiohotplug.dir/build.make test/CMakeFiles/testaudiohotplug.dir/testaudiohotplug.c.s
 .PHONY : testaudiohotplug.c.s
 
 testaudioinfo.o: testaudioinfo.c.o
@@ -1760,7 +1760,7 @@ testaudioinfo.o: testaudioinfo.c.o
 
 # target to build an object file
 testaudioinfo.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudioinfo.dir/build.make test/CMakeFiles/testaudioinfo.dir/testaudioinfo.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudioinfo.dir/build.make test/CMakeFiles/testaudioinfo.dir/testaudioinfo.c.o
 .PHONY : testaudioinfo.c.o
 
 testaudioinfo.i: testaudioinfo.c.i
@@ -1768,7 +1768,7 @@ testaudioinfo.i: testaudioinfo.c.i
 
 # target to preprocess a source file
 testaudioinfo.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudioinfo.dir/build.make test/CMakeFiles/testaudioinfo.dir/testaudioinfo.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudioinfo.dir/build.make test/CMakeFiles/testaudioinfo.dir/testaudioinfo.c.i
 .PHONY : testaudioinfo.c.i
 
 testaudioinfo.s: testaudioinfo.c.s
@@ -1776,7 +1776,7 @@ testaudioinfo.s: testaudioinfo.c.s
 
 # target to generate assembly for a file
 testaudioinfo.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudioinfo.dir/build.make test/CMakeFiles/testaudioinfo.dir/testaudioinfo.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudioinfo.dir/build.make test/CMakeFiles/testaudioinfo.dir/testaudioinfo.c.s
 .PHONY : testaudioinfo.c.s
 
 testaudiorecording.o: testaudiorecording.c.o
@@ -1784,7 +1784,7 @@ testaudiorecording.o: testaudiorecording.c.o
 
 # target to build an object file
 testaudiorecording.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiorecording.dir/build.make test/CMakeFiles/testaudiorecording.dir/testaudiorecording.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiorecording.dir/build.make test/CMakeFiles/testaudiorecording.dir/testaudiorecording.c.o
 .PHONY : testaudiorecording.c.o
 
 testaudiorecording.i: testaudiorecording.c.i
@@ -1792,7 +1792,7 @@ testaudiorecording.i: testaudiorecording.c.i
 
 # target to preprocess a source file
 testaudiorecording.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiorecording.dir/build.make test/CMakeFiles/testaudiorecording.dir/testaudiorecording.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiorecording.dir/build.make test/CMakeFiles/testaudiorecording.dir/testaudiorecording.c.i
 .PHONY : testaudiorecording.c.i
 
 testaudiorecording.s: testaudiorecording.c.s
@@ -1800,7 +1800,7 @@ testaudiorecording.s: testaudiorecording.c.s
 
 # target to generate assembly for a file
 testaudiorecording.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiorecording.dir/build.make test/CMakeFiles/testaudiorecording.dir/testaudiorecording.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiorecording.dir/build.make test/CMakeFiles/testaudiorecording.dir/testaudiorecording.c.s
 .PHONY : testaudiorecording.c.s
 
 testaudiostreamdynamicresample.o: testaudiostreamdynamicresample.c.o
@@ -1808,7 +1808,7 @@ testaudiostreamdynamicresample.o: testaudiostreamdynamicresample.c.o
 
 # target to build an object file
 testaudiostreamdynamicresample.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiostreamdynamicresample.dir/build.make test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiostreamdynamicresample.dir/build.make test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.o
 .PHONY : testaudiostreamdynamicresample.c.o
 
 testaudiostreamdynamicresample.i: testaudiostreamdynamicresample.c.i
@@ -1816,7 +1816,7 @@ testaudiostreamdynamicresample.i: testaudiostreamdynamicresample.c.i
 
 # target to preprocess a source file
 testaudiostreamdynamicresample.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiostreamdynamicresample.dir/build.make test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiostreamdynamicresample.dir/build.make test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.i
 .PHONY : testaudiostreamdynamicresample.c.i
 
 testaudiostreamdynamicresample.s: testaudiostreamdynamicresample.c.s
@@ -1824,7 +1824,7 @@ testaudiostreamdynamicresample.s: testaudiostreamdynamicresample.c.s
 
 # target to generate assembly for a file
 testaudiostreamdynamicresample.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiostreamdynamicresample.dir/build.make test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testaudiostreamdynamicresample.dir/build.make test/CMakeFiles/testaudiostreamdynamicresample.dir/testaudiostreamdynamicresample.c.s
 .PHONY : testaudiostreamdynamicresample.c.s
 
 testautomation.o: testautomation.c.o
@@ -1832,7 +1832,7 @@ testautomation.o: testautomation.c.o
 
 # target to build an object file
 testautomation.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation.c.o
 .PHONY : testautomation.c.o
 
 testautomation.i: testautomation.c.i
@@ -1840,7 +1840,7 @@ testautomation.i: testautomation.c.i
 
 # target to preprocess a source file
 testautomation.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation.c.i
 .PHONY : testautomation.c.i
 
 testautomation.s: testautomation.c.s
@@ -1848,7 +1848,7 @@ testautomation.s: testautomation.c.s
 
 # target to generate assembly for a file
 testautomation.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation.c.s
 .PHONY : testautomation.c.s
 
 testautomation_audio.o: testautomation_audio.c.o
@@ -1856,7 +1856,7 @@ testautomation_audio.o: testautomation_audio.c.o
 
 # target to build an object file
 testautomation_audio.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_audio.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_audio.c.o
 .PHONY : testautomation_audio.c.o
 
 testautomation_audio.i: testautomation_audio.c.i
@@ -1864,7 +1864,7 @@ testautomation_audio.i: testautomation_audio.c.i
 
 # target to preprocess a source file
 testautomation_audio.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_audio.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_audio.c.i
 .PHONY : testautomation_audio.c.i
 
 testautomation_audio.s: testautomation_audio.c.s
@@ -1872,7 +1872,7 @@ testautomation_audio.s: testautomation_audio.c.s
 
 # target to generate assembly for a file
 testautomation_audio.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_audio.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_audio.c.s
 .PHONY : testautomation_audio.c.s
 
 testautomation_blit.o: testautomation_blit.c.o
@@ -1880,7 +1880,7 @@ testautomation_blit.o: testautomation_blit.c.o
 
 # target to build an object file
 testautomation_blit.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_blit.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_blit.c.o
 .PHONY : testautomation_blit.c.o
 
 testautomation_blit.i: testautomation_blit.c.i
@@ -1888,7 +1888,7 @@ testautomation_blit.i: testautomation_blit.c.i
 
 # target to preprocess a source file
 testautomation_blit.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_blit.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_blit.c.i
 .PHONY : testautomation_blit.c.i
 
 testautomation_blit.s: testautomation_blit.c.s
@@ -1896,7 +1896,7 @@ testautomation_blit.s: testautomation_blit.c.s
 
 # target to generate assembly for a file
 testautomation_blit.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_blit.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_blit.c.s
 .PHONY : testautomation_blit.c.s
 
 testautomation_clipboard.o: testautomation_clipboard.c.o
@@ -1904,7 +1904,7 @@ testautomation_clipboard.o: testautomation_clipboard.c.o
 
 # target to build an object file
 testautomation_clipboard.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_clipboard.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_clipboard.c.o
 .PHONY : testautomation_clipboard.c.o
 
 testautomation_clipboard.i: testautomation_clipboard.c.i
@@ -1912,7 +1912,7 @@ testautomation_clipboard.i: testautomation_clipboard.c.i
 
 # target to preprocess a source file
 testautomation_clipboard.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_clipboard.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_clipboard.c.i
 .PHONY : testautomation_clipboard.c.i
 
 testautomation_clipboard.s: testautomation_clipboard.c.s
@@ -1920,7 +1920,7 @@ testautomation_clipboard.s: testautomation_clipboard.c.s
 
 # target to generate assembly for a file
 testautomation_clipboard.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_clipboard.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_clipboard.c.s
 .PHONY : testautomation_clipboard.c.s
 
 testautomation_events.o: testautomation_events.c.o
@@ -1928,7 +1928,7 @@ testautomation_events.o: testautomation_events.c.o
 
 # target to build an object file
 testautomation_events.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_events.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_events.c.o
 .PHONY : testautomation_events.c.o
 
 testautomation_events.i: testautomation_events.c.i
@@ -1936,7 +1936,7 @@ testautomation_events.i: testautomation_events.c.i
 
 # target to preprocess a source file
 testautomation_events.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_events.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_events.c.i
 .PHONY : testautomation_events.c.i
 
 testautomation_events.s: testautomation_events.c.s
@@ -1944,7 +1944,7 @@ testautomation_events.s: testautomation_events.c.s
 
 # target to generate assembly for a file
 testautomation_events.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_events.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_events.c.s
 .PHONY : testautomation_events.c.s
 
 testautomation_guid.o: testautomation_guid.c.o
@@ -1952,7 +1952,7 @@ testautomation_guid.o: testautomation_guid.c.o
 
 # target to build an object file
 testautomation_guid.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_guid.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_guid.c.o
 .PHONY : testautomation_guid.c.o
 
 testautomation_guid.i: testautomation_guid.c.i
@@ -1960,7 +1960,7 @@ testautomation_guid.i: testautomation_guid.c.i
 
 # target to preprocess a source file
 testautomation_guid.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_guid.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_guid.c.i
 .PHONY : testautomation_guid.c.i
 
 testautomation_guid.s: testautomation_guid.c.s
@@ -1968,7 +1968,7 @@ testautomation_guid.s: testautomation_guid.c.s
 
 # target to generate assembly for a file
 testautomation_guid.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_guid.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_guid.c.s
 .PHONY : testautomation_guid.c.s
 
 testautomation_hints.o: testautomation_hints.c.o
@@ -1976,7 +1976,7 @@ testautomation_hints.o: testautomation_hints.c.o
 
 # target to build an object file
 testautomation_hints.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_hints.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_hints.c.o
 .PHONY : testautomation_hints.c.o
 
 testautomation_hints.i: testautomation_hints.c.i
@@ -1984,7 +1984,7 @@ testautomation_hints.i: testautomation_hints.c.i
 
 # target to preprocess a source file
 testautomation_hints.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_hints.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_hints.c.i
 .PHONY : testautomation_hints.c.i
 
 testautomation_hints.s: testautomation_hints.c.s
@@ -1992,7 +1992,7 @@ testautomation_hints.s: testautomation_hints.c.s
 
 # target to generate assembly for a file
 testautomation_hints.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_hints.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_hints.c.s
 .PHONY : testautomation_hints.c.s
 
 testautomation_images.o: testautomation_images.c.o
@@ -2000,7 +2000,7 @@ testautomation_images.o: testautomation_images.c.o
 
 # target to build an object file
 testautomation_images.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_images.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_images.c.o
 .PHONY : testautomation_images.c.o
 
 testautomation_images.i: testautomation_images.c.i
@@ -2008,7 +2008,7 @@ testautomation_images.i: testautomation_images.c.i
 
 # target to preprocess a source file
 testautomation_images.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_images.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_images.c.i
 .PHONY : testautomation_images.c.i
 
 testautomation_images.s: testautomation_images.c.s
@@ -2016,7 +2016,7 @@ testautomation_images.s: testautomation_images.c.s
 
 # target to generate assembly for a file
 testautomation_images.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_images.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_images.c.s
 .PHONY : testautomation_images.c.s
 
 testautomation_intrinsics.o: testautomation_intrinsics.c.o
@@ -2024,7 +2024,7 @@ testautomation_intrinsics.o: testautomation_intrinsics.c.o
 
 # target to build an object file
 testautomation_intrinsics.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_intrinsics.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_intrinsics.c.o
 .PHONY : testautomation_intrinsics.c.o
 
 testautomation_intrinsics.i: testautomation_intrinsics.c.i
@@ -2032,7 +2032,7 @@ testautomation_intrinsics.i: testautomation_intrinsics.c.i
 
 # target to preprocess a source file
 testautomation_intrinsics.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_intrinsics.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_intrinsics.c.i
 .PHONY : testautomation_intrinsics.c.i
 
 testautomation_intrinsics.s: testautomation_intrinsics.c.s
@@ -2040,7 +2040,7 @@ testautomation_intrinsics.s: testautomation_intrinsics.c.s
 
 # target to generate assembly for a file
 testautomation_intrinsics.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_intrinsics.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_intrinsics.c.s
 .PHONY : testautomation_intrinsics.c.s
 
 testautomation_iostream.o: testautomation_iostream.c.o
@@ -2048,7 +2048,7 @@ testautomation_iostream.o: testautomation_iostream.c.o
 
 # target to build an object file
 testautomation_iostream.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_iostream.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_iostream.c.o
 .PHONY : testautomation_iostream.c.o
 
 testautomation_iostream.i: testautomation_iostream.c.i
@@ -2056,7 +2056,7 @@ testautomation_iostream.i: testautomation_iostream.c.i
 
 # target to preprocess a source file
 testautomation_iostream.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_iostream.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_iostream.c.i
 .PHONY : testautomation_iostream.c.i
 
 testautomation_iostream.s: testautomation_iostream.c.s
@@ -2064,7 +2064,7 @@ testautomation_iostream.s: testautomation_iostream.c.s
 
 # target to generate assembly for a file
 testautomation_iostream.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_iostream.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_iostream.c.s
 .PHONY : testautomation_iostream.c.s
 
 testautomation_joystick.o: testautomation_joystick.c.o
@@ -2072,7 +2072,7 @@ testautomation_joystick.o: testautomation_joystick.c.o
 
 # target to build an object file
 testautomation_joystick.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_joystick.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_joystick.c.o
 .PHONY : testautomation_joystick.c.o
 
 testautomation_joystick.i: testautomation_joystick.c.i
@@ -2080,7 +2080,7 @@ testautomation_joystick.i: testautomation_joystick.c.i
 
 # target to preprocess a source file
 testautomation_joystick.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_joystick.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_joystick.c.i
 .PHONY : testautomation_joystick.c.i
 
 testautomation_joystick.s: testautomation_joystick.c.s
@@ -2088,7 +2088,7 @@ testautomation_joystick.s: testautomation_joystick.c.s
 
 # target to generate assembly for a file
 testautomation_joystick.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_joystick.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_joystick.c.s
 .PHONY : testautomation_joystick.c.s
 
 testautomation_keyboard.o: testautomation_keyboard.c.o
@@ -2096,7 +2096,7 @@ testautomation_keyboard.o: testautomation_keyboard.c.o
 
 # target to build an object file
 testautomation_keyboard.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_keyboard.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_keyboard.c.o
 .PHONY : testautomation_keyboard.c.o
 
 testautomation_keyboard.i: testautomation_keyboard.c.i
@@ -2104,7 +2104,7 @@ testautomation_keyboard.i: testautomation_keyboard.c.i
 
 # target to preprocess a source file
 testautomation_keyboard.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_keyboard.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_keyboard.c.i
 .PHONY : testautomation_keyboard.c.i
 
 testautomation_keyboard.s: testautomation_keyboard.c.s
@@ -2112,7 +2112,7 @@ testautomation_keyboard.s: testautomation_keyboard.c.s
 
 # target to generate assembly for a file
 testautomation_keyboard.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_keyboard.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_keyboard.c.s
 .PHONY : testautomation_keyboard.c.s
 
 testautomation_log.o: testautomation_log.c.o
@@ -2120,7 +2120,7 @@ testautomation_log.o: testautomation_log.c.o
 
 # target to build an object file
 testautomation_log.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_log.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_log.c.o
 .PHONY : testautomation_log.c.o
 
 testautomation_log.i: testautomation_log.c.i
@@ -2128,7 +2128,7 @@ testautomation_log.i: testautomation_log.c.i
 
 # target to preprocess a source file
 testautomation_log.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_log.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_log.c.i
 .PHONY : testautomation_log.c.i
 
 testautomation_log.s: testautomation_log.c.s
@@ -2136,7 +2136,7 @@ testautomation_log.s: testautomation_log.c.s
 
 # target to generate assembly for a file
 testautomation_log.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_log.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_log.c.s
 .PHONY : testautomation_log.c.s
 
 testautomation_main.o: testautomation_main.c.o
@@ -2144,7 +2144,7 @@ testautomation_main.o: testautomation_main.c.o
 
 # target to build an object file
 testautomation_main.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_main.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_main.c.o
 .PHONY : testautomation_main.c.o
 
 testautomation_main.i: testautomation_main.c.i
@@ -2152,7 +2152,7 @@ testautomation_main.i: testautomation_main.c.i
 
 # target to preprocess a source file
 testautomation_main.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_main.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_main.c.i
 .PHONY : testautomation_main.c.i
 
 testautomation_main.s: testautomation_main.c.s
@@ -2160,7 +2160,7 @@ testautomation_main.s: testautomation_main.c.s
 
 # target to generate assembly for a file
 testautomation_main.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_main.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_main.c.s
 .PHONY : testautomation_main.c.s
 
 testautomation_math.o: testautomation_math.c.o
@@ -2168,7 +2168,7 @@ testautomation_math.o: testautomation_math.c.o
 
 # target to build an object file
 testautomation_math.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_math.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_math.c.o
 .PHONY : testautomation_math.c.o
 
 testautomation_math.i: testautomation_math.c.i
@@ -2176,7 +2176,7 @@ testautomation_math.i: testautomation_math.c.i
 
 # target to preprocess a source file
 testautomation_math.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_math.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_math.c.i
 .PHONY : testautomation_math.c.i
 
 testautomation_math.s: testautomation_math.c.s
@@ -2184,7 +2184,7 @@ testautomation_math.s: testautomation_math.c.s
 
 # target to generate assembly for a file
 testautomation_math.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_math.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_math.c.s
 .PHONY : testautomation_math.c.s
 
 testautomation_mouse.o: testautomation_mouse.c.o
@@ -2192,7 +2192,7 @@ testautomation_mouse.o: testautomation_mouse.c.o
 
 # target to build an object file
 testautomation_mouse.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_mouse.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_mouse.c.o
 .PHONY : testautomation_mouse.c.o
 
 testautomation_mouse.i: testautomation_mouse.c.i
@@ -2200,7 +2200,7 @@ testautomation_mouse.i: testautomation_mouse.c.i
 
 # target to preprocess a source file
 testautomation_mouse.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_mouse.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_mouse.c.i
 .PHONY : testautomation_mouse.c.i
 
 testautomation_mouse.s: testautomation_mouse.c.s
@@ -2208,7 +2208,7 @@ testautomation_mouse.s: testautomation_mouse.c.s
 
 # target to generate assembly for a file
 testautomation_mouse.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_mouse.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_mouse.c.s
 .PHONY : testautomation_mouse.c.s
 
 testautomation_pixels.o: testautomation_pixels.c.o
@@ -2216,7 +2216,7 @@ testautomation_pixels.o: testautomation_pixels.c.o
 
 # target to build an object file
 testautomation_pixels.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_pixels.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_pixels.c.o
 .PHONY : testautomation_pixels.c.o
 
 testautomation_pixels.i: testautomation_pixels.c.i
@@ -2224,7 +2224,7 @@ testautomation_pixels.i: testautomation_pixels.c.i
 
 # target to preprocess a source file
 testautomation_pixels.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_pixels.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_pixels.c.i
 .PHONY : testautomation_pixels.c.i
 
 testautomation_pixels.s: testautomation_pixels.c.s
@@ -2232,7 +2232,7 @@ testautomation_pixels.s: testautomation_pixels.c.s
 
 # target to generate assembly for a file
 testautomation_pixels.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_pixels.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_pixels.c.s
 .PHONY : testautomation_pixels.c.s
 
 testautomation_platform.o: testautomation_platform.c.o
@@ -2240,7 +2240,7 @@ testautomation_platform.o: testautomation_platform.c.o
 
 # target to build an object file
 testautomation_platform.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_platform.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_platform.c.o
 .PHONY : testautomation_platform.c.o
 
 testautomation_platform.i: testautomation_platform.c.i
@@ -2248,7 +2248,7 @@ testautomation_platform.i: testautomation_platform.c.i
 
 # target to preprocess a source file
 testautomation_platform.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_platform.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_platform.c.i
 .PHONY : testautomation_platform.c.i
 
 testautomation_platform.s: testautomation_platform.c.s
@@ -2256,7 +2256,7 @@ testautomation_platform.s: testautomation_platform.c.s
 
 # target to generate assembly for a file
 testautomation_platform.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_platform.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_platform.c.s
 .PHONY : testautomation_platform.c.s
 
 testautomation_properties.o: testautomation_properties.c.o
@@ -2264,7 +2264,7 @@ testautomation_properties.o: testautomation_properties.c.o
 
 # target to build an object file
 testautomation_properties.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_properties.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_properties.c.o
 .PHONY : testautomation_properties.c.o
 
 testautomation_properties.i: testautomation_properties.c.i
@@ -2272,7 +2272,7 @@ testautomation_properties.i: testautomation_properties.c.i
 
 # target to preprocess a source file
 testautomation_properties.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_properties.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_properties.c.i
 .PHONY : testautomation_properties.c.i
 
 testautomation_properties.s: testautomation_properties.c.s
@@ -2280,7 +2280,7 @@ testautomation_properties.s: testautomation_properties.c.s
 
 # target to generate assembly for a file
 testautomation_properties.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_properties.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_properties.c.s
 .PHONY : testautomation_properties.c.s
 
 testautomation_rect.o: testautomation_rect.c.o
@@ -2288,7 +2288,7 @@ testautomation_rect.o: testautomation_rect.c.o
 
 # target to build an object file
 testautomation_rect.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_rect.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_rect.c.o
 .PHONY : testautomation_rect.c.o
 
 testautomation_rect.i: testautomation_rect.c.i
@@ -2296,7 +2296,7 @@ testautomation_rect.i: testautomation_rect.c.i
 
 # target to preprocess a source file
 testautomation_rect.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_rect.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_rect.c.i
 .PHONY : testautomation_rect.c.i
 
 testautomation_rect.s: testautomation_rect.c.s
@@ -2304,7 +2304,7 @@ testautomation_rect.s: testautomation_rect.c.s
 
 # target to generate assembly for a file
 testautomation_rect.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_rect.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_rect.c.s
 .PHONY : testautomation_rect.c.s
 
 testautomation_render.o: testautomation_render.c.o
@@ -2312,7 +2312,7 @@ testautomation_render.o: testautomation_render.c.o
 
 # target to build an object file
 testautomation_render.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_render.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_render.c.o
 .PHONY : testautomation_render.c.o
 
 testautomation_render.i: testautomation_render.c.i
@@ -2320,7 +2320,7 @@ testautomation_render.i: testautomation_render.c.i
 
 # target to preprocess a source file
 testautomation_render.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_render.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_render.c.i
 .PHONY : testautomation_render.c.i
 
 testautomation_render.s: testautomation_render.c.s
@@ -2328,7 +2328,7 @@ testautomation_render.s: testautomation_render.c.s
 
 # target to generate assembly for a file
 testautomation_render.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_render.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_render.c.s
 .PHONY : testautomation_render.c.s
 
 testautomation_sdltest.o: testautomation_sdltest.c.o
@@ -2336,7 +2336,7 @@ testautomation_sdltest.o: testautomation_sdltest.c.o
 
 # target to build an object file
 testautomation_sdltest.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_sdltest.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_sdltest.c.o
 .PHONY : testautomation_sdltest.c.o
 
 testautomation_sdltest.i: testautomation_sdltest.c.i
@@ -2344,7 +2344,7 @@ testautomation_sdltest.i: testautomation_sdltest.c.i
 
 # target to preprocess a source file
 testautomation_sdltest.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_sdltest.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_sdltest.c.i
 .PHONY : testautomation_sdltest.c.i
 
 testautomation_sdltest.s: testautomation_sdltest.c.s
@@ -2352,7 +2352,7 @@ testautomation_sdltest.s: testautomation_sdltest.c.s
 
 # target to generate assembly for a file
 testautomation_sdltest.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_sdltest.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_sdltest.c.s
 .PHONY : testautomation_sdltest.c.s
 
 testautomation_stdlib.o: testautomation_stdlib.c.o
@@ -2360,7 +2360,7 @@ testautomation_stdlib.o: testautomation_stdlib.c.o
 
 # target to build an object file
 testautomation_stdlib.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_stdlib.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_stdlib.c.o
 .PHONY : testautomation_stdlib.c.o
 
 testautomation_stdlib.i: testautomation_stdlib.c.i
@@ -2368,7 +2368,7 @@ testautomation_stdlib.i: testautomation_stdlib.c.i
 
 # target to preprocess a source file
 testautomation_stdlib.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_stdlib.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_stdlib.c.i
 .PHONY : testautomation_stdlib.c.i
 
 testautomation_stdlib.s: testautomation_stdlib.c.s
@@ -2376,7 +2376,7 @@ testautomation_stdlib.s: testautomation_stdlib.c.s
 
 # target to generate assembly for a file
 testautomation_stdlib.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_stdlib.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_stdlib.c.s
 .PHONY : testautomation_stdlib.c.s
 
 testautomation_subsystems.o: testautomation_subsystems.c.o
@@ -2384,7 +2384,7 @@ testautomation_subsystems.o: testautomation_subsystems.c.o
 
 # target to build an object file
 testautomation_subsystems.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_subsystems.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_subsystems.c.o
 .PHONY : testautomation_subsystems.c.o
 
 testautomation_subsystems.i: testautomation_subsystems.c.i
@@ -2392,7 +2392,7 @@ testautomation_subsystems.i: testautomation_subsystems.c.i
 
 # target to preprocess a source file
 testautomation_subsystems.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_subsystems.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_subsystems.c.i
 .PHONY : testautomation_subsystems.c.i
 
 testautomation_subsystems.s: testautomation_subsystems.c.s
@@ -2400,7 +2400,7 @@ testautomation_subsystems.s: testautomation_subsystems.c.s
 
 # target to generate assembly for a file
 testautomation_subsystems.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_subsystems.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_subsystems.c.s
 .PHONY : testautomation_subsystems.c.s
 
 testautomation_surface.o: testautomation_surface.c.o
@@ -2408,7 +2408,7 @@ testautomation_surface.o: testautomation_surface.c.o
 
 # target to build an object file
 testautomation_surface.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_surface.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_surface.c.o
 .PHONY : testautomation_surface.c.o
 
 testautomation_surface.i: testautomation_surface.c.i
@@ -2416,7 +2416,7 @@ testautomation_surface.i: testautomation_surface.c.i
 
 # target to preprocess a source file
 testautomation_surface.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_surface.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_surface.c.i
 .PHONY : testautomation_surface.c.i
 
 testautomation_surface.s: testautomation_surface.c.s
@@ -2424,7 +2424,7 @@ testautomation_surface.s: testautomation_surface.c.s
 
 # target to generate assembly for a file
 testautomation_surface.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_surface.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_surface.c.s
 .PHONY : testautomation_surface.c.s
 
 testautomation_time.o: testautomation_time.c.o
@@ -2432,7 +2432,7 @@ testautomation_time.o: testautomation_time.c.o
 
 # target to build an object file
 testautomation_time.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_time.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_time.c.o
 .PHONY : testautomation_time.c.o
 
 testautomation_time.i: testautomation_time.c.i
@@ -2440,7 +2440,7 @@ testautomation_time.i: testautomation_time.c.i
 
 # target to preprocess a source file
 testautomation_time.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_time.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_time.c.i
 .PHONY : testautomation_time.c.i
 
 testautomation_time.s: testautomation_time.c.s
@@ -2448,7 +2448,7 @@ testautomation_time.s: testautomation_time.c.s
 
 # target to generate assembly for a file
 testautomation_time.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_time.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_time.c.s
 .PHONY : testautomation_time.c.s
 
 testautomation_timer.o: testautomation_timer.c.o
@@ -2456,7 +2456,7 @@ testautomation_timer.o: testautomation_timer.c.o
 
 # target to build an object file
 testautomation_timer.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_timer.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_timer.c.o
 .PHONY : testautomation_timer.c.o
 
 testautomation_timer.i: testautomation_timer.c.i
@@ -2464,7 +2464,7 @@ testautomation_timer.i: testautomation_timer.c.i
 
 # target to preprocess a source file
 testautomation_timer.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_timer.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_timer.c.i
 .PHONY : testautomation_timer.c.i
 
 testautomation_timer.s: testautomation_timer.c.s
@@ -2472,7 +2472,7 @@ testautomation_timer.s: testautomation_timer.c.s
 
 # target to generate assembly for a file
 testautomation_timer.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_timer.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_timer.c.s
 .PHONY : testautomation_timer.c.s
 
 testautomation_video.o: testautomation_video.c.o
@@ -2480,7 +2480,7 @@ testautomation_video.o: testautomation_video.c.o
 
 # target to build an object file
 testautomation_video.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_video.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_video.c.o
 .PHONY : testautomation_video.c.o
 
 testautomation_video.i: testautomation_video.c.i
@@ -2488,7 +2488,7 @@ testautomation_video.i: testautomation_video.c.i
 
 # target to preprocess a source file
 testautomation_video.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_video.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_video.c.i
 .PHONY : testautomation_video.c.i
 
 testautomation_video.s: testautomation_video.c.s
@@ -2496,7 +2496,7 @@ testautomation_video.s: testautomation_video.c.s
 
 # target to generate assembly for a file
 testautomation_video.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_video.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testautomation.dir/build.make test/CMakeFiles/testautomation.dir/testautomation_video.c.s
 .PHONY : testautomation_video.c.s
 
 testbounds.o: testbounds.c.o
@@ -2504,7 +2504,7 @@ testbounds.o: testbounds.c.o
 
 # target to build an object file
 testbounds.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testbounds.dir/build.make test/CMakeFiles/testbounds.dir/testbounds.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testbounds.dir/build.make test/CMakeFiles/testbounds.dir/testbounds.c.o
 .PHONY : testbounds.c.o
 
 testbounds.i: testbounds.c.i
@@ -2512,7 +2512,7 @@ testbounds.i: testbounds.c.i
 
 # target to preprocess a source file
 testbounds.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testbounds.dir/build.make test/CMakeFiles/testbounds.dir/testbounds.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testbounds.dir/build.make test/CMakeFiles/testbounds.dir/testbounds.c.i
 .PHONY : testbounds.c.i
 
 testbounds.s: testbounds.c.s
@@ -2520,7 +2520,7 @@ testbounds.s: testbounds.c.s
 
 # target to generate assembly for a file
 testbounds.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testbounds.dir/build.make test/CMakeFiles/testbounds.dir/testbounds.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testbounds.dir/build.make test/CMakeFiles/testbounds.dir/testbounds.c.s
 .PHONY : testbounds.c.s
 
 testcamera.o: testcamera.c.o
@@ -2528,7 +2528,7 @@ testcamera.o: testcamera.c.o
 
 # target to build an object file
 testcamera.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcamera.dir/build.make test/CMakeFiles/testcamera.dir/testcamera.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcamera.dir/build.make test/CMakeFiles/testcamera.dir/testcamera.c.o
 .PHONY : testcamera.c.o
 
 testcamera.i: testcamera.c.i
@@ -2536,7 +2536,7 @@ testcamera.i: testcamera.c.i
 
 # target to preprocess a source file
 testcamera.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcamera.dir/build.make test/CMakeFiles/testcamera.dir/testcamera.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcamera.dir/build.make test/CMakeFiles/testcamera.dir/testcamera.c.i
 .PHONY : testcamera.c.i
 
 testcamera.s: testcamera.c.s
@@ -2544,7 +2544,7 @@ testcamera.s: testcamera.c.s
 
 # target to generate assembly for a file
 testcamera.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcamera.dir/build.make test/CMakeFiles/testcamera.dir/testcamera.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcamera.dir/build.make test/CMakeFiles/testcamera.dir/testcamera.c.s
 .PHONY : testcamera.c.s
 
 testclipboard.o: testclipboard.c.o
@@ -2552,7 +2552,7 @@ testclipboard.o: testclipboard.c.o
 
 # target to build an object file
 testclipboard.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testclipboard.dir/build.make test/CMakeFiles/testclipboard.dir/testclipboard.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testclipboard.dir/build.make test/CMakeFiles/testclipboard.dir/testclipboard.c.o
 .PHONY : testclipboard.c.o
 
 testclipboard.i: testclipboard.c.i
@@ -2560,7 +2560,7 @@ testclipboard.i: testclipboard.c.i
 
 # target to preprocess a source file
 testclipboard.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testclipboard.dir/build.make test/CMakeFiles/testclipboard.dir/testclipboard.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testclipboard.dir/build.make test/CMakeFiles/testclipboard.dir/testclipboard.c.i
 .PHONY : testclipboard.c.i
 
 testclipboard.s: testclipboard.c.s
@@ -2568,7 +2568,7 @@ testclipboard.s: testclipboard.c.s
 
 # target to generate assembly for a file
 testclipboard.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testclipboard.dir/build.make test/CMakeFiles/testclipboard.dir/testclipboard.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testclipboard.dir/build.make test/CMakeFiles/testclipboard.dir/testclipboard.c.s
 .PHONY : testclipboard.c.s
 
 testcolorspace.o: testcolorspace.c.o
@@ -2576,7 +2576,7 @@ testcolorspace.o: testcolorspace.c.o
 
 # target to build an object file
 testcolorspace.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcolorspace.dir/build.make test/CMakeFiles/testcolorspace.dir/testcolorspace.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcolorspace.dir/build.make test/CMakeFiles/testcolorspace.dir/testcolorspace.c.o
 .PHONY : testcolorspace.c.o
 
 testcolorspace.i: testcolorspace.c.i
@@ -2584,7 +2584,7 @@ testcolorspace.i: testcolorspace.c.i
 
 # target to preprocess a source file
 testcolorspace.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcolorspace.dir/build.make test/CMakeFiles/testcolorspace.dir/testcolorspace.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcolorspace.dir/build.make test/CMakeFiles/testcolorspace.dir/testcolorspace.c.i
 .PHONY : testcolorspace.c.i
 
 testcolorspace.s: testcolorspace.c.s
@@ -2592,7 +2592,7 @@ testcolorspace.s: testcolorspace.c.s
 
 # target to generate assembly for a file
 testcolorspace.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcolorspace.dir/build.make test/CMakeFiles/testcolorspace.dir/testcolorspace.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcolorspace.dir/build.make test/CMakeFiles/testcolorspace.dir/testcolorspace.c.s
 .PHONY : testcolorspace.c.s
 
 testcontroller.o: testcontroller.c.o
@@ -2600,7 +2600,7 @@ testcontroller.o: testcontroller.c.o
 
 # target to build an object file
 testcontroller.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/testcontroller.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/testcontroller.c.o
 .PHONY : testcontroller.c.o
 
 testcontroller.i: testcontroller.c.i
@@ -2608,7 +2608,7 @@ testcontroller.i: testcontroller.c.i
 
 # target to preprocess a source file
 testcontroller.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/testcontroller.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/testcontroller.c.i
 .PHONY : testcontroller.c.i
 
 testcontroller.s: testcontroller.c.s
@@ -2616,7 +2616,7 @@ testcontroller.s: testcontroller.c.s
 
 # target to generate assembly for a file
 testcontroller.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/testcontroller.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcontroller.dir/build.make test/CMakeFiles/testcontroller.dir/testcontroller.c.s
 .PHONY : testcontroller.c.s
 
 testcustomcursor.o: testcustomcursor.c.o
@@ -2624,7 +2624,7 @@ testcustomcursor.o: testcustomcursor.c.o
 
 # target to build an object file
 testcustomcursor.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcustomcursor.dir/build.make test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcustomcursor.dir/build.make test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.o
 .PHONY : testcustomcursor.c.o
 
 testcustomcursor.i: testcustomcursor.c.i
@@ -2632,7 +2632,7 @@ testcustomcursor.i: testcustomcursor.c.i
 
 # target to preprocess a source file
 testcustomcursor.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcustomcursor.dir/build.make test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcustomcursor.dir/build.make test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.i
 .PHONY : testcustomcursor.c.i
 
 testcustomcursor.s: testcustomcursor.c.s
@@ -2640,7 +2640,7 @@ testcustomcursor.s: testcustomcursor.c.s
 
 # target to generate assembly for a file
 testcustomcursor.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcustomcursor.dir/build.make test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testcustomcursor.dir/build.make test/CMakeFiles/testcustomcursor.dir/testcustomcursor.c.s
 .PHONY : testcustomcursor.c.s
 
 testdialog.o: testdialog.c.o
@@ -2648,7 +2648,7 @@ testdialog.o: testdialog.c.o
 
 # target to build an object file
 testdialog.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdialog.dir/build.make test/CMakeFiles/testdialog.dir/testdialog.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdialog.dir/build.make test/CMakeFiles/testdialog.dir/testdialog.c.o
 .PHONY : testdialog.c.o
 
 testdialog.i: testdialog.c.i
@@ -2656,7 +2656,7 @@ testdialog.i: testdialog.c.i
 
 # target to preprocess a source file
 testdialog.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdialog.dir/build.make test/CMakeFiles/testdialog.dir/testdialog.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdialog.dir/build.make test/CMakeFiles/testdialog.dir/testdialog.c.i
 .PHONY : testdialog.c.i
 
 testdialog.s: testdialog.c.s
@@ -2664,7 +2664,7 @@ testdialog.s: testdialog.c.s
 
 # target to generate assembly for a file
 testdialog.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdialog.dir/build.make test/CMakeFiles/testdialog.dir/testdialog.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdialog.dir/build.make test/CMakeFiles/testdialog.dir/testdialog.c.s
 .PHONY : testdialog.c.s
 
 testdisplayinfo.o: testdisplayinfo.c.o
@@ -2672,7 +2672,7 @@ testdisplayinfo.o: testdisplayinfo.c.o
 
 # target to build an object file
 testdisplayinfo.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdisplayinfo.dir/build.make test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdisplayinfo.dir/build.make test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.o
 .PHONY : testdisplayinfo.c.o
 
 testdisplayinfo.i: testdisplayinfo.c.i
@@ -2680,7 +2680,7 @@ testdisplayinfo.i: testdisplayinfo.c.i
 
 # target to preprocess a source file
 testdisplayinfo.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdisplayinfo.dir/build.make test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdisplayinfo.dir/build.make test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.i
 .PHONY : testdisplayinfo.c.i
 
 testdisplayinfo.s: testdisplayinfo.c.s
@@ -2688,7 +2688,7 @@ testdisplayinfo.s: testdisplayinfo.c.s
 
 # target to generate assembly for a file
 testdisplayinfo.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdisplayinfo.dir/build.make test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdisplayinfo.dir/build.make test/CMakeFiles/testdisplayinfo.dir/testdisplayinfo.c.s
 .PHONY : testdisplayinfo.c.s
 
 testdlopennote.o: testdlopennote.c.o
@@ -2696,7 +2696,7 @@ testdlopennote.o: testdlopennote.c.o
 
 # target to build an object file
 testdlopennote.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdlopennote.dir/build.make test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdlopennote.dir/build.make test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o
 .PHONY : testdlopennote.c.o
 
 testdlopennote.i: testdlopennote.c.i
@@ -2704,7 +2704,7 @@ testdlopennote.i: testdlopennote.c.i
 
 # target to preprocess a source file
 testdlopennote.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdlopennote.dir/build.make test/CMakeFiles/testdlopennote.dir/testdlopennote.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdlopennote.dir/build.make test/CMakeFiles/testdlopennote.dir/testdlopennote.c.i
 .PHONY : testdlopennote.c.i
 
 testdlopennote.s: testdlopennote.c.s
@@ -2712,7 +2712,7 @@ testdlopennote.s: testdlopennote.c.s
 
 # target to generate assembly for a file
 testdlopennote.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdlopennote.dir/build.make test/CMakeFiles/testdlopennote.dir/testdlopennote.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdlopennote.dir/build.make test/CMakeFiles/testdlopennote.dir/testdlopennote.c.s
 .PHONY : testdlopennote.c.s
 
 testdraw.o: testdraw.c.o
@@ -2720,7 +2720,7 @@ testdraw.o: testdraw.c.o
 
 # target to build an object file
 testdraw.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdraw.dir/build.make test/CMakeFiles/testdraw.dir/testdraw.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdraw.dir/build.make test/CMakeFiles/testdraw.dir/testdraw.c.o
 .PHONY : testdraw.c.o
 
 testdraw.i: testdraw.c.i
@@ -2728,7 +2728,7 @@ testdraw.i: testdraw.c.i
 
 # target to preprocess a source file
 testdraw.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdraw.dir/build.make test/CMakeFiles/testdraw.dir/testdraw.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdraw.dir/build.make test/CMakeFiles/testdraw.dir/testdraw.c.i
 .PHONY : testdraw.c.i
 
 testdraw.s: testdraw.c.s
@@ -2736,7 +2736,7 @@ testdraw.s: testdraw.c.s
 
 # target to generate assembly for a file
 testdraw.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdraw.dir/build.make test/CMakeFiles/testdraw.dir/testdraw.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdraw.dir/build.make test/CMakeFiles/testdraw.dir/testdraw.c.s
 .PHONY : testdraw.c.s
 
 testdrawchessboard.o: testdrawchessboard.c.o
@@ -2744,7 +2744,7 @@ testdrawchessboard.o: testdrawchessboard.c.o
 
 # target to build an object file
 testdrawchessboard.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdrawchessboard.dir/build.make test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdrawchessboard.dir/build.make test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.o
 .PHONY : testdrawchessboard.c.o
 
 testdrawchessboard.i: testdrawchessboard.c.i
@@ -2752,7 +2752,7 @@ testdrawchessboard.i: testdrawchessboard.c.i
 
 # target to preprocess a source file
 testdrawchessboard.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdrawchessboard.dir/build.make test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdrawchessboard.dir/build.make test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.i
 .PHONY : testdrawchessboard.c.i
 
 testdrawchessboard.s: testdrawchessboard.c.s
@@ -2760,7 +2760,7 @@ testdrawchessboard.s: testdrawchessboard.c.s
 
 # target to generate assembly for a file
 testdrawchessboard.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdrawchessboard.dir/build.make test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdrawchessboard.dir/build.make test/CMakeFiles/testdrawchessboard.dir/testdrawchessboard.c.s
 .PHONY : testdrawchessboard.c.s
 
 testdropfile.o: testdropfile.c.o
@@ -2768,7 +2768,7 @@ testdropfile.o: testdropfile.c.o
 
 # target to build an object file
 testdropfile.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdropfile.dir/build.make test/CMakeFiles/testdropfile.dir/testdropfile.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdropfile.dir/build.make test/CMakeFiles/testdropfile.dir/testdropfile.c.o
 .PHONY : testdropfile.c.o
 
 testdropfile.i: testdropfile.c.i
@@ -2776,7 +2776,7 @@ testdropfile.i: testdropfile.c.i
 
 # target to preprocess a source file
 testdropfile.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdropfile.dir/build.make test/CMakeFiles/testdropfile.dir/testdropfile.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdropfile.dir/build.make test/CMakeFiles/testdropfile.dir/testdropfile.c.i
 .PHONY : testdropfile.c.i
 
 testdropfile.s: testdropfile.c.s
@@ -2784,7 +2784,7 @@ testdropfile.s: testdropfile.c.s
 
 # target to generate assembly for a file
 testdropfile.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdropfile.dir/build.make test/CMakeFiles/testdropfile.dir/testdropfile.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testdropfile.dir/build.make test/CMakeFiles/testdropfile.dir/testdropfile.c.s
 .PHONY : testdropfile.c.s
 
 testerror.o: testerror.c.o
@@ -2792,7 +2792,7 @@ testerror.o: testerror.c.o
 
 # target to build an object file
 testerror.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testerror.dir/build.make test/CMakeFiles/testerror.dir/testerror.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testerror.dir/build.make test/CMakeFiles/testerror.dir/testerror.c.o
 .PHONY : testerror.c.o
 
 testerror.i: testerror.c.i
@@ -2800,7 +2800,7 @@ testerror.i: testerror.c.i
 
 # target to preprocess a source file
 testerror.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testerror.dir/build.make test/CMakeFiles/testerror.dir/testerror.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testerror.dir/build.make test/CMakeFiles/testerror.dir/testerror.c.i
 .PHONY : testerror.c.i
 
 testerror.s: testerror.c.s
@@ -2808,7 +2808,7 @@ testerror.s: testerror.c.s
 
 # target to generate assembly for a file
 testerror.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testerror.dir/build.make test/CMakeFiles/testerror.dir/testerror.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testerror.dir/build.make test/CMakeFiles/testerror.dir/testerror.c.s
 .PHONY : testerror.c.s
 
 testevdev.o: testevdev.c.o
@@ -2816,7 +2816,7 @@ testevdev.o: testevdev.c.o
 
 # target to build an object file
 testevdev.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testevdev.dir/build.make test/CMakeFiles/testevdev.dir/testevdev.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testevdev.dir/build.make test/CMakeFiles/testevdev.dir/testevdev.c.o
 .PHONY : testevdev.c.o
 
 testevdev.i: testevdev.c.i
@@ -2824,7 +2824,7 @@ testevdev.i: testevdev.c.i
 
 # target to preprocess a source file
 testevdev.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testevdev.dir/build.make test/CMakeFiles/testevdev.dir/testevdev.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testevdev.dir/build.make test/CMakeFiles/testevdev.dir/testevdev.c.i
 .PHONY : testevdev.c.i
 
 testevdev.s: testevdev.c.s
@@ -2832,7 +2832,7 @@ testevdev.s: testevdev.c.s
 
 # target to generate assembly for a file
 testevdev.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testevdev.dir/build.make test/CMakeFiles/testevdev.dir/testevdev.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testevdev.dir/build.make test/CMakeFiles/testevdev.dir/testevdev.c.s
 .PHONY : testevdev.c.s
 
 testffmpeg.o: testffmpeg.c.o
@@ -2840,7 +2840,7 @@ testffmpeg.o: testffmpeg.c.o
 
 # target to build an object file
 testffmpeg.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg.c.o
 .PHONY : testffmpeg.c.o
 
 testffmpeg.i: testffmpeg.c.i
@@ -2848,7 +2848,7 @@ testffmpeg.i: testffmpeg.c.i
 
 # target to preprocess a source file
 testffmpeg.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg.c.i
 .PHONY : testffmpeg.c.i
 
 testffmpeg.s: testffmpeg.c.s
@@ -2856,7 +2856,7 @@ testffmpeg.s: testffmpeg.c.s
 
 # target to generate assembly for a file
 testffmpeg.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg.c.s
 .PHONY : testffmpeg.c.s
 
 testffmpeg_vulkan.o: testffmpeg_vulkan.c.o
@@ -2864,7 +2864,7 @@ testffmpeg_vulkan.o: testffmpeg_vulkan.c.o
 
 # target to build an object file
 testffmpeg_vulkan.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.o
 .PHONY : testffmpeg_vulkan.c.o
 
 testffmpeg_vulkan.i: testffmpeg_vulkan.c.i
@@ -2872,7 +2872,7 @@ testffmpeg_vulkan.i: testffmpeg_vulkan.c.i
 
 # target to preprocess a source file
 testffmpeg_vulkan.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.i
 .PHONY : testffmpeg_vulkan.c.i
 
 testffmpeg_vulkan.s: testffmpeg_vulkan.c.s
@@ -2880,7 +2880,7 @@ testffmpeg_vulkan.s: testffmpeg_vulkan.c.s
 
 # target to generate assembly for a file
 testffmpeg_vulkan.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testffmpeg.dir/build.make test/CMakeFiles/testffmpeg.dir/testffmpeg_vulkan.c.s
 .PHONY : testffmpeg_vulkan.c.s
 
 testfile.o: testfile.c.o
@@ -2888,7 +2888,7 @@ testfile.o: testfile.c.o
 
 # target to build an object file
 testfile.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfile.dir/build.make test/CMakeFiles/testfile.dir/testfile.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfile.dir/build.make test/CMakeFiles/testfile.dir/testfile.c.o
 .PHONY : testfile.c.o
 
 testfile.i: testfile.c.i
@@ -2896,7 +2896,7 @@ testfile.i: testfile.c.i
 
 # target to preprocess a source file
 testfile.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfile.dir/build.make test/CMakeFiles/testfile.dir/testfile.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfile.dir/build.make test/CMakeFiles/testfile.dir/testfile.c.i
 .PHONY : testfile.c.i
 
 testfile.s: testfile.c.s
@@ -2904,7 +2904,7 @@ testfile.s: testfile.c.s
 
 # target to generate assembly for a file
 testfile.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfile.dir/build.make test/CMakeFiles/testfile.dir/testfile.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfile.dir/build.make test/CMakeFiles/testfile.dir/testfile.c.s
 .PHONY : testfile.c.s
 
 testfilesystem.o: testfilesystem.c.o
@@ -2912,7 +2912,7 @@ testfilesystem.o: testfilesystem.c.o
 
 # target to build an object file
 testfilesystem.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfilesystem.dir/build.make test/CMakeFiles/testfilesystem.dir/testfilesystem.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfilesystem.dir/build.make test/CMakeFiles/testfilesystem.dir/testfilesystem.c.o
 .PHONY : testfilesystem.c.o
 
 testfilesystem.i: testfilesystem.c.i
@@ -2920,7 +2920,7 @@ testfilesystem.i: testfilesystem.c.i
 
 # target to preprocess a source file
 testfilesystem.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfilesystem.dir/build.make test/CMakeFiles/testfilesystem.dir/testfilesystem.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfilesystem.dir/build.make test/CMakeFiles/testfilesystem.dir/testfilesystem.c.i
 .PHONY : testfilesystem.c.i
 
 testfilesystem.s: testfilesystem.c.s
@@ -2928,7 +2928,7 @@ testfilesystem.s: testfilesystem.c.s
 
 # target to generate assembly for a file
 testfilesystem.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfilesystem.dir/build.make test/CMakeFiles/testfilesystem.dir/testfilesystem.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testfilesystem.dir/build.make test/CMakeFiles/testfilesystem.dir/testfilesystem.c.s
 .PHONY : testfilesystem.c.s
 
 testgeometry.o: testgeometry.c.o
@@ -2936,7 +2936,7 @@ testgeometry.o: testgeometry.c.o
 
 # target to build an object file
 testgeometry.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgeometry.dir/build.make test/CMakeFiles/testgeometry.dir/testgeometry.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgeometry.dir/build.make test/CMakeFiles/testgeometry.dir/testgeometry.c.o
 .PHONY : testgeometry.c.o
 
 testgeometry.i: testgeometry.c.i
@@ -2944,7 +2944,7 @@ testgeometry.i: testgeometry.c.i
 
 # target to preprocess a source file
 testgeometry.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgeometry.dir/build.make test/CMakeFiles/testgeometry.dir/testgeometry.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgeometry.dir/build.make test/CMakeFiles/testgeometry.dir/testgeometry.c.i
 .PHONY : testgeometry.c.i
 
 testgeometry.s: testgeometry.c.s
@@ -2952,7 +2952,7 @@ testgeometry.s: testgeometry.c.s
 
 # target to generate assembly for a file
 testgeometry.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgeometry.dir/build.make test/CMakeFiles/testgeometry.dir/testgeometry.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgeometry.dir/build.make test/CMakeFiles/testgeometry.dir/testgeometry.c.s
 .PHONY : testgeometry.c.s
 
 testgl.o: testgl.c.o
@@ -2960,7 +2960,7 @@ testgl.o: testgl.c.o
 
 # target to build an object file
 testgl.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgl.dir/build.make test/CMakeFiles/testgl.dir/testgl.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgl.dir/build.make test/CMakeFiles/testgl.dir/testgl.c.o
 .PHONY : testgl.c.o
 
 testgl.i: testgl.c.i
@@ -2968,7 +2968,7 @@ testgl.i: testgl.c.i
 
 # target to preprocess a source file
 testgl.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgl.dir/build.make test/CMakeFiles/testgl.dir/testgl.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgl.dir/build.make test/CMakeFiles/testgl.dir/testgl.c.i
 .PHONY : testgl.c.i
 
 testgl.s: testgl.c.s
@@ -2976,7 +2976,7 @@ testgl.s: testgl.c.s
 
 # target to generate assembly for a file
 testgl.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgl.dir/build.make test/CMakeFiles/testgl.dir/testgl.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgl.dir/build.make test/CMakeFiles/testgl.dir/testgl.c.s
 .PHONY : testgl.c.s
 
 testgles.o: testgles.c.o
@@ -2984,7 +2984,7 @@ testgles.o: testgles.c.o
 
 # target to build an object file
 testgles.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles.dir/build.make test/CMakeFiles/testgles.dir/testgles.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles.dir/build.make test/CMakeFiles/testgles.dir/testgles.c.o
 .PHONY : testgles.c.o
 
 testgles.i: testgles.c.i
@@ -2992,7 +2992,7 @@ testgles.i: testgles.c.i
 
 # target to preprocess a source file
 testgles.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles.dir/build.make test/CMakeFiles/testgles.dir/testgles.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles.dir/build.make test/CMakeFiles/testgles.dir/testgles.c.i
 .PHONY : testgles.c.i
 
 testgles.s: testgles.c.s
@@ -3000,7 +3000,7 @@ testgles.s: testgles.c.s
 
 # target to generate assembly for a file
 testgles.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles.dir/build.make test/CMakeFiles/testgles.dir/testgles.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles.dir/build.make test/CMakeFiles/testgles.dir/testgles.c.s
 .PHONY : testgles.c.s
 
 testgles2.o: testgles2.c.o
@@ -3008,7 +3008,7 @@ testgles2.o: testgles2.c.o
 
 # target to build an object file
 testgles2.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles2.dir/build.make test/CMakeFiles/testgles2.dir/testgles2.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles2.dir/build.make test/CMakeFiles/testgles2.dir/testgles2.c.o
 .PHONY : testgles2.c.o
 
 testgles2.i: testgles2.c.i
@@ -3016,7 +3016,7 @@ testgles2.i: testgles2.c.i
 
 # target to preprocess a source file
 testgles2.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles2.dir/build.make test/CMakeFiles/testgles2.dir/testgles2.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles2.dir/build.make test/CMakeFiles/testgles2.dir/testgles2.c.i
 .PHONY : testgles2.c.i
 
 testgles2.s: testgles2.c.s
@@ -3024,7 +3024,7 @@ testgles2.s: testgles2.c.s
 
 # target to generate assembly for a file
 testgles2.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles2.dir/build.make test/CMakeFiles/testgles2.dir/testgles2.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgles2.dir/build.make test/CMakeFiles/testgles2.dir/testgles2.c.s
 .PHONY : testgles2.c.s
 
 testgpu_simple_clear.o: testgpu_simple_clear.c.o
@@ -3032,7 +3032,7 @@ testgpu_simple_clear.o: testgpu_simple_clear.c.o
 
 # target to build an object file
 testgpu_simple_clear.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_simple_clear.dir/build.make test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_simple_clear.dir/build.make test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o
 .PHONY : testgpu_simple_clear.c.o
 
 testgpu_simple_clear.i: testgpu_simple_clear.c.i
@@ -3040,7 +3040,7 @@ testgpu_simple_clear.i: testgpu_simple_clear.c.i
 
 # target to preprocess a source file
 testgpu_simple_clear.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_simple_clear.dir/build.make test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_simple_clear.dir/build.make test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.i
 .PHONY : testgpu_simple_clear.c.i
 
 testgpu_simple_clear.s: testgpu_simple_clear.c.s
@@ -3048,7 +3048,7 @@ testgpu_simple_clear.s: testgpu_simple_clear.c.s
 
 # target to generate assembly for a file
 testgpu_simple_clear.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_simple_clear.dir/build.make test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_simple_clear.dir/build.make test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.s
 .PHONY : testgpu_simple_clear.c.s
 
 testgpu_spinning_cube.o: testgpu_spinning_cube.c.o
@@ -3056,7 +3056,7 @@ testgpu_spinning_cube.o: testgpu_spinning_cube.c.o
 
 # target to build an object file
 testgpu_spinning_cube.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_spinning_cube.dir/build.make test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_spinning_cube.dir/build.make test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.o
 .PHONY : testgpu_spinning_cube.c.o
 
 testgpu_spinning_cube.i: testgpu_spinning_cube.c.i
@@ -3064,7 +3064,7 @@ testgpu_spinning_cube.i: testgpu_spinning_cube.c.i
 
 # target to preprocess a source file
 testgpu_spinning_cube.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_spinning_cube.dir/build.make test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_spinning_cube.dir/build.make test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.i
 .PHONY : testgpu_spinning_cube.c.i
 
 testgpu_spinning_cube.s: testgpu_spinning_cube.c.s
@@ -3072,7 +3072,7 @@ testgpu_spinning_cube.s: testgpu_spinning_cube.c.s
 
 # target to generate assembly for a file
 testgpu_spinning_cube.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_spinning_cube.dir/build.make test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpu_spinning_cube.dir/build.make test/CMakeFiles/testgpu_spinning_cube.dir/testgpu_spinning_cube.c.s
 .PHONY : testgpu_spinning_cube.c.s
 
 testgpurender_effects.o: testgpurender_effects.c.o
@@ -3080,7 +3080,7 @@ testgpurender_effects.o: testgpurender_effects.c.o
 
 # target to build an object file
 testgpurender_effects.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_effects.dir/build.make test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_effects.dir/build.make test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.o
 .PHONY : testgpurender_effects.c.o
 
 testgpurender_effects.i: testgpurender_effects.c.i
@@ -3088,7 +3088,7 @@ testgpurender_effects.i: testgpurender_effects.c.i
 
 # target to preprocess a source file
 testgpurender_effects.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_effects.dir/build.make test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_effects.dir/build.make test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.i
 .PHONY : testgpurender_effects.c.i
 
 testgpurender_effects.s: testgpurender_effects.c.s
@@ -3096,7 +3096,7 @@ testgpurender_effects.s: testgpurender_effects.c.s
 
 # target to generate assembly for a file
 testgpurender_effects.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_effects.dir/build.make test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_effects.dir/build.make test/CMakeFiles/testgpurender_effects.dir/testgpurender_effects.c.s
 .PHONY : testgpurender_effects.c.s
 
 testgpurender_msdf.o: testgpurender_msdf.c.o
@@ -3104,7 +3104,7 @@ testgpurender_msdf.o: testgpurender_msdf.c.o
 
 # target to build an object file
 testgpurender_msdf.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_msdf.dir/build.make test/CMakeFiles/testgpurender_msdf.dir/testgpurender_msdf.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_msdf.dir/build.make test/CMakeFiles/testgpurender_msdf.dir/testgpurender_msdf.c.o
 .PHONY : testgpurender_msdf.c.o
 
 testgpurender_msdf.i: testgpurender_msdf.c.i
@@ -3112,7 +3112,7 @@ testgpurender_msdf.i: testgpurender_msdf.c.i
 
 # target to preprocess a source file
 testgpurender_msdf.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_msdf.dir/build.make test/CMakeFiles/testgpurender_msdf.dir/testgpurender_msdf.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_msdf.dir/build.make test/CMakeFiles/testgpurender_msdf.dir/testgpurender_msdf.c.i
 .PHONY : testgpurender_msdf.c.i
 
 testgpurender_msdf.s: testgpurender_msdf.c.s
@@ -3120,7 +3120,7 @@ testgpurender_msdf.s: testgpurender_msdf.c.s
 
 # target to generate assembly for a file
 testgpurender_msdf.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_msdf.dir/build.make test/CMakeFiles/testgpurender_msdf.dir/testgpurender_msdf.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testgpurender_msdf.dir/build.make test/CMakeFiles/testgpurender_msdf.dir/testgpurender_msdf.c.s
 .PHONY : testgpurender_msdf.c.s
 
 testhaptic.o: testhaptic.c.o
@@ -3128,7 +3128,7 @@ testhaptic.o: testhaptic.c.o
 
 # target to build an object file
 testhaptic.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhaptic.dir/build.make test/CMakeFiles/testhaptic.dir/testhaptic.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhaptic.dir/build.make test/CMakeFiles/testhaptic.dir/testhaptic.c.o
 .PHONY : testhaptic.c.o
 
 testhaptic.i: testhaptic.c.i
@@ -3136,7 +3136,7 @@ testhaptic.i: testhaptic.c.i
 
 # target to preprocess a source file
 testhaptic.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhaptic.dir/build.make test/CMakeFiles/testhaptic.dir/testhaptic.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhaptic.dir/build.make test/CMakeFiles/testhaptic.dir/testhaptic.c.i
 .PHONY : testhaptic.c.i
 
 testhaptic.s: testhaptic.c.s
@@ -3144,7 +3144,7 @@ testhaptic.s: testhaptic.c.s
 
 # target to generate assembly for a file
 testhaptic.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhaptic.dir/build.make test/CMakeFiles/testhaptic.dir/testhaptic.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhaptic.dir/build.make test/CMakeFiles/testhaptic.dir/testhaptic.c.s
 .PHONY : testhaptic.c.s
 
 testhittesting.o: testhittesting.c.o
@@ -3152,7 +3152,7 @@ testhittesting.o: testhittesting.c.o
 
 # target to build an object file
 testhittesting.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhittesting.dir/build.make test/CMakeFiles/testhittesting.dir/testhittesting.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhittesting.dir/build.make test/CMakeFiles/testhittesting.dir/testhittesting.c.o
 .PHONY : testhittesting.c.o
 
 testhittesting.i: testhittesting.c.i
@@ -3160,7 +3160,7 @@ testhittesting.i: testhittesting.c.i
 
 # target to preprocess a source file
 testhittesting.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhittesting.dir/build.make test/CMakeFiles/testhittesting.dir/testhittesting.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhittesting.dir/build.make test/CMakeFiles/testhittesting.dir/testhittesting.c.i
 .PHONY : testhittesting.c.i
 
 testhittesting.s: testhittesting.c.s
@@ -3168,7 +3168,7 @@ testhittesting.s: testhittesting.c.s
 
 # target to generate assembly for a file
 testhittesting.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhittesting.dir/build.make test/CMakeFiles/testhittesting.dir/testhittesting.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhittesting.dir/build.make test/CMakeFiles/testhittesting.dir/testhittesting.c.s
 .PHONY : testhittesting.c.s
 
 testhotplug.o: testhotplug.c.o
@@ -3176,7 +3176,7 @@ testhotplug.o: testhotplug.c.o
 
 # target to build an object file
 testhotplug.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhotplug.dir/build.make test/CMakeFiles/testhotplug.dir/testhotplug.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhotplug.dir/build.make test/CMakeFiles/testhotplug.dir/testhotplug.c.o
 .PHONY : testhotplug.c.o
 
 testhotplug.i: testhotplug.c.i
@@ -3184,7 +3184,7 @@ testhotplug.i: testhotplug.c.i
 
 # target to preprocess a source file
 testhotplug.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhotplug.dir/build.make test/CMakeFiles/testhotplug.dir/testhotplug.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhotplug.dir/build.make test/CMakeFiles/testhotplug.dir/testhotplug.c.i
 .PHONY : testhotplug.c.i
 
 testhotplug.s: testhotplug.c.s
@@ -3192,7 +3192,7 @@ testhotplug.s: testhotplug.c.s
 
 # target to generate assembly for a file
 testhotplug.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhotplug.dir/build.make test/CMakeFiles/testhotplug.dir/testhotplug.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testhotplug.dir/build.make test/CMakeFiles/testhotplug.dir/testhotplug.c.s
 .PHONY : testhotplug.c.s
 
 testiconv.o: testiconv.c.o
@@ -3200,7 +3200,7 @@ testiconv.o: testiconv.c.o
 
 # target to build an object file
 testiconv.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testiconv.dir/build.make test/CMakeFiles/testiconv.dir/testiconv.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testiconv.dir/build.make test/CMakeFiles/testiconv.dir/testiconv.c.o
 .PHONY : testiconv.c.o
 
 testiconv.i: testiconv.c.i
@@ -3208,7 +3208,7 @@ testiconv.i: testiconv.c.i
 
 # target to preprocess a source file
 testiconv.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testiconv.dir/build.make test/CMakeFiles/testiconv.dir/testiconv.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testiconv.dir/build.make test/CMakeFiles/testiconv.dir/testiconv.c.i
 .PHONY : testiconv.c.i
 
 testiconv.s: testiconv.c.s
@@ -3216,7 +3216,7 @@ testiconv.s: testiconv.c.s
 
 # target to generate assembly for a file
 testiconv.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testiconv.dir/build.make test/CMakeFiles/testiconv.dir/testiconv.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testiconv.dir/build.make test/CMakeFiles/testiconv.dir/testiconv.c.s
 .PHONY : testiconv.c.s
 
 testime.o: testime.c.o
@@ -3224,7 +3224,7 @@ testime.o: testime.c.o
 
 # target to build an object file
 testime.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testime.dir/build.make test/CMakeFiles/testime.dir/testime.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testime.dir/build.make test/CMakeFiles/testime.dir/testime.c.o
 .PHONY : testime.c.o
 
 testime.i: testime.c.i
@@ -3232,7 +3232,7 @@ testime.i: testime.c.i
 
 # target to preprocess a source file
 testime.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testime.dir/build.make test/CMakeFiles/testime.dir/testime.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testime.dir/build.make test/CMakeFiles/testime.dir/testime.c.i
 .PHONY : testime.c.i
 
 testime.s: testime.c.s
@@ -3240,7 +3240,7 @@ testime.s: testime.c.s
 
 # target to generate assembly for a file
 testime.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testime.dir/build.make test/CMakeFiles/testime.dir/testime.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testime.dir/build.make test/CMakeFiles/testime.dir/testime.c.s
 .PHONY : testime.c.s
 
 testintersections.o: testintersections.c.o
@@ -3248,7 +3248,7 @@ testintersections.o: testintersections.c.o
 
 # target to build an object file
 testintersections.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testintersections.dir/build.make test/CMakeFiles/testintersections.dir/testintersections.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testintersections.dir/build.make test/CMakeFiles/testintersections.dir/testintersections.c.o
 .PHONY : testintersections.c.o
 
 testintersections.i: testintersections.c.i
@@ -3256,7 +3256,7 @@ testintersections.i: testintersections.c.i
 
 # target to preprocess a source file
 testintersections.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testintersections.dir/build.make test/CMakeFiles/testintersections.dir/testintersections.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testintersections.dir/build.make test/CMakeFiles/testintersections.dir/testintersections.c.i
 .PHONY : testintersections.c.i
 
 testintersections.s: testintersections.c.s
@@ -3264,7 +3264,7 @@ testintersections.s: testintersections.c.s
 
 # target to generate assembly for a file
 testintersections.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testintersections.dir/build.make test/CMakeFiles/testintersections.dir/testintersections.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testintersections.dir/build.make test/CMakeFiles/testintersections.dir/testintersections.c.s
 .PHONY : testintersections.c.s
 
 testkeys.o: testkeys.c.o
@@ -3272,7 +3272,7 @@ testkeys.o: testkeys.c.o
 
 # target to build an object file
 testkeys.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testkeys.dir/build.make test/CMakeFiles/testkeys.dir/testkeys.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testkeys.dir/build.make test/CMakeFiles/testkeys.dir/testkeys.c.o
 .PHONY : testkeys.c.o
 
 testkeys.i: testkeys.c.i
@@ -3280,7 +3280,7 @@ testkeys.i: testkeys.c.i
 
 # target to preprocess a source file
 testkeys.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testkeys.dir/build.make test/CMakeFiles/testkeys.dir/testkeys.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testkeys.dir/build.make test/CMakeFiles/testkeys.dir/testkeys.c.i
 .PHONY : testkeys.c.i
 
 testkeys.s: testkeys.c.s
@@ -3288,7 +3288,7 @@ testkeys.s: testkeys.c.s
 
 # target to generate assembly for a file
 testkeys.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testkeys.dir/build.make test/CMakeFiles/testkeys.dir/testkeys.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testkeys.dir/build.make test/CMakeFiles/testkeys.dir/testkeys.c.s
 .PHONY : testkeys.c.s
 
 testloadso.o: testloadso.c.o
@@ -3296,7 +3296,7 @@ testloadso.o: testloadso.c.o
 
 # target to build an object file
 testloadso.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testloadso.dir/build.make test/CMakeFiles/testloadso.dir/testloadso.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testloadso.dir/build.make test/CMakeFiles/testloadso.dir/testloadso.c.o
 .PHONY : testloadso.c.o
 
 testloadso.i: testloadso.c.i
@@ -3304,7 +3304,7 @@ testloadso.i: testloadso.c.i
 
 # target to preprocess a source file
 testloadso.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testloadso.dir/build.make test/CMakeFiles/testloadso.dir/testloadso.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testloadso.dir/build.make test/CMakeFiles/testloadso.dir/testloadso.c.i
 .PHONY : testloadso.c.i
 
 testloadso.s: testloadso.c.s
@@ -3312,7 +3312,7 @@ testloadso.s: testloadso.c.s
 
 # target to generate assembly for a file
 testloadso.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testloadso.dir/build.make test/CMakeFiles/testloadso.dir/testloadso.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testloadso.dir/build.make test/CMakeFiles/testloadso.dir/testloadso.c.s
 .PHONY : testloadso.c.s
 
 testlocale.o: testlocale.c.o
@@ -3320,7 +3320,7 @@ testlocale.o: testlocale.c.o
 
 # target to build an object file
 testlocale.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlocale.dir/build.make test/CMakeFiles/testlocale.dir/testlocale.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlocale.dir/build.make test/CMakeFiles/testlocale.dir/testlocale.c.o
 .PHONY : testlocale.c.o
 
 testlocale.i: testlocale.c.i
@@ -3328,7 +3328,7 @@ testlocale.i: testlocale.c.i
 
 # target to preprocess a source file
 testlocale.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlocale.dir/build.make test/CMakeFiles/testlocale.dir/testlocale.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlocale.dir/build.make test/CMakeFiles/testlocale.dir/testlocale.c.i
 .PHONY : testlocale.c.i
 
 testlocale.s: testlocale.c.s
@@ -3336,7 +3336,7 @@ testlocale.s: testlocale.c.s
 
 # target to generate assembly for a file
 testlocale.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlocale.dir/build.make test/CMakeFiles/testlocale.dir/testlocale.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlocale.dir/build.make test/CMakeFiles/testlocale.dir/testlocale.c.s
 .PHONY : testlocale.c.s
 
 testlock.o: testlock.c.o
@@ -3344,7 +3344,7 @@ testlock.o: testlock.c.o
 
 # target to build an object file
 testlock.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlock.dir/build.make test/CMakeFiles/testlock.dir/testlock.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlock.dir/build.make test/CMakeFiles/testlock.dir/testlock.c.o
 .PHONY : testlock.c.o
 
 testlock.i: testlock.c.i
@@ -3352,7 +3352,7 @@ testlock.i: testlock.c.i
 
 # target to preprocess a source file
 testlock.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlock.dir/build.make test/CMakeFiles/testlock.dir/testlock.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlock.dir/build.make test/CMakeFiles/testlock.dir/testlock.c.i
 .PHONY : testlock.c.i
 
 testlock.s: testlock.c.s
@@ -3360,7 +3360,7 @@ testlock.s: testlock.c.s
 
 # target to generate assembly for a file
 testlock.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlock.dir/build.make test/CMakeFiles/testlock.dir/testlock.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testlock.dir/build.make test/CMakeFiles/testlock.dir/testlock.c.s
 .PHONY : testlock.c.s
 
 testmanymouse.o: testmanymouse.c.o
@@ -3368,7 +3368,7 @@ testmanymouse.o: testmanymouse.c.o
 
 # target to build an object file
 testmanymouse.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmanymouse.dir/build.make test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmanymouse.dir/build.make test/CMakeFiles/testmanymouse.dir/testmanymouse.c.o
 .PHONY : testmanymouse.c.o
 
 testmanymouse.i: testmanymouse.c.i
@@ -3376,7 +3376,7 @@ testmanymouse.i: testmanymouse.c.i
 
 # target to preprocess a source file
 testmanymouse.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmanymouse.dir/build.make test/CMakeFiles/testmanymouse.dir/testmanymouse.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmanymouse.dir/build.make test/CMakeFiles/testmanymouse.dir/testmanymouse.c.i
 .PHONY : testmanymouse.c.i
 
 testmanymouse.s: testmanymouse.c.s
@@ -3384,7 +3384,7 @@ testmanymouse.s: testmanymouse.c.s
 
 # target to generate assembly for a file
 testmanymouse.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmanymouse.dir/build.make test/CMakeFiles/testmanymouse.dir/testmanymouse.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmanymouse.dir/build.make test/CMakeFiles/testmanymouse.dir/testmanymouse.c.s
 .PHONY : testmanymouse.c.s
 
 testmessage.o: testmessage.c.o
@@ -3392,7 +3392,7 @@ testmessage.o: testmessage.c.o
 
 # target to build an object file
 testmessage.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmessage.dir/build.make test/CMakeFiles/testmessage.dir/testmessage.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmessage.dir/build.make test/CMakeFiles/testmessage.dir/testmessage.c.o
 .PHONY : testmessage.c.o
 
 testmessage.i: testmessage.c.i
@@ -3400,7 +3400,7 @@ testmessage.i: testmessage.c.i
 
 # target to preprocess a source file
 testmessage.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmessage.dir/build.make test/CMakeFiles/testmessage.dir/testmessage.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmessage.dir/build.make test/CMakeFiles/testmessage.dir/testmessage.c.i
 .PHONY : testmessage.c.i
 
 testmessage.s: testmessage.c.s
@@ -3408,7 +3408,7 @@ testmessage.s: testmessage.c.s
 
 # target to generate assembly for a file
 testmessage.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmessage.dir/build.make test/CMakeFiles/testmessage.dir/testmessage.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmessage.dir/build.make test/CMakeFiles/testmessage.dir/testmessage.c.s
 .PHONY : testmessage.c.s
 
 testmodal.o: testmodal.c.o
@@ -3416,7 +3416,7 @@ testmodal.o: testmodal.c.o
 
 # target to build an object file
 testmodal.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmodal.dir/build.make test/CMakeFiles/testmodal.dir/testmodal.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmodal.dir/build.make test/CMakeFiles/testmodal.dir/testmodal.c.o
 .PHONY : testmodal.c.o
 
 testmodal.i: testmodal.c.i
@@ -3424,7 +3424,7 @@ testmodal.i: testmodal.c.i
 
 # target to preprocess a source file
 testmodal.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmodal.dir/build.make test/CMakeFiles/testmodal.dir/testmodal.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmodal.dir/build.make test/CMakeFiles/testmodal.dir/testmodal.c.i
 .PHONY : testmodal.c.i
 
 testmodal.s: testmodal.c.s
@@ -3432,7 +3432,7 @@ testmodal.s: testmodal.c.s
 
 # target to generate assembly for a file
 testmodal.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmodal.dir/build.make test/CMakeFiles/testmodal.dir/testmodal.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmodal.dir/build.make test/CMakeFiles/testmodal.dir/testmodal.c.s
 .PHONY : testmodal.c.s
 
 testmouse.o: testmouse.c.o
@@ -3440,7 +3440,7 @@ testmouse.o: testmouse.c.o
 
 # target to build an object file
 testmouse.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmouse.dir/build.make test/CMakeFiles/testmouse.dir/testmouse.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmouse.dir/build.make test/CMakeFiles/testmouse.dir/testmouse.c.o
 .PHONY : testmouse.c.o
 
 testmouse.i: testmouse.c.i
@@ -3448,7 +3448,7 @@ testmouse.i: testmouse.c.i
 
 # target to preprocess a source file
 testmouse.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmouse.dir/build.make test/CMakeFiles/testmouse.dir/testmouse.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmouse.dir/build.make test/CMakeFiles/testmouse.dir/testmouse.c.i
 .PHONY : testmouse.c.i
 
 testmouse.s: testmouse.c.s
@@ -3456,7 +3456,7 @@ testmouse.s: testmouse.c.s
 
 # target to generate assembly for a file
 testmouse.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmouse.dir/build.make test/CMakeFiles/testmouse.dir/testmouse.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmouse.dir/build.make test/CMakeFiles/testmouse.dir/testmouse.c.s
 .PHONY : testmouse.c.s
 
 testmultiaudio.o: testmultiaudio.c.o
@@ -3464,7 +3464,7 @@ testmultiaudio.o: testmultiaudio.c.o
 
 # target to build an object file
 testmultiaudio.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmultiaudio.dir/build.make test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmultiaudio.dir/build.make test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.o
 .PHONY : testmultiaudio.c.o
 
 testmultiaudio.i: testmultiaudio.c.i
@@ -3472,7 +3472,7 @@ testmultiaudio.i: testmultiaudio.c.i
 
 # target to preprocess a source file
 testmultiaudio.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmultiaudio.dir/build.make test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmultiaudio.dir/build.make test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.i
 .PHONY : testmultiaudio.c.i
 
 testmultiaudio.s: testmultiaudio.c.s
@@ -3480,7 +3480,7 @@ testmultiaudio.s: testmultiaudio.c.s
 
 # target to generate assembly for a file
 testmultiaudio.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmultiaudio.dir/build.make test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testmultiaudio.dir/build.make test/CMakeFiles/testmultiaudio.dir/testmultiaudio.c.s
 .PHONY : testmultiaudio.c.s
 
 testnative.o: testnative.c.o
@@ -3488,7 +3488,7 @@ testnative.o: testnative.c.o
 
 # target to build an object file
 testnative.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnative.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnative.c.o
 .PHONY : testnative.c.o
 
 testnative.i: testnative.c.i
@@ -3496,7 +3496,7 @@ testnative.i: testnative.c.i
 
 # target to preprocess a source file
 testnative.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnative.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnative.c.i
 .PHONY : testnative.c.i
 
 testnative.s: testnative.c.s
@@ -3504,7 +3504,7 @@ testnative.s: testnative.c.s
 
 # target to generate assembly for a file
 testnative.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnative.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnative.c.s
 .PHONY : testnative.c.s
 
 testnativewayland.o: testnativewayland.c.o
@@ -3512,7 +3512,7 @@ testnativewayland.o: testnativewayland.c.o
 
 # target to build an object file
 testnativewayland.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativewayland.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativewayland.c.o
 .PHONY : testnativewayland.c.o
 
 testnativewayland.i: testnativewayland.c.i
@@ -3520,7 +3520,7 @@ testnativewayland.i: testnativewayland.c.i
 
 # target to preprocess a source file
 testnativewayland.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativewayland.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativewayland.c.i
 .PHONY : testnativewayland.c.i
 
 testnativewayland.s: testnativewayland.c.s
@@ -3528,7 +3528,7 @@ testnativewayland.s: testnativewayland.c.s
 
 # target to generate assembly for a file
 testnativewayland.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativewayland.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativewayland.c.s
 .PHONY : testnativewayland.c.s
 
 testnativex11.o: testnativex11.c.o
@@ -3536,7 +3536,7 @@ testnativex11.o: testnativex11.c.o
 
 # target to build an object file
 testnativex11.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativex11.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativex11.c.o
 .PHONY : testnativex11.c.o
 
 testnativex11.i: testnativex11.c.i
@@ -3544,7 +3544,7 @@ testnativex11.i: testnativex11.c.i
 
 # target to preprocess a source file
 testnativex11.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativex11.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativex11.c.i
 .PHONY : testnativex11.c.i
 
 testnativex11.s: testnativex11.c.s
@@ -3552,7 +3552,7 @@ testnativex11.s: testnativex11.c.s
 
 # target to generate assembly for a file
 testnativex11.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativex11.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testnative.dir/build.make test/CMakeFiles/testnative.dir/testnativex11.c.s
 .PHONY : testnativex11.c.s
 
 testoffscreen.o: testoffscreen.c.o
@@ -3560,7 +3560,7 @@ testoffscreen.o: testoffscreen.c.o
 
 # target to build an object file
 testoffscreen.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoffscreen.dir/build.make test/CMakeFiles/testoffscreen.dir/testoffscreen.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoffscreen.dir/build.make test/CMakeFiles/testoffscreen.dir/testoffscreen.c.o
 .PHONY : testoffscreen.c.o
 
 testoffscreen.i: testoffscreen.c.i
@@ -3568,7 +3568,7 @@ testoffscreen.i: testoffscreen.c.i
 
 # target to preprocess a source file
 testoffscreen.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoffscreen.dir/build.make test/CMakeFiles/testoffscreen.dir/testoffscreen.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoffscreen.dir/build.make test/CMakeFiles/testoffscreen.dir/testoffscreen.c.i
 .PHONY : testoffscreen.c.i
 
 testoffscreen.s: testoffscreen.c.s
@@ -3576,7 +3576,7 @@ testoffscreen.s: testoffscreen.c.s
 
 # target to generate assembly for a file
 testoffscreen.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoffscreen.dir/build.make test/CMakeFiles/testoffscreen.dir/testoffscreen.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoffscreen.dir/build.make test/CMakeFiles/testoffscreen.dir/testoffscreen.c.s
 .PHONY : testoffscreen.c.s
 
 testoverlay.o: testoverlay.c.o
@@ -3584,7 +3584,7 @@ testoverlay.o: testoverlay.c.o
 
 # target to build an object file
 testoverlay.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoverlay.dir/build.make test/CMakeFiles/testoverlay.dir/testoverlay.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoverlay.dir/build.make test/CMakeFiles/testoverlay.dir/testoverlay.c.o
 .PHONY : testoverlay.c.o
 
 testoverlay.i: testoverlay.c.i
@@ -3592,7 +3592,7 @@ testoverlay.i: testoverlay.c.i
 
 # target to preprocess a source file
 testoverlay.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoverlay.dir/build.make test/CMakeFiles/testoverlay.dir/testoverlay.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoverlay.dir/build.make test/CMakeFiles/testoverlay.dir/testoverlay.c.i
 .PHONY : testoverlay.c.i
 
 testoverlay.s: testoverlay.c.s
@@ -3600,7 +3600,7 @@ testoverlay.s: testoverlay.c.s
 
 # target to generate assembly for a file
 testoverlay.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoverlay.dir/build.make test/CMakeFiles/testoverlay.dir/testoverlay.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testoverlay.dir/build.make test/CMakeFiles/testoverlay.dir/testoverlay.c.s
 .PHONY : testoverlay.c.s
 
 testpalette.o: testpalette.c.o
@@ -3608,7 +3608,7 @@ testpalette.o: testpalette.c.o
 
 # target to build an object file
 testpalette.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpalette.dir/build.make test/CMakeFiles/testpalette.dir/testpalette.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpalette.dir/build.make test/CMakeFiles/testpalette.dir/testpalette.c.o
 .PHONY : testpalette.c.o
 
 testpalette.i: testpalette.c.i
@@ -3616,7 +3616,7 @@ testpalette.i: testpalette.c.i
 
 # target to preprocess a source file
 testpalette.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpalette.dir/build.make test/CMakeFiles/testpalette.dir/testpalette.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpalette.dir/build.make test/CMakeFiles/testpalette.dir/testpalette.c.i
 .PHONY : testpalette.c.i
 
 testpalette.s: testpalette.c.s
@@ -3624,7 +3624,7 @@ testpalette.s: testpalette.c.s
 
 # target to generate assembly for a file
 testpalette.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpalette.dir/build.make test/CMakeFiles/testpalette.dir/testpalette.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpalette.dir/build.make test/CMakeFiles/testpalette.dir/testpalette.c.s
 .PHONY : testpalette.c.s
 
 testpen.o: testpen.c.o
@@ -3632,7 +3632,7 @@ testpen.o: testpen.c.o
 
 # target to build an object file
 testpen.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpen.dir/build.make test/CMakeFiles/testpen.dir/testpen.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpen.dir/build.make test/CMakeFiles/testpen.dir/testpen.c.o
 .PHONY : testpen.c.o
 
 testpen.i: testpen.c.i
@@ -3640,7 +3640,7 @@ testpen.i: testpen.c.i
 
 # target to preprocess a source file
 testpen.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpen.dir/build.make test/CMakeFiles/testpen.dir/testpen.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpen.dir/build.make test/CMakeFiles/testpen.dir/testpen.c.i
 .PHONY : testpen.c.i
 
 testpen.s: testpen.c.s
@@ -3648,7 +3648,7 @@ testpen.s: testpen.c.s
 
 # target to generate assembly for a file
 testpen.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpen.dir/build.make test/CMakeFiles/testpen.dir/testpen.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpen.dir/build.make test/CMakeFiles/testpen.dir/testpen.c.s
 .PHONY : testpen.c.s
 
 testplatform.o: testplatform.c.o
@@ -3656,7 +3656,7 @@ testplatform.o: testplatform.c.o
 
 # target to build an object file
 testplatform.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testplatform.dir/build.make test/CMakeFiles/testplatform.dir/testplatform.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testplatform.dir/build.make test/CMakeFiles/testplatform.dir/testplatform.c.o
 .PHONY : testplatform.c.o
 
 testplatform.i: testplatform.c.i
@@ -3664,7 +3664,7 @@ testplatform.i: testplatform.c.i
 
 # target to preprocess a source file
 testplatform.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testplatform.dir/build.make test/CMakeFiles/testplatform.dir/testplatform.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testplatform.dir/build.make test/CMakeFiles/testplatform.dir/testplatform.c.i
 .PHONY : testplatform.c.i
 
 testplatform.s: testplatform.c.s
@@ -3672,7 +3672,7 @@ testplatform.s: testplatform.c.s
 
 # target to generate assembly for a file
 testplatform.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testplatform.dir/build.make test/CMakeFiles/testplatform.dir/testplatform.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testplatform.dir/build.make test/CMakeFiles/testplatform.dir/testplatform.c.s
 .PHONY : testplatform.c.s
 
 testpopup.o: testpopup.c.o
@@ -3680,7 +3680,7 @@ testpopup.o: testpopup.c.o
 
 # target to build an object file
 testpopup.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpopup.dir/build.make test/CMakeFiles/testpopup.dir/testpopup.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpopup.dir/build.make test/CMakeFiles/testpopup.dir/testpopup.c.o
 .PHONY : testpopup.c.o
 
 testpopup.i: testpopup.c.i
@@ -3688,7 +3688,7 @@ testpopup.i: testpopup.c.i
 
 # target to preprocess a source file
 testpopup.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpopup.dir/build.make test/CMakeFiles/testpopup.dir/testpopup.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpopup.dir/build.make test/CMakeFiles/testpopup.dir/testpopup.c.i
 .PHONY : testpopup.c.i
 
 testpopup.s: testpopup.c.s
@@ -3696,7 +3696,7 @@ testpopup.s: testpopup.c.s
 
 # target to generate assembly for a file
 testpopup.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpopup.dir/build.make test/CMakeFiles/testpopup.dir/testpopup.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpopup.dir/build.make test/CMakeFiles/testpopup.dir/testpopup.c.s
 .PHONY : testpopup.c.s
 
 testpower.o: testpower.c.o
@@ -3704,7 +3704,7 @@ testpower.o: testpower.c.o
 
 # target to build an object file
 testpower.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpower.dir/build.make test/CMakeFiles/testpower.dir/testpower.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpower.dir/build.make test/CMakeFiles/testpower.dir/testpower.c.o
 .PHONY : testpower.c.o
 
 testpower.i: testpower.c.i
@@ -3712,7 +3712,7 @@ testpower.i: testpower.c.i
 
 # target to preprocess a source file
 testpower.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpower.dir/build.make test/CMakeFiles/testpower.dir/testpower.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpower.dir/build.make test/CMakeFiles/testpower.dir/testpower.c.i
 .PHONY : testpower.c.i
 
 testpower.s: testpower.c.s
@@ -3720,7 +3720,7 @@ testpower.s: testpower.c.s
 
 # target to generate assembly for a file
 testpower.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpower.dir/build.make test/CMakeFiles/testpower.dir/testpower.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testpower.dir/build.make test/CMakeFiles/testpower.dir/testpower.c.s
 .PHONY : testpower.c.s
 
 testprocess.o: testprocess.c.o
@@ -3728,7 +3728,7 @@ testprocess.o: testprocess.c.o
 
 # target to build an object file
 testprocess.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testprocess.dir/build.make test/CMakeFiles/testprocess.dir/testprocess.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testprocess.dir/build.make test/CMakeFiles/testprocess.dir/testprocess.c.o
 .PHONY : testprocess.c.o
 
 testprocess.i: testprocess.c.i
@@ -3736,7 +3736,7 @@ testprocess.i: testprocess.c.i
 
 # target to preprocess a source file
 testprocess.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testprocess.dir/build.make test/CMakeFiles/testprocess.dir/testprocess.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testprocess.dir/build.make test/CMakeFiles/testprocess.dir/testprocess.c.i
 .PHONY : testprocess.c.i
 
 testprocess.s: testprocess.c.s
@@ -3744,7 +3744,7 @@ testprocess.s: testprocess.c.s
 
 # target to generate assembly for a file
 testprocess.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testprocess.dir/build.make test/CMakeFiles/testprocess.dir/testprocess.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testprocess.dir/build.make test/CMakeFiles/testprocess.dir/testprocess.c.s
 .PHONY : testprocess.c.s
 
 testqsort.o: testqsort.c.o
@@ -3752,7 +3752,7 @@ testqsort.o: testqsort.c.o
 
 # target to build an object file
 testqsort.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testqsort.dir/build.make test/CMakeFiles/testqsort.dir/testqsort.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testqsort.dir/build.make test/CMakeFiles/testqsort.dir/testqsort.c.o
 .PHONY : testqsort.c.o
 
 testqsort.i: testqsort.c.i
@@ -3760,7 +3760,7 @@ testqsort.i: testqsort.c.i
 
 # target to preprocess a source file
 testqsort.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testqsort.dir/build.make test/CMakeFiles/testqsort.dir/testqsort.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testqsort.dir/build.make test/CMakeFiles/testqsort.dir/testqsort.c.i
 .PHONY : testqsort.c.i
 
 testqsort.s: testqsort.c.s
@@ -3768,7 +3768,7 @@ testqsort.s: testqsort.c.s
 
 # target to generate assembly for a file
 testqsort.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testqsort.dir/build.make test/CMakeFiles/testqsort.dir/testqsort.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testqsort.dir/build.make test/CMakeFiles/testqsort.dir/testqsort.c.s
 .PHONY : testqsort.c.s
 
 testrelative.o: testrelative.c.o
@@ -3776,7 +3776,7 @@ testrelative.o: testrelative.c.o
 
 # target to build an object file
 testrelative.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrelative.dir/build.make test/CMakeFiles/testrelative.dir/testrelative.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrelative.dir/build.make test/CMakeFiles/testrelative.dir/testrelative.c.o
 .PHONY : testrelative.c.o
 
 testrelative.i: testrelative.c.i
@@ -3784,7 +3784,7 @@ testrelative.i: testrelative.c.i
 
 # target to preprocess a source file
 testrelative.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrelative.dir/build.make test/CMakeFiles/testrelative.dir/testrelative.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrelative.dir/build.make test/CMakeFiles/testrelative.dir/testrelative.c.i
 .PHONY : testrelative.c.i
 
 testrelative.s: testrelative.c.s
@@ -3792,7 +3792,7 @@ testrelative.s: testrelative.c.s
 
 # target to generate assembly for a file
 testrelative.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrelative.dir/build.make test/CMakeFiles/testrelative.dir/testrelative.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrelative.dir/build.make test/CMakeFiles/testrelative.dir/testrelative.c.s
 .PHONY : testrelative.c.s
 
 testrendercopyex.o: testrendercopyex.c.o
@@ -3800,7 +3800,7 @@ testrendercopyex.o: testrendercopyex.c.o
 
 # target to build an object file
 testrendercopyex.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendercopyex.dir/build.make test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendercopyex.dir/build.make test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.o
 .PHONY : testrendercopyex.c.o
 
 testrendercopyex.i: testrendercopyex.c.i
@@ -3808,7 +3808,7 @@ testrendercopyex.i: testrendercopyex.c.i
 
 # target to preprocess a source file
 testrendercopyex.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendercopyex.dir/build.make test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendercopyex.dir/build.make test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.i
 .PHONY : testrendercopyex.c.i
 
 testrendercopyex.s: testrendercopyex.c.s
@@ -3816,7 +3816,7 @@ testrendercopyex.s: testrendercopyex.c.s
 
 # target to generate assembly for a file
 testrendercopyex.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendercopyex.dir/build.make test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendercopyex.dir/build.make test/CMakeFiles/testrendercopyex.dir/testrendercopyex.c.s
 .PHONY : testrendercopyex.c.s
 
 testrendertarget.o: testrendertarget.c.o
@@ -3824,7 +3824,7 @@ testrendertarget.o: testrendertarget.c.o
 
 # target to build an object file
 testrendertarget.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendertarget.dir/build.make test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendertarget.dir/build.make test/CMakeFiles/testrendertarget.dir/testrendertarget.c.o
 .PHONY : testrendertarget.c.o
 
 testrendertarget.i: testrendertarget.c.i
@@ -3832,7 +3832,7 @@ testrendertarget.i: testrendertarget.c.i
 
 # target to preprocess a source file
 testrendertarget.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendertarget.dir/build.make test/CMakeFiles/testrendertarget.dir/testrendertarget.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendertarget.dir/build.make test/CMakeFiles/testrendertarget.dir/testrendertarget.c.i
 .PHONY : testrendertarget.c.i
 
 testrendertarget.s: testrendertarget.c.s
@@ -3840,7 +3840,7 @@ testrendertarget.s: testrendertarget.c.s
 
 # target to generate assembly for a file
 testrendertarget.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendertarget.dir/build.make test/CMakeFiles/testrendertarget.dir/testrendertarget.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrendertarget.dir/build.make test/CMakeFiles/testrendertarget.dir/testrendertarget.c.s
 .PHONY : testrendertarget.c.s
 
 testresample.o: testresample.c.o
@@ -3848,7 +3848,7 @@ testresample.o: testresample.c.o
 
 # target to build an object file
 testresample.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testresample.dir/build.make test/CMakeFiles/testresample.dir/testresample.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testresample.dir/build.make test/CMakeFiles/testresample.dir/testresample.c.o
 .PHONY : testresample.c.o
 
 testresample.i: testresample.c.i
@@ -3856,7 +3856,7 @@ testresample.i: testresample.c.i
 
 # target to preprocess a source file
 testresample.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testresample.dir/build.make test/CMakeFiles/testresample.dir/testresample.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testresample.dir/build.make test/CMakeFiles/testresample.dir/testresample.c.i
 .PHONY : testresample.c.i
 
 testresample.s: testresample.c.s
@@ -3864,7 +3864,7 @@ testresample.s: testresample.c.s
 
 # target to generate assembly for a file
 testresample.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testresample.dir/build.make test/CMakeFiles/testresample.dir/testresample.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testresample.dir/build.make test/CMakeFiles/testresample.dir/testresample.c.s
 .PHONY : testresample.c.s
 
 testrotate.o: testrotate.c.o
@@ -3872,7 +3872,7 @@ testrotate.o: testrotate.c.o
 
 # target to build an object file
 testrotate.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrotate.dir/build.make test/CMakeFiles/testrotate.dir/testrotate.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrotate.dir/build.make test/CMakeFiles/testrotate.dir/testrotate.c.o
 .PHONY : testrotate.c.o
 
 testrotate.i: testrotate.c.i
@@ -3880,7 +3880,7 @@ testrotate.i: testrotate.c.i
 
 # target to preprocess a source file
 testrotate.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrotate.dir/build.make test/CMakeFiles/testrotate.dir/testrotate.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrotate.dir/build.make test/CMakeFiles/testrotate.dir/testrotate.c.i
 .PHONY : testrotate.c.i
 
 testrotate.s: testrotate.c.s
@@ -3888,7 +3888,7 @@ testrotate.s: testrotate.c.s
 
 # target to generate assembly for a file
 testrotate.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrotate.dir/build.make test/CMakeFiles/testrotate.dir/testrotate.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrotate.dir/build.make test/CMakeFiles/testrotate.dir/testrotate.c.s
 .PHONY : testrotate.c.s
 
 testrumble.o: testrumble.c.o
@@ -3896,7 +3896,7 @@ testrumble.o: testrumble.c.o
 
 # target to build an object file
 testrumble.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrumble.dir/build.make test/CMakeFiles/testrumble.dir/testrumble.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrumble.dir/build.make test/CMakeFiles/testrumble.dir/testrumble.c.o
 .PHONY : testrumble.c.o
 
 testrumble.i: testrumble.c.i
@@ -3904,7 +3904,7 @@ testrumble.i: testrumble.c.i
 
 # target to preprocess a source file
 testrumble.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrumble.dir/build.make test/CMakeFiles/testrumble.dir/testrumble.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrumble.dir/build.make test/CMakeFiles/testrumble.dir/testrumble.c.i
 .PHONY : testrumble.c.i
 
 testrumble.s: testrumble.c.s
@@ -3912,7 +3912,7 @@ testrumble.s: testrumble.c.s
 
 # target to generate assembly for a file
 testrumble.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrumble.dir/build.make test/CMakeFiles/testrumble.dir/testrumble.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrumble.dir/build.make test/CMakeFiles/testrumble.dir/testrumble.c.s
 .PHONY : testrumble.c.s
 
 testrwlock.o: testrwlock.c.o
@@ -3920,7 +3920,7 @@ testrwlock.o: testrwlock.c.o
 
 # target to build an object file
 testrwlock.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrwlock.dir/build.make test/CMakeFiles/testrwlock.dir/testrwlock.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrwlock.dir/build.make test/CMakeFiles/testrwlock.dir/testrwlock.c.o
 .PHONY : testrwlock.c.o
 
 testrwlock.i: testrwlock.c.i
@@ -3928,7 +3928,7 @@ testrwlock.i: testrwlock.c.i
 
 # target to preprocess a source file
 testrwlock.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrwlock.dir/build.make test/CMakeFiles/testrwlock.dir/testrwlock.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrwlock.dir/build.make test/CMakeFiles/testrwlock.dir/testrwlock.c.i
 .PHONY : testrwlock.c.i
 
 testrwlock.s: testrwlock.c.s
@@ -3936,7 +3936,7 @@ testrwlock.s: testrwlock.c.s
 
 # target to generate assembly for a file
 testrwlock.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrwlock.dir/build.make test/CMakeFiles/testrwlock.dir/testrwlock.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testrwlock.dir/build.make test/CMakeFiles/testrwlock.dir/testrwlock.c.s
 .PHONY : testrwlock.c.s
 
 testscale.o: testscale.c.o
@@ -3944,7 +3944,7 @@ testscale.o: testscale.c.o
 
 # target to build an object file
 testscale.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testscale.dir/build.make test/CMakeFiles/testscale.dir/testscale.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testscale.dir/build.make test/CMakeFiles/testscale.dir/testscale.c.o
 .PHONY : testscale.c.o
 
 testscale.i: testscale.c.i
@@ -3952,7 +3952,7 @@ testscale.i: testscale.c.i
 
 # target to preprocess a source file
 testscale.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testscale.dir/build.make test/CMakeFiles/testscale.dir/testscale.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testscale.dir/build.make test/CMakeFiles/testscale.dir/testscale.c.i
 .PHONY : testscale.c.i
 
 testscale.s: testscale.c.s
@@ -3960,7 +3960,7 @@ testscale.s: testscale.c.s
 
 # target to generate assembly for a file
 testscale.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testscale.dir/build.make test/CMakeFiles/testscale.dir/testscale.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testscale.dir/build.make test/CMakeFiles/testscale.dir/testscale.c.s
 .PHONY : testscale.c.s
 
 testsem.o: testsem.c.o
@@ -3968,7 +3968,7 @@ testsem.o: testsem.c.o
 
 # target to build an object file
 testsem.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsem.dir/build.make test/CMakeFiles/testsem.dir/testsem.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsem.dir/build.make test/CMakeFiles/testsem.dir/testsem.c.o
 .PHONY : testsem.c.o
 
 testsem.i: testsem.c.i
@@ -3976,7 +3976,7 @@ testsem.i: testsem.c.i
 
 # target to preprocess a source file
 testsem.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsem.dir/build.make test/CMakeFiles/testsem.dir/testsem.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsem.dir/build.make test/CMakeFiles/testsem.dir/testsem.c.i
 .PHONY : testsem.c.i
 
 testsem.s: testsem.c.s
@@ -3984,7 +3984,7 @@ testsem.s: testsem.c.s
 
 # target to generate assembly for a file
 testsem.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsem.dir/build.make test/CMakeFiles/testsem.dir/testsem.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsem.dir/build.make test/CMakeFiles/testsem.dir/testsem.c.s
 .PHONY : testsem.c.s
 
 testsensor.o: testsensor.c.o
@@ -3992,7 +3992,7 @@ testsensor.o: testsensor.c.o
 
 # target to build an object file
 testsensor.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsensor.dir/build.make test/CMakeFiles/testsensor.dir/testsensor.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsensor.dir/build.make test/CMakeFiles/testsensor.dir/testsensor.c.o
 .PHONY : testsensor.c.o
 
 testsensor.i: testsensor.c.i
@@ -4000,7 +4000,7 @@ testsensor.i: testsensor.c.i
 
 # target to preprocess a source file
 testsensor.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsensor.dir/build.make test/CMakeFiles/testsensor.dir/testsensor.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsensor.dir/build.make test/CMakeFiles/testsensor.dir/testsensor.c.i
 .PHONY : testsensor.c.i
 
 testsensor.s: testsensor.c.s
@@ -4008,7 +4008,7 @@ testsensor.s: testsensor.c.s
 
 # target to generate assembly for a file
 testsensor.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsensor.dir/build.make test/CMakeFiles/testsensor.dir/testsensor.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsensor.dir/build.make test/CMakeFiles/testsensor.dir/testsensor.c.s
 .PHONY : testsensor.c.s
 
 testshader.o: testshader.c.o
@@ -4016,7 +4016,7 @@ testshader.o: testshader.c.o
 
 # target to build an object file
 testshader.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshader.dir/build.make test/CMakeFiles/testshader.dir/testshader.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshader.dir/build.make test/CMakeFiles/testshader.dir/testshader.c.o
 .PHONY : testshader.c.o
 
 testshader.i: testshader.c.i
@@ -4024,7 +4024,7 @@ testshader.i: testshader.c.i
 
 # target to preprocess a source file
 testshader.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshader.dir/build.make test/CMakeFiles/testshader.dir/testshader.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshader.dir/build.make test/CMakeFiles/testshader.dir/testshader.c.i
 .PHONY : testshader.c.i
 
 testshader.s: testshader.c.s
@@ -4032,7 +4032,7 @@ testshader.s: testshader.c.s
 
 # target to generate assembly for a file
 testshader.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshader.dir/build.make test/CMakeFiles/testshader.dir/testshader.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshader.dir/build.make test/CMakeFiles/testshader.dir/testshader.c.s
 .PHONY : testshader.c.s
 
 testshape.o: testshape.c.o
@@ -4040,7 +4040,7 @@ testshape.o: testshape.c.o
 
 # target to build an object file
 testshape.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshape.dir/build.make test/CMakeFiles/testshape.dir/testshape.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshape.dir/build.make test/CMakeFiles/testshape.dir/testshape.c.o
 .PHONY : testshape.c.o
 
 testshape.i: testshape.c.i
@@ -4048,7 +4048,7 @@ testshape.i: testshape.c.i
 
 # target to preprocess a source file
 testshape.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshape.dir/build.make test/CMakeFiles/testshape.dir/testshape.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshape.dir/build.make test/CMakeFiles/testshape.dir/testshape.c.i
 .PHONY : testshape.c.i
 
 testshape.s: testshape.c.s
@@ -4056,7 +4056,7 @@ testshape.s: testshape.c.s
 
 # target to generate assembly for a file
 testshape.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshape.dir/build.make test/CMakeFiles/testshape.dir/testshape.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testshape.dir/build.make test/CMakeFiles/testshape.dir/testshape.c.s
 .PHONY : testshape.c.s
 
 testsoftwaretransparent.o: testsoftwaretransparent.c.o
@@ -4064,7 +4064,7 @@ testsoftwaretransparent.o: testsoftwaretransparent.c.o
 
 # target to build an object file
 testsoftwaretransparent.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsoftwaretransparent.dir/build.make test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsoftwaretransparent.dir/build.make test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.o
 .PHONY : testsoftwaretransparent.c.o
 
 testsoftwaretransparent.i: testsoftwaretransparent.c.i
@@ -4072,7 +4072,7 @@ testsoftwaretransparent.i: testsoftwaretransparent.c.i
 
 # target to preprocess a source file
 testsoftwaretransparent.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsoftwaretransparent.dir/build.make test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsoftwaretransparent.dir/build.make test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.i
 .PHONY : testsoftwaretransparent.c.i
 
 testsoftwaretransparent.s: testsoftwaretransparent.c.s
@@ -4080,7 +4080,7 @@ testsoftwaretransparent.s: testsoftwaretransparent.c.s
 
 # target to generate assembly for a file
 testsoftwaretransparent.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsoftwaretransparent.dir/build.make test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsoftwaretransparent.dir/build.make test/CMakeFiles/testsoftwaretransparent.dir/testsoftwaretransparent.c.s
 .PHONY : testsoftwaretransparent.c.s
 
 testsprite.o: testsprite.c.o
@@ -4088,7 +4088,7 @@ testsprite.o: testsprite.c.o
 
 # target to build an object file
 testsprite.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsprite.dir/build.make test/CMakeFiles/testsprite.dir/testsprite.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsprite.dir/build.make test/CMakeFiles/testsprite.dir/testsprite.c.o
 .PHONY : testsprite.c.o
 
 testsprite.i: testsprite.c.i
@@ -4096,7 +4096,7 @@ testsprite.i: testsprite.c.i
 
 # target to preprocess a source file
 testsprite.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsprite.dir/build.make test/CMakeFiles/testsprite.dir/testsprite.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsprite.dir/build.make test/CMakeFiles/testsprite.dir/testsprite.c.i
 .PHONY : testsprite.c.i
 
 testsprite.s: testsprite.c.s
@@ -4104,7 +4104,7 @@ testsprite.s: testsprite.c.s
 
 # target to generate assembly for a file
 testsprite.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsprite.dir/build.make test/CMakeFiles/testsprite.dir/testsprite.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsprite.dir/build.make test/CMakeFiles/testsprite.dir/testsprite.c.s
 .PHONY : testsprite.c.s
 
 testspriteminimal.o: testspriteminimal.c.o
@@ -4112,7 +4112,7 @@ testspriteminimal.o: testspriteminimal.c.o
 
 # target to build an object file
 testspriteminimal.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspriteminimal.dir/build.make test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspriteminimal.dir/build.make test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.o
 .PHONY : testspriteminimal.c.o
 
 testspriteminimal.i: testspriteminimal.c.i
@@ -4120,7 +4120,7 @@ testspriteminimal.i: testspriteminimal.c.i
 
 # target to preprocess a source file
 testspriteminimal.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspriteminimal.dir/build.make test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspriteminimal.dir/build.make test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.i
 .PHONY : testspriteminimal.c.i
 
 testspriteminimal.s: testspriteminimal.c.s
@@ -4128,7 +4128,7 @@ testspriteminimal.s: testspriteminimal.c.s
 
 # target to generate assembly for a file
 testspriteminimal.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspriteminimal.dir/build.make test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspriteminimal.dir/build.make test/CMakeFiles/testspriteminimal.dir/testspriteminimal.c.s
 .PHONY : testspriteminimal.c.s
 
 testspritesurface.o: testspritesurface.c.o
@@ -4136,7 +4136,7 @@ testspritesurface.o: testspritesurface.c.o
 
 # target to build an object file
 testspritesurface.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspritesurface.dir/build.make test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspritesurface.dir/build.make test/CMakeFiles/testspritesurface.dir/testspritesurface.c.o
 .PHONY : testspritesurface.c.o
 
 testspritesurface.i: testspritesurface.c.i
@@ -4144,7 +4144,7 @@ testspritesurface.i: testspritesurface.c.i
 
 # target to preprocess a source file
 testspritesurface.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspritesurface.dir/build.make test/CMakeFiles/testspritesurface.dir/testspritesurface.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspritesurface.dir/build.make test/CMakeFiles/testspritesurface.dir/testspritesurface.c.i
 .PHONY : testspritesurface.c.i
 
 testspritesurface.s: testspritesurface.c.s
@@ -4152,7 +4152,7 @@ testspritesurface.s: testspritesurface.c.s
 
 # target to generate assembly for a file
 testspritesurface.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspritesurface.dir/build.make test/CMakeFiles/testspritesurface.dir/testspritesurface.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testspritesurface.dir/build.make test/CMakeFiles/testspritesurface.dir/testspritesurface.c.s
 .PHONY : testspritesurface.c.s
 
 testsurround.o: testsurround.c.o
@@ -4160,7 +4160,7 @@ testsurround.o: testsurround.c.o
 
 # target to build an object file
 testsurround.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsurround.dir/build.make test/CMakeFiles/testsurround.dir/testsurround.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsurround.dir/build.make test/CMakeFiles/testsurround.dir/testsurround.c.o
 .PHONY : testsurround.c.o
 
 testsurround.i: testsurround.c.i
@@ -4168,7 +4168,7 @@ testsurround.i: testsurround.c.i
 
 # target to preprocess a source file
 testsurround.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsurround.dir/build.make test/CMakeFiles/testsurround.dir/testsurround.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsurround.dir/build.make test/CMakeFiles/testsurround.dir/testsurround.c.i
 .PHONY : testsurround.c.i
 
 testsurround.s: testsurround.c.s
@@ -4176,7 +4176,7 @@ testsurround.s: testsurround.c.s
 
 # target to generate assembly for a file
 testsurround.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsurround.dir/build.make test/CMakeFiles/testsurround.dir/testsurround.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsurround.dir/build.make test/CMakeFiles/testsurround.dir/testsurround.c.s
 .PHONY : testsurround.c.s
 
 testsymbols.o: testsymbols.c.o
@@ -4184,7 +4184,7 @@ testsymbols.o: testsymbols.c.o
 
 # target to build an object file
 testsymbols.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsymbols.dir/build.make test/CMakeFiles/testsymbols.dir/testsymbols.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsymbols.dir/build.make test/CMakeFiles/testsymbols.dir/testsymbols.c.o
 .PHONY : testsymbols.c.o
 
 testsymbols.i: testsymbols.c.i
@@ -4192,7 +4192,7 @@ testsymbols.i: testsymbols.c.i
 
 # target to preprocess a source file
 testsymbols.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsymbols.dir/build.make test/CMakeFiles/testsymbols.dir/testsymbols.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsymbols.dir/build.make test/CMakeFiles/testsymbols.dir/testsymbols.c.i
 .PHONY : testsymbols.c.i
 
 testsymbols.s: testsymbols.c.s
@@ -4200,7 +4200,7 @@ testsymbols.s: testsymbols.c.s
 
 # target to generate assembly for a file
 testsymbols.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsymbols.dir/build.make test/CMakeFiles/testsymbols.dir/testsymbols.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testsymbols.dir/build.make test/CMakeFiles/testsymbols.dir/testsymbols.c.s
 .PHONY : testsymbols.c.s
 
 testthread.o: testthread.c.o
@@ -4208,7 +4208,7 @@ testthread.o: testthread.c.o
 
 # target to build an object file
 testthread.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testthread.dir/build.make test/CMakeFiles/testthread.dir/testthread.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testthread.dir/build.make test/CMakeFiles/testthread.dir/testthread.c.o
 .PHONY : testthread.c.o
 
 testthread.i: testthread.c.i
@@ -4216,7 +4216,7 @@ testthread.i: testthread.c.i
 
 # target to preprocess a source file
 testthread.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testthread.dir/build.make test/CMakeFiles/testthread.dir/testthread.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testthread.dir/build.make test/CMakeFiles/testthread.dir/testthread.c.i
 .PHONY : testthread.c.i
 
 testthread.s: testthread.c.s
@@ -4224,7 +4224,7 @@ testthread.s: testthread.c.s
 
 # target to generate assembly for a file
 testthread.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testthread.dir/build.make test/CMakeFiles/testthread.dir/testthread.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testthread.dir/build.make test/CMakeFiles/testthread.dir/testthread.c.s
 .PHONY : testthread.c.s
 
 testtime.o: testtime.c.o
@@ -4232,7 +4232,7 @@ testtime.o: testtime.c.o
 
 # target to build an object file
 testtime.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtime.dir/build.make test/CMakeFiles/testtime.dir/testtime.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtime.dir/build.make test/CMakeFiles/testtime.dir/testtime.c.o
 .PHONY : testtime.c.o
 
 testtime.i: testtime.c.i
@@ -4240,7 +4240,7 @@ testtime.i: testtime.c.i
 
 # target to preprocess a source file
 testtime.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtime.dir/build.make test/CMakeFiles/testtime.dir/testtime.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtime.dir/build.make test/CMakeFiles/testtime.dir/testtime.c.i
 .PHONY : testtime.c.i
 
 testtime.s: testtime.c.s
@@ -4248,7 +4248,7 @@ testtime.s: testtime.c.s
 
 # target to generate assembly for a file
 testtime.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtime.dir/build.make test/CMakeFiles/testtime.dir/testtime.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtime.dir/build.make test/CMakeFiles/testtime.dir/testtime.c.s
 .PHONY : testtime.c.s
 
 testtimer.o: testtimer.c.o
@@ -4256,7 +4256,7 @@ testtimer.o: testtimer.c.o
 
 # target to build an object file
 testtimer.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtimer.dir/build.make test/CMakeFiles/testtimer.dir/testtimer.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtimer.dir/build.make test/CMakeFiles/testtimer.dir/testtimer.c.o
 .PHONY : testtimer.c.o
 
 testtimer.i: testtimer.c.i
@@ -4264,7 +4264,7 @@ testtimer.i: testtimer.c.i
 
 # target to preprocess a source file
 testtimer.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtimer.dir/build.make test/CMakeFiles/testtimer.dir/testtimer.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtimer.dir/build.make test/CMakeFiles/testtimer.dir/testtimer.c.i
 .PHONY : testtimer.c.i
 
 testtimer.s: testtimer.c.s
@@ -4272,7 +4272,7 @@ testtimer.s: testtimer.c.s
 
 # target to generate assembly for a file
 testtimer.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtimer.dir/build.make test/CMakeFiles/testtimer.dir/testtimer.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtimer.dir/build.make test/CMakeFiles/testtimer.dir/testtimer.c.s
 .PHONY : testtimer.c.s
 
 testtray.o: testtray.c.o
@@ -4280,7 +4280,7 @@ testtray.o: testtray.c.o
 
 # target to build an object file
 testtray.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtray.dir/build.make test/CMakeFiles/testtray.dir/testtray.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtray.dir/build.make test/CMakeFiles/testtray.dir/testtray.c.o
 .PHONY : testtray.c.o
 
 testtray.i: testtray.c.i
@@ -4288,7 +4288,7 @@ testtray.i: testtray.c.i
 
 # target to preprocess a source file
 testtray.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtray.dir/build.make test/CMakeFiles/testtray.dir/testtray.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtray.dir/build.make test/CMakeFiles/testtray.dir/testtray.c.i
 .PHONY : testtray.c.i
 
 testtray.s: testtray.c.s
@@ -4296,7 +4296,7 @@ testtray.s: testtray.c.s
 
 # target to generate assembly for a file
 testtray.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtray.dir/build.make test/CMakeFiles/testtray.dir/testtray.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testtray.dir/build.make test/CMakeFiles/testtray.dir/testtray.c.s
 .PHONY : testtray.c.s
 
 testurl.o: testurl.c.o
@@ -4304,7 +4304,7 @@ testurl.o: testurl.c.o
 
 # target to build an object file
 testurl.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testurl.dir/build.make test/CMakeFiles/testurl.dir/testurl.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testurl.dir/build.make test/CMakeFiles/testurl.dir/testurl.c.o
 .PHONY : testurl.c.o
 
 testurl.i: testurl.c.i
@@ -4312,7 +4312,7 @@ testurl.i: testurl.c.i
 
 # target to preprocess a source file
 testurl.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testurl.dir/build.make test/CMakeFiles/testurl.dir/testurl.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testurl.dir/build.make test/CMakeFiles/testurl.dir/testurl.c.i
 .PHONY : testurl.c.i
 
 testurl.s: testurl.c.s
@@ -4320,7 +4320,7 @@ testurl.s: testurl.c.s
 
 # target to generate assembly for a file
 testurl.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testurl.dir/build.make test/CMakeFiles/testurl.dir/testurl.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testurl.dir/build.make test/CMakeFiles/testurl.dir/testurl.c.s
 .PHONY : testurl.c.s
 
 testutils.o: testutils.c.o
@@ -4328,7 +4328,7 @@ testutils.o: testutils.c.o
 
 # target to build an object file
 testutils.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/sdltests_utils.dir/build.make test/CMakeFiles/sdltests_utils.dir/testutils.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/sdltests_utils.dir/build.make test/CMakeFiles/sdltests_utils.dir/testutils.c.o
 .PHONY : testutils.c.o
 
 testutils.i: testutils.c.i
@@ -4336,7 +4336,7 @@ testutils.i: testutils.c.i
 
 # target to preprocess a source file
 testutils.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/sdltests_utils.dir/build.make test/CMakeFiles/sdltests_utils.dir/testutils.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/sdltests_utils.dir/build.make test/CMakeFiles/sdltests_utils.dir/testutils.c.i
 .PHONY : testutils.c.i
 
 testutils.s: testutils.c.s
@@ -4344,7 +4344,7 @@ testutils.s: testutils.c.s
 
 # target to generate assembly for a file
 testutils.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/sdltests_utils.dir/build.make test/CMakeFiles/sdltests_utils.dir/testutils.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/sdltests_utils.dir/build.make test/CMakeFiles/sdltests_utils.dir/testutils.c.s
 .PHONY : testutils.c.s
 
 testver.o: testver.c.o
@@ -4352,7 +4352,7 @@ testver.o: testver.c.o
 
 # target to build an object file
 testver.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testver.dir/build.make test/CMakeFiles/testver.dir/testver.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testver.dir/build.make test/CMakeFiles/testver.dir/testver.c.o
 .PHONY : testver.c.o
 
 testver.i: testver.c.i
@@ -4360,7 +4360,7 @@ testver.i: testver.c.i
 
 # target to preprocess a source file
 testver.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testver.dir/build.make test/CMakeFiles/testver.dir/testver.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testver.dir/build.make test/CMakeFiles/testver.dir/testver.c.i
 .PHONY : testver.c.i
 
 testver.s: testver.c.s
@@ -4368,7 +4368,7 @@ testver.s: testver.c.s
 
 # target to generate assembly for a file
 testver.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testver.dir/build.make test/CMakeFiles/testver.dir/testver.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testver.dir/build.make test/CMakeFiles/testver.dir/testver.c.s
 .PHONY : testver.c.s
 
 testviewport.o: testviewport.c.o
@@ -4376,7 +4376,7 @@ testviewport.o: testviewport.c.o
 
 # target to build an object file
 testviewport.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testviewport.dir/build.make test/CMakeFiles/testviewport.dir/testviewport.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testviewport.dir/build.make test/CMakeFiles/testviewport.dir/testviewport.c.o
 .PHONY : testviewport.c.o
 
 testviewport.i: testviewport.c.i
@@ -4384,7 +4384,7 @@ testviewport.i: testviewport.c.i
 
 # target to preprocess a source file
 testviewport.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testviewport.dir/build.make test/CMakeFiles/testviewport.dir/testviewport.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testviewport.dir/build.make test/CMakeFiles/testviewport.dir/testviewport.c.i
 .PHONY : testviewport.c.i
 
 testviewport.s: testviewport.c.s
@@ -4392,7 +4392,7 @@ testviewport.s: testviewport.c.s
 
 # target to generate assembly for a file
 testviewport.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testviewport.dir/build.make test/CMakeFiles/testviewport.dir/testviewport.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testviewport.dir/build.make test/CMakeFiles/testviewport.dir/testviewport.c.s
 .PHONY : testviewport.c.s
 
 testvulkan.o: testvulkan.c.o
@@ -4400,7 +4400,7 @@ testvulkan.o: testvulkan.c.o
 
 # target to build an object file
 testvulkan.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testvulkan.dir/build.make test/CMakeFiles/testvulkan.dir/testvulkan.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testvulkan.dir/build.make test/CMakeFiles/testvulkan.dir/testvulkan.c.o
 .PHONY : testvulkan.c.o
 
 testvulkan.i: testvulkan.c.i
@@ -4408,7 +4408,7 @@ testvulkan.i: testvulkan.c.i
 
 # target to preprocess a source file
 testvulkan.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testvulkan.dir/build.make test/CMakeFiles/testvulkan.dir/testvulkan.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testvulkan.dir/build.make test/CMakeFiles/testvulkan.dir/testvulkan.c.i
 .PHONY : testvulkan.c.i
 
 testvulkan.s: testvulkan.c.s
@@ -4416,7 +4416,7 @@ testvulkan.s: testvulkan.c.s
 
 # target to generate assembly for a file
 testvulkan.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testvulkan.dir/build.make test/CMakeFiles/testvulkan.dir/testvulkan.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testvulkan.dir/build.make test/CMakeFiles/testvulkan.dir/testvulkan.c.s
 .PHONY : testvulkan.c.s
 
 testwaylandcustom.o: testwaylandcustom.c.o
@@ -4424,7 +4424,7 @@ testwaylandcustom.o: testwaylandcustom.c.o
 
 # target to build an object file
 testwaylandcustom.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.o
 .PHONY : testwaylandcustom.c.o
 
 testwaylandcustom.i: testwaylandcustom.c.i
@@ -4432,7 +4432,7 @@ testwaylandcustom.i: testwaylandcustom.c.i
 
 # target to preprocess a source file
 testwaylandcustom.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.i
 .PHONY : testwaylandcustom.c.i
 
 testwaylandcustom.s: testwaylandcustom.c.s
@@ -4440,7 +4440,7 @@ testwaylandcustom.s: testwaylandcustom.c.s
 
 # target to generate assembly for a file
 testwaylandcustom.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwaylandcustom.dir/build.make test/CMakeFiles/testwaylandcustom.dir/testwaylandcustom.c.s
 .PHONY : testwaylandcustom.c.s
 
 testwm.o: testwm.c.o
@@ -4448,7 +4448,7 @@ testwm.o: testwm.c.o
 
 # target to build an object file
 testwm.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwm.dir/build.make test/CMakeFiles/testwm.dir/testwm.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwm.dir/build.make test/CMakeFiles/testwm.dir/testwm.c.o
 .PHONY : testwm.c.o
 
 testwm.i: testwm.c.i
@@ -4456,7 +4456,7 @@ testwm.i: testwm.c.i
 
 # target to preprocess a source file
 testwm.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwm.dir/build.make test/CMakeFiles/testwm.dir/testwm.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwm.dir/build.make test/CMakeFiles/testwm.dir/testwm.c.i
 .PHONY : testwm.c.i
 
 testwm.s: testwm.c.s
@@ -4464,7 +4464,7 @@ testwm.s: testwm.c.s
 
 # target to generate assembly for a file
 testwm.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwm.dir/build.make test/CMakeFiles/testwm.dir/testwm.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testwm.dir/build.make test/CMakeFiles/testwm.dir/testwm.c.s
 .PHONY : testwm.c.s
 
 testyuv.o: testyuv.c.o
@@ -4472,7 +4472,7 @@ testyuv.o: testyuv.c.o
 
 # target to build an object file
 testyuv.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv.c.o
 .PHONY : testyuv.c.o
 
 testyuv.i: testyuv.c.i
@@ -4480,7 +4480,7 @@ testyuv.i: testyuv.c.i
 
 # target to preprocess a source file
 testyuv.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv.c.i
 .PHONY : testyuv.c.i
 
 testyuv.s: testyuv.c.s
@@ -4488,7 +4488,7 @@ testyuv.s: testyuv.c.s
 
 # target to generate assembly for a file
 testyuv.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv.c.s
 .PHONY : testyuv.c.s
 
 testyuv_cvt.o: testyuv_cvt.c.o
@@ -4496,7 +4496,7 @@ testyuv_cvt.o: testyuv_cvt.c.o
 
 # target to build an object file
 testyuv_cvt.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o
 .PHONY : testyuv_cvt.c.o
 
 testyuv_cvt.i: testyuv_cvt.c.i
@@ -4504,7 +4504,7 @@ testyuv_cvt.i: testyuv_cvt.c.i
 
 # target to preprocess a source file
 testyuv_cvt.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv_cvt.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv_cvt.c.i
 .PHONY : testyuv_cvt.c.i
 
 testyuv_cvt.s: testyuv_cvt.c.s
@@ -4512,7 +4512,7 @@ testyuv_cvt.s: testyuv_cvt.c.s
 
 # target to generate assembly for a file
 testyuv_cvt.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv_cvt.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/testyuv.dir/build.make test/CMakeFiles/testyuv.dir/testyuv_cvt.c.s
 .PHONY : testyuv_cvt.c.s
 
 torturethread.o: torturethread.c.o
@@ -4520,7 +4520,7 @@ torturethread.o: torturethread.c.o
 
 # target to build an object file
 torturethread.c.o:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/torturethread.dir/build.make test/CMakeFiles/torturethread.dir/torturethread.c.o
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/torturethread.dir/build.make test/CMakeFiles/torturethread.dir/torturethread.c.o
 .PHONY : torturethread.c.o
 
 torturethread.i: torturethread.c.i
@@ -4528,7 +4528,7 @@ torturethread.i: torturethread.c.i
 
 # target to preprocess a source file
 torturethread.c.i:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/torturethread.dir/build.make test/CMakeFiles/torturethread.dir/torturethread.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/torturethread.dir/build.make test/CMakeFiles/torturethread.dir/torturethread.c.i
 .PHONY : torturethread.c.i
 
 torturethread.s: torturethread.c.s
@@ -4536,7 +4536,7 @@ torturethread.s: torturethread.c.s
 
 # target to generate assembly for a file
 torturethread.c.s:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/torturethread.dir/build.make test/CMakeFiles/torturethread.dir/torturethread.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/torturethread.dir/build.make test/CMakeFiles/torturethread.dir/torturethread.c.s
 .PHONY : torturethread.c.s
 
 # Help Target
@@ -5036,7 +5036,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -P /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -P /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

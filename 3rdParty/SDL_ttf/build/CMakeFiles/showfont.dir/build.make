@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/showfont.dir/depend.make
@@ -73,32 +73,32 @@ CMakeFiles/showfont.dir/codegen:
 .PHONY : CMakeFiles/showfont.dir/codegen
 
 CMakeFiles/showfont.dir/examples/showfont.c.o: CMakeFiles/showfont.dir/flags.make
-CMakeFiles/showfont.dir/examples/showfont.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/showfont.c
+CMakeFiles/showfont.dir/examples/showfont.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/showfont.c
 CMakeFiles/showfont.dir/examples/showfont.c.o: CMakeFiles/showfont.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/showfont.dir/examples/showfont.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/showfont.dir/examples/showfont.c.o -MF CMakeFiles/showfont.dir/examples/showfont.c.o.d -o CMakeFiles/showfont.dir/examples/showfont.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/showfont.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/showfont.dir/examples/showfont.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/showfont.dir/examples/showfont.c.o -MF CMakeFiles/showfont.dir/examples/showfont.c.o.d -o CMakeFiles/showfont.dir/examples/showfont.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/showfont.c
 
 CMakeFiles/showfont.dir/examples/showfont.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/showfont.dir/examples/showfont.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/showfont.c > CMakeFiles/showfont.dir/examples/showfont.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/showfont.c > CMakeFiles/showfont.dir/examples/showfont.c.i
 
 CMakeFiles/showfont.dir/examples/showfont.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/showfont.dir/examples/showfont.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/showfont.c -o CMakeFiles/showfont.dir/examples/showfont.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/showfont.c -o CMakeFiles/showfont.dir/examples/showfont.c.s
 
 CMakeFiles/showfont.dir/examples/editbox.c.o: CMakeFiles/showfont.dir/flags.make
-CMakeFiles/showfont.dir/examples/editbox.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/editbox.c
+CMakeFiles/showfont.dir/examples/editbox.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/editbox.c
 CMakeFiles/showfont.dir/examples/editbox.c.o: CMakeFiles/showfont.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/showfont.dir/examples/editbox.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/showfont.dir/examples/editbox.c.o -MF CMakeFiles/showfont.dir/examples/editbox.c.o.d -o CMakeFiles/showfont.dir/examples/editbox.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/editbox.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/showfont.dir/examples/editbox.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/showfont.dir/examples/editbox.c.o -MF CMakeFiles/showfont.dir/examples/editbox.c.o.d -o CMakeFiles/showfont.dir/examples/editbox.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/editbox.c
 
 CMakeFiles/showfont.dir/examples/editbox.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/showfont.dir/examples/editbox.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/editbox.c > CMakeFiles/showfont.dir/examples/editbox.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/editbox.c > CMakeFiles/showfont.dir/examples/editbox.c.i
 
 CMakeFiles/showfont.dir/examples/editbox.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/showfont.dir/examples/editbox.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/examples/editbox.c -o CMakeFiles/showfont.dir/examples/editbox.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/examples/editbox.c -o CMakeFiles/showfont.dir/examples/editbox.c.s
 
 # Object files for target showfont
 showfont_OBJECTS = \
@@ -113,10 +113,10 @@ showfont: CMakeFiles/showfont.dir/examples/editbox.c.o
 showfont: CMakeFiles/showfont.dir/build.make
 showfont: CMakeFiles/showfont.dir/compiler_depend.ts
 showfont: libSDL3_ttf.so.0.3.0
-showfont: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0
-showfont: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+showfont: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/libSDL3.so.0.5.0
+showfont: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 showfont: CMakeFiles/showfont.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable showfont"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable showfont"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/showfont.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -128,6 +128,6 @@ CMakeFiles/showfont.dir/clean:
 .PHONY : CMakeFiles/showfont.dir/clean
 
 CMakeFiles/showfont.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles/showfont.dir/DependInfo.cmake "--color=$(COLOR)" showfont
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles/showfont.dir/DependInfo.cmake "--color=$(COLOR)" showfont
 .PHONY : CMakeFiles/showfont.dir/depend
 

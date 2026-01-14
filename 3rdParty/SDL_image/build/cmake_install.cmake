@@ -1,4 +1,4 @@
-# Install script for directory: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image
+# Install script for directory: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -55,8 +55,8 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/libSDL3_image.so.0.3.2"
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/libSDL3_image.so.0"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/libSDL3_image.so.0.3.2"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/libSDL3_image.so.0"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libSDL3_image.so.0.3.2"
@@ -66,7 +66,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
        NOT IS_SYMLINK "${file}")
       file(RPATH_CHANGE
            FILE "${file}"
-           OLD_RPATH "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build:"
+           OLD_RPATH "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build:"
            NEW_RPATH "")
       if(CMAKE_INSTALL_DO_STRIP)
         execute_process(COMMAND "/usr/bin/strip" "${file}")
@@ -76,50 +76,17 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/libSDL3_image.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/libSDL3_image.so")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "DEVEL" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/SDL3_image" TYPE FILE FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/include/SDL3_image/SDL_image.h")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
-  foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpng16.so.16.53.0"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpng16.so.16"
-      )
-    if(EXISTS "${file}" AND
-       NOT IS_SYMLINK "${file}")
-      file(RPATH_CHECK
-           FILE "${file}"
-           RPATH "")
-    endif()
-  endforeach()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/external/libpng-build/libpng16.so.16.53.0"
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/external/libpng-build/libpng16.so.16"
-    )
-  foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpng16.so.16.53.0"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libpng16.so.16"
-      )
-    if(EXISTS "${file}" AND
-       NOT IS_SYMLINK "${file}")
-      if(CMAKE_INSTALL_DO_STRIP)
-        execute_process(COMMAND "/usr/bin/strip" "${file}")
-      endif()
-    endif()
-  endforeach()
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/external/libpng-build/libpng16.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/SDL3_image" TYPE FILE FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/include/SDL3_image/SDL_image.h")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_image" TYPE FILE FILES
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/SDL3_imageConfig.cmake"
-    "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/SDL3_imageConfigVersion.cmake"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/SDL3_imageConfig.cmake"
+    "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/SDL3_imageConfigVersion.cmake"
     )
 endif()
 
@@ -127,7 +94,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_image/SDL3_image-shared-targets.cmake")
     file(DIFFERENT _cmake_export_file_changed FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_image/SDL3_image-shared-targets.cmake"
-         "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/CMakeFiles/Export/fdbcc26fc63f315745653ad4df2390fb/SDL3_image-shared-targets.cmake")
+         "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/CMakeFiles/Export/fdbcc26fc63f315745653ad4df2390fb/SDL3_image-shared-targets.cmake")
     if(_cmake_export_file_changed)
       file(GLOB _cmake_old_config_files "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_image/SDL3_image-shared-targets-*.cmake")
       if(_cmake_old_config_files)
@@ -140,32 +107,24 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
     endif()
     unset(_cmake_export_file_changed)
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_image" TYPE FILE FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/CMakeFiles/Export/fdbcc26fc63f315745653ad4df2390fb/SDL3_image-shared-targets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_image" TYPE FILE FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/CMakeFiles/Export/fdbcc26fc63f315745653ad4df2390fb/SDL3_image-shared-targets.cmake")
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_image" TYPE FILE FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/CMakeFiles/Export/fdbcc26fc63f315745653ad4df2390fb/SDL3_image-shared-targets-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SDL3_image" TYPE FILE FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/CMakeFiles/Export/fdbcc26fc63f315745653ad4df2390fb/SDL3_image-shared-targets-release.cmake")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "devel" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/sdl3-image.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/sdl3-image.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/SDL3_image" TYPE FILE FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/LICENSE.txt")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/SDL3_image/optional" TYPE FILE RENAME "LICENSE.zlib.txt" FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/external/zlib/LICENSE")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/SDL3_image/optional" TYPE FILE RENAME "LICENSE.libpng.txt" FILES "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/external/libpng/LICENSE")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/licenses/SDL3_image" TYPE FILE FILES "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/LICENSE.txt")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/install_local_manifest.txt"
+  file(WRITE "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -181,6 +140,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

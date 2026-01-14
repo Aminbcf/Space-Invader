@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylanddyn.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylanddyn.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylanddyn.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylanddyn.h \
  /usr/include/wayland-cursor.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
  /usr/include/wayland-util.h /usr/include/math.h \
@@ -17,8 +17,8 @@ CMakeFiles/SDL3-shared.dir/src/video/wayland/SDL_waylanddyn.c.o: \
  /usr/include/xkbcommon/xkbcommon-compose.h \
  /usr/include/wayland-client-core.h /usr/include/wayland-util.h \
  /usr/include/wayland-version.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/wayland/SDL_waylandsym.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/wayland-generated-protocols/wayland-client-protocol.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/wayland/SDL_waylandsym.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/wayland-generated-protocols/wayland-client-protocol.h \
  /usr/include/wayland-client.h /usr/include/wayland-client-core.h \
  /usr/include/wayland-client-protocol.h /usr/include/wayland-egl.h \
  /usr/include/wayland-egl-core.h /usr/include/libdecor-0/libdecor.h

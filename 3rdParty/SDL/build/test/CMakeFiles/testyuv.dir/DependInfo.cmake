@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv.c" "test/CMakeFiles/testyuv.dir/testyuv.c.o" "gcc" "test/CMakeFiles/testyuv.dir/testyuv.c.o.d"
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testyuv_cvt.c" "test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o" "gcc" "test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv.c" "test/CMakeFiles/testyuv.dir/testyuv.c.o" "gcc" "test/CMakeFiles/testyuv.dir/testyuv.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testyuv_cvt.c" "test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o" "gcc" "test/CMakeFiles/testyuv.dir/testyuv_cvt.c.o.d"
   "" "test/testyuv" "gcc" "test/CMakeFiles/testyuv.dir/link.d"
   )
 

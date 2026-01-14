@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/include -I/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/include-revision -I/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include
+C_INCLUDES = -I/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/include -I/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/include-revision -I/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include
 
 C_FLAGS = -O3 -DNDEBUG -fPIE -Wall -Wextra -Wno-unused-parameter
 

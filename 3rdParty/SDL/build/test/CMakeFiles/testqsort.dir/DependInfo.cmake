@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testqsort.c" "test/CMakeFiles/testqsort.dir/testqsort.c.o" "gcc" "test/CMakeFiles/testqsort.dir/testqsort.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testqsort.c" "test/CMakeFiles/testqsort.dir/testqsort.c.o" "gcc" "test/CMakeFiles/testqsort.dir/testqsort.c.o.d"
   "" "test/testqsort" "gcc" "test/CMakeFiles/testqsort.dir/link.d"
   )
 

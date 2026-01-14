@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SDL3_ttf-shared.dir/depend.make
@@ -73,88 +73,88 @@ CMakeFiles/SDL3_ttf-shared.dir/codegen:
 .PHONY : CMakeFiles/SDL3_ttf-shared.dir/codegen
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o: CMakeFiles/SDL3_ttf-shared.dir/flags.make
-CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable.c
+CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable.c
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o: CMakeFiles/SDL3_ttf-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable.c
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.i
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable.c.s
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o: CMakeFiles/SDL3_ttf-shared.dir/flags.make
-CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable_ttf.c
+CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable_ttf.c
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o: CMakeFiles/SDL3_ttf-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable_ttf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable_ttf.c
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable_ttf.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable_ttf.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.i
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_hashtable_ttf.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_hashtable_ttf.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_hashtable_ttf.c.s
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o: CMakeFiles/SDL3_ttf-shared.dir/flags.make
-CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_gpu_textengine.c
+CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_gpu_textengine.c
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o: CMakeFiles/SDL3_ttf-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_gpu_textengine.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_gpu_textengine.c
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_gpu_textengine.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_gpu_textengine.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.i
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_gpu_textengine.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_gpu_textengine.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_gpu_textengine.c.s
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o: CMakeFiles/SDL3_ttf-shared.dir/flags.make
-CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_renderer_textengine.c
+CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_renderer_textengine.c
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o: CMakeFiles/SDL3_ttf-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_renderer_textengine.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_renderer_textengine.c
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_renderer_textengine.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_renderer_textengine.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.i
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_renderer_textengine.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_renderer_textengine.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_renderer_textengine.c.s
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o: CMakeFiles/SDL3_ttf-shared.dir/flags.make
-CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_surface_textengine.c
+CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_surface_textengine.c
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o: CMakeFiles/SDL3_ttf-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_surface_textengine.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_surface_textengine.c
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_surface_textengine.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_surface_textengine.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.i
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_surface_textengine.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_surface_textengine.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.c.s
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o: CMakeFiles/SDL3_ttf-shared.dir/flags.make
-CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_ttf.c
+CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_ttf.c
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o: CMakeFiles/SDL3_ttf-shared.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_ttf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o -MF CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o.d -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_ttf.c
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_ttf.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_ttf.c > CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.i
 
 CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_ttf.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_ttf.c -o CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.s
 
 # Object files for target SDL3_ttf-shared
 SDL3_ttf__shared_OBJECTS = \
@@ -176,19 +176,13 @@ libSDL3_ttf.so.0.3.0: CMakeFiles/SDL3_ttf-shared.dir/src/SDL_surface_textengine.
 libSDL3_ttf.so.0.3.0: CMakeFiles/SDL3_ttf-shared.dir/src/SDL_ttf.c.o
 libSDL3_ttf.so.0.3.0: CMakeFiles/SDL3_ttf-shared.dir/build.make
 libSDL3_ttf.so.0.3.0: CMakeFiles/SDL3_ttf-shared.dir/compiler_depend.ts
-libSDL3_ttf.so.0.3.0: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/libSDL3.so.0.5.0
-libSDL3_ttf.so.0.3.0: external/harfbuzz-build/libharfbuzz.a
-libSDL3_ttf.so.0.3.0: external/freetype-build/libfreetype.a
-libSDL3_ttf.so.0.3.0: external/plutosvg-guild/libplutosvg.a
-libSDL3_ttf.so.0.3.0: external/harfbuzz-build/libharfbuzz.a
-libSDL3_ttf.so.0.3.0: external/freetype-build/libfreetype.a
-libSDL3_ttf.so.0.3.0: external/harfbuzz-build/libharfbuzz.a
-libSDL3_ttf.so.0.3.0: external/freetype-build/libfreetype.a
-libSDL3_ttf.so.0.3.0: external/plutovg-build/libplutovg.a
-libSDL3_ttf.so.0.3.0: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/src/SDL_ttf.sym
-libSDL3_ttf.so.0.3.0: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+libSDL3_ttf.so.0.3.0: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/libSDL3.so.0.5.0
+libSDL3_ttf.so.0.3.0: /usr/lib/libharfbuzz.so
+libSDL3_ttf.so.0.3.0: /usr/lib/libfreetype.so
+libSDL3_ttf.so.0.3.0: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/src/SDL_ttf.sym
+libSDL3_ttf.so.0.3.0: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 libSDL3_ttf.so.0.3.0: CMakeFiles/SDL3_ttf-shared.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library libSDL3_ttf.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C shared library libSDL3_ttf.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SDL3_ttf-shared.dir/link.txt --verbose=$(VERBOSE)
 	$(CMAKE_COMMAND) -E cmake_symlink_library libSDL3_ttf.so.0.3.0 libSDL3_ttf.so.0 libSDL3_ttf.so
 
@@ -207,6 +201,6 @@ CMakeFiles/SDL3_ttf-shared.dir/clean:
 .PHONY : CMakeFiles/SDL3_ttf-shared.dir/clean
 
 CMakeFiles/SDL3_ttf-shared.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_ttf/build/CMakeFiles/SDL3_ttf-shared.dir/DependInfo.cmake "--color=$(COLOR)" SDL3_ttf-shared
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_ttf/build/CMakeFiles/SDL3_ttf-shared.dir/DependInfo.cmake "--color=$(COLOR)" SDL3_ttf-shared
 .PHONY : CMakeFiles/SDL3_ttf-shared.dir/depend
 

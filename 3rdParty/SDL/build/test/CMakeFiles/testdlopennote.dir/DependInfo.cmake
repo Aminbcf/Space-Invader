@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testdlopennote.c" "test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o" "gcc" "test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testdlopennote.c" "test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o" "gcc" "test/CMakeFiles/testdlopennote.dir/testdlopennote.c.o.d"
   "" "test/testdlopennote" "gcc" "test/CMakeFiles/testdlopennote.dir/link.d"
   )
 

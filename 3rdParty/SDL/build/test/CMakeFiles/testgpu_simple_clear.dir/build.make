@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/testgpu_simple_clear.dir/depend.make
@@ -73,18 +73,18 @@ test/CMakeFiles/testgpu_simple_clear.dir/codegen:
 .PHONY : test/CMakeFiles/testgpu_simple_clear.dir/codegen
 
 test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o: test/CMakeFiles/testgpu_simple_clear.dir/flags.make
-test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpu_simple_clear.c
+test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpu_simple_clear.c
 test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o: test/CMakeFiles/testgpu_simple_clear.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o -MF CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o.d -o CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpu_simple_clear.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o -MF CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o.d -o CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpu_simple_clear.c
 
 test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.i"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpu_simple_clear.c > CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.i
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpu_simple_clear.c > CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.i
 
 test/CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.s"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testgpu_simple_clear.c -o CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.s
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testgpu_simple_clear.c -o CMakeFiles/testgpu_simple_clear.dir/testgpu_simple_clear.c.s
 
 # Object files for target testgpu_simple_clear
 testgpu_simple_clear_OBJECTS = \
@@ -100,20 +100,20 @@ test/testgpu_simple_clear: libSDL3_test.a
 test/testgpu_simple_clear: libSDL3.so.0.5.0
 test/testgpu_simple_clear: /usr/lib/libunwind-generic.so
 test/testgpu_simple_clear: /usr/lib/libunwind.so
-test/testgpu_simple_clear: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
+test/testgpu_simple_clear: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/dynapi/SDL_dynapi.sym
 test/testgpu_simple_clear: test/CMakeFiles/testgpu_simple_clear.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testgpu_simple_clear"
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testgpu_simple_clear.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable testgpu_simple_clear"
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testgpu_simple_clear.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/testgpu_simple_clear.dir/build: test/testgpu_simple_clear
 .PHONY : test/CMakeFiles/testgpu_simple_clear.dir/build
 
 test/CMakeFiles/testgpu_simple_clear.dir/clean:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testgpu_simple_clear.dir/cmake_clean.cmake
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test && $(CMAKE_COMMAND) -P CMakeFiles/testgpu_simple_clear.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/testgpu_simple_clear.dir/clean
 
 test/CMakeFiles/testgpu_simple_clear.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/test/CMakeFiles/testgpu_simple_clear.dir/DependInfo.cmake "--color=$(COLOR)" testgpu_simple_clear
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/test/CMakeFiles/testgpu_simple_clear.dir/DependInfo.cmake "--color=$(COLOR)" testgpu_simple_clear
 .PHONY : test/CMakeFiles/testgpu_simple_clear.dir/depend
 

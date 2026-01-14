@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -107,7 +107,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"DEVEL\" \"Unspecified\" \"devel\" \"library\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"DEVEL\" \"devel\" \"library\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -152,16 +152,16 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/CMakeFiles /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/CMakeFiles /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/CMakeFiles /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/CMakeFiles /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL_image/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL_image/build/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
@@ -252,110 +252,6 @@ showclipboard: cmake_check_build_system
 showclipboard/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/showclipboard.dir/build.make CMakeFiles/showclipboard.dir/build
 .PHONY : showclipboard/fast
-
-#=============================================================================
-# Target rules for targets named zlib
-
-# Build rule for target.
-zlib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zlib
-.PHONY : zlib
-
-# fast build rule for target.
-zlib/fast:
-	$(MAKE) $(MAKESILENT) -f external/zlib-build/CMakeFiles/zlib.dir/build.make external/zlib-build/CMakeFiles/zlib.dir/build
-.PHONY : zlib/fast
-
-#=============================================================================
-# Target rules for targets named zlibstatic
-
-# Build rule for target.
-zlibstatic: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zlibstatic
-.PHONY : zlibstatic
-
-# fast build rule for target.
-zlibstatic/fast:
-	$(MAKE) $(MAKESILENT) -f external/zlib-build/CMakeFiles/zlibstatic.dir/build.make external/zlib-build/CMakeFiles/zlibstatic.dir/build
-.PHONY : zlibstatic/fast
-
-#=============================================================================
-# Target rules for targets named png_genprebuilt
-
-# Build rule for target.
-png_genprebuilt: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 png_genprebuilt
-.PHONY : png_genprebuilt
-
-# fast build rule for target.
-png_genprebuilt/fast:
-	$(MAKE) $(MAKESILENT) -f external/libpng-build/CMakeFiles/png_genprebuilt.dir/build.make external/libpng-build/CMakeFiles/png_genprebuilt.dir/build
-.PHONY : png_genprebuilt/fast
-
-#=============================================================================
-# Target rules for targets named png_genfiles
-
-# Build rule for target.
-png_genfiles: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 png_genfiles
-.PHONY : png_genfiles
-
-# fast build rule for target.
-png_genfiles/fast:
-	$(MAKE) $(MAKESILENT) -f external/libpng-build/CMakeFiles/png_genfiles.dir/build.make external/libpng-build/CMakeFiles/png_genfiles.dir/build
-.PHONY : png_genfiles/fast
-
-#=============================================================================
-# Target rules for targets named png_shared
-
-# Build rule for target.
-png_shared: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 png_shared
-.PHONY : png_shared
-
-# fast build rule for target.
-png_shared/fast:
-	$(MAKE) $(MAKESILENT) -f external/libpng-build/CMakeFiles/png_shared.dir/build.make external/libpng-build/CMakeFiles/png_shared.dir/build
-.PHONY : png_shared/fast
-
-#=============================================================================
-# Target rules for targets named png_static
-
-# Build rule for target.
-png_static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 png_static
-.PHONY : png_static
-
-# fast build rule for target.
-png_static/fast:
-	$(MAKE) $(MAKESILENT) -f external/libpng-build/CMakeFiles/png_static.dir/build.make external/libpng-build/CMakeFiles/png_static.dir/build
-.PHONY : png_static/fast
-
-#=============================================================================
-# Target rules for targets named pngfix
-
-# Build rule for target.
-pngfix: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pngfix
-.PHONY : pngfix
-
-# fast build rule for target.
-pngfix/fast:
-	$(MAKE) $(MAKESILENT) -f external/libpng-build/CMakeFiles/pngfix.dir/build.make external/libpng-build/CMakeFiles/pngfix.dir/build
-.PHONY : pngfix/fast
-
-#=============================================================================
-# Target rules for targets named png-fix-itxt
-
-# Build rule for target.
-png-fix-itxt: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 png-fix-itxt
-.PHONY : png-fix-itxt
-
-# fast build rule for target.
-png-fix-itxt/fast:
-	$(MAKE) $(MAKESILENT) -f external/libpng-build/CMakeFiles/png-fix-itxt.dir/build.make external/libpng-build/CMakeFiles/png-fix-itxt.dir/build
-.PHONY : png-fix-itxt/fast
 
 examples/showanim.o: examples/showanim.c.o
 .PHONY : examples/showanim.o
@@ -1044,19 +940,11 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... png_genfiles"
-	@echo "... png_genprebuilt"
 	@echo "... uninstall"
 	@echo "... SDL3_image-shared"
-	@echo "... png-fix-itxt"
-	@echo "... png_shared"
-	@echo "... png_static"
-	@echo "... pngfix"
 	@echo "... showanim"
 	@echo "... showclipboard"
 	@echo "... showimage"
-	@echo "... zlib"
-	@echo "... zlibstatic"
 	@echo "... examples/showanim.o"
 	@echo "... examples/showanim.i"
 	@echo "... examples/showanim.s"

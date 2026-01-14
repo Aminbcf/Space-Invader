@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DHAVE_LIBUDEV_H -DHAVE_SIGNAL_H
 
-C_INCLUDES = -I/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/include-revision -I/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/include
+C_INCLUDES = -I/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/include-revision -I/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/include
 
 C_FLAGS = -O3 -DNDEBUG -std=gnu99
 

@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmdyn.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmdyn.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmdyn.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmdyn.h \
  /usr/include/xf86drm.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h \
  /usr/include/sys/types.h \
@@ -19,4 +19,4 @@ CMakeFiles/SDL3-shared.dir/src/video/kmsdrm/SDL_kmsdrmdyn.c.o: \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
  /usr/include/gbm.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmsym.h
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/video/kmsdrm/SDL_kmsdrmsym.h

@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/core/unix/SDL_fribidi.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/core/unix/SDL_fribidi.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/core/unix/SDL_fribidi.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/core/unix/SDL_fribidi.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/core/unix/SDL_fribidi.h \
  /usr/include/sys/types.h /usr/include/fribidi/fribidi.h \
  /usr/include/fribidi/fribidi-common.h \
  /usr/include/fribidi/fribidi-config.h \

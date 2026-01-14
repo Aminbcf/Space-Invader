@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL
+CMAKE_SOURCE_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build
+CMAKE_BINARY_DIR = /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SDL_uclibc.dir/depend.make
@@ -73,354 +73,354 @@ CMakeFiles/SDL_uclibc.dir/codegen:
 .PHONY : CMakeFiles/SDL_uclibc.dir/codegen
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_atan2.c
+CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_atan2.c
 CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_atan2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_atan2.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_atan2.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_atan2.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_atan2.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_atan2.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_exp.c
+CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_exp.c
 CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_exp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_exp.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_exp.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_exp.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_exp.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_exp.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_fmod.c
+CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_fmod.c
 CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_fmod.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_fmod.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_fmod.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_fmod.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_fmod.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_fmod.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_log.c
+CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_log.c
 CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_log.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_log.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_log.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_log.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_log.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_log.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_log10.c
+CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_log10.c
 CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_log10.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_log10.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_log10.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_log10.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_log10.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_log10.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_pow.c
+CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_pow.c
 CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_pow.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_pow.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_pow.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_pow.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_pow.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_pow.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_rem_pio2.c
+CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_rem_pio2.c
 CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_rem_pio2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_rem_pio2.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_rem_pio2.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_rem_pio2.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_rem_pio2.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_rem_pio2.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_sqrt.c
+CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_sqrt.c
 CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_sqrt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_sqrt.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_sqrt.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_sqrt.c > CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/e_sqrt.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/e_sqrt.c -o CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_cos.c
+CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_cos.c
 CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_cos.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_cos.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_cos.c > CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_cos.c > CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_cos.c -o CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_cos.c -o CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_rem_pio2.c
+CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_rem_pio2.c
 CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_rem_pio2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_rem_pio2.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_rem_pio2.c > CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_rem_pio2.c > CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_rem_pio2.c -o CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_rem_pio2.c -o CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_sin.c
+CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_sin.c
 CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_sin.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_sin.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_sin.c > CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_sin.c > CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_sin.c -o CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_sin.c -o CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_tan.c
+CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_tan.c
 CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_tan.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_tan.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_tan.c > CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_tan.c > CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/k_tan.c -o CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/k_tan.c -o CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_atan.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_atan.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_atan.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_atan.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_atan.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_atan.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_atan.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_atan.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_copysign.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_copysign.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_copysign.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_copysign.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_copysign.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_copysign.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_copysign.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_copysign.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_cos.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_cos.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_cos.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_cos.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_cos.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_cos.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_cos.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_cos.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_fabs.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_fabs.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_fabs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_fabs.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_fabs.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_fabs.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_fabs.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_fabs.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_floor.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_floor.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_floor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_floor.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_floor.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_floor.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_floor.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_floor.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isinf.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isinf.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isinf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isinf.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isinf.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isinf.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isinf.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isinf.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isinff.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isinff.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isinff.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isinff.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isinff.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isinff.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isinff.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isinff.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isnan.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isnan.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isnan.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isnan.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isnan.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isnan.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isnan.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isnan.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isnanf.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isnanf.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isnanf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isnanf.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isnanf.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isnanf.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_isnanf.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_isnanf.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_modf.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_modf.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_modf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_modf.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_modf.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_modf.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_modf.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_modf.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_scalbn.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_scalbn.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_scalbn.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_scalbn.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_scalbn.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_scalbn.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_scalbn.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_scalbn.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_sin.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_sin.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_sin.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_sin.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_sin.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_sin.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_sin.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_sin.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.s
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o: CMakeFiles/SDL_uclibc.dir/flags.make
-CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o: /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_tan.c
+CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o: /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_tan.c
 CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o: CMakeFiles/SDL_uclibc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o -c /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_tan.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o -MF CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o.d -o CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o -c /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_tan.c
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_tan.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_tan.c > CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.i
 
 CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/libm/s_tan.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/libm/s_tan.c -o CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.s
 
 # Object files for target SDL_uclibc
 SDL_uclibc_OBJECTS = \
@@ -480,7 +480,7 @@ libSDL_uclibc.a: CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o
 libSDL_uclibc.a: CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o
 libSDL_uclibc.a: CMakeFiles/SDL_uclibc.dir/build.make
 libSDL_uclibc.a: CMakeFiles/SDL_uclibc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C static library libSDL_uclibc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C static library libSDL_uclibc.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/SDL_uclibc.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SDL_uclibc.dir/link.txt --verbose=$(VERBOSE)
 
@@ -493,6 +493,6 @@ CMakeFiles/SDL_uclibc.dir/clean:
 .PHONY : CMakeFiles/SDL_uclibc.dir/clean
 
 CMakeFiles/SDL_uclibc.dir/depend:
-	cd /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/build/CMakeFiles/SDL_uclibc.dir/DependInfo.cmake "--color=$(COLOR)" SDL_uclibc
+	cd /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/build/CMakeFiles/SDL_uclibc.dir/DependInfo.cmake "--color=$(COLOR)" SDL_uclibc
 .PHONY : CMakeFiles/SDL_uclibc.dir/depend
 

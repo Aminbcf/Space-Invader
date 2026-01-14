@@ -8,6 +8,30 @@
 # ============================================================================
 
 # ----------------------------------------------------------------------------
+# OS DETECTION & PLATFORM SPECIFIC CONFIG
+# ----------------------------------------------------------------------------
+ifeq ($(OS),Windows_NT)
+    PLATFORM = Windows
+    EXEC_EXT = .exe
+    DLIB_EXT = .dll
+    # Use -G "Unix Makefiles" for MinGW/MSYS2
+    CMAKE_GENERATOR = -G "Unix Makefiles"
+    # SDL3 on Windows might need additional system libraries
+    PLATFORM_LDFLAGS = -lsetupapi -lwinmm -lole32 -loleaut32 -limm32 -lversion -luuid -luser32 -lgdi32 -lcomdlg32 -lshell32
+    # Number of processors for parallel build
+    JOBS = $(NUMBER_OF_PROCESSORS)
+    VENDORED = ON
+else
+    PLATFORM = Linux
+    EXEC_EXT =
+    DLIB_EXT = .so
+    CMAKE_GENERATOR = 
+    PLATFORM_LDFLAGS = 
+    JOBS = $(shell nproc 2>/dev/null || echo 4)
+    VENDORED = OFF
+endif
+
+# ----------------------------------------------------------------------------
 # CONFIGURATION DU COMPILATEUR
 # ----------------------------------------------------------------------------
 CC = gcc
@@ -20,10 +44,8 @@ CFLAGS = -Wall -Wextra -g -std=c11 -D_GNU_SOURCE \
 # Support for Local SDL Build
 LOCAL_SDL_DIR = 3rdParty/SDL
 LOCAL_SDL_BUILD_DIR = $(LOCAL_SDL_DIR)/build
-
 LOCAL_IMAGE_DIR = 3rdParty/SDL_image
 LOCAL_IMAGE_BUILD_DIR = $(LOCAL_IMAGE_DIR)/build
-
 LOCAL_TTF_DIR = 3rdParty/SDL_ttf
 LOCAL_TTF_BUILD_DIR = $(LOCAL_TTF_DIR)/build
 
@@ -35,21 +57,30 @@ ifneq "$(wildcard $(LOCAL_SDL_DIR)/CMakeLists.txt)" ""
     SDL_LDFLAGS = -L$(LOCAL_SDL_BUILD_DIR) -lSDL3 \
                   -L$(LOCAL_IMAGE_BUILD_DIR) -lSDL3_image \
                   -L$(LOCAL_TTF_BUILD_DIR) -lSDL3_ttf \
-                  -Wl,-rpath,$(abspath $(LOCAL_SDL_BUILD_DIR)) \
-                  -Wl,-rpath,$(abspath $(LOCAL_IMAGE_BUILD_DIR)) \
-                  -Wl,-rpath,$(abspath $(LOCAL_TTF_BUILD_DIR)) \
-                  -lm
+                  $(PLATFORM_LDFLAGS) -lm
+
+    # RPATH is Linux specific
+    ifeq ($(PLATFORM),Linux)
+        SDL_LDFLAGS += -Wl,-rpath,$(abspath $(LOCAL_SDL_BUILD_DIR)) \
+                       -Wl,-rpath,$(abspath $(LOCAL_IMAGE_BUILD_DIR)) \
+                       -Wl,-rpath,$(abspath $(LOCAL_TTF_BUILD_DIR))
+    endif
 else
     # System SDL
     SDL_CFLAGS = $(shell pkg-config --cflags sdl3 sdl3-image sdl3-ttf 2>/dev/null || \
                   echo "-I/usr/local/include/SDL3 -D_REENTRANT -I/usr/local/include/SDL3_ttf -I/usr/local/include/SDL3_image")
 
     SDL_LDFLAGS = $(shell pkg-config --libs sdl3 sdl3-image sdl3-ttf 2>/dev/null || \
-                   echo "-L/usr/local/lib -lSDL3 -lSDL3_ttf -lSDL3_image") -lm
+                   echo "-L/usr/local/lib -lSDL3 -lSDL3_ttf -lSDL3_image") $(PLATFORM_LDFLAGS) -lm
 endif
 
 # Bibliothèques pour ncurses et tests
-NCURSES_LDFLAGS = -lncurses -lm
+ifeq ($(PLATFORM),Windows)
+    # On Windows, try to find pdcurses or ncurses
+    NCURSES_LDFLAGS = $(shell pkg-config --libs ncurses 2>/dev/null || echo "-lpdcurses") -lm
+else
+    NCURSES_LDFLAGS = -lncurses -lm
+endif
 TEST_LDFLAGS = -lcheck -lm -lpthread -lrt
 
 # ----------------------------------------------------------------------------
@@ -128,9 +159,9 @@ TEST_OBJS = $(patsubst $(TEST_DIR)/%, $(TEST_BUILD_DIR)/%, $(TEST_SRCS:.c=.o))
 # ----------------------------------------------------------------------------
 # EXÉCUTABLES FINAUX
 # ----------------------------------------------------------------------------
-SDL_EXEC = $(BIN_DIR)/space_invaders_sdl
-NCURSES_EXEC = $(BIN_DIR)/space_invaders_ncurses
-TEST_EXEC = $(BIN_DIR)/test_runner
+SDL_EXEC = $(BIN_DIR)/space_invaders_sdl$(EXEC_EXT)
+NCURSES_EXEC = $(BIN_DIR)/space_invaders_ncurses$(EXEC_EXT)
+TEST_EXEC = $(BIN_DIR)/test_runner$(EXEC_EXT)
 
 # ----------------------------------------------------------------------------
 # OUTILS AUXILIAIRES
@@ -521,42 +552,40 @@ doc generate-docs:
 # GESTION DES BIBLIOTHÈQUES LOCALES
 # ============================================================================
 
-libs-build: $(LOCAL_SDL_BUILD_DIR)/libSDL3.so $(LOCAL_IMAGE_BUILD_DIR)/libSDL3_image.so $(LOCAL_TTF_BUILD_DIR)/libSDL3_ttf.so
+libs-build: $(LOCAL_SDL_BUILD_DIR)/libSDL3$(DLIB_EXT) $(LOCAL_IMAGE_BUILD_DIR)/libSDL3_image$(DLIB_EXT) $(LOCAL_TTF_BUILD_DIR)/libSDL3_ttf$(DLIB_EXT)
 
 # 1. Build SDL3
-$(LOCAL_SDL_BUILD_DIR)/libSDL3.so:
+$(LOCAL_SDL_BUILD_DIR)/libSDL3$(DLIB_EXT):
 	@echo "→ Compilation de SDL3 locale..."
 	@mkdir -p $(LOCAL_SDL_BUILD_DIR)
-	@cd $(LOCAL_SDL_BUILD_DIR) && cmake .. -DCMAKE_BUILD_TYPE=Release -DSDL_STATIC=OFF -DSDL_SHARED=ON && make -j$(shell nproc)
+	@cd $(LOCAL_SDL_BUILD_DIR) && cmake .. $(CMAKE_GENERATOR) -DCMAKE_BUILD_TYPE=Release -DSDL_STATIC=OFF -DSDL_SHARED=ON && cmake --build . -j$(JOBS)
 	@echo "✓ SDL3 locale compilée"
 
 # 2. Build SDL3_image (Depends on SDL3)
-$(LOCAL_IMAGE_BUILD_DIR)/libSDL3_image.so: $(LOCAL_SDL_BUILD_DIR)/libSDL3.so
+$(LOCAL_IMAGE_BUILD_DIR)/libSDL3_image$(DLIB_EXT): $(LOCAL_SDL_BUILD_DIR)/libSDL3$(DLIB_EXT)
 	@echo "→ Compilation de SDL3_image locale..."
 	@mkdir -p $(LOCAL_IMAGE_BUILD_DIR)
-	@# Point to local SDL3 build used -DSDL3_DIR
-	@# Disable heavy formats to avoid extra dependencies (NASM, etc)
-	@cd $(LOCAL_IMAGE_BUILD_DIR) && cmake .. \
+	@cd $(LOCAL_IMAGE_BUILD_DIR) && cmake .. $(CMAKE_GENERATOR) \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DSDLIMAGE_BACKEND_STB=ON \
-		-DSDLIMAGE_VENDORED=ON \
+		-DSDLIMAGE_VENDORED=$(VENDORED) \
 		-DSDLIMAGE_AVIF=OFF \
 		-DSDLIMAGE_JXL=OFF \
 		-DSDLIMAGE_WEBP=OFF \
 		-DSDLIMAGE_TIF=OFF \
 		-DSDL3_DIR=$(abspath $(LOCAL_SDL_BUILD_DIR)) \
-		&& make -j$(shell nproc)
+		&& cmake --build . -j$(JOBS)
 	@echo "✓ SDL3_image locale compilée"
 
 # 3. Build SDL3_ttf (Depends on SDL3)
-$(LOCAL_TTF_BUILD_DIR)/libSDL3_ttf.so: $(LOCAL_SDL_BUILD_DIR)/libSDL3.so
+$(LOCAL_TTF_BUILD_DIR)/libSDL3_ttf$(DLIB_EXT): $(LOCAL_SDL_BUILD_DIR)/libSDL3$(DLIB_EXT)
 	@echo "→ Compilation de SDL3_ttf locale..."
 	@mkdir -p $(LOCAL_TTF_BUILD_DIR)
-	@cd $(LOCAL_TTF_BUILD_DIR) && cmake .. \
+	@cd $(LOCAL_TTF_BUILD_DIR) && cmake .. $(CMAKE_GENERATOR) \
 		-DCMAKE_BUILD_TYPE=Release \
-		-DSDLTTF_VENDORED=ON \
+		-DSDLTTF_VENDORED=$(VENDORED) \
 		-DSDL3_DIR=$(abspath $(LOCAL_SDL_BUILD_DIR)) \
-		&& make -j$(shell nproc)
+		&& cmake --build . -j$(JOBS)
 	@echo "✓ SDL3_ttf locale compilée"
 
 # ============================================================================
@@ -585,6 +614,11 @@ prepare-assets: | $(BIN_DIR)
 	@if [ -d "src/assets" ]; then \
 		cp -r src/assets/* $(BIN_DIR)/assets/ 2>/dev/null || true; \
 	fi
+	@if [ "$(PLATFORM)" = "Windows" ]; then \
+		cp -f $(LOCAL_SDL_BUILD_DIR)/*$(DLIB_EXT) $(BIN_DIR)/ 2>/dev/null || true; \
+		cp -f $(LOCAL_IMAGE_BUILD_DIR)/*$(DLIB_EXT) $(BIN_DIR)/ 2>/dev/null || true; \
+		cp -f $(LOCAL_TTF_BUILD_DIR)/*$(DLIB_EXT) $(BIN_DIR)/ 2>/dev/null || true; \
+	fi
 	@cp -f highscore.dat $(BIN_DIR)/ 2>/dev/null || true
 	@cp -f README.md $(BIN_DIR)/ 2>/dev/null || true
 	@echo "✓ Ressources préparées (polices, images, audio)"
@@ -600,7 +634,7 @@ clean:
 	@echo "→ Nettoyage des fichiers de compilation..."
 	@rm -rf $(BUILD_DIR) $(BIN_DIR)
 	@rm -f *.o *.a *.so *.gcno *.gcda *.gcov
-	@rm -f space_invaders_sdl space_invaders_ncurses test_runner
+	@rm -f space_invaders_sdl$(EXEC_EXT) space_invaders_ncurses$(EXEC_EXT) test_runner$(EXEC_EXT)
 	@rm -f gmon.out callgrind.out.* valgrind-*.log
 	@rm -rf $(DOC_DIR)/html $(DOC_DIR)/latex
 	@rm -f $(DIST_DIR)/*.tar.gz $(DIST_DIR)/*.zip

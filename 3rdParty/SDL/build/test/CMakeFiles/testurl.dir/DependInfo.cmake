@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/test/testurl.c" "test/CMakeFiles/testurl.dir/testurl.c.o" "gcc" "test/CMakeFiles/testurl.dir/testurl.c.o.d"
+  "/home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/test/testurl.c" "test/CMakeFiles/testurl.dir/testurl.c.o" "gcc" "test/CMakeFiles/testurl.dir/testurl.c.o.d"
   "" "test/testurl" "gcc" "test/CMakeFiles/testurl.dir/link.d"
   )
 

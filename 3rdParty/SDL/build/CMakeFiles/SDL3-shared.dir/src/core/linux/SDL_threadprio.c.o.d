@@ -1,7 +1,7 @@
 CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/core/linux/SDL_threadprio.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/core/linux/SDL_threadprio.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
  /usr/include/sys/time.h /usr/include/features.h \
  /usr/include/bits/types.h /usr/include/bits/types/time_t.h \
  /usr/include/bits/types/struct_timeval.h /usr/include/sys/select.h \
@@ -30,7 +30,7 @@ CMakeFiles/SDL3-shared.dir/src/core/linux/SDL_threadprio.c.o: \
  /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
  /usr/include/bits/getopt_core.h /usr/include/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/core/linux/SDL_dbus.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/core/linux/SDL_dbus.h \
  /usr/include/dbus-1.0/dbus/dbus.h \
  /usr/lib/dbus-1.0/include/dbus/dbus-arch-deps.h \
  /usr/include/dbus-1.0/dbus/dbus-macros.h \

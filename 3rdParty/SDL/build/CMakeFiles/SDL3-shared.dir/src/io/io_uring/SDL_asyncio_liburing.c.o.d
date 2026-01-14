@@ -1,8 +1,8 @@
 CMakeFiles/SDL3-shared.dir/src/io/io_uring/SDL_asyncio_liburing.c.o: \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/io/io_uring/SDL_asyncio_liburing.c \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/io/io_uring/SDL_asyncio_liburing.c \
  /usr/include/stdc-predef.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/SDL_internal.h \
- /home/amin/Desktop/ProjetC/AnotherOne/3rdParty/SDL/src/io/io_uring/../SDL_sysasyncio.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/SDL_internal.h \
+ /home/amin/Desktop/ProjetC/Projet/3rdParty/SDL/src/io/io_uring/../SDL_sysasyncio.h \
  /usr/include/liburing.h /usr/include/sys/socket.h \
  /usr/include/features.h /usr/include/bits/types/struct_iovec.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
